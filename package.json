@@ -1,0 +1,17 @@
+{
+  "name": "web-hoi",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install": "npm install && cd client && npm install && cd ../",
+    "server": "node server/index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "concurrently": "^5.0.0",
+    "express": "^4.17.1"
+  }
+}
