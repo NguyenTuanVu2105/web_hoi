@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
         date_range: Sequelize.DATE,
         issued_by: Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         phone: Sequelize.INTEGER,
-        email: INTEGER.STRING,
+        email: Sequelize.STRING,
         facebook_link: Sequelize.STRING,
         native_land: Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         address_now: Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',

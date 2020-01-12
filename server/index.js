@@ -4,7 +4,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-require('./server/router/router')(app);
+require('../server/router/router')(app);
 
 const db = require('./server/config/db.config');
 
