@@ -4,9 +4,9 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-require('./server/router/router')(app);
+require('./router/router')(app);
 
-const db = require('./server/config/db.config');
+const db = require('./config/db.config');
 
 db.sequelize.sync().then(() => {
     console.log("Sequelize is Running");
