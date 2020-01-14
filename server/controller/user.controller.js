@@ -2,8 +2,9 @@ const db = require('../config/db.config');
 const config = require('../config/config');
 const User = db.user;
 const Member = db.member
-var avatar = "./asset/default_avatar.png";
 const Op = db.Sequelize.Op;
+
+var jwt = require('jsonwebtoken');
 exports.login = (req, res) => {
 	console.log("Sign-In");
 	User.findOne({
@@ -18,8 +19,8 @@ exports.login = (req, res) => {
 			return res.status(404).send({message:"User không tồn tại"});
 		}
 
-		var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-		if (!passwordIsValid) {
+		//var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+		if (req.body.password != user.password) {
 			return res.status(401).send({message:"Password không đúng"});
 		}
 		
@@ -32,4 +33,27 @@ exports.login = (req, res) => {
 	}).catch(err => {
 		res.status(500).send('Error -> ' + err);
 	});
+}
+exports.editPassword = (req, res)=>{
+	User.findOne({
+		where: {
+			id: req.userId
+		}, 
+	}).then(user => {
+		if (user.password!=req.body.password) {
+			return res.status(404).send({message:"Mật khẩu không chính xác"});
+		}
+		User.update({
+			password: req.body.newpassword
+		},{
+			where: { id: user.id }
+			}).then( () =>res.status(200).send({success : true})
+			).catch(err =>
+				{
+					res.status(500).send({message: err})
+				})
+	}).catch(err =>
+        {
+            res.status(500).send({message: err})
+    })
 }

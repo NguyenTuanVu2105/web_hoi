@@ -6,7 +6,7 @@ app.use(cors());
 
 require('../server/router/router')(app);
 
-const db = require('./server/config/db.config');
+const db = require('./config/db.config');
 
 db.sequelize.sync().then(() => {
     console.log("Sequelize is Running");

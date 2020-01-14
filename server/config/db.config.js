@@ -19,12 +19,12 @@ db.sequelize = sequelize;
 db.user = require('../model/user.model')(sequelize, Sequelize);
 db.member = require('../model/member.model')(sequelize, Sequelize);
 db.club = require('../model/club.model')(sequelize, Sequelize);
-db.branch = require('../model/branch.model');
+db.branch = require('../model/branch.model')(sequelize, Sequelize);
 
-db.user.hasManry(db.member);
-db.member.hasManry(db.club);
+db.user.hasMany(db.member);
+db.member.hasMany(db.club);
 db.club.belongsTo(db.member);
-db.club.hasManry(db.branch);
+db.club.hasMany(db.branch);
 db.branch.belongsTo(db.club);
 
 module.exports = db;
