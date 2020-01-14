@@ -4,15 +4,16 @@ const Club = db.club;
 
 exports.AddClub = (req, res) => {
     const club = {};
-    if (req.body.name) club.name = req.body.name;
-    if (req.body.founding_date) club.founding_date = req.body.founding_date;
-    if (req.body.detail) club.detail = req.body.detail;
+    if (req.body.Madoi) club.Madoi = req.body.madoi;
+    if (req.body.Tendoi) club.Tendoi = req.body.tendoi;
+    if (req.body.Ngaythanhlap) club.Ngaythanhlap = req.body.ngaythanhlap;
+    if (req.body.Chitiet) club.Chitiet = req.body.chitiet;
     Club.findOne({
-        where:{name :req.body.name}
+        where:{Madoi :req.body.madoi}
     }).then(club =>{
         if(!club) {
             new Club(club).save()
-            .then(club => res.status(200).send({success : true, id: club.id}))
+            .then(club => res.status(200).send({success : true, Madoi: club.madoi}))
             .catch(err => res.status(404).send({message: err}));
         } else {
             res.status(404).send({success: false, message: "club is exist"})
@@ -22,19 +23,20 @@ exports.AddClub = (req, res) => {
 
 exports.EditClub = (req,res) =>{
     Club.findOne({
-        where:{id :req.body.id}
+        where:{Madoi :req.body.Madoi}
     }).then(club =>{
         if(!club)
             res.status(500).send({message : err})
         else 
         {
         Club.update({
-                name: req.body.name,
-                founding_date: req.body.founding_date,
-                detail:req.body.detail
+                Madoi:req.body.madoi,
+                Tendoi: req.body.tendoi,
+                Ngaythanhlap: req.body.ngaythanhlap,
+                Chitiet:req.body.chitiet
             },
             {
-            where:{id :req.body.id}
+            where:{Madoi :req.body.madoi}
             })
             .then(
                 res.send({Success : true})
@@ -49,7 +51,7 @@ exports.EditClub = (req,res) =>{
 exports.DeleteClub = (req,res) =>{
     Club.destroy({
         where: {
-            id: req.body.id
+            Madoi: req.body.madoi
         }
     }).then(function (result) {
         if(result !== 0)
@@ -63,17 +65,17 @@ exports.DeleteClub = (req,res) =>{
     })
 }
 exports.ViewClub = (req, res) => {
-    var q = req.query.club
+    var q = req.query.tendoi
     Club.findAll(
         {
             attributes: [
-                 'name',
+                 'Tendoi',
             ],
-            where: {name: {[db.Sequelize.Op.like]: '%' + q + '%'}},
+            where: {Tendoi: {[db.Sequelize.Op.like]: '%' + q + '%'}},
             // include: [
             //     {
             //         model: Book,
-            //         attributes: ['id', 'name','founding_date','detail']
+            //         attributes: ['id', 'Tendoi','Ngaythanhlap','Chitiet']
                     
             //     }
             // ]
@@ -86,14 +88,14 @@ exports.ViewClub = (req, res) => {
 //     club.findAll(
 //         {
 //             attributes: [
-//                  'name',
+//                  'Tendoi',
 //             ],
 //             where: {id: req.query.id},
            
 //             include: [
 //                 {
 //                     model: Book,
-//                     attributes: ['id', 'name','image','star']
+//                     attributes: ['id', 'Tendoi','image','star']
                     
 //                 }
 //             ]
