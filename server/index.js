@@ -4,11 +4,11 @@ app.use(express.json());
 const cors = require('cors');
 app.use(cors());
 
-require('../server/router/router')(app);
+require('./router/router')(app);
 
 const db = require('./config/db.config');
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
     console.log("Sequelize is Running");
 }).catch(err => {
     console.log(err.message);
