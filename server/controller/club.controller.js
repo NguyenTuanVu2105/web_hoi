@@ -65,40 +65,40 @@ exports.DeleteClub = (req,res) =>{
     })
 }
 exports.ViewClub = (req, res) => {
+    var page = parseInt(req.query.page)
+    Club.findAndCountAll({
+        limit: 10,
+        offset: (page-1)*10
+        
+    }).then( result => {
+       
+      res.status(200).send({
+      success: true,
+      data: result,
+    });
+    })
+      
+}
+exports.SearchClub = (req, res) => {
     var q = req.query.tendoi
     Club.findAll(
         {
             attributes: [
-                 'Tendoi',
+                'Tendoi',
             ],
             where: {Tendoi: {[db.Sequelize.Op.like]: '%' + q + '%'}},
-            // include: [
-            //     {
-            //         model: Book,
-            //         attributes: ['id', 'Tendoi','Ngaythanhlap','Chitiet']
-                    
-            //     }
-            // ]
     }).then(club => {
         res.status(200).send(club)
     }).catch(err => res.status(500).send({message: err}))
 }
+
 // exports.searchclubById = (req, res) => {
-// console.log(req.query.id)
 //     club.findAll(
 //         {
 //             attributes: [
 //                  'Tendoi',
 //             ],
 //             where: {id: req.query.id},
-           
-//             include: [
-//                 {
-//                     model: Book,
-//                     attributes: ['id', 'Tendoi','image','star']
-                    
-//                 }
-//             ]
 //     }).then(books => {
 //         res.send(books)
 //     }).catch(err => res.status(500).send({message: err}))

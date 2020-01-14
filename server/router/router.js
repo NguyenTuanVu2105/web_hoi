@@ -6,7 +6,7 @@ const path = require("path")
 module.exports = function(app) {
     const usercontroller 		= require('../controller/user.controller');
     const clubcontroller        = require('../controller/club.controller');
-
+    const branchcontroller      = require('../controller/branch.controller');
 
     app.post('/api/login', usercontroller.login);
 
@@ -20,5 +20,19 @@ module.exports = function(app) {
 
     app.delete('/admin/delete/club', clubcontroller.DeleteClub);
 
-    app.get('/admin/information/club',clubcontroller.ViewClub)
+    app.get('/admin/information/club',clubcontroller.ViewClub);
+
+    app.get('/admin/search/club',clubcontroller.SearchClub);
+
+    //chi hoi
+
+    app.post('/admin/add/branch', branchcontroller.AddBranch);
+
+    app.put('/admin/edit/branch', branchcontroller.EditBranch);
+
+    app.delete('/admin/delete/branch', branchcontroller.DeleteBranch);
+
+    app.get('/admin/information/branch',branchcontroller.ViewBranch);
+
+    app.get('/admin/search/branch',branchcontroller.SearchBranch)
 }
