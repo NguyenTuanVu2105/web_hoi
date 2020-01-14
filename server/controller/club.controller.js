@@ -4,10 +4,10 @@ const Club = db.club;
 
 exports.AddClub = (req, res) => {
     const club = {};
-    if (req.body.Madoi) club.Madoi = req.body.madoi;
-    if (req.body.Tendoi) club.Tendoi = req.body.tendoi;
-    if (req.body.Ngaythanhlap) club.Ngaythanhlap = req.body.ngaythanhlap;
-    if (req.body.Chitiet) club.Chitiet = req.body.chitiet;
+    if (req.body.madoi) club.Madoi = req.body.madoi;
+    if (req.body.tendoi) club.Tendoi = req.body.tendoi;
+    if (req.body.ngaythanhlap) club.Ngaythanhlap = req.body.ngaythanhlap;
+    if (req.body.chitiet) club.Chitiet = req.body.chitiet;
     Club.findOne({
         where:{Madoi :req.body.madoi}
     }).then(club =>{
