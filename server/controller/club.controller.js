@@ -10,10 +10,10 @@ exports.AddClub = (req, res) => {
     if (req.body.chitiet) club.Chitiet = req.body.chitiet;
     Club.findOne({
         where:{Madoi :req.body.madoi}
-    }).then(club =>{
-        if(!club) {
+    }).then(clubs =>{
+        if(!clubs) {
             new Club(club).save()
-            .then(club => res.status(200).send({success : true, Madoi: club.madoi}))
+            .then(clubs => res.status(200).send({success : true, Madoi: clubs.Madoi}))
             .catch(err => res.status(404).send({message: err}));
         } else {
             res.status(404).send({success: false, message: "club is exist"})
