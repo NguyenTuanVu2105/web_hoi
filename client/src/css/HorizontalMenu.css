@@ -1,0 +1,10 @@
+li{
+    display:inline-block;
+}
+.styleA{
+    color: red !important;
+    opacity: .4;
+}
+.displayVisible{
+    display: none !important;
+}
