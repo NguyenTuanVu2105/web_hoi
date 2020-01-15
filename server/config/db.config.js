@@ -18,13 +18,16 @@ db.sequelize = sequelize;
 
 db.user = require('../model/user.model')(sequelize, Sequelize);
 db.member = require('../model/member.model')(sequelize, Sequelize);
+db.position = require('../model/position.model')(sequelize, Sequelize);
 db.club = require('../model/club.model')(sequelize, Sequelize);
 db.branch = require('../model/branch.model')(sequelize, Sequelize);
 
 db.user.hasMany(db.member);
-db.member.hasMany(db.club);
-db.club.belongsTo(db.member);
-db.club.hasMany(db.branch);
-db.branch.belongsTo(db.club);
+db.position.hasMany(db.member);
+db.member.belongsTo(db.position);
+db.club.hasMany(db.member);
+db.member.belongsTo(db.club);
+db.branch.hasMany(db.club);
+db.club.belongsTo(db.branch);
 
 module.exports = db;
