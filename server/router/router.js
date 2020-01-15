@@ -7,12 +7,20 @@ module.exports = function(app) {
     const usercontroller 		= require('../controller/user.controller');
     const clubcontroller        = require('../controller/club.controller');
     const branchcontroller      = require('../controller/branch.controller');
+    const admincontroller       = require('../controller/admin.controller');
+    const membercontroller      = require('../controller/member.controller');
 
     app.post('/api/login', usercontroller.login);
 
     app.put('/api/user/edit/password', [authJwt.verifyToken], usercontroller.editPassword);
 
+    //member
+    app.post('/user/information/add', [authJwt.verifyToken],membercontroller.AddProfile);
 
+    app.put('/admin/information/edit', [authJwt.verifyToken],membercontroller.EditProfile);
+
+    app.get('/admin/information/club',[authJwt.verifyToken],membercontroller.ViewProfile);
+    
     // club
     app.post('/admin/add/club', clubcontroller.AddClub);
 
@@ -34,5 +42,9 @@ module.exports = function(app) {
 
     app.get('/admin/information/branch',branchcontroller.ViewBranch);
 
-    app.get('/admin/search/branch',branchcontroller.SearchBranch)
+    app.get('/admin/search/branch',branchcontroller.SearchBranch);
+
+    //admin
+
+
 }
