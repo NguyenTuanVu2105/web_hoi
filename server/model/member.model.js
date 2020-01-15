@@ -4,8 +4,6 @@ module.exports = (sequelize, Sequelize) => {
         Hovaten:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Ngaysinh:           Sequelize.DATE,
         Gioitinh:           Sequelize.BOOLEAN,
-        Chucvu:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Bacchuyenmon:       Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         CMTorHC:            Sequelize.STRING,
         Ngaycap:            Sequelize.DATE,
         Noicap:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
