@@ -12,7 +12,7 @@ function LearningAndActivities(props){
                         <div className="col-6">
                             <label for="" className="label_information">Trường:</label>
                             <input type="text" className="input_information" /> <br />
-                            <label for="" className="label_information">lớp:</label>
+                            <label for="" className="label_information">Lớp:</label>
                             <input type="text" className="input_information" />
                         </div>
                         <div className="col-6">

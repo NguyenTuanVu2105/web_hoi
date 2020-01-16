@@ -1,11 +1,20 @@
-import React, {Component} from 'react'
+import React, {Component, useContext, useEffect} from 'react'
 import InformationUser from '../Component/InformationUser'
 import {formChildren} from '../Component/FormChildren'
 import {formChildrenRight} from '../Component/FormChildrenRight'
+import HomepageContext from "../context/HomepageContext";
 function ProFileLeft(props) {
     const style = {
         padding : '0'
     }
+    const {nameMap, setNameMap} = useContext(HomepageContext)
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ',
+            ['/profile']: 'Hồ sơ cá nhân'
+        })
+    }, [])
+    console.log(nameMap)
     return (
         <div className="row">
             <div className = "col-5">

@@ -1,15 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import DropMenu from './Component/NavBar';
-import HomePage from './page/HomePage';
+import {BrowserRouter} from 'react-router-dom'
+import {renderRoutes} from 'react-router-config'
+import routes from './routes/Routes'
+import 'antd/dist/antd.css';
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+        <BrowserRouter>
+            {/* kick it all off with the root route */}
+            {renderRoutes(routes)}
+        </BrowserRouter>,
     </div>
-    
   );
 }
 

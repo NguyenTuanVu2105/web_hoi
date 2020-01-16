@@ -1,23 +1,23 @@
-import LoginContainer from "../app/login/components/LoginContainer"
-import RegisterContainer from "../app/register/components/RegisterContainer"
-import Paths from "./Paths"
-import App from "../App"
+import HomePage from '../page/HomePage';
+import ProFileLeft from "../page/ProFile";
+import LearningAndActivities from "../page/learningAndActivities";
 
 const routes = [
     {
-        path: Paths.HomePage,
-        exact: true,
-        component: App
-    },
-    {
-        path: Paths.Login,
-        exact: true,
-        component: App
-    },
-    {
-        path: Paths.Register,
-        exact: true,
-        component: App
+        path: '/',
+        component: HomePage,
+        routes: [
+            {
+                path: "/profile",
+                component: ProFileLeft,
+                breadcrumbName: 'home',
+            },
+            {
+                path: "/learn",
+                component: LearningAndActivities,
+                breadcrumbName: 'learn',
+            },
+        ]
     },
 ]
 
