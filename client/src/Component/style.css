@@ -19,7 +19,7 @@
 .drop-menu:hover {
     background: rgb(177, 6, 6) !important ;
 }
-a{  
+.sticky a{
     font-size: 18px !important;
     color: white  !important;
     text-decoration: none !important;
