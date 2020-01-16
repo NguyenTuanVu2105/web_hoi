@@ -1,0 +1,22 @@
+.borderRadius{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 15px;
+}
+.img{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+}
+.image{
+    margin: 15px 0px 15px 15px;
+    padding-right: 40px;  
+}
+.describe{
+    font-size: 15px !important;
+    color: red !important;
+    text-align: right !important;
+}
+.information{
+    padding-left: 0px;
+}

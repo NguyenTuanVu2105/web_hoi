@@ -25,7 +25,7 @@ module.exports = (sequelize, Sequelize) => {
         GPA:                Sequelize.FLOAT,
         Trinhdohocvan:      Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         DoanvienDangvien:   Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Ghichukhac:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci'
+        Ghichukhac:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',          
     });
     return Member;
 }
