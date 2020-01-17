@@ -4,18 +4,22 @@ import LearningAndActivities from "../page/learningAndActivities";
 
 const routes = [
     {
-        path: '/',
         component: HomePage,
         routes: [
             {
-                path: "/profile",
+                path: "/",
+                exact: true,
                 component: ProFileLeft,
-                breadcrumbName: 'home',
+            },
+            {
+                path: "/profile",
+                exact: true,
+                component: ProFileLeft,
             },
             {
                 path: "/learn",
+                exact: true,
                 component: LearningAndActivities,
-                breadcrumbName: 'learn',
             },
         ]
     },

@@ -14,10 +14,11 @@ const NavBar = () => {
                 navs.map(nav => (
                 <div>
                     <div className="panel-heading drop-menu">
-                        <div>
-                            <a class="" data-toggle="collapse" href={nav.Id1}>{nav.name}</a>
-                        </div>
-                        <div className="items-i"><i class="fa fa-angle-down" style={style}></i></div>
+                        <a class="" data-toggle="collapse" href={nav.Id1}>
+                            {nav.name}
+                            <div className="items-i"><i className="fa fa-angle-down" style={style}></i></div>
+                        </a>
+
                     </div>
                     <div id={nav.Id2} class="panel-collapse collapse">
                         <ul class="list-group">

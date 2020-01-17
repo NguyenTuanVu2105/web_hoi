@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {renderRoutes} from 'react-router-config'
 import {Link} from "react-router-dom";
@@ -16,6 +16,11 @@ import HomepageContext from "../context/HomepageContext";
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ'
+        })
+    }, [])
     const breadcrumb = _.map(nameMap, (name, url) => {
         return (
             <Breadcrumb.Item key={url}>
@@ -40,7 +45,7 @@ function HomePage(props) {
                         <Breadcrumb>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}
-                        {/* <ProFileLeft /> */}
+                        {/* <ProFileLeft />*/}
                         {/* <AddUnit/> */}
                         {/*<TeamLeader/>*/}
                         {/*<SearchUnit/>*/}

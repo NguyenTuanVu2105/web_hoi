@@ -10,10 +10,6 @@
     width: auto !important;
     margin-top: 10px !important;
     border-radius: 10px !important;
-    display: flex;
-    justify-content:space-between;
-    padding-left: 9px;
-    padding-right: 9px;
 }
 
 .drop-menu:hover {
@@ -24,9 +20,12 @@
     color: white  !important;
     text-decoration: none !important;
     font-weight: 500 !important;
-    display: block !important;
     text-align: center !important;
     line-height: 40px !important;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 0 10px;
 }
 /* #logo{
     background-image: url("logomau.png");
