@@ -1,6 +1,7 @@
 import HomePage from '../page/HomePage';
 import ProFileLeft from "../page/ProFile";
 import LearningAndActivities from "../page/learningAndActivities";
+import SearchUnit from '../page/SearchUnit';
 
 const routes = [
     {
@@ -20,6 +21,11 @@ const routes = [
                 path: "/learn",
                 exact: true,
                 component: LearningAndActivities,
+            },
+            {
+                path: "/SearchUnit",
+                exact: true,
+                component: SearchUnit,
             },
         ]
     },

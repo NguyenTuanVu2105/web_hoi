@@ -1,15 +1,16 @@
 export const navs = [
     {
-        isVisible:false,
         Id1: "#collapse1",
         Id2: "collapse1",
         name: "HỒ SƠ TỔ CHỨC",
         children: [
             {
-                name: "HỘI MÁU"
+                name: "HỘI MÁU",
+                href: "/"
             },
             {
-                name: "ĐƠN VỊ TRỰC THUỘC"
+                name: "ĐƠN VỊ TRỰC THUỘC",
+                href: "/SearchUnit"
             },
             {
                 name: "LÃnh ĐẠO QUA CÁC THỜI KỲ"

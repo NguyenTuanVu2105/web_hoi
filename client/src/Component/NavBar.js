@@ -24,7 +24,7 @@ const NavBar = () => {
                         <ul class="list-group">
                             {
                                 nav.children.map(x => (
-                            <li className="list-group-item"><a className="list-items" href="">{x.name}</a></li>
+                            <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                 ))
                             }
                         </ul>

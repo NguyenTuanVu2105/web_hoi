@@ -1,8 +1,19 @@
-import React, { Component } from 'react'
+
 import {SearchUnitList} from '../Component/SearchUnitList'
 import '../css/SearchUnit.css'
+import React, {Component, useContext, useEffect} from 'react'
+import HomepageContext from "../context/HomepageContext";
 
 const SearchUnit = () =>{
+
+    const {nameMap, setNameMap} = useContext(HomepageContext)
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ',
+            ['/SearchUnit']: 'Đơn vị hoạt động'
+        })
+    }, [])
+    console.log(nameMap)
     const style = {
         marginLeft : '15px'
     }

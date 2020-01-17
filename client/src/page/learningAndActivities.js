@@ -1,7 +1,19 @@
-import React, { Component } from 'react'
+
 import '../css/LearningAndActivities.css'
+import React, {Component, useContext, useEffect} from 'react'
+import HomepageContext from "../context/HomepageContext";
 
 function LearningAndActivities(props){
+
+    const {nameMap, setNameMap} = useContext(HomepageContext)
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ',
+            ['/learn']: 'Học tập và hoạt động'
+        })
+    }, [])
+    
+
     return (
         <div>
 

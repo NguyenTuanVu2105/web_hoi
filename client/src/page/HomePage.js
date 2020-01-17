@@ -16,11 +16,6 @@ import HomepageContext from "../context/HomepageContext";
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
-    useEffect(() => {
-        setNameMap({
-            '': 'Trang chủ'
-        })
-    }, [])
     const breadcrumb = _.map(nameMap, (name, url) => {
         return (
             <Breadcrumb.Item key={url}>
