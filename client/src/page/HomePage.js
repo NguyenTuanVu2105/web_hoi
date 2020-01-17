@@ -45,7 +45,7 @@ function HomePage(props) {
                         <Breadcrumb>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}
-                        {/* <ProFileLeft />*/}
+                        {/* <ProFileLeft /> */}
                         {/* <AddUnit/> */}
                         {/*<TeamLeader/>*/}
                         {/*<SearchUnit/>*/}

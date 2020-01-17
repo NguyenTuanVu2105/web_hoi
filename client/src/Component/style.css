@@ -4,6 +4,9 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
 } */
+.container-fluid{
+    padding-right: 0px !important;
+}
 .drop-menu{
     background-color: #ff1313 !important;
     height: 40px !important;
@@ -109,6 +112,7 @@
 }
 
 .input_information{
+    width: 60%;
     border: none;
     border-bottom: 1px solid rgb(204, 202, 202);
 }
@@ -119,7 +123,8 @@
     box-shadow:0 0 15px #808451;
 }
 .label_information{
-    padding-left: 10%;
+    width: 34%;
+    padding-left: 15px;
     color: red;
     display: inline-block;
 }
