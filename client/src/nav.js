@@ -2,18 +2,19 @@ export const navs = [
     {
         Id1: "#collapse1",
         Id2: "collapse1",
-        name: "HỒ SƠ TỔ CHỨC",
+        name: "HỒ SƠ TỔ CHỨC",        
         children: [
             {
-                name: "HỘI MÁU",
-                href: "/"
+                name: "HỒ SƠ TỔ CHỨC",
+                href : "/OrganizationalRecords",
             },
             {
                 name: "ĐƠN VỊ TRỰC THUỘC",
                 href: "/SearchUnit"
             },
             {
-                name: "LÃnh ĐẠO QUA CÁC THỜI KỲ"
+                name: "LÃnh ĐẠO QUA CÁC THỜI KỲ",
+                Href: "/TeamLeader"
             }
         ]
     },
@@ -23,7 +24,8 @@ export const navs = [
         name: "HỒ SƠ THÀNH VIÊN",
         children: [
             {
-                name: "HỒ SƠ CÁ NHÂN"
+                name: "HỒ SƠ CÁ NHÂN",
+                Href: "/profile"
             }, 
             {
                 name: "THÔNG TIN GIA ĐÌNH"

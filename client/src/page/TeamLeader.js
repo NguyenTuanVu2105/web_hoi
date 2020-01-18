@@ -1,8 +1,18 @@
-import React, { Component } from 'react'
+import React, {Component, useContext, useEffect} from 'react'
+import HomepageContext from "../context/HomepageContext";
 import {TeamLeaderList} from '../Component/TeamLeaderList'
 import '../css/TeamLeader.css'
 
 const TeamLeader = () =>{
+
+    const {nameMap, setNameMap} = useContext(HomepageContext)
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ',
+            ['/TeamLeader']: 'Lãnh đạo qua các thời kỳ'
+        })
+    }, [])
+
     return (
         <div>
             {

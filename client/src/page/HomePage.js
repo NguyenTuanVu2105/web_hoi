@@ -10,6 +10,7 @@ import LearningAndActivities from '../page/learningAndActivities';
 import AddUnit from '../page/AddUnit'
 import TeamLeader from '../page/TeamLeader'
 import SearchUnit from '../page/SearchUnit'
+import OrganizationalRecords from '../page/OrganizationalRecords'
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
@@ -44,6 +45,7 @@ function HomePage(props) {
                         {/* <AddUnit/> */}
                         {/*<TeamLeader/>*/}
                         {/*<SearchUnit/>*/}
+                        {/* <OrganizationalRecords/> */}
                     </div>
                 </HomepageContext.Provider>
             </div>

@@ -3,6 +3,7 @@ import InformationUser from '../Component/InformationUser'
 import {formChildren} from '../Component/FormChildren'
 import {formChildrenRight} from '../Component/FormChildrenRight'
 import HomepageContext from "../context/HomepageContext";
+
 function ProFileLeft(props) {
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {

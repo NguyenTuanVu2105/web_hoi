@@ -2,6 +2,8 @@ import HomePage from '../page/HomePage';
 import ProFileLeft from "../page/ProFile";
 import LearningAndActivities from "../page/learningAndActivities";
 import SearchUnit from '../page/SearchUnit';
+import TeamLeader from '../page/TeamLeader';
+import OrganizationalRecords from '../page/OrganizationalRecords'
 
 const routes = [
     {
@@ -27,6 +29,16 @@ const routes = [
                 exact: true,
                 component: SearchUnit,
             },
+            {
+                path: "/TeamLeader",
+                exact: true,
+                component: TeamLeader,
+            },
+            {
+                path: "/OrganizationalRecords",
+                exact: true,
+                component: OrganizationalRecords,
+            }
         ]
     },
 ]

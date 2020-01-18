@@ -1,0 +1,26 @@
+.para{
+    margin: 20px;
+}
+.divBody{
+    
+    border: 1px solid red;
+    border-top: none;
+    margin-top: 25px;
+}
+.header{
+    background-color: red;
+    height: 30px;
+}
+.header h4{
+    color: white;
+    margin-left: 15px;
+}
+.tagA{
+    margin-left: 50px;
+}
+
+    .tagA a{
+        font-size: 20px;
+        color: red !important;
+        font-weight: 500;
+    }
