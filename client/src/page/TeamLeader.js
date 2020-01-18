@@ -14,7 +14,7 @@ const TeamLeader = () =>{
     }, [])
 
     return (
-        <div>
+        <div >
             {
                 TeamLeaderList.map(leader =>(
                     <div className = 'row borderRadius'>
@@ -22,10 +22,10 @@ const TeamLeader = () =>{
                             <div className = 'img'></div>
                         </div>
                         <div className = 'col-9 information'>
-                            <label>Họ tên: {leader.name}</label><br/>
-                            <label>Chức vụ: {leader.position}</label><br/>
-                            <label>Thời gian công tác: {leader.time}</label><br/>
-                            <label>Mô tả: {leader.describe}</label><br/>
+                            <label className="label_information1">Họ tên: {leader.name}</label><br/>
+                            <label className="label_information1">Chức vụ: {leader.position}</label><br/>
+                            <label className="label_information1">Thời gian công tác: {leader.time}</label><br/>
+                            <label className="label_information1">Mô tả: {leader.describe}</label><br/>
                             <a className='describe' href = ''>Chi tiết>>></a>
                         </div>
                     </div>

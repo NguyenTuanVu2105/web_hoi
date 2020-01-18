@@ -15,7 +15,7 @@ function LearningAndActivities(props){
     
 
     return (
-        <div>
+        <div className = "para">
 
             <div>
                 <h3>Học tập</h3>
@@ -47,11 +47,11 @@ function LearningAndActivities(props){
             <div>
                 <h3>Hoạt động</h3>
                 <div>
-                    <label for="" className="label">Trực thuộc chi hội:</label><br />
-                    <label for="" className="label">Trực thuộc đội:</label><br />
-                    <label for="" className="label">Ngày vào hội:</label><br />
-                    <label for="" className="label">Chức vụ:</label><br />
-                    <label for="" className="label">Bậc chuyên môn:</label>
+                    <label for="" className="label_information">Trực thuộc chi hội:</label><br />
+                    <label for="" className="label_information">Trực thuộc đội:</label><br />
+                    <label for="" className="label_information">Ngày vào hội:</label><br />
+                    <label for="" className="label_information">Chức vụ:</label><br />
+                    <label for="" className="label_information">Bậc chuyên môn:</label>
                 </div>
                 <fieldset>
                     <legend>Khen thưởng:</legend>

@@ -18,11 +18,11 @@
 .drop-menu:hover {
     background: rgb(177, 6, 6) !important ;
 }
-.sticky a{
-    font-size: 18px !important;
+.stickyA{
+    font-size: 18px;
     color: white  !important;
     text-decoration: none !important;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
     text-align: center !important;
     line-height: 40px !important;
     width: 100%;
@@ -97,8 +97,10 @@
     /* max-width: 200px !important; */
 }
 .list-items{
+    color: white;
+    text-align: center;
     font-weight: 400 !important;
-    font-size: 16px !important;
+    font-size: 14px !important;
     line-height: 30px !important;
     
 }
@@ -123,6 +125,7 @@
     box-shadow:0 0 15px #808451;
 }
 .label_information{
+    font-size: 18px;
     width: 34%;
     padding-left: 15px;
     color: red;
@@ -148,4 +151,7 @@ legend{
 }
 .content-right{
     padding-left: 0px !important;
+}
+.para{
+    margin: 20px;
 }

@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 import {AddUnitChild} from '../Component/AddUnitChild'
+import '../css/AddUnit.css'
 const AddUnit = () => {
 
 
     return (
-        <div>
+        <div className = "para">
             {
                 AddUnitChild.map(label => (
                     <div>
-                        <label>{label.name}</label><br />
+                        <span className = "spanLabel">{label.name}</span><br />
                     </div>
                 ))
             }
             <div className='col-12'>
-                thành viên hiện tại
+            <span className = "spanLabel">Thành viên hiện tại:</span>
             </div>
-            <div className='row'>
-
-
+            <div className='row rowTable'>
                 <table className='col-5' border={'1px'}>
                     <tr>
                         <th>
@@ -61,11 +60,10 @@ const AddUnit = () => {
                         <th>3</th>
                     </tr>
                 </table>
-
             </div>
-            <div>Tổng số thành viên:</div>
-            <span>Điểm hiến máu thường xuyên tổ chức:</span><br/>
-            <span>Kết quả hoạt động:</span>
+            <span className = "spanLabel">Tổng số thành viên:</span><br/>
+            <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
+            <span className = "spanLabel">Kết quả hoạt động:</span>
             <div></div>
         </div>
     )

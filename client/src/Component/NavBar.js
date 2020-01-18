@@ -14,7 +14,7 @@ const NavBar = () => {
                 navs.map(nav => (
                 <div>
                     <div className="panel-heading drop-menu">
-                        <a class="" data-toggle="collapse" href={nav.Id1}>
+                        <a className="stickyA" data-toggle="collapse" href={nav.Id1}>
                             {nav.name}
                             <div className="items-i"><i className="fa fa-angle-down" style={style}></i></div>
                         </a>

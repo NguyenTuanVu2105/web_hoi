@@ -1,7 +1,7 @@
 .borderRadius{
     border: 1px solid black;
     border-radius: 10px;
-    margin: 15px;
+    margin: 20px;
 }
 .img{
     background-color: red;
@@ -15,8 +15,14 @@
 .describe{
     font-size: 15px !important;
     color: red !important;
-    text-align: right !important;
+    display: flex;
+    justify-content: flex-end;
 }
 .information{
     padding-left: 0px;
+}
+.label_information1{
+    font-size: 18px;
+    color: red;
+    display: inline-block;
 }

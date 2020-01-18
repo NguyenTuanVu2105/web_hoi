@@ -40,12 +40,12 @@ function HomePage(props) {
                         {/*<HorizontalMenu />*/}
                         <Breadcrumb>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
-                        {/* <LearningAndActivities /> */}
-                        {/* <ProFileLeft /> */}
-                        {/* <AddUnit/> */}
-                        {/*<TeamLeader/>*/}
-                        {/*<SearchUnit/>*/}
-                        {/* <OrganizationalRecords/> */}
+                        <LearningAndActivities />
+                        <ProFileLeft />
+                        <AddUnit/>
+                        <TeamLeader/>
+                        <SearchUnit/>
+                        <OrganizationalRecords/>
                     </div>
                 </HomepageContext.Provider>
             </div>
