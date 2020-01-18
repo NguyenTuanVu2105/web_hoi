@@ -9,7 +9,8 @@ export const OrganizationalRecordsList = [
                 name : "Lịch sử hội"
             },
             {
-                name : "Lãnh đạo qua các thời kỳ"
+                name : "Lãnh đạo qua các thời kỳ",
+                href : "/TeamLeader"
             },
             {
                 name : "Báo cáo công tác hội"
@@ -20,10 +21,12 @@ export const OrganizationalRecordsList = [
         name: "ĐƠN VỊ TRỰC THUỘC",
         child : [
             {
-                name : "Hồ sơ đơn vị"
+                name : "Hồ sơ đơn vị",
+                href : "/SearchUnit"
             },
             {
-                name : "Đơn vị mới"
+                name : "Đơn vị mới",
+                href : "/AddUnit"
             },
             {
                 name : "Tra cứu thông tin đơn vị"

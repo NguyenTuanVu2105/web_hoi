@@ -3,6 +3,7 @@ import ProFileLeft from "../page/ProFile";
 import LearningAndActivities from "../page/learningAndActivities";
 import SearchUnit from '../page/SearchUnit';
 import TeamLeader from '../page/TeamLeader';
+import AddUnit from '../page/AddUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
 
 const routes = [
@@ -38,6 +39,11 @@ const routes = [
                 path: "/OrganizationalRecords",
                 exact: true,
                 component: OrganizationalRecords,
+            },
+            {
+                path: "/AddUnit",
+                exact: true,
+                component: AddUnit,
             }
         ]
     },

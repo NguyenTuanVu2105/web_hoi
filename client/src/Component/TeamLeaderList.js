@@ -1,10 +1,10 @@
 export const TeamLeaderList = [
     {
         img : '',
-        name : 'hihi',
-        position : 'hihi',
+        name : 'Chử Nhất Hợp',
+        position : 'Chủ tịch Hội',
         time : '1994-2020',
-        describe : 'hihi'
+        describe : 'Mô tả ngắn.....'
     }
     // {
     //     img : '',

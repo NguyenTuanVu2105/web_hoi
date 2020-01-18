@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
+import React, {Component, useContext, useEffect} from 'react'
+import HomepageContext from "../context/HomepageContext";
 import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 const AddUnit = () => {
 
+    const {nameMap, setNameMap} = useContext(HomepageContext)
+    useEffect(() => {
+        setNameMap({
+            '': 'Trang chủ',
+            ['/AddUnit']: 'Thêm đơn vị'
+        })
+    }, [])
 
     return (
         <div className = "para">

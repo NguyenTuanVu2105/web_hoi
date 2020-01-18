@@ -8,14 +8,14 @@ export const navs = [
                 name: "HỒ SƠ TỔ CHỨC",
                 href : "/OrganizationalRecords",
             },
-            {
-                name: "ĐƠN VỊ TRỰC THUỘC",
-                href: "/SearchUnit"
-            },
-            {
-                name: "LÃnh ĐẠO QUA CÁC THỜI KỲ",
-                Href: "/TeamLeader"
-            }
+            // {
+            //     name: "ĐƠN VỊ TRỰC THUỘC",
+            //     href: "/SearchUnit"
+            // },
+            // {
+            //     name: "LÃnh ĐẠO QUA CÁC THỜI KỲ",
+            //     href: "/TeamLeader"
+            // }
         ]
     },
     {
@@ -25,13 +25,15 @@ export const navs = [
         children: [
             {
                 name: "HỒ SƠ CÁ NHÂN",
-                Href: "/profile"
+                href: "/profile"
             }, 
+            // {
+            //     name: "THÔNG TIN GIA ĐÌNH",
+            //     href:"/Addunit"
+            // },
             {
-                name: "THÔNG TIN GIA ĐÌNH"
-            },
-            {
-                name: "HỌC TẬP VÀ HOẠT ĐỘNG"
+                name: "HỌC TẬP VÀ HOẠT ĐỘNG",
+                href:"/learn"
             }
         ]
     },
