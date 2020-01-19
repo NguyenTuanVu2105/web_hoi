@@ -19,7 +19,7 @@ module.exports = function(app) {
 
     app.put('/admin/information/edit', [authJwt.verifyToken],membercontroller.EditProfile);
 
-    app.get('/admin/information/club',[authJwt.verifyToken],membercontroller.ViewProfile);
+    app.get('/admin/information/member',[authJwt.verifyToken],membercontroller.ViewProfile);
     
     // club
     app.post('/admin/add/club', clubcontroller.AddClub);

@@ -7,7 +7,7 @@ exports.AddBranch = (req, res) => {
     if (req.body.machihoi) branch.Machihoi = req.body.machihoi;
     if (req.body.tenchihoi) branch.Tenchihoi = req.body.tenchihoi;
     if (req.body.ngaythanhlap) branch.Ngaythanhlap = req.body.ngaythanhlap;
-    if (req.body.chitiet) branch.Chitiet = req.body.chitiet;
+    if (req.body.chihoitruong) branch.Chihoitruong = req.body.chihoitruong;
     Branch.findOne({
         where:{Machihoi :req.body.machihoi}
     }).then(Branchs =>{
@@ -33,7 +33,7 @@ exports.EditBranch = (req,res) =>{
                 Machihoi:req.body.machihoi,
                 Tenchihoi: req.body.tenchihoi,
                 Ngaythanhlap: req.body.ngaythanhlap,
-                Chitiet:req.body.chitiet
+                Chihoitruong:req.body.chihoitruong
             },
             {
             where:{Machihoi :req.body.machihoi}
@@ -65,13 +65,8 @@ exports.DeleteBranch = (req,res) =>{
     })
 }
 exports.ViewBranch = (req, res) => {
-    var page = parseInt(req.query.page)
-    Branch.findAndCountAll({
-        limit: 12,
-        offset: (page-1)*12
-        
-    }).then( result => {
-       
+    Branch.findAll()
+    .then( result => {
       res.status(200).send({
       success: true,
       data: result,
