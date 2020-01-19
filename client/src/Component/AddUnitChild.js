@@ -12,13 +12,13 @@ export const AddUnitChild = [
         name: 'Đơn vị trực thuộc quản lý:'
     },
     {
-        name: 'phụ trách đơn vị hiện tại:',
+        name: 'Phụ trách đơn vị hiện tại:',
         child:[
             {
                 x : 'Họ và tên:'
             },
             {
-                x : 'Chức vụ'
+                x : 'Chức vụ:'
             }
         ]
     },

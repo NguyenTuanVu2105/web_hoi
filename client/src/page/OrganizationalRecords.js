@@ -21,7 +21,7 @@ const OrganizationalRecords = () =>{
                         <div className = "header"><h4>{label.name}</h4></div>
                         {
                             label.child.map(x=>(
-                                <div className = "tagA"><i class='fas fa-angle-double-right' style={{fontSize:'15px',color:"red",marginRight:'10px'}}></i><a>{x.name}</a></div>
+                                <div className = "tagA"><i class='fas fa-angle-double-right' style={{fontSize:'15px',color:"red",marginRight:'10px'}}></i><a href={x.href}>{x.name}</a></div>
                             ))
                         }                        
                     </div>

@@ -3,10 +3,7 @@ import React, { Component } from 'react'
 import './style.css'; 
 
 const InformationUser = ()=>{
-    const style = {
-        paddingLeft : "0",
-        width: "0 !important"
-    }
+    
     const style1 = {
         fontWeight: "100",
         color: "black",
@@ -30,12 +27,12 @@ const InformationUser = ()=>{
                             <input type="text" class="input_information" /><br/>
                             <label for="" class="label_information">Ngày sinh: </label>
                             <input type="date" class="input_information" /><br/>
-                            <label for="" class="label_information">giới tính: </label>
+                            <label for="" class="label_information">Giới tính: </label>
                             <input id="man" type="radio" class="radio_information" name="gioitinh" value="Nam" />
-                            <label for="man" style ={{style}} class="label_information">Nam </label>
+                            <label for="man" className="sex">Nam </label>
                             <input id="woman" type="radio" class="radio_information" name="gioitinh" value="Nữ" />
-                            <label for="woman" style ={{style}} class="label_information">Nữ </label><br/>
-                            <label for="" class="label_information">CMND/CCCD/HC: </label>
+                            <label for="woman" className="sex">Nữ </label><br/>
+                            <label for="" class="label_information">CMND/CCCD: </label>
                             <input type="text" class="input_information" />
                         </div>
                     </div>
