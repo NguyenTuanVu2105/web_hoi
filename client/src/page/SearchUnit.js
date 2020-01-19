@@ -27,7 +27,7 @@ const SearchUnit = () =>{
                             <ul class="list-group">
                                 {
                                     unit.child.map(child =>(
-                                    <li class="list-group-blood-item"><a class="list-items-a" href="">{child.name}</a></li>
+                                    <li class="list-group-blood-item"><a class="list-items-a" href={child.href}>{child.name}</a></li>
                                     ))
                                 }
                                                 
