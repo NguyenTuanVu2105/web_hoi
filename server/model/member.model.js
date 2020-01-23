@@ -7,7 +7,6 @@ module.exports = (sequelize, Sequelize) => {
         CMTorHC:            Sequelize.STRING,
         Ngaycap:            Sequelize.DATE,
         Noicap:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Chucvu:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Dienthoai:          Sequelize.STRING,
         Email:              Sequelize.STRING,
         facebook:           Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
