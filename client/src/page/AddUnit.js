@@ -7,7 +7,8 @@ const AddUnit = () => {
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            '': 'Trang chủ',
+            ['/']: 'Trang chủ',
+            ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
             ['/AddUnit']: 'Thêm đơn vị'
         })
     }, [])

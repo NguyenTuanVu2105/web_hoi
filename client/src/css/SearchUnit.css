@@ -27,9 +27,9 @@
     border-radius: 10px !important;
     display: flex;
     justify-content:space-between;
-    padding-top: 9px;
-    padding-left: 9px;
-    padding-right: 650px;
+    padding: 0px;
+    padding-left: 15px;
+    line-height: 55px;
     border: 1px solid red;
 }
 .list-group-blood:hover{
@@ -49,11 +49,15 @@
         list-style-type: none;
     }
         .list-items-a{
-            margin-left: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
             font-size: 18px;
             color: red !important;
             text-decoration: none !important;
             text-align: left !important;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
         }
     
         .list-group-blood-item:hover{

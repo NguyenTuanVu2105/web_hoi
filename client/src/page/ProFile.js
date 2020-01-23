@@ -8,7 +8,7 @@ function ProFileLeft(props) {
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            '': 'Trang chủ',
+            ['/']: 'Trang chủ',
             ['/profile']: 'Hồ sơ cá nhân'
         })
     }, [])

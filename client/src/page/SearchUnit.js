@@ -9,8 +9,9 @@ const SearchUnit = () =>{
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            '': 'Trang chủ',
-            ['/SearchUnit']: 'Đơn vị hoạt động'
+            ['/']: 'Trang chủ',
+            ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
+            ['/SearchUnit']: 'Đơn vị hoạt động',
         })
     }, [])
     console.log(nameMap)
@@ -21,13 +22,15 @@ const SearchUnit = () =>{
                 SearchUnitList.map(unit =>(
                     <div>
                         <div class="panel-heading list-group-blood">
-                            <div><a data-toggle="collapse" href={unit.id1} onclick="myFunction('icon10')" style={{fontSize:'23px'}}>{unit.name} <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}></i></a> </div>
+                            <a data-toggle="collapse" href={unit.id1} onclick="myFunction('icon10')" style={{fontSize:'23px', width:"100%"}}>{unit.name} <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}></i></a>
                         </div>
                         <div id={unit.id2} class="panel-collapse collapse">
                             <ul class="list-group">
                                 {
                                     unit.child.map(child =>(
-                                    <li class="list-group-blood-item"><a class="list-items-a" href={child.href}>{child.name}</a></li>
+                                    <li class="list-group-blood-item">
+                                        <div style={{width:"100%"}}><a class="list-items-a" href={child.href}>{child.name}<i class="fa fa-caret-right" style={{fontSize :"20px", marginTop:"3px"}}></i></a></div>
+                                        </li>
                                     ))
                                 }
                                                 

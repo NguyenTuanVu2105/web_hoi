@@ -3,17 +3,17 @@ export const OrganizationalRecordsList = [
         name : "HỘI MÁU",
         child : [
             {
-                name : "Giới thiệu về hội"
+                name : "Giới thiệu về Hội"
             },
             {
-                name : "Lịch sử hội"
+                name : "Lịch sử Hội"
             },
             {
                 name : "Lãnh đạo qua các thời kỳ",
                 href : "/TeamLeader"
             },
             {
-                name : "Báo cáo công tác hội"
+                name : "Báo cáo công tác Hội"
             }
         ]
     },

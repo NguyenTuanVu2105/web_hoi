@@ -8,7 +8,8 @@ const TeamLeader = () =>{
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            '': 'Trang chủ',
+            ['/']: 'Trang chủ',
+            ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
             ['/TeamLeader']: 'Lãnh đạo qua các thời kỳ'
         })
     }, [])

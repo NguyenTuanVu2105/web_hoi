@@ -8,7 +8,7 @@ function LearningAndActivities(props){
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            '': 'Trang chủ',
+            ['/']: 'Trang chủ',
             ['/learn']: 'Học tập và hoạt động'
         })
     }, [])
