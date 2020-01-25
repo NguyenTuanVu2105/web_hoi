@@ -7,7 +7,6 @@ exports.AddClub = (req, res) => {
     if (req.body.madoi) club.Madoi = req.body.madoi;
     if (req.body.tendoi) club.Tendoi = req.body.tendoi;
     if (req.body.ngaythanhlap) club.Ngaythanhlap = req.body.ngaythanhlap;
-    if (req.body.doitruong) club.Doitruong = req.body.doitruong;
     Club.findOne({
         where:{Madoi :req.body.madoi}
     }).then(clubs =>{
@@ -32,8 +31,7 @@ exports.EditClub = (req,res) =>{
         Club.update({
                 Madoi:req.body.madoi,
                 Tendoi: req.body.tendoi,
-                Ngaythanhlap: req.body.ngaythanhlap,
-                Doitruong:req.body.doitruong
+                Ngaythanhlap: req.body.ngaythanhlap
             },
             {
             where:{Madoi :req.body.madoi}
