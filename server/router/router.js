@@ -32,6 +32,8 @@ module.exports = function(app) {
 
     app.get('/admin/search/club',clubcontroller.SearchClub);
 
+    app.get('/user/captain/club', clubcontroller.Captain);
+
     //chi hoi
 
     app.post('/admin/add/branch', branchcontroller.AddBranch);
@@ -43,6 +45,8 @@ module.exports = function(app) {
     app.get('/admin/information/branch',branchcontroller.ViewBranch);
 
     app.get('/admin/search/branch',branchcontroller.SearchBranch);
+
+    app.get('/user/captain/branch', branchcontroller.CaptainBranch);
 
     //admin
 

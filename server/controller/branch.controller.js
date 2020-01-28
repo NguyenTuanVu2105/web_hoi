@@ -1,5 +1,8 @@
 const db = require('../config/db.config');
 const Branch = db.branch;
+const Position = db.position
+const Club = db.club
+const Member = db.member
 
 
 exports.AddBranch = (req, res) => {
@@ -7,7 +10,6 @@ exports.AddBranch = (req, res) => {
     if (req.body.machihoi) branch.Machihoi = req.body.machihoi;
     if (req.body.tenchihoi) branch.Tenchihoi = req.body.tenchihoi;
     if (req.body.ngaythanhlap) branch.Ngaythanhlap = req.body.ngaythanhlap;
-    if (req.body.chihoitruong) branch.Chihoitruong = req.body.chihoitruong;
     Branch.findOne({
         where:{Machihoi :req.body.machihoi}
     }).then(Branchs =>{
@@ -32,8 +34,7 @@ exports.EditBranch = (req,res) =>{
         Branch.update({
                 Machihoi:req.body.machihoi,
                 Tenchihoi: req.body.tenchihoi,
-                Ngaythanhlap: req.body.ngaythanhlap,
-                Chihoitruong:req.body.chihoitruong
+                Ngaythanhlap: req.body.ngaythanhlap
             },
             {
             where:{Machihoi :req.body.machihoi}
@@ -83,4 +84,31 @@ exports.SearchBranch = (req, res) => {
     }).then(branch => {
         res.status(200).send(branch)
     }).catch(err => res.status(500).send({message: err}))
+}
+
+exports.CaptainBranch = (req, res) => {
+    Member.findOne({
+        attributes: ['Hovaten', 'TinhtrangHD'],
+        include: [{
+            model: Position,
+            where: {
+                Chucvu: "Chi hội trưởng"
+            },
+            attributes: ['Chucvu']
+        }, {
+            model: Club,
+            attributes: ['Madoi', 'Tendoi'],
+            include: [{
+                model: Branch,
+                where: {
+                    id: req.query.branchId
+                },
+                attributes: ['Machihoi', 'Tenchihoi']
+            }]
+        }]
+    }).then(captain => {
+        res.status(200).send(captain)
+    }).catch(err => {
+        res.status(500).send({message: err})
+    })
 }
