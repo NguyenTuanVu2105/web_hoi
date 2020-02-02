@@ -1,6 +1,6 @@
 import React, {Component, useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-import {AddUnitChild} from '../Component/AddUnitChild'
+import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 const AddUnit = () => {
 
@@ -18,7 +18,7 @@ const AddUnit = () => {
             {
                 AddUnitChild.map(label => (
                     <div>
-                        <span className = "spanLabel">{label.name}</span><br />
+                        <span className = "spanLabel">{label.name}</span><br />                         
                     </div>
                 ))
             }
@@ -69,6 +69,16 @@ const AddUnit = () => {
                         <th>3</th>
                     </tr>
                 </table>
+            </div>
+            <div>
+                <span className = "spanLabel">Số cơ sở trực thuộc Hội:</span><br/>
+                {
+                    ItemUnit.map(name =>(
+                        <div style={{paddingLeft:'20px'}}>
+                            <a>{name.name}</a><br/>
+                        </div>
+                    ))
+                }
             </div>
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>

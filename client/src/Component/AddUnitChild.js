@@ -12,15 +12,7 @@ export const AddUnitChild = [
         name: 'Đơn vị trực thuộc quản lý:'
     },
     {
-        name: 'Phụ trách đơn vị hiện tại:',
-        child:[
-            {
-                x : 'Họ và tên:'
-            },
-            {
-                x : 'Chức vụ:'
-            }
-        ]
+        name: 'Phụ trách đơn vị hiện tại:'
     },
     {
         name: 'Năm thành lập:'
@@ -29,6 +21,17 @@ export const AddUnitChild = [
         name: 'Ngày truyền thống:'
     },
     {
-        name: 'Số cơ sở trực thuộc Hội(Nếu có):'
+        name: 'Số cơ sở trực thuộc Hội(Nếu có):'       
+    }
+]
+export const ItemUnit = [
+    {
+        name : '1. 06/01'
+    },
+    {
+        name : '1. 24/01'
+    },
+    {
+        name : '1. 27/02'
     }
 ]
