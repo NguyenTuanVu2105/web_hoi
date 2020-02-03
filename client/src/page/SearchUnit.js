@@ -1,6 +1,6 @@
 
 import {SearchUnitList} from '../Component/SearchUnitList'
-import '../css/SearchUnit.css'
+import '../../css/SearchUnit.css'
 import React, {Component, useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 

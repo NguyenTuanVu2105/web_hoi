@@ -50,5 +50,6 @@ module.exports = function(app) {
 
     //admin
 
+    app.get('/branch/club/all', admincontroller.BranchClubInformation) 
 
 }
