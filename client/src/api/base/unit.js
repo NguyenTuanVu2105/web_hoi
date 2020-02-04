@@ -2,7 +2,7 @@ import {createApiRequest} from '../index'
 
 export const getUnitAll = () => {
     return createApiRequest({
-        url: '/branch/club/all', 
+        url: 'localhost:5000/branch/club/all', 
         method: 'get'
     })
 }

@@ -9,7 +9,7 @@ const SearchUnit = () =>{
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
-            ['/']: 'Trang chủ',
+            ['/']: 'Trang chủ', 
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
             ['/SearchUnit']: 'Đơn vị hoạt động',
         })
