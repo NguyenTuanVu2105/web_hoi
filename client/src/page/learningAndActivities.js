@@ -2,7 +2,7 @@
 import '../css/LearningAndActivities.css'
 import React, {Component, useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-
+import {learningAndActivities} from '../Component/learningAndActivities'
 function LearningAndActivities(props){
 
     const {nameMap, setNameMap} = useContext(HomepageContext)
@@ -13,7 +13,9 @@ function LearningAndActivities(props){
         })
     }, [])
     
-
+    const style = {
+        paddingLeft : '15px'
+    }
     return (
         <div className = "para">
 
@@ -37,22 +39,24 @@ function LearningAndActivities(props){
                 </form>
                 <fieldset>
                     <legend>Khen thưởng:</legend>
-                    <div className='row'>
-                        <label>Năm học:</label>
-                        <label>Kỳ học:</label>
-                        <label>Lý do khen thưởng:</label>
-                    </div>
+                    <table style = {{width :'40%'}} >
+                        <tr className='row'>
+                            <th className='col-4'>Năm học:</th>
+                            <th className='col-4'>Kỳ học:</th>
+                            <th className='col-4'>Lý do khen thưởng:</th>
+                        </tr>
+                    </table>
                 </fieldset>
             </div>
             <div>
                 <h3>Hoạt động</h3>
-                <div>
-                    <label for="" className="label_information">Trực thuộc chi hội:</label><br />
-                    <label for="" className="label_information">Trực thuộc đội:</label><br />
-                    <label for="" className="label_information">Ngày vào hội:</label><br />
-                    <label for="" className="label_information">Chức vụ:</label><br />
-                    <label for="" className="label_information">Bậc chuyên môn:</label>
-                </div>
+                {
+                    learningAndActivities.map(label => (
+                        <div className="activities">
+                            <label for=""className="label_information">{label.label}</label><br />
+                        </div>
+                    ))
+                }
                 <fieldset>
                     <legend>Khen thưởng:</legend>
                     {/* <div className='row'>

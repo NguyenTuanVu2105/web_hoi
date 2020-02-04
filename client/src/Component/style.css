@@ -119,15 +119,13 @@
     border: none;
     border-bottom: 1px solid rgb(204, 202, 202);
 }
-.input_information:focus{
-    border:1px solid #845151;
-    -moz-box-shadow:0 0 8px #808451;
-    -webkit-box-shadow:0 0 15px #808451;
-    box-shadow:0 0 15px #808451;
-}
+/* .input_information:focus{
+
+    border:none
+
+} */
 .label_information{
     font-size: 14px;
-    width: 32%;
     color: red;
     display: inline-block;    
 }

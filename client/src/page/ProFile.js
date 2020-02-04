@@ -14,7 +14,7 @@ function ProFileLeft(props) {
     }, [])
     const style = {
         textAlign:'end',
-        paddingLeft : '0 !important'
+        width : '32%'
     }
     console.log(nameMap)
     return (
