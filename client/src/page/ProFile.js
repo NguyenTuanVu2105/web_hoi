@@ -12,6 +12,10 @@ function ProFileLeft(props) {
             ['/profile']: 'Hồ sơ cá nhân'
         })
     }, [])
+    const style = {
+        textAlign:'end',
+        paddingLeft : '0 !important'
+    }
     console.log(nameMap)
     return (
         <div className="row">
@@ -25,7 +29,7 @@ function ProFileLeft(props) {
                                         {
                                             form.children.map(label => (
                                                 <div>
-                                                    <label for="" className="label_information">{label.name}</label>
+                                                    <label for="" style={style} className="label_information">{label.name}</label>
                                                     <input type="text" className="input_information" />
                                                 </div>
                                                 
@@ -45,7 +49,7 @@ function ProFileLeft(props) {
                                         {
                                             form.children.map(label => (
                                                 <div>
-                                                    <label for="" className="label_information">{label.name}</label>
+                                                    <label for="" style={style} className="label_information">{label.name}</label>
                                                     <input type="text" className="input_information" />
                                                 </div>                                 
                                             ))

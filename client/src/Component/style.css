@@ -114,7 +114,8 @@
 }
 
 .input_information{
-    width: 60%;
+    margin-left: 5px;
+    width: 55%;
     border: none;
     border-bottom: 1px solid rgb(204, 202, 202);
 }
@@ -125,11 +126,10 @@
     box-shadow:0 0 15px #808451;
 }
 .label_information{
-    font-size: 18px;
-    width: 34%;
-    padding-left: 15px;
+    font-size: 14px;
+    width: 32%;
     color: red;
-    display: inline-block;
+    display: inline-block;    
 }
 fieldset{
     border: 1px solid black !important;

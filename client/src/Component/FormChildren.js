@@ -1,18 +1,24 @@
 export const formChildren = [
     {
-        legend : "Quê quán:",
+        legend : "Thông tin cơ bản:",
         children : [
             {
-                name: "Quốc gia: "
+                name: "CMND/CCCD/HC: "
             },
             {
-                name: "Tỉnh/thành phố: "
+                name: "Ngày cấp: "
             },
             {
-                name: "Quận/Huyện: "
+                name: "Nơi cấp: "
             },
             {
-                name: "Phường/Xã: "
+                name: "Điện thoại: "
+            },
+            {
+                name: "Link Facebook: "
+            },
+            {
+                name: "Địa chỉ Email: "
             }
         ]
     },

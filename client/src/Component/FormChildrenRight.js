@@ -17,31 +17,25 @@ export const formChildrenRight = [
         ]
     },
     {
-        legend : "Nơi ở hiện tại:",
+        legend : "Địa chỉ:",
         children : [
             {
-                name: "Tỉnh/Thành phố: "
+                name: "Quê quán: "
             },
             {
-                name: "Quận/Huyện: "
-            },
-            {
-                name: "Phường/xã: "
-            },
-            {
-                name: "Địa chỉ chi tiết: "
+                name: "Nơi ở hiện nay: "
             }
         ]
     },
     {
         legend : "Liên hệ người thân:",
         children : [
-            {
-                name: "Họ và tên: "
-            },
-            {
-                name: "Điện thoại: "
-            },
+            // {
+            //     name: "Họ và tên: "
+            // },
+            // {
+            //     name: "Điện thoại: "
+            // },
             {
                 name: "Địa chỉ liên hệ: "
             }
