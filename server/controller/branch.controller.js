@@ -66,12 +66,10 @@ exports.DeleteBranch = (req,res) =>{
     })
 }
 exports.ViewBranch = (req, res) => {
-    Branch.findAll()
-    .then( result => {
-      res.status(200).send({
-      success: true,
-      data: result,
-    });
+    Branch.findOne({
+        where:{Machihoik  :req.body.machihoi}
+    }).then( result => {
+      res.status(200).send({success: true,data: result,});
     })
       
 }

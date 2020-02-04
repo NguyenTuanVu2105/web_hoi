@@ -4,7 +4,6 @@ const Profile = db.member;
 
 exports.AddProfile = (req, res) => {
     const profile = {};
-    if (req.body.sothethanhvien) profile.Sothethanhvien = req.body.sothethanhvien;
     if (req.body.hovaten) profile.Hovaten = req.body.hovaten;
     if (req.body.ngaysinh) profile.Ngaysinh = req.body.ngaysinh;
     if (req.body.gioitinh) profile.Gioitinh = req.body.gioitinh;
@@ -58,7 +57,6 @@ exports.EditProfile = (req,res) =>{
                 Ngaysinh  : req.body.ngaysinh ,
                 Gioitinh  : req.body.gioitinh ,
                 Chucvu  : req.body.chucvu ,
-                Bacchuyenmon  : req.body.bacchuyenmon ,
                 CMTorHC  : req.body.cmtorhc ,
                 Ngaycap  : req.body.ngaycap ,
                 Noicap  : req.body.noicap ,

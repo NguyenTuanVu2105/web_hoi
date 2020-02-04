@@ -49,6 +49,10 @@ module.exports = function(app) {
     app.get('/user/captain/branch', branchcontroller.CaptainBranch);
 
     //admin
+    app.get('/admin/view/member', admincontroller.ViewMemberbyName)
+    
+    app.get('/branch/club/all', admincontroller.BranchClubInformation)
 
+    app.get('/association/leader/all', admincontroller.LeaderAssociation)
 
 }
