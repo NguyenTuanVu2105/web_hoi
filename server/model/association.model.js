@@ -18,8 +18,8 @@ module.exports = (sequelize, Sequelize) => {
         Tongsothanhvien:    Sequelize.INTEGER,
         Diemhienmau:        Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
         Ketquahoatdong:     Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Gioithieu:      Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
-        Lichsu:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci'
+        Gioithieu:          Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
+        Lichsu:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci'
     });
     return Association;
 }
