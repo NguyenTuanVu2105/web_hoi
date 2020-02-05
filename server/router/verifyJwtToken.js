@@ -24,33 +24,45 @@ verifyToken = (req, res, next) => {
 	})
 }
 
-isManager = (req, res, next) => {
+isDoitruong = (req, res, next) => {
 	User.findOne({
 		where: {
 			id: req.userId
 		}
 	}).then(user => {
-		console.log(user.is_Manager)
-		if (user.is_Manager === true) {
+		if (user.role === "DOITRUONG") {
 			next()
 			return
 		}
-		res.status(403).send("Require Manager Role!")
+		res.status(403).send("Require Doitruong Role!")
+	})
+} 
+
+isChihoitruong = (req, res, next) => {
+	User.findOne({
+		where: {
+			id: req.userId
+		}
+	}).then(user => {
+		if (user.role === "CHIHOITRUONG") {
+			next()
+			return
+		}
+		res.status(403).send("Require Chihoitruong Role!")
 	})
 }
 
-isPresident = (req, res, next) => {
+isHoitruong = (req, res, next) => {
 	User.findOne({
 		where: {
 			id: req.userId
 		}
 	}).then(user => {
-		console.log(user.is_President)
-		if (user.is_President === true) {
+		if (user.role === "HOITRUONG") {
 			next()
 			return
 		}
-		res.status(403).send("Require President Role!")
+		res.status(403).send("Require Hoitruong Role!")
 	})
 }
 
@@ -61,8 +73,7 @@ isAdmin = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		console.log(user.is_Admin)
-		if (user.is_Admin === true) {
+		if (user.role === "ADMIN") {
 			next()
 			return
 		}
@@ -75,7 +86,8 @@ isAdmin = (req, res, next) => {
 const authJwt = {}
 authJwt.verifyToken = verifyToken
 authJwt.isAdmin = isAdmin
-authJwt.isManager = isManager
-authJwt.isPresident = isPresident
+authJwt.isHoitruong = isHoitruong
+authJwt.isChihoitruong = isChihoitruong
+authJwt.isDoitruong = isDoitruong
 
 module.exports = authJwt

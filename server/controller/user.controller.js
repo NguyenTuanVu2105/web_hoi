@@ -4,23 +4,24 @@ const User = db.user;
 const Member = db.member
 const Op = db.Sequelize.Op;
 
+var jwt = require('jsonwebtoken')
+var bcrypt = require('bcryptjs')
+
 var jwt = require('jsonwebtoken');
 exports.login = (req, res) => {
 	console.log("Sign-In");
 	User.findOne({
 		where: {
 			username: req.body.username
-		}, 
-		include: [{
-			model: Member
-		}]
+		}
 	}).then(user => {
 		if (!user) {
 			return res.status(404).send({message:"User không tồn tại"});
 		}
 
-		//var passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
-		if (req.body.password != user.password) {
+		var passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
+		if (!passwordIsValid) {
+			console.log(user)
 			return res.status(401).send({message:"Password không đúng"});
 		}
 		
