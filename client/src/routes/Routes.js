@@ -5,6 +5,7 @@ import SearchUnit from '../page/SearchUnit';
 import TeamLeader from '../page/TeamLeader';
 import AddUnit from '../page/AddUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
+import TableSearch from '../page/TableSearch'
 
 const routes = [
     {
@@ -44,6 +45,11 @@ const routes = [
                 path: "/AddUnit",
                 exact: true,
                 component: AddUnit,
+            },
+            {
+                path: "/TableSearch",
+                exact: true,
+                component: TableSearch,
             }
         ]
     },

@@ -12,6 +12,7 @@ import TeamLeader from '../page/TeamLeader'
 import SearchUnit from '../page/SearchUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
 import SearchItem from '../page/SearchItem'
+import TableSearch from '../page/TableSearch'
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
@@ -47,7 +48,8 @@ function HomePage(props) {
                         <TeamLeader/>
                         <SearchUnit/>
                         <OrganizationalRecords/> */}
-                        <SearchItem/>
+                        {/* <SearchItem/> */}
+                        {/* <TableSearch/> */}
                     </div>
                 </HomepageContext.Provider>
             </div>
