@@ -1,14 +1,12 @@
 const db = require('../config/db.config');
 const Profile = db.member;
-
-
+const Specialized = db.specialized;
+const User = db.user;
 exports.AddProfile = (req, res) => {
     const profile = {};
     if (req.body.hovaten) profile.Hovaten = req.body.hovaten;
     if (req.body.ngaysinh) profile.Ngaysinh = req.body.ngaysinh;
     if (req.body.gioitinh) profile.Gioitinh = req.body.gioitinh;
-    if (req.body.chucvu) profile.Chucvu = req.body.chucvu;
-    if (req.body.bacchuyenmon) profile.Bacchuyenmon = req.body.bacchuyenmon;
     if (req.body.cmtorhc) profile.CMTorHC = req.body.cmtorhc;
     if (req.body.ngaycap) profile.Ngaycap = req.body.ngaycap;
     if (req.body.noicap) profile.Noicap = req.body.noicap;
@@ -52,11 +50,9 @@ exports.EditProfile = (req,res) =>{
         else 
         {
         Profile.update({
-                Sothethanhvien  : req.body.sothethanhvien ,
                 Hovaten  : req.body.hovaten ,
                 Ngaysinh  : req.body.ngaysinh ,
                 Gioitinh  : req.body.gioitinh ,
-                Chucvu  : req.body.chucvu ,
                 CMTorHC  : req.body.cmtorhc ,
                 Ngaycap  : req.body.ngaycap ,
                 Noicap  : req.body.noicap ,
@@ -96,6 +92,15 @@ exports.ViewProfile = (req, res) => {
         where: {
             userId : req.userId
         }, 
+        include: [{
+            model: Specialized,
+            attributes: ['Sogiotmau']
+        },
+        {
+            model: User,
+            attributes: ['image']
+        },
+    ]
     }).then( profile => {
         res.status(200).send(profile)
     }).catch(err => {
