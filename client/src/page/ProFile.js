@@ -50,7 +50,7 @@ function ProFileLeft(props) {
                                             form.children.map(label => (
                                                 <div>
                                                     <label for="" style={style} className="label_information">{label.name}</label>
-                                                    <input type="text" className="input_information" />
+                                                    <input type="textarea" className="input_information" />
                                                 </div>                                 
                                             ))
                                         }
