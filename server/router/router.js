@@ -28,7 +28,7 @@ module.exports = function(app) {
 
     app.delete('/admin/delete/club', clubcontroller.DeleteClub);
 
-    app.get('/admin/information/club',clubcontroller.ViewClub);
+    app.get('/information/club',clubcontroller.ViewClub);
 
     app.get('/admin/search/club',clubcontroller.SearchClub);
 
@@ -42,7 +42,7 @@ module.exports = function(app) {
 
     app.delete('/admin/delete/branch', branchcontroller.DeleteBranch);
 
-    app.get('/admin/information/branch',branchcontroller.ViewBranch);
+    app.get('/information/branch',branchcontroller.ViewBranch);
 
     app.get('/admin/search/branch',branchcontroller.SearchBranch);
 
@@ -50,6 +50,8 @@ module.exports = function(app) {
 
     //admin
     app.get('/admin/view/member', admincontroller.ViewMemberbyName)
+
+    app.get('/admin/search/member', admincontroller.SearchMemberbyName)
     
     app.get('/branch/club/all', admincontroller.BranchClubInformation)
 

@@ -3,16 +3,23 @@ const Branch = db.branch
 const Club = db.club
 const Member = db.member
 const Position = db.position
+const Specialized = db.specialized
 //chưa test
 exports.ViewMemberbyName = (req, res) => {
-    Member.findOne({
+    Member.findAll({
+        limit: 10,
+        offset: (page-1)*10,
         where: {
-            Sothethanhvien: req.Sothethanhvien
+            Hovaten: req.body.hovaten
         },
         include: [
             {
                 model: Position,
-            },{
+            },
+            {
+                model: Specialized,
+            },
+            {
             model: Club,
             attributes: ['Tendoi'],
             include:[{
@@ -25,6 +32,16 @@ exports.ViewMemberbyName = (req, res) => {
     }).catch(err => {
         res.status(500).send({message: err})
     })
+}
+
+exports.SearchMemberbyName = (req, res) => {
+    var q = req.query.hovaten
+    Member.findAll(
+        {
+            where: {Hovaten: {[db.Sequelize.Op.like]: '%' + q + '%'}},
+    }).then(member => {
+        res.status(200).send(member)
+    }).catch(err => res.status(500).send({message: err}))
 }
 
 exports.BranchClubInformation = (req, res) => {
