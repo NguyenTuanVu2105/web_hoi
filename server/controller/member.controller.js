@@ -1,45 +1,40 @@
-const db = require('../config/db.config');
-const Profile = db.member;
+const db = require('../config/db.config')
+const Profile = db.member
 const Position = db.position
 const Specialized = db.specialized
-// exports.AddProfile = (req, res) => {
-//     const profile = {};
-//     if (req.body.hovaten) profile.Hovaten = req.body.hovaten;
-//     if (req.body.ngaysinh) profile.Ngaysinh = req.body.ngaysinh;
-//     if (req.body.gioitinh) profile.Gioitinh = req.body.gioitinh;
-//     if (req.body.cmtorhc) profile.CMTorHC = req.body.cmtorhc;
-//     if (req.body.ngaycap) profile.Ngaycap = req.body.ngaycap;
-//     if (req.body.noicap) profile.Noicap = req.body.noicap;
-//     if (req.body.dienthoai) profile.Dienthoai = req.body.dienthoai;
-//     if (req.body.email) profile.Email = req.body.email;
-//     if (req.body.facebook) profile.facebook = req.body.facebook;
-//     if (req.body.quequan) profile.Quequan = req.body.quequan;
-//     if (req.body.diachill) profile.DiachiLL = req.body.diachill;
-//     if (req.body.nhommau) profile.Nhommau = req.body.nhommau;
-//     if (req.body.rh) profile.Rh = req.body.rh;
-//     if (req.body.solanhm) profile.SolanHM = req.body.solanhm;
-//     if (req.body.ngayvaohoi) profile.Ngayvaohoi = req.body.ngayvaohoi;
-//     if (req.body.thoigianhd) profile.ThoigianHD = req.body.thoigianhd;
-//     if (req.body.tinhtranghd) profile.TinhtrangHD = req.body.tinhtranghd;
-//     if (req.body.thongtinlienhegd) profile.ThongtinlienhaGD = req.body.thongtinlienhegd;
-//     if (req.body.donvi) profile.Donvi = req.body.donvi;
-//     if (req.body.donvicuthe) profile.Donvicuthe = req.body.donvicuthe;
-//     if (req.body.gpa) profile.GPA = req.body.gpa;
-//     if (req.body.trinhdohocvan) profile.Trinhdohocvan = req.body.trinhdohocvan;
-//     if (req.body.doanviendangvien) profile.DoanvienDangvien = req.body.doanviendangvien;
-//     if (req.body.ghichukhac) profile.Ghichukhac = req.body.ghichukhac;
-//     Profile.findOne({
-//         where:{userId :req.userId}
-//     }).then(profiles =>{
-//         if(!profiles) {
-//             new Profile(profile).save()
-//             .then(profiles => res.status(200).send({success : true, Profile: profiles}))
-//             .catch(err => res.status(404).send({message: err}));
-//         } else {
-//             res.status(404).send({success: false, message: err})
-//         }
-//     }).catch(err => res.status(500).send({message: err}))
-// }
+const Club = db.club
+var currentTime = new Date()
+
+exports.AddProfile = (req, res) => {
+    var year = currentTime.getFullYear()
+    const profile = {};
+    if (req.body.hovaten) profile.Hovaten = req.body.hovaten
+    if (req.body.ngaysinh) profile.Ngaysinh = req.body.ngaysinh
+    if (req.body.specializedId) profile.specializedId = req.body.specializedId
+    if (req.body.positionId) profile.positionId = req.body.positionId
+    if (req.body.clubId) profile.clubId = req.body.clubId
+    Profile.findOne({
+        where: {
+            Hovaten: req.body.hovaten,
+            Ngaysinh: req.body.ngaysinh
+        }
+    }).then(profiles =>{
+        if(!profiles) {
+            new Profile(profile).save().then().catch(err => res.status(500).send({message: err}))
+            Club.findOne({
+                where: {
+                    id: req.body.clubId
+                },
+                include: [{
+                    model: Profile,
+                    attributes: [[db.sequelize.fn('COUNT', db.sequelize.col('')), 'n_hats']]
+                }]
+            })
+        } else {
+            res.status(404).send({success: false, message: err})
+        }
+    }).catch(err => res.status(500).send({message: err}))
+}
 
 exports.EditProfile = (req,res) =>{
     Profile.findOne({
