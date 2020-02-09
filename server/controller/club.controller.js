@@ -11,7 +11,6 @@ exports.AddClub = (req, res) => {
     if (req.body.diachi) club.Diachi = req.body.diachi;
     if (req.body.donviql) club.DonviQl = req.body.donviql;
     if (req.body.phutrach) club.Phutrach = req.body.phutrach;
-    if (req.body.namthanhlap) club.Namthanhlap = req.body.namthanhlap;
     if (req.body.ngaytruyenthong) club.Ngaytruyenthong = req.body.ngaytruyenthong;
     if (req.body.csthuochoi) club.CSthuochoi = req.body.csthuochoi;
     if (req.body.camtinhvien) club.Camtinhvien = req.body.camtinhvien;
@@ -51,7 +50,6 @@ exports.EditClub = (req,res) =>{
                 Diachi : req.body.diachi,
                 DonviQl  :  req.body.donviql,
                 Phutrach  :  req.body.phutrach,
-                Namthanhlap :  req.body.namthanhlap,
                 Ngaytruyenthong  :  req.body.ngaytruyenthong,
                 CSthuochoi  :  req.body.csthuochoi,
                 Camtinhvien :  req.body.camtinhvien,

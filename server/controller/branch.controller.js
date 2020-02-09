@@ -13,7 +13,6 @@ exports.AddBranch = (req, res) => {
     if (req.body.diachi) branch.Diachi = req.body.diachi;
     if (req.body.donviql) branch.DonviQl = req.body.donviql;
     if (req.body.phutrach) branch.Phutrach = req.body.phutrach;
-    if (req.body.namthanhlap) branch.Namthanhlap = req.body.namthanhlap;
     if (req.body.ngaytruyenthong) branch.Ngaytruyenthong = req.body.ngaytruyenthong;
     if (req.body.csthuochoi) branch.CSthuochoi = req.body.csthuochoi;
     if (req.body.camtinhvien) branch.Camtinhvien = req.body.camtinhvien;
@@ -53,7 +52,6 @@ exports.EditBranch = (req,res) =>{
                 Diachi : req.body.diachi,
                 DonviQl  :  req.body.donviql,
                 Phutrach  :  req.body.phutrach,
-                Namthanhlap :  req.body.namthanhlap,
                 Ngaytruyenthong  :  req.body.ngaytruyenthong,
                 CSthuochoi  :  req.body.csthuochoi,
                 Camtinhvien :  req.body.camtinhvien,

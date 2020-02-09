@@ -6,7 +6,6 @@ module.exports = (sequelize, Sequelize) => {
         Diachi:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
         DonviQL:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Phutrach:           Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
-        Namthanhlap:        Sequelize.DATE,
         Ngaytruyenthong:    Sequelize.DATE,
         CSthuochoi:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Camtinhvien:        Sequelize.INTEGER,
