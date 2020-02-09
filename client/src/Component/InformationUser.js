@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'; 
 import '../css/InformationUser.css'
+import Avatar from '../Component/UpdateImg'
 const InformationUser = ()=>{
     
     const style1 = {
@@ -17,8 +18,7 @@ const InformationUser = ()=>{
                     <legend>Thông tin cá nhân:</legend>
                     <div class="row">
                         <div className="col-3" id="image_infor">
-                            <input type="image" width="48" height="120" />
-                            <a href="" style={{style1}}>Cập nhật ảnh</a>
+                            <Avatar/>
                         </div>
                         <div class="col-9">
                             <label for="" class="label_information2">Mã thành viên: </label><br/>

@@ -1,3 +1,4 @@
+import React, { Component } from 'react'
 import { Upload, Icon, message } from 'antd';
 
 function getBase64(img, callback) {
@@ -62,4 +63,4 @@ class Avatar extends React.Component {
         );
     }
 }
-ReactDOM.render(<Avatar />, mountNode);
+export default Avatar;

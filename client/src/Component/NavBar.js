@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+
+import React, { useState } from 'react';
 import './style.css'
 import {navs} from '../nav'
 
 const NavBar = () => {
+    const [Icon, setIcon] = useState('fa fa-angle-down')
     const style = {
         fontSize : '25px',
         paddingTop: '45%',
         color: 'white'
     }
+    console.log(Icon)
     return (
         <div className="sticky" >
             {
@@ -16,7 +19,19 @@ const NavBar = () => {
                     <div className="panel-heading drop-menu">
                         <a className="stickyA" data-toggle="collapse" href={nav.Id1}>
                             {nav.name}
-                            <div className="items-i"><i className="fa fa-angle-down" style={style}></i></div>
+                            <div className="items-i"><i className={Icon} style={style} onClick={()=> setIcon(Icon =>{
+                                console.log(Icon)
+                                if (Icon == 'fa fa-angle-down'){
+                                    Icon += 'fa fa-angle-up'
+                                    Icon -= 'fa fa-angle-down'
+                                    console.log(Icon)
+                                    return Icon
+                                }
+                                if (Icon == 'fa fa-angle-up'){
+                                    Icon = 'fa fa-angle-down'
+                                    return Icon
+                                }
+                            })} ></i></div>
                         </a>
 
                     </div>
