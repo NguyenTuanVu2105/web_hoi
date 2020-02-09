@@ -15,8 +15,6 @@ module.exports = function(app) {
     app.put('/api/user/edit/password', [authJwt.verifyToken], usercontroller.editPassword);
 
     //member
-  //  app.post('/user/information/add', [authJwt.verifyToken],membercontroller.AddProfile);
-
     app.put('/admin/information/edit', [authJwt.verifyToken],membercontroller.EditProfile);
 
     app.get('/admin/information/member',[authJwt.verifyToken],membercontroller.ViewProfile);
@@ -30,8 +28,6 @@ module.exports = function(app) {
 
     app.get('/information/club',clubcontroller.ViewClub);
 
-    app.get('/admin/search/club',clubcontroller.SearchClub);
-
     app.get('/user/captain/club', clubcontroller.Captain);
 
     //chi hoi
@@ -43,8 +39,6 @@ module.exports = function(app) {
     app.delete('/admin/delete/branch', branchcontroller.DeleteBranch);
 
     app.get('/information/branch',branchcontroller.ViewBranch);
-
-    app.get('/admin/search/branch',branchcontroller.SearchBranch);
 
     app.get('/user/captain/branch', branchcontroller.CaptainBranch);
 

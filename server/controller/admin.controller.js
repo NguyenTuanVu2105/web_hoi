@@ -41,11 +41,11 @@ exports.ViewMember = (req, res) => {
 }
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
-        attributes: ['id', 'Tenchihoi'],
+        attributes: ['Machihoi', 'Tenchihoi'],
         include: 
         [{
             model: Club,
-            attributes: ['id', 'Tendoi']
+            attributes: ['Madoi', 'Tendoi']
         }]
     }).then(information => {
         res.status(200).send({success: true, data: information})

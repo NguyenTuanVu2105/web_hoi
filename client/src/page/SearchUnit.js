@@ -32,9 +32,9 @@ const SearchUnit = () =>{
                 unit.map(search =>(
                     <div>
                         <div class="panel-heading list-group-blood">
-                            <a data-toggle="collapse" href={`#${search.id}`} onclick="myFunction('icon10')" style={{fontSize:'23px', width:"100%"}}>{search.Tenchihoi} <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}></i></a>
+                            <a data-toggle="collapse" href={`#${search.Machihoi}`} onclick="myFunction('icon10')" style={{fontSize:'23px', width:"100%"}}>{search.Tenchihoi} <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}></i></a>
                         </div>
-                        <div id={search.id} class="panel-collapse collapse">
+                        <div id={search.Machihoi} class="panel-collapse collapse">
                             <ul class="list-group">
                                 {
                                     search.clubs.map(child =>(

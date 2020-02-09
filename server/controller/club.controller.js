@@ -12,7 +12,6 @@ exports.AddClub = (req, res) => {
     if (req.body.donviql) club.DonviQl = req.body.donviql;
     if (req.body.phutrach) club.Phutrach = req.body.phutrach;
     if (req.body.ngaytruyenthong) club.Ngaytruyenthong = req.body.ngaytruyenthong;
-    if (req.body.csthuochoi) club.CSthuochoi = req.body.csthuochoi;
     if (req.body.camtinhvien) club.Camtinhvien = req.body.camtinhvien;
     if (req.body.tnv) club.TNV = req.body.tnv;
     if (req.body.hoivien) club.Hoivien = req.body.hoivien;
@@ -51,7 +50,6 @@ exports.EditClub = (req,res) =>{
                 DonviQl  :  req.body.donviql,
                 Phutrach  :  req.body.phutrach,
                 Ngaytruyenthong  :  req.body.ngaytruyenthong,
-                CSthuochoi  :  req.body.csthuochoi,
                 Camtinhvien :  req.body.camtinhvien,
                 TNV : req.body.tnv,
                 Hoivien : req.body.hoivien,
@@ -92,31 +90,13 @@ exports.DeleteClub = (req,res) =>{
     })
 }
 exports.ViewClub = (req, res) => {
-    var page = parseInt(req.query.page)
-    Club.findAll({
-        limit: 10,
-        offset: (page-1)*10
+    Club.findOne({
+        where:{Madoi  :req.body.madoi}
     }).then( result => {
-      res.status(200).send({
-      success: true,
-      data: result
-    });
+      res.status(200).send({success: true,data: result,});
     })
       
 }
-exports.SearchClub = (req, res) => {
-    var q = req.query.tendoi
-    Club.findAll(
-        {
-            attributes: [
-                'Tendoi',
-            ],
-            where: {Tendoi: {[db.Sequelize.Op.like]: '%' + q + '%'}},
-    }).then(club => {
-        res.status(200).send(club)
-    }).catch(err => res.status(500).send({message: err}))
-}
-
 
 exports.Captain = (req, res) => {
     Member.findOne({

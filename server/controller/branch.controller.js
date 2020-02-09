@@ -102,16 +102,6 @@ exports.ViewBranch = (req, res) => {
       
 }
 
-exports.SearchBranch = (req, res) => {
-    var q = req.query.tenchihoi
-    Branch.findAll(
-        {
-            where: {Tenchihoi: {[db.Sequelize.Op.like]: '%' + q + '%'}},
-    }).then(branch => {
-        res.status(200).send(branch)
-    }).catch(err => res.status(500).send({message: err}))
-}
-
 exports.CaptainBranch = (req, res) => {
     Member.findOne({
         attributes: ['Hovaten', 'TinhtrangHD'],
