@@ -4,14 +4,48 @@ const Club = db.club
 const Member = db.member
 const Position = db.position
 const Specialized = db.specialized
+const Op = db.Sequelize.Op
 //chưa test
-exports.ViewMemberbyName = (req, res) => {
+exports.ViewMember = (req, res) => {
+    const limit = parseInt(req.query.limit)
+    const offset = parseInt(req.query.page)
+    if(req.query.hovaten == null && req.query.nhommau == null)
+    {
+        Member.findAll({
+            limit: limit,
+            offset: (offset-1)*limit,
+            include: [
+                {
+                    model: Position,
+                },
+                {
+                    model: Specialized,
+                },
+                {
+                    model: Club,
+                    
+                    attributes: ['Tendoi'],
+                    include:[{
+                        model: Branch,
+                        attributes: ['Tenchihoi']
+                    }]
+            }]
+        }).then(information => {
+            res.status(200).send({success: true, data: information})
+        }).catch(err => {
+            res.status(500).send({success: false, message: err})
+        })
+    }
+    else{
     Member.findAll({
-        limit: 10,
-        offset: (page-1)*10,
+        limit: limit,
+        offset: (offset-1)*limit,
         where: {
-            Hovaten: req.body.hovaten
-        },
+            [Op.or]: [
+                    {Hovaten:  req.query.hovaten }, 
+                   {Nhommau: req.query.nhommau || null}
+                ]
+        },  
         include: [
             {
                 model: Position,
@@ -20,58 +54,48 @@ exports.ViewMemberbyName = (req, res) => {
                 model: Specialized,
             },
             {
-            model: Club,
-            attributes: ['Tendoi'],
-            include:[{
-                model: Branch,
-                attributes: ['Tenchihoi']
-            }]
+                model: Club,
+                attributes: ['Tendoi'],
+                include:[{
+                    model: Branch,
+                    attributes: ['Tenchihoi']
+                }]
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
+    }
 }
-
-exports.SearchMemberbyName = (req, res) => {
-    var q = req.query.hovaten
-    Member.findAll(
-        {
-            where: {Hovaten: {[db.Sequelize.Op.like]: '%' + q + '%'}},
-    }).then(member => {
-        res.status(200).send(member)
-    }).catch(err => res.status(500).send({message: err}))
-}
-
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
-        attributes: ['Tenchihoi'],
+        attributes: ['Machihoi', 'Tenchihoi'],
         include: 
         [{
             model: Club,
-            attributes: ['Tendoi']
+            attributes: ['Madoi', 'Tendoi']
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
 }
 
 exports.LeaderAssociation = (req, res) => {
     Member.findAll({
-        attributes: ['Hovaten', 'ThoigianHD', 'TinhtrangHD', 'Ghichukhac'],
+        attributes: ['Image', 'Hovaten', 'ThoigianHD', 'TinhtrangHD', 'Ghichukhac'],
         include: [{
             model: Position,
             where: {
-                Chucvu: "Hội trưởng"
+                Chucvu: 'Hội trưởng'
             },
             attributes: ['Chucvu']
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
 }

@@ -1,8 +1,8 @@
 import {createApiRequest} from '../index'
 
-export const getUnitAll = () => {
+export const getLeaderAll = () => {
     return createApiRequest({
-        url: 'http://localhost:5000/branch/club/all',
+        url: 'http://localhost:5000/association/leader/all',
         method: 'get'
     })
 }

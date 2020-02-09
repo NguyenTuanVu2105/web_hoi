@@ -9,13 +9,14 @@ module.exports = function(app) {
     const branchcontroller      = require('../controller/branch.controller');
     const admincontroller       = require('../controller/admin.controller');
     const membercontroller      = require('../controller/member.controller');
+    const associationcontroller      = require('../controller/association.controller');
 
     app.post('/api/login', usercontroller.login);
 
     app.put('/api/user/edit/password', [authJwt.verifyToken], usercontroller.editPassword);
 
     //member
-    app.post('/user/information/add', [authJwt.verifyToken],membercontroller.AddProfile);
+    app.post('/admin/information/add', membercontroller.AddProfile)
 
     app.put('/admin/information/edit', [authJwt.verifyToken],membercontroller.EditProfile);
 
@@ -30,8 +31,6 @@ module.exports = function(app) {
 
     app.get('/information/club',clubcontroller.ViewClub);
 
-    app.get('/admin/search/club',clubcontroller.SearchClub);
-
     app.get('/user/captain/club', clubcontroller.Captain);
 
     //chi hoi
@@ -44,14 +43,15 @@ module.exports = function(app) {
 
     app.get('/information/branch',branchcontroller.ViewBranch);
 
-    app.get('/admin/search/branch',branchcontroller.SearchBranch);
-
     app.get('/user/captain/branch', branchcontroller.CaptainBranch);
 
-    //admin
-    app.get('/admin/view/member', admincontroller.ViewMemberbyName)
+    //hoi
+    app.put('/admin/edit/association', associationcontroller.EditAssociation);
 
-    app.get('/admin/search/member', admincontroller.SearchMemberbyName)
+    app.get('/information/association', associationcontroller.ViewAssociation);
+
+    //admin
+    app.get('/admin/view/member', admincontroller.ViewMember)
     
     app.get('/branch/club/all', admincontroller.BranchClubInformation)
 
