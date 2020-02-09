@@ -15,7 +15,7 @@ module.exports = function(app) {
     app.put('/api/user/edit/password', [authJwt.verifyToken], usercontroller.editPassword);
 
     //member
-    app.post('/user/information/add', [authJwt.verifyToken],membercontroller.AddProfile);
+  //  app.post('/user/information/add', [authJwt.verifyToken],membercontroller.AddProfile);
 
     app.put('/admin/information/edit', [authJwt.verifyToken],membercontroller.EditProfile);
 
@@ -49,9 +49,7 @@ module.exports = function(app) {
     app.get('/user/captain/branch', branchcontroller.CaptainBranch);
 
     //admin
-    app.get('/admin/view/member', admincontroller.ViewMemberbyName)
-
-    app.get('/admin/search/member', admincontroller.SearchMemberbyName)
+    app.get('/admin/view/member', admincontroller.ViewMember)
     
     app.get('/branch/club/all', admincontroller.BranchClubInformation)
 
