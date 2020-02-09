@@ -9,6 +9,7 @@ module.exports = function(app) {
     const branchcontroller      = require('../controller/branch.controller');
     const admincontroller       = require('../controller/admin.controller');
     const membercontroller      = require('../controller/member.controller');
+    const associationcontroller      = require('../controller/association.controller');
 
     app.post('/api/login', usercontroller.login);
 
@@ -41,6 +42,11 @@ module.exports = function(app) {
     app.get('/information/branch',branchcontroller.ViewBranch);
 
     app.get('/user/captain/branch', branchcontroller.CaptainBranch);
+
+    //hoi
+    app.put('/admin/edit/association', associationcontroller.EditBranch);
+
+    app.get('/information/association',branchcontroller.ViewBranch);
 
     //admin
     app.get('/admin/view/member', admincontroller.ViewMember)

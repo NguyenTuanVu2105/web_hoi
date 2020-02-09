@@ -1,6 +1,5 @@
 const db = require('../config/db.config');
 const Profile = db.member;
-const User = db.user;
 const Position = db.position
 const Specialized = db.specialized
 // exports.AddProfile = (req, res) => {
