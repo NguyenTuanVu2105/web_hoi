@@ -86,7 +86,7 @@ const TableSearch = () =>{
         })
     }, [])
 
-    // tùy chọn hiển thị 
+    // tùy chọn hiển thị //thêm thành viên
     const [Visible, setVisible] = useState(false)
     
       const showModal = () => {
@@ -95,6 +95,7 @@ const TableSearch = () =>{
     
       const handleOk = e => {
         console.log(e);
+        alert('Thêm thành công!!!')
         setVisible(false)
       };
     
@@ -103,7 +104,11 @@ const TableSearch = () =>{
         setVisible(false)
       };
 
-      // select nhom mau và Rh 
+      //thêm thành viên
+      
+
+
+      // select nhom mau
       const { Option } = Select;
 
       function handleChange(value) {
@@ -112,6 +117,20 @@ const TableSearch = () =>{
 
       // search
       const { Search } = Input;
+
+
+
+      //tên đội
+  const { Option1 } = Select;
+
+  const children = [];
+  for (let i = 10; i < 36; i++) {
+    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+  }
+
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
 
 
   return(
@@ -163,12 +182,49 @@ const TableSearch = () =>{
           <Select defaultValue="All" style={{ width: 110,height:30 }} onChange={handleChange}>
             <Option value="All">Nhóm máu</Option>
             <Option style={{ textAlign: "center" }} value="O">O</Option>
-            <Option style={{ textAlign: "center" }}value="A">A</Option>
-            <Option style={{ textAlign: "center" }}value="B">B</Option>
-            <Option style={{ textAlign: "center" }}value="AB">AB</Option>
+            <Option style={{ textAlign: "center" }} value="A">A</Option>
+            <Option style={{ textAlign: "center" }} value="B">B</Option>
+            <Option style={{ textAlign: "center" }} value="AB">AB</Option>
           </Select>
         </div>
       </form>
+
+
+      {/* --Thêm thành viên--- */}
+      <div>
+          <Button type="primary" onClick={showModal} style={{backgroundColor:'white', color:'#1890ff'}}>
+            Thêm thành viên
+          </Button>
+          <Modal
+            title="Thêm thành viên"
+            visible={Visible}
+            onOk={handleOk}
+            onCancel={handleCancel}
+          >
+          
+          <form >
+            <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
+            <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+            <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }}>
+              <Option style={{ textAlign: "center" }} value="disabled" disabled>Chức vụ</Option>
+              <Option style={{ textAlign: "center" }} value="1">O</Option>
+              <Option style={{ textAlign: "center" }} value="2">A</Option>
+              <Option style={{ textAlign: "center" }} value="3">B</Option>
+              <Option style={{ textAlign: "center" }} value="4">AB</Option>
+            </Select>
+            <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }} >
+              <Option style={{ textAlign: "center" }} value="disabled" disabled>Bậc chuyên môn</Option>
+              <Option style={{ textAlign: "center" }} value="1">Huấn luyện viên</Option>
+              <Option style={{ textAlign: "center" }} value="2">Hướng dẫn viên</Option>
+              <Option style={{ textAlign: "center" }} value="3">Học viên</Option>
+              <Option style={{ textAlign: "center" }} value="4">none</Option>
+            </Select>
+            <Select mode="tags" style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
+              {children}
+            </Select>
+          </form>
+          </Modal>
+        </div>
       <Table columns={columns} dataSource={data}  scroll={{x: 'max-content' }} />
     </div>
     

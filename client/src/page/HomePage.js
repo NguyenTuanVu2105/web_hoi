@@ -13,9 +13,11 @@ import SearchUnit from '../page/SearchUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
 import SearchItem from '../page/SearchItem'
 import TableSearch from '../page/TableSearch'
+import login from '../page/login'
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
+import LoginBlood from '../page/login';
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
@@ -52,6 +54,7 @@ function HomePage(props) {
                         <OrganizationalRecords/> */}
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
+                        {/* <LoginBlood/> */}
                     </div>
                 </HomepageContext.Provider>
             </div>
