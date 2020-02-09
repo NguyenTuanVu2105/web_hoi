@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
     const Member = sequelize.define('members', {
-        Image:      Sequelize.STRING,
+        Image:              Sequelize.STRING,
         Sothethanhvien:     Sequelize.STRING,
         Hovaten:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Ngaysinh:           Sequelize.DATE,

@@ -71,7 +71,8 @@ exports.EditProfile = (req,res) =>{
                 GPA  : req.body.gpa ,
                 Trinhdohocvan  : req.body.trinhdohocvan ,
                 DoanvienDangvien  : req.body.doanviendangvien ,
-                Ghichukhac  : req.body.ghichukhac 
+                Ghichukhac  : req.body.ghichukhac,
+                Image :req.body.image
             },
             {
             where:{userId :req.userId}
