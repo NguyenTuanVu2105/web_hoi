@@ -21,24 +21,24 @@ exports.ViewMemberbyName = (req, res) => {
             }]
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
 }
 
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
-        attributes: ['Tenchihoi'],
+        attributes: ['id', 'Tenchihoi'],
         include: 
         [{
             model: Club,
-            attributes: ['Tendoi']
+            attributes: ['id', 'Tendoi']
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
 }
 
@@ -53,8 +53,8 @@ exports.LeaderAssociation = (req, res) => {
             attributes: ['Chucvu']
         }]
     }).then(information => {
-        res.status(200).send(information)
+        res.status(200).send({success: true, data: information})
     }).catch(err => {
-        res.status(500).send({message: err})
+        res.status(500).send({success: false, message: err})
     })
 }

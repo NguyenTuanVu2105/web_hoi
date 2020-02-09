@@ -20,7 +20,7 @@ const TeamLeader = () =>{
                 TeamLeaderList.map(leader =>(
                     <div className = 'row borderRadius'>
                         <div className = 'col-2 image'>
-                            <div className = 'img'></div>
+                            <img className='img' src={leader.img}></img>
                         </div>
                         <div className = 'col-9 information'>
                             <label className="label_information1">Họ tên: {leader.name}</label><br/>
