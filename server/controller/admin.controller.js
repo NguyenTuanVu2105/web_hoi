@@ -10,7 +10,7 @@ exports.ViewMember = (req, res) => {
     if(req.query.hovaten == null && req.query.nhommau == null)
     {
         Member.findAll({
-            limit: 10,
+            limit: req.query.limit,
             offset: (req.query.page-1)*10,
             include: [
                 {
@@ -36,16 +36,15 @@ exports.ViewMember = (req, res) => {
     }
     else{
     Member.findAll({
-        limit: 10,
+        limit: req.query.limit,
         offset: (req.query.page-1)*10,
         where: {
-            [Op.or]: {Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'}, 
-                    Nhommau: req.query.nhommau
-        } 
+            [Op.or]: [{Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'}}, 
+                    {Nhommau: req.query.nhommau}]
+        } ,
             // Sothethanhvien: req.query.sothethanhvien,
             // Quequan: {[db.Sequelize.Op.like]: '%' +req.query.quequan + '%'},
             
-        },
         include: [
             {
                 model: Position,
