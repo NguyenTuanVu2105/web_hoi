@@ -11,7 +11,7 @@ exports.ViewMember = (req, res) => {
     {
         Member.findAll({
             limit: 10,
-            offset: (page-1)*10,
+            offset: (req.query.page-1)*10,
             include: [
                 {
                     model: Position,
@@ -37,7 +37,7 @@ exports.ViewMember = (req, res) => {
     else{
     Member.findAll({
         limit: 10,
-        offset: (page-1)*10,
+        offset: (req.query.page-1)*10,
         where: {
             [Op.or]: {Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'}, 
                     Nhommau: req.query.nhommau
