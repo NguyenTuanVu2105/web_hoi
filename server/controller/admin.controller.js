@@ -5,27 +5,33 @@ const Member = db.member
 const Position = db.position
 const Specialized = db.specialized
 //chưa test
-exports.ViewMemberbyName = (req, res) => {
+exports.ViewMember = (req, res) => {
     Member.findAll({
         limit: 10,
         offset: (page-1)*10,
         where: {
-            Hovaten: req.body.hovaten
+            Sothethanhvien: req.query.sothethanhvien,
+            Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'},
+            Quequan: {[db.Sequelize.Op.like]: '%' +req.query.quequan + '%'},
+            Nhommau: req.query.nhommau,
         },
         include: [
             {
                 model: Position,
+                where: {Chucvu: {[db.Sequelize.Op.like]: '%' + req.query.chucvu + '%'}},
             },
             {
                 model: Specialized,
+                where: {Bacchuyenmon: {[db.Sequelize.Op.like]: '%' + req.query.bacchuyenmon + '%'}},
             },
             {
-            model: Club,
-            attributes: ['Tendoi'],
-            include:[{
-                model: Branch,
-                attributes: ['Tenchihoi']
-            }]
+                model: Club,
+                
+                attributes: ['Tendoi'],
+                include:[{
+                    model: Branch,
+                    attributes: ['Tenchihoi']
+                }]
         }]
     }).then(information => {
         res.status(200).send(information)
@@ -33,17 +39,6 @@ exports.ViewMemberbyName = (req, res) => {
         res.status(500).send({message: err})
     })
 }
-
-exports.SearchMemberbyName = (req, res) => {
-    var q = req.query.hovaten
-    Member.findAll(
-        {
-            where: {Hovaten: {[db.Sequelize.Op.like]: '%' + q + '%'}},
-    }).then(member => {
-        res.status(200).send(member)
-    }).catch(err => res.status(500).send({message: err}))
-}
-
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
         attributes: ['Tenchihoi'],
