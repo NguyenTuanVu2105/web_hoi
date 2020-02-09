@@ -7,11 +7,13 @@ const Specialized = db.specialized
 const Op = db.Sequelize.Op
 //chưa test
 exports.ViewMember = (req, res) => {
+    const limit = parseInt(req.query.limit)
+    const offset = parseInt(req.query.page)
     if(req.query.hovaten == null && req.query.nhommau == null)
     {
         Member.findAll({
-            limit: req.query.limit,
-            offset: (req.query.page-1)*10,
+            limit: limit,
+            offset: (offset-1)*limit,
             include: [
                 {
                     model: Position,
@@ -36,27 +38,23 @@ exports.ViewMember = (req, res) => {
     }
     else{
     Member.findAll({
-        limit: req.query.limit,
-        offset: (req.query.page-1)*10,
+        limit: limit,
+        offset: (offset-1)*limit,
         where: {
-            [Op.or]: [{Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'}}, 
-                    {Nhommau: req.query.nhommau}]
-        } ,
-            // Sothethanhvien: req.query.sothethanhvien,
-            // Quequan: {[db.Sequelize.Op.like]: '%' +req.query.quequan + '%'},
-            
+            [Op.or]: [
+                    {Hovaten:  req.query.hovaten }, 
+                   {Nhommau: req.query.nhommau || null}
+                ]
+        },  
         include: [
             {
                 model: Position,
-                // where: {Chucvu: {[db.Sequelize.Op.like]: '%' + req.query.chucvu + '%'}},
             },
             {
                 model: Specialized,
-                // where: {Bacchuyenmon: {[db.Sequelize.Op.like]: '%' + req.query.bacchuyenmon + '%'}},
             },
             {
                 model: Club,
-                
                 attributes: ['Tendoi'],
                 include:[{
                     model: Branch,
