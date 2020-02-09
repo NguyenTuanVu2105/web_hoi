@@ -56,11 +56,11 @@ exports.BranchClubInformation = (req, res) => {
 
 exports.LeaderAssociation = (req, res) => {
     Member.findAll({
-        attributes: ['Hovaten', 'ThoigianHD', 'TinhtrangHD', 'Ghichukhac'],
+        attributes: ['Image', 'Hovaten', 'ThoigianHD', 'TinhtrangHD', 'Ghichukhac'],
         include: [{
             model: Position,
             where: {
-                Chucvu: "Hội trưởng"
+                Chucvu: 'Hội trưởng'
             },
             attributes: ['Chucvu']
         }]
