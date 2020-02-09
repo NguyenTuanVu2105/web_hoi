@@ -4,7 +4,8 @@ import './style.css'
 import {navs} from '../nav'
 
 const NavBar = () => {
-    const [Icon, setIcon] = useState('fa fa-angle-down')
+
+    const [Icon, setIcon] = useState(false)
     const style = {
         fontSize : '25px',
         paddingTop: '45%',
@@ -17,21 +18,9 @@ const NavBar = () => {
                 navs.map(nav => (
                 <div>
                     <div className="panel-heading drop-menu">
-                        <a className="stickyA" data-toggle="collapse" href={nav.Id1}>
+                        <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={()=> setIcon(!Icon)}>
                             {nav.name}
-                            <div className="items-i"><i className={Icon} style={style} onClick={()=> setIcon(Icon =>{
-                                console.log(Icon)
-                                if (Icon == 'fa fa-angle-down'){
-                                    Icon += 'fa fa-angle-up'
-                                    Icon -= 'fa fa-angle-down'
-                                    console.log(Icon)
-                                    return Icon
-                                }
-                                if (Icon == 'fa fa-angle-up'){
-                                    Icon = 'fa fa-angle-down'
-                                    return Icon
-                                }
-                            })} ></i></div>
+                            <div className="items-i"><i className={Icon?'fa fa-angle-up':'fa fa-angle-down'} style={style}  ></i></div>
                         </a>
 
                     </div>
@@ -39,7 +28,7 @@ const NavBar = () => {
                         <ul class="list-group">
                             {
                                 nav.children.map(x => (
-                            <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
+                                    <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                 ))
                             }
                         </ul>

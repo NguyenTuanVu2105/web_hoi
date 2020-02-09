@@ -11,7 +11,7 @@ const SearchUnit = () =>{
         setNameMap({
             ['/']: 'Trang chủ', 
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-            ['/SearchUnit']: 'Đơn vị hoạt động',
+            ['/SearchUnit']: 'Hồ sơ đơn vị',
         })
     }, [])
     console.log(nameMap)

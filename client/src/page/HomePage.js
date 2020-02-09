@@ -26,11 +26,13 @@ function HomePage(props) {
             </Breadcrumb.Item>
         )
     })
-
     return (
         <div className="container-fluid">
             <div className="row">
                 <div className="col-2 menu-left">
+                    <div className="logoPageBlood">
+
+                    </div>
                     <NavBar/>
                 </div>
                 <HomepageContext.Provider value={{

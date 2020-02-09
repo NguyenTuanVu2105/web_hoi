@@ -30,13 +30,7 @@
     justify-content:space-between;
     padding: 0 10px;
 }
-/* #logo{
-    background-image: url("logomau.png");
-    height:100px;
-    width: 250px;
-    background-position: center;
-    background-size: cover;
-} */
+
 /* 
 .header{
     height: 200px;
@@ -142,7 +136,7 @@ legend{
     color: red !important;
 }
 .sticky{
-    padding-top: 250px;
+    padding-top: 30px;
     position: sticky;
     position: -webkit-sticky;
     top:0;
@@ -155,4 +149,13 @@ legend{
 }
 .sex{
     margin-right: 10px;
+}
+
+.logoPageBlood{
+    margin-top: 30px;
+    background-image: url("https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=1&_nc_ohc=fgTTjiQRwO8AX_EyHit&_nc_ht=scontent.fhan3-1.fna&oh=0fc38a83e734acec907d4d9d8784b797&oe=5EBB1865");
+    height:225px;
+    
+    background-position: center;
+    background-size: cover;
 }

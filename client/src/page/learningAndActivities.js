@@ -59,11 +59,7 @@ function LearningAndActivities(props){
                 }
                 <fieldset>
                     <legend>Khen thưởng:</legend>
-                    {/* <div className='row'>
-                            <label>Năm học:</label>
-                            <label>Kỳ học:</label>
-                            <label>Lý do khen thưởng:</label>
-                        </div> */}
+                    
                 </fieldset>
             </div>
 

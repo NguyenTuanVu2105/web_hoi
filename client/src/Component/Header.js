@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import '../css/Header.css'
 
 const Header = () =>{
     return(
-        <div style ={{height:'250px',backgroundColor:'red'}}>
+        <div className='pageHeader'>
             
         </div>
     )
