@@ -17,7 +17,7 @@ const signIn = () => {
                                 <i className="fa fa-user icon-fa" style={{ fontSize: 40}}/><input className="child-input" type="text" placeholder="ID" />
                             </div>
                             <div className="child-form">
-                                <i className="fa fa-lock icon-fa" style="font-size:40px" />
+                                <i className="fa fa-lock icon-fa" style={{ fontSize: 40}} />
                                 <input className="child-input" type="password" placeholder="Password" />
                             </div>
                             <div className="child-form" style="justify-content: center;">
