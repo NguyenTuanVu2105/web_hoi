@@ -7,28 +7,58 @@ var currentTime = new Date()
 
 exports.AddProfile = (req, res) => {
     var year = currentTime.getFullYear()
-    const profile = {};
-    if (req.body.hovaten) profile.Hovaten = req.body.hovaten
-    if (req.body.ngaysinh) profile.Ngaysinh = req.body.ngaysinh
-    if (req.body.specializedId) profile.specializedId = req.body.specializedId
-    if (req.body.positionId) profile.positionId = req.body.positionId
-    if (req.body.clubId) profile.clubId = req.body.clubId
     Profile.findOne({
         where: {
             Hovaten: req.body.hovaten,
             Ngaysinh: req.body.ngaysinh
         }
-    }).then(profiles =>{
+    }).then(profiles => {
         if(!profiles) {
-            new Profile(profile).save().then().catch(err => res.status(500).send({message: err}))
-            Club.findOne({
-                where: {
-                    id: req.body.clubId
-                },
-                include: [{
-                    model: Profile,
-                    attributes: [[db.sequelize.fn('COUNT', db.sequelize.col('')), 'n_hats']]
-                }]
+            Profile.create({
+                Hovaten: req.body.hovaten,
+                Ngaysinh: req.body.ngaysinh,
+                specializedId: req.body.specializedId,
+                positionId: req.body.positionId,
+                clubId: req.body.clubId
+            }).then(() => {
+                Club.findOne({
+                    where: {
+                        id: req.body.clubId
+                    },
+                    attributes: ['Madoi'],
+                    include: [{
+                        model: Profile,
+                        attributes: [[db.sequelize.fn('COUNT', db.sequelize.col('members.clubId')), 'countMember']]
+                    }]
+                }).then(infor => {
+                    values = JSON.stringify(infor.members[0])
+                    numbers = JSON.parse(values)
+                    number = numbers['countMember']
+                    if (number < 10) {
+                        value = year + '.' + infor.Madoi.substring(0, 8) + '00' + number
+                    } else if (number >= 10 && number < 100) {
+                        value = year + '.' + infor.Madoi.substring(0, 8) + '0' + number
+                    } else {
+                        value = year + '.' + infor.Madoi.substring(0, 8) + number
+                    }
+                    Profile.update({
+                        Sothethanhvien: value
+                    }, {
+                        where: {
+                            Hovaten: req.body.hovaten,
+                            Ngaysinh: req.body.ngaysinh
+                        }
+                    }).then(
+                        res.status(200).send({success: true, data: value})
+                    ).catch(err => {
+                            res.status(500).send({success: false,message: err})
+                    })
+                    
+                }).catch(err => {
+                    res.status(500).send({success:false, message: err})
+                })
+            }).catch(err => {
+                res.status(500).send({success:false, message: err})
             })
         } else {
             res.status(404).send({success: false, message: err})
@@ -72,7 +102,7 @@ exports.EditProfile = (req,res) =>{
             })
             .then(
                 res.send({Success : true})
-            ).catch(error =>
+            ).catch(err =>
                 {
                     res.status(500).send({message: err})
                 })
