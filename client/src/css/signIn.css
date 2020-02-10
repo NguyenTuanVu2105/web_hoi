@@ -1,0 +1,87 @@
+body{
+    /* background-image: url("background-blood.jpg"); */
+    background-size: cover;
+    /* height: 715px; */
+}
+.test {
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+}
+.para-e{
+    margin-top: 120px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.hihi{
+    display: block;
+    position: absolute;
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    border-radius: 3%;
+    z-index: 1;
+}
+.child-e{
+        
+}
+    .circle-blood{    
+        display: flex;
+        justify-content: center;   
+        background-color: white;
+        width: 100%;
+        height: 100px;        
+        border-radius: 50%;
+    }
+        .circle-blood .mau{
+            /* background-image: url("logo-02.png"); */
+            background-position: center;
+            background-size: cover;
+            margin-top: 15px;
+            margin-left: 15px;
+            width: 70px;
+            height: 70px;
+        }
+.sign-in-form{
+    padding: 0 20px;
+}
+.child-form{
+    display: flex;
+    border: 1px solid red;
+    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.child-form .child-input{
+    border: none;
+    line-height: 30px;
+    width: 97%;
+    padding-left: 15px;
+}
+.child-form .child-input:focus{
+    border-radius: 5px;
+    border-color: white !important;
+}
+.child-form button{
+    color: white;
+    font-size: 22px;
+    width: 100%;
+    background-color: rgb(8, 91, 139);
+    border: none;
+}
+.child-form .icon-fa{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.unknown-name{
+    display: flex;
+    justify-content: space-evenly;
+}
+input:focus{
+    outline-offset: 0 !important;
+}

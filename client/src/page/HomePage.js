@@ -13,7 +13,7 @@ import Header from '../Component/Header';
 // import OrganizationalRecords from '../page/OrganizationalRecords'
 // import SearchItem from '../page/SearchItem'
 // import TableSearch from '../page/TableSearch'
-
+import signIn from '../page/signIn'
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
@@ -54,6 +54,7 @@ function HomePage(props) {
                         <OrganizationalRecords/> */}
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
+                        <signIn/>
                     </div>
                 </HomepageContext.Provider>
             </div>

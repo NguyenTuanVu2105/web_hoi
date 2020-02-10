@@ -17,6 +17,7 @@
     border: none;
 }
 .buttonDisable{
+    margin-right: 5px;
     background-color: white;
     border-radius: 5px;
     border: 1px solid red;
@@ -24,4 +25,11 @@
 }
 .buttonDisable:hover{
     background-color: rgb(206, 174, 236);
+}
+.changeAddUnit{
+    display: flex;
+    justify-content: flex-end;
+}
+.tableAddUnit{
+    border-radius: 10px;
 }

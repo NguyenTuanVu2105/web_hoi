@@ -1,9 +1,9 @@
-import React, {Component, useContext, useEffect} from 'react'
+import React, {Component,useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 const AddUnit = () => {
-
+    const [changeInput, setchangeInput] = useState(true)
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
@@ -12,19 +12,20 @@ const AddUnit = () => {
             ['/AddUnit']: 'Thêm đơn vị'
         })
     }, [])
-    const handleChange = ()=>{
-        var para=document.getElementById('inputDisableA');
-        para.remove("disable");
-    }
+    
 
     return (
         <div className = "para">
-            <button className="buttonDisable" onclick={handleChange}>Sửa</button>
+            <div className='changeAddUnit'>
+                <button className="buttonDisable" onClick= {()=>setchangeInput(false)}>Sửa</button>
+                <button className="buttonDisable" onClick= {()=>setchangeInput(true)}>Lưu thay đổi</button>
+            
+            </div>
             {
                 AddUnitChild.map(label => (
                     <div>
                         <span className = "spanLabel">{label.name}</span>
-                        <input id="inputDisbleA" className="inputDisable"  value='1234' disabled />                         
+                        <input id="inputDisbleA" className="inputDisable"  value='1234' disabled={changeInput} />                         
                     </div>
                 ))
             }
@@ -32,7 +33,7 @@ const AddUnit = () => {
             <span className = "spanLabel">Thành viên hiện tại:</span>
             </div>
             <div className='row rowTable'>
-                <table className='col-5' border={'1px'}>
+                <table className='col-5 tableAddUnit' border={'1px'}>
                     <tr>
                         <th>
                             Cảm tình viên
@@ -55,7 +56,7 @@ const AddUnit = () => {
                     </tr>
                 </table>
 
-                <table className='col-5' border={'1px'}>
+                <table className='col-5 tableAddUnit' border={'1px'}>
                     <tr>
                         <th>
                             Hướng dẫn viên/Cán bộ tăng cường

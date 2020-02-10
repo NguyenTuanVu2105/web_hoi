@@ -1,10 +1,10 @@
-import React, { Component,useState, useContext, useEffect } from 'react'
+import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { Table } from 'antd';
 import '../css/SearchItem.css'
 import { Modal, Button } from 'antd';
 import { Select } from 'antd';
-import {TableSearchList, CheckBoxLeft, CheckBoxRight} from '../Component/TableSearchList'
+import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd';
 
 
@@ -13,17 +13,17 @@ const columns = [
   {
     title: 'STT',
     dataIndex: 'STT',
-    fixed:'left'
+    fixed: 'left'
   },
   {
     title: 'ID',
     dataIndex: 'ID',
-    fixed:'left'
+    fixed: 'left'
   },
   {
     title: 'Họ và tên',
     dataIndex: 'name',
-    fixed:'left'
+    fixed: 'left'
   },
   {
     title: 'Ngày sinh',
@@ -52,7 +52,7 @@ const columns = [
   {
     title: 'Action',
     dataIndex: 'aAction',
-    fixed:'right',
+    fixed: 'right',
     // filters: [{ text: 'on', value: 'on' }, { text: 'off', value: 'off' }],
     // onFilter: (value, record) => {
     //   return record.aAction === value
@@ -72,55 +72,55 @@ for (let i = 0; i < 46; i++) {
     position: `hihi${i}`,
     team: 'hihihihi',
     phone: `123456789${i}`,
-    aAction: i%2?"on":"off"
+    aAction: i % 2 ? "on" : "off"
   });
 }
 
-const TableSearch = () =>{
-  const {nameMap, setNameMap} = useContext(HomepageContext)
-    useEffect(() => {
-        setNameMap({
-            ['/']: 'Trang chủ',
-            ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-            ['/TableSearch']: 'Tìm kiếm thành viên'
-        })
-    }, [])
+const TableSearch = () => {
+  const { nameMap, setNameMap } = useContext(HomepageContext)
+  useEffect(() => {
+    setNameMap({
+      ['/']: 'Trang chủ',
+      ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
+      ['/TableSearch']: 'Tìm kiếm thành viên'
+    })
+  }, [])
 
-    // tùy chọn hiển thị //thêm thành viên
-    const [Visible, setVisible] = useState(false)
-    
-      const showModal = () => {
-        setVisible(true)
-      };
-    
-      const handleOk = e => {
-        console.log(e);
-        alert('Thêm thành công!!!')
-        setVisible(false)
-      };
-    
-      const handleCancel = e => {
-        console.log(e);
-        setVisible(false)
-      };
+  // tùy chọn hiển thị //thêm thành viên
+  const [Visible, setVisible] = useState(false)
 
-      //thêm thành viên
-      
+  const showModal = () => {
+    setVisible(true)
+  };
 
+  const handleOk = e => {
+    console.log(e);
+    alert('Thêm thành công!!!')
+    setVisible(false)
+  };
 
-      // select nhom mau
-      const { Option } = Select;
+  const handleCancel = e => {
+    console.log(e);
+    setVisible(false)
+  };
 
-      function handleChange(value) {
-        console.log(`selected ${value}`);
-      }
-
-      // search
-      const { Search } = Input;
+  //thêm thành viên
 
 
 
-      //tên đội
+  // select nhom mau
+  const { Option } = Select;
+
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+  }
+
+  // search
+  const { Search } = Input;
+
+
+
+  //tên đội
   const { Option1 } = Select;
 
   const children = [];
@@ -133,10 +133,48 @@ const TableSearch = () =>{
   }
 
 
-  return(
-    <div className = "para searchItem">
-      <form className='row menuSearch'>
-        {/* <div className='col-2 offset-1  '>
+  return (
+    <div className="para searchItem">
+      <div className='row' style={{margin:10}}>
+        {/* --Thêm thành viên--- */}
+        <div className='col-1'>
+          <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff' }}>
+            Thêm thành viên
+          </Button>
+          <Modal
+            title="Thêm thành viên"
+            visible={Visible}
+            onOk={handleOk}
+            onCancel={handleCancel}
+          >
+            <form >
+              <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
+              <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+              <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }}>
+                <Option style={{ textAlign: "center" }} value="disabled" disabled>Chức vụ</Option>
+                <Option style={{ textAlign: "center" }} value="1">O</Option>
+                <Option style={{ textAlign: "center" }} value="2">A</Option>
+                <Option style={{ textAlign: "center" }} value="3">B</Option>
+                <Option style={{ textAlign: "center" }} value="4">AB</Option>
+              </Select>
+              <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }} >
+                <Option style={{ textAlign: "center" }} value="disabled" disabled>Bậc chuyên môn</Option>
+                <Option style={{ textAlign: "center" }} value="1">Huấn luyện viên</Option>
+                <Option style={{ textAlign: "center" }} value="2">Hướng dẫn viên</Option>
+                <Option style={{ textAlign: "center" }} value="3">Học viên</Option>
+                <Option style={{ textAlign: "center" }} value="4">none</Option>
+              </Select>
+              <Select mode="tags" style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
+                {children}
+              </Select>
+            </form>
+          </Modal>
+        </div>
+
+        {/* ---------------tìm kiếm--------------------- */}
+        <div className='col-4 offset-7'>
+          <form className='row menuSearch'>
+            {/* <div className='col-2 offset-1  '>
           <Button type="primary" onClick={showModal}>
             Tùy chọn hiển thị
             </Button>
@@ -172,62 +210,27 @@ const TableSearch = () =>{
           </Modal>
         </div> */}
 
-        
-        <div className="offset-8">
-          <Search
-            placeholder="Họ và tên..."
-            onSearch={value => console.log(value)}
-            style={{ width: 200, height: 30, margin :20 }}
-          />
-          <Select defaultValue="All" style={{ width: 110,height:30 }} onChange={handleChange}>
-            <Option value="All">Nhóm máu</Option>
-            <Option style={{ textAlign: "center" }} value="O">O</Option>
-            <Option style={{ textAlign: "center" }} value="A">A</Option>
-            <Option style={{ textAlign: "center" }} value="B">B</Option>
-            <Option style={{ textAlign: "center" }} value="AB">AB</Option>
-          </Select>
-        </div>
-      </form>
-
-
-      {/* --Thêm thành viên--- */}
-      <div>
-          <Button type="primary" onClick={showModal} style={{backgroundColor:'white', color:'#1890ff'}}>
-            Thêm thành viên
-          </Button>
-          <Modal
-            title="Thêm thành viên"
-            visible={Visible}
-            onOk={handleOk}
-            onCancel={handleCancel}
-          >
-          
-          <form >
-            <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
-            <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
-            <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }}>
-              <Option style={{ textAlign: "center" }} value="disabled" disabled>Chức vụ</Option>
-              <Option style={{ textAlign: "center" }} value="1">O</Option>
-              <Option style={{ textAlign: "center" }} value="2">A</Option>
-              <Option style={{ textAlign: "center" }} value="3">B</Option>
-              <Option style={{ textAlign: "center" }} value="4">AB</Option>
-            </Select>
-            <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }} >
-              <Option style={{ textAlign: "center" }} value="disabled" disabled>Bậc chuyên môn</Option>
-              <Option style={{ textAlign: "center" }} value="1">Huấn luyện viên</Option>
-              <Option style={{ textAlign: "center" }} value="2">Hướng dẫn viên</Option>
-              <Option style={{ textAlign: "center" }} value="3">Học viên</Option>
-              <Option style={{ textAlign: "center" }} value="4">none</Option>
-            </Select>
-            <Select mode="tags" style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
-              {children}
-            </Select>
+            <div className="">
+              <Search
+                placeholder="Họ và tên..."
+                onSearch={value => console.log(value)}
+                style={{ width: 200, height: 30 }}
+              />
+              <Select defaultValue="All" style={{marginLeft:5, width: 110, height: 30 }} onChange={handleChange}>
+                <Option value="All">Nhóm máu</Option>
+                <Option style={{ textAlign: "center" }} value="O">O</Option>
+                <Option style={{ textAlign: "center" }} value="A">A</Option>
+                <Option style={{ textAlign: "center" }} value="B">B</Option>
+                <Option style={{ textAlign: "center" }} value="AB">AB</Option>
+              </Select>
+            </div>
           </form>
-          </Modal>
         </div>
-      <Table columns={columns} dataSource={data}  scroll={{x: 'max-content' }} />
+      </div>
+
+      <Table columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
     </div>
-    
+
   )
 }
 
