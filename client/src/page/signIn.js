@@ -20,7 +20,7 @@ const signIn = () => {
                                 <i className="fa fa-lock icon-fa" style={{ fontSize: 40}} />
                                 <input className="child-input" type="password" placeholder="Password" />
                             </div>
-                            <div className="child-form" style="justify-content: center;">
+                            <div className="child-form" style={{justifyContent: 'center'}}>
                                 <button>Sign-in</button>
                             </div>
                             <div className="unknown-name">
