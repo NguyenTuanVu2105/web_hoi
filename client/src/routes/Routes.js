@@ -6,8 +6,14 @@ import TeamLeader from '../page/TeamLeader';
 import AddUnit from '../page/AddUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
 import TableSearch from '../page/TableSearch'
+import signIn from '../page/signIn'
 
 const routes = [
+    {
+        path: "/login",
+        exact: true,
+        component: signIn
+    },
     {
         component: HomePage,
         routes: [
