@@ -41,9 +41,10 @@ function HomePage(props) {
                     nameMap,
                     setNameMap
                 }}>
-                    <div className="col-10 content-right " >
+                    <div className="col-10 content-right" >
                         <Header />
                         {/*<HorizontalMenu />*/}
+                        
                         <Breadcrumb>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}

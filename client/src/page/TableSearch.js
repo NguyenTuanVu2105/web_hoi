@@ -233,10 +233,10 @@ const TableSearch = () => {
               <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
               <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }}>
                 <Option style={{ textAlign: "center" }} value="disabled" disabled>Chức vụ</Option>
-                <Option style={{ textAlign: "center" }} value="1">O</Option>
-                <Option style={{ textAlign: "center" }} value="2">A</Option>
-                <Option style={{ textAlign: "center" }} value="3">B</Option>
-                <Option style={{ textAlign: "center" }} value="4">AB</Option>
+                <Option style={{ textAlign: "center" }} value="1">Chủ tịch Hội</Option>
+                <Option style={{ textAlign: "center" }} value="2">Chi hội trưởng</Option>
+                <Option style={{ textAlign: "center" }} value="3">Đội trưởng</Option>
+                <Option style={{ textAlign: "center" }} value="4">None</Option>
               </Select>
               <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }} >
                 <Option style={{ textAlign: "center" }} value="disabled" disabled>Bậc chuyên môn</Option>
@@ -245,7 +245,7 @@ const TableSearch = () => {
                 <Option style={{ textAlign: "center" }} value="3">Học viên</Option>
                 <Option style={{ textAlign: "center" }} value="4">none</Option>
               </Select>
-              <Select mode="tags" style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
+              <Select mode='default' style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
                 {children}
               </Select>
             </form>

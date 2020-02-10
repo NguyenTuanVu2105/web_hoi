@@ -19,7 +19,7 @@ const AddUnit = () => {
             <div className='changeAddUnit'>
                 <button className="buttonDisable" onClick= {()=>setchangeInput(false)}>Sửa</button>
                 <button className="buttonDisable" onClick= {()=>setchangeInput(true)}>Lưu thay đổi</button>
-            
+                <button className="buttonDisable">Thêm mới</button>
             </div>
             {
                 AddUnitChild.map(label => (

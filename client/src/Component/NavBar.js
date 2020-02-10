@@ -37,6 +37,7 @@ const NavBar = () => {
                     
                 ))
             }
+            <a style={{borderBottom:'1px solid black'}}>Đăng suất</a>
         </div>
     )
 }
