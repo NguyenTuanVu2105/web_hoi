@@ -5,3 +5,23 @@
     font-size: 18px;
     color: red;
 }
+.inputDisable{
+    margin-left:5px; 
+    color:red;
+    border: none;
+    border-bottom: 1px solid grey;
+
+}
+.inputDisable:disabled{
+    background-color: white;
+    border: none;
+}
+.buttonDisable{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid red;
+    color: red;
+}
+.buttonDisable:hover{
+    background-color: rgb(206, 174, 236);
+}

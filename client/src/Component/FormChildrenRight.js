@@ -40,13 +40,5 @@ export const formChildrenRight = [
                 name: "Địa chỉ liên hệ: "
             }
         ]
-    },
-    {
-        legend : "Ghi chú khác:",
-        children : [
-            {
-                name: "Ghi chú: "
-            }
-        ]
     }
 ]

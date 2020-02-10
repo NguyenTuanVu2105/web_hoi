@@ -3,21 +3,21 @@ import React, {useEffect, useState} from 'react'
 import {renderRoutes} from 'react-router-config'
 import {Link} from "react-router-dom";
 import NavBar from '../Component/NavBar';
-import ProFileLeft from './ProFile';
+// import ProFileLeft from './ProFile';
 import Header from '../Component/Header';
-import HorizontalMenu from '../Component/HorizontalMenu';
-import LearningAndActivities from '../page/learningAndActivities';
-import AddUnit from '../page/AddUnit'
-import TeamLeader from '../page/TeamLeader'
-import SearchUnit from '../page/SearchUnit'
-import OrganizationalRecords from '../page/OrganizationalRecords'
-import SearchItem from '../page/SearchItem'
-import TableSearch from '../page/TableSearch'
-import login from '../page/login'
+// import HorizontalMenu from '../Component/HorizontalMenu';
+// import LearningAndActivities from '../page/learningAndActivities';
+// import AddUnit from '../page/AddUnit'
+// import TeamLeader from '../page/TeamLeader'
+// import SearchUnit from '../page/SearchUnit'
+// import OrganizationalRecords from '../page/OrganizationalRecords'
+// import SearchItem from '../page/SearchItem'
+// import TableSearch from '../page/TableSearch'
+
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
-import LoginBlood from '../page/login';
+
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
@@ -54,7 +54,6 @@ function HomePage(props) {
                         <OrganizationalRecords/> */}
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
-                        {/* <LoginBlood/> */}
                     </div>
                 </HomepageContext.Provider>
             </div>

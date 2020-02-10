@@ -21,19 +21,5 @@ export const formChildren = [
                 name: "Địa chỉ Email: "
             }
         ]
-    },
-    {
-        legend : "Hiến máu:",
-        children : [
-            {
-                name: "Số lần hiến máu: "
-            },
-            {
-                name: "Nhóm máu: "
-            },
-            {
-                name: "Rh(D): "
-            }
-        ]
     }
 ]

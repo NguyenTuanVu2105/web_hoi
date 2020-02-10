@@ -12,13 +12,19 @@ const AddUnit = () => {
             ['/AddUnit']: 'Thêm đơn vị'
         })
     }, [])
+    const handleChange = ()=>{
+        var para=document.getElementById('inputDisableA');
+        para.remove("disable");
+    }
 
     return (
         <div className = "para">
+            <button className="buttonDisable" onclick={handleChange}>Sửa</button>
             {
                 AddUnitChild.map(label => (
                     <div>
-                        <span className = "spanLabel">{label.name}</span><br />                         
+                        <span className = "spanLabel">{label.name}</span>
+                        <input id="inputDisbleA" className="inputDisable"  value='1234' disabled />                         
                     </div>
                 ))
             }
