@@ -1,23 +1,23 @@
 
 import '../css/LearningAndActivities.css'
-import React, {Component, useContext, useEffect} from 'react'
+import React, { Component, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
-import {learningAndActivities} from '../Component/learningAndActivities'
-function LearningAndActivities(props){
+import { learningAndActivities } from '../Component/learningAndActivities'
+function LearningAndActivities(props) {
 
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const { nameMap, setNameMap } = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',
             ['/learn']: 'Học tập và hoạt động'
         })
     }, [])
-    
+
     const style = {
-        paddingLeft : '15px'
+        paddingLeft: '15px'
     }
     return (
-        <div className = "para">
+        <div className="para">
 
             <div>
                 <h3>Học tập</h3>
@@ -39,7 +39,7 @@ function LearningAndActivities(props){
                 </form>
                 <fieldset>
                     <legend>Khen thưởng:</legend>
-                    <table style = {{width :'40%'}} >
+                    <table style={{ width: '40%' }} >
                         <tr className='row'>
                             <th className='col-4'>Năm học:</th>
                             <th className='col-4'>Kỳ học:</th>
@@ -53,16 +53,19 @@ function LearningAndActivities(props){
                 {
                     learningAndActivities.map(label => (
                         <div className="activities">
-                            <label for=""className="label_information">{label.label}</label><br />
+                            <label for="" className="label_information">{label.label}</label><br />
                         </div>
                     ))
                 }
                 <fieldset>
                     <legend>Khen thưởng:</legend>
-                    
+
                 </fieldset>
             </div>
-
+            <div className="DivLAA">
+                <button className="buttonLAA">Submit</button>
+                <button className="buttonLAA">Hủy</button>
+            </div>
         </div>
     )
 }

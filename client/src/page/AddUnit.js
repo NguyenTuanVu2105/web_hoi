@@ -25,7 +25,7 @@ const AddUnit = () => {
                 AddUnitChild.map(label => (
                     <div>
                         <span className = "spanLabel">{label.name}</span>
-                        <input id="inputDisbleA" className="inputDisable"  value='1234' disabled={changeInput} />                         
+                        <input id="inputDisbleA" className="inputDisable"  placeholder='1234' disabled={changeInput} />                         
                     </div>
                 ))
             }

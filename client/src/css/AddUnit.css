@@ -17,6 +17,7 @@
     border: none;
 }
 .buttonDisable{
+    height: 30px;
     margin-right: 5px;
     background-color: white;
     border-radius: 5px;

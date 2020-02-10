@@ -9,3 +9,20 @@ h3{
 .activities{
     margin-left: 15px;
 }
+.buttonLAA{
+    width: 70px;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid red;
+    color: red;
+    margin-left: 5px;
+}
+.buttonLAA:hover{
+    background-color: rgb(206, 174, 236);
+}
+.DivLAA{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -42,11 +42,87 @@ const columns = [
     dataIndex: 'position',
   },
   {
+    title: 'Bậc chuyên môn',
+    dataIndex: 'position',
+  },
+  {
+    title: 'CCCD/HC',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Ngày cấp',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Nơi cấp',
+    dataIndex: 'position',
+  },
+  {
+    title: 'Điện thoại',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Email',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'link Facebook',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Quê quán',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Địa chỉ liên lạc',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Chi hội trực thuộc',
+    dataIndex: 'phone',
+  },
+  {
     title: 'Đội trực thuộc',
     dataIndex: 'team',
   },
   {
-    title: 'Điện thoại',
+    title: 'Nhóm máu',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'RH(D)',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Số lần hiến máu',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Ngày vào Hội',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Thời gian hoạt động hội',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Thông tin liên lạc gia đình',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Đơn vị học tập/Công tác',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Lớp/Đơn vị cụ thể',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Kết quả học tập tích lũy',
+    dataIndex: 'phone',
+  },
+  {
+    title: 'Đảng viên/Đoàn viên',
     dataIndex: 'phone',
   },
   {
@@ -57,6 +133,11 @@ const columns = [
     // onFilter: (value, record) => {
     //   return record.aAction === value
     // },
+  },
+  {
+    title: 'Delete',
+    dataIndex: 'aAction',
+    fixed:'right'
   },
 ];
 
