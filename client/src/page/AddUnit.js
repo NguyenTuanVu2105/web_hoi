@@ -16,11 +16,7 @@ const AddUnit = () => {
 
     return (
         <div className = "para">
-            <div className='changeAddUnit'>
-                <button className="buttonDisable" onClick= {()=>setchangeInput(false)}>Sửa</button>
-                <button className="buttonDisable" onClick= {()=>setchangeInput(true)}>Lưu thay đổi</button>
-                <button className="buttonDisable">Thêm mới</button>
-            </div>
+            
             {
                 AddUnitChild.map(label => (
                     <div>
@@ -29,51 +25,61 @@ const AddUnit = () => {
                     </div>
                 ))
             }
-            <div className='col-12'>
-            <span className = "spanLabel">Thành viên hiện tại:</span>
+            <div>
+            <span className = "spanLabel">Thành viên hiện tại: </span>
             </div>
             <div className='row rowTable'>
-                <table className='col-5 tableAddUnit' border={'1px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
                     <tr>
                         <th>
                             Cảm tình viên
-                            </th>
-                        <th>
-                            1
+                        </th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
                         <th>
                             Tình nguyện viên
                         </th>
-                        <th>2</th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                        </th>
                     </tr>
                     <tr>
                         <th>
                             Hội viên
                         </th>
-                        <th>3</th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                        </th>
                     </tr>
                 </table>
 
-                <table className='col-5 tableAddUnit' border={'1px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
                     <tr>
                         <th>
                             Hướng dẫn viên/Cán bộ tăng cường
                         </th>
-                        <th>1</th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                        </th>
                     </tr>
                     <tr>
                         <th>
                             Huấn luyện viên
                         </th>
-                        <th>2</th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                        </th>
                     </tr>
                     <tr>
                         <th>
                             Cán bộ
                         </th>
-                        <th>3</th>
+                        <th className="inputTH">
+                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                        </th>
                     </tr>
                 </table>
             </div>

@@ -1,7 +1,7 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { Table } from 'antd';
-import '../css/SearchItem.css'
+import '../css/TableSearch.css'
 import { Modal, Button } from 'antd';
 import { Select } from 'antd';
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
@@ -176,7 +176,7 @@ const TableSearch = () => {
 
   const handleOk = e => {
     console.log(e);
-    alert('Thêm thành công!!!')
+    alert('Thêm thành công tài khoản:AAAAAAAAA')
     setVisible(false)
   };
 

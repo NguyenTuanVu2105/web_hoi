@@ -26,7 +26,7 @@ export const OrganizationalRecordsList = [
             },
             {
                 name : "Đơn vị mới",
-                href : "/AddUnit"
+                href : "/AUDUnit"
             },
             {
                 name : "Tra cứu thông tin đơn vị",
