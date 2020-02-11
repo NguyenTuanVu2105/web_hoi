@@ -1,29 +1,38 @@
 import Paths from '../../routes/Paths'
 import {getCookie, removeCookie, setCookie} from '../storage/cookies'
-import {COOKIE_KEY, getSessionStorage, SESSION_KEY} from '../storage/sessionStorage'
+import {COOKIE_KEY} from '../storage/sessionStorage'
+import { getUserProfile } from '../base/profile';
 
 export const logout = () => {
-    removeCookie(COOKIE_KEY.TOKEN);
-    removeCookie(COOKIE_KEY.EMAIL);
-    removeCookie(COOKIE_KEY.NAME);
-    removeCookie(COOKIE_KEY.USER_ID);
+    removeCookie(COOKIE_KEY.TOKEN)
     window.location.href = Paths.Login
 }
 
-export const getUser = () => {
+export const getUser = async () => {
     let token = getCookie(COOKIE_KEY.TOKEN)
+    let user = {}
+    if (token) {
+        const result = await getUserProfile()
+        if (result.success) {
+            user = result.data
+            console.log(user)
+        } else {
+            return null
+        }
+    }
     return token ? {
         token: token,
-        email: getCookie(COOKIE_KEY.EMAIL),
-        name: getCookie(COOKIE_KEY.NAME),
-        userId: getCookie(COOKIE_KEY.USER_ID),
-        shop: getSessionStorage(SESSION_KEY.SHOP)
+        name: user.Hovaten,
+        id: user.id,
+        code: user.Sothethanhvien
     } : null
 }
 
-export const setUserCookies = (token, email, userId, name) => {
+export const checkAuth = () => {
+    console.log(getCookie(COOKIE_KEY.TOKEN))
+    return getCookie(COOKIE_KEY.TOKEN) ? true : false
+}
+
+export const setUserCookies = (token) => {
     setCookie(COOKIE_KEY.TOKEN, token);
-    setCookie(COOKIE_KEY.EMAIL, email);
-    setCookie(COOKIE_KEY.NAME, name);
-    setCookie(COOKIE_KEY.USER_ID, userId)
 }
