@@ -1,8 +1,5 @@
 export const introduleBloodList = [
     {
-        name: 'Phần 1 nè các bé:'
-    },
-    {
         name: 'Phụ trách đơn vị hiện tại:'
     },
     {
