@@ -7,12 +7,18 @@ import '../css/AUDUnit.css'
 
 const AUDUnit = () => {
     const [changeInput, setchangeInput] = useState(true)
+    const [changeButton, setchangeButton] = useState(false)
     const [inputDisabledH, setInputDisabledH] = useState(true)
     const { nameMap, setNameMap } = useContext(HomepageContext)
 
     const { Option } = Select;
 
     const { Search } = Input;
+
+    const handleOk = e => {
+        console.log(e);
+        prompt('a');
+    };
 
     useEffect(() => {
         setNameMap({
@@ -35,10 +41,14 @@ const AUDUnit = () => {
 
 
                 </form>
+                <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button>
+                <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
+                <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
+
                 <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
                 <button className="buttonDisable" onClick={() => setchangeInput(true)}>Lưu thay đổi</button>
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Thêm mới</button>
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Xóa</button>
+                <button className="buttonDisable" onClick={() => setchangeInput(false)} disabled={changeButton}>Thêm mới</button>
+                <button className="buttonDisable" onClick={()=>handleOk()} disabled={changeButton}>Xóa</button>
             </div>
             <div className="para">
 

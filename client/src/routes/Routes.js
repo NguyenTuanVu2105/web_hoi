@@ -8,6 +8,7 @@ import OrganizationalRecords from '../page/OrganizationalRecords'
 import TableSearch from '../page/TableSearch'
 import signIn from '../page/signIn'
 import AUDUnit from '../page/AUDUnit'
+import introduleBlood from '../page/introduleBlood'
 
 const routes = [
     {
@@ -62,6 +63,11 @@ const routes = [
                 path: "/AUDUnit",
                 exact: true,
                 component: AUDUnit,
+            },
+            {
+                path: "/introduleBlood",
+                exact: true,
+                component: introduleBlood,
             },
         ]
     },

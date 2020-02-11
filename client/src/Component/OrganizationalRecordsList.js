@@ -3,7 +3,8 @@ export const OrganizationalRecordsList = [
         name : "HỘI MÁU",
         child : [
             {
-                name : "Giới thiệu về Hội"
+                name : "Giới thiệu về Hội",
+                href:'/introduleBlood'
             },
             {
                 name : "Lịch sử Hội"
