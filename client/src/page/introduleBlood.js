@@ -2,21 +2,21 @@ import React, {Component,useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import {introduleBloodList, ItemUnit} from '../Component/introduleBloodList'
 import '../css/AddUnit.css'
-const AddUnit = () => {
+const IntroduleBlood = () => {
     const [changeInput, setchangeInput] = useState(true)
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-            ['/AddUnit']: 'Giới thiệu về Hội'
+            ['/introduleBlood']: 'Giới thiệu về Hội'
         })
     }, [])
     
 
     return (
         <div className = "para">
-            
+            <h4><a style={{color:'red'}} href='/introduleBloodDisplay'>Phần I: Giới thiệu về Hội></a></h4>
             {
                 introduleBloodList.map(label => (
                     <div>
@@ -100,4 +100,4 @@ const AddUnit = () => {
     )
 }
 
-export default AddUnit;
+export default IntroduleBlood;
