@@ -7,7 +7,6 @@ const Op = db.Sequelize.Op;
 var jwt = require('jsonwebtoken')
 var bcrypt = require('bcryptjs')
 
-var jwt = require('jsonwebtoken');
 exports.login = (req, res) => {
 	console.log("Sign-In");
 	User.findOne({

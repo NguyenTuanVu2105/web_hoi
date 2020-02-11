@@ -6,160 +6,23 @@ import { Modal, Button } from 'antd';
 import { Select } from 'antd';
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd';
+import { getTableMember } from "../api/base/tablesearch"
 
-
-
-const columns = [
-  {
-    title: 'STT',
-    dataIndex: 'STT',
-    fixed: 'left'
-  },
-  {
-    title: 'ID',
-    dataIndex: 'ID',
-    fixed: 'left'
-  },
-  {
-    title: 'Họ và tên',
-    dataIndex: 'name',
-    fixed: 'left'
-  },
-  {
-    title: 'Ngày sinh',
-    dataIndex: 'date',
-  },
-  {
-    title: 'Giới tính',
-    dataIndex: 'sex',
-    // filters: [{ text: 'Nam', value: 'nam' }, { text: 'Nữ', value: 'nữ' }],
-    // onFilter: (value, record) => {
-    //   return record.aAction === value
-    // },
-  },
-  {
-    title: 'Chức vụ',
-    dataIndex: 'position',
-  },
-  {
-    title: 'Bậc chuyên môn',
-    dataIndex: 'position',
-  },
-  {
-    title: 'CCCD/HC',
-    dataIndex: 'position',
-  },
-  {
-    title: 'Ngày cấp',
-    dataIndex: 'position',
-  },
-  {
-    title: 'Nơi cấp',
-    dataIndex: 'position',
-  },
-  {
-    title: 'Điện thoại',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Email',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'link Facebook',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Quê quán',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Địa chỉ liên lạc',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Chi hội trực thuộc',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Đội trực thuộc',
-    dataIndex: 'team',
-  },
-  {
-    title: 'Nhóm máu',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'RH(D)',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Số lần hiến máu',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Ngày vào Hội',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Thời gian hoạt động hội',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Thông tin liên lạc gia đình',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Đơn vị học tập/Công tác',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Lớp/Đơn vị cụ thể',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Kết quả học tập tích lũy',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Đảng viên/Đoàn viên',
-    dataIndex: 'phone',
-  },
-  {
-    title: 'Action',
-    dataIndex: 'aAction',
-    fixed: 'right',
-    // filters: [{ text: 'on', value: 'on' }, { text: 'off', value: 'off' }],
-    // onFilter: (value, record) => {
-    //   return record.aAction === value
-    // },
-  },
-  {
-    title: 'Delete',
-    dataIndex: 'aAction',
-    fixed:'right'
-  },
-];
-
-const data = [];
-for (let i = 0; i < 46; i++) {
-  data.push({
-    STT: i,
-    ID: `2019.2702.01.00${i}`,
-    key: i,
-    name: `NGo Thai Son vu vuong${i}`,
-    date: `07/04/198${i}`,
-    sex: 'Nam',
-    position: `hihi${i}`,
-    team: 'hihihihi',
-    phone: `123456789${i}`,
-    aAction: i % 2 ? "on" : "off"
-  });
-}
+const { Column } = Table
 
 const TableSearch = () => {
+  const [table, setTable] = useState([])
   const { nameMap, setNameMap } = useContext(HomepageContext)
+
+  const fetchData = async () => {
+    const result = await getTableMember(10, 1)
+    if (result.success) {
+        setTable(result.data.data)
+    }
+}
+
   useEffect(() => {
+    fetchData()
     setNameMap({
       ['/']: 'Trang chủ',
       ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
@@ -309,7 +172,53 @@ const TableSearch = () => {
         </div>
       </div>
 
-      <Table columns={columns} dataSource={data} scroll={{ x: 'max-content' }} />
+      <Table dataSource={table} scroll={{ x: 'max-content' }}>
+        <Column title="ID" dataIndex="id" fixed="left" id="id" />
+        <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />
+        <Column title="Họ và tên" dataIndex="Hovaten" fixed="left" id="Hovaten" />
+        <Column title="Ngày sinh" dataIndex="Ngaysinh" id="Ngaysinh" />
+        <Column title="Giới tính" dataIndex="Gioitinh" id="Gioitinh" />
+        <Column title="Chức vụ" dataIndex="position.Chucvu" id="Chucvu" />
+        <Column title="Bậc chuyên môn" dataIndex="specialized.Bacchuyenmon" id="Bacchuyenmon " />
+        <Column title="CCCD/CMT/HC" dataIndex="CMTorHC" id="CMTorHC" />
+        <Column title="Ngày cấp" dataIndex="Ngaycap" id="Ngaycap" />
+        <Column title="Nơi cấp" dataIndex="Noicap" id="Noi" />
+        <Column title="Điện thoại" dataIndex="Dienthoai" id="Dienthoai" />
+        <Column title="Email" dataIndex="Email" id="Email" />
+        <Column title="Facebook" dataIndex="Facebook" id="Facebook" />
+        <Column title="Quê quán" dataIndex="Quequan" id="Quequan" />
+        <Column title="Địa chỉ LL" dataIndex="DiachiLL" id="DiachiLL" />
+        <Column title="Đội trực thuộc" dataIndex="club.Tendoi" id="Tendoi" />
+        <Column title="Chi hội trực thuộc" dataIndex="club.branch.Tenchihoi" id="Tenchihoi" />
+        <Column title="Nhóm máu" dataIndex="Nhommau" id="Nhommau" />
+        <Column title="Rh" dataIndex="Rh" id="Rh" />
+        <Column title="Số lần hiến máu" dataIndex="SolanHM" id="SolanHM" />
+        <Column title="Ngày vào Hội" dataIndex="NgayvaoHoi" id="NgayvaoHoi" />
+        <Column title="Thời gian hoạt động hội" dataIndex="ThoigianHD" id="ThoigianHD" />
+        <Column title="Thông tin liên lạc gia đình" dataIndex="ThongtinlienheGD" id="ThongtinlienheGD" />
+        <Column title="Đơn vị học tập/Công tác" dataIndex="Donvi" id="Donvi" />
+        <Column title="Lớp/Đơn vị cụ thể" dataIndex="Donvicuthe" id="Donvicuthe" />
+        <Column title="GPA" dataIndex="GPA" id="GPA" />
+        <Column title="Trình độ học vấn" dataIndex="Trinhdohocvan" id="Trinhdohocvan" />
+        <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
+        <Column 
+          title="Tình trạng HĐ" 
+          dataIndex="TinhtrangHD" 
+          fixed="right"
+          id="TinhtrangHD" 
+        />
+        <Column 
+          title="Chọn" 
+          fixed="right" 
+          id="Chon" 
+          render={(text, record) => (
+            <span>
+              <Button>Sửa</Button>
+              <Button>Xóa</Button>
+            </span>
+          )}
+        />
+      </Table>
     </div>
 
   )

@@ -23,7 +23,6 @@ exports.ViewMember = (req, res) => {
                 },
                 {
                     model: Club,
-                    
                     attributes: ['Tendoi'],
                     include:[{
                         model: Branch,
@@ -35,32 +34,31 @@ exports.ViewMember = (req, res) => {
         }).catch(err => {
             res.status(500).send({success: false, message: err})
         })
-    }
-    else{
-    Member.findAll({
-        limit: limit,
-        offset: (offset-1)*limit,
-        where: {
-            [Op.or]: [
-                    {Hovaten:  req.query.hovaten }, 
-                   {Nhommau: req.query.nhommau || null}
-                ]
-        },  
-        include: [
-            {
-                model: Position,
-            },
-            {
-                model: Specialized,
-            },
-            {
-                model: Club,
-                attributes: ['Tendoi'],
-                include:[{
-                    model: Branch,
-                    attributes: ['Tenchihoi']
-                }]
-        }]
+    } else {
+        Member.findAll({
+            limit: limit,
+            offset: (offset-1)*limit,
+            where: {
+                [Op.or]: [
+                        {Hovaten:  req.query.hovaten }, 
+                    {Nhommau: req.query.nhommau || null}
+                    ]
+            },  
+            include: [
+                {
+                    model: Position,
+                },
+                {
+                    model: Specialized,
+                },
+                {
+                    model: Club,
+                    attributes: ['Tendoi'],
+                    include:[{
+                        model: Branch,
+                        attributes: ['Tenchihoi']
+                    }]
+            }]
     }).then(information => {
         res.status(200).send({success: true, data: information})
     }).catch(err => {
