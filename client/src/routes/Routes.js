@@ -7,6 +7,7 @@ import AddUnit from '../page/AddUnit'
 import OrganizationalRecords from '../page/OrganizationalRecords'
 import TableSearch from '../page/TableSearch'
 import signIn from '../page/signIn'
+import AUDUnit from '../page/AUDUnit'
 
 const routes = [
     {
@@ -56,7 +57,12 @@ const routes = [
                 path: "/TableSearch",
                 exact: true,
                 component: TableSearch,
-            }
+            },
+            {
+                path: "/AUDUnit",
+                exact: true,
+                component: AUDUnit,
+            },
         ]
     },
 ]

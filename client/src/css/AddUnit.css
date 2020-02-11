@@ -16,21 +16,18 @@
     background-color: white;
     border: none;
 }
-.buttonDisable{
-    height: 30px;
-    margin-right: 5px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid red;
-    color: red;
-}
-.buttonDisable:hover{
-    background-color: rgb(206, 174, 236);
-}
-.changeAddUnit{
-    display: flex;
-    justify-content: flex-end;
-}
+
 .tableAddUnit{
     border-radius: 10px;
+}
+.tableAddUnit{
+    border: none;
+    color: red;
+    font-weight: 100;
+}
+.tableAddUnit th{
+    font-weight: 450;
+}
+.inputTH{
+    width: 41px;
 }
