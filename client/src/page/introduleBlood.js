@@ -26,6 +26,16 @@ const AddUnit = () => {
                 ))
             }
             <div>
+            <div>
+                <span className = "spanLabel">Các đơn vị trực thuộc Hội:</span><br/>
+                {
+                    ItemUnit.map(name =>(
+                        <div style={{paddingLeft:'20px'}}>
+                            <a href=''>{name.name}</a><br/>
+                        </div>
+                    ))
+                }
+            </div>
             <span className = "spanLabel">Thành viên hiện tại: </span>
             </div>
             <div className='row rowTable'>
@@ -84,19 +94,7 @@ const AddUnit = () => {
                 </table>
             </div>
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
-            <div>
-                <span className = "spanLabel">Các đơn vị trực thuộc Hội:</span><br/>
-                {
-                    ItemUnit.map(name =>(
-                        <div style={{paddingLeft:'20px'}}>
-                            <a href=''>{name.name}</a><br/>
-                        </div>
-                    ))
-                }
-            </div>
             
-            <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
-            <span className = "spanLabel">Kết quả hoạt động:</span>
             <div></div>
         </div>
     )
