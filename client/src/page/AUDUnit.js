@@ -1,6 +1,7 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
+
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
@@ -15,10 +16,16 @@ const AUDUnit = () => {
 
     const { Search } = Input;
 
-    const handleOk = e => {
-        console.log(e);
-        prompt('a');
-    };
+    const handleDe = ()=>{
+        window.confirm('hihi');
+    }
+    const handleAd = ()=>{
+        window.confirm('hihihi');
+    }
+
+    const handleUp = ()=>{
+        window.confirm('hihihihi');
+    }
 
     useEffect(() => {
         setNameMap({
@@ -46,9 +53,14 @@ const AUDUnit = () => {
                 <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
 
                 <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
-                <button className="buttonDisable" onClick={() => setchangeInput(true)}>Lưu thay đổi</button>
-                <button className="buttonDisable" onClick={() => setchangeInput(false)} disabled={changeButton}>Thêm mới</button>
-                <button className="buttonDisable" onClick={()=>handleOk()} disabled={changeButton}>Xóa</button>
+                <button className="buttonDisable" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
+                <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+
+
+
+
+
             </div>
             <form className="para">
 
@@ -86,7 +98,7 @@ const AUDUnit = () => {
                                 Hội viên
                         </th>
                             <th className="inputTH">
-                                <input id="inputDisbleA"  type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' disabled={changeInput} />
+                                <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' disabled={changeInput} />
                             </th>
                         </tr>
                     </table>
@@ -129,7 +141,7 @@ const AUDUnit = () => {
                         ))
                     }
                 </div>
-                
+
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
                 <div></div>
