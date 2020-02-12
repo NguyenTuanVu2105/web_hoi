@@ -31,7 +31,7 @@ const IntroduleBlood = () => {
                 {
                     ItemUnit.map(name =>(
                         <div style={{paddingLeft:'20px'}}>
-                            <a href=''>{name.name}</a><br/>
+                            <a href={name.href}>{name.name}</a><br/>
                         </div>
                     ))
                 }
