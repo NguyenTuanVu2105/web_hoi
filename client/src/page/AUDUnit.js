@@ -17,14 +17,19 @@ const AUDUnit = () => {
     const { Search } = Input;
 
     const handleDe = ()=>{
-        window.confirm('hihi');
+        window.confirm('Bạn có chắc muốn xóa!');
     }
     const handleAd = ()=>{
-        window.confirm('hihihi');
+        window.confirm('Bạn có chắc muốn Thêm mới!');
     }
 
     const handleUp = ()=>{
-        window.confirm('hihihihi');
+        window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        setchangeInput(true)
+    }
+    const handleCa = ()=>{
+        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+        setchangeInput(true)
     }
 
     useEffect(() => {
@@ -52,8 +57,7 @@ const AUDUnit = () => {
                 <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
                 <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
 
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
-                <button className="buttonDisable" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
                 <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
                 <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
 
@@ -144,8 +148,13 @@ const AUDUnit = () => {
 
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
-                <div></div>
+                
             </form>
+            <div style={{display:'flex', justifyContent:'flex-end',}}>
+                <button className="buttonD" style={{marginRight:5,marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonD" style={{marginRight:30,marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleCa()}>Hủy</button>
+            </div>
+            
         </div>
     )
 }

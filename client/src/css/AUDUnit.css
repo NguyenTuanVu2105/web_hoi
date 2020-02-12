@@ -31,7 +31,7 @@
 }
 .buttonD:hover{
     /* border: 1px solid #40a9ff;   */
-    background-color: #40a9ff;
+    background-color: #40a9ff !important;
 }
 .changeAUDUnit{
     margin-top: 20px;
