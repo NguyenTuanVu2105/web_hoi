@@ -10,7 +10,7 @@ import signIn from '../page/signIn'
 import AUDUnit from '../page/AUDUnit'
 import introduleBlood from '../page/introduleBlood'
 import introduleBloodDisplay from '../page/introduleBloodDisplay'
-
+import HistoryBlood from '../page/HistoryBlood'
 const routes = [
     {
         path: "/login",
@@ -74,6 +74,11 @@ const routes = [
                 path: "/introduleBloodDisplay",
                 exact: true,
                 component: introduleBloodDisplay,
+            },
+            {
+                path: "/HistoryBlood",
+                exact: true,
+                component: HistoryBlood,
             },
         ]
     },

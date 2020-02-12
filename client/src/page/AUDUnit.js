@@ -30,7 +30,7 @@ const AUDUnit = () => {
 
     return (
         <div>
-            <div className='changeAddUnit'>
+            <div className='changeAUDUnit'>
                 <form>
 
                     <Search
@@ -50,13 +50,13 @@ const AUDUnit = () => {
                 <button className="buttonDisable" onClick={() => setchangeInput(false)} disabled={changeButton}>Thêm mới</button>
                 <button className="buttonDisable" onClick={()=>handleOk()} disabled={changeButton}>Xóa</button>
             </div>
-            <div className="para">
+            <form className="para">
 
                 {
                     AddUnitChild.map(label => (
                         <div>
                             <span className="spanLabel">{label.name}</span>
-                            <input id="inputDisbleA" className="inputDisable" placeholder='1234' value='' disabled={changeInput} />
+                            <input id="inputDisbleA" className="inputDisable" placeholder='1234' value="1234" disabled={changeInput} />
                         </div>
                     ))
                 }
@@ -118,8 +118,9 @@ const AUDUnit = () => {
                         </tr>
                     </table>
                 </div>
+                <span className="spanLabel">Tổng số thành viên:</span><br />
                 <div>
-                    <span className="spanLabel">Số cơ sở trực thuộc Hội:</span><br />
+                    <span className="spanLabel">Số đơn vị trực thuộc Chi Hội:</span><br />
                     {
                         ItemUnit.map(name => (
                             <div style={{ paddingLeft: '20px' }}>
@@ -128,11 +129,11 @@ const AUDUnit = () => {
                         ))
                     }
                 </div>
-                <span className="spanLabel">Tổng số thành viên:</span><br />
+                
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
                 <div></div>
-            </div>
+            </form>
         </div>
     )
 }

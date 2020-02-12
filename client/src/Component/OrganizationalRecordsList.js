@@ -7,7 +7,8 @@ export const OrganizationalRecordsList = [
                 href:'/introduleBlood'
             },
             {
-                name : "Lịch sử Hội"
+                name : "Lịch sử Hội",
+                href:'/HistoryBlood'
             },
             {
                 name : "Lãnh đạo qua các thời kỳ",
