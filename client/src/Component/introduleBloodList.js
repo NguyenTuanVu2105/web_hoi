@@ -6,7 +6,7 @@ export const introduleBloodList = [
         name: 'Ngày Truyền thống:'
     },
     {
-        name: 'Năm thành lập:'
+        name: 'Ngày thành lập:'
     }
 ]
 export const ItemUnit = [
