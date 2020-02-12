@@ -89,13 +89,26 @@ exports.DeleteClub = (req,res) =>{
         }
     })
 }
-exports.ViewClub = (req, res) => {
+
+exports.ViewOneClub = (req, res) => {
     Club.findOne({
-        where:{Madoi  :req.body.madoi}
-    }).then( result => {
+        where:{Madoi: req.query.madoi}
+    }).then(result => {
       res.status(200).send({success: true,data: result,});
+    }).catch(err => {
+        res.status(500).send({success: false,message: err})
     })
       
+}
+
+exports.ViewAllClub = (req, res) => {
+    Club.findAll({
+        attributes: ['id', 'Madoi', 'Tendoi']
+    }).then( result => {
+        res.status(200).send({success: true,data: result,})
+    }).catch(err => {
+        res.status(500).send({success: false,message: err})
+    })
 }
 
 exports.Captain = (req, res) => {

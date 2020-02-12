@@ -1,27 +1,56 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
-import HomepageContext from "../context/HomepageContext";
-import { Table } from 'antd';
+import HomepageContext from "../context/HomepageContext"
+import { Table } from 'antd'
 import '../css/TableSearch.css'
-import { Modal, Button } from 'antd';
-import { Select } from 'antd';
+import { Modal, Button } from 'antd'
+import { Select } from 'antd'
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
-import { Input } from 'antd';
-import { getTableMember } from "../api/base/tablesearch"
+import { Input } from 'antd'
+import { getTableMember } from '../api/base/tablesearch'
+import { getClubAll } from '../api/base/admin'
+import { getPosition, getSpecialized} from '../api/base/consernposition'
 
 const { Column } = Table
 
 const TableSearch = () => {
   const [table, setTable] = useState([])
+  const [club, setClub] = useState([])
+  const [position, setPosition] = useState([])
+  const [specialized, setSpecialized] = useState([])
   const { nameMap, setNameMap } = useContext(HomepageContext)
 
+  const fetchDataPosition = async () => {
+    const result = await getPosition()
+    if (result.success) {
+      setPosition(result.data.data)
+    }
+  }
+
+  const fetchDataSpecialized = async () => {
+    const result = await getSpecialized()
+    if (result.success) {
+      setSpecialized(result.data.data)
+    }
+  }
+
+  const fetchDataClub = async () => {
+    const result = await getClubAll()
+    if (result.success) {
+      setClub(result.data.data)
+    }
+  }
+  
   const fetchData = async () => {
-    const result = await getTableMember(10, 1)
+    const result = await getTableMember(1000, 1)
     if (result.success) {
         setTable(result.data.data)
     }
 }
 
   useEffect(() => {
+    fetchDataPosition()
+    fetchDataSpecialized()
+    fetchDataClub()
     fetchData()
     setNameMap({
       ['/']: 'Trang chủ',
@@ -67,11 +96,6 @@ const TableSearch = () => {
   //tên đội
   const { Option1 } = Select;
 
-  const children = [];
-  for (let i = 10; i < 36; i++) {
-    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
-  }
-
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
@@ -94,22 +118,20 @@ const TableSearch = () => {
             <form >
               <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
               <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
-              <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }}>
-                <Option style={{ textAlign: "center" }} value="disabled" disabled>Chức vụ</Option>
-                <Option style={{ textAlign: "center" }} value="1">Chủ tịch Hội</Option>
-                <Option style={{ textAlign: "center" }} value="2">Chi hội trưởng</Option>
-                <Option style={{ textAlign: "center" }} value="3">Đội trưởng</Option>
-                <Option style={{ textAlign: "center" }} value="4">None</Option>
+              <Select defaultValue="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
+                {position.map(position => (
+                  <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
+                ))}
               </Select>
-              <Select defaultValue="disabled" style={{ height: 30, marginBottom: 15 }} >
-                <Option style={{ textAlign: "center" }} value="disabled" disabled>Bậc chuyên môn</Option>
-                <Option style={{ textAlign: "center" }} value="1">Huấn luyện viên</Option>
-                <Option style={{ textAlign: "center" }} value="2">Hướng dẫn viên</Option>
-                <Option style={{ textAlign: "center" }} value="3">Học viên</Option>
-                <Option style={{ textAlign: "center" }} value="4">none</Option>
+              <Select defaultValue="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
+                {specialized.map(specialized => (
+                  <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
+                ))}
               </Select>
               <Select mode='default' style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
-                {children}
+                {club.map(club => (
+                  <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                ))}
               </Select>
             </form>
           </Modal>
@@ -160,8 +182,7 @@ const TableSearch = () => {
                 onSearch={value => console.log(value)}
                 style={{ width: 200, height: 30 }}
               />
-              <Select defaultValue="All" style={{marginLeft:5, width: 110, height: 30 }} onChange={handleChange}>
-                <Option value="All">Nhóm máu</Option>
+              <Select defaultValue="Nhóm máu" style={{marginLeft:5, width: 110, height: 30 }} onChange={handleChange}>
                 <Option style={{ textAlign: "center" }} value="O">O</Option>
                 <Option style={{ textAlign: "center" }} value="A">A</Option>
                 <Option style={{ textAlign: "center" }} value="B">B</Option>
@@ -177,7 +198,22 @@ const TableSearch = () => {
         <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />
         <Column title="Họ và tên" dataIndex="Hovaten" fixed="left" id="Hovaten" />
         <Column title="Ngày sinh" dataIndex="Ngaysinh" id="Ngaysinh" />
-        <Column title="Giới tính" dataIndex="Gioitinh" id="Gioitinh" />
+        <Column 
+          title="Giới tính" 
+          dataIndex="Gioitinh" 
+          id="Gioitinh"
+          render={(Gioitinh) => {
+            if (Gioitinh) {
+              return <span>
+                Nam
+              </span>
+            } else {
+              return <span>
+                Nữ
+              </span>
+            }
+          }}
+        />
         <Column title="Chức vụ" dataIndex="position.Chucvu" id="Chucvu" />
         <Column title="Bậc chuyên môn" dataIndex="specialized.Bacchuyenmon" id="Bacchuyenmon " />
         <Column title="CCCD/CMT/HC" dataIndex="CMTorHC" id="CMTorHC" />
@@ -191,7 +227,22 @@ const TableSearch = () => {
         <Column title="Đội trực thuộc" dataIndex="club.Tendoi" id="Tendoi" />
         <Column title="Chi hội trực thuộc" dataIndex="club.branch.Tenchihoi" id="Tenchihoi" />
         <Column title="Nhóm máu" dataIndex="Nhommau" id="Nhommau" />
-        <Column title="Rh" dataIndex="Rh" id="Rh" />
+        <Column 
+          title="Rh" 
+          dataIndex="Rh" 
+          id="Rh"
+          render={(Rh) => {
+            if (Rh) {
+              return <span>
+                +
+              </span>
+            } else {
+              return <span>
+                -
+              </span>
+            }
+          }}
+        />
         <Column title="Số lần hiến máu" dataIndex="SolanHM" id="SolanHM" />
         <Column title="Ngày vào Hội" dataIndex="NgayvaoHoi" id="NgayvaoHoi" />
         <Column title="Thời gian hoạt động hội" dataIndex="ThoigianHD" id="ThoigianHD" />
@@ -203,9 +254,20 @@ const TableSearch = () => {
         <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
         <Column 
           title="Tình trạng HĐ" 
-          dataIndex="TinhtrangHD" 
+          dataIndex="TinhtrangHD"
           fixed="right"
-          id="TinhtrangHD" 
+          id="TinhtrangHD"
+          render={(TinhtrangHD) => {
+            if (TinhtrangHD) {
+              return <span>
+                On
+              </span>
+            } else {
+              return <span>
+                Off
+              </span>
+            }
+          }}
         />
         <Column 
           title="Chọn" 
