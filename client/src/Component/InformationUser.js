@@ -38,8 +38,8 @@ const InformationUser = ()=>{
                             <Avatar/>
                         </div>
                         <div class="informationUserForMobile">
-                            <label for="" class="label_information2">Mã thành viên: </label><br/>
-                            <label for="" class="label_information2">Họ và tên: </label><br/>
+                            <label for="" class="label_information2">Mã thành viên: </label> {user.Sothethanhvien}<br/>
+                            <label for="" class="label_information2">Họ và tên: </label> {user.Hovaten}<br/>
                             <label for="" class="label_information2">Ngày sinh: </label>
                             <input type="date" class="input_information2" defaultValue={user.Ngaysinh} disabled={true}/><br/>
                             <label for="" class="label_information2">Giới tính: </label>
