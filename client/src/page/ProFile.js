@@ -1,19 +1,33 @@
-import React, {Component, useContext, useEffect} from 'react'
+import React, {Component, useContext, useEffect, useState} from 'react'
 import InformationUser from '../Component/InformationUser'
 import {formChildren} from '../Component/FormChildren'
 import {formChildrenRight} from '../Component/FormChildrenRight'
-import HomepageContext from "../context/HomepageContext";
-import { Select } from 'antd';
+import HomepageContext from "../context/HomepageContext"
+import { Select } from 'antd'
 import '../css/profile.css'
+import { getUserProfile } from '../api/base/profile'
 
 function ProFileLeft(props) {
     const {nameMap, setNameMap} = useContext(HomepageContext)
+    const [user, setUser] = useState([])
+
+    const fetchData = async () => {
+        const result = await getUserProfile()
+        if (result.success) {
+            setUser(result.data.data)
+        }
+    }
+
     useEffect(() => {
+        fetchData()
         setNameMap({
             ['/']: 'Trang chủ',
             ['/profile']: 'Hồ sơ cá nhân'
         })
     }, [])
+
+    console.log(user)
+
     const style = {
         textAlign:'end',
         width : '32%'

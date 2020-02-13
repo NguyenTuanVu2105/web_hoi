@@ -33,7 +33,7 @@ exports.AddProfile = (req, res) => {
                 }).then(infor => {
                     values = JSON.stringify(infor.members[0])
                     numbers = JSON.parse(values)
-                    number = numbers['countMember']
+                    number = numbers['countMember'] + 1
                     if (number < 10) {
                         value = year + '.' + infor.Madoi.substring(0, 8) + '00' + number
                     } else if (number >= 10 && number < 100) {

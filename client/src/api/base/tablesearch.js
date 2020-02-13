@@ -6,3 +6,11 @@ export const getTableMember = (limit, page) => {
         method: 'get'
     })
 }
+
+export const addNewMember = (data) => {
+    return createApiRequest({
+        url: `/admin/information/add`, 
+        method: 'post',
+        data: data
+    })
+}
