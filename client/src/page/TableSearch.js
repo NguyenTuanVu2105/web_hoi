@@ -103,10 +103,10 @@ const TableSearch = () => {
 
   return (
     <div className="para searchItem">
-      <div className='row' style={{margin:10}}>
+      <div className='row menuFM' >
         {/* --Thêm thành viên--- */}
-        <div className='col-1'>
-          <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff' }}>
+        <div className='addFM'>
+          <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white',width:'100%', color: '#1890ff',whiteSpace: 'inherit' }}>
             Thêm thành viên
           </Button>
           <Modal
@@ -138,7 +138,7 @@ const TableSearch = () => {
         </div>
 
         {/* ---------------tìm kiếm--------------------- */}
-        <div className='col-4 offset-7'>
+        <div className=' menuSearchFM'>
           <form className='row menuSearch'>
             {/* <div className='col-2 offset-1  '>
           <Button type="primary" onClick={showModal}>
@@ -175,18 +175,19 @@ const TableSearch = () => {
 
           </Modal>
         </div> */}
-
-            <div className="">
+            <div className="tenFM">
               <Select
                 mode="multiple"
                 placeholder="Họ và tên..."
-                style={{ width: 200, height: 30 }}
+                style={{ width: '100%', height: 30 }}
               >
                 {table.map(table => (
                   <Select.Option style={{ textAlign: "center" }} key={table.id}>{table.Hovaten}</Select.Option>
                 ))}
-              </Select>
-              <Select defaultValue="Nhóm máu" style={{marginLeft:5, width: 110, height: 30 }} onChange={handleChange}>
+              </Select>             
+            </div>
+            <div className="nhommauFM">
+              <Select defaultValue="Nhóm máu" style={{ width:'100%', height: 30 }} onChange={handleChange}>
                 <Option style={{ textAlign: "center" }} value="O">O</Option>
                 <Option style={{ textAlign: "center" }} value="A">A</Option>
                 <Option style={{ textAlign: "center" }} value="B">B</Option>

@@ -42,24 +42,26 @@ const AUDUnit = () => {
 
     return (
         <div>
-            <div className='changeAUDUnit'>
-                <form>
-
+            <div className=' row changeAUDUnit'>
+                <form className="searchForMobile">
                     <Search
                         placeholder="Tìm kiếm"
                         onSearch={value => console.log(value)}
-                        style={{ width: 200, height: 30, marginRight: 5 }}
+                        style={{ height: 30, marginRight: 5 }}
                     />
-
-
                 </form>
-                <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button>
-                <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
-                <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
-
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
-                <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
-                <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+                <div className="ButtonForMobile">
+                    <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button>
+                    <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
+                    <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
+                </div>
+                
+                <div className="ButtonForMobile">
+                    <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
+                    <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
+                    <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+                </div>
+                
 
 
 
@@ -80,7 +82,7 @@ const AUDUnit = () => {
                     <span className="spanLabel">Thành viên hiện tại: </span>
                 </div>
                 <div className='row rowTable'>
-                    <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                    <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                         <tr>
                             <th>
                                 Cảm tình viên
@@ -107,7 +109,7 @@ const AUDUnit = () => {
                         </tr>
                     </table>
 
-                    <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                    <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                         <tr>
                             <th>
                                 Hướng dẫn viên/Cán bộ tăng cường
@@ -150,9 +152,9 @@ const AUDUnit = () => {
                 <span className="spanLabel">Kết quả hoạt động:</span>
                 
             </form>
-            <div style={{display:'flex', justifyContent:'flex-end',}}>
-                <button className="buttonD" style={{marginRight:5,marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleUp()}>Lưu thay đổi</button>
-                <button className="buttonD" style={{marginRight:30,marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleCa()}>Hủy</button>
+            <div className="buttonSubmitForMobile">
+                <button className="buttonS" style={{marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS" style={{marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleCa()}>Hủy</button>
             </div>
             
         </div>

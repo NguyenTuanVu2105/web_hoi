@@ -17,10 +17,10 @@ const InformationUser = ()=>{
                 <fieldset>
                     <legend>Thông tin cá nhân:</legend>
                     <div class="row">
-                        <div className="col-3" id="image_infor">
+                        <div className="avatarForMobile" id="image_infor"  style={{paddingLeft: '8%'}}>
                             <Avatar/>
                         </div>
-                        <div class="col-9">
+                        <div class="informationUserForMobile">
                             <label for="" class="label_information2">Mã thành viên: </label><br/>
                             <label for="" class="label_information2">Họ và tên: </label><br/>
                             <label for="" class="label_information2">Ngày sinh: </label>

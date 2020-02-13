@@ -1,0 +1,33 @@
+.addFM{
+    width: 11%;
+    margin-left: 9.67%;
+}
+.menuFM{
+    margin-bottom: 10px;
+}
+.menuSearchFM{
+    width: 33.33%;
+    margin-left: 46%;
+}
+@media (max-width: 992px){
+    .menuFM{
+        margin-bottom: 10px;
+    }
+    .addFM{
+        width: 100%;
+        margin-left: 0;
+    }
+    .menuSearchFM{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .tenFM{
+        width: 55%;
+        margin-left: 5%;
+    }
+    .nhommauFM{
+        width: 34%;
+        margin-left: 1%;
+    }
+}
