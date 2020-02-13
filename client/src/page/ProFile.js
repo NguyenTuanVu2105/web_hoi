@@ -3,7 +3,7 @@ import InformationUser from '../Component/InformationUser'
 import {formChildren} from '../Component/FormChildren'
 import {formChildrenRight} from '../Component/FormChildrenRight'
 import HomepageContext from "../context/HomepageContext"
-import { Select } from 'antd'
+import { Select, Input } from 'antd'
 import '../css/profile.css'
 import { getUserProfile } from '../api/base/profile'
 
@@ -14,7 +14,7 @@ function ProFileLeft(props) {
     const fetchData = async () => {
         const result = await getUserProfile()
         if (result.success) {
-            setUser(result.data.data)
+            setUser(result.data)
         }
     }
 
@@ -26,13 +26,10 @@ function ProFileLeft(props) {
         })
     }, [])
 
-    console.log(user)
-
     const style = {
         textAlign:'end',
         width : '32%'
     }
-    console.log(nameMap)
     //nhóm máu
     const { Option } = Select;
     return (
@@ -64,7 +61,7 @@ function ProFileLeft(props) {
                         <input type="text" className="input_information" />
                         <label for="" style={style} className="label_information">Nhóm máu: </label>
                         <Select defaultValue="disabled" style={{marginLeft:5, height: 30,width:120}}>
-                            <Option style={{ textAlign: "center" }} value="disabled" disabled>Nhóm máu</Option>
+                            <Option style={{ textAlign: "center" }} value="disabled" disabled>{user.Nhommau}</Option>
                             <Option style={{ textAlign: "center" }} value="1">O</Option>
                             <Option style={{ textAlign: "center" }} value="2">A</Option>
                             <Option style={{ textAlign: "center" }} value="3">B</Option>
@@ -72,7 +69,7 @@ function ProFileLeft(props) {
                         </Select><br/>
                         <label for="" style={style} className="label_information">Rh(D): </label>
                         <Select defaultValue="disabled" style={{marginLeft:5, height: 30,width:120}}>
-                            <Option style={{ textAlign: "center" }} value="disabled" disabled>Rh(D):</Option>
+                            <Option style={{ textAlign: "center" }} value="disabled" disabled>{user.Rh ? "+" : "-"}</Option>
                             <Option style={{ textAlign: "center" }} value="1">+</Option>
                             <Option style={{ textAlign: "center" }} value="2">-</Option>
                         </Select>
