@@ -182,7 +182,7 @@ const TableSearch = () => {
                 style={{ width: '100%', height: 30 }}
               >
                 {table.map(table => (
-                  <Select.Option style={{ textAlign: "center" }} key={table.id}>{table.Hovaten}</Select.Option>
+                  <Select.Option mode='default' style={{ textAlign: "center" }} key={table.id}>{table.Hovaten}</Select.Option>
                 ))}
               </Select>             
             </div>
@@ -258,7 +258,7 @@ const TableSearch = () => {
         <Column title="Trình độ học vấn" dataIndex="Trinhdohocvan" id="Trinhdohocvan" />
         <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
         <Column 
-          title="Tình trạng HĐ" 
+          title="active status" 
           dataIndex="TinhtrangHD"
           fixed="right"
           id="TinhtrangHD"

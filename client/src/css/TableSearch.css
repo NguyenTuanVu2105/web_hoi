@@ -5,6 +5,13 @@
 .menuFM{
     margin-bottom: 10px;
 }
+.menuSearch{
+    width: 100%;
+}
+.tenFM{
+    width: 49%;
+    margin-right: 1%;
+}
 .menuSearchFM{
     width: 33.33%;
     margin-left: 46%;
