@@ -6,7 +6,7 @@ import { Modal, Button } from 'antd'
 import { Select } from 'antd'
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd'
-import { getTableMember } from '../api/base/tablesearch'
+import { getTableMember, addNewMember } from '../api/base/tablesearch'
 import { getClubAll } from '../api/base/admin'
 import { getPosition, getSpecialized} from '../api/base/consernposition'
 
@@ -177,11 +177,15 @@ const TableSearch = () => {
         </div> */}
 
             <div className="">
-              <Search
+              <Select
+                mode="multiple"
                 placeholder="Họ và tên..."
-                onSearch={value => console.log(value)}
                 style={{ width: 200, height: 30 }}
-              />
+              >
+                {table.map(table => (
+                  <Select.Option style={{ textAlign: "center" }} key={table.id}>{table.Hovaten}</Select.Option>
+                ))}
+              </Select>
               <Select defaultValue="Nhóm máu" style={{marginLeft:5, width: 110, height: 30 }} onChange={handleChange}>
                 <Option style={{ textAlign: "center" }} value="O">O</Option>
                 <Option style={{ textAlign: "center" }} value="A">A</Option>
