@@ -6,6 +6,7 @@ import HomepageContext from "../context/HomepageContext"
 import { Select } from 'antd'
 import '../css/profile.css'
 import { getUserProfile } from '../api/base/profile'
+import { createAuthApiRequest } from '../api/index'
 
 function ProFileLeft(props) {
     const {nameMap, setNameMap} = useContext(HomepageContext)
