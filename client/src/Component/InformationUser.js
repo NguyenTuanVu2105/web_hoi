@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect, useState } from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css'; 
 import '../css/InformationUser.css'
 import Avatar from '../Component/UpdateImg'
+import { getUserProfile } from '../api/base/profile'
+
 const InformationUser = ()=>{
     
     const style1 = {
@@ -10,6 +12,20 @@ const InformationUser = ()=>{
         color: "black",
         fontSize: "15px"
     }
+
+    const [user, setUser] = useState([])
+
+    const fetchData = async () => {
+        const result = await getUserProfile()
+        if (result.success) {
+            setUser(result.data)
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     return (
         <div>
             {
@@ -21,10 +37,10 @@ const InformationUser = ()=>{
                             <Avatar/>
                         </div>
                         <div class="col-9">
-                            <label for="" class="label_information2">Mã thành viên: </label><br/>
-                            <label for="" class="label_information2">Họ và tên: </label><br/>
+                            <label for="" class="label_information2">Mã thành viên:</label> {user.Sothethanhvien} <br/>
+                            <label for="" class="label_information2">Họ và tên: </label> {user.Hovaten} <br/>
                             <label for="" class="label_information2">Ngày sinh: </label>
-                            <input type="date" class="input_information2" /><br/>
+                            <input type="date" class="input_information2" defaultValue={user.Ngaysinh} /><br/>
                             <label for="" class="label_information2">Giới tính: </label>
                             <input id="men" style = {{marginLeft: '5px'}} type="radio" class="radio_information" name="gioitinh" value="Nam" />
                             <label for="men" className="sex">Nam </label>
