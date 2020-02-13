@@ -38,7 +38,7 @@ function ProFileLeft(props) {
     const { Option } = Select;
     return (
         <div className="row">
-            <div className = "col-5 offset-1">
+            <div className = "profileForMobile">
                 <InformationUser />
                 {
                     formChildren.map(form => (
@@ -80,7 +80,7 @@ function ProFileLeft(props) {
                     </fieldset>
                 </form>
             </div>
-            <div className = "col-5">
+            <div className = "profileForMobile">
                 {
                     formChildrenRight.map(form =>(
                         <form action = "" method = "post" className = "information"  autocomplete="on">

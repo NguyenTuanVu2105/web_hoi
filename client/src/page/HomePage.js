@@ -28,21 +28,22 @@ function HomePage(props) {
             </Breadcrumb.Item>
         )
     })
+
+    
+    
     return (
         <div className="container-fluid">
-            <div className="row">
-                <div className="col-2 menu-left">
-                    <div className="logoPageBlood">
-
-                    </div>
+            <div className="row homePageBlood">
+                <div className="menu-left">                   
                     <NavBar/>
                 </div>
                 <HomepageContext.Provider value={{
                     nameMap,
                     setNameMap
                 }}>
-                    <div className="col-10 content-right" >
-                        <Header />
+                    <div className="content-right" >
+                        
+                        <Header/>
                         {/*<HorizontalMenu />*/}
                         
                         <Breadcrumb>{breadcrumb}</Breadcrumb>
