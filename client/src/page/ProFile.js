@@ -30,35 +30,37 @@ function ProFileLeft(props) {
         textAlign:'end',
         width : '32%'
     }
+
     //nhóm máu
     const { Option } = Select;
     return (
         <div className="row">
             <div className = "profileForMobile">
                 <InformationUser />
-                {
-                    formChildren.map(form => (
-                        <form action="" method="post" className="information"  autocomplete="on">
-                            <fieldset>
-                                <legend>{form.legend}</legend>
-                                        {
-                                            form.children.map(label => (
-                                                <div>
-                                                    <label for="" style={style} className="label_information">{label.name}</label>
-                                                    <input type="text" className="input_information" />
-                                                </div>
-                                                
-                                            ))
-                                        }
-                            </fieldset>
-                        </form>
-                    ))
-                }
+                    <form action="" method="post" className="information"  autocomplete="on">
+                        <fieldset>
+                            <legend>Thông tin cơ bản</legend>
+                                <div>
+                                    <label for="" style={style} className="label_information">CMND/CCCD/HC: </label>
+                                    <input type="text" defaultValue={user.CMTorHC} className="input_information" />
+                                    <label for="" style={style} className="label_information">Ngày cấp: </label>
+                                    <input type="text" defaultValue={user.Ngaycap} className="input_information" />
+                                    <label for="" style={style} className="label_information">Nơi cấp: </label>
+                                    <input type="text" defaultValue={user.Noicap} className="input_information" />
+                                    <label for="" style={style} className="label_information">Điện thoại: </label>
+                                    <input type="text" defaultValue={user.Dienthoai} className="input_information" />
+                                    <label for="" style={style} className="label_information">Link Facebook: </label>
+                                    <input type="text" defaultValue={user.Facebook} className="input_information" />
+                                    <label for="" style={style} className="label_information">Địa chỉ Email: </label>
+                                    <input type="text" defaultValue={user.Email} className="input_information" />
+                                </div>
+                        </fieldset>
+                    </form>
                 <form action="" method="post" className="information"  autocomplete="on">
                     <fieldset>
                         <legend>Hiến máu:</legend>
                         <label for="" style={style} className="label_information">Số lần hiến máu: </label>
-                        <input type="text" className="input_information" />
+                        <input type="text" defaultValue={user.SolanHM} className="input_information" />
                         <label for="" style={style} className="label_information">Nhóm máu: </label>
                         <Select defaultValue="disabled" style={{marginLeft:5, height: 30,width:120}}>
                             <Option style={{ textAlign: "center" }} value="disabled" disabled>{user.Nhommau}</Option>
@@ -77,28 +79,42 @@ function ProFileLeft(props) {
                 </form>
             </div>
             <div className = "profileForMobile">
-                {
-                    formChildrenRight.map(form =>(
-                        <form action = "" method = "post" className = "information"  autocomplete="on">
-                            <fieldset>
-                                <legend>{form.legend}</legend>
-                                        {
-                                            form.children.map(label => (
-                                                <div>
-                                                    <label for="" style={style} className="label_information">{label.name}</label>
-                                                    <input type="textarea" className="input_information" />
-                                                </div>                                 
-                                            ))
-                                        }
-                            </fieldset>
-                        </form>
-                    ))
-                }
+                <form action = "" method = "post" className = "information"  autocomplete="on">
+                    <fieldset>
+                        <legend>Đơn vị công tác:</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Đơn vị học tập/Công tác: </label>
+                                <input type="textarea" defaultValue={user.Donvi} className="input_information" />
+                                <label for="" style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
+                                <input type="textarea" defaultValue={user.Donvicuthe}  className="input_information" />
+                                <label for="" style={style} className="label_information">Lớp/Phòng ban: </label>
+                                <input type="textarea" defaultValue={user.Donvicuthe} className="input_information" />
+                                <label for="" style={style} className="label_information">Trình độ học vấn: </label>
+                                <input type="textarea" defaultValue={user.Trinhdohocvan} className="input_information" />
+                            </div>                                 
+                    </fieldset>
+                    <fieldset>
+                        <legend>Địa chỉ:</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Quê quán: </label>
+                                <input type="textarea" defaultValue={user.Quequan} className="input_information" />
+                                <label for="" style={style} className="label_information">Nơi ở hiện nay: </label>
+                                <input type="textarea" defaultValue={user.DiachiLL} className="input_information" />
+                            </div>                                 
+                    </fieldset>
+                    <fieldset>
+                        <legend>Liên hệ người thân:</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Địa chỉ liên hệ: </label>
+                                <input type="textarea" defaultValue={user.ThongtinlienheGD} className="input_information" />
+                            </div>                                 
+                    </fieldset>
+                </form>
                 <form action="" method="post" className="information"  autocomplete="on">
                     <fieldset>
                         <legend>Ghi chú khác:</legend>
                         <label for="" style={style} className="label_information">Ghi chú: </label>
-                        <textarea className="input_information" style={{height:26}} cols="50"/>                      
+                        <textarea className="input_information" defaultValue={user.Ghichu} style={{height:26}} cols="50"/>                      
                     </fieldset>
                 </form>
                 <div className="DIVprofile">
