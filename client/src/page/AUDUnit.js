@@ -153,8 +153,8 @@ const AUDUnit = () => {
                 
             </form>
             <div className="buttonSubmitForMobile">
-                <button className="buttonS" style={{marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleUp()}>Lưu thay đổi</button>
-                <button className="buttonS" style={{marginBottom:30, backgroundColor:'rgb(245, 245, 245)'}} onClick={() => handleCa()}>Hủy</button>
+                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS"  onClick={() => handleCa()}>Hủy</button>
             </div>
             
         </div>

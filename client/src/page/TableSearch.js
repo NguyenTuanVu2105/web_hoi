@@ -254,18 +254,18 @@ const TableSearch = () => {
         <Column title="Trình độ học vấn" dataIndex="Trinhdohocvan" id="Trinhdohocvan" />
         <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
         <Column 
-          title="Tình trạng HĐ" 
+          title="status" 
           dataIndex="TinhtrangHD"
           fixed="right"
           id="TinhtrangHD"
           render={(TinhtrangHD) => {
             if (TinhtrangHD) {
               return <span>
-                Đang HĐ
+                <i className="fa fa-circle" style={{color:'rgb(91, 255, 91)'}}></i>
               </span>
             } else {
               return <span>
-                Nghỉ HĐ
+                <i className="fa fa-circle" style={{color:'gray'}}></i>
               </span>
             }
           }}
