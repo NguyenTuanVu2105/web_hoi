@@ -85,13 +85,12 @@ const TableSearch = () => {
   function handleChange(value) {
     console.log(`selected ${value}`)
   }
-
   return (
     <div className="para searchItem">
       <div className='row menuFM' >
         {/* --Thêm thành viên--- */}
         <div className='addFM'>
-          <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white',width:'100%', color: '#1890ff',whiteSpace: 'inherit' }}>
+          <Button className="ADDmember" type="primary" onClick={showModal} style={{ backgroundColor: 'white',width:'100%', color: '#1890ff',whiteSpace: 'inherit' }}>
             Thêm thành viên
           </Button>
           <Modal
@@ -182,13 +181,15 @@ const TableSearch = () => {
               </Select>
             </div>
             <div className="nhommauFM">
-              <Select defaultValue="Nhóm máu" style={{ width:'100%', height: 30 }} onChange={handleChange}>
+              <Select defaultValue="Nhóm máu" style={{ width:'90%', height: 30 }} onChange={handleChange}>
                 <Option style={{ textAlign: "center" }} value="O">O</Option>
                 <Option style={{ textAlign: "center" }} value="A">A</Option>
                 <Option style={{ textAlign: "center" }} value="B">B</Option>
                 <Option style={{ textAlign: "center" }} value="AB">AB</Option>
               </Select>
+              <button className='buttonSearch'><i className="fa fa-search"></i></button>
             </div>
+            
           </form>
         </div>
       </div>

@@ -16,12 +16,22 @@
     width: 33.33%;
     margin-left: 46%;
 }
+
+.buttonSearch{
+    background-color: white;
+    border: none;
+    width: 10%;
+}
+.buttonSearch:hover{
+    color: rgb(24, 144, 255);
+}
+
 @media (max-width: 992px){
     .menuFM{
         margin-bottom: 10px;
     }
     .addFM{
-        width: 100%;
+        width: 50%;
         margin-left: 0;
     }
     .menuSearchFM{
@@ -30,11 +40,11 @@
         margin-top: 10px;
     }
     .tenFM{
-        width: 55%;
+        width: 50%;
         margin-left: 5%;
     }
     .nhommauFM{
-        width: 34%;
-        margin-left: 1%;
+        width: 39%;
+        display: inline-block;
     }
 }
