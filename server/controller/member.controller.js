@@ -1,4 +1,6 @@
 const db = require('../config/db.config')
+const bcrypt = require('bcryptjs')
+const User = db.user
 const Profile = db.member
 const Position = db.position
 const Specialized = db.specialized
@@ -19,7 +21,8 @@ exports.AddProfile = (req, res) => {
                 Ngaysinh: req.body.ngaysinh,
                 specializedId: req.body.specializedId,
                 positionId: req.body.positionId,
-                clubId: req.body.clubId
+                clubId: req.body.clubId,
+                TinhtrangHD  : req.body.tinhtranghd
             }).then(() => {
                 Club.findOne({
                     where: {
@@ -49,7 +52,15 @@ exports.AddProfile = (req, res) => {
                             Ngaysinh: req.body.ngaysinh
                         }
                     }).then(
-                        res.status(200).send({success: true, data: value})
+                        User.create({
+                            username: value,
+                            password: bcrypt.hashSync("12345678", 8),
+                            role: 'member'
+                        }).then(user => {
+                            res.status(200).send({success: true, data: value, users: user})
+                        }).catch(err => {
+                            res.status(500).send({success:false, message: err})
+                        })
                     ).catch(err => {
                             res.status(500).send({success: false,message: err})
                     })
@@ -87,7 +98,6 @@ exports.EditProfile = (req,res) =>{
                 Rh  : req.body.rh ,
                 SolanHM  : req.body.solanhm ,
                 ThoigianHD  : req.body.thoigianhd ,
-                TinhtrangHD  : req.body.tinhtranghd ,
                 ThongtinlienhaGD  : req.body.thongtinlienhegd ,
                 Donvi  : req.body.donvi ,
                 Donvicuthe  : req.body.donvicuthe ,

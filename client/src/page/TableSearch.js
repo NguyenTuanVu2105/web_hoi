@@ -2,7 +2,7 @@ import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext"
 import { Table } from 'antd'
 import '../css/TableSearch.css'
-import { Modal, Button } from 'antd'
+import { Modal, Button, Radio, Form } from 'antd'
 import { Select } from 'antd'
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd'
@@ -11,6 +11,7 @@ import { getClubAll } from '../api/base/admin'
 import { getPosition, getSpecialized} from '../api/base/consernposition'
 
 const { Column } = Table
+const { Option } = Select
 
 const TableSearch = () => {
   const [table, setTable] = useState([])
@@ -66,7 +67,7 @@ const TableSearch = () => {
     setVisible(true)
   };
 
-  const handleOk = e => {
+  const handleSubmit = e => {
     console.log(e);
     alert('Thêm thành công tài khoản:AAAAAAAAA')
     setVisible(false)
@@ -77,29 +78,13 @@ const TableSearch = () => {
     setVisible(false)
   };
 
-  //thêm thành viên
-
-
-
-  // select nhom mau
-  const { Option } = Select;
-
   function handleChange(value) {
-    console.log(`selected ${value}`);
+    console.log(`selected ${value}`)
   }
 
-  // search
-  const { Search } = Input;
-
-
-
-  //tên đội
-  const { Option1 } = Select;
-
   function handleChange(value) {
-    console.log(`selected ${value}`);
+    console.log(`selected ${value}`)
   }
-
 
   return (
     <div className="para searchItem">
@@ -112,12 +97,15 @@ const TableSearch = () => {
           <Modal
             title="Thêm thành viên"
             visible={Visible}
-            onOk={handleOk}
             onCancel={handleCancel}
           >
-            <form >
+            <Form onSubmit={handleSubmit}>
               <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
               <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+              <Radio.Group name="radiogroup">
+                <Radio value={1}  style = {{marginLeft: '5px', marginBottom: 15}} class="radio_information"> Nam </Radio>
+                <Radio value={2}  class="radio_information"> Nữ </Radio>
+              </Radio.Group>
               <Select defaultValue="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
                 {position.map(position => (
                   <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
@@ -128,12 +116,16 @@ const TableSearch = () => {
                   <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
                 ))}
               </Select>
-              <Select mode='default' style={{ width: '100%' }} placeholder="Tên đội" onChange={handleChange}>
+              <Select defaultValue="Tên đội" style={{ width: '100%' }}>
                 {club.map(club => (
                   <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
                 ))}
               </Select>
-            </form>
+              <Radio.Group name="radiogroup">
+                <Radio value={1}  style = {{marginLeft: '5px', marginTop: 15}} class="radio_information"> Đang hoạt động </Radio>
+                <Radio value={2}  class="radio_information"> Nghỉ hoạt động </Radio>
+              </Radio.Group>
+            </Form>
           </Modal>
         </div>
 
@@ -177,14 +169,17 @@ const TableSearch = () => {
         </div> */}
             <div className="tenFM">
               <Select
-                mode="multiple"
+                showSearch
                 placeholder="Họ và tên..."
                 style={{ width: '100%', height: 30 }}
+                filterOption={(input, option) =>
+                  option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                }
               >
                 {table.map(table => (
-                  <Select.Option mode='default' style={{ textAlign: "center" }} key={table.id}>{table.Hovaten}</Select.Option>
+                  <Option value={table.id} style={{ textAlign: "center" }}>{table.Hovaten}</Option>
                 ))}
-              </Select>             
+              </Select>
             </div>
             <div className="nhommauFM">
               <Select defaultValue="Nhóm máu" style={{ width:'100%', height: 30 }} onChange={handleChange}>
@@ -258,18 +253,18 @@ const TableSearch = () => {
         <Column title="Trình độ học vấn" dataIndex="Trinhdohocvan" id="Trinhdohocvan" />
         <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
         <Column 
-          title="active status" 
+          title="Tình trạng HĐ" 
           dataIndex="TinhtrangHD"
           fixed="right"
           id="TinhtrangHD"
           render={(TinhtrangHD) => {
             if (TinhtrangHD) {
               return <span>
-                On
+                Đang HĐ
               </span>
             } else {
               return <span>
-                Off
+                Nghỉ HĐ
               </span>
             }
           }}
