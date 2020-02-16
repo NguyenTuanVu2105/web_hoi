@@ -5,8 +5,9 @@ import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
-
-const AUDUnit = () => {
+import '../api/base/club'
+import { getClub, delClub , postClub} from '../api/base/club';
+const AUDUnit = (props) => {
     const [changeInput, setchangeInput] = useState(true)
     const [changeButton, setchangeButton] = useState(false)
     const [inputDisabledH, setInputDisabledH] = useState(true)
@@ -17,19 +18,27 @@ const AUDUnit = () => {
     const { Search } = Input;
 
     const handleDe = ()=>{
-        window.confirm('Bạn có chắc muốn xóa!');
+        const a = window.confirm('Bạn có chắc muốn xóa!');
+        if(a){
+            delClub()
+        }
     }
     const handleAd = ()=>{
-        window.confirm('Bạn có chắc muốn Thêm mới!');
+        console.log(props.form)
+        const a = window.confirm('Bạn có chắc muốn Thêm mới!');
+        // if(a){
+        //     getClub()
+        // }
     }
 
     const handleUp = ()=>{
-        window.confirm('Bạn có chắc muốn lưu thay đổi!');
-        setchangeInput(true)
+        const a =  window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        if(a){
+            postClub()
+        }
     }
     const handleCa = ()=>{
         window.confirm('Bạn có chắc muốn Hủy thay đổi!');
-        setchangeInput(true)
     }
 
     useEffect(() => {
