@@ -136,7 +136,7 @@ const AUDUnit = () => {
                         </tr>
                     </table>
                 </div>
-                <span className="spanLabel">Tổng số thành viên:</span><br />
+                {/* <span className="spanLabel">Tổng số thành viên:</span><br /> */}
                 <div>
                     <span className="spanLabel">Số đơn vị trực thuộc Chi Hội:</span><br />
                     {

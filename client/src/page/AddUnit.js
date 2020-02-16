@@ -4,6 +4,7 @@ import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 const AddUnit = () => {
     const [changeInput, setchangeInput] = useState(true)
+    const [changeButton, setchangeButton] = useState(false)
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
@@ -12,16 +13,28 @@ const AddUnit = () => {
             ['/AddUnit']: 'Hồ sơ đơn vị'
         })
     }, [])
-    
-
+    const handleUp = ()=>{
+        window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        setchangeInput(true)
+    }
+    const handleCa = ()=>{
+        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+        setchangeInput(true)
+    }
+    const handleDe = ()=>{
+        window.confirm('Bạn có chắc muốn xóa!');
+    }
     return (
         <div className = "para">
-            
+            <div className="ButtonForMobileAdd">
+                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
+                <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+            </div>
             {
                 AddUnitChild.map(label => (
                     <div>
-                        <span className = "spanLabel">{label.name}</span>
-                        <input id="inputDisbleA" className="inputDisable"  placeholder='1234' disabled={changeInput} />                         
+                        <span className="spanLabel">{label.name}</span>
+                        <input type="text" className="inputDisable" placeholder='1234' onChange={(e) => console.log(e.target.value)} defaultValue="1234" disabled={changeInput} />
                     </div>
                 ))
             }
@@ -96,7 +109,10 @@ const AddUnit = () => {
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
             <span className = "spanLabel">Kết quả hoạt động:</span>
-            <div></div>
+            <div className="buttonSubmitForMobile">
+                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS"  onClick={() => handleCa()}>Hủy</button>
+            </div>
         </div>
     )
 }

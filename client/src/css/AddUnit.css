@@ -31,3 +31,27 @@
 .inputTH{
     width: 41px;
 }
+.buttonDisable{
+    height: 32px;
+    width: 31%;
+    margin-left: 1.75%;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;  
+}
+.buttonDisable:hover{
+    /* border: 1px solid #40a9ff;   */
+    background-color: #aad7fc;
+}
+.ButtonForMobileAdd{
+    margin-left: 70%;
+}
+
+@media (max-width: 992px){
+    .ButtonForMobileAdd{
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
