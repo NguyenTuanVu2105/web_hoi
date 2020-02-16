@@ -18,6 +18,10 @@ export const navs = [
         IconID: 'icon2', 
         children: [
             {
+                name:"TRA CỨU THÀNH VIÊN",
+                href:"/TableSearch"
+            },
+            {
                 name: "HỒ SƠ CÁ NHÂN",
                 href: "/profile"
             }, 

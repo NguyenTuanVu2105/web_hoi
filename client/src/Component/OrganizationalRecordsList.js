@@ -30,10 +30,10 @@ export const OrganizationalRecordsList = [
                 name : "Đơn vị mới",
                 href : "/AUDUnit"
             },
-            {
-                name : "Tra cứu thông tin đơn vị",
-                href : "/TableSearch"
-            },
+            // {
+            //     name : "Tra cứu thông tin đơn vị",
+            //     href : "/TableSearch"
+            // },
             {
                 name : "In danh sách đơn vị"
             }

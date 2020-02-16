@@ -49,9 +49,8 @@ function HomePage(props) {
                     <div className="content-right" >
                         
                         <Header/>
-                        {/*<HorizontalMenu />*/}
-                        
-                        <Breadcrumb>{breadcrumb}</Breadcrumb>
+                        {/*<HorizontalMenu />*/}                      
+                        <Breadcrumb style={{paddingLeft:15, paddingTop:10}}>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}
                         {/* <ProFileLeft />
