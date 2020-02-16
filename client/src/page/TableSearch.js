@@ -256,7 +256,7 @@ const TableSearch = () => {
         <Column 
           title="status" 
           dataIndex="TinhtrangHD"
-          fixed="right"
+          
           id="TinhtrangHD"
           render={(TinhtrangHD) => {
             if (TinhtrangHD) {
@@ -272,7 +272,7 @@ const TableSearch = () => {
         />
         <Column 
           title="Chọn" 
-          fixed="right" 
+          
           id="Chon" 
           render={(text, record) => (
             <span>

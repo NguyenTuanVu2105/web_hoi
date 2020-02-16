@@ -33,6 +33,8 @@ export const checkAuth = () => {
     return getCookie(COOKIE_KEY.TOKEN) ? true : false
 }
 
-export const setUserCookies = (token) => {
-    setCookie(COOKIE_KEY.TOKEN, token);
+export const setUserCookies = (token, role) => {
+    setCookie(COOKIE_KEY.TOKEN, token)
+    setCookie(COOKIE_KEY.ROLE, role)
 }
+

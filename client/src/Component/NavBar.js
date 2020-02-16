@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './style.css'
 import '../css/NavBar.css'
 import { navs } from '../nav'
+import { logout } from '../api/auth/auth';
 
 const NavBar = () => {
 
@@ -67,7 +68,7 @@ const NavBar = () => {
 
                     ))
                 }
-                <a style={{ borderBottom: '1px solid black' }}>Đăng suất</a>
+                <a style={{ borderBottom: '1px solid black' }} onClick={logout()}>Đăng xuất</a>
             </div>
         </div>
 
