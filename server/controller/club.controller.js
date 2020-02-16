@@ -56,7 +56,6 @@ exports.EditClub = (req,res) =>{
                 Huongdanvien  :  req.body.huongdanvien,
                 Huanluyenvien  : req.body.huanluyenvien,
                 Canbotangcuong  :  req.body.canbotangcuong,
-                Tongsothanhvien  :  req.body.tongsothanhvien,
                 Diemhienmau  :  req.body.diemhienmau,
                 Ketquahoatdong :  req.body.ketquahoatdong
             },
@@ -91,7 +90,7 @@ exports.DeleteClub = (req,res) =>{
 }
 exports.ViewClub = (req, res) => {
     Club.findOne({
-        where:{Madoi  :req.body.madoi}
+        where:{Madoi  :req.query.madoi}
     }).then( result => {
       res.status(200).send({success: true,data: result,});
     })

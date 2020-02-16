@@ -10,7 +10,6 @@ module.exports = (sequelize, Sequelize) => {
         Huongdanvien:       Sequelize.INTEGER,
         Huanluyenvien:      Sequelize.INTEGER,
         Canbo:     Sequelize.INTEGER,
-        Tongsothanhvien:    Sequelize.INTEGER,
     });
     return Association;
 }

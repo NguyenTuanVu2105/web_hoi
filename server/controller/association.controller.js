@@ -12,7 +12,6 @@ exports.EditAssociation = (req,res) =>{
         Huongdanvien  :  req.body.huongdanvien,
         Huanluyenvien  : req.body.huanluyenvien,
         Canbo  :  req.body.canbo,
-        Tongsothanhvien : req.body.tongsothanhvien,
         },
         {
         where:{}

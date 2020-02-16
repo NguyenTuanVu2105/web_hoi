@@ -41,7 +41,7 @@ exports.ViewMember = (req, res) => {
             where: {
                 [Op.or]: [
                         {Hovaten:  req.query.hovaten }, 
-                    {Nhommau: req.query.nhommau || null}
+                        {Nhommau: req.query.nhommau || null}
                     ]
             },  
             include: [
@@ -65,6 +65,15 @@ exports.ViewMember = (req, res) => {
         res.status(500).send({success: false, message: err})
     })
     }
+}
+exports.SearchClub = (req, res) => {
+    Club.findAll({
+        attributes: ['Madoi', 'Tendoi']
+    }).then(information => {
+        res.status(200).send({success: true, data: information})
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
 }
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
