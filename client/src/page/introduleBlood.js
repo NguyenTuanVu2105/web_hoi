@@ -5,6 +5,15 @@ import '../css/AddUnit.css'
 const IntroduleBlood = () => {
     const [changeInput, setchangeInput] = useState(true)
     const {nameMap, setNameMap} = useContext(HomepageContext)
+
+    const handleUp = ()=>{
+        window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        setchangeInput(true)
+    }
+    const handleCa = ()=>{
+        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+        setchangeInput(true)
+    }
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',
@@ -16,7 +25,10 @@ const IntroduleBlood = () => {
 
     return (
         <div className = "para">
-            <h4><a style={{color:'red'}} href='/introduleBloodDisplay'>Phần I: Giới thiệu về Hội></a></h4>
+            <div className="ButtonForMobileAdd">
+                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
+            </div>
+            <h4><a style={{color:'red'}} href='/introduleBloodDisplay'>Phần I: Giới thiệu về Hội >>></a></h4>
             {
                 introduleBloodList.map(label => (
                     <div>
@@ -95,7 +107,10 @@ const IntroduleBlood = () => {
             </div>
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
             
-            <div></div>
+            <div className="buttonSubmitForMobile">
+                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS"  onClick={() => handleCa()}>Hủy</button>
+            </div>
         </div>
     )
 }
