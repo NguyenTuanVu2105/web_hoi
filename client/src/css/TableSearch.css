@@ -1,0 +1,50 @@
+.addFM{
+    width: 11%;
+    margin-left: 9.67%;
+}
+.menuFM{
+    margin-bottom: 10px;
+}
+.menuSearch{
+    width: 100%;
+}
+.tenFM{
+    width: 49%;
+    margin-right: 1%;
+}
+.menuSearchFM{
+    width: 33.33%;
+    margin-left: 46%;
+}
+
+.buttonSearch{
+    background-color: white;
+    border: none;
+    width: 10%;
+}
+.buttonSearch:hover{
+    color: rgb(24, 144, 255);
+}
+
+@media (max-width: 992px){
+    .menuFM{
+        margin-bottom: 10px;
+    }
+    .addFM{
+        width: 50%;
+        margin-left: 0;
+    }
+    .menuSearchFM{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .tenFM{
+        width: 50%;
+        margin-left: 5%;
+    }
+    .nhommauFM{
+        width: 39%;
+        display: inline-block;
+    }
+}

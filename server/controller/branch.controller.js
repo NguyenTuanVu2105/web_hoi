@@ -1,5 +1,5 @@
-const db = require('../config/db.config');
-const Branch = db.branch;
+const db = require('../config/db.config')
+const Branch = db.branch
 const Position = db.position
 const Club = db.club
 const Member = db.member

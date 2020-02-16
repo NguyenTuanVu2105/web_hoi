@@ -17,14 +17,19 @@ const AUDUnit = () => {
     const { Search } = Input;
 
     const handleDe = ()=>{
-        window.confirm('hihi');
+        window.confirm('Bạn có chắc muốn xóa!');
     }
     const handleAd = ()=>{
-        window.confirm('hihihi');
+        window.confirm('Bạn có chắc muốn Thêm mới!');
     }
 
     const handleUp = ()=>{
-        window.confirm('hihihihi');
+        window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        setchangeInput(true)
+    }
+    const handleCa = ()=>{
+        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+        setchangeInput(true)
     }
 
     useEffect(() => {
@@ -37,25 +42,26 @@ const AUDUnit = () => {
 
     return (
         <div>
-            <div className='changeAUDUnit'>
-                <form>
-
+            <div className=' row changeAUDUnit'>
+                <form className="searchForMobile">
                     <Search
                         placeholder="Tìm kiếm"
                         onSearch={value => console.log(value)}
-                        style={{ width: 200, height: 30, marginRight: 5 }}
+                        style={{ height: 30, marginRight: 5 }}
                     />
-
-
                 </form>
-                <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button>
-                <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
-                <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
-
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
-                <button className="buttonDisable" onClick={() => handleUp()}>Lưu thay đổi</button>
-                <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
-                <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+                <div className="ButtonForMobile">
+                    <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button>
+                    <button className="buttonD" onClick={() => setchangeButton(false)}>Chi Hội</button>
+                    <button className="buttonD" onClick={() => setchangeButton(false)}>Đội</button>
+                </div>
+                
+                <div className="ButtonForMobile">
+                    <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
+                    <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button>
+                    <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+                </div>
+                
 
 
 
@@ -76,7 +82,7 @@ const AUDUnit = () => {
                     <span className="spanLabel">Thành viên hiện tại: </span>
                 </div>
                 <div className='row rowTable'>
-                    <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                    <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                         <tr>
                             <th>
                                 Cảm tình viên
@@ -103,7 +109,7 @@ const AUDUnit = () => {
                         </tr>
                     </table>
 
-                    <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                    <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                         <tr>
                             <th>
                                 Hướng dẫn viên/Cán bộ tăng cường
@@ -144,8 +150,13 @@ const AUDUnit = () => {
 
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
-                <div></div>
+                
             </form>
+            <div className="buttonSubmitForMobile">
+                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS"  onClick={() => handleCa()}>Hủy</button>
+            </div>
+            
         </div>
     )
 }

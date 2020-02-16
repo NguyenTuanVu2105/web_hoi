@@ -32,14 +32,21 @@ const SearchUnit = () =>{
                 unit.map(search =>(
                     <div>
                         <div class="panel-heading list-group-blood">
-                            <a data-toggle="collapse" href={`#${search.Machihoi}`} onclick="myFunction('icon10')" style={{fontSize:'23px', width:"100%"}}>{search.Tenchihoi} <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}></i></a>
+                            <a className="AFM" data-toggle="collapse" href={`#${search.Machihoi}`}>{search.Tenchihoi} 
+                                <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
+                            </a>
                         </div>
                         <div id={search.Machihoi} class="panel-collapse collapse">
                             <ul class="list-group">
                                 {
                                     search.clubs.map(child =>(
                                     <li class="list-group-blood-item">
-                                        <div style={{width:"100%"}}><a class="list-items-a" title="hihihii" href={child.href}>{child.Tendoi}<i class="fa fa-caret-right" style={{fontSize :"20px", marginTop:"3px"}}></i></a></div>
+                                        <div style={{width:"100%"}}><a class="list-items-a"  href={child.href}>{child.Tendoi}
+                                        <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
+                                            <i class="fa fa-caret-right" style={{fontSize :"20px"}}/>
+                                        </div>
+                                        
+                                        </a></div>
                                         </li>
                                     ))
                                 }
