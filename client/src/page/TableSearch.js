@@ -146,7 +146,7 @@ const TableSearch = (props) => {
                 </Radio.Group>
               )}
               <Form.Item>
-                <Button type="primary" style = {{marginLeft: '5px', marginTop: 15}} htmlType="submit">Tạo</Button>
+                <Button type="primary" style = {{marginLeft: 360, marginTop: 15}} htmlType="submit">Tạo</Button>
               </Form.Item>
             </Form>
           </Modal>
