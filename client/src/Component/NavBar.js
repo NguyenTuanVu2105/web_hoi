@@ -55,8 +55,8 @@ const NavBar = () => {
                                 </a>
 
                             </div>
-                            <div id={nav.Id2} class="panel-collapse collapse">
-                                <ul class="list-group">
+                            <div id={nav.Id2} className="panel-collapse collapse">
+                                <ul className="list-group">
                                     {
                                         nav.children.map(x => (
                                             <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>

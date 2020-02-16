@@ -14,7 +14,18 @@ const SearchUnit = () =>{
         }
     }
 
+
+    // const [club, setClub] = useState([])
+    // const fetchDataClub = async () => {
+    //     const result = await getClubAll()
+    //     if (result.success) {
+    //       setClub(result.data.data)
+    //     }
+    //   }
+
+
     useEffect(() => {
+        // fetchDataClub()
         fetchData()
         setNameMap({
             ['/']: 'Trang chủ', 
@@ -31,6 +42,11 @@ const SearchUnit = () =>{
             {
                 unit.map(search =>(
                     <div>
+                        {/* <Select defaultValue="Tên đội" style={{ width: '100%' }}>
+                {club.map(club => (
+                  <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                ))}
+              </Select> */}
                         <div class="panel-heading list-group-blood">
                             <a className="AFM" data-toggle="collapse" href={`#${search.Machihoi}`}>{search.Tenchihoi} 
                                 <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
