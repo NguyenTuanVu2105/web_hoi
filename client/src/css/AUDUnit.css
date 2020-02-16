@@ -32,8 +32,9 @@
 }
 .changeAUDUnit{
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
+    margin-left: 15px;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .searchForMobile{
@@ -60,6 +61,12 @@
 }
 .buttonS:hover{
     background-color: #40a9ff;
+}
+#chiHoiA{
+    display: block;  
+}
+#DoiA{
+    display: none;
 }
 @media (max-width: 992px){
     .changeAUDUnit{
