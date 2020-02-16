@@ -15,7 +15,6 @@ export const getUser = async () => {
         const result = await getUserProfile()
         if (result.success) {
             user = result.data
-            console.log(user)
         } else {
             return null
         }
@@ -29,7 +28,6 @@ export const getUser = async () => {
 }
 
 export const checkAuth = () => {
-    console.log(getCookie(COOKIE_KEY.TOKEN))
     return getCookie(COOKIE_KEY.TOKEN) ? true : false
 }
 

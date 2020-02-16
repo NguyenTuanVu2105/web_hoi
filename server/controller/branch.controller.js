@@ -60,7 +60,6 @@ exports.EditBranch = (req,res) =>{
                 Huongdanvien  :  req.body.huongdanvien,
                 Huanluyenvien  : req.body.huanluyenvien,
                 Canbotangcuong  :  req.body.canbotangcuong,
-                Tongsothanhvien  :  req.body.tongsothanhvien,
                 Diemhienmau  :  req.body.diemhienmau,
                 Ketquahoatdong :  req.body.ketquahoatdong
             },
@@ -80,7 +79,7 @@ exports.EditBranch = (req,res) =>{
 exports.DeleteBranch = (req,res) =>{
     Branch.destroy({
         where: {
-            Machihoi: req.body.machihoi
+            Machihoi: req.query.machihoi
         }
     }).then(function (result) {
         if(result !== 0)
@@ -95,7 +94,7 @@ exports.DeleteBranch = (req,res) =>{
 }
 exports.ViewBranch = (req, res) => {
     Branch.findOne({
-        where:{Machihoi  :req.body.machihoi}
+        where:{Machihoi  :req.query.machihoi}
     }).then( result => {
       res.status(200).send({success: true,data: result,});
     })
