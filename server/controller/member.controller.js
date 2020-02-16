@@ -19,6 +19,7 @@ exports.AddProfile = (req, res) => {
             Profile.create({
                 Hovaten: req.body.hovaten,
                 Ngaysinh: req.body.ngaysinh,
+                Gioitinh: req.body.gioitinh,
                 specializedId: req.body.specializedId,
                 positionId: req.body.positionId,
                 clubId: req.body.clubId,

@@ -13,7 +13,8 @@ import { getPosition, getSpecialized} from '../api/base/consernposition'
 const { Column } = Table
 const { Option } = Select
 
-const TableSearch = () => {
+const TableSearch = (props) => {
+  const { getFieldDecorator } = props.form
   const [table, setTable] = useState([])
   const [club, setClub] = useState([])
   const [position, setPosition] = useState([])
@@ -68,8 +69,12 @@ const TableSearch = () => {
   };
 
   const handleSubmit = e => {
-    console.log(e);
-    alert('Thêm thành công tài khoản:AAAAAAAAA')
+    e.preventDefault()
+    props.form.validateFields((err, values) => {
+      if (!err) {
+        addNewMember(values)
+      }
+    });
     setVisible(false)
   };
 
@@ -97,33 +102,52 @@ const TableSearch = () => {
             title="Thêm thành viên"
             visible={Visible}
             onCancel={handleCancel}
+            okText="submit"
+            footer={null}
           >
             <Form onSubmit={handleSubmit}>
-              <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
-              <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
-              <Radio.Group name="radiogroup">
-                <Radio value={1}  style = {{marginLeft: '5px', marginBottom: 15}} class="radio_information"> Nam </Radio>
-                <Radio value={2}  class="radio_information"> Nữ </Radio>
-              </Radio.Group>
-              <Select defaultValue="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
-                {position.map(position => (
-                  <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
-                ))}
-              </Select>
-              <Select defaultValue="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
-                {specialized.map(specialized => (
-                  <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
-                ))}
-              </Select>
-              <Select defaultValue="Tên đội" style={{ width: '100%' }}>
-                {club.map(club => (
-                  <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
-                ))}
-              </Select>
-              <Radio.Group name="radiogroup">
-                <Radio value={1}  style = {{marginLeft: '5px', marginTop: 15}} class="radio_information"> Đang hoạt động </Radio>
-                <Radio value={2}  class="radio_information"> Nghỉ hoạt động </Radio>
-              </Radio.Group>
+              {getFieldDecorator('hovaten')(
+                <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
+              )}
+              {getFieldDecorator('ngaysinh')(
+                <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+              )}
+              {getFieldDecorator('gioitinh')(
+                <Radio.Group name="radiogroup">
+                  <Radio value={1}  style = {{marginLeft: '5px', marginBottom: 15}} class="radio_information"> Nam </Radio>
+                  <Radio value={0}  class="radio_information"> Nữ </Radio>
+                </Radio.Group>
+              )}
+              {getFieldDecorator('positionId')(
+                <Select defaultValue="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
+                  {position.map(position => (
+                    <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
+                  ))}
+                </Select>
+              )}
+              {getFieldDecorator('specializedId')(
+                <Select defaultValue="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
+                  {specialized.map(specialized => (
+                    <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
+                  ))}
+                </Select>
+              )}
+              {getFieldDecorator('clubId')(
+                <Select defaultValue="Tên đội" style={{ width: '100%' }}>
+                  {club.map(club => (
+                    <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                  ))}
+                </Select>
+              )}
+              {getFieldDecorator('tinhtranghd')(
+                <Radio.Group name="radiogroup">
+                  <Radio value={1}  style = {{marginLeft: '5px', marginTop: 15}} class="radio_information"> Đang hoạt động </Radio>
+                  <Radio value={0}  class="radio_information"> Nghỉ hoạt động </Radio>
+                </Radio.Group>
+              )}
+              <Form.Item>
+                <Button type="primary" style = {{marginLeft: '5px', marginTop: 15}} htmlType="submit">Tạo</Button>
+              </Form.Item>
             </Form>
           </Modal>
         </div>
@@ -287,4 +311,5 @@ const TableSearch = () => {
   )
 }
 
-export default TableSearch;
+
+export default Form.create()(TableSearch)
