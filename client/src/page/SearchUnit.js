@@ -41,7 +41,7 @@ const SearchUnit = () =>{
                                 {
                                     search.clubs.map(child =>(
                                     <li class="list-group-blood-item">
-                                        <div style={{width:"100%"}}><a class="list-items-a"  href={child.href}>{child.Tendoi}
+                                        <div style={{width:"100%"}}><a class="list-items-a"  href="/AddUnit">{child.Tendoi}
                                         <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
                                             <i class="fa fa-caret-right" style={{fontSize :"20px"}}/>
                                         </div>

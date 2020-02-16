@@ -14,7 +14,7 @@ const LoginWrap = (props) => {
     const [message, setMessage] = useState('')
     const handleLogin = (data) => {
         if (data.Success) {
-          setUserCookies(data.accessToken)
+          setUserCookies(data.accessToken, data.message)
         }
     }
     const submitLogin = async (values) => {

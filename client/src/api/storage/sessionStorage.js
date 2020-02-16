@@ -14,4 +14,5 @@ export const removeSessionStorage = (name) => {
 
 export const COOKIE_KEY = {
     TOKEN: 'TOKEN',
+    ROLE: 'ROLE'
 }

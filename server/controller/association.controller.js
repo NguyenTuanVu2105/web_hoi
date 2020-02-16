@@ -6,17 +6,8 @@ exports.EditAssociation = (req,res) =>{
         Ngaythanhlap : req.body.ngaythanhlap,
         Phutrach : req.body.phutrach,
         Ngaytruyenthong : req.body.ngaytruyenthong,
-<<<<<<< HEAD
-        Camtinhvien :  req.body.camtinhvien,
-        TNV : req.body.tnv,
-        Hoivien : req.body.hoivien,
-        Huongdanvien  :  req.body.huongdanvien,
-        Huanluyenvien  : req.body.huanluyenvien,
-        Canbo  :  req.body.canbo,
-=======
         Tongsothanhvien : req.body.tongsothanhvien,
         Gioithieu : req.body.gioithieu,
->>>>>>> bd26fc20ed192dbe11adb3961ca6aa038e8a51d5
         },
         {
         where:{}

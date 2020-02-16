@@ -9,7 +9,7 @@ const AddUnit = () => {
         setNameMap({
             ['/']: 'Trang chủ',
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-            ['/AddUnit']: 'Thêm đơn vị'
+            ['/AddUnit']: 'Hồ sơ đơn vị'
         })
     }, [])
     

@@ -83,7 +83,7 @@ const AUDUnit = (props) => {
                     AddUnitChild.map(label => (
                         <div>
                             <span className="spanLabel">{label.name}</span>
-                            <input id="inputDisbleA" className="inputDisable" placeholder='1234' value="1234" disabled={changeInput} />
+                            <input type="text" className="inputDisable" placeholder='1234' onChange={(e) => console.log(e.target.value)} defaultValue="1234" disabled={changeInput} />
                         </div>
                     ))
                 }
