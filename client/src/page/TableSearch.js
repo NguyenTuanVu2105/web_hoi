@@ -2,7 +2,7 @@ import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext"
 import { Table } from 'antd'
 import '../css/TableSearch.css'
-import { Modal, Button, Radio, Form } from 'antd'
+import { Modal, Button, Radio, Form, notification } from 'antd'
 import { Select } from 'antd'
 import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd'
@@ -73,9 +73,12 @@ const TableSearch = (props) => {
     props.form.validateFields((err, values) => {
       if (!err) {
         addNewMember(values)
+        setVisible(false)
+        notification['success']({
+          message: 'Thêm thành công thành viên ' + values.hovaten,
+        })
       }
-    });
-    setVisible(false)
+    })
   };
 
   const handleCancel = e => {
