@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {renderRoutes} from 'react-router-config'
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import NavBar from '../Component/NavBar';
 // import ProFileLeft from './ProFile';
 import Header from '../Component/Header';
@@ -17,10 +17,15 @@ import signIn from '../page/signIn'
 import {Breadcrumb, Input} from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
+import { checkAuth } from '../api/auth/auth';
 
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
+    if (!checkAuth()) {
+        props.history.push('/login')
+    }
+
     const breadcrumb = _.map(nameMap, (name, url) => {
         return (
             <Breadcrumb.Item key={url}>
@@ -64,4 +69,4 @@ function HomePage(props) {
     )
 }
 
-export default HomePage
+export default withRouter(HomePage)

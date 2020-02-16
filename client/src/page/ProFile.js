@@ -13,8 +13,10 @@ function ProFileLeft(props) {
 
     const fetchData = async () => {
         const result = await getUserProfile()
-        if (result.success) {
-            setUser(result.data)
+        if (result) {
+            if (result.success) {
+                setUser(result.data)
+            }
         }
     }
 
