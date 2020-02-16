@@ -68,7 +68,7 @@ const NavBar = () => {
 
                     ))
                 }
-                <a style={{ borderBottom: '1px solid black' }} onClick={logout}>Đăng xuất</a>
+                <a style={{ borderBottom: '1px solid black', marginLeft:15,marginTop:10}} onClick={logout}>Đăng xuất</a>
             </div>
         </div>
 

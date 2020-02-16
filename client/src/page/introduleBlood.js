@@ -2,6 +2,7 @@ import React, {Component,useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import {introduleBloodList, ItemUnit} from '../Component/introduleBloodList'
 import '../css/AddUnit.css'
+import '../css/introduleBlood.css'
 const IntroduleBlood = () => {
     const [changeInput, setchangeInput] = useState(true)
     const {nameMap, setNameMap} = useContext(HomepageContext)
@@ -51,7 +52,7 @@ const IntroduleBlood = () => {
             <span className = "spanLabel">Thành viên hiện tại: </span>
             </div>
             <div className='row rowTable'>
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                     <tr>
                         <th>
                             Cảm tình viên
@@ -78,7 +79,7 @@ const IntroduleBlood = () => {
                     </tr>
                 </table>
 
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                     <tr>
                         <th>
                             Hướng dẫn viên/Cán bộ tăng cường
