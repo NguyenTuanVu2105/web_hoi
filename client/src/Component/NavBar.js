@@ -55,8 +55,8 @@ const NavBar = () => {
                                 </a>
 
                             </div>
-                            <div id={nav.Id2} class="panel-collapse collapse">
-                                <ul class="list-group">
+                            <div id={nav.Id2} className="panel-collapse collapse">
+                                <ul className="list-group">
                                     {
                                         nav.children.map(x => (
                                             <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
@@ -68,7 +68,7 @@ const NavBar = () => {
 
                     ))
                 }
-                <a style={{ borderBottom: '1px solid black', marginLeft:15,marginTop:10}} onClick={logout}>Đăng xuất</a>
+                <a style={{ borderBottom: '1px solid black', marginLeft:15,marginTop:15}} onClick={logout}>Đăng xuất</a>
             </div>
         </div>
 

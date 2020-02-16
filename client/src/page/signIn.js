@@ -37,7 +37,9 @@ const LoginWrap = (props) => {
       
     const { getFieldDecorator } = props.form;
     return (
-        <div className="login-wrap">
+      
+        <div className="login-wrap backgroundSignIn">
+          <div className="backgroundOpacity"></div>
             <Form onSubmit={handleSubmit} className="login-form">
             {message && <Alert style={{marginBottom: '20px'}} message={message} type="error"/>}
                 <Form.Item>
