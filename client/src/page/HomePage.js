@@ -50,7 +50,7 @@ function HomePage(props) {
                         
                         <Header/>
                         {/*<HorizontalMenu />*/}                      
-                        <Breadcrumb style={{paddingLeft:15, paddingTop:10}}>{breadcrumb}</Breadcrumb>
+                        <Breadcrumb style={{paddingLeft:25, paddingTop:10}}>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}
                         {/* <ProFileLeft />
