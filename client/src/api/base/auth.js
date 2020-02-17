@@ -1,7 +1,7 @@
-import {createAuthApiRequest} from '../index'
+import {createApiRequest} from '../index'
 
 export const login = (data) => {
-    return createAuthApiRequest({
+    return createApiRequest({
         url: '/api/login', 
         method: 'post',
         data: data
