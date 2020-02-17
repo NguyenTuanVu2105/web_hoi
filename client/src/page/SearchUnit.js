@@ -3,7 +3,10 @@ import '../css/SearchUnit.css'
 import React, {Component, useContext, useEffect, useState} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { getUnitAll } from '../api/base/unit'
+import { Select } from 'antd'
+import { getClubAll } from '../api/base/admin'
 
+const { Option } = Select
 const SearchUnit = () =>{
     const {nameMap, setNameMap} = useContext(HomepageContext)
     const [unit, setUnit] = useState([])
@@ -14,14 +17,13 @@ const SearchUnit = () =>{
         }
     }
 
-
-    // const [club, setClub] = useState([])
-    // const fetchDataClub = async () => {
-    //     const result = await getClubAll()
-    //     if (result.success) {
-    //       setClub(result.data.data)
-    //     }
-    //   }
+    const [club, setClub] = useState([])
+    const fetchDataClub = async () => {
+        const result = await getClubAll()
+        if (result.success) {
+          setClub(result.data.data)
+        }
+      }
 
 
     useEffect(() => {
@@ -39,19 +41,20 @@ const SearchUnit = () =>{
 
     return(
         <div className="para">
+            <Select defaultValue="Tên đội" style={{ width: '100%' }}>
+                {club.map(club => (
+                    <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                ))}
+            </Select>
             {
                 unit.map(search =>(
                     <div>
-                        {/* <Select defaultValue="Tên đội" style={{ width: '100%' }}>
-                {club.map(club => (
-                  <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
-                ))}
-              </Select> */}
-                        <div class="panel-heading list-group-blood">
-                            <a className="AFM" data-toggle="collapse" href={`#${search.Machihoi}`}>{search.Tenchihoi} 
+                        
+                        <a class="panel-heading list-group-blood " data-toggle="collapse" href={`#${search.Machihoi}`}>
+                            <div className="AFM">{search.Tenchihoi} 
                                 <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                         <div id={search.Machihoi} class="panel-collapse collapse">
                             <ul class="list-group">
                                 {
@@ -77,3 +80,10 @@ const SearchUnit = () =>{
 }
 
 export default SearchUnit;
+
+
+{/* <div class="panel-heading list-group-blood">
+                            <a className="AFM" data-toggle="collapse" href={`#${search.Machihoi}`}>{search.Tenchihoi} 
+                                <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
+                            </a>
+                        </div> */}

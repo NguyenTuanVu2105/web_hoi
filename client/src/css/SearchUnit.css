@@ -31,9 +31,11 @@
     padding-left: 15px;
     flex-direction:column-reverse;
     border: 1px solid red;
+    color: red;
 }
 .list-group-blood:hover{
     background-color: rgb(248, 234, 234) !important;
+    color: rgb(123, 20, 219);
 }
 .list-group-blood a{
     color: red !important;
