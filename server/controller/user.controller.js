@@ -6,6 +6,7 @@ const Op = db.Sequelize.Op;
 
 var jwt = require('jsonwebtoken')
 var bcrypt = require('bcryptjs')
+var nodemailer = require('nodemailer');
 
 exports.login = (req, res) => {
 	console.log("Sign-In");
@@ -40,11 +41,12 @@ exports.editPassword = (req, res)=>{
 			id: req.userId
 		}, 
 	}).then(user => {
-		if (user.password!=req.body.password) {
-			return res.status(404).send({message:"Mật khẩu không chính xác"});
+		var passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
+		if (!passwordIsValid) {
+			return res.status(401).send({message:"Password không đúng"});
 		}
 		User.update({
-			password: req.body.newpassword
+			password: bcrypt.hashSync(req.body.newpassword,10)
 		},{
 			where: { id: user.id }
 			}).then( () =>res.status(200).send({success : true})
@@ -52,6 +54,45 @@ exports.editPassword = (req, res)=>{
 				{
 					res.status(500).send({message: err})
 				})
+	}).catch(err =>
+        {
+            res.status(500).send({message: err})
+    })
+}
+exports.ForgetPassword = (req, res)=>{
+	User.findOne({
+		where: {
+			username: req.body.username
+		}, 
+	}).then(user => {
+		if (!user) {
+			return res.status(401).send({message:"Username không chính xác"});
+		}
+		else{
+			var transporter = nodemailer.createTransport({
+				service: 'gmail',
+				auth: {
+				  user: 'hoithanhnienvandonghienmau@gmail.com',
+				  pass: 'hoimauhanoi1994@'
+				}
+			  });
+			  
+			  var mailOptions = {
+				from: 'hoithanhnienvandonghienmau@gmail.com',
+				to: 'anhvuonghn99@gmail.com',
+				subject: 'Sending Email using Node.js',
+				text:'You recieved message from server',
+				html: 'Tài khoản:' + req.body.username + ' đã quên mật khẩu và yêu cầu cấp lại' 			  
+			};
+			  
+			  transporter.sendMail(mailOptions, function(error, info){
+				if (error) {
+				  res.status(401).send({message:error});
+				} else {
+				  res.status(200).send({success : true})
+				}
+			  });
+		}
 	}).catch(err =>
         {
             res.status(500).send({message: err})
