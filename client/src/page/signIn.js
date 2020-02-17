@@ -70,8 +70,6 @@ const LoginWrap = (props) => {
                 </Form.Item>
                 <div className="divMK">
                   <a className="quenDoiMK">Quên mật khẩu</a>
-                  |
-                  <a className="quenDoiMK">Đổi mật khẩu</a>
                 </div>                
             </Form>
         </div>
