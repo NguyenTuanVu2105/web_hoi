@@ -1,7 +1,7 @@
-import {createApiRequest} from '../index'
+import {createAuthApiRequest} from '../index'
 
 export const getClubAll = () => {
-    return createApiRequest({
+    return createAuthApiRequest({
         url: '/information/club/all', 
         method: 'get'
     })

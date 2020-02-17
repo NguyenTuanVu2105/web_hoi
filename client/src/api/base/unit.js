@@ -1,7 +1,7 @@
-import {createApiRequest} from '../index'
+import {createAuthApiRequest} from '../index'
 
 export const getUnitAll = () => {
-    return createApiRequest({
+    return createAuthApiRequest({
         url: '/branch/club/all',
         method: 'get'
     })
