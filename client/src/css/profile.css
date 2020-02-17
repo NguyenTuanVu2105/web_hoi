@@ -13,6 +13,7 @@
 .DIVprofile{
     display: flex;
     justify-content: flex-end;
+    margin-top: 15px;
 }
 .profileForMobile{
     width: 41.66%;
