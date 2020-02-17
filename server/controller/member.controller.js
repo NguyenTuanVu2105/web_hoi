@@ -98,15 +98,12 @@ exports.EditProfile = (req,res) =>{
                 Nhommau  : req.body.nhommau ,
                 Rh  : req.body.rh ,
                 SolanHM  : req.body.solanhm ,
-                ThoigianHD  : req.body.thoigianhd ,
-                ThongtinlienhaGD  : req.body.thongtinlienhegd ,
+                ThongtinlienheGD  : req.body.thongtinlienhegd ,
                 Donvi  : req.body.donvi ,
                 Donvicuthe  : req.body.donvicuthe ,
-                GPA  : req.body.gpa ,
                 Trinhdohocvan  : req.body.trinhdohocvan ,
-                DoanvienDangvien  : req.body.doanviendangvien ,
-                Ghichukhac  : req.body.ghichukhac,
-                Image :req.body.image
+                DoanvienDangvien  : req.body.doanviendangvien,
+                Ghichukhac  : req.body.ghichukhac
             },
             {
             where:{userId :req.userId}

@@ -1,14 +1,14 @@
-import {createApiRequest} from '../index'
+import {createAuthApiRequest} from '../index'
 
 export const getPosition = () => {
-    return createApiRequest({
+    return createAuthApiRequest({
         url: '/admin/position/view', 
         method: 'get'
     })
 }
 
 export const getSpecialized = () => {
-    return createApiRequest({
+    return createAuthApiRequest({
         url: '/admin/specialized/view', 
         method: 'get'
     })
