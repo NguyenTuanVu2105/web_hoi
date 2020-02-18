@@ -122,21 +122,21 @@ const TableSearch = (props) => {
                 </Radio.Group>
               )}
               {getFieldDecorator('positionId')(
-                <Select defaultValue="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
+                <Select placeholder="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
                   {position.map(position => (
                     <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
                   ))}
                 </Select>
               )}
               {getFieldDecorator('specializedId')(
-                <Select defaultValue="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
+                <Select placeholder="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
                   {specialized.map(specialized => (
                     <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
                   ))}
                 </Select>
               )}
               {getFieldDecorator('clubId')(
-                <Select defaultValue="Tên đội" style={{ width: '100%' }}>
+                <Select placeholder="Tên đội" style={{ width: '100%' }}>
                   {club.map(club => (
                     <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
                   ))}

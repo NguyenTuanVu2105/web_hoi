@@ -1,7 +1,7 @@
-import {createApiRequest} from '../index'
+import {createAuthApiRequest} from '../index'
 
 export const getLeaderAll = () => {
-    return createApiRequest({
+    return createAuthApiRequest({
         url: '/association/leader/all',
         method: 'get'
     })
