@@ -34,7 +34,7 @@ const InformationUser = ()=>{
             {
                 <form action="" method="post" className="information">
                 <fieldset>
-                    <legend>Thông tin cá nhân:</legend>
+                    <legend className="legendA">Thông tin cá nhân</legend>
                     <div class="row">
                         <div className="avatarForMobile" id="image_infor"  style={{paddingLeft: '8%'}}>
                             <Avatar/>

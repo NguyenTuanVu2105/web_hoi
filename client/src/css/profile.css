@@ -1,11 +1,22 @@
+.legendA{
+    width: auto !important;
+    font-size: 20px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    color: red !important;
+    border: none !important;
+}
 .buttonProfile{
-    width: 70px;
-    height: 30px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid red;
-    color: red;
-    margin-left: 5px;
+    width: 70px !important;
+    height: 30px !important;
+    background-color: white !important;
+    border-radius: 5px !important;
+    border: 1px solid red !important;
+    color: red !important;
+    margin-left: 5px !important;
+}
+.ant-form-item-control{
+    line-height: normal !important;
 }
 .buttonProfile:hover{
     background-color: rgb(206, 174, 236);

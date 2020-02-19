@@ -25,12 +25,12 @@ function ProFileLeft(props) {
     const handleSubmit = e => {
         e.preventDefault()
         props.form.validateFields((err, values) => {
-          if (!err) {
-            updateUserProfile(values)
-            notification['success']({
-              message: 'Cập nhật thông tin thành công!',
-            })
-          }
+            if (!err) {
+                updateUserProfile(values)
+                notification['success']({
+                    message: 'Cập nhật thông tin thành công!',
+                })
+            }
         })
     }
 
@@ -50,13 +50,13 @@ function ProFileLeft(props) {
     //nhóm máu
     const { Option } = Select;
     return (
-        <div className="row">
-            <Form onSubmit={handleSubmit} >
+        <div>
+            <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
                     <InformationUser />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
-                            <legend>Thông tin cơ bản</legend>
+                            <legend className="legendA">Thông tin cơ bản</legend>
                             <div>
                                 <label for="" style={style} className="label_information">CMND/CCCD/HC: </label>
                                 {getFieldDecorator('cmtorhc', {
@@ -99,7 +99,7 @@ function ProFileLeft(props) {
                     </Form.Item>
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
-                            <legend>Hiến máu</legend>
+                            <legend className="legendA">Hiến máu</legend>
                             <label for="" style={style} className="label_information">Số lần hiến máu: </label>
                             {getFieldDecorator('solanhm', {
                                 initialValue: user.SolanHM
@@ -132,7 +132,7 @@ function ProFileLeft(props) {
                 <div className="profileForMobile">
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
-                            <legend>Đơn vị công tác</legend>
+                            <legend className="legendA">Đơn vị công tác</legend>
                             <div>
                                 <label for="" style={style} className="label_information">Đơn vị học tập/Công tác: </label>
                                 {getFieldDecorator('donvi', {
@@ -161,7 +161,7 @@ function ProFileLeft(props) {
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend>Địa chỉ</legend>
+                            <legend className="legendA">Địa chỉ</legend>
                             <div>
                                 <label for="" style={style} className="label_information">Quê quán: </label>
                                 {getFieldDecorator('quequan', {
@@ -178,7 +178,7 @@ function ProFileLeft(props) {
                             </div>
                         </fieldset>
                         <fieldset>
-                            <legend>Liên hệ người thân</legend>
+                            <legend className="legendA">Liên hệ người thân</legend>
                             <div>
                                 <label for="" style={style} className="label_information">Địa chỉ liên hệ: </label>
                                 {getFieldDecorator('thongtinlienhegd', {
@@ -191,7 +191,7 @@ function ProFileLeft(props) {
                     </Form.Item>
                     <Form.Item action="" method="post" className="information" autocomplete="on" style={{ heigh: 'auto' }}>
                         <fieldset>
-                            <legend>Ghi chú khác</legend>
+                            <legend className="legendA">Ghi chú khác</legend>
                             <label for="" style={style} className="label_information">Ghi chú: </label>
                             {getFieldDecorator('ghichukhac', {
                                 initialValue: user.Ghichukhac
@@ -210,8 +210,8 @@ function ProFileLeft(props) {
 
                 </div>
             </Form>
-            
-            <div >      
+
+            <div >
                 <div className="modal fade" id="modalMK" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
@@ -221,9 +221,9 @@ function ProFileLeft(props) {
                             </div>
                             <div class="modal-body">
                                 <form>
-                                    <input type="text" className="changePass" placeholder="Mật khẩu cũ"/>
-                                    <input type="text" className="changePass" placeholder="Mật khẩu mới"/>
-                                    <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu"/>
+                                    <input type="text" className="changePass" placeholder="Mật khẩu cũ" />
+                                    <input type="text" className="changePass" placeholder="Mật khẩu mới" />
+                                    <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu" />
                                 </form>
                             </div>
                             <div class="modal-footer">
