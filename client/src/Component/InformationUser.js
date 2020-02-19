@@ -20,7 +20,7 @@ const InformationUser = ()=>{
         const result = await getUserProfile()
         if (result) {
             if (result.success) {
-                setUser(result.data)
+                setUser(result.data.data)
             }
         }
     }

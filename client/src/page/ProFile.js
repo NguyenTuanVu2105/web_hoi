@@ -17,7 +17,7 @@ function ProFileLeft(props) {
         const result = await getUserProfile()
         if (result) {
             if (result.success) {
-                setUser(result.data)
+                setUser(result.data.data)
             }
         }
     }
@@ -51,7 +51,7 @@ function ProFileLeft(props) {
     const { Option } = Select;
     return (
         <div className="row">
-            <Form onChange={handleSubmit}>
+            <Form onChange={handleSubmit} >
                 <div className="profileForMobile">
                     <InformationUser />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
@@ -111,19 +111,19 @@ function ProFileLeft(props) {
                                 initialValue: user.Nhommau ? user.Nhommau : "Nhóm máu"
                             })(
                                 <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
-                                    <Option style={{ textAlign: "center" }} value="1">O</Option>
-                                    <Option style={{ textAlign: "center" }} value="2">A</Option>
-                                    <Option style={{ textAlign: "center" }} value="3">B</Option>
-                                    <Option style={{ textAlign: "center" }} value="4">AB</Option>
+                                    <Option style={{ textAlign: "center" }} value="O">O</Option>
+                                    <Option style={{ textAlign: "center" }} value="A">A</Option>
+                                    <Option style={{ textAlign: "center" }} value="B">B</Option>
+                                    <Option style={{ textAlign: "center" }} value="AB">AB</Option>
                                 </Select>
                             )} <br />
                             <label for="" style={style} className="label_information">Rh(D): </label>
                             {getFieldDecorator('rh', {
-                                initialValue: user.Rh ? "+" : "-"
+                                initialValue: user.Rh ? 1 : 0
                             })(
                                 <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
-                                    <Option style={{ textAlign: "center" }} value="1">+</Option>
-                                    <Option style={{ textAlign: "center" }} value="2">-</Option>
+                                    <Option style={{ textAlign: "center" }} value={1}>+</Option>
+                                    <Option style={{ textAlign: "center" }} value={0}>-</Option>
                                 </Select>
                             )}
                         </fieldset>
@@ -193,8 +193,8 @@ function ProFileLeft(props) {
                         <fieldset>
                             <legend>Ghi chú khác</legend>
                             <label for="" style={style} className="label_information">Ghi chú: </label>
-                            {getFieldDecorator('ghichu', {
-                                initialValue: user.Ghichu
+                            {getFieldDecorator('ghichukhac', {
+                                initialValue: user.Ghichukhac
                             })(
                                 <TextArea type="text" className="input_information" />
                             )}

@@ -24,7 +24,7 @@ exports.AddProfile = (req, res) => {
                 positionId: req.body.positionId,
                 clubId: req.body.clubId,
                 TinhtrangHD  : req.body.tinhtranghd
-            }).then(() => {
+            }).then(HandleProfile => {
                 Club.findOne({
                     where: {
                         id: req.body.clubId
@@ -32,7 +32,7 @@ exports.AddProfile = (req, res) => {
                     attributes: ['Madoi'],
                     include: [{
                         model: Profile,
-                        attributes: [[db.sequelize.fn('COUNT', db.sequelize.col('members.clubId')), 'countMember']]
+                        attributes: ['id', [db.sequelize.fn('COUNT', db.sequelize.col('members.clubId')), 'countMember']]
                     }]
                 }).then(infor => {
                     values = JSON.stringify(infor.members[0])
@@ -46,7 +46,8 @@ exports.AddProfile = (req, res) => {
                         value = year + '.' + infor.Madoi.substring(0, 8) + number
                     }
                     Profile.update({
-                        Sothethanhvien: value
+                        Sothethanhvien: value,
+                        userId: HandleProfile.id
                     }, {
                         where: {
                             Hovaten: req.body.hovaten,
@@ -118,6 +119,7 @@ exports.EditProfile = (req,res) =>{
     }).catch(err => res.status(500).send({message: err}))
 }
 exports.ViewProfile = (req, res) => {
+    console.log(req.userId)
     Profile.findOne({
         where: {
             userId : req.userId
@@ -128,7 +130,7 @@ exports.ViewProfile = (req, res) => {
         },
     ]
     }).then( profile => {
-        res.status(200).send(profile)
+        res.status(200).send({success: true, data: profile})
     }).catch(err => {
         res.status(500).send({message: err})
     })
