@@ -26,7 +26,7 @@ function ProFileLeft(props) {
         e.preventDefault()
         props.form.validateFields((err, values) => {
           if (!err) {
-            console.log(values)
+            updateUserProfile(values)
             notification['success']({
               message: 'Cập nhật thông tin thành công!',
             })
@@ -51,7 +51,7 @@ function ProFileLeft(props) {
     const { Option } = Select;
     return (
         <div className="row">
-            <Form onChange={handleSubmit} >
+            <Form onSubmit={handleSubmit} >
                 <div className="profileForMobile">
                     <InformationUser />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
