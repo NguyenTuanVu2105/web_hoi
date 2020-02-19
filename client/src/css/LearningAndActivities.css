@@ -38,3 +38,20 @@ h3{
     border: none ;
     border-bottom: 1px solid rgb(204, 202, 202) ;
 }
+.label_LAA{
+    font-size: 14px;
+    width: 60px;
+    color: red;
+    display: inline-block;    
+}
+.DIV-learn{
+    width: 60%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.input-number-LAA{
+    margin-left: 5px;
+    width: 45px ;
+    border: none ;
+    border-bottom: 1px solid rgb(204, 202, 202) ;
+}

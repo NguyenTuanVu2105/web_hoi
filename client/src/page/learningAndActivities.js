@@ -23,17 +23,15 @@ function LearningAndActivities(props) {
                 <h3>Học tập</h3>
                 <form action="" method="post" className="">
                     <div className="row">
-                        <div className="col-6">
-                            <label for="" className="label_information">Trường:</label>
+                        <div className="DIV-learn">
+                            <label for="" className="label_LAA">Trường:</label>
                             <input type="text" className="input_LAA" /> <br />
-                            <label for="" className="label_information">Lớp:</label>
-                            <input type="text" className="input_LAA" />
-                        </div>
-                        <div className="col-6">
-                            <label for="" className="label_information">Ngành:</label>
+                            <label for="" className="label_LAA">Lớp:</label>
                             <input type="text" className="input_LAA" /> <br />
-                            <label for="" className="label_information">Kết quả học tập:</label>
-                            <input type="text" className="input_LAA" />
+                            <label for="" className="label_LAA">Ngành:</label>
+                            <input type="text" className="input_LAA" /> <br />
+                            <label for="" className="label_LAA">Kết quả học tập:</label>
+                            <input type="number" className="input-number-LAA" />
                         </div>
                     </div>
                     <fieldset>
