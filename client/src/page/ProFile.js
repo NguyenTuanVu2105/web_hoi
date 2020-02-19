@@ -3,9 +3,10 @@ import InformationUser from '../Component/InformationUser'
 import { formChildren } from '../Component/FormChildren'
 import { formChildrenRight } from '../Component/FormChildrenRight'
 import HomepageContext from "../context/HomepageContext"
-import { Select, Form, notification } from 'antd'
+import { Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
 import { getUserProfile, updateUserProfile } from '../api/base/profile'
+import TextArea from 'antd/lib/input/TextArea'
 
 function ProFileLeft(props) {
     const { getFieldDecorator } = props.form
@@ -25,7 +26,7 @@ function ProFileLeft(props) {
         e.preventDefault()
         props.form.validateFields((err, values) => {
           if (!err) {
-            updateUserProfile(values)
+            console.log(values)
             notification['success']({
               message: 'Cập nhật thông tin thành công!',
             })
@@ -50,95 +51,166 @@ function ProFileLeft(props) {
     const { Option } = Select;
     return (
         <div className="row">
-            <div className="profileForMobile">
-                <InformationUser />
-                <Form onChange={handleSubmit} action="" method="post" className="information" autocomplete="on">
-                    <fieldset>
-                        <legend>Thông tin cơ bản</legend>
-                        <div>
-                            <label for="" style={style} className="label_information">CMND/CCCD/HC: </label>
-                            <input type="text" defaultValue={user.CMTorHC} className="input_information" />
-                            <label for="" style={style} className="label_information">Ngày cấp: </label>
-                            <input type="text" defaultValue={user.Ngaycap} className="input_information" />
-                            <label for="" style={style} className="label_information">Nơi cấp: </label>
-                            <input type="text" defaultValue={user.Noicap} className="input_information" />
-                            <label for="" style={style} className="label_information">Điện thoại: </label>
-                            <input type="text" defaultValue={user.Dienthoai} className="input_information" />
-                            <label for="" style={style} className="label_information">Link Facebook: </label>
-                            <input type="text" defaultValue={user.Facebook} className="input_information" />
-                            <label for="" style={style} className="label_information">Địa chỉ Email: </label>
-                            <input type="text" defaultValue={user.Email} className="input_information" />
-                        </div>
-                    </fieldset>
-                </Form>
-                <Form onChange={handleSubmit} action="" method="post" className="information" autocomplete="on">
-                    <fieldset>
-                        <legend>Hiến máu</legend>
-                        <label for="" style={style} className="label_information">Số lần hiến máu: </label>
-                        <input type="number" defaultValue={user.SolanHM} className="input_information" />
-                        <label for="" style={style} className="label_information">Nhóm máu: </label>
-                        <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
-                            <Option style={{ textAlign: "center" }} value="disabled" disabled>{user.Nhommau}</Option>
-                            <Option style={{ textAlign: "center" }} value="1">O</Option>
-                            <Option style={{ textAlign: "center" }} value="2">A</Option>
-                            <Option style={{ textAlign: "center" }} value="3">B</Option>
-                            <Option style={{ textAlign: "center" }} value="4">AB</Option>
-                        </Select><br />
-                        <label for="" style={style} className="label_information">Rh(D): </label>
-                        <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
-                            <Option style={{ textAlign: "center" }} value="disabled" disabled>{user.Rh ? "+" : "-"}</Option>
-                            <Option style={{ textAlign: "center" }} value="1">+</Option>
-                            <Option style={{ textAlign: "center" }} value="2">-</Option>
-                        </Select>
-                    </fieldset>
-                </Form>
-            </div>
-            <div className="profileForMobile">
-                <Form onChange={handleSubmit} action="" method="post" className="information" autocomplete="on">
-                    <fieldset>
-                        <legend>Đơn vị công tác</legend>
-                        <div>
-                            <label for="" style={style} className="label_information">Đơn vị học tập/Công tác: </label>
-                            <input type="textarea" defaultValue={user.Donvi} className="input_information" />
-                            <label for="" style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
-                            <input type="textarea" defaultValue={user.Donvicuthe} className="input_information" />
-                            <label for="" style={style} className="label_information">Đoàn viên/Đảng viên: </label>
-                            <input type="textarea" defaultValue={user.DoanvienDangvien} className="input_information" />
-                            <label for="" style={style} className="label_information">Trình độ học vấn: </label>
-                            <input type="textarea" defaultValue={user.Trinhdohocvan} className="input_information" />
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Địa chỉ</legend>
-                        <div>
-                            <label for="" style={style} className="label_information">Quê quán: </label>
-                            <input type="textarea" defaultValue={user.Quequan} title={user.Quequan} className="input_information" />
-                            <label for="" style={style} className="label_information">Nơi ở hiện nay: </label>
-                            <input type="textarea" defaultValue={user.DiachiLL} title={user.DiachiLL} className="input_information" />
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Liên hệ người thân</legend>
-                        <div>
-                            <label for="" style={style} className="label_information">Địa chỉ liên hệ: </label>
-                            <input type="textarea" defaultValue={user.ThongtinlienheGD} title={user.ThongtinlienheGD} className="input_information" />
-                        </div>
-                    </fieldset>
-                </Form>
-                <Form onChange={handleSubmit} action="" method="post" className="information" autocomplete="on" style={{ heigh: 'auto' }}>
-                    <fieldset>
-                        <legend>Ghi chú khác</legend>
-                        <label for="" style={style} className="label_information">Ghi chú: </label>
-                        <textarea className="input_information" defaultValue={user.Ghichu} title={user.Ghichu} style={{ height: 26 }} cols="50" />
-                    </fieldset>
-                </Form>
-                <div className="DIVprofile">
-                    <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a>
-                    <button className="buttonProfile">Submit</button>
-                    <button className="buttonProfile">Hủy</button>
+            <Form onChange={handleSubmit}>
+                <div className="profileForMobile">
+                    <InformationUser />
+                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                        <fieldset>
+                            <legend>Thông tin cơ bản</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">CMND/CCCD/HC: </label>
+                                {getFieldDecorator('cmtorhc', {
+                                    initialValue: user.CMTorHC
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Ngày cấp: </label>
+                                {getFieldDecorator('ngaycap', {
+                                    initialValue: user.Ngaycap
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Nơi cấp: </label>
+                                {getFieldDecorator('noicap', {
+                                    initialValue: user.Noicap
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Điện thoại: </label>
+                                {getFieldDecorator('dienthoai', {
+                                    initialValue: user.Dienthoai
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Link Facebook: </label>
+                                {getFieldDecorator('facebook', {
+                                    initialValue: user.Facebook
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Địa chỉ Email: </label>
+                                {getFieldDecorator('email', {
+                                    initialValue: user.Email
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                            </div>
+                        </fieldset>
+                    </Form.Item>
+                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                        <fieldset>
+                            <legend>Hiến máu</legend>
+                            <label for="" style={style} className="label_information">Số lần hiến máu: </label>
+                            {getFieldDecorator('solanhm', {
+                                initialValue: user.SolanHM
+                            })(
+                                <Input type="text" className="input_information" />
+                            )}
+                            <label for="" style={style} className="label_information">Nhóm máu: </label>
+                            {getFieldDecorator('nhommau', {
+                                initialValue: user.Nhommau ? user.Nhommau : "Nhóm máu"
+                            })(
+                                <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
+                                    <Option style={{ textAlign: "center" }} value="1">O</Option>
+                                    <Option style={{ textAlign: "center" }} value="2">A</Option>
+                                    <Option style={{ textAlign: "center" }} value="3">B</Option>
+                                    <Option style={{ textAlign: "center" }} value="4">AB</Option>
+                                </Select>
+                            )} <br />
+                            <label for="" style={style} className="label_information">Rh(D): </label>
+                            {getFieldDecorator('rh', {
+                                initialValue: user.Rh ? "+" : "-"
+                            })(
+                                <Select defaultValue="disabled" style={{ marginLeft: 5, height: 30, width: 120 }}>
+                                    <Option style={{ textAlign: "center" }} value="1">+</Option>
+                                    <Option style={{ textAlign: "center" }} value="2">-</Option>
+                                </Select>
+                            )}
+                        </fieldset>
+                    </Form.Item>
                 </div>
+                <div className="profileForMobile">
+                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                        <fieldset>
+                            <legend>Đơn vị công tác</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Đơn vị học tập/Công tác: </label>
+                                {getFieldDecorator('donvi', {
+                                    initialValue: user.Donvi
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
+                                {getFieldDecorator('donvicuthe', {
+                                    initialValue: user.Donvicuthe
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Đoàn viên/Đảng viên: </label>
+                                {getFieldDecorator('doanviendangvien', {
+                                    initialValue: user.DoanvienDangvien
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Trình độ học vấn: </label>
+                                {getFieldDecorator('trinhdohocvan', {
+                                    initialValue: user.Trinhdohocvan
+                                })(
+                                    <Input type="text" className="input_information" />
+                                )}
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Địa chỉ</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Quê quán: </label>
+                                {getFieldDecorator('quequan', {
+                                    initialValue: user.Quequan
+                                })(
+                                    <TextArea type="text" className="input_information" />
+                                )}
+                                <label for="" style={style} className="label_information">Nơi ở hiện nay: </label>
+                                {getFieldDecorator('diachill', {
+                                    initialValue: user.DiachiLL
+                                })(
+                                    <TextArea type="text" className="input_information" />
+                                )}
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Liên hệ người thân</legend>
+                            <div>
+                                <label for="" style={style} className="label_information">Địa chỉ liên hệ: </label>
+                                {getFieldDecorator('thongtinlienhegd', {
+                                    initialValue: user.ThongtinlienheGD
+                                })(
+                                    <TextArea type="text" className="input_information" />
+                                )}
+                            </div>
+                        </fieldset>
+                    </Form.Item>
+                    <Form.Item action="" method="post" className="information" autocomplete="on" style={{ heigh: 'auto' }}>
+                        <fieldset>
+                            <legend>Ghi chú khác</legend>
+                            <label for="" style={style} className="label_information">Ghi chú: </label>
+                            {getFieldDecorator('ghichu', {
+                                initialValue: user.Ghichu
+                            })(
+                                <TextArea type="text" className="input_information" />
+                            )}
+                        </fieldset>
+                    </Form.Item>
+                    <div className="DIVprofile">
+                        <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a>
+                        <Form.Item>
+                            <Button className="buttonProfile" type="primary" htmlType="submit">Submit</Button>
+                        </Form.Item>
+                        <button className="buttonProfile">Hủy</button>
+                    </div>
 
-            </div>
+                </div>
+            </Form>
+            
             <div >      
                 <div className="modal fade" id="modalMK" role="dialog">
                     <div className="modal-dialog">
