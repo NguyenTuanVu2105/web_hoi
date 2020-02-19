@@ -68,7 +68,7 @@ function ProFileLeft(props) {
                                 {getFieldDecorator('ngaycap', {
                                     initialValue: user.Ngaycap
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="date" className="input_information" />
                                 )}
                                 <label for="" style={style} className="label_information">Nơi cấp: </label>
                                 {getFieldDecorator('noicap', {
