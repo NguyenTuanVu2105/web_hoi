@@ -119,7 +119,7 @@ function ProFileLeft(props) {
                             )} <br />
                             <label for="" style={style} className="label_information">Rh(D): </label>
                             {getFieldDecorator('rh', {
-                                initialValue: user.Rh ? user.Rd : null
+                                initialValue: user.Rh ? user.Rh : null
                             })(
                                 <Select style={{ marginLeft: 5, height: 30, width: 120 }}>
                                     <Option style={{ textAlign: "center" }} value={true}>+</Option>
