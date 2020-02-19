@@ -263,13 +263,17 @@ const TableSearch = (props) => {
           dataIndex="Rh" 
           id="Rh"
           render={(Rh) => {
-            if (Rh) {
+            if (Rh === true) {
               return <span>
                 +
               </span>
-            } else {
+            } else if (Rh == false) {
               return <span>
                 -
+              </span>
+            } else {
+              return <span>
+                
               </span>
             }
           }}
