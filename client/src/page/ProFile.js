@@ -205,7 +205,7 @@ function ProFileLeft(props) {
                         <Form.Item>
                             <Button className="buttonProfile" type="primary" htmlType="submit">Submit</Button>
                         </Form.Item>
-                        <button className="buttonProfile">Hủy</button>
+                        {/* <button className="buttonProfile">Hủy</button> */}
                     </div>
 
                 </div>
