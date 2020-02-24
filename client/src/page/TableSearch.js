@@ -20,6 +20,7 @@ const TableSearch = (props) => {
   const [position, setPosition] = useState([])
   const [specialized, setSpecialized] = useState([])
   const { nameMap, setNameMap } = useContext(HomepageContext)
+  const page = 1
 
   const fetchDataPosition = async () => {
     const result = await getPosition()
@@ -42,8 +43,8 @@ const TableSearch = (props) => {
     }
   }
   
-  const fetchData = async () => {
-    const result = await getTableMember(1000, 1)
+  const fetchData = async (page) => {
+    const result = await getTableMember(1000, page)
     if (result.success) {
         setTable(result.data.data)
     }
@@ -53,7 +54,7 @@ const TableSearch = (props) => {
     fetchDataPosition()
     fetchDataSpecialized()
     fetchDataClub()
-    fetchData()
+    fetchData(page)
     setNameMap({
       ['/']: 'Trang chủ',
       ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
