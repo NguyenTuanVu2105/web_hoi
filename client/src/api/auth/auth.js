@@ -10,6 +10,7 @@ export const logout = () => {
 
 export const getUser = async () => {
     let token = getCookie(COOKIE_KEY.TOKEN)
+    let role = getCookie(COOKIE_KEY.ROLE)
     let user = {}
     if (token) {
         const result = await getUserProfile()
@@ -23,7 +24,8 @@ export const getUser = async () => {
         token: token,
         name: user.Hovaten,
         id: user.id,
-        code: user.Sothethanhvien
+        code: user.Sothethanhvien,
+        role: role
     } : null
 }
 

@@ -18,14 +18,17 @@ export const navs = [
         IconID: 'icon2', 
         children: [
             {
+                id: "tracuu",
                 name:"TRA CỨU THÀNH VIÊN",
                 href:"/TableSearch"
             },
             {
+                id: "hoso",
                 name: "HỒ SƠ CÁ NHÂN",
                 href: "/profile"
             }, 
             {
+                id: "hoctap",
                 name: "HỌC TẬP VÀ HOẠT ĐỘNG",
                 href:"/learn"
             }
