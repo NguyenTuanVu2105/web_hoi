@@ -12,6 +12,7 @@ module.exports = function(app) {
     const associationcontroller     = require('../controller/association.controller')
     const positioncontroller        = require('../controller/position.controller')
     const specializedcontroller     = require('../controller/specialized.controller')
+    const imageUploader             = multer({dest: 'images/'})
 
     app.post('/api/login', usercontroller.login)
 
@@ -25,6 +26,19 @@ module.exports = function(app) {
     app.put('/user/information/edit', [authJwt.verifyToken], membercontroller.EditProfile)
 
     app.get('/user/information/member',[authJwt.verifyToken], membercontroller.ViewProfile)
+
+    app.post('/user/avatar/add', [imageUploader.single('avatar'), authJwt.verifyToken], membercontroller.uploadAvatar)
+
+    app.get('/:name', (req, res) => {
+		const fileName = req.params.name
+		if (!fileName) {
+			return res.send({
+				status: false,
+				message: 'no filename specified',
+			})
+		}
+		res.sendFile(path.resolve(`./images/${fileName}`))
+	})
 
     //position
     app.get('/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)

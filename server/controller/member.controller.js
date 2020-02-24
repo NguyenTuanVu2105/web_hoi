@@ -1,5 +1,6 @@
 const db = require('../config/db.config')
 const bcrypt = require('bcryptjs')
+const fs = require('fs')
 const User = db.user
 const Profile = db.member
 const Position = db.position
@@ -135,4 +136,35 @@ exports.ViewProfile = (req, res) => {
         res.status(500).send({message: err})
     })
       
+}
+
+exports.uploadAvatar = (req, res) => {
+    const processedFile = req.file || {}
+    let orgName = processedFile.originalname || ''
+    orgName = orgName.trim().replace(/ /g, "-")
+    const fullPathInServ = processedFile.path
+    const newFullPath = `${fullPathInServ}-${orgName}`
+    fs.renameSync(fullPathInServ, newFullPath);
+    const temp = newFullPath.split('/')
+    const fileName = temp[temp.length-1]
+
+    User.findOne({
+        where: {
+            id: req.userId
+        },
+        include: [{
+            model: Profile
+        }]
+    }).then(user => {
+        Profile.update({
+            image: fileName
+        },{
+        where: { 
+            id: user.member.id 
+        }
+    }).then( () => res.status(200).send({success : true})
+    ).catch(err => {
+            res.status(500).send({message: err})
+        })
+    })
 }
