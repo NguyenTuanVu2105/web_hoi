@@ -4,7 +4,7 @@ import './style.css';
 import '../css/InformationUser.css'
 import Avatar from '../Component/UpdateImg'
 import { getUserProfile } from '../api/base/profile'
-import { Radio } from 'antd'
+import { Radio, Form } from 'antd'
 
 const InformationUser = ()=>{
     
@@ -32,7 +32,7 @@ const InformationUser = ()=>{
     return (
         <div>
             {
-                <form action="" method="post" className="information">
+                <Form action="" method="post" className="information">
                 <fieldset>
                     <legend className="legendA">Thông tin cá nhân</legend>
                     <div class="row">
@@ -52,7 +52,7 @@ const InformationUser = ()=>{
                         </div>
                     </div>
                 </fieldset>       
-            </form>
+            </Form>
             }
         </div>
     )

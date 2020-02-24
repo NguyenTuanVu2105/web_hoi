@@ -120,7 +120,6 @@ exports.EditProfile = (req,res) =>{
     }).catch(err => res.status(500).send({message: err}))
 }
 exports.ViewProfile = (req, res) => {
-    console.log(req.userId)
     Profile.findOne({
         where: {
             userId : req.userId

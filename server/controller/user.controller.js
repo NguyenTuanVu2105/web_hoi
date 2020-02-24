@@ -22,7 +22,6 @@ exports.login = (req, res) => {
 
 		var passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
 		if (!passwordIsValid) {
-			console.log(user)
 			return res.status(401).send({message:"Password không đúng"});
 		}
 		
@@ -74,7 +73,6 @@ exports.ForgetPassword = (req, res)=>{
 			return res.status(401).send({message:"Username không chính xác"});
 		}
 		else{
-			console.log(user)
 			var newpassword = generator.generate({
 				length: 10,
 				numbers: true
@@ -99,7 +97,6 @@ exports.ForgetPassword = (req, res)=>{
 				if (error) {
 				  res.status(401).send({message:error});
 				} else {
-					console.log(info)
 				  res.status(200).send({success : true})
 				  User.update({ password: bcrypt.hashSync(newpassword,10)
 					},{
