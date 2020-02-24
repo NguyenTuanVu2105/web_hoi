@@ -4,18 +4,22 @@ export const OrganizationalRecordsList = [
         child : [
             {
                 name : "Giới thiệu về Hội",
-                href:'/introduleBlood'
+                href:'/introduleBlood',
+                id: 'introdule'
             },
             {
                 name : "Lịch sử Hội",
-                href:'/HistoryBlood'
+                href:'/HistoryBlood',
+                id: 'history'
             },
             {
                 name : "Lãnh đạo qua các thời kỳ",
-                href : "/TeamLeader"
+                href : "/TeamLeader",
+                id: 'teamleader'
             },
             {
-                name : "Báo cáo công tác Hội"
+                name : "Báo cáo công tác Hội",
+                id: 'report'
             }
         ]
     },
@@ -24,18 +28,21 @@ export const OrganizationalRecordsList = [
         child : [
             {
                 name : "Hồ sơ đơn vị",
-                href : "/SearchUnit"
+                href : "/SearchUnit",
+                id: 'searchunit'
             },
             {
                 name : "Đơn vị mới",
-                href : "/AUDUnit"
+                href : "/AUDUnit",
+                id: 'addunit'
             },
             // {
             //     name : "Tra cứu thông tin đơn vị",
             //     href : "/TableSearch"
             // },
             {
-                name : "In danh sách đơn vị"
+                name : "In danh sách đơn vị",
+                id: 'printlist'
             }
         ]
     }
