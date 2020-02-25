@@ -147,23 +147,16 @@ exports.uploadAvatar = (req, res) => {
     const temp = newFullPath.split('/')
     const fileName = temp[temp.length-1]
 
-    User.findOne({
+    var fileString = fileName.slice(7)
+
+    Profile.update({
+        Image: fileString
+    }, {
         where: {
-            id: req.userId
-        },
-        include: [{
-            model: Profile
-        }]
-    }).then(user => {
-        Profile.update({
-            image: fileName
-        },{
-        where: { 
-            id: user.member.id 
+            userId: req.userId
         }
-    }).then( () => res.status(200).send({success : true})
+    }).then( () => res.status(200).send({success : true, file: fileString})
     ).catch(err => {
-            res.status(500).send({message: err})
-        })
+        res.status(500).send({message: err})
     })
 }

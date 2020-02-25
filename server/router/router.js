@@ -27,9 +27,9 @@ module.exports = function(app) {
 
     app.get('/user/information/member',[authJwt.verifyToken], membercontroller.ViewProfile)
 
-    app.post('/api/auth/profile/avatar', [imageUploader.single('avatar'), authJwt.verifyToken], membercontroller.uploadAvatar)
+    app.post('/api/upload/avatar', [imageUploader.single('avatar'), authJwt.verifyToken], membercontroller.uploadAvatar)
 
-    app.get('/:name', (req, res) => {
+    app.get('/api/avatar/:name', [authJwt.verifyToken], (req, res) => {
 		const fileName = req.params.name
 		if (!fileName) {
 			return res.send({
