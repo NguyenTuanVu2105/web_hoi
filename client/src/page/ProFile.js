@@ -53,7 +53,7 @@ function ProFileLeft(props) {
         <div>
             <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
-                    <InformationUser />
+                    <InformationUser sttv={user.Sothethanhvien} />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>

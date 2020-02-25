@@ -6,8 +6,8 @@ import Avatar from '../Component/UpdateImg'
 import { getUserProfile } from '../api/base/profile'
 import { Radio, Form } from 'antd'
 
-const InformationUser = ()=>{
-    
+const InformationUser = (props)=>{
+    const {sttv} = props
     const style1 = {
         fontWeight: "100",
         color: "black",
@@ -40,7 +40,7 @@ const InformationUser = ()=>{
                             <Avatar/>
                         </div>
                         <div class="informationUserForMobile">
-                            <label for="" class="label_information2">Mã thành viên: </label> {user.Sothethanhvien}<br/>
+                            <label for="" class="label_information2">Mã thành viên: </label> {sttv}<br/>
                             <label for="" class="label_information2">Họ và tên: </label> {user.Hovaten}<br/>
                             <label for="" class="label_information2">Ngày sinh: </label>
                             <input type="date" class="input_information2" defaultValue={user.Ngaysinh} disabled={true}/><br/>
