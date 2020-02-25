@@ -1,13 +1,14 @@
 .addFM{
     width: 11% !important;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 
 }
 .menuFM{
     margin-bottom: 10px;
 }
 .menuSearch{
-    width: 89%;
+    width: 100%;
+    margin-top: 15px;
 }
 .tenFM{
     width: 100%;
@@ -32,6 +33,25 @@
 /* .nhommauFM{
     display: flex;
 } */
+.searchOC{
+    background-color: white;
+    border: none;
+    height: 30px;
+    border: 1px solid rgb(24, 144, 255);
+    color: rgb(24, 144, 255);
+    border-radius: 5px;
+    position: relative;
+}
+#mySearch{
+    display: none;
+    position: relative;
+}
+.formSearch{
+    width: 100%;
+    
+    margin-left: 15px;
+    margin-right: 15px;
+}
 @media (max-width: 992px){
     .menuFM{
         margin-bottom: 10px;
