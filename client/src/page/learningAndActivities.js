@@ -23,30 +23,58 @@ function LearningAndActivities(props) {
                 <h3>Học tập</h3>
                 <form action="" method="post" className="">
                     <div className="row">
-                        <div className="col-6">
-                            <label for="" className="label_information">Trường:</label>
-                            <input type="text" className="input_information" /> <br />
-                            <label for="" className="label_information">Lớp:</label>
-                            <input type="text" className="input_information" />
-                        </div>
-                        <div className="col-6">
-                            <label for="" className="label_information">Ngành:</label>
-                            <input type="text" className="input_information" /> <br />
-                            <label for="" className="label_information">Kết quả học tập:</label>
-                            <input type="text" className="input_information" />
+                        <div className="DIV-learn">
+                            <label for="" className="label_LAA">Trường:</label>
+                            <input type="text" className="input_LAA" /> <br />
+                            <label for="" className="label_LAA">Lớp:</label>
+                            <input type="text" className="input_LAA" /> <br />
+                            <label for="" className="label_LAA">Ngành:</label>
+                            <input type="text" className="input_LAA" /> <br />
+                            <label for="" className="label_LAA">Kết quả học tập:</label>
+                            <input type="number" className="input-number-LAA" />
                         </div>
                     </div>
-                </form>
-                <fieldset>
-                    <legend>Khen thưởng:</legend>
-                    <table style={{ width: '40%' }} >
+                    <fieldset>
+                    <legend className="legendA">Khen thưởng:</legend>
+                    <table style={{width:'100%'}}>
+                        <tr className='row '>
+                            <th className='col-4'>Năm học</th>
+                            <th className='col-4'>Kỳ học</th>
+                            <th className='col-4'>Lý do khen thưởng</th>
+                        </tr>
                         <tr className='row'>
-                            <th className='col-4'>Năm học:</th>
-                            <th className='col-4'>Kỳ học:</th>
-                            <th className='col-4'>Lý do khen thưởng:</th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                        </tr>
+                        <tr className='row'>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                        </tr>
+                        <tr className='row'>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                        </tr>
+                        <tr className='row'>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                        </tr>
+                        <tr className='row'>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                        </tr>
+                        <tr className='row'>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><input type="number" className="input_LAA1" /></th>
+                            <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
                         </tr>
                     </table>
                 </fieldset>
+                </form>
             </div>
             <div>
                 <h3>Hoạt động</h3>
@@ -58,13 +86,12 @@ function LearningAndActivities(props) {
                     ))
                 }
                 <fieldset>
-                    <legend>Khen thưởng:</legend>
+                    <legend className="legendA">Khen thưởng:</legend>
 
                 </fieldset>
             </div>
             <div className="DivLAA">
                 <button className="buttonLAA">Submit</button>
-                <button className="buttonLAA">Hủy</button>
             </div>
         </div>
     )

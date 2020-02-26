@@ -110,9 +110,10 @@
 
 .input_information{
     margin-left: 5px;
-    width: 55%;
-    border: none;
-    border-bottom: 1px solid rgb(204, 202, 202);
+    width: 55% !important;
+    border: none !important;
+    border-bottom: 1px solid rgb(204, 202, 202) !important;
+    border-radius: 0 !important;
 }
 /* .input_information:focus{
 
@@ -129,12 +130,13 @@ fieldset{
     padding-bottom: 15px !important;
     padding-left: 15px !important;
 }
-legend{
+.legendA{
     width: auto !important;
     font-size: 20px !important;
     padding-left: 5px !important;
     padding-right: 5px !important;
     color: red !important;
+    border: none !important;
 }
 .sticky{
     padding-top: 30px;

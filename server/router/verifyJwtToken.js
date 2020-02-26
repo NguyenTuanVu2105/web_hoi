@@ -35,6 +35,8 @@ isDoitruong = (req, res, next) => {
 			return
 		}
 		res.status(403).send("Require Doitruong Role!")
+	}).catch(err => {
+		res.status(500).send({message: err})
 	})
 } 
 
@@ -49,6 +51,8 @@ isChihoitruong = (req, res, next) => {
 			return
 		}
 		res.status(403).send("Require Chihoitruong Role!")
+	}).catch(err => {
+		res.status(500).send({message: err})
 	})
 }
 
@@ -63,6 +67,8 @@ isHoitruong = (req, res, next) => {
 			return
 		}
 		res.status(403).send("Require Hoitruong Role!")
+	}).catch(err => {
+		res.status(500).send({message: err})
 	})
 }
 

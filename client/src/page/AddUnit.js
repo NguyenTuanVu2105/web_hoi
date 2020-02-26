@@ -2,10 +2,33 @@ import React, {Component,useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
+import { getUser, checkAuth} from '../api/auth/auth'
+
 const AddUnit = () => {
     const [changeInput, setchangeInput] = useState(true)
     const [changeButton, setchangeButton] = useState(false)
     const {nameMap, setNameMap} = useContext(HomepageContext)
+
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('roleedit')
+            // var del = document.getElementById('roledelete')
+            var save = document.getElementById('rolesave')
+            // var cancel = document.getElementById('rolecancel')
+            if (value.role === 'member') {
+                edit.style.display='none'
+                // del.style.display='none'
+                save.style.display='none'
+                // cancel.style.display='none'
+            } else {
+                edit.style.display='block'
+                // del.style.display='block'
+                save.style.display='block'
+                // cancel.style.display='block'
+            }
+        }
+    })
+
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',
@@ -28,8 +51,8 @@ const AddUnit = () => {
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                
-                <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button>
+                <button className="buttonDisable" id='roleedit' onClick={() => setchangeInput(false)&&roles}>Sửa</button>                
+                {/* <button className="buttonDisable" id='roledelete' onClick={() => handleDe()&&roles} disabled={changeButton}>Xóa</button> */}
             </div>
             {
                 AddUnitChild.map(label => (
@@ -111,8 +134,8 @@ const AddUnit = () => {
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
             <span className = "spanLabel">Kết quả hoạt động:</span>
             <div className="buttonSubmitForMobile">
-                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
-                <button className="buttonS"  onClick={() => handleCa()}>Hủy</button>
+                <button id='rolesave' className="buttonS" onClick={() => handleUp()&&roles}>Lưu thay đổi</button>
+                {/* <button id='rolecancel' className="buttonS"  onClick={() => handleCa()&&roles}>Hủy</button> */}
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 const db = require('../config/db.config')
 const bcrypt = require('bcryptjs')
+const fs = require('fs')
 const User = db.user
 const Profile = db.member
 const Position = db.position
@@ -24,7 +25,7 @@ exports.AddProfile = (req, res) => {
                 positionId: req.body.positionId,
                 clubId: req.body.clubId,
                 TinhtrangHD  : req.body.tinhtranghd
-            }).then(() => {
+            }).then(HandleProfile => {
                 Club.findOne({
                     where: {
                         id: req.body.clubId
@@ -32,7 +33,7 @@ exports.AddProfile = (req, res) => {
                     attributes: ['Madoi'],
                     include: [{
                         model: Profile,
-                        attributes: [[db.sequelize.fn('COUNT', db.sequelize.col('members.clubId')), 'countMember']]
+                        attributes: ['id', [db.sequelize.fn('COUNT', db.sequelize.col('members.clubId')), 'countMember']]
                     }]
                 }).then(infor => {
                     values = JSON.stringify(infor.members[0])
@@ -46,7 +47,8 @@ exports.AddProfile = (req, res) => {
                         value = year + '.' + infor.Madoi.substring(0, 8) + number
                     }
                     Profile.update({
-                        Sothethanhvien: value
+                        Sothethanhvien: value,
+                        userId: HandleProfile.id
                     }, {
                         where: {
                             Hovaten: req.body.hovaten,
@@ -128,9 +130,33 @@ exports.ViewProfile = (req, res) => {
         },
     ]
     }).then( profile => {
-        res.status(200).send(profile)
+        res.status(200).send({success: true, data: profile})
     }).catch(err => {
         res.status(500).send({message: err})
     })
       
+}
+
+exports.uploadAvatar = (req, res) => {
+    const processedFile = req.file || {}
+    let orgName = processedFile.originalname || ''
+    orgName = orgName.trim().replace(/ /g, "-")
+    const fullPathInServ = processedFile.path
+    const newFullPath = `${fullPathInServ}-${orgName}`
+    fs.renameSync(fullPathInServ, newFullPath);
+    const temp = newFullPath.split('/')
+    const fileName = temp[temp.length-1]
+
+    var fileString = fileName.slice(7)
+
+    Profile.update({
+        Image: fileString
+    }, {
+        where: {
+            userId: req.userId
+        }
+    }).then( () => res.status(200).send({success : true, file: fileString})
+    ).catch(err => {
+        res.status(500).send({message: err})
+    })
 }

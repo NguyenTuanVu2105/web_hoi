@@ -3,9 +3,20 @@ import React, { useState } from 'react';
 import './style.css'
 import '../css/NavBar.css'
 import { navs } from '../nav'
-import { logout } from '../api/auth/auth';
+import { getUser, logout, checkAuth} from '../api/auth/auth';
 
 const NavBar = () => {
+
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var para = document.getElementById("tracuu")
+            if (value.role === 'member') {
+                para.style.display='none'
+            } else {
+                para.style.display='block'
+            }
+        }
+    })
 
     // const [Icon, setIcon] = useState(false)
     const setChangeIcon = (element) => {
@@ -41,9 +52,8 @@ const NavBar = () => {
         <div>
             <button className="sideBarOpen sideBar" onClick={()=>navbarOpen()} >&#9776;</button>
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235 }} id="mySidebar" >
-                <button className="sideBarClose sideBar" onClick={()=>navbarClose()}>Close X</button>
+                <button className="sideBarClose sideBar" onClick={()=>navbarClose()&&roles}>Close X</button>
                 <div className="logoPageBlood">
-
                 </div>
                 {
                     navs.map(nav => (
@@ -59,7 +69,7 @@ const NavBar = () => {
                                 <ul className="list-group">
                                     {
                                         nav.children.map(x => (
-                                            <li className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
+                                            <li id={x.id} className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                         ))
                                     }
                                 </ul>
