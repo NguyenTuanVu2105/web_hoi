@@ -6,13 +6,7 @@ import Avatar from '../Component/UpdateImg'
 import { Radio, Form } from 'antd'
 
 const InformationUser = (props)=>{
-    const {sttv, hovaten, ngaysinh, gioitinh} = props
-    const style1 = {
-        fontWeight: "100",
-        color: "black",
-        fontSize: "15px"
-    }
-
+    const {sttv, hovaten, ngaysinh, gioitinh, image} = props
     return (
         <div>
             {
@@ -21,7 +15,7 @@ const InformationUser = (props)=>{
                     <legend className="legendA">Thông tin cá nhân</legend>
                     <div class="row">
                         <div className="avatarForMobile" id="image_infor"  style={{paddingLeft: '8%'}}>
-                            <Avatar/>
+                            <Avatar avt={image}/>
                         </div>
                         <div class="informationUserForMobile">
                             <label for="" class="label_information2">Mã thành viên: </label> {sttv}<br/>
