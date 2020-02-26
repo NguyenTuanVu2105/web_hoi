@@ -5,7 +5,7 @@ const Header = () => {
     const [inf, setInf] = useState({
         name: 'Người Việt Trẻ 3000',
         link: 'https://www.facebook.com/',
-        time: '1234',
+        time: '30/2/3000-31/2/3000',
         place: 'Hà Nội-Việt Nam',
         background: 'rgb(87, 78, 78)',
         color: ''
