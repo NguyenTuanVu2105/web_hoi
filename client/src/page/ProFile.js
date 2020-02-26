@@ -53,7 +53,7 @@ function ProFileLeft(props) {
         <div>
             <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
-                    <InformationUser sttv={user.Sothethanhvien} />
+                    <InformationUser sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>
@@ -167,13 +167,13 @@ function ProFileLeft(props) {
                                 {getFieldDecorator('quequan', {
                                     initialValue: user.Quequan
                                 })(
-                                    <TextArea type="text" className="input_information" />
+                                    <Input type="text" className="input_information" />
                                 )}
                                 <label for="" style={style} className="label_information">Nơi ở hiện nay: </label>
                                 {getFieldDecorator('diachill', {
                                     initialValue: user.DiachiLL
                                 })(
-                                    <TextArea type="text" className="input_information" />
+                                    <Input type="text" className="input_information" />
                                 )}
                             </div>
                         </fieldset>
@@ -184,7 +184,7 @@ function ProFileLeft(props) {
                                 {getFieldDecorator('thongtinlienhegd', {
                                     initialValue: user.ThongtinlienheGD
                                 })(
-                                    <TextArea type="text" className="input_information" />
+                                    <Input type="text" className="input_information" />
                                 )}
                             </div>
                         </fieldset>
@@ -196,7 +196,7 @@ function ProFileLeft(props) {
                             {getFieldDecorator('ghichukhac', {
                                 initialValue: user.Ghichukhac
                             })(
-                                <TextArea type="text" className="input_information" />
+                                <Input type="text" className="input_information" />
                             )}
                         </fieldset>
                     </Form.Item>

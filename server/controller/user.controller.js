@@ -87,7 +87,7 @@ exports.ForgetPassword = (req, res)=>{
 			  
 			var mailOptions = {
 				from: 'hội máu',
-				to:  user.Email,
+				to:  user.member.Email,
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
 				html: 'Mật khẩu cho tài khoản : ' + req.body.username + ' là ' + newpassword 			  
