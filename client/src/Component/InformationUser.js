@@ -3,31 +3,15 @@ import React, { Component, useEffect, useState } from 'react'
 import './style.css'; 
 import '../css/InformationUser.css'
 import Avatar from '../Component/UpdateImg'
-import { getUserProfile } from '../api/base/profile'
 import { Radio, Form } from 'antd'
 
 const InformationUser = (props)=>{
-    const {sttv} = props
+    const {sttv, hovaten, ngaysinh, gioitinh} = props
     const style1 = {
         fontWeight: "100",
         color: "black",
         fontSize: "15px"
     }
-
-    const [user, setUser] = useState([])
-
-    const fetchData = async () => {
-        const result = await getUserProfile()
-        if (result) {
-            if (result.success) {
-                setUser(result.data.data)
-            }
-        }
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
 
     return (
         <div>
@@ -41,11 +25,11 @@ const InformationUser = (props)=>{
                         </div>
                         <div class="informationUserForMobile">
                             <label for="" class="label_information2">Mã thành viên: </label> {sttv}<br/>
-                            <label for="" class="label_information2">Họ và tên: </label> {user.Hovaten}<br/>
+                            <label for="" class="label_information2">Họ và tên: </label> {hovaten}<br/>
                             <label for="" class="label_information2">Ngày sinh: </label>
-                            <input type="date" class="input_information2" defaultValue={user.Ngaysinh} disabled={true}/><br/>
+                            <input type="date" class="input_information2" defaultValue={ngaysinh} disabled={true}/><br/>
                             <label for="" class="label_information2">Giới tính: </label>
-                            <Radio.Group disabled={true} value={user.Gioitinh ? 1 : 2} name="radiogroup">
+                            <Radio.Group disabled={true} value={gioitinh ? 1 : 2} name="radiogroup">
                                 <Radio value={1}  style = {{marginLeft: '5px'}} class="radio_information"> Nam </Radio>
                                 <Radio value={2}  class="radio_information"> Nữ </Radio>
                             </Radio.Group>
