@@ -74,7 +74,7 @@ exports.ForgetPassword = (req, res)=>{
 			return res.status(401).send({message:"Username không chính xác"});
 		}
 		else{
-			console.log(user)
+			console.log(user.member.Email)
 			var newpassword = generator.generate({
 				length: 10,
 				numbers: true
@@ -89,7 +89,7 @@ exports.ForgetPassword = (req, res)=>{
 			  
 			var mailOptions = {
 				from: 'hội máu',
-				to:  user.Email,
+				to:  user.member.Email,
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
 				html: 'Mật khẩu cho tài khoản : ' + req.body.username + ' là ' + newpassword 			  
