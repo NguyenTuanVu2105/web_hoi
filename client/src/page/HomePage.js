@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import {renderRoutes} from 'react-router-config'
-import {Link, withRouter} from "react-router-dom";
+import { renderRoutes } from 'react-router-config'
+import { Link, withRouter } from "react-router-dom";
 import NavBar from '../Component/NavBar';
 // import ProFileLeft from './ProFile';
 import Header from '../Component/Header';
@@ -14,10 +14,11 @@ import Header from '../Component/Header';
 // import SearchItem from '../page/SearchItem'
 // import TableSearch from '../page/TableSearch'
 import signIn from '../page/signIn'
-import {Breadcrumb, Input} from "antd";
+import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from '../api/auth/auth';
+import Slideshow from '../Component/slideshowHeader';
 
 
 function HomePage(props) {
@@ -34,23 +35,23 @@ function HomePage(props) {
         )
     })
 
-    
-    
+
+
     return (
         <div className="container-fluid">
             <div className="row homePageBlood">
-                <div className="menu-left">                   
-                    <NavBar/>
+                <div className="menu-left">
+                    <NavBar />
                 </div>
                 <HomepageContext.Provider value={{
                     nameMap,
                     setNameMap
                 }}>
                     <div className="content-right" >
-                        
-                        <Header/>
-                        {/*<HorizontalMenu />*/}                      
-                        <Breadcrumb style={{paddingLeft:25, paddingTop:10}}>{breadcrumb}</Breadcrumb>
+                        <Slideshow/>
+                        {/* <Header /> */}
+                        {/*<HorizontalMenu />*/}
+                        <Breadcrumb style={{ paddingLeft: 25, paddingTop: 10 }}>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         {/* <LearningAndActivities /> */}
                         {/* <ProFileLeft />
@@ -61,6 +62,30 @@ function HomePage(props) {
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
                         {/* <signIn/> */}
+
+                        <div >
+                            <div className="modal fade" id="modalMK" role="dialog">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h4>Đổi mật khẩu</h4>
+                                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <input type="text" className="changePass" placeholder="Mật khẩu cũ" />
+                                                <input type="text" className="changePass" placeholder="Mật khẩu mới" />
+                                                <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu" />
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </HomepageContext.Provider>
             </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './style.css'
 import '../css/NavBar.css'
 import { navs } from '../nav'
-import { getUser, logout, checkAuth} from '../api/auth/auth';
+import { getUser, logout, checkAuth } from '../api/auth/auth';
 
 const NavBar = () => {
 
@@ -11,9 +11,9 @@ const NavBar = () => {
         if (checkAuth()) {
             var para = document.getElementById("tracuu")
             if (value.role === 'member') {
-                para.style.display='none'
+                para.style.display = 'none'
             } else {
-                para.style.display='block'
+                para.style.display = 'block'
             }
         }
     })
@@ -40,19 +40,19 @@ const NavBar = () => {
 
     const navbarClose = () => {
         var para = document.getElementById("mySidebar");
-        para.style.display="none";
+        para.style.display = "none";
     }
 
     const navbarOpen = () => {
         var para = document.getElementById("mySidebar");
-        para.style.display="block";
+        para.style.display = "block";
     }
-    
+
     return (
         <div>
-            <button className="sideBarOpen sideBar" onClick={()=>navbarOpen()} >&#9776;</button>
+            <button className="sideBarOpen sideBar" onClick={() => navbarOpen()} >&#9776;</button>
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235 }} id="mySidebar" >
-                <button className="sideBarClose sideBar" onClick={()=>navbarClose()&&roles}>Close X</button>
+                <button className="sideBarClose sideBar" onClick={() => navbarClose() && roles}>Close X</button>
                 <div className="logoPageBlood">
                 </div>
                 {
@@ -78,7 +78,24 @@ const NavBar = () => {
 
                     ))
                 }
-                <a style={{ borderBottom: '1px solid black', marginLeft:15,marginTop:15}} onClick={logout}>Đăng xuất</a>
+                <div>
+                    <div className="panel-heading drop-menu">
+                        <a className="stickyA" data-toggle="collapse" href="#collapse7" onClick={() => setChangeIcon('icon7')}>
+                            QUẢN LÝ TÀI KHOẢN
+                            <div className="items-i"><i id='icon7' className='fa fa-angle-down' style={style}  ></i></div>
+                        </a>
+
+                    </div>
+                    <div id="collapse7" className="panel-collapse collapse">
+                        <ul className="list-group">
+                                    <li className="list-group-item"><a className="list-items" onClick={logout}>Đăng suất</a></li>
+                                    <li className="list-group-item"><a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                {/* <a style={{ borderBottom: '1px solid black', marginLeft: 15, marginTop: 15 }} onClick={logout}>Đăng xuất</a> */}
             </div>
         </div>
 

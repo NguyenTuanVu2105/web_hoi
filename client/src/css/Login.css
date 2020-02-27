@@ -4,6 +4,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    position: relative;
   }
   
   .login-wrap .login-form {
@@ -44,3 +45,57 @@
 .divMK{
   text-align: center;
 }
+.setvisible{
+  position: absolute;
+    z-index: 2;
+    width: 350px;
+    height: 350px;
+    background-image: url("https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=1&_nc_ohc=fgTTjiQRwO8AX_EyHit&_nc_ht=scontent.fhan3-1.fna&oh=0fc38a83e734acec907d4d9d8784b797&oe=5EBB1865");
+    background-position: center;
+    background-size: cover;
+    /* background: rgba(255, 255, 255, 0.6); */
+    border-radius: 10px;
+}
+  .khungChua{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex;
+    justify-content: space-between;
+  }
+    .setClose{
+      border: none;
+      background-color: white;
+      font-size: 20px;
+      border-radius: 25%;
+    }
+    .setClose:hover{
+      color: rgb(24, 144, 255);
+    }
+
+  .setEmail{
+    background: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    border: 1px solid black;
+    margin-left: 5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    height: 40px;
+    padding-left: 15px;
+  }
+  .setEmail:hover{
+    border: 1px solid rgb(24, 144, 255);
+  }
+  .Gui{
+    width: 25%;
+    border: 1px solid black;
+    margin-left: 70%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  .Gui:hover{
+    border: 1px solid rgb(24, 144, 255);
+  }

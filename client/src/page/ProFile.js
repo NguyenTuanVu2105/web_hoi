@@ -201,7 +201,7 @@ function ProFileLeft(props) {
                         </fieldset>
                     </Form.Item>
                     <div className="DIVprofile">
-                        <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a>
+                        {/* <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a> */}
                         <Form.Item>
                             <Button className="buttonProfile" type="primary" htmlType="submit">Submit</Button>
                         </Form.Item>
@@ -211,7 +211,7 @@ function ProFileLeft(props) {
                 </div>
             </Form>
 
-            <div >
+            {/* <div >
                 <div className="modal fade" id="modalMK" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
@@ -232,7 +232,7 @@ function ProFileLeft(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>// row
 
     )
