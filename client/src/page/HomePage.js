@@ -18,6 +18,7 @@ import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from '../api/auth/auth';
+import Slideshow from '../Component/slideshowHeader';
 
 
 function HomePage(props) {
@@ -47,8 +48,8 @@ function HomePage(props) {
                     setNameMap
                 }}>
                     <div className="content-right" >
-
-                        <Header />
+                        <Slideshow/>
+                        {/* <Header /> */}
                         {/*<HorizontalMenu />*/}
                         <Breadcrumb style={{ paddingLeft: 25, paddingTop: 10 }}>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}

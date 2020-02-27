@@ -17,6 +17,7 @@
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
+    z-index: 1;
     border: 1px solid white;
 }
 .sideBarOpen:hover{

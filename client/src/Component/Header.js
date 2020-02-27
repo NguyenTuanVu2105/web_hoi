@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react'
 import '../css/Header.css'
+import { Slide } from 'react-slideshow-image';
 
 const Header = () => {
     const [inf, setInf] = useState({
@@ -21,17 +22,16 @@ const Header = () => {
     }
     return (
         <div className='pageHeader'>
-            <i className='fas fa-arrow-circle-left' style={{ fontSize: 45, color: 'gray', opacity: '.8' }} />
+            {/* <i className='fas fa-arrow-circle-left' style={{ fontSize: 45, color: 'gray', opacity: '.8' }} /> */}
             <div  className="informationImg" style={{backgroundColor:`${inf.background}`}}>
                 <a className="doiBackground" data-toggle="modal" data-target="#modalBackground">Thay đổi background >>></a>
-                <div> 
-                    
+                <div>                     
                     <label name="name" className="labelHeader" style={{color:`${inf.color}`}}>Tên chương trình: <a href={inf.link} style={{color:`${inf.color}`}} target="blank">{inf.name}</a></label><br />
                     <label name="time" className="labelHeader" style={{color:`${inf.color}`}}>Ngày diễn ra: {inf.time}</label><br />
                     <label name="place" className="labelHeader" style={{color:`${inf.color}`}}>Địa điểm tổ chức: {inf.place}</label><br />                    
                 </div>
 
-                <div className="modal fade" id="modalBackground" role="dialog">
+                <div className="modal fade AA" id="modalBackground" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -68,7 +68,7 @@ const Header = () => {
                 </div>
             </div>
 
-            <i className='fas fa-arrow-circle-right' style={{ fontSize: 45, color: 'gray', opacity: '.8' }} />
+            {/* <i className='fas fa-arrow-circle-right' style={{ fontSize: 45, color: 'gray', opacity: '.8' }} /> */}
         </div>
     )
 }
