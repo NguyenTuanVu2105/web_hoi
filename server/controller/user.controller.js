@@ -87,10 +87,11 @@ exports.ForgetPassword = (req, res)=>{
 			  
 			var mailOptions = {
 				from: 'hội máu',
+				// to:	'hoithanhnienvandonghienmau@gmail.com',
 				to:  user.member.Email,
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
-				html: 'Mật khẩu cho tài khoản : ' + req.body.username + ' là ' + newpassword 			  
+				html: '<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">Hội máu</h4></div><div style="border-bottom:1px solid gray; width:600px"><p>Xin chào' + req.body.username +'<p><p>Bạn có thể nhập mã sau làm mật khẩu dùng một lần để đăng nhập vào Hội máu:</p><div style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:70px;text-align:center;margin-bottom:20px">'+ newpassword+'</div></div></div>'			  
 			};
 			  
 			  transporter.sendMail(mailOptions, function(error, info){
