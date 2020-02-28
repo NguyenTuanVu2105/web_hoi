@@ -51,7 +51,7 @@ const NavBar = () => {
     return (
         <div>
             <button className="sideBarOpen sideBar" onClick={() => navbarOpen()} >&#9776;</button>
-            <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235 }} id="mySidebar" >
+            <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex:2 }} id="mySidebar" >
                 <button className="sideBarClose sideBar" onClick={() => navbarClose() && roles}>Close X</button>
                 <div className="logoPageBlood">
                 </div>

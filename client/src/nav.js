@@ -18,11 +18,6 @@ export const navs = [
         IconID: 'icon2', 
         children: [
             {
-                id: "tracuu",
-                name:"TRA CỨU THÀNH VIÊN",
-                href:"/TableSearch"
-            },
-            {
                 id: "hoso",
                 name: "HỒ SƠ CÁ NHÂN",
                 href: "/profile"
@@ -43,9 +38,7 @@ export const navs = [
             {
                 name: ""
             },
-            {
-                name: ""
-            }
+
         ]
     },
     {
@@ -57,9 +50,7 @@ export const navs = [
             {
                 name: ""
             },
-            {
-                name: ""
-            }
+
         ]
     },
     {
@@ -71,9 +62,7 @@ export const navs = [
             {
                 name: ""
             },
-            {
-                name: ""
-            }
+
         ]
     },
     {
@@ -85,8 +74,27 @@ export const navs = [
             {
                 name: ""
             },
+
+        ]
+    },
+    {
+        Id1: "#collapse8",
+        Id2: "collapse8",
+        name: "ADMIN",
+        IconID: 'icon8', 
+        children: [
             {
-                name: ""
+                id: "tracuu",
+                name: "TRA CỨU THÀNH VIÊN",
+                href: "/TableSearch"
+            },
+            {
+                name: "THÊM ĐƠN VỊ",
+                href: '/AUDUnit'
+            },
+            {
+                name: "THAY ĐỔI BACKGROUND",
+                href: '/ChangeBackground'
             }
         ]
     },

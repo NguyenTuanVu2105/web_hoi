@@ -11,6 +11,7 @@ import AUDUnit from '../page/AUDUnit'
 import introduleBlood from '../page/introduleBlood'
 import introduleBloodDisplay from '../page/introduleBloodDisplay'
 import HistoryBlood from '../page/HistoryBlood'
+import ChangeBackground from '../page/ChangeBackground'
 const routes = [
     {
         path: "/login",
@@ -79,6 +80,11 @@ const routes = [
                 path: "/HistoryBlood",
                 exact: true,
                 component: HistoryBlood,
+            },
+            {
+                path: "/ChangeBackground",
+                exact: true,
+                component: ChangeBackground,
             },
         ]
     },

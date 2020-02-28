@@ -56,23 +56,7 @@ const AUDUnit = (props) => {
         Doi: false
     })
 
-    const changeBackgroudHeader = (event) => {
-        var target= event.target;
-        var name = target.name;
-        var value = target.value;
-        setInf({...inf,
-            [name]: value
-        })
-    }
-    const [inf, setInf] = useState({
-        name: 'Người Việt Trẻ 3000',
-        link: 'https://www.facebook.com/',
-        time: '30/2/3000-31/2/3000',
-        place: 'Hà Nội-Việt Nam',
-        background: 'rgb(87, 78, 78)',
-        color: ''
-
-    })
+    
 
     useEffect(() => {
         setNameMap({
@@ -95,35 +79,9 @@ const AUDUnit = (props) => {
                 <div className="ButtonForMobile">
                     <button className="buttonD" onClick={() => openChiHoi()}>Chi Hội</button>
                     <button className="buttonD" onClick={() => openDoi()}>Đội</button>
-                    <button className="buttonD" onClick={() => openDoi()}><a className="doiBackground" data-toggle="modal" data-target="#modalBackground"> background</a></button>
+                    <button className="buttonD" onClick={() => openDoi()}></button>
                     
-                    <div className="modal fade AA" id="modalBackground" role="dialog">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h4>Chỉnh sửa background</h4>
-                                <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
-                                    <input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
-                                    <input type="text" name="time" className="changeBackground" placeholder="Ngày diễn ra" onChange={e=>changeBackgroudHeader(e)}/>
-                                    <input type="text" name="place" className="changeBackground" placeholder="Địa điểm tổ chức" onChange={e=>changeBackgroudHeader(e)} />
-                                    <label className="changeColor">Màu nền: </label>
-                                    <input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
-                                    <label className="changeColor">Màu chữ: </label>
-                                    <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
-                                    <label className="changeColor">Background: </label>
-                                    <input type="file" style={{ marginLeft: 5 }} /><br />
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    
 
                 </div>
             </div>
