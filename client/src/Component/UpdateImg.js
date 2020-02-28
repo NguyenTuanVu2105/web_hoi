@@ -3,26 +3,26 @@ import { Upload, Icon, message } from 'antd'
 import { getAvatar, uploadAvatar } from '../api/base/profile'
 
 const Avatar = (props) => {
-    const {avt} = props
-    const [avatar, setAvatar] = useState(null)
+    // const {avt} = props
+    // const [avatar, setAvatar] = useState(null)
     
-    const fetchData = async () => {
-        const result = await getAvatar(avt)
-        console.log(result.data)
-        // if (result.success) {
-        //     setAvatar(result.data)
-        // }
-    }
+    // const fetchData = async () => {
+    //     const result = await getAvatar(avt)
+    //     console.log(result.data)
+    //     if (result.success) {
+    //         setAvatar(result.data)
+    //     }
+    // }
 
-    useEffect(() => {
-        fetchData()
-    }, [avt])
+    // useEffect(() => {
+    //     fetchData()
+    // }, [avt])
 
     return (
         <Upload
             listType="picture-card"
         >
-            <img src={avatar} alt="avatar" style={{ width: '100%' }} />
+            {/* <img src={avatar} alt="avatar" style={{ width: '100%' }} /> */}
         </Upload>
     )
 }

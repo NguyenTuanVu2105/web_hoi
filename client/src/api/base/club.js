@@ -7,11 +7,10 @@ export const postClub = (data) => {
         data: data,
     })
 }
-export const getClub = (data) => {
+export const getClub = (madoi) => {
     return createAuthApiRequest({
-        url: '/admin/add/club',
-        method: 'post',
-        data: data,
+        url: `/information/club/${madoi}`,
+        method: 'get'
     })
 }
 export const delClub = (data) => {

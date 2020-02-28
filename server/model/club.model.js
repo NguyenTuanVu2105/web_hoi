@@ -3,7 +3,7 @@ module.exports = (sequelize, Sequelize) => {
         Madoi: Sequelize.STRING,
         Tendoi: Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Ngaythanhlap:       Sequelize.DATEONLY,
-        DiachiL:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
+        Diachi:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
         DonviQL:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Phutrach:           Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
         Ngaytruyenthong:    Sequelize.DATEONLY,

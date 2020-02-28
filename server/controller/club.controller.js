@@ -47,7 +47,7 @@ exports.EditClub = (req,res) =>{
                 Tendoi: req.body.tendoi,
                 Ngaythanhlap: req.body.ngaythanhlap,
                 Diachi : req.body.diachi,
-                DonviQl  :  req.body.donviql,
+                DonviQL  :  req.body.donviql,
                 Phutrach  :  req.body.phutrach,
                 Ngaytruyenthong  :  req.body.ngaytruyenthong,
                 Camtinhvien :  req.body.camtinhvien,
