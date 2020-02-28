@@ -3,28 +3,29 @@ import HomepageContext from "../context/HomepageContext";
 import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 import { getUser, checkAuth} from '../api/auth/auth'
+import { getClub } from '../api/base/club'
 
-const AddUnit = () => {
+const AddUnit = (props) => {
+    const { madoi } = props
     const [changeInput, setchangeInput] = useState(true)
     const [changeButton, setchangeButton] = useState(false)
     const {nameMap, setNameMap} = useContext(HomepageContext)
+    
+    const fetchData = async () => {
+        const result = await getClub()
+
+    }
 
     const roles = getUser().then((value) => {
         if (checkAuth()) {
             var edit = document.getElementById('roleedit')
-            // var del = document.getElementById('roledelete')
             var save = document.getElementById('rolesave')
-            // var cancel = document.getElementById('rolecancel')
             if (value.role === 'member') {
                 edit.style.display='none'
-                // del.style.display='none'
                 save.style.display='none'
-                // cancel.style.display='none'
             } else {
                 edit.style.display='block'
-                // del.style.display='block'
                 save.style.display='block'
-                // cancel.style.display='block'
             }
         }
     })
