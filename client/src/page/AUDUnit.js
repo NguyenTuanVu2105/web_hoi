@@ -1,7 +1,7 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
-
+// import {changeBackgroudHeader} from '../Component/Header'
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
@@ -26,19 +26,17 @@ const AUDUnit = (props) => {
     const handleAd = () => {
         console.log(props.form)
         const a = window.confirm('Bạn có chắc muốn Thêm mới!');
-        // if(a){
-        //     getClub()
-        // }
+
     }
 
     const handleUp = () => {
-        const a = window.confirm('Bạn có chắc muốn lưu thay đổi!');
+        const a = window.confirm('Bạn có chắc muốn thêm mới!');
         if (a) {
             postClub()
         }
     }
     const handleCa = () => {
-        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+        window.confirm('Bạn có chắc muốn hủy thêm mới!');
     }
 
     const openChiHoi = () => {
@@ -58,23 +56,23 @@ const AUDUnit = (props) => {
         Doi: false
     })
 
-    // const changeBackgroudHeader = (event) => {
-    //     var target= event.target;
-    //     var name = target.name;
-    //     var value = target.value;
-    //     setInf({...inf,
-    //         [name]: value
-    //     })
-    // }
-    // const [inf, setInf] = useState({
-    //     name: 'Người Việt Trẻ 3000',
-    //     link: 'https://www.facebook.com/',
-    //     time: '30/2/3000-31/2/3000',
-    //     place: 'Hà Nội-Việt Nam',
-    //     background: 'rgb(87, 78, 78)',
-    //     color: ''
+    const changeBackgroudHeader = (event) => {
+        var target= event.target;
+        var name = target.name;
+        var value = target.value;
+        setInf({...inf,
+            [name]: value
+        })
+    }
+    const [inf, setInf] = useState({
+        name: 'Người Việt Trẻ 3000',
+        link: 'https://www.facebook.com/',
+        time: '30/2/3000-31/2/3000',
+        place: 'Hà Nội-Việt Nam',
+        background: 'rgb(87, 78, 78)',
+        color: ''
 
-    // })
+    })
 
     useEffect(() => {
         setNameMap({
@@ -85,7 +83,7 @@ const AUDUnit = (props) => {
     }, [])
 
     return (
-        <div>
+        <div className="para">
             <div className=' row changeAUDUnit'>
                 {/* <form className="searchForMobile">
                     <Search
@@ -95,12 +93,11 @@ const AUDUnit = (props) => {
                     />
                 </form> */}
                 <div className="ButtonForMobile">
-                    {/* <button className="buttonD" onClick={() => setchangeButton(true)}>Hội</button> */}
                     <button className="buttonD" onClick={() => openChiHoi()}>Chi Hội</button>
                     <button className="buttonD" onClick={() => openDoi()}>Đội</button>
-                    {/* <button className="buttonD" onClick={() => openDoi()}><a className="doiBackground" data-toggle="modal" data-target="#modalBackground"> background</a></button> */}
+                    <button className="buttonD" onClick={() => openDoi()}><a className="doiBackground" data-toggle="modal" data-target="#modalBackground"> background</a></button>
                     
-                    {/* <div className="modal fade AA" id="modalBackground" role="dialog">
+                    <div className="modal fade AA" id="modalBackground" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -126,19 +123,11 @@ const AUDUnit = (props) => {
                             </div>
                         </div>
                     </div>
-                </div>modal */}
-
-                    {/* <button className="buttonDisable" onClick={() => handleAd()} disabled={changeButton}>Thêm mới</button> */}
                 </div>
 
-                <div className="ButtonForMobile">
-                    {/* <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>                 */}
-
-                    {/* <button className="buttonDisable" onClick={() => handleDe()} disabled={changeButton}>Xóa</button> */}
                 </div>
-
             </div>
-            <form className="para" style={{ display: name.ChiHoi ? 'block' : 'none' }}>
+            <form style={{ display: name.ChiHoi ? 'block' : 'none' }}>
                 <h4>Chi Hội</h4>
                 <div>
                     <span className="spanLabel">Đơn vị:</span>
@@ -216,17 +205,6 @@ const AUDUnit = (props) => {
                         </tr>
                     </table>
                 </div>
-                {/* <span className="spanLabel">Tổng số thành viên:</span><br /> */}
-                {/* <div>
-                    <span className="spanLabel">Số đơn vị trực thuộc Chi Hội:</span><br />
-                    {
-                        ItemUnit.map(name => (
-                            <div style={{ paddingLeft: '20px' }}>
-                                <a>{name.name}</a><br />
-                            </div>
-                        ))
-                    }
-                </div> */}
 
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
@@ -261,7 +239,7 @@ const AUDUnit = (props) => {
                                 Cảm tình viên
                         </th>
                             <th className="inputTH">
-                                <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' />
+                                <input id="inputDisbleA" type='number' min="0" className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
                         </tr>
                         <tr>
@@ -317,7 +295,7 @@ const AUDUnit = (props) => {
 
             </form>
             <div className="buttonSubmitForMobile">
-                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button className="buttonS" onClick={() => handleUp()}>Thêm mới</button>
                 <button className="buttonS" onClick={() => handleCa()}>Hủy</button>
             </div>
 
