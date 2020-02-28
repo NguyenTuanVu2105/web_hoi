@@ -9,7 +9,7 @@ import Header from '../Component/Header';
 // ];
  
 const properties = {
-  duration: 2000,
+  duration: 3500,
   transitionDuration: 500,
   infinite: true,
   indicators: true,
@@ -34,6 +34,7 @@ const Slideshow = () => {
             <Header/>
           </div>
         </Slide>
+        
       </div>
     )
 }
