@@ -10,6 +10,12 @@ var currentTime = new Date()
 
 exports.AddProfile = (req, res) => {
     var year = currentTime.getFullYear()
+    if ( req.body.hovaten === null || req.body.ngaysinh === null || 
+         req.body.gioitinh === null || req.body.specializedId === null ||
+         req.body.positionId === null || req.body.clubId === null || 
+         req.body.tinhtranghd === null) {
+            res.status(403).send({message: 'Enter not enough information!'})
+    }
     Profile.findOne({
         where: {
             Hovaten: req.body.hovaten,
