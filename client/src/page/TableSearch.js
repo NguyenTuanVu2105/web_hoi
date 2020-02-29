@@ -123,50 +123,98 @@ const TableSearch = (props) => {
           footer={null}
         >
           <Form onSubmit={handleSubmit}>
-            {getFieldDecorator('hovaten')(
-              <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
-            )}
-            {getFieldDecorator('ngaysinh')(
-              <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
-            )}
-            {getFieldDecorator('gioitinh')(
-              <Radio.Group name="radiogroup">
-                <Radio value={1} style={{ marginLeft: '5px', marginBottom: 15 }} class="radio_information"> Nam </Radio>
-                <Radio value={0} class="radio_information"> Nữ </Radio>
-              </Radio.Group>
-            )}
-            {getFieldDecorator('positionId')(
-              <Select placeholder="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
-                {position.map(position => (
-                  <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
-                ))}
-              </Select>
-            )}
-            {getFieldDecorator('specializedId')(
-              <Select placeholder="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
-                {specialized.map(specialized => (
-                  <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
-                ))}
-              </Select>
-            )}
-            {getFieldDecorator('clubId')(
-              <Select placeholder="Tên đội" style={{ width: '100%' }}>
-                {club.map(club => (
-                  <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
-                ))}
-              </Select>
-            )}
-            {getFieldDecorator('tinhtranghd')(
-              <Radio.Group name="radiogroup">
-                <Radio value={1} style={{ marginLeft: '5px', marginTop: 15 }} class="radio_information"> Đang hoạt động </Radio>
-                <Radio value={0} class="radio_information"> Nghỉ hoạt động </Radio>
-              </Radio.Group>
-            )}
+            <Form.Item>
+              {getFieldDecorator('hovaten', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa nhập họ và tên!'
+                }]
+              })(
+                <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('ngaysinh', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn ngày sinh!'
+                }]
+              })(
+                <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('gioitinh', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn giới tính!'
+                }]
+              })(
+                <Radio.Group name="radiogroup">
+                  <Radio value={1} style={{ marginLeft: '5px', marginBottom: 15 }} class="radio_information"> Nam </Radio>
+                  <Radio value={0} class="radio_information"> Nữ </Radio>
+                </Radio.Group>
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('positionId', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn chức vụ!'
+                }]
+              })(
+                <Select placeholder="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
+                  {position.map(position => (
+                    <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
+                  ))}
+                </Select>
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('specializedId', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn bậc chuyên môn!'
+                }]
+              })(
+                <Select placeholder="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
+                  {specialized.map(specialized => (
+                    <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
+                  ))}
+                </Select>
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('clubId', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn đội!'
+                }]
+              })(
+                <Select placeholder="Tên đội" style={{ width: '100%' }}>
+                  {club.map(club => (
+                    <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                  ))}
+                </Select>
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('tinhtranghd', {
+                rules: [{
+                  required: true,
+                  message: 'Chưa chọn tình trạng hoạt động!'
+                }]
+              })(
+                <Radio.Group name="radiogroup">
+                  <Radio value={1} style={{ marginLeft: '5px', marginTop: 15 }} class="radio_information"> Đang hoạt động </Radio>
+                  <Radio value={0} class="radio_information"> Nghỉ hoạt động </Radio>
+                </Radio.Group>
+              )}
+            </Form.Item>
             <Form.Item>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <Button type="primary" style={{ marginTop: 15 }} htmlType="submit">Tạo</Button>
               </div>
-
             </Form.Item>
           </Form>
         </Modal>{/* =====Them thanh vien===== */}
