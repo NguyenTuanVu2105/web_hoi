@@ -67,7 +67,7 @@ export const createAuthApiRequest = async ({ url, method, data, params, isFormDa
     }
 }
 
-export const uploadFile = async (data, filename, file) => {
+export const uploadFile = async (url, data, filename, file) => {
     const formData = new FormData();
     const token = getCookie(COOKIE_KEY.TOKEN)
     if (!token) {
@@ -81,7 +81,7 @@ export const uploadFile = async (data, filename, file) => {
         }
         formData.append("avatar", file);
         const { data: resp } = await axios.post(
-            `${baseUrl}/api/auth/profile/avatar`,
+            `${baseUrl}${url}`,
             formData,
             {
                 headers: {

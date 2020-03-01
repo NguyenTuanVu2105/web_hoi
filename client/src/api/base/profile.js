@@ -1,4 +1,4 @@
-import { createAuthApiRequest } from "../index"
+import { createAuthApiRequest, uploadFile } from "../index"
 
 export const getUserProfile = () => {
   return createAuthApiRequest({
@@ -22,10 +22,6 @@ export const getAvatar = (fileName) => {
   })
 }
 
-export const uploadAvatar = (data) => {
-  return createAuthApiRequest({
-    url: `/api/upload/avatar`,
-    method: 'post',
-    data: data
-  })
+export const uploadAvatar = ({data, filename, file}) => {
+  return uploadFile('/api/upload/avatar', data, filename, file)
 }

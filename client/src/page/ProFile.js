@@ -5,14 +5,14 @@ import { formChildrenRight } from '../Component/FormChildrenRight'
 import HomepageContext from "../context/HomepageContext"
 import { Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
-import { getUserProfile, updateUserProfile } from '../api/base/profile'
+import { getUserProfile, updateUserProfile, uploadAvatar } from '../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea'
 
 function ProFileLeft(props) {
     const { getFieldDecorator } = props.form
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [user, setUser] = useState([])
-
+    const [file, setFile] = useState({})
     const fetchData = async () => {
         const result = await getUserProfile()
         if (result) {
@@ -27,6 +27,9 @@ function ProFileLeft(props) {
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
+                console.log(file)
+                await uploadAvatar(file)
+                console.log('success')
                 await updateUserProfile(values)
                 setLoading(false)
                 notification['success']({
@@ -55,7 +58,7 @@ function ProFileLeft(props) {
         <div>
             <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
-                    <InformationUser sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} />
+                    <InformationUser image={user.Image} file={file} setFile={setFile} sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} />
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>

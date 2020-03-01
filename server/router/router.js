@@ -31,7 +31,7 @@ module.exports = function(app) {
 
     app.post('/api/upload/avatar', [imageUploader.single('avatar'), authJwt.verifyToken], membercontroller.uploadAvatar)
 
-    app.get('/api/avatar/:name', [authJwt.verifyToken], (req, res) => {
+    app.get('/api/avatar/:name', (req, res) => {
 		const fileName = req.params.name
 		if (!fileName) {
 			return res.send({

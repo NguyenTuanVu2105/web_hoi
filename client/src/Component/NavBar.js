@@ -10,10 +10,12 @@ const NavBar = () => {
     const roles = getUser().then((value) => {
         if (checkAuth()) {
             var para = document.getElementById("tracuu")
-            if (value.role === 'member') {
-                para.style.display = 'none'
-            } else {
-                para.style.display = 'block'
+            if (para) {
+                if (value.role === 'member') {
+                    para.style.display = 'none'
+                } else {
+                    para.style.display = 'block'
+                }
             }
         }
     })
@@ -21,15 +23,17 @@ const NavBar = () => {
     // const [Icon, setIcon] = useState(false)
     const setChangeIcon = (element) => {
         var para = document.getElementById(element);
-        if (para.classList.item(1) === "fa-angle-down") {
-            console.log(para.classList.item(1));
-            para.classList.remove("fa-angle-down");
-            para.classList.toggle("fa-angle-up");
-        }
-        else if (para.classList.item(1) === "fa-angle-up") {
-            para.classList.remove("fa-angle-up");
-            para.classList.toggle("fa-angle-down");
-            console.log(para.classList);
+        if (para) {
+            if (para.classList.item(1) === "fa-angle-down") {
+                console.log(para.classList.item(1));
+                para.classList.remove("fa-angle-down");
+                para.classList.toggle("fa-angle-up");
+            }
+            else if (para.classList.item(1) === "fa-angle-up") {
+                para.classList.remove("fa-angle-up");
+                para.classList.toggle("fa-angle-down");
+                console.log(para.classList);
+            }
         }
     }
     const style = {
