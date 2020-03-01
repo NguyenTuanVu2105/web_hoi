@@ -7,3 +7,10 @@ export const login = (data) => {
         data: data
     })
 }
+export const forgetpassword = (data) => {
+    return createApiRequest({
+        url: '/api/forgetpassword', 
+        method: 'post',
+        data: data
+    })
+}

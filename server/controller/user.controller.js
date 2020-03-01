@@ -97,8 +97,8 @@ exports.ForgetPassword = (req, res)=>{
 				if (error) {
 				  res.status(401).send({message:error});
 				} else {
-				  res.status(200).send({success : true})
-				  User.update({ password: bcrypt.hashSync(newpassword,10)
+				  res.status(200).send({success : true, data : user.members[0].Email.trim()})
+				  User.update({ password: bcrypt.hashSync(newpassword,8)
 					},{
 					where: {username: req.body.username}
 					})
