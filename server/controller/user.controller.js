@@ -64,10 +64,10 @@ exports.ForgetPassword = (req, res)=>{
 		where: {
 			username: req.body.username
 		}, 
-		include:[{
+		include:{
 			model: Member,
-			attributes: ['Email'] 
-		}]
+			attributes: ['Email','Hovaten'] 
+		}
 	}).then(user => {
 		if (!user) {
 			return res.status(401).send({message:"Username không chính xác"});
@@ -84,14 +84,13 @@ exports.ForgetPassword = (req, res)=>{
 				  pass: 'hoimauhanoi1994@'
 				}
 			  });
-			  
 			var mailOptions = {
 				from: 'hội máu',
 				// to:	'hoithanhnienvandonghienmau@gmail.com',
-				to:  user.member.Email,
+				to:  user.members[0].Email.trim(),
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
-				html: '<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">Hội máu</h4></div><div style="border-bottom:1px solid gray; width:600px"><p>Xin chào' + req.body.username +'<p><p>Bạn có thể nhập mã sau làm mật khẩu dùng một lần để đăng nhập vào Hội máu:</p><div style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:70px;text-align:center;margin-bottom:20px">'+ newpassword+'</div></div></div>'			  
+				html: '<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">Hội máu</h4></div><div style="border-bottom:1px solid gray; width:600px"><p>Xin chào ' + user.members[0].Hovaten +',</p><p>Bạn có thể nhập mã sau làm mật khẩu dùng một lần để đăng nhập vào Hội máu:</p><div style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:100px;text-align:center;margin-bottom:20px">'+ newpassword+'</div></div></div>'			  
 			};
 			  
 			  transporter.sendMail(mailOptions, function(error, info){
