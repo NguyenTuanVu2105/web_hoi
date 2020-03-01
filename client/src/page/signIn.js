@@ -4,18 +4,12 @@ import { Form, Icon, Input, Alert, Button, notification,  Checkbox } from 'antd'
 import AppContext from '../AppContext'
 import { withRouter } from 'react-router-dom'
 import { setUserCookies, getUser, checkAuth } from '../api/auth/auth'
-<<<<<<< HEAD
-import { login } from '../api/base/auth';
 import Loading from '../Component/Spin'
-
-const LoginWrap = (props) => {
-  const [isLoading, setIsLoading] = useState(false)
-=======
 import { login,forgetpassword } from '../api/base/auth';
 
 const LoginWrap = (props) => {
   const [idForget, setIdForget] = useState('')
->>>>>>> fbb1f7948daa591a2fdc149dc459f014f1a9a605
+  const [isLoading, setIsLoading] = useState(false)
   const context = useContext(AppContext)
   if (checkAuth()) {
     props.history.push('/')
@@ -35,14 +29,10 @@ const LoginWrap = (props) => {
       handleLogin(data)
       
       props.history.push('/')
-<<<<<<< HEAD
     } else {
       setMessage(data)
     }
     setIsLoading(false)
-=======
-    } 
->>>>>>> fbb1f7948daa591a2fdc149dc459f014f1a9a605
   }
   const handleSubmit = e => {
     e.preventDefault();
