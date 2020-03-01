@@ -5,26 +5,33 @@ import AppContext from '../AppContext'
 import { withRouter } from 'react-router-dom'
 import { setUserCookies, getUser, checkAuth } from '../api/auth/auth'
 import { login } from '../api/base/auth';
+import Loading from '../Component/Spin'
 
 const LoginWrap = (props) => {
+  const [isLoading, setIsLoading] = useState(false)
   const context = useContext(AppContext)
   if (checkAuth()) {
     props.history.push('/')
   }
   const [message, setMessage] = useState('')
   const handleLogin = (data) => {
+    
     if (data.Success) {
       setUserCookies(data.accessToken, data.message)
     }
+    
   }
   const submitLogin = async (values) => {
+    setIsLoading(true)
     const { success, data } = await login(values)
     if (success) {
       handleLogin(data)
+      
       props.history.push('/')
     } else {
       setMessage(data)
     }
+    setIsLoading(false)
   }
   const handleSubmit = e => {
     e.preventDefault();
@@ -37,8 +44,12 @@ const LoginWrap = (props) => {
   const [open, setOpen] = useState(false)
   const { getFieldDecorator } = props.form;
   return (
-
+    <div>
+      <div style={{display:isLoading?'block':'none'}}>
+        <Loading/>
+      </div>
     <div className="login-wrap backgroundSignIn">
+      
       <div className="backgroundOpacity"></div>
 
       <div className="setvisible" style={{ display: open ? 'block' : 'none' }}>
@@ -104,6 +115,7 @@ const LoginWrap = (props) => {
 
 
       </Form>
+    </div>
     </div>
   )
 }

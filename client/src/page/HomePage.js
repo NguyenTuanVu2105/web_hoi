@@ -19,6 +19,7 @@ import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from '../api/auth/auth';
 import Slideshow from '../Component/slideshowHeader';
+import Loading from '../Component/Spin';
 
 
 function HomePage(props) {
@@ -34,18 +35,22 @@ function HomePage(props) {
             </Breadcrumb.Item>
         )
     })
-
+    const [isLoading, setLoading] = useState(false)
 
 
     return (
         <div className="container-fluid">
+            
             <div className="row homePageBlood">
+            {isLoading && <Loading></Loading>}
                 <div className="menu-left">
                     <NavBar />
                 </div>
                 <HomepageContext.Provider value={{
                     nameMap,
-                    setNameMap
+                    setNameMap,
+                    isLoading,
+                    setLoading
                 }}>
                     <div className="content-right" >
                         <Slideshow/>

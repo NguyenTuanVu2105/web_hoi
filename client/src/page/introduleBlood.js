@@ -5,7 +5,7 @@ import '../css/AddUnit.css'
 import '../css/introduleBlood.css'
 const IntroduleBlood = () => {
     const [changeInput, setchangeInput] = useState(true)
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const {nameMap, setNameMap, isLoading, setLoading} = useContext(HomepageContext)
 
     const handleUp = ()=>{
         window.confirm('Bạn có chắc muốn lưu thay đổi!');
