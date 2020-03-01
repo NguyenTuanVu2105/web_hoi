@@ -1,8 +1,9 @@
-var express = require('express');
+var express = require('express')
 var app = express();
 app.use(express.json());
 const cors = require('cors');
-app.use(cors());
+app.use(cors())
+require('dotenv').config()
 
 require('./router/router')(app);
 
@@ -14,6 +15,6 @@ db.sequelize.sync().then(() => {
     console.log(err.message);
 });
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT;
 
 app.listen(port);

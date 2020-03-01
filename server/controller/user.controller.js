@@ -1,5 +1,7 @@
-const db = require('../config/db.config');
-const config = require('../config/config');
+const db = require('../config/db.config')
+const config = require('../config/config')
+const configemail = require('../config/configemail')
+require('dotenv').config()
 
 const User = db.user;
 const Member = db.member
@@ -79,8 +81,8 @@ exports.ForgetPassword = (req, res)=>{
 			var transporter = nodemailer.createTransport({
 				service: 'gmail',
 				auth: {
-				  user: 'hoithanhnienvandonghienmau@gmail.com',
-				  pass: 'hoimauhanoi1994@'
+				  user: configemail.email,
+				  pass: configemail.password
 				}
 			  });
 			var mailOptions = {
@@ -89,7 +91,11 @@ exports.ForgetPassword = (req, res)=>{
 				to:  user.members[0].Email.trim(),
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
-				html: '<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">Hội máu</h4></div><div style="border-bottom:1px solid gray; width:600px"><p>Xin chào ' + user.members[0].Hovaten +',</p><p>Bạn vui lòng truy cập link sau và làm theo hướng dẫn để tạo mật khẩu mới:</p>localhost:5000/newpassword/' +token +'</div></div>'			  
+				html: `<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">
+				Hội máu</h4></div><div style="border-bottom:1px solid gray;
+				 width:600px"><p>Xin chào ' + ${user.members[0].Hovaten} +',
+				 </p><p>Bạn vui lòng truy cập link sau và làm theo hướng dẫn để tạo mật khẩu mới:
+				 </p>${process.env.CLIENT_HOST}/newpassword/'${token}</div></div>`			  
 			};
 			  
 			  transporter.sendMail(mailOptions, function(error, info){
