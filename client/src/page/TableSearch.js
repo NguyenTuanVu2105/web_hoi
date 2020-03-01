@@ -130,7 +130,7 @@ const TableSearch = (props) => {
                   message: 'Chưa nhập họ và tên!'
                 }]
               })(
-                <Input placeholder="Họ và tên" style={{ marginBottom: 15 }} />
+                <Input placeholder="Họ và tên" />
               )}
             </Form.Item>
             <Form.Item>
@@ -140,7 +140,7 @@ const TableSearch = (props) => {
                   message: 'Chưa chọn ngày sinh!'
                 }]
               })(
-                <Input type='date' placeholder="Basic usage" style={{ marginBottom: 15 }} />
+                <Input type='date' placeholder="Basic usage"/>
               )}
             </Form.Item>
             <Form.Item>
@@ -151,7 +151,7 @@ const TableSearch = (props) => {
                 }]
               })(
                 <Radio.Group name="radiogroup">
-                  <Radio value={1} style={{ marginLeft: '5px', marginBottom: 15 }} class="radio_information"> Nam </Radio>
+                  <Radio value={1} style={{ marginLeft: '5px'}} class="radio_information"> Nam </Radio>
                   <Radio value={0} class="radio_information"> Nữ </Radio>
                 </Radio.Group>
               )}
@@ -163,7 +163,7 @@ const TableSearch = (props) => {
                   message: 'Chưa chọn chức vụ!'
                 }]
               })(
-                <Select placeholder="Chức vụ" style={{ height: 30, marginBottom: 15 }}>
+                <Select placeholder="Chức vụ" style={{ height: 30}}>
                   {position.map(position => (
                     <Option style={{ textAlign: "center" }} key={position.id}>{position.Chucvu}</Option>
                   ))}
@@ -177,7 +177,7 @@ const TableSearch = (props) => {
                   message: 'Chưa chọn bậc chuyên môn!'
                 }]
               })(
-                <Select placeholder="Bậc chuyên môn" style={{ height: 30, marginBottom: 15 }} >
+                <Select placeholder="Bậc chuyên môn" style={{ height: 30 }} >
                   {specialized.map(specialized => (
                     <Option style={{ textAlign: "center" }} key={specialized.id}>{specialized.Bacchuyenmon}</Option>
                   ))}
@@ -206,14 +206,14 @@ const TableSearch = (props) => {
                 }]
               })(
                 <Radio.Group name="radiogroup">
-                  <Radio value={1} style={{ marginLeft: '5px', marginTop: 15 }} class="radio_information"> Đang hoạt động </Radio>
+                  <Radio value={1} style={{ marginLeft: '5px'}} class="radio_information"> Đang hoạt động </Radio>
                   <Radio value={0} class="radio_information"> Nghỉ hoạt động </Radio>
                 </Radio.Group>
               )}
             </Form.Item>
             <Form.Item>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button type="primary" style={{ marginTop: 15 }} htmlType="submit">Tạo</Button>
+                <Button type="primary" htmlType="submit">Tạo</Button>
               </div>
             </Form.Item>
           </Form>
@@ -237,6 +237,7 @@ const TableSearch = (props) => {
             </Select>
 
             <Select className="optionSelect" defaultValue="Nhóm máu" onChange={handleChange}>
+              <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
               <Option style={{ textAlign: "center" }} value="O">O</Option>
               <Option style={{ textAlign: "center" }} value="A">A</Option>
               <Option style={{ textAlign: "center" }} value="B">B</Option>

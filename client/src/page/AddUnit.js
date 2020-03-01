@@ -73,7 +73,7 @@ const AddUnit = (props) => {
                             Cảm tình viên
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
+                            <input id="inputDisbleA" type="number" min="0" className="inputDisable" style={{width:35}} placeholder='1234' disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
