@@ -1,14 +1,21 @@
 import React, { useContext, useState } from 'react'
 import '../css/Login.css'
-import { Form, Icon, Input, Alert, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Alert, Button, notification,  Checkbox } from 'antd';
 import AppContext from '../AppContext'
 import { withRouter } from 'react-router-dom'
 import { setUserCookies, getUser, checkAuth } from '../api/auth/auth'
+<<<<<<< HEAD
 import { login } from '../api/base/auth';
 import Loading from '../Component/Spin'
 
 const LoginWrap = (props) => {
   const [isLoading, setIsLoading] = useState(false)
+=======
+import { login,forgetpassword } from '../api/base/auth';
+
+const LoginWrap = (props) => {
+  const [idForget, setIdForget] = useState('')
+>>>>>>> fbb1f7948daa591a2fdc149dc459f014f1a9a605
   const context = useContext(AppContext)
   if (checkAuth()) {
     props.history.push('/')
@@ -28,10 +35,14 @@ const LoginWrap = (props) => {
       handleLogin(data)
       
       props.history.push('/')
+<<<<<<< HEAD
     } else {
       setMessage(data)
     }
     setIsLoading(false)
+=======
+    } 
+>>>>>>> fbb1f7948daa591a2fdc149dc459f014f1a9a605
   }
   const handleSubmit = e => {
     e.preventDefault();
@@ -40,6 +51,15 @@ const LoginWrap = (props) => {
         submitLogin(values)
       }
     });
+  }
+  const handleForget = async () => {
+    const { success, data } = await forgetpassword({username: idForget})
+    if (success) {
+      notification['success']({
+        message: 'Vui lòng vào email ' + data.data + ' để nhận mật khẩu mới ',
+      })
+      
+    }
   }
   const [open, setOpen] = useState(false)
   const { getFieldDecorator } = props.form;
@@ -58,11 +78,10 @@ const LoginWrap = (props) => {
             <button className="setClose" onClick={() => setOpen(false)}>&times;</button>            
           </div>
           <form>
-            <input type="email" className="setEmail" placeholder="Email" />
-            <input type="text" className="setEmail" placeholder="ID" />
+            <input type="text" className="setEmail" placeholder="ID" value={idForget} onChange={(e) => setIdForget(e.target.value)} />
           </form>
           <div>
-            <button type="button" className="Gui">Gửi</button>
+            <button type="button" className="Gui" onClick={handleForget}>Gửi</button>
           </div>
         </div>{/*setvisible*/}
 
