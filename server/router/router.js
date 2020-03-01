@@ -20,6 +20,8 @@ module.exports = function(app) {
 
     app.post('/api/forgetpassword', usercontroller.ForgetPassword)
 
+    app.post('/api/newpassword',[authJwt.verifyToken, verifySignUp.checkPassword], usercontroller.NewPassword)
+
     //member
     app.post('/admin/information/add',[authJwt.verifyToken], membercontroller.AddProfile)
 
