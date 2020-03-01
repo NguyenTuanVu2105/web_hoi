@@ -41,10 +41,17 @@ const SearchUnit = () =>{
 
     return(
         <div className="para">
-            <Select defaultValue="Tên đội" style={{ width: '100%' }}>
-                {club.map(club => (
-                    <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
-                ))}
+            <Select
+              showSearch
+              placeholder="Tên đội..."
+              style={{ width: '20%', height: 30, marginLeft: 5 }}
+              filterOption={(input, option) =>
+                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+            >
+              {club.map(club => (
+                <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+              ))}
             </Select>
             {
                 unit.map(search =>(
