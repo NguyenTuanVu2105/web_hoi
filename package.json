@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "heroku-postbuild": "cd client & npm install & cd../",
+    "heroku-postbuild": "cd client & npm install & cd ../",
     "server": "node server/index.js",
     "client": "npm run start --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\""
