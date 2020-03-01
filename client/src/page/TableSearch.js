@@ -237,6 +237,7 @@ const TableSearch = (props) => {
             </Select>
 
             <Select className="optionSelect" defaultValue="Nhóm máu" onChange={handleChange}>
+              <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
               <Option style={{ textAlign: "center" }} value="O">O</Option>
               <Option style={{ textAlign: "center" }} value="A">A</Option>
               <Option style={{ textAlign: "center" }} value="B">B</Option>
