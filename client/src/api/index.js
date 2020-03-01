@@ -5,8 +5,8 @@ import { COOKIE_KEY } from './storage/sessionStorage'
 import { logout } from './auth/auth'
 import Paths from '../routes/Paths'
 
-const baseUrl = getEnv("BACKEND")
-console.log(baseUrl)
+const baseUrl = ""
+
 export const createApiRequest = async ({ url, method, data, params }) => {
     try {
         const { data: resp } = await axios({
