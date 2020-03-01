@@ -79,10 +79,6 @@ const AUDUnit = (props) => {
                 <div className="ButtonForMobile">
                     <button className="buttonD" onClick={() => openChiHoi()}>Chi Hội</button>
                     <button className="buttonD" onClick={() => openDoi()}>Đội</button>
-                    <button className="buttonD" onClick={() => openDoi()}></button>
-                    
-                    
-
                 </div>
             </div>
             <form style={{ display: name.ChiHoi ? 'block' : 'none' }}>
