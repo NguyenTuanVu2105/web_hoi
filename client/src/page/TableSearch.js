@@ -58,7 +58,7 @@ const TableSearch = (props) => {
     setNameMap({
       ['/']: 'Trang chủ',
       ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-      ['/TableSearch']: 'Tìm kiếm thành viên'
+      ['/TableSearch']: 'Tra cứu thành viên'
     })
   }, [])
 

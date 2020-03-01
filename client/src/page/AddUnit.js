@@ -64,7 +64,7 @@ const AddUnit = (props) => {
                 ))
             }
             <div>
-            <span className = "spanLabel">Thành viên hiện tại: </span>
+            <span className = "spanLabel">Tổng số thành viên:</span><br/>
             </div>
             <div className='row rowTable'>
                 <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
@@ -121,7 +121,7 @@ const AddUnit = (props) => {
                     </tr>
                 </table>
             </div>
-            <div>
+            {/* <div>
                 <span className = "spanLabel">Số cơ sở trực thuộc Hội:</span><br/>
                 {
                     ItemUnit.map(name =>(
@@ -130,8 +130,8 @@ const AddUnit = (props) => {
                         </div>
                     ))
                 }
-            </div>
-            <span className = "spanLabel">Tổng số thành viên:</span><br/>
+            </div> */}
+            
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
             <span className = "spanLabel">Kết quả hoạt động:</span>
             <div className="buttonSubmitForMobile">
