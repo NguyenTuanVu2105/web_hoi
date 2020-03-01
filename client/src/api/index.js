@@ -5,17 +5,16 @@ import { COOKIE_KEY } from './storage/sessionStorage'
 import { logout } from './auth/auth'
 import Paths from '../routes/Paths'
 
-const baseUrl = ""
+// const baseUrl = getEnv("BACKEND")
 
 export const createApiRequest = async ({ url, method, data, params }) => {
     try {
         const { data: resp } = await axios({
             method,
-            url: `${baseUrl}${url}`,
+            url: `${url}`,
             data,
             params,
         })
-        console.log(`${baseUrl}`)
         return {
             success: true,
             data: resp,
@@ -38,7 +37,7 @@ export const createAuthApiRequest = async ({ url, method, data, params, isFormDa
         if (token) {
             const { data: resp } = await axios({
                 method,
-                url: `${baseUrl}${url}`,
+                url: `${url}`,
                 data,
                 params,
                 headers: {
@@ -81,7 +80,7 @@ export const uploadFile = async (url, data, filename, file) => {
         }
         formData.append("avatar", file);
         const { data: resp } = await axios.post(
-            `${baseUrl}${url}`,
+            `${url}`,
             formData,
             {
                 headers: {
