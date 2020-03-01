@@ -206,14 +206,14 @@ const TableSearch = (props) => {
                 }]
               })(
                 <Radio.Group name="radiogroup">
-                  <Radio value={1} style={{ marginLeft: '5px', marginTop: 15 }} class="radio_information"> Đang hoạt động </Radio>
+                  <Radio value={1} style={{ marginLeft: '5px'}} class="radio_information"> Đang hoạt động </Radio>
                   <Radio value={0} class="radio_information"> Nghỉ hoạt động </Radio>
                 </Radio.Group>
               )}
             </Form.Item>
             <Form.Item>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button type="primary" style={{ marginTop: 15 }} htmlType="submit">Tạo</Button>
+                <Button type="primary" htmlType="submit">Tạo</Button>
               </div>
             </Form.Item>
           </Form>
@@ -237,6 +237,7 @@ const TableSearch = (props) => {
             </Select>
 
             <Select className="optionSelect" defaultValue="Nhóm máu" onChange={handleChange}>
+              <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
               <Option style={{ textAlign: "center" }} value="O">O</Option>
               <Option style={{ textAlign: "center" }} value="A">A</Option>
               <Option style={{ textAlign: "center" }} value="B">B</Option>
