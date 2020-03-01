@@ -154,14 +154,15 @@ exports.uploadAvatar = (req, res) => {
     const fileName = temp[temp.length-1]
 
     var fileString = fileName.slice(7)
+    var filePath = 'http://localhost:5000/api/avatar/' + fileString
 
     Profile.update({
-        Image: fileString
+        Image: filePath
     }, {
         where: {
             userId: req.userId
         }
-    }).then( () => res.status(200).send({success : true, file: fileString})
+    }).then( () => res.status(200).send({success : true, file: filePath})
     ).catch(err => {
         res.status(500).send({message: err})
     })
