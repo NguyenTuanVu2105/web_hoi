@@ -4,7 +4,6 @@ import {BrowserRouter} from 'react-router-dom'
 import {renderRoutes} from 'react-router-config'
 import routes from './routes/Routes'
 import 'antd/dist/antd.css';
-
 function App() {
   return (
     <div className="App">

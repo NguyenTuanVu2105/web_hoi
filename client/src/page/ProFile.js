@@ -10,7 +10,7 @@ import TextArea from 'antd/lib/input/TextArea'
 
 function ProFileLeft(props) {
     const { getFieldDecorator } = props.form
-    const { nameMap, setNameMap } = useContext(HomepageContext)
+    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [user, setUser] = useState([])
 
     const fetchData = async () => {
@@ -22,11 +22,13 @@ function ProFileLeft(props) {
         }
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        props.form.validateFields((err, values) => {
+        props.form.validateFields(async (err, values) => {
             if (!err) {
-                updateUserProfile(values)
+                setLoading(true)
+                await updateUserProfile(values)
+                setLoading(false)
                 notification['success']({
                     message: 'Cập nhật thông tin thành công!',
                 })
