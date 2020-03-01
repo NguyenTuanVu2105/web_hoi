@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "node server/index.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node server/index.js",
+    "heroku-postbuild": "cd client && yarn && yarn run build",
   },
   "keywords": [],
   "author": "",
