@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs')
 const fs = require('fs')
 const User = db.user
 const Profile = db.member
-const Position = db.position
 const Specialized = db.specialized
 const Club = db.club
 var currentTime = new Date()
