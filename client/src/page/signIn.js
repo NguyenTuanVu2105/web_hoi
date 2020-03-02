@@ -40,15 +40,20 @@ const LoginWrap = (props) => {
       if (!err) {
         submitLogin(values)
       }
+      
     });
   }
   const handleForget = async () => {
     const { success, data } = await forgetpassword({username: idForget})
     if (success) {
       notification['success']({
-        message: 'Vui lòng vào email ' + data.data + ' để nhận mật khẩu mới ',
+        message: 'Vui lòng vào gmail và làm theo hướng dẫn để nhận mật khẩu mới ',
       })
-      
+    }
+    else{
+      notification['err']({
+        message: 'Bạn đã nhập ID sai. Vui lòng nhập lại',
+      })
     }
   }
   const [open, setOpen] = useState(false)
