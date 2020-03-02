@@ -71,7 +71,7 @@ const LoginWrap = (props) => {
             <input type="text" className="setEmail" placeholder="ID" value={idForget} onChange={(e) => setIdForget(e.target.value)} />
           </form>
           <div>
-            <button type="button" className="Gui" onClick={handleForget}>Gửi</button>
+            <button type="button" style={{fontWeight:500}} className="Gui" onClick={handleForget}>Gửi</button>
           </div>
         </div>{/*setvisible*/}
 
