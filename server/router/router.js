@@ -47,6 +47,8 @@ module.exports = function(app) {
 
     app.get('/api/learnactivity/view', [authJwt.verifyToken], learnactivity.getLearnActivity)
 
+    app.post('/api/learnactivity/edit', [authJwt.verifyToken], learnactivity.editLearnActivity)
+
     //position
     app.get('/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)
 

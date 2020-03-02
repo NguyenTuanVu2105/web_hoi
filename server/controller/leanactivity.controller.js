@@ -16,8 +16,7 @@ exports.getLearnActivity = (req, res) => {
             },
             include: [{
                 model: Learn
-            }],
-            include: [{
+            }, {
                 model: Activity
             }]
         }).then(information => {
@@ -47,7 +46,7 @@ exports.editLearnActivity = (req,res) =>{
                     Lop: req.body.lop,
                     Nganh: req.body.nganh,
                     memberId: member.id
-                }).then(school => {
+                }).then(() => {
                     Learn.create({
                         Namhoc_Mot:      req.body.learn_namhoc_mot,
                         Kihoc_Mot:       req.body.learn_kihoc_mot,
@@ -96,7 +95,7 @@ exports.editLearnActivity = (req,res) =>{
                     where: {
                         memberId: member.id
                     }
-                }).then(school => {
+                }).then(() => {
                     Learn.update({
                         Namhoc_Mot:      req.body.learn_namhoc_mot,
                         Kihoc_Mot:       req.body.learn_kihoc_mot,
