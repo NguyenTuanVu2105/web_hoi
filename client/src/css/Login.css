@@ -75,7 +75,7 @@
   .setEmail{
     background: rgba(255, 255, 255, 0.6);
     width: 90%;
-    border: 1px solid black;
+    border: 1px solid #e9ecef;
     margin-left: 5%;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -88,14 +88,16 @@
   }
   .Gui{
     width: 25%;
-    border: 1px solid black;
+    border: 1px solid #e9ecef;
     margin-left: 70%;
     margin-top: 50px;
     margin-bottom: 20px;
     border-radius: 3px;
     height: 30px;
     background: rgba(255, 255, 255, 0.6);
+    font-weight: 500 !important;
   }
   .Gui:hover{
     border: 1px solid rgb(24, 144, 255);
+    color: rgb(24, 144, 255);
   }
