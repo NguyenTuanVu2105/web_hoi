@@ -157,10 +157,8 @@ exports.uploadAvatar = (req, res) => {
     const fullPathInServ = processedFile.path
     const newFullPath = `${fullPathInServ}-${orgName}`
     fs.renameSync(fullPathInServ, newFullPath);
-    const temp = newFullPath.split('/')
-    const fileName = temp[temp.length-1]
 
-    var fileString = path.basename(fileName)
+    var fileString = path.basename(newFullPath)
     var filePath = `${process.env.SERVER_HOST}/api/avatar/` + fileString
 
     Profile.update({
