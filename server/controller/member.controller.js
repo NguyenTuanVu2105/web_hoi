@@ -1,6 +1,7 @@
 const db = require('../config/db.config')
 const bcrypt = require('bcryptjs')
 require('dotenv').config()
+const path = require('path')
 const fs = require('fs')
 const User = db.user
 const Profile = db.member
@@ -159,7 +160,7 @@ exports.uploadAvatar = (req, res) => {
     const temp = newFullPath.split('/')
     const fileName = temp[temp.length-1]
 
-    var fileString = fileName.slice(7)
+    var fileString = path.basename(fileName)
     var filePath = `${process.env.SERVER_HOST}/api/avatar/` + fileString
 
     Profile.update({
