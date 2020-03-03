@@ -73,8 +73,6 @@ function LearningAndActivities(props) {
                                     })(
                                         <Input type="text" className="input_LAA" />
                                     )} <br />
-                                    <label for="" className="label_LAA">Kết quả học tập:</label>
-                                    <input type="number" className="input-number-LAA" />
                                 </div>
                             </div>
                             <fieldset>
