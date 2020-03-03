@@ -90,7 +90,7 @@ function LearningAndActivities(props) {
                                         {getFieldDecorator('learn_namhoc_mot', {
                                             initialValue: leact.HT_Namhoc_Mot
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )} 
                                     </th>
                                     <th className='col-4'>
@@ -111,21 +111,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_namhoc_hai', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Namhoc_Hai
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_kihoc_hai', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Kihoc_Hai
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_lydo_hai', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HT_Lydo_Hai
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -134,21 +134,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_namhoc_ba', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Namhoc_Ba
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_kihoc_ba', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Kihoc_Ba
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_lydo_ba', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HT_Lydo_Ba
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -157,21 +157,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_namhoc_bon', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Namhoc_Bon
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_kihoc_bon', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Kihoc_Bon
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_lydo_bon', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HT_Lydo_Bon
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -180,21 +180,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_namhoc_nam', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Namhoc_Nam
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_kihoc_nam', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HT_Kihoc_Nam
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_lydo_nam', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HT_Lydo_Nam
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -226,21 +226,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_namhoc_mot', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Namhoc_Mot
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_kihoc_mot', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Kihoc_Mot
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_lydo_mot', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HD_Lydo_Mot
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -249,21 +249,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_namhoc_hai', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Namhoc_Hai
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_kihoc_hai', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Kihoc_Hai
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_lydo_hai', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HD_Lydo_Hai
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -272,21 +272,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_namhoc_ba', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Namhoc_Ba
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_kihoc_ba', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Kihoc_Ba
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_lydo_ba', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HD_Lydo_Ba
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -295,21 +295,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_namhoc_bon', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Namhoc_Bon
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_kihoc_bon', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Kihoc_Bon
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_lydo_bon', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HD_Lydo_Bon
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
@@ -318,21 +318,21 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_namhoc_nam', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Namhoc_Nam
                                         })(
-                                            <Input type="number" className="input_LAA1" />
+                                            <Input type="text" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_kihoc_nam', {
-                                            // initialValue: leact.learn.Kihoc_Mot
+                                            initialValue: leact.HD_Kihoc_Nam
                                         })(
                                             <Input type="number" className="input_LAA1" />
                                         )}
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('activity_lydo_nam', {
-                                            // initialValue: leact.learn['Lydo_Mot']
+                                            initialValue: leact.HD_Lydo_Nam
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
                                         )}
