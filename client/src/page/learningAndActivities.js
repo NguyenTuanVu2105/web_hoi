@@ -43,8 +43,6 @@ function LearningAndActivities(props) {
         })
     }, [])
 
-    console.log(leact)
-
     const style = {
         paddingLeft: '15px'
     }
@@ -90,49 +88,117 @@ function LearningAndActivities(props) {
                                 <tr className='row'>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_namhoc_mot', {
-                                            // initialValue: leact.learn
+                                            initialValue: leact.HT_Namhoc_Mot
                                         })(
                                             <Input type="number" className="input_LAA1" />
-                                        )} <br />
+                                        )} 
                                     </th>
                                     <th className='col-4'>
                                         {getFieldDecorator('learn_kihoc_mot', {
+                                            initialValue: leact.HT_Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )} 
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_lydo_mot', {
+                                            initialValue: leact.HT_Lydo_Mot
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )} 
+                                    </th>
+                                </tr>
+                                <tr className='row'>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_namhoc_hai', {
                                             // initialValue: leact.learn.Kihoc_Mot
                                         })(
                                             <Input type="number" className="input_LAA1" />
-                                        )} <br />
+                                        )}
                                     </th>
-                                    <th className='col-4'>{getFieldDecorator('learn_lydo_mot', {
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_kihoc_hai', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_lydo_hai', {
                                             // initialValue: leact.learn['Lydo_Mot']
                                         })(
                                             <TextArea rows="1" className="input_LAA1" />
-                                        )} <br />
+                                        )}
                                     </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_namhoc_ba', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_kihoc_ba', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_lydo_ba', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_namhoc_bon', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_kihoc_bon', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_lydo_bon', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
-                                </tr>
-                                <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
-                                </tr>
-                                <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_namhoc_nam', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_kihoc_nam', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('learn_lydo_nam', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                             </table>
                         </fieldset>
@@ -158,34 +224,119 @@ function LearningAndActivities(props) {
                                     <th className='col-4'>Lý do khen thưởng</th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_namhoc_mot', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_kihoc_mot', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_lydo_mot', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_namhoc_hai', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_kihoc_hai', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_lydo_hai', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_namhoc_ba', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_kihoc_ba', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_lydo_ba', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_namhoc_bon', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_kihoc_bon', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_lydo_bon', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                                 <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
-                                </tr>
-                                <tr className='row'>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><input type="number" className="input_LAA1" /></th>
-                                    <th className='col-4'><textarea rows="1" className="input_LAA1" /></th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_namhoc_nam', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_kihoc_nam', {
+                                            // initialValue: leact.learn.Kihoc_Mot
+                                        })(
+                                            <Input type="number" className="input_LAA1" />
+                                        )}
+                                    </th>
+                                    <th className='col-4'>
+                                        {getFieldDecorator('activity_lydo_nam', {
+                                            // initialValue: leact.learn['Lydo_Mot']
+                                        })(
+                                            <TextArea rows="1" className="input_LAA1" />
+                                        )}
+                                    </th>
                                 </tr>
                             </table>
                         </fieldset>
