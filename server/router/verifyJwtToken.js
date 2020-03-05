@@ -30,7 +30,7 @@ isDoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "DOITRUONG") {
+		if (user.role === "doitruong") {
 			next()
 			return
 		}
@@ -46,7 +46,7 @@ isChihoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "CHIHOITRUONG") {
+		if (user.role === "chihoitruong") {
 			next()
 			return
 		}
@@ -62,7 +62,8 @@ isHoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "HOITRUONG") {
+		if (user.role == "hoitruong") {
+			console.log(user.role)
 			next()
 			return
 		}
@@ -79,7 +80,7 @@ isAdmin = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "ADMIN") {
+		if (user.role === "admin") {
 			next()
 			return
 		}
