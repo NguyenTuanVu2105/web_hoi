@@ -2,7 +2,7 @@ module.exports = (sequelize, Sequelize) => {
     const Branch = sequelize.define('branchs', {
         Machihoi:           Sequelize.STRING,
         Tenchihoi:          Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Ngaythanhlap:       Sequelize.DATEONLY,
+        Ngaythanhlap:       Sequelize.INTEGER,
         Diachi:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
         DonviQL:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Phutrach:           Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci', 
