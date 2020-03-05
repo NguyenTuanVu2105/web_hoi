@@ -6,12 +6,13 @@
 .img{
     background-position: center;
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 200px;
 }
 .image{
     margin: 15px 0px 15px 15px;
-    padding-right: 40px;  
+    padding-right: 40px; 
+    width: 190px; 
 }
 .describe{
     font-size: 15px !important;
@@ -20,6 +21,7 @@
     justify-content: flex-end;
 }
 .information{
+    width: calc(100%-200px);
     padding-left: 0px;
 }
 .label_information1{

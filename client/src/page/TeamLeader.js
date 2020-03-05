@@ -30,15 +30,18 @@ const TeamLeader = () =>{
             {
                 leader.map(leader =>(
                     <div className = 'row borderRadius'>
-                        <div className = 'col-2 image'>
+                        <div className = 'image'>
                             <img className='img' src={leader.Image}></img>
                         </div>
-                        <div className = 'col-9 information'>
+                        <div className = 'information'>
                             <label className="label_information1">Họ tên: {leader.Hovaten}</label><br/>
                             <label className="label_information1">Chức vụ: {leader.position.Chucvu}</label><br/>
                             <label className="label_information1">Thời gian công tác: {leader.ThoigianHD}</label><br/>
-                            <label className="label_information1">Mô tả: {leader.Ghichukhac}</label><br/>
-                            <a className='describe' href = ''>Chi tiết>>></a>
+                            <div>
+                                <label className="label_information1">Mô tả: {leader.Ghichukhac}</label><br/>
+                                <a className='describe' href = ''>Chi tiết>>></a>
+                            </div>
+                            
                         </div>
                     </div>
                 ))
