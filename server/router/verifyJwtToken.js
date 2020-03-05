@@ -73,26 +73,8 @@ isHoitruong = (req, res, next) => {
 	})
 }
 
-isAdmin = (req, res, next) => {
-	
-	User.findOne({
-		where: {
-			id: req.userId
-		}
-	}).then(user => {
-		if (user.role === "admin") {
-			next()
-			return
-		}
-				
-		res.status(403).send("Require Admin Role!")
-		return
-	})
-}
-
 const authJwt = {}
 authJwt.verifyToken = verifyToken
-authJwt.isAdmin = isAdmin
 authJwt.isHoitruong = isHoitruong
 authJwt.isChihoitruong = isChihoitruong
 authJwt.isDoitruong = isDoitruong
