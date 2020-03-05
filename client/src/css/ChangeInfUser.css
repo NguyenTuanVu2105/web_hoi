@@ -1,0 +1,20 @@
+.body{
+    position: relative;
+}
+    .body .ChangeLeft{
+
+    }
+        .body .ChangeLeft .label_Change{
+            font-size: 14px;
+            color: rgb(24, 144, 255);
+            display: inline-block; 
+            line-height: 30px;
+        }
+        .body .ChangeLeft .input_change{
+            margin-left: 5px;
+            width: 55% ;
+            border: none ;
+            border-bottom: 1px solid rgb(204, 202, 202) ;
+            border-radius: 0 ;
+            line-height: 30px;
+        }

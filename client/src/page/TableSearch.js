@@ -9,7 +9,7 @@ import { Input } from 'antd'
 import { getTableMember, addNewMember } from '../api/base/tablesearch'
 import { getClubAll } from '../api/base/admin'
 import { getPosition, getSpecialized } from '../api/base/consernposition'
-
+import ChangeInfUser from '../Component/ChangeInfUser'
 const { Column } = Table
 const { Option } = Select
 
@@ -401,7 +401,8 @@ const TableSearch = (props) => {
           id="Chon"
           render={(text, record) => (
             <span>
-              <Button>Sửa</Button>
+              {/* <Button>Sửa</Button> */}
+              <ChangeInfUser/>
               <Button>Xóa</Button>
             </span>
           )}
