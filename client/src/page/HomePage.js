@@ -68,11 +68,8 @@ function HomePage(props) {
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
                         {/* <signIn/> */}
-<<<<<<< HEAD
                         {/* <ChangeInfUser/> */}
-=======
                         {/* <ResetPassword/> */}
->>>>>>> master
                         <div >
                             <div className="modal fade" id="modalMK" role="dialog">
                                 <div className="modal-dialog">
