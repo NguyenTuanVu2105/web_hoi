@@ -46,6 +46,11 @@ exports.ViewMember = (req, res) => {
                 Member.findAll({
                     include: [{
                         model: Position,
+                        where: {
+                            Capbac: {
+                                [Op.gte]: 2
+                            }
+                        }
                     }, {
                         model: Specialized,
                     },  {
@@ -68,6 +73,11 @@ exports.ViewMember = (req, res) => {
                 Member.findAll({
                     include: [{
                         model: Position,
+                        where: {
+                            Capbac: {
+                                [Op.gte]: 2
+                            }
+                        }
                     }, {
                         model: Specialized,
                     },  {
