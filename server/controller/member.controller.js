@@ -1,11 +1,13 @@
 const db = require('../config/db.config')
 const bcrypt = require('bcryptjs')
+require('dotenv').config()
+const path = require('path')
 const fs = require('fs')
 const User = db.user
 const Profile = db.member
-const Position = db.position
 const Specialized = db.specialized
 const Club = db.club
+const School = db.school
 var currentTime = new Date()
 
 exports.AddProfile = (req, res) => {
@@ -52,25 +54,30 @@ exports.AddProfile = (req, res) => {
                     } else {
                         value = year + '.' + infor.Madoi.substring(0, 8) + number
                     }
-                    Profile.update({
-                        Sothethanhvien: value,
-                        userId: HandleProfile.id
-                    }, {
-                        where: {
-                            Hovaten: req.body.hovaten,
-                            Ngaysinh: req.body.ngaysinh
-                        }
-                    }).then(
-                        User.create({
-                            username: value,
-                            password: bcrypt.hashSync("12345678", 8),
-                            role: 'member'
-                        }).then(user => {
+                    School.create({
+                        memberId: HandleProfile.id
+                    }).catch(err => {
+                        res.status(500).send({success:false, message: err})
+                    })
+                    User.create({
+                        username: value,
+                        password: bcrypt.hashSync("12345678", 8),
+                        role: 'member'
+                    }).then(user => {
+                        Profile.update({
+                            Sothethanhvien: value,
+                            userId: user.id
+                        }, {
+                            where: {
+                                Hovaten: req.body.hovaten,
+                                Ngaysinh: req.body.ngaysinh
+                            }
+                        }).then(
                             res.status(200).send({success: true, data: value, users: user})
-                        }).catch(err => {
+                        ).catch(err => {
                             res.status(500).send({success:false, message: err})
                         })
-                    ).catch(err => {
+                    }).catch(err => {
                             res.status(500).send({success: false,message: err})
                     })
                     
@@ -150,11 +157,9 @@ exports.uploadAvatar = (req, res) => {
     const fullPathInServ = processedFile.path
     const newFullPath = `${fullPathInServ}-${orgName}`
     fs.renameSync(fullPathInServ, newFullPath);
-    const temp = newFullPath.split('/')
-    const fileName = temp[temp.length-1]
 
-    var fileString = fileName.slice(7)
-    var filePath = 'http://localhost:5000/api/avatar/' + fileString
+    var fileString = path.basename(newFullPath)
+    var filePath = `${process.env.SERVER_HOST}/api/avatar/` + fileString
 
     Profile.update({
         Image: filePath

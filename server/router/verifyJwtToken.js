@@ -30,7 +30,7 @@ isDoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "DOITRUONG") {
+		if (user.role === "doitruong") {
 			next()
 			return
 		}
@@ -46,7 +46,7 @@ isChihoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "CHIHOITRUONG") {
+		if (user.role === "chihoitruong") {
 			next()
 			return
 		}
@@ -62,7 +62,8 @@ isHoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "HOITRUONG") {
+		if (user.role == "hoitruong") {
+			console.log(user.role)
 			next()
 			return
 		}
@@ -72,26 +73,8 @@ isHoitruong = (req, res, next) => {
 	})
 }
 
-isAdmin = (req, res, next) => {
-	
-	User.findOne({
-		where: {
-			id: req.userId
-		}
-	}).then(user => {
-		if (user.role === "ADMIN") {
-			next()
-			return
-		}
-				
-		res.status(403).send("Require Admin Role!")
-		return
-	})
-}
-
 const authJwt = {}
 authJwt.verifyToken = verifyToken
-authJwt.isAdmin = isAdmin
 authJwt.isHoitruong = isHoitruong
 authJwt.isChihoitruong = isChihoitruong
 authJwt.isDoitruong = isDoitruong

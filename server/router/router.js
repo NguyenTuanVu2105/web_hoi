@@ -12,6 +12,7 @@ module.exports = function(app) {
     const associationcontroller     = require('../controller/association.controller')
     const positioncontroller        = require('../controller/position.controller')
     const specializedcontroller     = require('../controller/specialized.controller')
+    const learnactivity             = require('../controller/leanactivity.controller')
     const imageUploader             = multer({dest: 'images/'})
 
     app.post('/api/login', usercontroller.login)
@@ -40,7 +41,13 @@ module.exports = function(app) {
 			})
 		}
 		res.sendFile(path.resolve(`./images/${fileName}`))
-	})
+    })
+    
+    //learning and activities
+
+    app.get('/api/learnactivity/view', [authJwt.verifyToken], learnactivity.getLearnActivity)
+
+    app.post('/api/learnactivity/edit', [authJwt.verifyToken], learnactivity.editLearnActivity)
 
     //position
     app.get('/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)

@@ -25,3 +25,18 @@ export const getAvatar = (fileName) => {
 export const uploadAvatar = ({data, filename, file}) => {
   return uploadFile('/api/upload/avatar', data, filename, file)
 }
+
+export const getLearnActivity = () => {
+  return createAuthApiRequest({
+    url: `/api/learnactivity/view`,
+    method: 'get'
+  })
+}
+
+export const editLearnActivity = (data) => {
+  return createAuthApiRequest({
+    url: `/api/learnactivity/edit`,
+    method: 'post',
+    data: data
+  })
+}
