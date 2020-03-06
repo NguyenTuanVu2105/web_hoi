@@ -55,23 +55,23 @@ function LearningAndActivities(props) {
                         <form action="" method="post" className="">
                             <div className="row">
                                 <div className="DIV-learn">
-                                    <label for="" className="label_LAA">Trường:</label>
+                                    <label className="label_LAA">Trường:</label>
                                     {getFieldDecorator('truong', {
                                         initialValue: leact.Truong
                                     })(
-                                        <Input type="text" className="input_LAA" />
+                                        <Input type="text" className="input_LAA2" />
                                     )} <br />
-                                    <label for="" className="label_LAA">Lớp:</label>
+                                    <label className="label_LAA">Lớp:</label>
                                     {getFieldDecorator('lop', {
                                         initialValue: leact.Lop
                                     })(
-                                        <Input type="text" className="input_LAA" />
+                                        <Input type="text" className="input_LAA2" />
                                     )} <br />
-                                    <label for="" className="label_LAA">Ngành:</label>
+                                    <label className="label_LAA">Ngành:</label>
                                     {getFieldDecorator('nganh', {
                                         initialValue: leact.Nganh
                                     })(
-                                        <Input type="text" className="input_LAA" />
+                                        <Input type="text" className="input_LAA2" />
                                     )} <br />
                                 </div>
                             </div>
@@ -205,13 +205,25 @@ function LearningAndActivities(props) {
                 </div>
                 <div>
                     <h3>Hoạt động</h3>
-                    {
+                    <div className="row">
+                        <div className="col-6">
+                            <label for="" className="label_information">Trực thuộc chi Hội:</label><br />
+                            <label for="" className="label_information">Trực thuộc Đội:</label><br />
+                            <label for="" className="label_information">Ngày vào Hội:</label><br />
+                        </div>
+                        <div className="col-6">
+                        <label for="" className="label_information">Chức vụ:</label><br />
+                            <label for="" className="label_information">Bậc chuyên môn:</label><br />
+                            <label for="" className="label_information">Tình trạng hoạt động:</label><br />
+                        </div>
+                    </div>
+                    {/* {
                         learningAndActivities.map(label => (
                             <div className="activities">
                                 <label for="" className="label_information">{label.label}</label><br />
                             </div>
                         ))
-                    }
+                    } */}
                     <Form.Item>
                         <fieldset>
                             <legend className="legendA">Khen thưởng:</legend>
