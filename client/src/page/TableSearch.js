@@ -78,6 +78,11 @@ const TableSearch = (props) => {
         notification['success']({
           message: 'Thêm thành công thành viên ' + values.hovaten,
         })
+      } else {
+        setVisible(false)
+        notification['error']({
+          message: 'Thành viên đã tồn tại!'
+        })
       }
     })
   };

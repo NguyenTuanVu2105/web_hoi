@@ -2,6 +2,8 @@ const db = require('../config/db.config')
 const Club = db.club
 const Position = db.position
 const Member = db.member
+const User = db.user
+const Op = db.Sequelize.Op
 
 exports.AddClub = (req, res) => {
     const club = {};
@@ -101,12 +103,57 @@ exports.ViewOneClub = (req, res) => {
 }
 
 exports.ViewAllClub = (req, res) => {
-    Club.findAll({
-        attributes: ['id', 'Madoi', 'Tendoi']
-    }).then( result => {
-        res.status(200).send({success: true,data: result,})
+    User.findOne({
+        where: {
+            id: req.userId
+        }
+    }).then(user => {
+        Member.findOne({
+            where: {
+                userId: req.userId
+            },
+            attributes: ['clubId'],
+            include: {
+                model: Club,
+                attributes: ['branchId']
+            }
+        }).then(member => {
+            if (user.role === 'hoitruong') {
+                Club.findAll({
+                    attributes: ['id', 'Madoi', 'Tendoi']
+                }).then( result => {
+                    res.status(200).send({success: true,data: result,})
+                }).catch(err => {
+                    res.status(500).send({success: false,message: err})
+                })
+            } else if (user.role === 'chihoitruong') {
+                Club.findAll({
+                    where: {
+                        branchId: member.club.branchId
+                    },
+                    attributes: ['id', 'Madoi', 'Tendoi']
+                }).then( result => {
+                    res.status(200).send({success: true,data: result,})
+                }).catch(err => {
+                    res.status(500).send({success: false,message: err})
+                })
+            } else {
+                Club.findAll({
+                    where: {
+                        id: member.clubId
+                    },
+                    attributes: ['id', 'Madoi', 'Tendoi']
+                }).then( result => {
+                    res.status(200).send({success: true,data: result,})
+                }).catch(err => {
+                    res.status(500).send({success: false,message: err})
+                })
+            }
+        }).catch(err => {
+            res.status(500).send({success: false, message: err})
+        })
     }).catch(err => {
-        res.status(500).send({success: false,message: err})
+        res.status(500).send({success: false, message: err})
     })
 }
 
