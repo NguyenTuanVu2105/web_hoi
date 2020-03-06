@@ -172,3 +172,18 @@ exports.uploadAvatar = (req, res) => {
         res.status(500).send({message: err})
     })
 }
+
+exports.test = (req, res) => {
+    Profile.findOne(req.role).then(profiles => {
+        Club.findAll({
+            where: {
+                id: profiles.clubId
+            },
+            include: [{
+                model: Profile
+            }]
+        }).then(infor => {
+            res.send(infor)
+        })
+    })
+}

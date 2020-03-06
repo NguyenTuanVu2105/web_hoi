@@ -51,7 +51,7 @@ const LoginWrap = (props) => {
       })
     }
     else{
-      notification['err']({
+      notification['error']({
         message: 'Bạn đã nhập ID sai. Vui lòng nhập lại',
       })
     }

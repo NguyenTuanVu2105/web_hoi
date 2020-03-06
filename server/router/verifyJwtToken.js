@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken')
 const config = require('../config/config')
 const db = require('../config/db.config')
 const User = db.user
+const Member = db.member
 
 verifyToken = (req, res, next) => {
 	let token = req.headers['x-access-token']
@@ -62,8 +63,13 @@ isHoitruong = (req, res, next) => {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role == "hoitruong") {
-			console.log(user.role)
+		if (user.role === "hoitruong") {
+			req.role = {
+				where: {
+					userId: req.userId
+				}, 
+				attributes: ['clubId']
+			}
 			next()
 			return
 		}
