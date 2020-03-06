@@ -64,12 +64,6 @@ isHoitruong = (req, res, next) => {
 		}
 	}).then(user => {
 		if (user.role === "hoitruong") {
-			req.role = {
-				where: {
-					userId: req.userId
-				}, 
-				attributes: ['clubId']
-			}
 			next()
 			return
 		}
