@@ -24,28 +24,28 @@ const TableSearch = (props) => {
 
   const fetchDataPosition = async () => {
     const result = await getPosition()
-    if (result.success) {
+    if (result.data.success) {
       setPosition(result.data.data)
     }
   }
 
   const fetchDataSpecialized = async () => {
     const result = await getSpecialized()
-    if (result.success) {
+    if (result.data.success) {
       setSpecialized(result.data.data)
     }
   }
 
   const fetchDataClub = async () => {
     const result = await getClubAll()
-    if (result.success) {
+    if (result.data.success) {
       setClub(result.data.data)
     }
   }
 
-  const fetchData = async (page) => {
-    const result = await getTableMember(1000, page)
-    if (result.success) {
+  const fetchData = async () => {
+    const result = await getTableMember()
+    if (result.data.success) {
       setTable(result.data.data)
     }
   }
@@ -54,7 +54,7 @@ const TableSearch = (props) => {
     fetchDataPosition()
     fetchDataSpecialized()
     fetchDataClub()
-    fetchData(page)
+    fetchData()
     setNameMap({
       ['/']: 'Trang chủ',
       ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
@@ -77,11 +77,6 @@ const TableSearch = (props) => {
         setVisible(false)
         notification['success']({
           message: 'Thêm thành công thành viên ' + values.hovaten,
-        })
-      } else {
-        setVisible(false)
-        notification['error']({
-          message: 'Thành viên đã tồn tại!'
         })
       }
     })
