@@ -32,6 +32,16 @@ h3{
     border: none ;
     border-bottom: 1px solid rgb(204, 202, 202) ;
 }
+.input_LAA2{
+    margin-left: 5px;
+    width: 55% !important;
+    border: none !important;
+    border-bottom: 1px solid rgb(204, 202, 202) !important;
+    border-radius: 0 !important;
+}
+.input_LAA2:after{
+    border: none !important;
+}
 .input_LAA1{
     margin-left: 5px;
     width: 90% ;
