@@ -14,3 +14,10 @@ export const forgetpassword = (data) => {
         data: data
     })
 }
+export const resrtpassword = (data) => {
+    return createApiRequest({
+        url: '/api/newpassword', 
+        method: 'post',
+        data: data
+    })
+}

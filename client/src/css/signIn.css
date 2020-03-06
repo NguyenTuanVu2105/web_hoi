@@ -27,9 +27,9 @@ body{
     border-radius: 3%;
     z-index: 1;
 }
-.child-e{
+/* .child-e{
         
-}
+} */
     .circle-blood{    
         display: flex;
         justify-content: center;   
