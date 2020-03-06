@@ -2,7 +2,7 @@ import {createAuthApiRequest} from '../index'
 
 export const getTableMember = (limit, page) => {
     return createAuthApiRequest({
-        url: `/admin/view/member?limit=${limit}?&page=${page}`,
+        url: `/admin/view/member`,
         method: 'get'
     })
 }

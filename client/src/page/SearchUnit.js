@@ -13,7 +13,7 @@ const SearchUnit = () =>{
     const [unit, setUnit] = useState([])
     const fetchData = async () => {
         const result = await getUnitAll()
-        if (result.success) {
+        if (result.data.success) {
             setUnit(result.data.data)
         }
     }
@@ -21,7 +21,7 @@ const SearchUnit = () =>{
     const [club, setClub] = useState([])
     const fetchDataClub = async () => {
         const result = await getClubAll()
-        if (result.success) {
+        if (result.data.success) {
           setClub(result.data.data)
         }
     }
