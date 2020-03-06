@@ -66,15 +66,7 @@ exports.ViewMember = (req, res) => {
     })
     }
 }
-exports.SearchClub = (req, res) => {
-    Club.findAll({
-        attributes: ['Madoi', 'Tendoi']
-    }).then(information => {
-        res.status(200).send({success: true, data: information})
-    }).catch(err => {
-        res.status(500).send({success: false, message: err})
-    })
-}
+
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
         attributes: ['Machihoi', 'Tenchihoi'],

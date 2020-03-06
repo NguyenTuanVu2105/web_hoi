@@ -6,6 +6,7 @@ import { getUnitAll } from '../api/base/unit'
 import { Select } from 'antd'
 import { getClubAll } from '../api/base/admin'
 
+
 const { Option } = Select
 const SearchUnit = () =>{
     const {nameMap, setNameMap} = useContext(HomepageContext)
@@ -23,11 +24,12 @@ const SearchUnit = () =>{
         if (result.success) {
           setClub(result.data.data)
         }
-      }
-
-
+    }
     useEffect(() => {
-        // fetchDataClub()
+        fetchDataClub()
+        
+    }, [])
+    useEffect(() => {
         fetchData()
         setNameMap({
             ['/']: 'Trang chủ', 
@@ -35,16 +37,12 @@ const SearchUnit = () =>{
             ['/SearchUnit']: 'Hồ sơ đơn vị',
         })
     }, [])
-
-    console.log(unit)
-
-
     return(
         <div className="para">
             <Select
               showSearch
               placeholder="Tên đội..."
-              style={{ width: '20%', height: 30, marginLeft: 5 }}
+              style={{ width: '40%', height: 30, marginLeft: 5 }}
               filterOption={(input, option) =>
                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
               }
