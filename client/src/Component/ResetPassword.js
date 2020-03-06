@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { notification} from 'antd';
 import '../css/ResetPassword.css'
-import { resetpassword } from '../../api/base/auth';
+import { resetpassword } from '../api/base/auth';
 
 const ResetPassword = () => {
   const [password, setpassword] = useState('')
+  const [confirmpassword, setconfirmpassword] = useState('')
   const handlePassword = async () => {
-    const { success, data } = await resetpassword({newpassword: password,confirmpassword: confirmpassword})
+    const { success, data } = await resetpassword({newpassword: password,passwordConfirm: confirmpassword})
     if (success) {
       notification['success']({
         message: 'Cập nhật mật khẩu thành công ',

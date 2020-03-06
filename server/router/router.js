@@ -105,5 +105,4 @@ module.exports = function(app) {
 
     app.get('/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
 
-    app.get('/search/club/all', [authJwt.verifyToken], admincontroller.SearchClub)     //khi click vào nút thêm thành viên sẽ gọi api này để thêm tất cả đội vào input tên đội của khung thêm thành viên 
 }

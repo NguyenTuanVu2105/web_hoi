@@ -14,7 +14,7 @@ export const forgetpassword = (data) => {
         data: data
     })
 }
-export const resrtpassword = (data) => {
+export const resetpassword = (data) => {
     return createApiRequest({
         url: '/api/newpassword', 
         method: 'post',
