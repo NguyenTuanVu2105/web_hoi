@@ -9,7 +9,7 @@ import { Input } from 'antd'
 import { getTableMember, addNewMember } from '../api/base/tablesearch'
 import { getClubAll } from '../api/base/admin'
 import { getPosition, getSpecialized } from '../api/base/consernposition'
-
+import ChangeInfUser from '../Component/ChangeInfUser'
 const { Column } = Table
 const { Option } = Select
 
@@ -316,7 +316,7 @@ const TableSearch = (props) => {
       </div>
 
       <Table dataSource={table} scroll={{ x: 'max-content' }}>
-        <Column title="ID" dataIndex="id" fixed="left" id="id" />
+        {/* <Column title="ID" dataIndex="id" fixed="left" id="id" /> */}
         <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />
         <Column title="Họ và tên" dataIndex="Hovaten" fixed="left" id="Hovaten" />
         <Column title="Ngày sinh" dataIndex="Ngaysinh" id="Ngaysinh" />
@@ -401,7 +401,8 @@ const TableSearch = (props) => {
           id="Chon"
           render={(text, record) => (
             <span>
-              <Button>Sửa</Button>
+              {/* <Button>Sửa</Button> */}
+              <ChangeInfUser/>
               <Button>Xóa</Button>
             </span>
           )}

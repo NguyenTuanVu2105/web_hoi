@@ -20,6 +20,7 @@ import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from '../api/auth/auth';
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
+import ChangeInfUser from '../Component/ChangeInfUser'
 import ResetPassword from '../Component/ResetPassword'
 
 function HomePage(props) {
@@ -67,7 +68,11 @@ function HomePage(props) {
                         {/* <SearchItem/> */}
                         {/* <TableSearch/> */}
                         {/* <signIn/> */}
+<<<<<<< HEAD
+                        {/* <ChangeInfUser/> */}
+=======
                         {/* <ResetPassword/> */}
+>>>>>>> master
                         <div >
                             <div className="modal fade" id="modalMK" role="dialog">
                                 <div className="modal-dialog">
