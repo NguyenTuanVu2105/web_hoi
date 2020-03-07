@@ -89,3 +89,16 @@
         /* background-color: red;
         height: 250px; */
     }
+
+@media (max-width: 992px){
+    .informationImg{
+        display: none;
+    }
+    .triangleImg{
+        display: none;
+    }
+    .backgroundCover{
+        width: 700px;
+        height: 250px;
+    }
+}

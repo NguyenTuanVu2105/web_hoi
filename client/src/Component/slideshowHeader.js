@@ -21,7 +21,7 @@ const properties = {
  
 const Slideshow = () => {
     return (
-      <div className="slide-container" style={{width:'93%',margin:'0 auto'}}>
+      <div className="slide-container" style={{width:'93%',maxWidth:1165,margin:'0 auto'}}>
         <Slide {...properties}>
           <div className="each-slide">
             <Header/>
