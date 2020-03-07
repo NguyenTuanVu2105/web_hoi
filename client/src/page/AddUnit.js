@@ -1,6 +1,6 @@
 import React, {Component,useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-import {AddUnitChild, ItemUnit} from '../Component/AddUnitChild'
+import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 import { getUser, checkAuth} from '../api/auth/auth'
 import { getClub } from '../api/base/club'
@@ -120,18 +120,7 @@ const AddUnit = (props) => {
                         </th>
                     </tr>
                 </table>
-            </div>
-            {/* <div>
-                <span className = "spanLabel">Số cơ sở trực thuộc Hội:</span><br/>
-                {
-                    ItemUnit.map(name =>(
-                        <div style={{paddingLeft:'20px'}}>
-                            <a>{name.name}</a><br/>
-                        </div>
-                    ))
-                }
-            </div> */}
-            
+            </div>           
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br/>
             <span className = "spanLabel">Kết quả hoạt động:</span>
             <div className="buttonSubmitForMobile">
