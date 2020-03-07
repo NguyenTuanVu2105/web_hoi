@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { Modal, Button, Radio, Form, notification } from 'antd'
 import { Input } from 'antd'
 import '../css/ChangeInfUser.css'
+import ProFile from '../page/ProFile'
+import LearningAndActivities from '../page/learningAndActivities'
 const ChangeInfUser = () => {
 
     const [Visible, setVisible] = useState(false)
-
+    const [Open, setOpen] = useState(true)
     const showModal = () => {
         setVisible(true)
     };
@@ -19,58 +21,28 @@ const ChangeInfUser = () => {
     };
     return (
         <div>
-            <Button className="addFM" type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit', height: 30 }}>
+            <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit', height: 30, width:'50px !important' }}>
                 Sửa
             </Button>
             <Modal
-                title="Sửa"
+                title="Sửa thông tin thành viên"
                 visible={Visible}
                 onCancel={handleCancel}
                 okText="submit"
                 footer={null}
             >
+                <div className="flexChoose">
+                        <button className="ChooseClick" onClick={()=>setOpen(true)}>Thông tin cá nhân</button>
+                        <button className="ChooseClick" onClick={()=>setOpen(false)}>Học tập và hoạt động</button>
+                    </div>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Item>
-                        <div className="row body">
-                            <div className=" row ChangeLeft">
-                                <div className="col-3">
-                                    <label className="label_Change">Họ và tên:</label><br />
-                                    <label className="label_Change">CMND/CCCD/HC:</label><br/>
-                                    <label className="label_Change">Ngày cấp:</label>
-                                    <label className="label_Change">Nơi cấp:</label>
-                                    <label className="label_Change">Điện thoại:</label>
-                                    <label className="label_Change">Link Facebook:</label>
-                                    <label className="label_Change">Địa chỉ Email:</label>
-                                    <label className="label_Change">Số lần hiến máu:</label>
-                                </div>
-                                <div className="col-9">
-                                    <input className="input_change" defaultValue="hihi" disabled /><br />
-
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                    
-                                    <input className="input_change" defaultValue="" /><br />
-                                </div>
-
-
-                            </div>
-                            <div>
-
-                            </div>
-                        </div>
-
-
-
-                    </Form.Item>
+                    
+                    <div style={{display:Open?"block":'none'}}>
+                        <ProFile/>
+                    </div>
+                    <div  style={{display:Open?"none":"block"}}>
+                        <LearningAndActivities/>
+                    </div>
                 </Form>
             </Modal>
         </div>

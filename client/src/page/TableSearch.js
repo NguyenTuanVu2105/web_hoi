@@ -316,7 +316,17 @@ const TableSearch = (props) => {
       </div>
 
       <Table dataSource={table} scroll={{ x: 'max-content' }}>
-        {/* <Column title="ID" dataIndex="id" fixed="left" id="id" /> */}
+        <Column 
+          title="Sửa" 
+          fixed="left"
+          id="Chon"
+          render={(text, record) => (
+            <span>
+              <ChangeInfUser/>
+            </span>
+          )}
+        />
+        
         <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />
         <Column title="Họ và tên" dataIndex="Hovaten" fixed="left" id="Hovaten" />
         <Column title="Ngày sinh" dataIndex="Ngaysinh" id="Ngaysinh" />
@@ -395,18 +405,16 @@ const TableSearch = (props) => {
             }
           }}
         />
-        <Column
+        {/* <Column
           title="Chọn"
 
           id="Chon"
           render={(text, record) => (
             <span>
-              {/* <Button>Sửa</Button> */}
               <ChangeInfUser/>
-              <Button>Xóa</Button>
             </span>
           )}
-        />
+        /> */}
       </Table>
     </div>
 

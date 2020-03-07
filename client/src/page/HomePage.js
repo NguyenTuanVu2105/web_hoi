@@ -69,7 +69,7 @@ function HomePage(props) {
                         {/* <TableSearch/> */}
                         {/* <signIn/> */}
                         {/* <ChangeInfUser/> */}
-                        <ResetPassword/>
+                        {/* <ResetPassword/> */}
                         <div >
                             <div className="modal fade" id="modalMK" role="dialog">
                                 <div className="modal-dialog">

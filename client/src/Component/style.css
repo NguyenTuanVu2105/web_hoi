@@ -107,7 +107,9 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
+.ant-modal{
+    width: 900px !important;
+}
 .input_information{
     margin-left: 5px;
     width: 55% !important;
@@ -173,7 +175,9 @@ fieldset{
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    
+    .ant-modal{
+        width: 90% !important;
+    }
 }
 
 @media (min-width: 993px){
