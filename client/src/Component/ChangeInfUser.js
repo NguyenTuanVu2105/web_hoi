@@ -25,6 +25,7 @@ const ChangeInfUser = () => {
                 Sửa
             </Button>
             <Modal
+                width="900px"
                 title="Sửa thông tin thành viên"
                 visible={Visible}
                 onCancel={handleCancel}
