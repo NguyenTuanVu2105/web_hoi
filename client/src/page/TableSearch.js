@@ -405,16 +405,7 @@ const TableSearch = (props) => {
             }
           }}
         />
-        {/* <Column
-          title="Chọn"
-
-          id="Chon"
-          render={(text, record) => (
-            <span>
-              <ChangeInfUser/>
-            </span>
-          )}
-        /> */}
+        
       </Table>
     </div>
 
