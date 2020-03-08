@@ -1,16 +1,13 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
-// import {changeBackgroudHeader} from '../Component/Header'
+
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
 import '../api/base/club'
 import { getClub, delClub, postClub } from '../api/base/club';
 const AUDUnit = (props) => {
-    const [changeInput, setchangeInput] = useState(true)
-    const [changeButton, setchangeButton] = useState(false)
-    const [inputDisabledH, setInputDisabledH] = useState(true)
     const { nameMap, setNameMap } = useContext(HomepageContext)
 
     const { Option } = Select;
@@ -35,28 +32,11 @@ const AUDUnit = (props) => {
             postClub()
         }
     }
-    const handleCa = () => {
-        window.confirm('Bạn có chắc muốn hủy thêm mới!');
-    }
+    // const handleCa = () => {
+    //     window.confirm('Bạn có chắc muốn hủy thêm mới!');
+    // }
 
-    const openChiHoi = () => {
-        setName({
-            ChiHoi: true,
-            Doi: false,
-        })
-    }
-    const openDoi = () => {
-        setName({
-            ChiHoi: false,
-            Doi: true,
-        })
-    }
-    const [name, setName] = useState({
-        ChiHoi: true,
-        Doi: false
-    })
-
-    
+    const [name, setName] = useState(true)
 
     useEffect(() => {
         setNameMap({
@@ -69,19 +49,12 @@ const AUDUnit = (props) => {
     return (
         <div className="para">
             <div className=' row changeAUDUnit'>
-                {/* <form className="searchForMobile">
-                    <Search
-                        placeholder="Tìm kiếm"
-                        onSearch={value => console.log(value)}
-                        style={{ height: 30, marginRight: 5 }}
-                    />
-                </form> */}
                 <div className="ButtonForMobile">
-                    <button className="buttonD" onClick={() => openChiHoi()}>Chi Hội</button>
-                    <button className="buttonD" onClick={() => openDoi()}>Đội</button>
+                    <button className="buttonD" onClick={() => setName(true)}>Chi Hội</button>
+                    <button className="buttonD" onClick={() => setName(false)}>Đội</button>
                 </div>
             </div>
-            <form style={{ display: name.ChiHoi ? 'block' : 'none' }}>
+            <form className="para" style={{ display: name? 'block' : 'none' }}>
                 <h4>Chi Hội</h4>
                 <div>
                     <span className="spanLabel">Đơn vị:</span>
@@ -98,7 +71,7 @@ const AUDUnit = (props) => {
                     <input type="number" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />
                     <span className="spanLabel">Ngày truyền thống:</span>
                     <input type="date" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />
-                    <span className="spanLabel">Số cơ sở trực thuộc Hội:</span>
+                    <span className="spanLabel">Số cơ sở trực thuộc chi Hội:</span>
                     <input type="text" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />
                 </div>
                 <div>
@@ -117,7 +90,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Tình nguyện viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='300' />
                             </th>
@@ -125,7 +98,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Hội viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='400' />
                             </th>
@@ -144,7 +117,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Huấn luyện viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='12' />
                             </th>
@@ -152,7 +125,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Cán bộ
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='34' />
                             </th>
@@ -164,7 +137,7 @@ const AUDUnit = (props) => {
                 <span className="spanLabel">Kết quả hoạt động:</span>
 
             </form>
-            <form className="para" style={{ display: name.Doi ? 'block' : 'none' }}>
+            <form className="para" style={{ display: name?'none':'block' }}>
                 <h4>Đội</h4>
                 <div>
                     <span className="spanLabel">Đơn vị:</span>
@@ -180,8 +153,7 @@ const AUDUnit = (props) => {
                     <span className="spanLabel">Năm thành lập:</span>
                     <input type="number" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />
                     <span className="spanLabel">Ngày truyền thống:</span>
-                    <input type="date" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />
-                    
+                    <input type="date" className="inputDisable" placeholder="" onChange={(e) => console.log(e.target.value)} defaultValue="" /><br />                    
                 </div>
                 <div>
                     <span className="spanLabel">Thành viên hiện tại: </span>
@@ -191,7 +163,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Cảm tình viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' min="0" className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
@@ -199,7 +171,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Tình nguyện viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
@@ -207,7 +179,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Hội viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
@@ -226,7 +198,7 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Huấn luyện viên
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
@@ -234,25 +206,20 @@ const AUDUnit = (props) => {
                         <tr>
                             <th>
                                 Cán bộ
-                        </th>
+                            </th>
                             <th className="inputTH">
                                 <input id="inputDisbleA" type='number' className="inputDisable" style={{ width: 50 }} placeholder='1234' />
                             </th>
                         </tr>
                     </table>
                 </div>
-                {/* <span className="spanLabel">Tổng số thành viên:</span><br /> */}
-
-
                 <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span><br />
                 <span className="spanLabel">Kết quả hoạt động:</span>
-
             </form>
             <div className="buttonSubmitForMobile">
                 <button className="buttonS" onClick={() => handleUp()}>Thêm mới</button>
-                <button className="buttonS" onClick={() => handleCa()}>Hủy</button>
+                {/* <button className="buttonS" onClick={() => handleCa()}>Hủy</button> */}
             </div>
-
         </div>
     )
 }
