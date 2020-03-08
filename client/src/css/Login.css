@@ -5,8 +5,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-  }
-  
+  } 
   .login-wrap .login-form {
       width: 400px;
       padding: 30px;
@@ -24,7 +23,6 @@
   background-size: cover;
 }
 .backgroundOpacity{
-  /* margin-top: 200px; */
   background-color: black;
   opacity: .3;
   height: 254px;
@@ -109,5 +107,8 @@
   .login-wrap .login-form{
     width: 320px;
     padding: 0;
+  }
+  .setvisible{
+    width: 320px;
   }
 }

@@ -64,7 +64,6 @@ const LoginWrap = (props) => {
         <Loading />
       </div>
       <div className="login-wrap backgroundSignIn">
-
         <div className="backgroundOpacity"></div>
         <div className="backgroundBlack" style={{ display: open ? 'block' : 'none' }}>
           <div className="setvisible" >
