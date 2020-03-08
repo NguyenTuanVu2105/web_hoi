@@ -1,4 +1,4 @@
-import React, {Component,useState , useContext, useEffect} from 'react'
+import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 import {introduleBloodList, ItemUnit} from '../Component/introduleBloodList'
 import '../css/AddUnit.css'

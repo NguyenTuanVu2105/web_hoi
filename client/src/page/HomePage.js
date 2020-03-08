@@ -40,8 +40,7 @@ function HomePage(props) {
 
 
     return (
-        <div className="container-fluid">
-            
+        <div className="container-fluid">            
             <div className="row homePageBlood">
             {isLoading && <Loading></Loading>}
                 <div className="menu-left">
@@ -92,7 +91,6 @@ function HomePage(props) {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </HomepageContext.Provider>
             </div>

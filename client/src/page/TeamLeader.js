@@ -1,6 +1,6 @@
-import React, {Component, useContext, useEffect, useState} from 'react'
+import React, { useContext, useEffect, useState} from 'react'
 import HomepageContext from "../context/HomepageContext";
-import {TeamLeaderList} from '../Component/TeamLeaderList'
+
 import '../css/TeamLeader.css'
 import { getLeaderAll } from '../api/base/leader'
 
