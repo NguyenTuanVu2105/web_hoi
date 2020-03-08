@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { notification} from 'antd';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
@@ -18,6 +19,7 @@ import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from '../api/auth/auth';
+import { changepassword } from '../api/base/auth';
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
 import ChangeInfUser from '../Component/ChangeInfUser'
@@ -37,7 +39,23 @@ function HomePage(props) {
         )
     })
     const [isLoading, setLoading] = useState(false)
+    const [oldpassword, setoldpassword] = useState('')
+    const [newpassword, setnewpassword] = useState('')
+    const [passwordconfirm, setpasswordconfirm] = useState('')
 
+    const handlePassword = async () => {
+      const { success, data } = await changepassword({password : oldpassword, newpassword: newpassword,passwordConfirm: passwordconfirm})
+      if (success) {
+        notification['success']({
+          message: 'Cập nhật mật khẩu thành công ',
+        })
+      }
+      else{
+        notification['error']({
+          message: 'Mật khẩu xác nhận không chính xác. Vui lòng nhập lại',
+        })
+      }
+    }
 
     return (
         <div className="container-fluid">            
@@ -79,13 +97,13 @@ function HomePage(props) {
                                         </div>
                                         <div className="modal-body">
                                             <form>
-                                                <input type="text" className="changePass" placeholder="Mật khẩu cũ" />
-                                                <input type="text" className="changePass" placeholder="Mật khẩu mới" />
-                                                <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu" />
+                                                <input type="text" className="changePass" placeholder="Mật khẩu cũ"  value={oldpassword} onChange={(e) => setoldpassword(e.target.value)} />
+                                                <input type="text" className="changePass" placeholder="Mật khẩu mới"  value={newpassword} onChange={(e) => setnewpassword(e.target.value)}/>
+                                                <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu"  value={passwordconfirm} onChange={(e) => setpasswordconfirm(e.target.value)}/>
                                             </form>
                                         </div>
                                         <div className="modal-footer">
-                                            <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
+                                            <button type="button" className="footerButton" data-dismiss="modal" onClick={handlePassword}>Lưu thay đổi</button>
                                         </div>
                                     </div>
                                 </div>
