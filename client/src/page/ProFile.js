@@ -27,9 +27,7 @@ function ProFileLeft(props) {
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
-                console.log(file)
                 await uploadAvatar(file)
-                console.log('success')
                 await updateUserProfile(values)
                 setLoading(false)
                 notification['success']({

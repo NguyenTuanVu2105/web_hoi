@@ -88,12 +88,12 @@ exports.ForgetPassword = (req, res)=>{
 			var mailOptions = {
 				from: 'hội máu',
 				// to:	'hoithanhnienvandonghienmau@gmail.com',
-				to:  user.members[0].Email.trim(),
+				to:  user.member.Email.trim(),
 				subject: 'Cập nhật mật khẩu',
 				text:'You recieved message from server',
 				html: `<div><div style="border-bottom:1px solid gray; width:600px"><h4 style="color:red">
 				Hội máu</h4></div><div style="border-bottom:1px solid gray;
-				 width:600px"><p>Xin chào ${user.members[0].Hovaten},
+				 width:600px"><p>Xin chào ${user.member.Hovaten},
 				 </p><p>Bạn vui lòng truy cập link sau và làm theo hướng dẫn để tạo mật khẩu mới:
 				 </p><button style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:70px;text-align:center;margin-bottom:20px"><a href=${process.env.CLIENT_HOST}/newpassword/'${token} style="text-decoration: none;">Tại đây</a></button></div></div>`			  
 			};
@@ -108,6 +108,7 @@ exports.ForgetPassword = (req, res)=>{
 		}
 	}).catch(err =>
         {
+			console.log(err)
             res.status(500).send({message: err})
     })
 }
