@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { notification} from 'antd';
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
 import NavBar from '../Component/NavBar';
-// import ProFileLeft from './ProFile';
-// import Header from '../Component/Header';
-// import HorizontalMenu from '../Component/HorizontalMenu';
-// import LearningAndActivities from '../page/learningAndActivities';
-// import AddUnit from '../page/AddUnit'
-// import TeamLeader from '../page/TeamLeader'
-// import SearchUnit from '../page/SearchUnit'
-// import OrganizationalRecords from '../page/OrganizationalRecords'
-// import SearchItem from '../page/SearchItem'
-// import TableSearch from '../page/TableSearch'
-// import signIn from '../page/signIn'
 import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
@@ -23,8 +10,6 @@ import { checkAuth, logout } from '../api/auth/auth';
 import { changepassword } from '../api/base/auth';
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
-// import ChangeInfUser from '../Component/ChangeInfUser'
-// import ResetPassword from '../Component/ResetPassword'
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
