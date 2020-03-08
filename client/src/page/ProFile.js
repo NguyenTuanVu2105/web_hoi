@@ -63,37 +63,37 @@ function ProFileLeft(props) {
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>
                             <div>
-                                <label for="" style={style} className="label_information">CMND/CCCD/HC: </label>
+                                <label style={style} className="label_information">CMND/CCCD/HC: </label>
                                 {getFieldDecorator('cmtorhc', {
                                     initialValue: user.CMTorHC
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Ngày cấp: </label>
+                                <label style={style} className="label_information">Ngày cấp: </label>
                                 {getFieldDecorator('ngaycap', {
                                     initialValue: user.Ngaycap
                                 })(
                                     <Input type="date" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Nơi cấp: </label>
+                                <label style={style} className="label_information">Nơi cấp: </label>
                                 {getFieldDecorator('noicap', {
                                     initialValue: user.Noicap
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Điện thoại: </label>
+                                <label style={style} className="label_information">Điện thoại: </label>
                                 {getFieldDecorator('dienthoai', {
                                     initialValue: user.Dienthoai
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Link Facebook: </label>
+                                <label style={style} className="label_information">Link Facebook: </label>
                                 {getFieldDecorator('facebook', {
                                     initialValue: user.Facebook
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Địa chỉ Email: </label>
+                                <label style={style} className="label_information">Địa chỉ Email: </label>
                                 {getFieldDecorator('email', {
                                     initialValue: user.Email
                                 })(
@@ -105,13 +105,13 @@ function ProFileLeft(props) {
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
                             <legend className="legendA">Hiến máu</legend>
-                            <label for="" style={style} className="label_information">Số lần hiến máu: </label>
+                            <label style={style} className="label_information">Số lần hiến máu: </label>
                             {getFieldDecorator('solanhm', {
                                 initialValue: user.SolanHM
                             })(
                                 <Input type="text" className="input_information" />
                             )}
-                            <label for="" style={style} className="label_information">Nhóm máu: </label>
+                            <label style={style} className="label_information">Nhóm máu: </label>
                             {getFieldDecorator('nhommau', {
                                 initialValue: user.Nhommau ? user.Nhommau : null
                             })(
@@ -122,7 +122,7 @@ function ProFileLeft(props) {
                                     <Option style={{ textAlign: "center" }} value="AB">AB</Option>
                                 </Select>
                             )} <br />
-                            <label for="" style={style} className="label_information">Rh(D): </label>
+                            <label style={style} className="label_information">Rh(D): </label>
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
@@ -139,25 +139,25 @@ function ProFileLeft(props) {
                         <fieldset>
                             <legend className="legendA">Đơn vị công tác</legend>
                             <div>
-                                <label for="" style={style} className="label_information">Đơn vị học tập/Công tác: </label>
+                                <label style={style} className="label_information">Đơn vị học tập/Công tác: </label>
                                 {getFieldDecorator('donvi', {
                                     initialValue: user.Donvi
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
+                                <label style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
                                 {getFieldDecorator('donvicuthe', {
                                     initialValue: user.Donvicuthe
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Đoàn viên/Đảng viên: </label>
+                                <label style={style} className="label_information">Đoàn viên/Đảng viên: </label>
                                 {getFieldDecorator('doanviendangvien', {
                                     initialValue: user.DoanvienDangvien
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Trình độ học vấn: </label>
+                                <label style={style} className="label_information">Trình độ học vấn: </label>
                                 {getFieldDecorator('trinhdohocvan', {
                                     initialValue: user.Trinhdohocvan
                                 })(
@@ -168,13 +168,13 @@ function ProFileLeft(props) {
                         <fieldset>
                             <legend className="legendA">Địa chỉ</legend>
                             <div>
-                                <label for="" style={style} className="label_information">Quê quán: </label>
+                                <label style={style} className="label_information">Quê quán: </label>
                                 {getFieldDecorator('quequan', {
                                     initialValue: user.Quequan
                                 })(
                                     <Input type="text" className="input_information" />
                                 )}
-                                <label for="" style={style} className="label_information">Nơi ở hiện nay: </label>
+                                <label style={style} className="label_information">Nơi ở hiện nay: </label>
                                 {getFieldDecorator('diachill', {
                                     initialValue: user.DiachiLL
                                 })(
@@ -185,7 +185,7 @@ function ProFileLeft(props) {
                         <fieldset>
                             <legend className="legendA">Liên hệ người thân</legend>
                             <div>
-                                <label for="" style={style} className="label_information">Địa chỉ liên hệ: </label>
+                                <label style={style} className="label_information">Địa chỉ liên hệ: </label>
                                 {getFieldDecorator('thongtinlienhegd', {
                                     initialValue: user.ThongtinlienheGD
                                 })(
@@ -197,7 +197,7 @@ function ProFileLeft(props) {
                     <Form.Item action="" method="post" className="information" autocomplete="on" style={{ heigh: 'auto' }}>
                         <fieldset>
                             <legend className="legendA">Ghi chú khác</legend>
-                            <label for="" style={style} className="label_information">Ghi chú: </label>
+                            <label style={style} className="label_information">Ghi chú: </label>
                             {getFieldDecorator('ghichukhac', {
                                 initialValue: user.Ghichukhac
                             })(

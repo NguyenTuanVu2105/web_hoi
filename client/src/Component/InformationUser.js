@@ -24,7 +24,7 @@ const InformationUser = (props)=>{
                 <Form action="" method="post" className="information">
                 <fieldset>
                     <legend className="legendA">Thông tin cá nhân</legend>
-                    <div class="row">
+                    <div className="row">
                         <div className="avatarForMobile" id="image_infor"  style={{paddingLeft: '8%'}}>
                         <div className="avatar_profile" onMouseEnter={() => { setAnimateChangeAvatar(1)}} onMouseLeave={() => {  setAnimateChangeAvatar(0)}}>
                         <Avatar
@@ -47,15 +47,15 @@ const InformationUser = (props)=>{
                     </div>
 
                         </div>
-                        <div class="informationUserForMobile">
-                            <label for="" class="label_information2">Mã thành viên: </label> {sttv}<br/>
-                            <label for="" class="label_information2">Họ và tên: </label> {hovaten}<br/>
-                            <label for="" class="label_information2">Ngày sinh: </label>
-                            <input type="date" class="input_information2" defaultValue={ngaysinh} disabled={true}/><br/>
-                            <label for="" class="label_information2">Giới tính: </label>
+                        <div className="informationUserForMobile">
+                            <label className="label_information2">Mã thành viên: </label> {sttv}<br/>
+                            <label className="label_information2">Họ và tên: </label> {hovaten}<br/>
+                            <label className="label_information2">Ngày sinh: </label>
+                            <input type="date" className="input_information2" defaultValue={ngaysinh} disabled={true}/><br/>
+                            <label className="label_information2">Giới tính: </label>
                             <Radio.Group disabled={true} value={gioitinh ? 1 : 2} name="radiogroup">
-                                <Radio value={1}  style = {{marginLeft: '5px'}} class="radio_information"> Nam </Radio>
-                                <Radio value={2}  class="radio_information"> Nữ </Radio>
+                                <Radio value={1}  style = {{marginLeft: '5px'}} className="radio_information"> Nam </Radio>
+                                <Radio value={2}  className="radio_information"> Nữ </Radio>
                             </Radio.Group>
                         </div>
                     </div>
