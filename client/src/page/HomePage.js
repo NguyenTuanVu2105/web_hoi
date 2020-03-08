@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { notification} from 'antd';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
@@ -18,7 +19,7 @@ import NavBar from '../Component/NavBar';
 import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
-import { checkAuth } from '../api/auth/auth';
+import { checkAuth, logout } from '../api/auth/auth';
 import { changepassword } from '../api/base/auth';
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
@@ -44,15 +45,15 @@ function HomePage(props) {
     const [passwordconfirm, setpasswordconfirm] = useState('')
 
     const handlePassword = async () => {
-      const { success, data } = await changepassword({password : oldpassword, newpassword: newpassword,passwordConfirm: passwordconfirm})
+      const { success } = await changepassword({password : oldpassword, newpassword: newpassword,passwordConfirm: passwordconfirm})
       if (success) {
         notification['success']({
-          message: 'Cập nhật mật khẩu thành công ',
-        })
+          message: 'Cập nhật mật khẩu thành công ',  
+        }, logout())
       }
       else{
         notification['error']({
-          message: 'Mật khẩu xác nhận không chính xác. Vui lòng nhập lại',
+          message: 'Sai mật khẩu hoặc mật khẩu xác nhận. Vui long nhập lại',
         })
       }
     }
