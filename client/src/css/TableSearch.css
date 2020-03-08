@@ -1,7 +1,5 @@
 .addFM{
     width: 11% !important;
-    /* margin: 0 auto; */
-
 }
 .menuFM{
     margin-bottom: 10px;
@@ -20,7 +18,7 @@
 .buttonSearch{
     background-color: white;
     border: none;
-    /* width: 10%; */
+
 }
 .buttonSearch:hover{
     color: rgb(24, 144, 255);
@@ -30,9 +28,7 @@
     height: 30px !important;
     margin-left: 5px !important;
 }
-/* .nhommauFM{
-    display: flex;
-} */
+
 .searchOC{
     background-color: white;
     border: none;

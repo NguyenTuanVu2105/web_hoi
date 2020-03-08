@@ -13,3 +13,14 @@
         height: 31px;
         width: 150px;
     }
+
+@media (max-width:600px){
+    .flexChoose{
+        display: inline-grid;
+    }
+        .flexChoose .ChooseClick{
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+}

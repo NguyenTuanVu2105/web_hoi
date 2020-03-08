@@ -40,16 +40,6 @@ const NavBar = () => {
         lineHeight: '35px',
         color: 'white'
     }
-
-    // const navbarClose = () => {
-    //     var para = document.getElementById("mySidebar");
-    //     para.style.display = "none";
-    // }
-
-    // const navbarOpen = () => {
-    //     var para = document.getElementById("mySidebar");
-    //     para.style.display = "block";
-    // }
     const [open, setOpen] = useState(false)
     return (
         <div>
@@ -99,50 +89,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-
-
-{/* <div>
-            <button className="sideBarOpen sideBar" onClick={() => navbarOpen()} >&#9776;</button>
-            <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex:11 }} id="mySidebar" >
-                <button className="sideBarClose sideBar" onClick={() => navbarClose() && roles}>Close X</button>
-                <div className="logoPageBlood">
-                </div>
-                {
-                    navs.map(nav => (
-                        <div>
-                            <div className="panel-heading drop-menu">
-                                <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={() => setChangeIcon(nav.IconID)}>
-                                    {nav.name}
-                                    <div className="items-i"><i id={nav.IconID} className='fa fa-angle-down' style={style}  ></i></div>
-                                </a>
-                            </div>
-                            <div id={nav.Id2} className="panel-collapse collapse">
-                                <ul className="list-group">
-                                    {
-                                        nav.children.map(x => (
-                                            <li id={x.id} className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    ))
-                }
-                <div>
-                    <div className="panel-heading drop-menu">
-                        <a className="stickyA" data-toggle="collapse" href="#collapse7" onClick={() => setChangeIcon('icon7')}>
-                            QUẢN LÝ TÀI KHOẢN
-                            <div className="items-i"><i id='icon7' className='fa fa-angle-down' style={style}  ></i></div>
-                        </a>
-
-                    </div>
-                    <div id="collapse7" className="panel-collapse collapse">
-                        <ul className="list-group">
-                                    <li className="list-group-item"><a className="list-items" onClick={logout}>Đăng xuất</a></li>
-                                    <li className="list-group-item"><a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> */}

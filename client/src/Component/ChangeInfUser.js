@@ -39,7 +39,7 @@ const ChangeInfUser = () => {
                 <div className="flexChoose">
                     <button className="ChooseClick" onClick={() => setOpen(true)}>Thông tin cá nhân</button>
                     <button className="ChooseClick" onClick={() => setOpen(false)}>Học tập và hoạt động</button>
-                    <Form style={{ width: 150 }}>
+                    <Form style={{ width: 150,marginLeft:10, marginRight:10 }}>
                         <Select style={{ height: 30 }} defaultValue="Phân quyền" onChange={handleChange}>
                             <Option style={{ textAlign: "center" }} value="Phân quyền">Phân quyền</Option>
                             <Option style={{ textAlign: "center" }} value="Chủ tịch Hội">2</Option>

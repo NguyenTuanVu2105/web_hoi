@@ -5,7 +5,7 @@ import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
 import NavBar from '../Component/NavBar';
 // import ProFileLeft from './ProFile';
-import Header from '../Component/Header';
+// import Header from '../Component/Header';
 // import HorizontalMenu from '../Component/HorizontalMenu';
 // import LearningAndActivities from '../page/learningAndActivities';
 // import AddUnit from '../page/AddUnit'
@@ -14,7 +14,7 @@ import Header from '../Component/Header';
 // import OrganizationalRecords from '../page/OrganizationalRecords'
 // import SearchItem from '../page/SearchItem'
 // import TableSearch from '../page/TableSearch'
-import signIn from '../page/signIn'
+// import signIn from '../page/signIn'
 import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
@@ -22,8 +22,8 @@ import { checkAuth } from '../api/auth/auth';
 import { changepassword } from '../api/base/auth';
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
-import ChangeInfUser from '../Component/ChangeInfUser'
-import ResetPassword from '../Component/ResetPassword'
+// import ChangeInfUser from '../Component/ChangeInfUser'
+// import ResetPassword from '../Component/ResetPassword'
 
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
@@ -72,21 +72,8 @@ function HomePage(props) {
                 }}>
                     <div className="content-right" >
                         <Slideshow/>
-                        {/* <Header /> */}
-                        {/*<HorizontalMenu />*/}
                         <Breadcrumb style={{ paddingLeft: 25, paddingTop: 10 }}>{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
-                        {/* <LearningAndActivities /> */}
-                        {/* <ProFileLeft />
-                        <AddUnit/>
-                        <TeamLeader/>
-                        <SearchUnit/>
-                        <OrganizationalRecords/> */}
-                        {/* <SearchItem/> */}
-                        {/* <TableSearch/> */}
-                        {/* <signIn/> */}
-                        {/* <ChangeInfUser/> */}
-                        {/* <ResetPassword/> */}
                         <div >
                             <div className="modal fade" id="modalMK" role="dialog">
                                 <div className="modal-dialog">
@@ -97,9 +84,9 @@ function HomePage(props) {
                                         </div>
                                         <div className="modal-body">
                                             <form>
-                                                <input type="text" className="changePass" placeholder="Mật khẩu cũ"  value={oldpassword} onChange={(e) => setoldpassword(e.target.value)} />
-                                                <input type="text" className="changePass" placeholder="Mật khẩu mới"  value={newpassword} onChange={(e) => setnewpassword(e.target.value)}/>
-                                                <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu"  value={passwordconfirm} onChange={(e) => setpasswordconfirm(e.target.value)}/>
+                                                <input type="password" className="changePass" placeholder="Mật khẩu cũ"  value={oldpassword} onChange={(e) => setoldpassword(e.target.value)} />
+                                                <input type="password" className="changePass" placeholder="Mật khẩu mới"  value={newpassword} onChange={(e) => setnewpassword(e.target.value)}/>
+                                                <input type="password" className="changePass" placeholder="Xác nhận lại mật khẩu"  value={passwordconfirm} onChange={(e) => setpasswordconfirm(e.target.value)}/>
                                             </form>
                                         </div>
                                         <div className="modal-footer">

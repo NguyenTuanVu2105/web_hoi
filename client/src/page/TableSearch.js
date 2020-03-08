@@ -112,7 +112,7 @@ const TableSearch = (props) => {
       <div className='row menuFM' >
         <button className="searchOC" onClick={() => searchOpen()} style={{marginLeft:15, marginRight:5}}>Tìm kiếm >>></button>
         {/* --Thêm thành viên--- */}
-        <Button className="addFM" type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit',height:30 }}>
+        <Button type="primary" onClick={showModal}  style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit',height:30}}>
           Thêm thành viên
           </Button>
         <Modal
@@ -304,15 +304,6 @@ const TableSearch = (props) => {
           <button className="searchOC" onClick={() => searchClose()}>close</button>
         </div>
 
-        {/* <div className='addFM'>
-          
-        </div> */}
-
-        {/* ---------------tìm kiếm--------------------- */}
-        {/* <div className=' menuSearchFM'>
-
-
-        </div> */}
       </div>
 
       <Table dataSource={table} scroll={{ x: 'max-content' }}>
@@ -404,8 +395,7 @@ const TableSearch = (props) => {
               </span>
             }
           }}
-        />
-        
+        />        
       </Table>
     </div>
 
