@@ -19,8 +19,6 @@
         display: inline-grid;
     }
         .flexChoose .ChooseClick{
-            margin-left: 0;
-            margin-right: 0;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 }
