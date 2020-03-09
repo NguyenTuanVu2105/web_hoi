@@ -107,7 +107,7 @@ exports.ViewMember = (req, res) => {
 
 exports.BranchClubInformation = (req, res) => {
     Branch.findAll({
-        attributes: ['Machihoi', 'Tenchihoi'],
+        attributes: ['id','Machihoi', 'Tenchihoi'],
         include: 
         [{
             model: Club,
@@ -135,4 +135,66 @@ exports.LeaderAssociation = (req, res) => {
     }).catch(err => {
         res.status(500).send({success: false, message: err})
     })
+}
+exports.ViewMember = (req, res) => {
+    if(req.query.hovaten == null && req.query.nhommau == null)
+    {
+        Member.findAll({
+            limit: 10,
+            offset: (page-1)*10,
+            include: [
+                {
+                    model: Position,
+                },
+                {
+                    model: Specialized,
+                },
+                {
+                    model: Club,
+
+                    attributes: ['Tendoi'],
+                    include:[{
+                        model: Branch,
+                        attributes: ['Tenchihoi']
+                    }]
+            }]
+        }).then(information => {
+            res.status(200).send({success: true, data: information})
+        }).catch(err => {
+            res.status(500).send({success: false, message: err})
+        })
+    }else{
+    Member.findAll({
+        limit: 10,
+        offset: (page-1)*10,
+        where: {
+            Hovaten: req.body.hovaten,
+            Sothethanhvien: req.query.sothethanhvien,
+            Hovaten: {[db.Sequelize.Op.like]: '%' + req.query.hovaten + '%'},
+            Quequan: {[db.Sequelize.Op.like]: '%' +req.query.quequan + '%'},
+            Nhommau: req.query.nhommau,
+        },
+        include: [
+            {
+                model: Position,
+                where: {Chucvu: {[db.Sequelize.Op.like]: '%' + req.query.chucvu + '%'}},
+            },
+            {
+                model: Specialized,
+                where: {Bacchuyenmon: {[db.Sequelize.Op.like]: '%' + req.query.bacchuyenmon + '%'}},
+            },
+            {
+                model: Club,
+                attributes: ['Tendoi'],
+                include:[{
+                    model: Branch,
+                    attributes: ['Tenchihoi']
+                }]
+        }]
+    }).then(information => {
+        res.status(200).send(information)
+    }).catch(err => {
+        res.status(500).send({message: err})
+    })
+}
 }

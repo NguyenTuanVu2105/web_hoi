@@ -26,11 +26,8 @@ const SearchUnit = () =>{
         }
     }
     useEffect(() => {
-        fetchDataClub()
-        
-    }, [])
-    useEffect(() => {
         fetchData()
+        fetchDataClub()
         setNameMap({
             ['/']: 'Trang chủ', 
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',

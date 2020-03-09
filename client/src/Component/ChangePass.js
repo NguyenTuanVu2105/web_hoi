@@ -43,9 +43,9 @@ const ChangePass = () => {
                             <input type="password" className="changePass" placeholder="Mật khẩu cũ" value={oldpassword} onChange={(e) => setoldpassword(e.target.value)} />
                             <label className="checkPassCss" style={{ display: checkPass1 ? "block" : "none" }}>Sai mật khẩu!</label>
                             <input type="password" className="changePass" placeholder="Mật khẩu mới" value={newpassword} onChange={(e) => setnewpassword(e.target.value)} />
-                            <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu quá ngắn hoặc chứa dấu cách!</label>
+                            <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu ít nhất gồm 8 ký tự và không chứa dấu cách!</label>
                             <input type="password" className="changePass" placeholder="Xác nhận lại mật khẩu" value={passwordconfirm} onChange={(e) => setpasswordconfirm(e.target.value)} />
-                            <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu quá ngắn hoặc chứa dấu cách!</label>
+                            <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu ít nhất gồm 8 ký tự và không chứa dấu cách!</label>
                         </form>
                     </div>
                     <div className="modal-footer">
