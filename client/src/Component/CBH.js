@@ -38,7 +38,7 @@ const CBH = () => {
                                 <h4>Chỉnh sửa background</h4>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <div class="modal-body">
+                            <div className="modal-body">
                                 <form>
                                     <input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
                                     <input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
@@ -54,7 +54,7 @@ const CBH = () => {
 
                                 </form>
                             </div>
-                            <div class="modal-footer">
+                            <div className="modal-footer">
                                 <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
                             </div>
                         </div>

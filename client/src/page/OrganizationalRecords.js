@@ -6,16 +6,16 @@ import { getUser, checkAuth} from '../api/auth/auth'
 
 const OrganizationalRecords = () =>{
 
-    const roles = getUser().then((value) => {
-        if (checkAuth()) {
-            var para = document.getElementById('addunit')
-            if (value.role === 'admin' || value.role === 'hoitruong') {
-                para.style.display='block'
-            } else {
-                para.style.display='none'
-            }
-        }
-    })
+    // const roles = getUser().then((value) => {
+    //     if (checkAuth()) {
+    //         var para = document.getElementById('addunit')
+    //         if (value.role === 'admin' || value.role === 'hoitruong') {
+    //             para.style.display='block'
+    //         } else {
+    //             para.style.display='none'
+    //         }
+    //     }
+    // })
 
     const {nameMap, setNameMap} = useContext(HomepageContext)
     useEffect(() => {

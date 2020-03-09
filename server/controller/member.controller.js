@@ -147,7 +147,6 @@ exports.ViewProfile = (req, res) => {
     }).catch(err => {
         res.status(500).send({message: err})
     })
-      
 }
 
 exports.uploadAvatar = (req, res) => {

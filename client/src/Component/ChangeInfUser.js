@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { Modal, Button, Radio, Form, notification } from 'antd'
 import { Select } from 'antd'
 import '../css/ChangeInfUser.css'
-import ProFile from '../page/ProFile'
-import LearningAndActivities from '../page/learningAndActivities'
+import AdminProFile from '../Component/AdminProfile'
+import AdminLA from '../Component/AdminLA'
 const { Option } = Select
 const ChangeInfUser = () => {
 
@@ -51,10 +51,10 @@ const ChangeInfUser = () => {
                 <Form onSubmit={handleSubmit}>
 
                     <div style={{ display: Open ? "block" : 'none' }}>
-                        <ProFile />
+                        <AdminProFile />
                     </div>
                     <div style={{ display: Open ? "none" : "block" }}>
-                        <LearningAndActivities />
+                        <AdminLA />
                     </div>
                 </Form>
             </Modal>

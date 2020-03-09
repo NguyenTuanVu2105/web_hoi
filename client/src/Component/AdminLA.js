@@ -7,7 +7,7 @@ import HomepageContext from "../context/HomepageContext";
 import { getLearnActivity, editLearnActivity } from '../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea';
 
-function LearningAndActivities(props) {
+function AdminLA(props) {
     const { getFieldDecorator } = props.form
     const { nameMap, setNameMap, setLoading  } = useContext(HomepageContext)
     const [ leact, setLeact ] = useState([])
@@ -355,4 +355,4 @@ function LearningAndActivities(props) {
     )
 }
 
-export default Form.create()(LearningAndActivities)
+export default Form.create()(AdminLA)
