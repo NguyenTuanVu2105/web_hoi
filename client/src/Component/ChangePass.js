@@ -9,11 +9,14 @@ const ChangePass = () => {
     const [passwordconfirm, setpasswordconfirm] = useState('')
     const [checkPass, setCheckPass] = useState(false)
     const [checkPass1, setCheckPass1] = useState(false)
+    const [checkPass2, setCheckPass2] = useState(false)
     const handlePassword = async () => {
         if (newpassword.length < 8 || newpassword.indexOf(" ") != -1) {            
             setCheckPass(true)
         }
-        
+        else if(newpassword != passwordconfirm){
+            setCheckPass2(true)
+        }
         else {
             setCheckPass(false)
             const { success } = await changepassword({ password: oldpassword, newpassword: newpassword, passwordConfirm: passwordconfirm })
@@ -46,6 +49,7 @@ const ChangePass = () => {
                             <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu quá ngắn hoặc chứa dấu cách!</label>
                             <input type="password" className="changePass" placeholder="Xác nhận lại mật khẩu" value={passwordconfirm} onChange={(e) => setpasswordconfirm(e.target.value)} />
                             <label className="checkPassCss" style={{ display: checkPass ? "block" : "none" }}>Mật khẩu quá ngắn hoặc chứa dấu cách!</label>
+                            <label className="checkPassCss" style={{ display: checkPass2 ? "block" : "none" }}>Mật khẩu không trùng nhau!</label>
                         </form>
                     </div>
                     <div className="modal-footer">
