@@ -1,6 +1,6 @@
-import React, {Component,useState , useContext, useEffect} from 'react'
+import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-import { notification } from 'antd'
+// import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 import { getUser, checkAuth} from '../api/auth/auth'
 import { getClub, editClub } from '../api/base/club'
@@ -9,8 +9,7 @@ import { useParams } from 'react-router-dom';
 const AddUnit = () => {
     let { madoi } = useParams()
     const [changeInput, setchangeInput] = useState(true)
-    const [changeButton, setchangeButton] = useState(false)
-    const [idForget, setIdForget] = useState([])
+    // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])
     const {nameMap, setNameMap} = useContext(HomepageContext)
 
@@ -58,13 +57,13 @@ const AddUnit = () => {
           }
         setchangeInput(true)
     }
-    const handleCa = ()=>{
-        window.confirm('Bạn có chắc muốn Hủy thay đổi!');
-        setchangeInput(true)
-    }
-    const handleDe = ()=>{
-        window.confirm('Bạn có chắc muốn xóa!');
-    }
+    // const handleCa = ()=>{
+    //     window.confirm('Bạn có chắc muốn Hủy thay đổi!');
+    //     setchangeInput(true)
+    // }
+    // const handleDe = ()=>{
+    //     window.confirm('Bạn có chắc muốn xóa!');
+    // }
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
@@ -103,13 +102,13 @@ const AddUnit = () => {
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
             </div>
             <div className='row rowTable'>
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
                     <tr>
                         <th>
                             Cảm tình viên
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" type="number" min="0" className="inputDisable" style={{width:35}} defaultValue={club.Camtinhvien} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input  type="number" min="0" className="inputDisable" style={{width:35}} defaultValue={club.Camtinhvien} disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
@@ -117,7 +116,7 @@ const AddUnit = () => {
                             Tình nguyện viên
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} defaultValue={club.TNV} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input className="inputDisable" style={{width:35}} defaultValue={club.TNV} disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
@@ -125,18 +124,18 @@ const AddUnit = () => {
                             Hội viên
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} defaultValue={club.Hoivien} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input className="inputDisable" style={{width:35}} defaultValue={club.Hoivien} disabled={changeInput} />
                         </th>
                     </tr>
                 </table>
 
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
                     <tr>
                         <th>
                             Hướng dẫn viên/Cán bộ tăng cường
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} defaultValue={club.Huongdanvien} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input className="inputDisable" style={{width:35}} defaultValue={club.Huongdanvien} disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
@@ -144,7 +143,7 @@ const AddUnit = () => {
                             Huấn luyện viên
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} defaultValue={club.Huanluyenvien} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input className="inputDisable" style={{width:35}} defaultValue={club.Huanluyenvien} disabled={changeInput} />
                         </th>
                     </tr>
                     <tr>
@@ -152,7 +151,7 @@ const AddUnit = () => {
                             Cán bộ
                         </th>
                         <th className="inputTH">
-                            <input id="inputDisbleA" className="inputDisable" style={{width:35}} defaultValue={club.Canbotangcuong} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+                            <input  className="inputDisable" style={{width:35}} defaultValue={club.Canbotangcuong} disabled={changeInput} />
                         </th>
                     </tr>
                 </table>

@@ -25,7 +25,6 @@ const SearchUnit = () =>{
           setClub(result.data.data)
         }
     }
-
     useEffect(() => {
         fetchData()
         fetchDataClub()

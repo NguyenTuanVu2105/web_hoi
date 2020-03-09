@@ -1,11 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Select } from 'antd'
 import '../css/TableSearchMember.css'
+import { getClubAll } from '../api/base/admin'
 const { Option } = Select
 const TableSearchMember = () => {
+    const [club, setClub] = useState([])
     function handleChange(value) {
         console.log(`selected ${value}`)
     }
+    const fetchDataClub = async () => {
+        const result = await getClubAll()
+        if (result.data.success) {
+          setClub(result.data.data)
+        }
+      }
+    useEffect(() => {
+        fetchDataClub()
+        
+    }, [])
     const [open, setOpen] = useState(false)
     return (
         <div className="div1">
@@ -34,7 +46,9 @@ const TableSearchMember = () => {
                             <Option style={{ textAlign: "center" }} value="4">4</Option>
                         </Select>
                         <Select placeholder="Tên đội" style={{ width: '24%', height: 30, marginLeft: 5, marginBottom:7 }}>
-
+                            {club.map(club => (
+                                <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                            ))}
                         </Select>
                         <Select style={{ width: '15%', height: 30, marginLeft: 5, marginBottom:7 }} defaultValue="Nhóm máu" onChange={handleChange}>
                             <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
