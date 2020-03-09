@@ -1,9 +1,9 @@
 
 import '../css/LearningAndActivities.css'
-import React, { Component, useContext, useEffect, Fragment, useState } from 'react'
+import React, { useContext, useEffect, Fragment, useState } from 'react'
 import { Form, notification, Input, Button } from 'antd'
 import HomepageContext from "../context/HomepageContext";
-import { learningAndActivities } from '../Component/learningAndActivities'
+
 import { getLearnActivity, editLearnActivity } from '../api/base/profile'
 import { A} from '../api/base/auth'
 import TextArea from 'antd/lib/input/TextArea';
@@ -206,24 +206,18 @@ function LearningAndActivities(props) {
                 <div>
                     <h3>Hoạt động</h3>
                     <div className="row">
-                        <div className="col-6">
-                            <label for="" className="label_information">Trực thuộc chi Hội:</label><br />
-                            <label for="" className="label_information">Trực thuộc Đội:</label><br />
-                            <label for="" className="label_information">Ngày vào Hội:</label><br />
+                        <div className="col12">
+                            <label className="label_information">Trực thuộc chi Hội:</label><br />
+                            <label className="label_information">Trực thuộc Đội:</label><br />
+                            <label className="label_information">Ngày vào Hội:</label><br />
                         </div>
-                        <div className="col-6">
-                        <label for="" className="label_information">Chức vụ:</label><br />
-                            <label for="" className="label_information">Bậc chuyên môn:</label><br />
-                            <label for="" className="label_information">Tình trạng hoạt động:</label><br />
+                        <div className="col12">
+                        <label className="label_information">Chức vụ:</label><br />
+                            <label className="label_information">Bậc chuyên môn:</label><br />
+                            <label className="label_information">Tình trạng hoạt động:</label><br />
                         </div>
                     </div>
-                    {/* {
-                        learningAndActivities.map(label => (
-                            <div className="activities">
-                                <label for="" className="label_information">{label.label}</label><br />
-                            </div>
-                        ))
-                    } */}
+
                     <Form.Item>
                         <fieldset>
                             <legend className="legendA">Khen thưởng:</legend>

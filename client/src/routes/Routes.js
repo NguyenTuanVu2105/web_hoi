@@ -12,6 +12,7 @@ import introduleBlood from '../page/introduleBlood'
 import introduleBloodDisplay from '../page/introduleBloodDisplay'
 import HistoryBlood from '../page/HistoryBlood'
 import ChangeBackground from '../page/ChangeBackground'
+import ChiHoi from '../page/ChiHoi'
 const routes = [
     {
         path: "/login",
@@ -85,6 +86,11 @@ const routes = [
                 path: "/ChangeBackground",
                 exact: true,
                 component: ChangeBackground,
+            },
+            {
+                path: "/ChiHoi",
+                exact: true,
+                component: ChiHoi,
             },
         ]
     },

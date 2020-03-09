@@ -28,9 +28,8 @@ const ResetPassword = () => {
             <div className="logomauI"/>
             <input className="password" type="password" placeholder="New Password" value={password} onChange={(e) => setpassword(e.target.value)}/><br/>
             <input className="password" type="password" placeholder="Confirm Password"value={confirmpassword} onChange={(e) => setconfirmpassword(e.target.value)}/><br/>
-            <button className="button-submit" onClick={handlePassword}>Summit</button>
-            </div>
-            
+            <button className="button-submit" onClick={handlePassword}>Lưu thay đổi</button>
+            </div>            
           </form>
     </div>
   )

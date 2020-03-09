@@ -1,7 +1,5 @@
 body{
-    /* background-image: url("background-blood.jpg"); */
     background-size: cover;
-    /* height: 715px; */
 }
 .test {
     background: black;
@@ -27,9 +25,7 @@ body{
     border-radius: 3%;
     z-index: 1;
 }
-/* .child-e{
-        
-} */
+
     .circle-blood{    
         display: flex;
         justify-content: center;   

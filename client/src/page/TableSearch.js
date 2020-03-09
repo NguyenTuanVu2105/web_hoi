@@ -10,6 +10,7 @@ import { getTableMember, addNewMember } from '../api/base/tablesearch'
 import { getClubAll } from '../api/base/admin'
 import { getPosition, getSpecialized } from '../api/base/consernposition'
 import ChangeInfUser from '../Component/ChangeInfUser'
+import TableSearchMember from '../Component/TableSearchMember'
 const { Column } = Table
 const { Option } = Select
 
@@ -91,26 +92,10 @@ const TableSearch = (props) => {
     console.log(`selected ${value}`)
   }
 
-  function handleChange(value) {
-    console.log(`selected ${value}`)
-  }
-
-  const searchClose = () => {
-    var para = document.getElementById("mySearch");
-    para.style.display = "none";
-  }
-
-  const searchOpen = () => {
-    var para = document.getElementById("mySearch");
-    para.style.display = "block";
-  }
-
-
-
   return (
     <div className="para searchItem">
       <div className='row menuFM' >
-        <button className="searchOC" onClick={() => searchOpen()} style={{marginLeft:15, marginRight:5}}>Tìm kiếm >>></button>
+        
         {/* --Thêm thành viên--- */}
         <Button type="primary" onClick={showModal}  style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit',height:30}}>
           Thêm thành viên
@@ -221,88 +206,7 @@ const TableSearch = (props) => {
 
         
         {/* =====Tìm kiếm===== */}
-        <div id='mySearch' className="formSearch">
-          <form className='row menuSearch'>
-            <Select className="optionSelect" defaultValue="Chi Hội" onChange={handleChange}>
-              <Option style={{ textAlign: "center" }} value="Chi Hội">Chi Hội</Option>
-              <Option style={{ textAlign: "center" }} value="2">2</Option>
-              <Option style={{ textAlign: "center" }} value="3">3</Option>
-              <Option style={{ textAlign: "center" }} value="4">4</Option>
-            </Select>
-
-            <Select placeholder="Tên đội" style={{ width: '20%', marginLeft: 5 }}>
-              {club.map(club => (
-                <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
-              ))}
-            </Select>
-
-            <Select className="optionSelect" defaultValue="Nhóm máu" onChange={handleChange}>
-              <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
-              <Option style={{ textAlign: "center" }} value="O">O</Option>
-              <Option style={{ textAlign: "center" }} value="A">A</Option>
-              <Option style={{ textAlign: "center" }} value="B">B</Option>
-              <Option style={{ textAlign: "center" }} value="AB">AB</Option>
-            </Select>
-
-            {/* ======que====== */}
-            <Select
-              showSearch
-              placeholder="Quê quán"
-              style={{ width: '20%', height: 30, marginLeft: 5 }}
-              filterOption={(input, option) =>
-                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-            >
-              {table.map(table => (
-                <Option value={table.id} style={{ textAlign: "center" }}>{table.Donvi}</Option>
-              ))}
-            </Select>
-            
-            {/* ======trường====== */}
-            <Select
-              showSearch
-              placeholder="Trường"
-              style={{ width: '20%', height: 30, marginLeft: 5 }}
-              filterOption={(input, option) =>
-                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-            >
-              {table.map(table => (
-                <Option value={table.id} style={{ textAlign: "center" }}>{table.Donvi}</Option>
-              ))}
-            </Select>
-
-            {/* ======Năm sinh====== */}
-            <Select
-              showSearch
-              placeholder="Năm sinh"
-              style={{ width: '11%', height: 30, marginLeft: 5 }}
-              filterOption={(input, option) =>
-                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-            >
-              {table.map(table => (
-                <Option value={table.id} style={{ textAlign: "center" }}>{table.Ngaysinh}</Option>
-              ))}
-            </Select>
-
-            {/* ======họ và tên====== */}
-            <Select
-              showSearch
-              placeholder="Họ và tên..."
-              style={{ width: '20%', height: 30, marginLeft: 5 }}
-              filterOption={(input, option) =>
-                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-            >
-              {table.map(table => (
-                <Option value={table.id} style={{ textAlign: "center" }}>{table.Hovaten}</Option>
-              ))}
-            </Select>
-            <button className='buttonSearch'><i className="fa fa-search"></i></button>
-          </form>
-          <button className="searchOC" onClick={() => searchClose()}>close</button>
-        </div>
+        <TableSearchMember/>
 
       </div>
 

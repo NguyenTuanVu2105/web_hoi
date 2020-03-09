@@ -31,11 +31,11 @@ export const OrganizationalRecordsList = [
                 href : "/SearchUnit",
                 id: 'searchunit'
             },
-            {
-                name : "Đơn vị mới",
-                href : "/AUDUnit",
-                id: 'addunit'
-            },
+            // {
+            //     name : "Đơn vị mới",
+            //     href : "/AUDUnit",
+            //     id: 'addunit'
+            // },
             // {
             //     name : "Tra cứu thông tin đơn vị",
             //     href : "/TableSearch"
