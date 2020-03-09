@@ -94,7 +94,7 @@ const AddUnit = () => {
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
             </div>
             <div className='row rowTable'>
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
                     <tr>
                         <th>
                             Cảm tình viên
@@ -121,7 +121,7 @@ const AddUnit = () => {
                     </tr>
                 </table>
 
-                <table className='col-4 tableAddUnit' border={'1px'} cellpadding={'2px'}>
+                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
                     <tr>
                         <th>
                             Hướng dẫn viên/Cán bộ tăng cường
