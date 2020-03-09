@@ -5,7 +5,7 @@ import HomepageContext from "../context/HomepageContext";
 import { getUnitAll } from '../api/base/unit'
 import { Select } from 'antd'
 import { getClubAll } from '../api/base/admin'
-
+import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 
 const { Option } = Select
 const SearchUnit = () =>{
@@ -25,12 +25,10 @@ const SearchUnit = () =>{
           setClub(result.data.data)
         }
     }
-    useEffect(() => {
-        fetchDataClub()
-        
-    }, [])
+
     useEffect(() => {
         fetchData()
+        fetchDataClub()
         setNameMap({
             ['/']: 'Trang chủ', 
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
@@ -64,13 +62,17 @@ const SearchUnit = () =>{
                             <ul class="list-group">
                                 {
                                     search.clubs.map(child =>(
-                                    <li class="list-group-blood-item">
-                                        <div style={{width:"100%"}}><a class="list-items-a"  href="/AddUnit">{child.Tendoi}
-                                        <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
-                                            <i class="fa fa-caret-right" style={{fontSize :"20px"}}/>
-                                        </div>
-                                        
-                                        </a></div>
+                                        <li class="list-group-blood-item">
+                                            <div style={{width:"100%"}}>
+                                                <Link madoi={child.madoi} class="list-items-a"  
+                                                    to = {{
+                                                        pathname:`/AddUnit/${child.Madoi}`
+                                                    }}> {child.Tendoi}
+                                                    <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
+                                                        <i class="fa fa-caret-right" style={{fontSize :"20px"}}/>
+                                                    </div>
+                                                </Link>
+                                            </div>
                                         </li>
                                     ))
                                 }

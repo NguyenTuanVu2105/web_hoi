@@ -9,7 +9,7 @@ export const postClub = (data) => {
 }
 export const getClub = (madoi) => {
     return createAuthApiRequest({
-        url: `/information/club/${madoi}`,
+        url: `/information/club?madoi=${madoi}`,
         method: 'get'
     })
 }
