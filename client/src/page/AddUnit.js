@@ -64,7 +64,7 @@ const AddUnit = () => {
             </div>
                 <div>
                     <span className="spanLabel">Đơn vị:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Tendoi} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" style={{width:"80%"}} defaultValue={club.Tendoi} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Mã đơn vị:</span>
