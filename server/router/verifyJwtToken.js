@@ -25,58 +25,24 @@ verifyToken = (req, res, next) => {
 	})
 }
 
-isDoitruong = (req, res, next) => {
+checkRoles = (req, res, next) => {
 	User.findOne({
 		where: {
 			id: req.userId
 		}
 	}).then(user => {
-		if (user.role === "doitruong") {
+		if (user.role === "doitruong" || user.role === "chihoitruong" || user.role === "hoitruong") {
 			next()
 			return
 		}
-		res.status(403).send("Require Doitruong Role!")
+		res.status(403).send("Require Role!")
 	}).catch(err => {
 		res.status(500).send({message: err})
 	})
 } 
 
-isChihoitruong = (req, res, next) => {
-	User.findOne({
-		where: {
-			id: req.userId
-		}
-	}).then(user => {
-		if (user.role === "chihoitruong") {
-			next()
-			return
-		}
-		res.status(403).send("Require Chihoitruong Role!")
-	}).catch(err => {
-		res.status(500).send({message: err})
-	})
-}
-
-isHoitruong = (req, res, next) => {
-	User.findOne({
-		where: {
-			id: req.userId
-		}
-	}).then(user => {
-		if (user.role === "hoitruong") {
-			next()
-			return
-		}
-		res.status(403).send("Require Hoitruong Role!")
-	}).catch(err => {
-		res.status(500).send({message: err})
-	})
-}
-
 const authJwt = {}
 authJwt.verifyToken = verifyToken
-authJwt.isHoitruong = isHoitruong
-authJwt.isChihoitruong = isChihoitruong
-authJwt.isDoitruong = isDoitruong
+authJwt.checkRoles = checkRoles
 
 module.exports = authJwt

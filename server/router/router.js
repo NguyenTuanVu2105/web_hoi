@@ -99,7 +99,9 @@ module.exports = function(app) {
     app.get('/information/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
 
     //admin
-    app.get('/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMember)
+    app.get('/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
+
+    app.get('/admin/view/memberLA', [authJwt.verifyToken], admincontroller.ViewMemberLA)
     
     app.get('/branch/club/all', [authJwt.verifyToken], admincontroller.BranchClubInformation)
 

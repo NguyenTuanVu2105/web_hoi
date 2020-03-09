@@ -7,7 +7,7 @@ const Position = db.position
 const Specialized = db.specialized
 const Op = db.Sequelize.Op
 //chưa test
-exports.ViewMember = (req, res) => {
+exports.ViewMemberInformation = (req, res) => {
     User.findOne({
         where: {
             id: req.userId
@@ -100,6 +100,18 @@ exports.ViewMember = (req, res) => {
         }).catch(err => {
             res.status(500).send({success: false, message: err})
         })
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
+
+exports.ViewMemberLA = (req, res) => {
+    User.findOne({
+        where: {
+            id: req.userId
+        }
+    }).then(user => {
+        
     }).catch(err => {
         res.status(500).send({success: false, message: err})
     })
