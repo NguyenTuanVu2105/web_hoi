@@ -3,7 +3,9 @@ import { changepassword } from '../api/base/auth';
 import { notification } from 'antd';
 import { logout } from '../api/auth/auth';
 import '../css/changePass.css'
+import Loading from '../Component/Spin'
 const ChangePass = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const [oldpassword, setoldpassword] = useState('')
     const [newpassword, setnewpassword] = useState('')
     const [passwordconfirm, setpasswordconfirm] = useState('')
@@ -11,16 +13,17 @@ const ChangePass = () => {
     const [checkPass1, setCheckPass1] = useState(false)
     const [checkPass2, setCheckPass2] = useState(false)
     const handlePassword = async () => {
-        if (newpassword.length < 8 || newpassword.indexOf(" ") != -1) {            
+        if (newpassword.length < 8 || newpassword.indexOf(" ") != -1) {
             setCheckPass(true)
         }
-        else if(newpassword != passwordconfirm){
+        else if (newpassword != passwordconfirm) {
             setCheckPass2(true)
         }
         else {
             setCheckPass(false)
             const { success } = await changepassword({ password: oldpassword, newpassword: newpassword, passwordConfirm: passwordconfirm })
             if (success) {
+                setIsLoading(true)
                 notification['success']({
                     message: 'Cập nhật mật khẩu thành công ',
                 }, logout())
@@ -35,6 +38,7 @@ const ChangePass = () => {
     }
     return (
         <div className="modal fade" id="modalMK" role="dialog">
+            {isLoading && <Loading/>}
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">

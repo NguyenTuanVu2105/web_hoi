@@ -30,7 +30,7 @@ function HomePage(props) {
     return (
         <div className="container-fluid">            
             <div className="row homePageBlood">
-            {isLoading && <Loading></Loading>}
+            {isLoading && <Loading/>}
                 <div className="menu-left">
                     <NavBar />
                 </div>
