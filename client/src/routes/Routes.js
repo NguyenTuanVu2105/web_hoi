@@ -53,7 +53,7 @@ const routes = [
                 component: OrganizationalRecords,
             },
             {
-                path: "/AddUnit",
+                path: `/AddUnit/:madoi`,
                 exact: true,
                 component: AddUnit,
             },
