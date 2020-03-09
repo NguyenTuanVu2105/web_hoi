@@ -21,7 +21,6 @@ const TableSearch = (props) => {
   const [position, setPosition] = useState([])
   const [specialized, setSpecialized] = useState([])
   const { nameMap, setNameMap } = useContext(HomepageContext)
-  const page = 1
 
   const fetchDataPosition = async () => {
     const result = await getPosition()
@@ -206,7 +205,7 @@ const TableSearch = (props) => {
 
         
         {/* =====Tìm kiếm===== */}
-        <TableSearchMember/>
+        <TableSearchMember data={table}/>
 
       </div>
 

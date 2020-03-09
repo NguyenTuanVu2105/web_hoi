@@ -6,7 +6,7 @@ import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
 import '../api/base/club'
-import { getClub, delClub, postClub } from '../api/base/club';
+import { getClub, editClub } from '../api/base/club';
 const AUDUnit = (props) => {
     const { nameMap, setNameMap } = useContext(HomepageContext)
 
@@ -16,9 +16,6 @@ const AUDUnit = (props) => {
 
     const handleDe = () => {
         const a = window.confirm('Bạn có chắc muốn xóa!');
-        if (a) {
-            delClub()
-        }
     }
     const handleAd = () => {
         console.log(props.form)
@@ -29,7 +26,7 @@ const AUDUnit = (props) => {
     const handleUp = () => {
         const a = window.confirm('Bạn có chắc muốn thêm mới!');
         if (a) {
-            postClub()
+            editClub()
         }
     }
     // const handleCa = () => {
