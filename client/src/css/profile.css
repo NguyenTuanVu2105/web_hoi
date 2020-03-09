@@ -27,32 +27,11 @@
 .doiMK{
     height: fit-content;
     margin-top: 3px;
-    border-bottom: 1px solid gray;
 }
 .doiMK:hover{
     color: rgb(240, 27, 27) !important;
 }
-.changePass{
-    width: 100%;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    height: 40px;
-    padding-left: 15px;
-}
-.changePass:hover{
-    border: 1px solid rgb(82, 163, 255);
-}
-.footerButton{
-    height: 30px;
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 5px;
-}
-.footerButton:hover{
-    border: 1px solid rgb(82, 163, 255);
-    color: rgb(82, 163, 255);
-}
+
 @media (max-width: 992px){
     .profileForMobile{
         width: 83.33%;
