@@ -1,4 +1,4 @@
-import {createAuthApiRequest} from '../index'
+import {createAuthApiRequest, uploadFile} from '../index'
 
 export const getClubAll = () => {
     return createAuthApiRequest({
