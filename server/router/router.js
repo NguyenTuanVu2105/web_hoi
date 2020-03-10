@@ -99,6 +99,13 @@ module.exports = function(app) {
     app.get('/information/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
 
     //admin
+
+    app.put('/admin/edit/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminEditProfile)
+
+    app.get('/admin/view/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminViewProfile)
+
+    app.post('/admin/upload/avatar', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
+
     app.get('/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
 
     app.get('/admin/view/memberLA', [authJwt.verifyToken], admincontroller.ViewMemberLA)

@@ -6,10 +6,12 @@ import '../css/profile.css'
 import { getUserProfile, updateUserProfile, uploadAvatar } from '../api/base/profile'
 
 function AdminProfile(props) {
+    const { dataUser } = props
     const { getFieldDecorator } = props.form
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [user, setUser] = useState([])
     const [file, setFile] = useState({})
+    console.log(dataUser)
     const fetchData = async () => {
         const result = await getUserProfile()
         if (result) {

@@ -5,8 +5,8 @@ import '../css/ChangeInfUser.css'
 import AdminProFile from '../Component/AdminProfile'
 import AdminLA from '../Component/AdminLA'
 const { Option } = Select
-const ChangeInfUser = () => {
-
+const ChangeInfUser = (props) => {
+    const { dataUser } = props
     const [Visible, setVisible] = useState(false)
     const [Open, setOpen] = useState(true)
     const showModal = () => {
@@ -51,7 +51,7 @@ const ChangeInfUser = () => {
                 <Form onSubmit={handleSubmit}>
 
                     <div style={{ display: Open ? "block" : 'none' }}>
-                        <AdminProFile />
+                        <AdminProFile dataUser = {dataUser}/>
                     </div>
                     <div style={{ display: Open ? "none" : "block" }}>
                         <AdminLA />

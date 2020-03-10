@@ -216,7 +216,7 @@ const TableSearch = (props) => {
           id="Chon"
           render={(text, record) => (
             <span>
-              <ChangeInfUser/>
+              <ChangeInfUser dataUser={table}/>
             </span>
           )}
         />
