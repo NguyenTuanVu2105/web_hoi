@@ -1,7 +1,5 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
-import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
-
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
@@ -29,9 +27,6 @@ const AUDUnit = (props) => {
             editClub()
         }
     }
-    // const handleCa = () => {
-    //     window.confirm('Bạn có chắc muốn hủy thêm mới!');
-    // }
 
     const [name, setName] = useState(true)
 
@@ -215,7 +210,6 @@ const AUDUnit = (props) => {
             </form>
             <div className="buttonSubmitForMobile">
                 <button className="buttonS" onClick={() => handleUp()}>Thêm mới</button>
-                {/* <button className="buttonS" onClick={() => handleCa()}>Hủy</button> */}
             </div>
         </div>
     )

@@ -1,6 +1,5 @@
 import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-// import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 import { notification } from 'antd'
 import { getUser, checkAuth} from '../api/auth/auth'
@@ -11,7 +10,6 @@ const AddUnit = () => {
     let { madoi } = useParams()
     const [changeInput, setchangeInput] = useState(true)
     const [idForget, setIdForget] = useState([])
-    // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])
     const {nameMap, setNameMap} = useContext(HomepageContext)
 
@@ -59,13 +57,7 @@ const AddUnit = () => {
           }
         setchangeInput(true)
     }
-    // const handleCa = ()=>{
-    //     window.confirm('Bạn có chắc muốn Hủy thay đổi!');
-    //     setchangeInput(true)
-    // }
-    // const handleDe = ()=>{
-    //     window.confirm('Bạn có chắc muốn xóa!');
-    // }
+
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
@@ -165,7 +157,6 @@ const AddUnit = () => {
             <input type="text" className="inputDisable" defaultValue={club.Diemhienmau} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
             <div className="buttonSubmitForMobile">
                 <button id='rolesave' className="buttonS" onClick={() => handleUpdate()&&roles}>Lưu thay đổi</button>
-                {/* <button id='rolecancel' className="buttonS"  onClick={() => handleCa()&&roles}>Hủy</button> */}
             </div>
         </div>
     )

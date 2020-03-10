@@ -1,8 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css'; 
+import '../css/style.css'; 
 import '../css/InformationUser.scss'
-// import Avatar from '../Component/UpdateImg'
 import { Radio, Form, Upload, Icon, message, Avatar} from 'antd'
 
 const InformationUser = (props)=>{

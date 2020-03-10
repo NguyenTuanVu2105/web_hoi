@@ -15,7 +15,7 @@
     width: 190px; 
 }
 .describe{
-    font-size: 15px !important;
+    font-size: 12px !important;
     color: red !important;
     display: flex;
     justify-content: flex-end;
@@ -25,7 +25,7 @@
     padding-left: 0px;
 }
 .label_information1{
-    font-size: 18px;
+    font-size: 14px;
     color: red;
     display: inline-block;
 }

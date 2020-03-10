@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { notification} from 'antd';
+// import { notification} from 'antd';
 import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
 import NavBar from '../Component/NavBar';
@@ -7,7 +7,6 @@ import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth, logout } from '../api/auth/auth';
-
 import Slideshow from '../Component/slideshowHeader';
 import Loading from '../Component/Spin';
 import ChangePass from '../Component/ChangePass'
@@ -25,7 +24,6 @@ function HomePage(props) {
         )
     })
     const [isLoading, setLoading] = useState(false)
-    
 
     return (
         <div className="container-fluid">            
