@@ -32,7 +32,7 @@ const TeamLeader = () =>{
                         <div className = 'image'>
                             <img className='img' src={leader.Image}></img>
                         </div>
-                        <div className = 'information'>
+                        <div className = 'information1'>
                             <label className="label_information1">Họ tên: {leader.Hovaten}</label><br/>
                             <label className="label_information1">Chức vụ: {leader.position.Chucvu}</label><br/>
                             <label className="label_information1">Thời gian công tác: {leader.ThoigianHD}</label><br/>

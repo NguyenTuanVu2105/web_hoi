@@ -20,8 +20,10 @@
     display: flex;
     justify-content: flex-end;
 }
-.information{
+.information1{
     width: calc(100% - 300px);
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .label_information1{
     font-size: 14px;
@@ -29,7 +31,7 @@
     display: inline-block;
 }
 @media (max-width:992px){
-    .information{
+    .information1{
         width: 100%;
         margin-left: 15px;
         margin-right: 10px;
