@@ -4,6 +4,7 @@ import HomepageContext from "../context/HomepageContext"
 import { Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
 import { getUserProfile, updateUserProfile, uploadAvatar } from '../api/base/profile'
+import { editProfileUser, viewProfileUser } from '../api/base/admin'
 
 function AdminProfile(props) {
     const { dataUser } = props

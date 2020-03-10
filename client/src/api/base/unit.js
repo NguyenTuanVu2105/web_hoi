@@ -2,7 +2,7 @@ import {createAuthApiRequest} from '../index'
 
 export const getUnitAll = () => {
     return createAuthApiRequest({
-        url: '/branch/club/all',
+        url: '/api/branch/club/all',
         method: 'get'
     })
 }

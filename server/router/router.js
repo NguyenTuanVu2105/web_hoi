@@ -24,11 +24,11 @@ module.exports = function(app) {
     app.post('/api/newpassword',[authJwt.verifyToken, verifySignUp.checkPassword], usercontroller.NewPassword)
 
     //member
-    app.post('/admin/information/add',[authJwt.verifyToken], membercontroller.AddProfile)
+    app.post('/api/admin/information/add',[authJwt.verifyToken], membercontroller.AddProfile)
 
-    app.put('/user/information/edit', [authJwt.verifyToken], membercontroller.EditProfile)
+    app.put('/api/user/information/edit', [authJwt.verifyToken], membercontroller.EditProfile)
 
-    app.get('/user/information/member',[authJwt.verifyToken], membercontroller.ViewProfile)
+    app.get('/api/user/information/member',[authJwt.verifyToken], membercontroller.ViewProfile)
 
     app.post('/api/upload/avatar', [imageUploader.single('avatar'), authJwt.verifyToken], membercontroller.uploadAvatar)
 
@@ -50,70 +50,70 @@ module.exports = function(app) {
     app.post('/api/learnactivity/edit', [authJwt.verifyToken], learnactivity.editLearnActivity)
 
     //position
-    app.get('/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)
+    app.get('/api/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)
 
-    app.post('/admin/position/add', [authJwt.verifyToken], positioncontroller.addPosition)
+    app.post('/api/admin/position/add', [authJwt.verifyToken], positioncontroller.addPosition)
 
-    app.put('/admin/position/update', [authJwt.verifyToken], positioncontroller.editPosition)
+    app.put('/api/admin/position/update', [authJwt.verifyToken], positioncontroller.editPosition)
 
-    app.delete('/admin/position/delete', [authJwt.verifyToken], positioncontroller.deletePosition)
+    app.delete('/api/admin/position/delete', [authJwt.verifyToken], positioncontroller.deletePosition)
 
     //specialized
 
-    app.get('/admin/specialized/view', [authJwt.verifyToken], specializedcontroller.viewSpecialized)
+    app.get('/api/admin/specialized/view', [authJwt.verifyToken], specializedcontroller.viewSpecialized)
 
-    app.post('/admin/specialized/add', [authJwt.verifyToken], specializedcontroller.addSpecialized)
+    app.post('/api/admin/specialized/add', [authJwt.verifyToken], specializedcontroller.addSpecialized)
 
-    app.put('/admin/specialized/update', [authJwt.verifyToken], specializedcontroller.editSpecialized)
+    app.put('/api/admin/specialized/update', [authJwt.verifyToken], specializedcontroller.editSpecialized)
 
-    app.delete('/admin/specialized/delete', [authJwt.verifyToken], specializedcontroller.deleteSpecialized)
+    app.delete('/api/admin/specialized/delete', [authJwt.verifyToken], specializedcontroller.deleteSpecialized)
     
     // club
-    app.post('/admin/add/club', [authJwt.verifyToken], clubcontroller.AddClub)
+    app.post('/api/admin/add/club', [authJwt.verifyToken], clubcontroller.AddClub)
 
-    app.put('/admin/edit/club', [authJwt.verifyToken], clubcontroller.EditClub)
+    app.put('/api/admin/edit/club', [authJwt.verifyToken], clubcontroller.EditClub)
 
-    app.delete('/admin/delete/club', [authJwt.verifyToken], clubcontroller.DeleteClub)
+    app.delete('/api/admin/delete/club', [authJwt.verifyToken], clubcontroller.DeleteClub)
 
-    app.get('/information/club', [authJwt.verifyToken], clubcontroller.ViewOneClub)
+    app.get('/api/information/club', [authJwt.verifyToken], clubcontroller.ViewOneClub)
 
-    app.get('/information/club/all', [authJwt.verifyToken], clubcontroller.ViewAllClub)
+    app.get('/api/information/club/all', [authJwt.verifyToken], clubcontroller.ViewAllClub)
 
     app.get('/user/captain/club', [authJwt.verifyToken], clubcontroller.Captain)
 
     //chi hoi
 
-    app.post('/admin/add/branch', [authJwt.verifyToken], branchcontroller.AddBranch)
+    app.post('/api/admin/add/branch', [authJwt.verifyToken], branchcontroller.AddBranch)
 
-    app.put('/admin/edit/branch', [authJwt.verifyToken], branchcontroller.EditBranch)
+    app.put('/api/admin/edit/branch', [authJwt.verifyToken], branchcontroller.EditBranch)
 
-    app.delete('/admin/delete/branch', [authJwt.verifyToken], branchcontroller.DeleteBranch)
+    app.delete('/api/admin/delete/branch', [authJwt.verifyToken], branchcontroller.DeleteBranch)
 
-    app.get('/information/branch', [authJwt.verifyToken], branchcontroller.ViewBranch)
+    app.get('/api/information/branch', [authJwt.verifyToken], branchcontroller.ViewBranch)
 
-    app.get('/user/captain/branch', [authJwt.verifyToken], branchcontroller.CaptainBranch)
+    app.get('/api/user/captain/branch', [authJwt.verifyToken], branchcontroller.CaptainBranch)
 
     //hoi
-    app.put('/admin/edit/association', [authJwt.verifyToken], associationcontroller.EditAssociation)
+    app.put('/api/admin/edit/association', [authJwt.verifyToken], associationcontroller.EditAssociation)
 
-    app.get('/information/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
+    app.get('/api/information/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
 
     //admin
 
-    app.put('/admin/edit/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminEditProfile)
+    app.put('/api/admin/edit/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminEditProfile)
 
-    app.get('/admin/view/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminViewProfile)
+    app.get('/api/admin/view/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminViewProfile)
 
-    app.post('/admin/upload/avatar', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
+    app.post('/api/admin/upload/avatar', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
 
-    app.get('/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
+    app.get('/api/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
 
-    app.get('/admin/view/memberLA', [authJwt.verifyToken], admincontroller.ViewMemberLA)
+    app.get('/api/admin/view/memberLA', [authJwt.verifyToken], admincontroller.ViewMemberLA)
     
-    app.get('/branch/club/all', [authJwt.verifyToken], admincontroller.BranchClubInformation)
+    app.get('/api/branch/club/all', [authJwt.verifyToken], admincontroller.BranchClubInformation)
 
-    app.get('/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
+    app.get('/api/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
 
-    app.get('/', admincontroller.Search)
+    app.get('/api/', admincontroller.Search)
 
 }
