@@ -1,4 +1,3 @@
-
 .container-fluid{
     padding-right: 0px !important;
 }
@@ -10,7 +9,6 @@
     margin-left: 5%;
     border-radius: 10px !important;
 }
-
 .drop-menu:hover {
     background: rgb(177, 6, 6) !important ;
 }
@@ -29,9 +27,6 @@
 .homePageBlood{
     margin-right: 0 !important;
 }
-
-
-
 .menu-left{  
     background-color: white;
     height: auto;
@@ -53,8 +48,7 @@
     text-align: center;
     font-weight: 400 !important;
     font-size: 14px !important;
-    line-height: 30px !important;
-    
+    line-height: 30px !important;  
 }
 .items-i i{
     color: black;
@@ -64,7 +58,6 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 .input_information{
     margin-left: 5px;
     width: 55% !important;
@@ -72,7 +65,6 @@
     border-bottom: 1px solid rgb(204, 202, 202) !important;
     border-radius: 0 !important;
 }
-
 .label_information{
     font-size: 14px;
     color: red;
@@ -110,7 +102,6 @@ fieldset{
 .sex{
     margin-right: 10px;
 }
-
 .logoPageBlood{
     margin: 0 auto;
     background-image: url("https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=1&_nc_ohc=fgTTjiQRwO8AX_EyHit&_nc_ht=scontent.fhan3-1.fna&oh=0fc38a83e734acec907d4d9d8784b797&oe=5EBB1865");

@@ -2,12 +2,7 @@ import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import Header from '../Component/Header';
 
-// const slideImages = [
-//   'images/slide_2.jpg',
-//   'images/slide_3.jpg',
-//   'images/slide_4.jpg'
-// ];
- 
+
 const properties = {
   duration: 3500,
   transitionDuration: 500,

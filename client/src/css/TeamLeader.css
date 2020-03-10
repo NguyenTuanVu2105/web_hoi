@@ -6,26 +6,32 @@
 .img{
     background-position: center;
     background-size: cover;
-    width: 150px;
-    height: 200px;
+    width: 120px;
+    height: 160px;
 }
 .image{
     margin: 15px 0px 15px 15px;
     padding-right: 40px; 
-    width: 190px; 
+    width: 150px; 
 }
 .describe{
-    font-size: 15px !important;
+    font-size: 12px !important;
     color: red !important;
     display: flex;
     justify-content: flex-end;
 }
 .information{
-    width: calc(100%-200px);
-    padding-left: 0px;
+    width: calc(100% - 300px);
 }
 .label_information1{
-    font-size: 18px;
+    font-size: 14px;
     color: red;
     display: inline-block;
+}
+@media (max-width:992px){
+    .information{
+        width: 100%;
+        margin-left: 15px;
+        margin-right: 10px;
+    }
 }

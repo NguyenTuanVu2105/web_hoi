@@ -1,8 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css'; 
+import '../css/style.css'; 
 import '../css/InformationUser.scss'
-// import Avatar from '../Component/UpdateImg'
 import { Radio, Form, Upload, Icon, message, Avatar} from 'antd'
 
 const InformationUser = (props)=>{
@@ -25,7 +23,7 @@ const InformationUser = (props)=>{
                 <fieldset>
                     <legend className="legendA">Thông tin cá nhân</legend>
                     <div className="row">
-                        <div className="avatarForMobile" id="image_infor"  style={{paddingLeft: '8%'}}>
+                        <div className="avatarForMobile" id="image_infor" >
                         <div className="avatar_profile" onMouseEnter={() => { setAnimateChangeAvatar(1)}} onMouseLeave={() => {  setAnimateChangeAvatar(0)}}>
                         <Avatar
                             size={125}

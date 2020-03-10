@@ -1,6 +1,5 @@
 import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-// import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
 import { getUser, checkAuth} from '../api/auth/auth'
 import { getClub, editClub } from '../api/base/club'

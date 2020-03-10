@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState} from 'react'
 import HomepageContext from "../context/HomepageContext";
-
 import '../css/TeamLeader.css'
 import { getLeaderAll } from '../api/base/leader'
 

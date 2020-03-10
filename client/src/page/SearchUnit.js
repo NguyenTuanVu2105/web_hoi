@@ -1,4 +1,3 @@
-import {SearchUnitList} from '../Component/SearchUnitList'
 import '../css/SearchUnit.css'
 import React, {Component, useContext, useEffect, useState} from 'react'
 import HomepageContext from "../context/HomepageContext";
@@ -87,9 +86,3 @@ const SearchUnit = () =>{
 
 export default SearchUnit;
 
-
-{/* <div class="panel-heading list-group-blood">
-                            <a className="AFM" data-toggle="collapse" href={`#${search.Machihoi}`}>{search.Tenchihoi} 
-                                <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
-                            </a>
-                        </div> */}
