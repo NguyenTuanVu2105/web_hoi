@@ -38,7 +38,7 @@ exports.AddClub = (req, res) => {
 
 exports.EditClub = (req,res) =>{
     Club.findOne({
-        where:{Madoi :req.body.Madoi}
+        where:{Madoi :req.body.madoi}
     }).then(club =>{
         if(!club)
             res.status(500).send({message : err})

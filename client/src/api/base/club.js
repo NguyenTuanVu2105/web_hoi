@@ -1,6 +1,6 @@
 import {createAuthApiRequest} from '../index'
 
-export const postClub = (data) => {
+export const editClub = (data) => {
     return createAuthApiRequest({
         url: '/admin/edit/club',
         method: 'post',
@@ -11,12 +11,5 @@ export const getClub = (madoi) => {
     return createAuthApiRequest({
         url: `/information/club?madoi=${madoi}`,
         method: 'get'
-    })
-}
-export const delClub = (data) => {
-    return createAuthApiRequest({
-        url: '/admin/delete/club',
-        method: 'post',
-        data: data,
     })
 }

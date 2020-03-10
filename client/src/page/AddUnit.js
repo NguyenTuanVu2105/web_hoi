@@ -2,13 +2,15 @@ import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 // import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
+import { notification } from 'antd'
 import { getUser, checkAuth} from '../api/auth/auth'
-import { getClub } from '../api/base/club'
+import { getClub, editClub } from '../api/base/club'
 import { useParams } from 'react-router-dom';
 
 const AddUnit = () => {
     let { madoi } = useParams()
     const [changeInput, setchangeInput] = useState(true)
+    const [idForget, setIdForget] = useState([])
     // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])
     const {nameMap, setNameMap} = useContext(HomepageContext)
@@ -34,8 +36,6 @@ const AddUnit = () => {
         }
     })
 
-    console.log(club)
-
     useEffect(() => {
         fetchData()
         setNameMap({
@@ -45,8 +45,18 @@ const AddUnit = () => {
             ['/AddUnit']: 'Hồ sơ đơn vị(Đội)'
         })
     }, [])
-    const handleUp = ()=>{
-        window.confirm('Bạn có chắc muốn lưu thay đổi!');
+    const handleUpdate = async () => {
+        const {success, data} = await editClub({})
+        if (success) {
+            notification['success']({
+              message: 'Cập nhật thông tin đơn vị thành công!',
+            })
+          }
+          else {
+            notification['error']({
+              message: 'Cập nhật thông tin đơn vị thất bại!',
+            })
+          }
         setchangeInput(true)
     }
     // const handleCa = ()=>{
@@ -64,31 +74,31 @@ const AddUnit = () => {
             </div>
                 <div>
                     <span className="spanLabel">Đơn vị:</span>
-                    <input type="text" className="inputDisable" style={{width:"80%"}} defaultValue={club.Tendoi} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" style={{width:"80%"}} defaultValue={club.Tendoi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Mã đơn vị:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Madoi} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" defaultValue={club.Madoi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Địa chỉ:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Diachi} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" defaultValue={club.Diachi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.DonviQL} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" defaultValue={club.DonviQL} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Phutrach} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="text" className="inputDisable" defaultValue={club.Phutrach} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Năm thành lập:</span>
-                    <input type="number" className="inputDisable" defaultValue={club.Ngaythanhlap} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="number" className="inputDisable" defaultValue={club.Ngaythanhlap} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
                 <div>
                     <span className="spanLabel">Ngày truyền thống:</span>
-                    <input type="date" className="inputDisable" defaultValue={club.Ngaytruyenthong} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+                    <input type="date" className="inputDisable" defaultValue={club.Ngaytruyenthong} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
                 </div>
             <div>
             <span className = "spanLabel">Tổng số thành viên:</span><br/>
@@ -149,12 +159,12 @@ const AddUnit = () => {
                 </table>
             </div>           
             <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
-            <input type="text" className="inputDisable" defaultValue={club.Ketquahoatdong} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+            <input type="text" className="inputDisable" defaultValue={club.Ketquahoatdong} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
             <br/>
             <span className = "spanLabel">Kết quả hoạt động:</span>
-            <input type="text" className="inputDisable" defaultValue={club.Diemhienmau} onChange={(e) => console.log(e.target.value)} disabled={changeInput} />
+            <input type="text" className="inputDisable" defaultValue={club.Diemhienmau} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
             <div className="buttonSubmitForMobile">
-                <button id='rolesave' className="buttonS" onClick={() => handleUp()&&roles}>Lưu thay đổi</button>
+                <button id='rolesave' className="buttonS" onClick={() => handleUpdate()&&roles}>Lưu thay đổi</button>
                 {/* <button id='rolecancel' className="buttonS"  onClick={() => handleCa()&&roles}>Hủy</button> */}
             </div>
         </div>
