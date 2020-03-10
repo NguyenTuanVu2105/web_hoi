@@ -2,6 +2,7 @@ import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
 // import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
+import { notification } from 'antd'
 import { getUser, checkAuth} from '../api/auth/auth'
 import { getClub, editClub } from '../api/base/club'
 import { useParams } from 'react-router-dom';
@@ -9,6 +10,7 @@ import { useParams } from 'react-router-dom';
 const AddUnit = () => {
     let { madoi } = useParams()
     const [changeInput, setchangeInput] = useState(true)
+    const [idForget, setIdForget] = useState([])
     // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])
     const {nameMap, setNameMap} = useContext(HomepageContext)
