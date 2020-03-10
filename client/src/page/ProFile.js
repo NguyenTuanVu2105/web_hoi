@@ -113,7 +113,7 @@ function ProFileLeft(props) {
                             {getFieldDecorator('nhommau', {
                                 initialValue: user.Nhommau ? user.Nhommau : null
                             })(
-                                <Select style={{ marginLeft: 5, height: 30, width: 120 }}>
+                                <Select style={{ marginLeft: 5, height: 30, width: 120, marginTop:5 }}>
                                     <Option style={{ textAlign: "center" }} value="O">O</Option>
                                     <Option style={{ textAlign: "center" }} value="A">A</Option>
                                     <Option style={{ textAlign: "center" }} value="B">B</Option>
@@ -124,7 +124,7 @@ function ProFileLeft(props) {
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
-                                <Select style={{ marginLeft: 5, height: 30, width: 120 }}>
+                                <Select style={{ marginLeft: 5, height: 30, width: 120, marginTop:5 }}>
                                     <Option style={{ textAlign: "center" }} value={true}>+</Option>
                                     <Option style={{ textAlign: "center" }} value={false}>-</Option>
                                 </Select>
