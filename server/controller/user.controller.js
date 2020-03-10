@@ -45,7 +45,7 @@ exports.editPassword = (req, res)=>{
 	}).then(user => {
 		var passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
 		if (!passwordIsValid) {
-			return res.status(401).send({message:"Password không đúng"});
+			return res.status(401).send({message:err});
 		}
 		User.update({
 			password: bcrypt.hashSync(req.body.newpassword,8)
