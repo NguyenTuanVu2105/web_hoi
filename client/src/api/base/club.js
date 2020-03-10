@@ -3,7 +3,7 @@ import {createAuthApiRequest} from '../index'
 export const editClub = (data) => {
     return createAuthApiRequest({
         url: '/admin/edit/club',
-        method: 'post',
+        method: 'put',
         data: data,
     })
 }

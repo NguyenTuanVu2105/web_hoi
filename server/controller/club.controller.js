@@ -65,13 +65,13 @@ exports.EditClub = (req,res) =>{
             where:{Madoi :req.body.madoi}
             })
             .then(
-                res.send({Success : true})
-            ).catch(error =>
+                res.status(200).send({success : true})
+            ).catch(err =>
                 {
-                    res.status(500).send({message: err})
+                    res.status(500).send({success: false, message: err})
                 })
         }
-    }).catch(err => res.status(500).send({message: err}))
+    }).catch(err => res.status(500).send({success: false, message: err}))
 }
 
 exports.DeleteClub = (req,res) =>{
