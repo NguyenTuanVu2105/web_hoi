@@ -2,21 +2,20 @@
     margin: 0
 }
 .spanLabel{
-    font-size: 18px;
+    font-size: 14px;
     color: red;
 }
-.inputDisable{
+/* .inputDisable{
     width: 300px;
     margin-left:5px; 
     color:red;
     border: none;
     border-bottom: 1px solid grey;
-
 }
 .inputDisable:disabled{
     background-color: white;
-    border: none;
-}
+    border: none ;
+} */
 
 .tableAddUnit{
     border-radius: 10px;
