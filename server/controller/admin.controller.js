@@ -175,7 +175,11 @@ exports.Search = (req, res) => {
             res.status(500).send({success: false, message: err})
         })
     }else{
+    console.log(req.query.hovaten)
+    console.log(req.query.nhommau)
+    console.log(req.query.quequan)
     console.log(req.query.tendoi)
+    console.log(req.query.tencihoi)
     var json1 = { 
         Hovaten: req.query.hovaten, 
         Nhommau: req.query.nhommau,

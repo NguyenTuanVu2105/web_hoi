@@ -30,9 +30,6 @@ const ChangePass = () => {
             }
             else {
                 setCheckPass1(true)
-                // notification['error']({
-                //     message: 'Sai mật khẩu hoặc mật khẩu xác nhận. Vui long nhập lại',
-                // })
             }
         }
     }
