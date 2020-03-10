@@ -107,4 +107,6 @@ module.exports = function(app) {
 
     app.get('/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
 
+    app.get('/', admincontroller.Search)
+
 }
