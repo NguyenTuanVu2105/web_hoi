@@ -191,10 +191,10 @@ exports.Search = (req, res) => {
         Ngaysinh:  Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('Ngaysinh')), req.query.namsinh),
     }
     var json2 = {
-        Tendoi:  {[Op.like]: '%' + req.query.tendoi + '%'},
+        id:  req.query.id,
     }
     var json3 = {
-        Tenchihoi:  {[Op.like]: '%' + req.query.tenchihoi + '%'},
+        id:   req.query.id,
     }
     var json4 = {
         Truong:  {[Op.like]: '%' + req.query.truong + '%'},
