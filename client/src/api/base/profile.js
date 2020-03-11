@@ -2,14 +2,14 @@ import { createAuthApiRequest, uploadFile } from "../index"
 
 export const getUserProfile = () => {
   return createAuthApiRequest({
-    url: `/user/information/member`,
+    url: `/api/user/information/member`,
     method: 'get'
   })
 }
 
 export const updateUserProfile = (data) => {
   return createAuthApiRequest({
-    url: `/user/information/edit`,
+    url: `/api/user/information/edit`,
     method: 'put',
     data: data
   })

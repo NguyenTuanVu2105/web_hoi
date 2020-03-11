@@ -1,37 +1,33 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
-import { AddUnitChild, ItemUnit } from '../Component/AddUnitChild'
-
 import { Select } from 'antd';
 import { Input } from 'antd';
 import '../css/AUDUnit.css'
 import '../api/base/club'
 import { getClub, editClub } from '../api/base/club';
 const AUDUnit = (props) => {
-    const { nameMap, setNameMap } = useContext(HomepageContext)
+    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
 
     const { Option } = Select;
 
     const { Search } = Input;
 
-    const handleDe = () => {
-        const a = window.confirm('Bạn có chắc muốn xóa!');
-    }
-    const handleAd = () => {
-        console.log(props.form)
-        const a = window.confirm('Bạn có chắc muốn Thêm mới!');
+    // const handleDe = () => {
+    //     const a = window.confirm('Bạn có chắc muốn xóa!');
+    // }
+    // const handleAd = () => {
+    //     console.log(props.form)
+    //     const a = window.confirm('Bạn có chắc muốn Thêm mới!');
+    // }
 
-    }
-
-    const handleUp = () => {
+    const handleAdd = () => {
         const a = window.confirm('Bạn có chắc muốn thêm mới!');
         if (a) {
+            setLoading(true)
             editClub()
         }
+        setLoading(false)
     }
-    // const handleCa = () => {
-    //     window.confirm('Bạn có chắc muốn hủy thêm mới!');
-    // }
 
     const [name, setName] = useState(true)
 
@@ -214,8 +210,7 @@ const AUDUnit = (props) => {
                 <span className="spanLabel">Kết quả hoạt động:</span>
             </form>
             <div className="buttonSubmitForMobile">
-                <button className="buttonS" onClick={() => handleUp()}>Thêm mới</button>
-                {/* <button className="buttonS" onClick={() => handleCa()}>Hủy</button> */}
+                <button className="buttonS" onClick={() => handleAdd()}>Thêm mới</button>
             </div>
         </div>
     )

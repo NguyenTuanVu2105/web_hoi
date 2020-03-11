@@ -93,6 +93,8 @@ exports.AddProfile = (req, res) => {
     }).catch(err => res.status(500).send({message: err}))
 }
 
+// Profile User 
+
 exports.EditProfile = (req,res) =>{
     Profile.findOne({
         where:{userId :req.userId}
@@ -124,7 +126,7 @@ exports.EditProfile = (req,res) =>{
             where:{userId :req.userId}
             })
             .then(
-                res.send({Success : true})
+                res.send({success : true})
             ).catch(err =>
                 {
                     res.status(500).send({message: err})
@@ -165,6 +167,90 @@ exports.uploadAvatar = (req, res) => {
     }, {
         where: {
             userId: req.userId
+        }
+    }).then( () => res.status(200).send({success : true, file: filePath})
+    ).catch(err => {
+        res.status(500).send({message: err})
+    })
+}
+
+// User management by Admin
+
+exports.AdminEditProfile = (req,res) =>{
+    Profile.findOne({
+        where: {
+            id :req.body.id
+        }
+    }).then(profile =>{
+        if(!profile) {
+            res.status(500).send({message : err})
+        }
+        else {
+            Profile.update({
+                CMTorHC  : req.body.cmtorhc ,
+                Ngaycap  : req.body.ngaycap ,
+                Noicap  : req.body.noicap ,
+                Dienthoai  : req.body.dienthoai ,
+                Email  : req.body.email ,
+                Facebook  : req.body.facebook ,
+                Quequan  : req.body.quequan ,
+                DiachiLL  : req.body.diachill ,
+                Nhommau  : req.body.nhommau ,
+                Rh  : req.body.rh ,
+                SolanHM  : req.body.solanhm ,
+                ThongtinlienheGD  : req.body.thongtinlienhegd ,
+                Donvi  : req.body.donvi ,
+                Donvicuthe  : req.body.donvicuthe ,
+                Trinhdohocvan  : req.body.trinhdohocvan ,
+                DoanvienDangvien  : req.body.doanviendangvien,
+                Ghichukhac  : req.body.ghichukhac
+            }, {
+                where: {
+                    id :req.body.id
+                }
+            }).then(
+                res.status(200).send({success : true})
+            ).catch(err => {
+                res.status(500).send({message: err})
+            })
+        }
+    }).catch(err => {
+        res.status(500).send({message: err})
+    })
+}
+exports.AdminViewProfile = (req, res) => {
+    Profile.findOne({
+        where: {
+            id: req.query.id
+        }, 
+        include: [{
+            model: Specialized,
+            attributes: ['Sogiotmau']
+        },
+    ]
+    }).then( profile => {
+        res.status(200).send({success: true, data: profile})
+    }).catch(err => {
+        res.status(500).send({message: err})
+    })
+}
+
+exports.AdminUploadAvatar = (req, res) => {
+    const processedFile = req.file || {}
+    let orgName = processedFile.originalname || ''
+    orgName = orgName.trim().replace(/ /g, "-")
+    const fullPathInServ = processedFile.path
+    const newFullPath = `${fullPathInServ}-${orgName}`
+    fs.renameSync(fullPathInServ, newFullPath);
+
+    var fileString = path.basename(newFullPath)
+    var filePath = `${process.env.SERVER_HOST}/api/avatar/` + fileString
+
+    Profile.update({
+        Image: filePath
+    }, {
+        where: {
+            id: req.body.id
         }
     }).then( () => res.status(200).send({success : true, file: filePath})
     ).catch(err => {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.css'
+import '../css/style.css'
 import '../css/NavBar.css'
 import { navs } from '../nav'
 import { getUser, logout, checkAuth } from '../api/auth/auth';
@@ -78,7 +78,7 @@ const NavBar = () => {
                     </div>
                     <div id="collapse7" className="panel-collapse collapse">
                         <ul className="list-group">
-                            <li className="list-group-item"><a className="list-items" onClick={logout}>Đăng xuất</a></li>
+                            <li className="list-group-item"><a className="doiMK" onClick={logout}>Đăng xuất</a></li>
                             <li className="list-group-item"><a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a></li>
                         </ul>
                     </div>

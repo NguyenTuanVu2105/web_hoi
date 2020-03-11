@@ -1,19 +1,18 @@
 import React, {useState , useContext, useEffect} from 'react'
 import HomepageContext from "../context/HomepageContext";
-// import {AddUnitChild} from '../Component/AddUnitChild'
 import '../css/AddUnit.css'
-import { notification } from 'antd'
 import { getUser, checkAuth} from '../api/auth/auth'
 import { getClub, editClub } from '../api/base/club'
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
+import { Button,  Input, Form, notification } from 'antd'
 
-const AddUnit = () => {
+const AddUnit = (props) => {
+    const { getFieldDecorator } = props.form
     let { madoi } = useParams()
+    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [changeInput, setchangeInput] = useState(true)
-    const [idForget, setIdForget] = useState([])
     // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])
-    const {nameMap, setNameMap} = useContext(HomepageContext)
 
     const fetchData = async () => {
         const result = await getClub(madoi)
@@ -22,19 +21,19 @@ const AddUnit = () => {
         }
     }
 
-    const roles = getUser().then((value) => {
-        if (checkAuth()) {
-            var edit = document.getElementById('roleedit')
-            var save = document.getElementById('rolesave')
-            if (value.role === 'member') {
-                edit.style.display='none'
-                save.style.display='none'
-            } else {
-                edit.style.display='block'
-                save.style.display='block'
-            }
-        }
-    })
+    // const roles = getUser().then((value) => {
+    //     if (checkAuth()) {
+    //         var edit = document.getElementById('roleedit')
+    //         var save = document.getElementById('rolesave')
+    //         if (value.role === 'member') {
+    //             edit.style.display='none'
+    //             save.style.display='none'
+    //         } else {
+    //             edit.style.display='block'
+    //             save.style.display='block'
+    //         }
+    //     }
+    // })
 
     useEffect(() => {
         fetchData()
@@ -45,130 +44,197 @@ const AddUnit = () => {
             ['/AddUnit']: 'Hồ sơ đơn vị(Đội)'
         })
     }, [])
-    const handleUpdate = async () => {
-        const {success, data} = await editClub({})
-        if (success) {
-            notification['success']({
-              message: 'Cập nhật thông tin đơn vị thành công!',
-            })
-          }
-          else {
-            notification['error']({
-              message: 'Cập nhật thông tin đơn vị thất bại!',
-            })
-          }
-        setchangeInput(true)
+
+    const handleUpdate = async (e) => {
+        e.preventDefault()
+        props.form.validateFields(async (err, values) => {
+            if (!err) {
+                setLoading(true)
+                const {success} = await editClub(values)
+                setLoading(false)
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin đơn vị thành công!',
+                    })
+                  }
+                else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin đơn vị thất bại!',
+                    })
+                }
+                setchangeInput(true)
+            }
+        })
     }
-    // const handleCa = ()=>{
-    //     window.confirm('Bạn có chắc muốn Hủy thay đổi!');
-    //     setchangeInput(true)
-    // }
-    // const handleDe = ()=>{
-    //     window.confirm('Bạn có chắc muốn xóa!');
-    // }
+    
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
-                <button className="buttonDisable" id='roleedit' onClick={() => setchangeInput(false)&&roles}>Sửa</button>                
-                {/* <button className="buttonDisable" id='roledelete' onClick={() => handleDe()&&roles} disabled={changeButton}>Xóa</button> */}
+                <Button className="buttonDisable" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
             </div>
-                <div>
-                    <span className="spanLabel">Đơn vị:</span>
-                    <input type="text" className="inputDisable" style={{width:"80%"}} defaultValue={club.Tendoi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
+            <Form onSubmit={handleUpdate}>
+                <Form.Item>
+                    <div>
+                            <span className="spanLabel">Đơn vị:</span>
+                            {getFieldDecorator('tendoi', {
+                                    initialValue: club.Tendoi
+                            })(
+                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                        <div>
+                            <span className="spanLabel">Mã đơn vị:</span>
+                            {getFieldDecorator('madoi', {
+                                    initialValue: club.Madoi
+                            })(
+                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                        <div>
+                            <span className="spanLabel">Địa chỉ:</span>
+                            {getFieldDecorator('diachi', {
+                                    initialValue: club.Diachi
+                            })(
+                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                        <div>
+                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
+                            {getFieldDecorator('donviql', {
+                                    initialValue: club.DonviQL
+                            })(
+                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                            
+                        </div>
+                        <div>
+                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
+                            {getFieldDecorator('phutrach', {
+                                    initialValue: club.Phutrach
+                            })(
+                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                        <div>
+                            <span className="spanLabel">Năm thành lập:</span>
+                            {getFieldDecorator('ngaythanhlap', {
+                                    initialValue: club.Ngaythanhlap
+                            })(
+                                <Input type="number" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                        <div>
+                            <span className="spanLabel">Ngày truyền thống:</span>
+                            {getFieldDecorator('ngaytruyenthong', {
+                                    initialValue: club.Ngaytruyenthong
+                            })(
+                                <Input type="date" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                            )}
+                        </div>
+                    <div>
+                    <span className = "spanLabel">Tổng số thành viên:</span><br/>
+                    </div>
+                    <div className='row rowTable'>
+                        <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
+                            <tr>
+                                <th>
+                                    Cảm tình viên
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('camtinhvien', {
+                                    initialValue: club.Camtinhvien
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Tình nguyện viên
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('tnv', {
+                                    initialValue: club.TNV
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Hội viên
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('hoivien', {
+                                    initialValue: club.Hoivien
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}
+                                </th>
+                            </tr>
+                        </table>
+                        <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
+                            <tr>
+                                <th>
+                                    Hướng dẫn viên/Cán bộ tăng cường
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('huongdanvien', {
+                                    initialValue: club.Huongdanvien
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Huấn luyện viên
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('huanluyenvien', {
+                                    initialValue: club.Huanluyenvien
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}       
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Cán bộ
+                                </th>
+                                <th className="inputTH">
+                                {getFieldDecorator('canbotangcuong', {
+                                    initialValue: club.Canbotangcuong
+                                })(
+                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
+                                )}
+                                </th>
+                            </tr>
+                        </table>
+                    </div>           
+                    <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
+                    {getFieldDecorator('ketquahoatdong', {
+                        initialValue: club.Ketquahoatdong
+                    })(
+                        <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}}  disabled={changeInput} />
+                    )}
+                    <br/>
+                    <span className = "spanLabel">Kết quả hoạt động:</span>
+                    {getFieldDecorator('diemhienmau', {
+                        initialValue: club.Diemhienmau
+                    })(
+                        <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
+                    )}
+                    
+                </Form.Item>
+                <div className="buttonSubmitForMobile">
+                    <Form.Item>
+                        <Button id='rolesave' className="buttonS" type="primary" htmlType="submit">Lưu thay đổi</Button>
+                    </Form.Item>
                 </div>
-                <div>
-                    <span className="spanLabel">Mã đơn vị:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Madoi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-                <div>
-                    <span className="spanLabel">Địa chỉ:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Diachi} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-                <div>
-                    <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.DonviQL} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-                <div>
-                    <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
-                    <input type="text" className="inputDisable" defaultValue={club.Phutrach} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-                <div>
-                    <span className="spanLabel">Năm thành lập:</span>
-                    <input type="number" className="inputDisable" defaultValue={club.Ngaythanhlap} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-                <div>
-                    <span className="spanLabel">Ngày truyền thống:</span>
-                    <input type="date" className="inputDisable" defaultValue={club.Ngaytruyenthong} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-                </div>
-            <div>
-            <span className = "spanLabel">Tổng số thành viên:</span><br/>
-            </div>
-            <div className='row rowTable'>
-                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
-                    <tr>
-                        <th>
-                            Cảm tình viên
-                        </th>
-                        <th className="inputTH">
-                            <input  type="number" min="0" className="inputDisable" style={{width:35}} defaultValue={club.Camtinhvien} disabled={changeInput} />
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Tình nguyện viên
-                        </th>
-                        <th className="inputTH">
-                            <input className="inputDisable" style={{width:35}} defaultValue={club.TNV} disabled={changeInput} />
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Hội viên
-                        </th>
-                        <th className="inputTH">
-                            <input className="inputDisable" style={{width:35}} defaultValue={club.Hoivien} disabled={changeInput} />
-                        </th>
-                    </tr>
-                </table>
-
-                <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
-                    <tr>
-                        <th>
-                            Hướng dẫn viên/Cán bộ tăng cường
-                        </th>
-                        <th className="inputTH">
-                            <input className="inputDisable" style={{width:35}} defaultValue={club.Huongdanvien} disabled={changeInput} />
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Huấn luyện viên
-                        </th>
-                        <th className="inputTH">
-                            <input className="inputDisable" style={{width:35}} defaultValue={club.Huanluyenvien} disabled={changeInput} />
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Cán bộ
-                        </th>
-                        <th className="inputTH">
-                            <input  className="inputDisable" style={{width:35}} defaultValue={club.Canbotangcuong} disabled={changeInput} />
-                        </th>
-                    </tr>
-                </table>
-            </div>           
-            <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
-            <input type="text" className="inputDisable" defaultValue={club.Ketquahoatdong} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-            <br/>
-            <span className = "spanLabel">Kết quả hoạt động:</span>
-            <input type="text" className="inputDisable" defaultValue={club.Diemhienmau} onChange={(e) => setIdForget(e.target.value)} disabled={changeInput} />
-            <div className="buttonSubmitForMobile">
-                <button id='rolesave' className="buttonS" onClick={() => handleUpdate()&&roles}>Lưu thay đổi</button>
-                {/* <button id='rolecancel' className="buttonS"  onClick={() => handleCa()&&roles}>Hủy</button> */}
-            </div>
+            </Form>
         </div>
     )
 }
 
-export default AddUnit;
+export default Form.create()(AddUnit);

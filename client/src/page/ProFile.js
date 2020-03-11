@@ -1,7 +1,7 @@
 import React, { Component, useContext, useEffect, useState } from 'react'
 import InformationUser from '../Component/InformationUser'
-import { formChildren } from '../Component/FormChildren'
-import { formChildrenRight } from '../Component/FormChildrenRight'
+// import { formChildren } from '../Component/FormChildren'
+// import { formChildrenRight } from '../Component/FormChildrenRight'
 import HomepageContext from "../context/HomepageContext"
 import { Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
