@@ -1,4 +1,7 @@
 const db = require('../config/db.config')
+var _ = require('lodash');
+const Sequelize = require('sequelize')
+const School = db.school
 const Branch = db.branch
 const Club = db.club
 const Member = db.member
@@ -149,8 +152,14 @@ exports.LeaderAssociation = (req, res) => {
     })
 }
 exports.Search = (req, res) => {
-    if(req.query.hovaten == null && req.query.nhommau == null 
-        && req.query.quequan ==null)
+    if( req.query.hovaten == null 
+        && req.query.nhommau == null 
+        && req.query.quequan ==null
+        && req.query.namsinh ==null
+        && req.query.tendoi ==null
+        && req.query.tenchihoi ==null
+        && req.query.truong ==null
+        )
     {
         Member.findAll({
             include: [
@@ -175,34 +184,36 @@ exports.Search = (req, res) => {
             res.status(500).send({success: false, message: err})
         })
     }else{
-    console.log(req.query.hovaten)
-    console.log(req.query.nhommau)
-    console.log(req.query.quequan)
-    console.log(req.query.tendoi)
-    console.log(req.query.tencihoi)
     var json1 = { 
         Hovaten: req.query.hovaten, 
         Nhommau: req.query.nhommau,
         Quequan: {[Op.like]: '%' + req.query.quequan + '%'},
-        // Namsinh: 
+        Ngaysinh:  Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('Ngaysinh')), req.query.namsinh),
     }
     var json2 = {
-        Tendoi:  req.query.tendoi 
+        Tendoi:  {[Op.like]: '%' + req.query.tendoi + '%'},
     }
     var json3 = {
-        Tenchihoi: req.query.tenchihoi 
+        Tenchihoi:  {[Op.like]: '%' + req.query.tenchihoi + '%'},
     }
-    console.log(json1)
-    console.log(json2)
-    console.log(json3)
-    Object.keys(json1).reduce((key) => (json1[key] == '') && delete json1[key]);
-    Object.keys(json2).reduce((key) => (json2[key] == '') && delete json2[key]);
-    Object.keys(json3).reduce((key) => (json3[key] == '') && delete json3[key]);
-    console.log(json1)
-    console.log(json2)
-    console.log(json3)
+    var json4 = {
+        Truong:  {[Op.like]: '%' + req.query.truong + '%'},
+    }
+    var result1 = _.pickBy(json1, function(value, key) {
+        return value !='';
+      });
+    var result2 = _.pickBy(json2, function(value, key) {
+        return value !='';
+    });
+    var result3 = _.pickBy(json3, function(value, key) {
+        return value !='';
+    });
+    var result4 = _.pickBy(json4, function(value, key) {
+        return value !='';
+    });
+    console.log(result1)
     Member.findAll({
-        where: json1,
+        where: result1,
         include: [
             {
                 model: Position,
@@ -211,12 +222,16 @@ exports.Search = (req, res) => {
                 model: Specialized,
             },
             {
+                model: School,
+                where: result4,
+            },
+            {
                 model: Club,
-                where: json2,
+                where: result2,
                 attributes: ['Tendoi'],
                 include:[{
                     model: Branch,
-                    where:json3,
+                    where:result3,
                     attributes: ['Tenchihoi']
                 }]
         }]
