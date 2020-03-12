@@ -66,11 +66,15 @@ const AddUnit = (props) => {
             }
         })
     }
-    
+    const [count, setCount] = useState(0)
+    const arr = []
+    for(var i = 0; i<count;i++){
+        arr.push(<Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />)
+    }
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
-                <Button className="buttonDisable" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
+                <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
             </div>
             <Form onSubmit={handleUpdate}>
                 <Form.Item>
@@ -225,14 +229,18 @@ const AddUnit = (props) => {
                     })(
                         <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
                     )}
-                    
+                    {
+                        arr
+                    }
                 </Form.Item>
                 <div className="buttonSubmitForMobile">
+                   
                     <Form.Item>
                         <Button id='rolesave' className="buttonS" type="primary" htmlType="submit">Lưu thay đổi</Button>
                     </Form.Item>
                 </div>
             </Form>
+            <button onClick={()=>setCount(count + 1)}>Thêm điểm hiến máu</button>
         </div>
     )
 }
