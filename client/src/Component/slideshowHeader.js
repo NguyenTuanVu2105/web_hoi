@@ -15,7 +15,7 @@ const properties = {
 }
 const arr = []
 for (var i = 0; i < 4; i++){
-  arr.push(<div className="each-slide">
+  arr.push(<div key={i.toString()} className="each-slide">
   <Header/>
 </div>)
 } 

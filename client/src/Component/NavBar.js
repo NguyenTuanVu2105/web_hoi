@@ -50,7 +50,7 @@ const NavBar = () => {
                 </div>
                 {
                     navs.map(nav => (
-                        <div>
+                        <div key={nav.id}>
                             <div className="panel-heading drop-menu">
                                 <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={() => setChangeIcon(nav.IconID)}>
                                     {nav.name}
@@ -61,7 +61,7 @@ const NavBar = () => {
                                 <ul className="list-group">
                                     {
                                         nav.children.map(x => (
-                                            <li id={x.id} className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
+                                            <li key={x.id} id={x.id} className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                         ))
                                     }
                                 </ul>
