@@ -13,21 +13,28 @@ const properties = {
     // console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
- 
+const arr = []
+for (var i = 0; i < 4; i++){
+  arr.push(<div className="each-slide">
+  <Header/>
+</div>)
+} 
 const Slideshow = () => {
     return (
       <div className="slide-container" style={{width:'93%',maxWidth:1165,margin:'0 auto'}}>
         <Slide {...properties}>
-          <div className="each-slide">
-            <Header/>
-
-          </div>
-          <div className="each-slide">
+          {/* <div className="each-slide">
             <Header/>
           </div>
           <div className="each-slide">
             <Header/>
           </div>
+          <div className="each-slide">
+            <Header/>
+          </div> */}
+          {
+            arr
+          }
         </Slide>
         
       </div>

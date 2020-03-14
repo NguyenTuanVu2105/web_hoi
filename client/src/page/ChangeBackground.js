@@ -14,7 +14,7 @@ const ChangeBackground = () => {
 
     const arr = []
     for (var i = 0; i<count;i++){
-        arr.push(<CBH/>)
+        arr.push(<CBH id={i}/>)
     }
     return (
         <div className="para">

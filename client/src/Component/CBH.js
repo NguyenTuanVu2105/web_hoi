@@ -1,7 +1,7 @@
 import React, { Component, useState } from 'react'
 import '../css/Header.css'
 
-const CBH = () => {
+const CBH = (props) => {
     const changeBackgroudHeader = (event) => {
         var target= event.target;
         var name = target.name;
@@ -22,16 +22,16 @@ const CBH = () => {
     })
 
     return (
-        <div className='pageHeader' style={{marginBottom:30}}>            
+        <div className='pageHeader'id={props.id} style={{marginBottom:30}}>            
             <div  className="informationImg" style={{backgroundColor:`${inf.background}`}}>                
                 <div>                                   
                     <label name="name" className="labelHeader" style={{color:`${inf.color}`}}>Tên chương trình: <a href={inf.link} style={{color:`${inf.color}`}} target="blank">{inf.name}</a></label><br />
                     <label name="time" className="labelHeader" style={{color:`${inf.color}`}}>Ngày diễn ra: {inf.time}</label><br />
                     <label name="place" className="labelHeader" style={{color:`${inf.color}`}}>Địa điểm tổ chức: {inf.place}</label><br />                    
-                    <a className="doiBackground" data-toggle="modal" data-target="#modalBackground"> Changebackground >>></a>
+                    <a className="doiBackground" data-toggle="modal" data-target={'#modalBackground'+props.id}> Changebackground >>></a>
                 </div>
 
-                <div className="modal fade AA" id="modalBackground" role="dialog">
+                <div className="modal fade AA" id={"modalBackground"+props.id} role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
@@ -51,7 +51,6 @@ const CBH = () => {
                                     <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
                                     <label className="changeColor">Link Background: </label>
                                     {/* <input type="file" style={{ marginLeft: 5 }} /><br /> */}
-
                                 </form>
                             </div>
                             <div className="modal-footer">
@@ -60,15 +59,10 @@ const CBH = () => {
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div>
-                <div className="triangleImg" style={{borderLeft:`60px solid ${inf.background}`}}>
-
-                </div>
-                <div name="linkAnh" className="backgroundCover" style={{backgroundImage:`url(${inf.linkAnh})`}}>
-                </div>
+                <div className="triangleImg" style={{borderLeft:`60px solid ${inf.background}`}}></div>
+                <div name="linkAnh" className="backgroundCover" style={{backgroundImage:`url(${inf.linkAnh})`}}></div>
             </div>            
         </div>
     )
