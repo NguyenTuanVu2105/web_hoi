@@ -8,6 +8,7 @@ import { getLearnActivity, editLearnActivity } from '../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea';
 
 function AdminLA(props) {
+    const { idUser } = props
     const { getFieldDecorator } = props.form
     const { nameMap, setNameMap, setLoading  } = useContext(HomepageContext)
     const [ leact, setLeact ] = useState([])

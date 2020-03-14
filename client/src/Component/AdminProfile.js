@@ -1,7 +1,7 @@
 import React, { Component, useContext, useEffect, useState } from 'react'
 import AdminInfUser from '../Component/AdminInfUser'
 import HomepageContext from "../context/HomepageContext"
-import { Select, Form, notification, Input, Button } from 'antd'
+import { Radio ,Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
 import { editAvatarUser,editProfileUser, viewProfileUser } from '../api/base/admin'
 
@@ -54,7 +54,38 @@ function AdminProfile(props) {
         <div>
             <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
-                    <AdminInfUser id = {idUser} image={user.Image} file={file} setFile={setFile} sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} />
+                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                        <AdminInfUser id={idUser} image={user.Image} file={file} setFile={setFile}/>
+                        <div className="informationUserForMobile">
+                            <label className="label_information2">Mã thành viên: </label> 
+                            {getFieldDecorator('sothethanhvien', {
+                                initialValue: user.Sothethanhvien
+                            })(
+                                <Input type="text" className="input_information" />
+                            )}<br/>
+                            <label className="label_information2">Họ và tên: </label>
+                            {getFieldDecorator('hovaten', {
+                                initialValue: user.Hovaten
+                            })(
+                                <Input type="text" className="input_information" />
+                            )}<br/> <br/>
+                            <label className="label_information2">Ngày sinh: </label>
+                            {getFieldDecorator('ngaysinh', {
+                                initialValue: user.Ngaysinh
+                            })(
+                                <Input type="date" className="input_information" />
+                            )}<br/>
+                            <label className="label_information2">Giới tính: </label>
+                            {getFieldDecorator('gioitinh', {
+                                initialValue: user.Gioitinh ? user.Gioitinh : null
+                            })(
+                                <Radio.Group name="radiogroup">
+                                    <Radio value={true}  style = {{marginLeft: '5px'}} className="radio_information"> Nam </Radio>
+                                    <Radio value={false}  className="radio_information"> Nữ </Radio>
+                                </Radio.Group>
+                            )}<br/>
+                        </div>
+                    </Form.Item>
                     <Form.Item action="" method="post" className="information" autocomplete="on">
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>

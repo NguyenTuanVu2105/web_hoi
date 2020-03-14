@@ -54,7 +54,7 @@ const ChangeInfUser = (props) => {
                         <AdminProFile idUser = {idUser}/>
                     </div>
                     <div style={{ display: Open ? "none" : "block" }}>
-                        <AdminLA />
+                        <AdminLA idUser = {idUser}/>
                     </div>
                 </Form>
             </Modal>
