@@ -1,29 +1,26 @@
 import React, { Component, useEffect, useState } from 'react'
-import '../css/style.css'; 
+import '../css/style.css';
 import '../css/InformationUser.scss'
-import { Form, Upload, Icon, Avatar} from 'antd'
+import { Form, Upload, Icon, Avatar } from 'antd'
 
-const AdminInfUser = (props)=>{
-    const {id, image} = props
+const AdminInfUser = (props) => {
+    const { id, image } = props
     const [animateChangeAvatar, setAnimateChangeAvatar] = useState(0)
     const [avatar, setAvatar] = useState(props.image)
     useEffect(() => {
         setAvatar(props.image)
     }, [props.image])
 
-    const onChooseFile = ({data, filename, file}) => {
+    const onChooseFile = ({ data, filename, file }) => {
         setAvatar(URL.createObjectURL(file))
         // this.setState({ data, filename, file, profile: this.state.profile })
-        props.setFile({data, filename, file, id})
+        props.setFile({ data, filename, file, id })
     }
     return (
-        <div>
+        <div style={{ width: "100%" }}>
             {
-                <fieldset>
-                    <legend className="legendA">Thông tin cá nhân</legend>
-                    <div className="row">
-                        <div className="avatarForMobile" id="image_infor" >
-                        <div className="avatar_profile" onMouseEnter={() => { setAnimateChangeAvatar(1)}} onMouseLeave={() => {  setAnimateChangeAvatar(0)}}>
+                <div className="avatarForMobile" id="image_infor" >
+                    <div className="avatar_profile" onMouseEnter={() => { setAnimateChangeAvatar(1) }} onMouseLeave={() => { setAnimateChangeAvatar(0) }}>
                         <Avatar
                             size={125}
                             src={avatar}
@@ -42,10 +39,7 @@ const AdminInfUser = (props)=>{
                             </Upload>
                         </div>
                     </div>
-
-                        </div>
-                    </div>
-                </fieldset>       
+                </div>
             }
         </div>
     )
