@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import InformationUser from '../Component/InformationUser'
 // import { formChildren } from '../Component/FormChildren'
 // import { formChildrenRight } from '../Component/FormChildrenRight'
@@ -6,7 +6,7 @@ import HomepageContext from "../context/HomepageContext"
 import { Select, Form, notification, Input, Button } from 'antd'
 import '../css/profile.css'
 import { getUserProfile, updateUserProfile, uploadAvatar } from '../api/base/profile'
-import TextArea from 'antd/lib/input/TextArea'
+// import TextArea from 'antd/lib/input/TextArea'
 
 function ProFileLeft(props) {
     const { getFieldDecorator } = props.form
