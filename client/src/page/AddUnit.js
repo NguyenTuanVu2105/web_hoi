@@ -15,7 +15,9 @@ const AddUnit = (props) => {
     const [club, setClub] = useState([])
 
     const fetchData = async () => {
+        setLoading(true)
         const result = await getClub(madoi)
+        setLoading(false)
         if (result.data.success) {
             setClub(result.data.data)
         }

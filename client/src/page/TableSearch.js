@@ -20,7 +20,7 @@ const TableSearch = (props) => {
   const [club, setClub] = useState([])
   const [position, setPosition] = useState([])
   const [specialized, setSpecialized] = useState([])
-  const { nameMap, setNameMap } = useContext(HomepageContext)
+  const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
 
   const fetchDataPosition = async () => {
     const result = await getPosition()
@@ -44,7 +44,9 @@ const TableSearch = (props) => {
   }
 
   const fetchData = async () => {
+    setLoading(true)
     const result = await getTableMember()
+    setLoading(false)
     if (result.data.success) {
       setTable(result.data.data)
     }
@@ -73,11 +75,19 @@ const TableSearch = (props) => {
     e.preventDefault()
     props.form.validateFields((err, values) => {
       if (!err) {
-        addNewMember(values)
+        setLoading(true)
+        const {success} = addNewMember(values)
+        setLoading(false)
         setVisible(false)
-        notification['success']({
-          message: 'Thêm thành công thành viên ' + values.hovaten,
-        })
+        if (success) {
+          notification['success']({
+            message: 'Thêm thành công thành viên ' + values.hovaten
+          })
+        } else {
+          notification['error']({
+            message: 'Thêm không thành công'
+          })
+        }
       }
     })
   };

@@ -14,7 +14,9 @@ function ProFileLeft(props) {
     const [user, setUser] = useState([])
     const [file, setFile] = useState({})
     const fetchData = async () => {
+        setLoading(true)
         const result = await getUserProfile()
+        setLoading(false)
         if (result) {
             if (result.success) {
                 setUser(result.data.data)
@@ -28,11 +30,17 @@ function ProFileLeft(props) {
             if (!err) {
                 setLoading(true)
                 await uploadAvatar(file)
-                await updateUserProfile(values)
+                const {success} = await updateUserProfile(values)
                 setLoading(false)
-                notification['success']({
-                    message: 'Cập nhật thông tin thành công!',
-                })
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin thành công!',
+                    })
+                } else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin thất bại!',
+                    })
+                }
             }
         })
     }

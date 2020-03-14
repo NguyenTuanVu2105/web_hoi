@@ -12,7 +12,9 @@ function LearningAndActivities(props) {
     const { nameMap, setNameMap, setLoading  } = useContext(HomepageContext)
     const [ leact, setLeact ] = useState([])
     const fetchData = async () => {
+        setLoading(true)
         const result = await getLearnActivity()
+        setLoading(false)
         if (result) {
             if (result.data.success) {
                 setLeact(result.data.data)
@@ -25,11 +27,17 @@ function LearningAndActivities(props) {
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
-                await editLearnActivity(values)
+                const {success} = await editLearnActivity(values)
                 setLoading(false)
-                notification['success']({
-                    message: 'Cập nhật học tập và hoạt động thành công!',
-                })
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật học tập và hoạt động thành công!',
+                    })
+                } else {
+                    notification['error']({
+                        message: 'Cập nhật học tập và hoạt động thất bại!',
+                    })
+                }
             }
         })
     }

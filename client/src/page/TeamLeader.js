@@ -5,10 +5,12 @@ import { getLeaderAll } from '../api/base/leader'
 
 const TeamLeader = () =>{
 
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const {nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [leader, setLeader] = useState([])
     const fetchData = async () => {
+        setLoading(true)
         const result = await getLeaderAll()
+        setLoading(false)
         if (result.success) {
             setLeader(result.data.data)
         }
@@ -21,9 +23,6 @@ const TeamLeader = () =>{
             ['/TeamLeader']: 'Lãnh đạo qua các thời kỳ'
         })
     }, [])
-
-    console.log(leader)
-
     return (
         <div >
             {

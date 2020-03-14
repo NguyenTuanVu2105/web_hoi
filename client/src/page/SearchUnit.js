@@ -8,10 +8,12 @@ import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 
 const { Option } = Select
 const SearchUnit = () =>{
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const {nameMap, setNameMap, setLoading} = useContext(HomepageContext)
     const [unit, setUnit] = useState([])
     const fetchData = async () => {
+        setLoading(true)
         const result = await getUnitAll()
+        setLoading(false)
         if (result.data.success) {
             setUnit(result.data.data)
         }
@@ -19,7 +21,9 @@ const SearchUnit = () =>{
 
     const [club, setClub] = useState([])
     const fetchDataClub = async () => {
+        setLoading(true)
         const result = await getClubAll()
+        setLoading(false)
         if (result.data.success) {
           setClub(result.data.data)
         }

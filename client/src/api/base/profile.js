@@ -40,3 +40,18 @@ export const editLearnActivity = (data) => {
     data: data
   })
 }
+
+export const getLearnActivityAdmin = (id) => {
+  return createAuthApiRequest({
+    url: `/api/admin/la/view?id=${id}`,
+    method: 'get'
+  })
+}
+
+export const editLearnActivityAdmin = (data) => {
+  return createAuthApiRequest({
+    url: `/api/admin/la/edit`,
+    method: 'post',
+    data: data
+  })
+}

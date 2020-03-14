@@ -12,7 +12,9 @@ function AdminProfile(props) {
     const [user, setUser] = useState([])
     const [file, setFile] = useState({})
     const fetchData = async () => {
+        setLoading(true)
         const result = await viewProfileUser(idUser)
+        setLoading(false)
         if (result) {
             if (result.data.success) {
                 setUser(result.data.data)
@@ -26,11 +28,17 @@ function AdminProfile(props) {
             if (!err) {
                 setLoading(true)
                 await editAvatarUser(file)
-                await editProfileUser(values)
+                const {success} = await editProfileUser(values)
                 setLoading(false)
-                notification['success']({
-                    message: 'Cập nhật thông tin thành công!',
-                })
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin thành công!',
+                    })
+                } else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin thất bại!',
+                    })
+                }
             }
         })
     }

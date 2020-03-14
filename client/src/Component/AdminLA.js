@@ -4,7 +4,7 @@ import React, { useContext, useEffect, Fragment, useState } from 'react'
 import { Form, notification, Input, Button } from 'antd'
 import HomepageContext from "../context/HomepageContext";
 
-import { getLearnActivity, editLearnActivity } from '../api/base/profile'
+import { getLearnActivityAdmin, editLearnActivityAdmin } from '../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea';
 
 function AdminLA(props) {
@@ -13,7 +13,9 @@ function AdminLA(props) {
     const { nameMap, setNameMap, setLoading  } = useContext(HomepageContext)
     const [ leact, setLeact ] = useState([])
     const fetchData = async () => {
-        const result = await getLearnActivity()
+        setLoading(true)
+        const result = await getLearnActivityAdmin(idUser)
+        setLoading(false)
         if (result) {
             if (result.data.success) {
                 setLeact(result.data.data)
@@ -26,11 +28,18 @@ function AdminLA(props) {
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
-                await editLearnActivity(values)
+                const {success} = await editLearnActivityAdmin(values)
                 setLoading(false)
-                notification['success']({
-                    message: 'Cập nhật học tập và hoạt động thành công!',
-                })
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin thành công!',
+                    })
+                  }
+                else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin thất bại!',
+                    })
+                }
             }
         })
     }
@@ -55,6 +64,9 @@ function AdminLA(props) {
                         <form action="" method="post" className="">
                             <div className="row">
                                 <div className="DIV-learn">
+                                    {getFieldDecorator('id', {
+                                        initialValue: idUser
+                                    })}
                                     <label className="label_LAA">Trường:</label>
                                     {getFieldDecorator('truong', {
                                         initialValue: leact.Truong
