@@ -6,7 +6,7 @@ import AdminProFile from '../Component/AdminProfile'
 import AdminLA from '../Component/AdminLA'
 const { Option } = Select
 const ChangeInfUser = (props) => {
-    const { dataUser } = props
+    const { idUser } = props
     const [Visible, setVisible] = useState(false)
     const [Open, setOpen] = useState(true)
     const showModal = () => {
@@ -51,7 +51,7 @@ const ChangeInfUser = (props) => {
                 <Form onSubmit={handleSubmit}>
 
                     <div style={{ display: Open ? "block" : 'none' }}>
-                        <AdminProFile dataUser = {dataUser}/>
+                        <AdminProFile idUser = {idUser}/>
                     </div>
                     <div style={{ display: Open ? "none" : "block" }}>
                         <AdminLA />

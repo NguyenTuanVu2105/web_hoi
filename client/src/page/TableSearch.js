@@ -211,14 +211,15 @@ const TableSearch = (props) => {
 
       <Table dataSource={table} scroll={{ x: 'max-content' }}>
         <Column 
-          title="Sửa" 
+          // title="Sửa" 
           fixed="left"
           id="Chon"
-          render={(text, record) => (
-            <span>
-              <ChangeInfUser dataUser={table}/>
+          dataIndex="id"
+          render={(id) => {
+            return <span>
+              <ChangeInfUser idUser={id}/>
             </span>
-          )}
+          }}
         />
         
         <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />

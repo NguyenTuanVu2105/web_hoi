@@ -104,7 +104,7 @@ module.exports = function(app) {
 
     app.get('/api/admin/view/member/information', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminViewProfile)
 
-    app.post('/api/admin/upload/avatar', [authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
+    app.post('/api/admin/upload/avatar', [imageUploader.single('avatar'), authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
 
     app.get('/api/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
 

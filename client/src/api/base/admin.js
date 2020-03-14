@@ -1,4 +1,4 @@
-import {createAuthApiRequest, uploadFile} from '../index'
+import {createAuthApiRequest, uploadFileAdmin} from '../index'
 
 export const getClubAll = () => {
     return createAuthApiRequest({
@@ -22,6 +22,6 @@ export const viewProfileUser = (id) => {
     })
 }
 
-export const editAvatarUser = ({data, filename, file}) => {
-    return uploadFile('/api/admin/upload/avatar', data, filename, file)
+export const editAvatarUser = ({data, filename, file, id}) => {
+    return uploadFileAdmin(`/api/admin/upload/avatar`, data, filename, file, id)
   }

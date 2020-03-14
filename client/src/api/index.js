@@ -105,3 +105,44 @@ export const uploadFile = async (url, data, filename, file) => {
         }
     }
 }
+
+export const uploadFileAdmin = async (url, data, filename, file, id) => {
+    const formData = new FormData();
+    const token = getCookie(COOKIE_KEY.TOKEN)
+    if (!token) {
+        return
+    }
+    try {
+        if (data) {
+            Object.keys(data).forEach(key => {
+                formData.append(key, data[key]);
+            });
+        }
+        formData.append("avatar", file)
+        formData.append("id", id)
+        const { data: resp } = await axios.post(
+            `${url}`,
+            formData,
+            {
+                headers: {
+                    'x-access-token': `${token}`
+                }
+            })
+        return {
+            success: true,
+            data: resp,
+        }
+    } catch (e) {
+        const { response } = e
+        const errorMessage = response ? response.data.message : e.message || e
+        if (response.status && [401, 403].includes(response.status)) {
+            logout()
+            window.location.href = Paths.Login
+        }
+
+        return {
+            success: false,
+            message: errorMessage,
+        }
+    }
+}
