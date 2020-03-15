@@ -101,6 +101,160 @@ const TableSearch = (props) => {
     console.log(`selected ${value}`)
   }
 
+  const columns = [{
+    title: 'Sửa',
+    fixed: 'left',
+    id: 'Chon',
+    dataIndex: 'id',
+    render: (id) => {
+      return <span>
+        <ChangeInfUser idUser={id}/>
+      </span>
+    }
+  }, {
+    title: 'Số thẻ thành viên',
+    dataIndex: 'Sothethanhvien',
+    id: 'Sothethanhvien',
+    fixed: 'left'
+  }, {
+    title: 'Họ và tên',
+    dataIndex: 'Hovaten',
+    id: 'Hovaten',
+    fixed: 'left'
+  }, {
+    title: 'Ngày sinh',
+    dataIndex: 'Ngaysinh',
+    id: 'Ngaysinh',
+    fixed: 'left'
+  }, {
+    title: 'Giới tính',
+    dataIndex: 'Gioitinh',
+    id: 'Gioitinh',
+    render: (Gioitinh) => {
+      if (Gioitinh) {
+        return <span> Nam </span>
+      } else {
+        return <span> Nữ </span>
+      }
+    }
+  }, {
+    title: 'Chức vụ',
+    dataIndex: 'position.Chucvu',
+    id: 'Chucvu'
+  }, {
+    title: 'Bậc chuyên môn',
+    dataIndex: 'specialized.Bacchuyenmon',
+    id: 'Bacchuyenmon'
+  }, {
+    title: 'CCCD/CMT/HC',
+    dataIndex: 'CMTorHC',
+    id: 'CMTorHC'
+  }, {
+    title: 'Ngày cấp',
+    dataIndex: 'Ngaycap',
+    id: 'Ngaycap'
+  }, {
+    title: 'Nơi cấp',
+    dataIndex: 'Noicap',
+    id: 'Noicap'
+  }, {
+    title: 'Điện thoại',
+    dataIndex: 'Dienthoai',
+    id: 'Dienthoai'
+  }, {
+    title: 'Email',
+    dataIndex: 'Email',
+    id: 'Email'
+  }, {
+    title: 'Facebook',
+    dataIndex: 'Facebook',
+    id: 'Facebook'
+  }, {
+    title: 'Quê quán',
+    dataIndex: 'Quequan',
+    id: 'Quequan'
+  }, {
+    title: 'Địa chỉ LL',
+    dataIndex: 'DiachiLL',
+    id: 'DiachiLL'
+  }, {
+    title: 'Đội trực thuộc',
+    dataIndex: 'club.Tendoi',
+    id: 'Tendoi'
+  }, {
+    title: 'Chi hội trực thuộc',
+    dataIndex: 'club.branch.Tenchihoi',
+    id: 'Tenchihoi'
+  }, {
+    title: 'Nhóm máu',
+    dataIndex: 'Nhommau',
+    id: 'Nhommau'
+  }, {
+    title: 'Rh',
+    dataIndex: 'Rh',
+    id: 'Rh',
+    render: (Rh) => {
+      if (Rh === true) {
+        return <span> + </span>
+      } else if (Rh == false) {
+        return <span> - </span>
+      } else {
+        return <span>   </span>
+      }
+    }
+  }, {
+    title: 'Số lần HM',
+    dataIndex: 'SolanHM',
+    id: 'SolanHM'
+  }, {
+    title: 'Ngày vào Hội',
+    dataIndex: 'NgayvaoHoi',
+    id: 'NgayvaoHoi'
+  }, {
+    title: 'Thời gian HĐ Hội',
+    dataIndex: 'ThoigianHD',
+    id: 'ThoigianHD'
+  }, {
+    title: 'Thông tin liên lạc GĐ',
+    dataIndex: 'ThongtinlienheGD',
+    id: 'ThongtinlienheGD' 
+  }, {
+    title: 'Đơn vị học tập/Công tác',
+    dataIndex: 'Donvi',
+    id: 'Donvi'
+  }, {
+    title: 'Lớp/Đơn vị cụ thể',
+    dataIndex: 'Donvicuthe',
+    id: 'Donvicuthe'
+  }, {
+    title: 'GPA',
+    dataIndex: 'GPA',
+    id: 'GPA' 
+  }, {
+    title: 'Trình độ học vấn',
+    dataIndex: 'Trinhdohocvan',
+    id: 'Trinhdohocvan'
+  }, {
+    title: 'Đảng viên/Đoàn viên',
+    dataIndex: 'DoanvienDangvien',
+    id: 'DoanvienDangvien'
+  }, {
+    title: 'status',
+    dataIndex: 'TinhtrangHD',
+    id: 'TinhtrangHD',
+    render: (TinhtrangHD) => {
+      if (TinhtrangHD) {
+        return <span>
+          <i className="fa fa-circle" style={{ color: 'rgb(91, 255, 91)' }}></i>
+        </span>
+      } else {
+        return <span>
+          <i className="fa fa-circle" style={{ color: 'gray' }}></i>
+        </span>
+      }
+    }
+  }]
+
   return (
     <div className="para searchItem">
       <div className='row menuFM' >
@@ -219,98 +373,8 @@ const TableSearch = (props) => {
 
       </div>
 
-      <Table dataSource={table} scroll={{ x: 'max-content' }}>
-        <Column 
-          // title="Sửa" 
-          fixed="left"
-          id="Chon"
-          dataIndex="id"
-          render={(id) => {
-            return <span>
-              <ChangeInfUser idUser={id}/>
-            </span>
-          }}
-        />
-        
-        <Column title="Số thẻ thành viên" dataIndex="Sothethanhvien" fixed="left" id="Sothethanhvien" />
-        <Column title="Họ và tên" dataIndex="Hovaten" fixed="left" id="Hovaten" />
-        <Column title="Ngày sinh" dataIndex="Ngaysinh" id="Ngaysinh" />
-        <Column
-          title="Giới tính"
-          dataIndex="Gioitinh"
-          id="Gioitinh"
-          render={(Gioitinh) => {
-            if (Gioitinh) {
-              return <span>
-                Nam
-              </span>
-            } else {
-              return <span>
-                Nữ
-              </span>
-            }
-          }}
-        />
-        <Column title="Chức vụ" dataIndex="position.Chucvu" id="Chucvu" />
-        <Column title="Bậc chuyên môn" dataIndex="specialized.Bacchuyenmon" id="Bacchuyenmon " />
-        <Column title="CCCD/CMT/HC" dataIndex="CMTorHC" id="CMTorHC" />
-        <Column title="Ngày cấp" dataIndex="Ngaycap" id="Ngaycap" />
-        <Column title="Nơi cấp" dataIndex="Noicap" id="Noi" />
-        <Column title="Điện thoại" dataIndex="Dienthoai" id="Dienthoai" />
-        <Column title="Email" dataIndex="Email" id="Email" />
-        <Column title="Facebook" dataIndex="Facebook" id="Facebook" />
-        <Column title="Quê quán" dataIndex="Quequan" id="Quequan" />
-        <Column title="Địa chỉ LL" dataIndex="DiachiLL" id="DiachiLL" />
-        <Column title="Đội trực thuộc" dataIndex="club.Tendoi" id="Tendoi" />
-        <Column title="Chi hội trực thuộc" dataIndex="club.branch.Tenchihoi" id="Tenchihoi" />
-        <Column title="Nhóm máu" dataIndex="Nhommau" id="Nhommau" />
-        <Column
-          title="Rh"
-          dataIndex="Rh"
-          id="Rh"
-          render={(Rh) => {
-            if (Rh === true) {
-              return <span>
-                +
-              </span>
-            } else if (Rh == false) {
-              return <span>
-                -
-              </span>
-            } else {
-              return <span>
+      <Table columns={columns} dataSource={table} scroll={{ x: 'max-content' }}/>
 
-              </span>
-            }
-          }}
-        />
-        <Column title="Số lần hiến máu" dataIndex="SolanHM" id="SolanHM" />
-        <Column title="Ngày vào Hội" dataIndex="NgayvaoHoi" id="NgayvaoHoi" />
-        <Column title="Thời gian hoạt động hội" dataIndex="ThoigianHD" id="ThoigianHD" />
-        <Column title="Thông tin liên lạc gia đình" dataIndex="ThongtinlienheGD" id="ThongtinlienheGD" />
-        <Column title="Đơn vị học tập/Công tác" dataIndex="Donvi" id="Donvi" />
-        <Column title="Lớp/Đơn vị cụ thể" dataIndex="Donvicuthe" id="Donvicuthe" />
-        <Column title="GPA" dataIndex="GPA" id="GPA" />
-        <Column title="Trình độ học vấn" dataIndex="Trinhdohocvan" id="Trinhdohocvan" />
-        <Column title="Đảng viên/Đoàn viên" dataIndex="DoanvienDangvien" id="DoanvienDangvien" />
-        <Column
-          title="status"
-          dataIndex="TinhtrangHD"
-
-          id="TinhtrangHD"
-          render={(TinhtrangHD) => {
-            if (TinhtrangHD) {
-              return <span>
-                <i className="fa fa-circle" style={{ color: 'rgb(91, 255, 91)' }}></i>
-              </span>
-            } else {
-              return <span>
-                <i className="fa fa-circle" style={{ color: 'gray' }}></i>
-              </span>
-            }
-          }}
-        />        
-      </Table>
     </div>
 
   )
@@ -318,42 +382,3 @@ const TableSearch = (props) => {
 
 
 export default Form.create()(TableSearch)
-
-
-
-
-{/* <div className='col-2 offset-1  '>
-          <Button type="primary" onClick={showModal}>
-            Tùy chọn hiển thị
-            </Button>
-          <Modal
-            title="Tùy chọn hiển thị"
-            visible={Visible}
-            onOk={handleOk}
-            onCancel={handleCancel}
-          >
-            <div className='row'>
-              <div className='col-6'>
-                {
-                  CheckBoxLeft.map(name => (
-                    <div>
-                      <input type='checkbox' id={name.id} />
-                      <label id={name.id} >{name.label}</label>
-                    </div>
-                  ))
-                }
-              </div>
-              <div className='col-6'>
-                {
-                  CheckBoxRight.map(name => (
-                    <div>
-                      <input type='checkbox' name={name.label} />
-                      <label id={name.label} >{name.label}</label>
-                    </div>
-                  ))
-                }
-              </div>
-            </div>
-
-          </Modal>
-        </div> */}
