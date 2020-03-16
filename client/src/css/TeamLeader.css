@@ -19,6 +19,8 @@
     color: red !important;
     display: flex;
     justify-content: flex-end;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .information1{
     width: calc(100% - 300px);
@@ -29,6 +31,17 @@
     font-size: 14px;
     color: red;
     display: inline-block;
+}
+
+.div-information-open{
+    font-size: 14px;
+    color: red;
+    word-break: break-all;
+}
+.div-information-close{
+    font-size: 14px;
+    color: red;
+    white-space: pre;
 }
 @media (max-width:992px){
     .information1{

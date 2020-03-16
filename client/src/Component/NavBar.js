@@ -24,14 +24,12 @@ const NavBar = () => {
         var para = document.getElementById(element);
         if (para) {
             if (para.classList.item(1) === "fa-angle-down") {
-                console.log(para.classList.item(1));
                 para.classList.remove("fa-angle-down");
                 para.classList.toggle("fa-angle-up");
             }
             else if (para.classList.item(1) === "fa-angle-up") {
                 para.classList.remove("fa-angle-up");
                 para.classList.toggle("fa-angle-down");
-                console.log(para.classList);
             }
         }
     }
