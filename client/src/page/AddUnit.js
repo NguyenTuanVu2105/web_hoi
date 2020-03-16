@@ -68,11 +68,6 @@ const AddUnit = (props) => {
             }
         })
     }
-    const [count, setCount] = useState(0)
-    const arr = []
-    for(var i = 0; i<count;i++){
-        arr.push(<Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />)
-    }
     return (
         <div className = "para">
             <div className="ButtonForMobileAdd">
@@ -231,9 +226,6 @@ const AddUnit = (props) => {
                     })(
                         <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
                     )}
-                    {
-                        arr
-                    }
                 </Form.Item>
                 <div className="buttonSubmitForMobile">
                    
@@ -242,7 +234,6 @@ const AddUnit = (props) => {
                     </Form.Item>
                 </div>
             </Form>
-            <button onClick={()=>setCount(count + 1)}>Thêm điểm hiến máu</button>
         </div>
     )
 }
