@@ -48,12 +48,62 @@
 .ButtonForMobileAdd{
     margin-left: 70%;
 }
-
+.unit-table-infor{
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+    .unit-table-infor .unit-column-infor{
+        width: calc(50% - 20px);
+        margin: 10px 10px 0px 10px;      
+    }
+        .unit-table-infor .unit-column-infor .unit-div-infor{
+            border: 1px solid #a9a9a9;
+            border-radius: 5px;
+            width: 100%;
+            height: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+            .unit-table-infor .unit-column-infor .unit-div-infor .unit-div1-infor{
+                width: 80%;
+                border-right: 1px solid #a9a9a9;
+                height: 25px;
+                margin-top: 3px;
+                line-height: 23px;
+            }
+                .unit-table-infor .unit-column-infor .unit-div-infor .unit-div1-infor .unit-span-infor{
+                    font-size: 14px;
+                    color: red;
+                    margin-left: 10px;                    
+                }
+                .unit-table-infor .unit-column-infor .unit-div-infor .unit-div2-infor{
+                    width: calc(20% - 1px);
+                    margin-left: 1px;
+                }
 @media (max-width: 992px){
     .ButtonForMobileAdd{
         width: 100%;
         margin-left: 0;
         display: flex;
         justify-content: center;
+    }
+}
+@media(max-width: 1400px){
+    .unit-table-infor{
+        width: 90%;       
+    }
+}
+@media(max-width: 992px){
+    .unit-table-infor{
+        padding-top: 10px;
+    }
+    .unit-table-infor .unit-column-infor{
+        width: 100%;
+        margin-top: 0px;
     }
 }

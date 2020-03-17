@@ -135,7 +135,88 @@ const AddUnit = (props) => {
                     <div>
                     <span className = "spanLabel">Tổng số thành viên:</span><br/>
                     </div>
-                    <div className='row rowTable'>
+                    {/*---------------unit-table-infor-------------------------*/}
+                    <div className="unit-table-infor">
+                        <div className="unit-column-infor">
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Cảm tình viên</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('camtinhvien', {
+                                    initialValue: club.Camtinhvien
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )}
+                                </div>
+                            </div>
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Tình nguyện viên</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('tnv', {
+                                    initialValue: club.TNV
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )}
+                                </div>
+                            </div>
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Hội viên</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('hoivien', {
+                                    initialValue: club.Hoivien
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )}
+                                </div>
+                            </div>
+                        </div>{/*unit-column-infor*/}
+
+                        <div className="unit-column-infor">
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('huongdanvien', {
+                                    initialValue: club.Huongdanvien
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )}
+                                </div>
+                            </div>
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Huấn luyện viên</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('huanluyenvien', {
+                                    initialValue: club.Huanluyenvien
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )} 
+                                </div>
+                            </div>
+                            <div className="unit-div-infor">
+                                <div className="unit-div1-infor">
+                                    <span className="unit-span-infor">Cán bộ</span>
+                                </div>
+                                <div className="unit-div2-infor">
+                                {getFieldDecorator('canbotangcuong', {
+                                    initialValue: club.Canbotangcuong
+                                })(
+                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
+                                )}
+                                </div>
+                            </div>
+                        </div>{/*unit-column-infor*/}
+                    </div>{/*---------------unit-table-infor-------------------------*/}
+
+                    {/* <div className='row rowTable'>
                         <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
                             <tr>
                                 <th>
@@ -212,7 +293,7 @@ const AddUnit = (props) => {
                                 </th>
                             </tr>
                         </table>
-                    </div>           
+                    </div>            */}
                     <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
                     {getFieldDecorator('ketquahoatdong', {
                         initialValue: club.Ketquahoatdong
