@@ -59,7 +59,6 @@ const ChiHoi = (props) => {
             </div>
             <Form >
                 <Form.Item>
-                    <h4>Chi Hội</h4>
                     <div>
                         <span className="spanLabel">Đơn vị:</span>
                         <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderRadius: 0, marginBottom: 2 }} disabled={changeInput} /><br />
