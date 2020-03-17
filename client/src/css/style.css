@@ -117,9 +117,6 @@ fieldset{
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    /* .w3-sidebar.w3-collapse{
-        display: none !important;
-    } */
     .ant-modal{
         width: 90% !important;
     }
@@ -134,13 +131,13 @@ fieldset{
 
 
 /* For mobile phones: */
-[class*="col-"] {
+/* [class*="col-"] {
     width: 100%;
   }
   
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 600px) { */
     /* For tablets: */
-    .col-s-1 {width: 8.33%;}
+    /* .col-s-1 {width: 8.33%;}
     .col-s-2 {width: 16.66%;}
     .col-s-3 {width: 25%;}
     .col-s-4 {width: 33.33%;}
@@ -153,9 +150,9 @@ fieldset{
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 768px) { */
     /* For desktop: */
-    .col-1 {width: 8.33%;}
+    /* .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
     .col-3 {width: 25%;}
     .col-4 {width: 33.33%;}
@@ -167,4 +164,4 @@ fieldset{
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-  }
+  } */
