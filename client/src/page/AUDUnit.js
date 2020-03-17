@@ -1,7 +1,7 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { Select } from 'antd';
-import { Input,Form, } from 'antd';
+import { Input, Form, } from 'antd';
 import '../css/AUDUnit.css'
 import '../api/base/club'
 import { getClub, editClub } from '../api/base/club';
@@ -39,100 +39,100 @@ const AUDUnit = (props) => {
                     <button className="buttonD" onClick={() => setName(false)}>Đội</button>
                 </div>
             </div>
-            <div className="para" style={{ display: name? 'block' : 'none' }}>
-            <Form >
-            <Form.Item>
-                <h4>Chi Hội</h4>
-                <div>
-                    <span className="spanLabel">Đơn vị:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Mã Đơn vị:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Địa chỉ:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Năm thành lập:</span>
-                    <Input type="number" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Ngày truyền thống:</span>
-                    <Input type="date" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Số cơ sở trực thuộc chi Hội:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                </div>
-                <div>
-                    <span className="spanLabel">Thành viên hiện tại: </span>
-                </div>
-                <div className="unit-table-infor">
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cảm tình viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Tình nguyện viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hội viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }}/>
-                                
-                                </div>
-                            </div>
-                        </div>{/*unit-column-infor*/}
+            <div className="para" style={{ display: name ? 'block' : 'none' }}>
+                <Form >
+                    <Form.Item>
+                        <h4>Chi Hội</h4>
+                        <div>
+                            <span className="spanLabel">Đơn vị:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Mã Đơn vị:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Địa chỉ:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Năm thành lập:</span>
+                            <Input type="number" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Ngày truyền thống:</span>
+                            <Input type="date" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Số cơ sở trực thuộc chi Hội:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                        </div>
+                        <div>
+                            <span className="spanLabel">Thành viên hiện tại: </span>
+                        </div>
+                        <div className="unit-table-infor">
+                            <div className="unit-column-infor">
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Cảm tình viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
 
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Huấn luyện viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                 
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cán bộ</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                        </div>{/*unit-column-infor*/}
-                    </div>{/*---------------unit-table-infor-------------------------*/}
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
 
-                {/* <div className='row rowTable'>
+                                    </div>
+                                </div>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Tình nguyện viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
+                                </div>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Hội viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
+                                </div>
+                            </div>{/*unit-column-infor*/}
+
+                            <div className="unit-column-infor">
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
+                                </div>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Huấn luyện viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
+                                </div>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Cán bộ</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
+                                </div>
+                            </div>{/*unit-column-infor*/}
+                        </div>{/*---------------unit-table-infor-------------------------*/}
+
+                        {/* <div className='row rowTable'>
                     <table className='tableAddUnit' border={'1px'} cellpadding={'2px'}>
                         <tr>
                             <th>
@@ -188,115 +188,118 @@ const AUDUnit = (props) => {
                     </table>
                 </div> */}
 
-                <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
-                <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                <span className="spanLabel">Kết quả hoạt động:</span>
-                <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                </Form.Item>
+                        <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
+                        <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                        <span className="spanLabel">Kết quả hoạt động:</span>
+                        <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                    </Form.Item>
                 </Form>
+                <div className="buttonSubmitForMobile">
+                    <button className="buttonS" onClick={() => handleAdd()}>Thêm mới</button>
+                </div>
             </div>
-            <div className="para" style={{ display: name? 'none' : 'block' }}>
-            <Form >
-            <Form.Item>
-                <h4>Đội</h4>
-                <div>
-                    <span className="spanLabel">Đơn vị:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Mã Đơn vị:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Địa chỉ:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
-                    <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Năm thành lập:</span>
-                    <Input type="number" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                    <span className="spanLabel">Ngày truyền thống:</span>
-                    <Input type="date" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                </div>
-                <div>
-                    <span className="spanLabel">Thành viên hiện tại: </span>
-                </div>
-                <div className="unit-table-infor">
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cảm tình viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Tình nguyện viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hội viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }}/>
-                                
-                                </div>
-                            </div>
-                        </div>{/*unit-column-infor*/}
+            <div className="para" style={{ display: name ? 'none' : 'block' }}>
+                <Form >
+                    <Form.Item>
+                        <h4>Đội</h4>
+                        <div>
+                            <span className="spanLabel">Đơn vị:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Mã Đơn vị:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Địa chỉ:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Năm thành lập:</span>
+                            <Input type="number" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                            <span className="spanLabel">Ngày truyền thống:</span>
+                            <Input type="date" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                        </div>
+                        <div>
+                            <span className="spanLabel">Thành viên hiện tại: </span>
+                        </div>
+                        <div className="unit-table-infor">
+                            <div className="unit-column-infor">
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Cảm tình viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
 
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Tình nguyện viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Huấn luyện viên</span>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Hội viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                 
+                            </div>{/*unit-column-infor*/}
+
+                            <div className="unit-column-infor">
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cán bộ</span>
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Huấn luyện viên</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                                <div className="unit-div2-infor">
-                                
-                                    <Input type="number" min="0" style={{width:"100%", color:"red", border:"none", backgroundColor:"white",height:28 }} />
-                                
+                                <div className="unit-div-infor">
+                                    <div className="unit-div1-infor">
+                                        <span className="unit-span-infor">Cán bộ</span>
+                                    </div>
+                                    <div className="unit-div2-infor">
+
+                                        <Input type="number" min="0" style={{ width: "100%", color: "red", border: "none", backgroundColor: "white", height: 28 }} />
+
+                                    </div>
                                 </div>
-                            </div>
-                        </div>{/*unit-column-infor*/}
-                    </div>{/*---------------unit-table-infor-------------------------*/}
-                <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
-                <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                <span className="spanLabel">Kết quả hoạt động:</span>
-                <Input type="text" style={{width:"60%",backgroundColor:"white", color:"red", border:"none", borderBottom:"1px solid grey", borderRadius:0, marginBottom:2}}/><br/>
-                </Form.Item>
+                            </div>{/*unit-column-infor*/}
+                        </div>{/*---------------unit-table-infor-------------------------*/}
+                        <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
+                        <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                        <span className="spanLabel">Kết quả hoạt động:</span>
+                        <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} /><br />
+                    </Form.Item>
                 </Form>
+                <div className="buttonSubmitForMobile">
+                    <button className="buttonS" onClick={() => handleAdd()}>Thêm mới</button>
+                </div>
             </div>
-            <div className="buttonSubmitForMobile">
-                <button className="buttonS" onClick={() => handleAdd()}>Thêm mới</button>
-            </div>
+
         </div>
     )
 }
 export default AUDUnit;
- 
