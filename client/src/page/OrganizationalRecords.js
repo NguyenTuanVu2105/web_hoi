@@ -29,11 +29,11 @@ const OrganizationalRecords = () =>{
         <div className = "para">
             {
                 OrganizationalRecordsList.map(label =>(
-                    <div className = "divBody">
-                        <div className = "header"><h4>{label.name}</h4></div>
+                    <div key={label.key} className = "divBody">
+                        <div  className = "header"><h4>{label.name}</h4></div>
                         {
                             label.child.map(x=>(
-                                <div id={x.id} className = "tagA"><i class='fas fa-angle-double-right' style={{fontSize:'15px',color:"red",marginRight:'10px'}}></i><a href={x.href}>{x.name}</a></div>
+                                <div key = {x.key} id={x.id} className = "tagA"><i className='fas fa-angle-double-right' style={{fontSize:'15px',color:"red",marginRight:'10px'}}></i><a href={x.href}>{x.name}</a></div>
                             ))
                         }                        
                     </div>
