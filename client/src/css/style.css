@@ -111,21 +111,21 @@ fieldset{
     background-size: cover;
 }
 
-@media (max-width: 1400px){
+@media (max-width: 992px){
     .content-right {
         width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
     }
-    .w3-sidebar.w3-collapse{
+    /* .w3-sidebar.w3-collapse{
         display: none !important;
-    }
+    } */
     .ant-modal{
         width: 90% !important;
     }
 }
 
-@media (min-width: 1401px){
+@media (min-width: 993px){
     .sideBar{
         display: none!important;
     }  
