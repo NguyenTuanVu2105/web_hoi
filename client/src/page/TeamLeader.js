@@ -45,7 +45,7 @@ const TeamLeader = () => {
         <div >
             {
                 leader.map((leader, index) => (
-                    <div className='row borderRadius'>
+                    <div key={"L"+index} className='row borderRadius'>
                         <div className='image'>
                             <img className='img' src={leader.Image}></img>
                         </div>
