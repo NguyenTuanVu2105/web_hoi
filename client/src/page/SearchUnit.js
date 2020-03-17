@@ -52,33 +52,31 @@ const SearchUnit = () =>{
               ))}
             </Select>
             {
-                unit.map(search =>(
-                    <div>
-                        
-                        <a class="panel-heading list-group-blood " data-toggle="collapse" href={`#${search.Machihoi}`}>
+                unit.map((search,index) =>(
+                    <div key={"U-"+index}>                       
+                        <a className="panel-heading list-group-blood " data-toggle="collapse" href={`#${search.Machihoi}`}>
                             <div className="AFM">{search.Tenchihoi} 
-                                <i id="icon10" class="fa fa-angle-down" style={{fontSize:'25px'}}/>
+                                <i id="icon10" className="fa fa-angle-down" style={{fontSize:'25px'}}/>
                             </div>
                         </a>
-                        <div id={search.Machihoi} class="panel-collapse collapse">
-                            <ul class="list-group">
+                        <div id={search.Machihoi} className="panel-collapse collapse">
+                            <ul className="list-group">
                                 {
-                                    search.clubs.map(child =>(
-                                        <li class="list-group-blood-item">
+                                    search.clubs.map((child,index) =>(
+                                        <li key={"C-"+index} className="list-group-blood-item">
                                             <div style={{width:"100%"}}>
-                                                <Link madoi={child.madoi} class="list-items-a"  
+                                                <Link madoi={child.madoi} className="list-items-a"  
                                                     to = {{
                                                         pathname:`/AddUnit/${child.Madoi}`
                                                     }}> {child.Tendoi}
                                                     <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
-                                                        <i class="fa fa-caret-right" style={{fontSize :"20px"}}/>
+                                                        <i className="fa fa-caret-right" style={{fontSize :"20px"}}/>
                                                     </div>
                                                 </Link>
                                             </div>
                                         </li>
                                     ))
-                                }
-                                                
+                                }                                               
                             </ul>
                         </div>
                     </div>                   
