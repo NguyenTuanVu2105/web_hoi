@@ -65,7 +65,7 @@ function ProFileLeft(props) {
             <Form onSubmit={handleSubmit} className="row">
                 <div className="profileForMobile">
                     <InformationUser image={user.Image} file={file} setFile={setFile} sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} />
-                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                    <Form.Item action="" method="post" className="information" autocomplete="on" style={{marginBottom:0}}>
                         <fieldset>
                             <legend className="legendA">Thông tin cơ bản</legend>
                             <div>
@@ -108,7 +108,7 @@ function ProFileLeft(props) {
                             </div>
                         </fieldset>
                     </Form.Item>
-                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                    <Form.Item action="" method="post" className="information" autocomplete="on" style={{marginBottom:0}}>
                         <fieldset>
                             <legend className="legendA">Hiến máu</legend>
                             <label style={style} className="label_information">Số lần hiến máu: </label>
@@ -141,7 +141,7 @@ function ProFileLeft(props) {
                     </Form.Item>
                 </div>
                 <div className="profileForMobile">
-                    <Form.Item action="" method="post" className="information" autocomplete="on">
+                    <Form.Item action="" method="post" className="information" autocomplete="on" style={{marginBottom:0}}>
                         <fieldset>
                             <legend className="legendA">Đơn vị công tác</legend>
                             <div>
