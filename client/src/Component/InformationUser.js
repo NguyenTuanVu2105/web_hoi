@@ -2,7 +2,6 @@ import React, { Component, useEffect, useState } from 'react'
 import '../css/style.css';
 import '../css/InformationUser.scss'
 import { Radio, Form, Upload, Icon, message, Avatar } from 'antd'
-
 const InformationUser = (props) => {
     const { sttv, hovaten, ngaysinh, gioitinh, image } = props
     const [animateChangeAvatar, setAnimateChangeAvatar] = useState(0)
@@ -16,6 +15,22 @@ const InformationUser = (props) => {
         // this.setState({ data, filename, file, profile: this.state.profile })
         props.setFile({ data, filename, file })
     }
+    const arr = []
+    const n = 3 // cho chức vụ thay cho số 3 là dc nhé////////////////////////////////////////
+    for( var i = 1;i<=5;i++){
+        if(i<=n){
+            arr.push(
+                <div className="icon-blood"></div>
+            )
+        }
+        else{
+            arr.push(
+                <div className="icon-blood-1"></div>
+            )
+        }
+    }
+
+
     return (
         <div>
             {
@@ -42,6 +57,13 @@ const InformationUser = (props) => {
                                             <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p>
                                         </Upload>
                                     </div>
+                                    <div className="icon-position">
+                                    <div className="icon-position-div">
+                                        {
+                                            arr
+                                        }
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div className="informationUserForMobile">
@@ -54,6 +76,9 @@ const InformationUser = (props) => {
                                     <Radio value={1} style={{ marginLeft: '5px' }} className="radio_information"> Nam </Radio>
                                     <Radio value={2} className="radio_information"> Nữ </Radio>
                                 </Radio.Group>
+                                
+                                
+                                
                             </div>
                         </div>
                     </fieldset>

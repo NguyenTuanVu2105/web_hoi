@@ -91,3 +91,31 @@
   .form_update {
     width: 75%;
   }
+  .icon-position{
+    display: flex;
+    width: 125px;
+    justify-content: center;
+    .icon-position-div{
+      display: flex;
+      flex-wrap: wrap;
+      .icon-blood{
+        background-image: url("../iconBlood/iconBlood-01.png");
+        background-position: center;
+        background-size: cover;
+        width: 15px;
+        height: 23px;
+        margin-left: 4px;
+      }
+      .icon-blood-1{
+        background-image: url("../iconBlood/iconBlood-02.png");
+        background-position: center;
+        background-size: cover;
+        width: 15px;
+        height: 23px;
+        margin-left: 4px;
+      }
+    }
+    
+
+  }
+  
