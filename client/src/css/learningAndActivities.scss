@@ -1,0 +1,96 @@
+.label{
+    padding-left: 5%;
+    color: red;
+    display: inline-block;
+}
+h3{
+    color: red;
+}
+.activities{
+    margin-left: 15px;
+}
+.buttonLAA{
+    width: 70px;
+    height: 30px;
+    background-color: white !important;
+    border-radius: 5px ;
+    border: 1px solid red !important;
+    color: red !important;
+    margin-left: 5px;
+}
+.buttonLAA:hover{
+    background-color: rgb(206, 174, 236) !important;
+}
+.DivLAA{
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+.input_LAA{
+    margin-left: 5px;
+    width: 55% ;
+    border: none ;
+    border-bottom: 1px solid rgb(204, 202, 202) ;
+}
+.input_LAA2{
+    margin-left: 5px;
+    width: 55% !important;
+    border: none !important;
+    border-bottom: 1px solid rgb(204, 202, 202) !important;
+    border-radius: 0 !important;
+}
+.input_LAA2:after{
+    border: none !important;
+}
+.input_LAA1{
+    margin-left: 5px;
+    width: 90% ;
+    border: none ;
+    border-bottom: 1px solid rgb(204, 202, 202) ;
+}
+.label_LAA{
+    font-size: 14px;
+    width: 60px;
+    color: red;
+    display: inline-block;    
+}
+.DIV-learn{
+    width: 60%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.input-number-LAA{
+    margin-left: 5px;
+    width: 45px ;
+    border: none ;
+    border-bottom: 1px solid rgb(204, 202, 202) ;
+}
+.col12{
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.table-LA{
+    width: 100%;
+    .table-LA-par{
+        display: flex;
+        flex-wrap: wrap;
+        .table-LA-cont{
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            margin-bottom: 3px;
+        }
+    }
+}
+
+
+@media (max-width:992px){
+    .col12{
+        width: 100%;
+    }
+    .DIV-learn{
+        width: 100%;
+    }
+}
