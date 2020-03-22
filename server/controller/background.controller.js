@@ -33,28 +33,20 @@ exports.AddBackground = (req, res) => {
             ]
         }
 
-    }).then(background =>{
-        if(!background) {
+    }).then(backgrounds =>{
+        if(!backgrounds) {
             new Background(background).save()
-            .then(() => res.status(200).send({success : true}))
+            .then(data => res.status(200).send({success : true}))
             .catch(err => res.status(404).send({message: err}));
         } else {
             res.status(404).send({success: false, message: "background is exist"})
         }
     }).catch(err => res.status(500).send({message: err}))
 }
-exports.AdminViewProfile = (req, res) => {
-    Profile.findOne({
-        where: {
-            id: req.query.id
-        }, 
-        include: [{
-            model: Specialized,
-            attributes: ['Sogiotmau']
-        },
-    ]
-    }).then( profile => {
-        res.status(200).send({success: true, data: profile})
+exports.ViewBackground = (req, res) => {
+    Background.findAll({
+    }).then( data => {
+        res.status(200).send({success: true, data: data})
     }).catch(err => {
         res.status(500).send({message: err})
     })
