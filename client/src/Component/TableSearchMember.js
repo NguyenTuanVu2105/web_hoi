@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Select } from 'antd'
 import '../css/TableSearchMember.css'
 import { getClubAll } from '../api/base/admin'
-
+import {regionList} from '../Component/regionList'
 import { getUnitAll } from '../api/base/unit'
 const TableSearchMember = () => {
     const { Option } = Select
@@ -59,8 +59,8 @@ const TableSearchMember = () => {
                                 <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
                             ))}
                         </Select>
-                        <Select style={{ width: '15%', height: 30, marginLeft: 5, marginBottom:7 }} defaultValue="Nhóm máu" onChange={handleChange}>
-                            <Option style={{ textAlign: "center" }} value="Default">Nhóm máu</Option>
+                        <Select style={{ width: '15%', height: 30, marginLeft: 5, marginBottom:7 }} defaultValue="default" onChange={handleChange}>
+                            <Option style={{ textAlign: "center" }} value="default">Nhóm máu</Option>
                             <Option style={{ textAlign: "center" }} value="O">O</Option>
                             <Option style={{ textAlign: "center" }} value="A">A</Option>
                             <Option style={{ textAlign: "center" }} value="B">B</Option>
@@ -72,11 +72,14 @@ const TableSearchMember = () => {
                         <Select
                             showSearch
                             placeholder="Quê quán"
-                            style={{ width: '24%', height: 30, marginLeft: 5 }}
+                            style={{ width: '24%', height: 30, marginLeft: 5, textAlign:"center" }}
                             filterOption={(input, option) =>
                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                             }
                         >
+                            {regionList.map((region) => (
+                                <Option style={{ textAlign: "center" }} key={region.name} >{region.name}</Option>
+                            ))}
 
                         </Select>
 
@@ -108,13 +111,6 @@ const TableSearchMember = () => {
 
                         <button className='buttonSearch'><i className="fa fa-search"></i></button>
                     </div>
-
-
-
-
-
-
-
                 </form>
 
             </div>
