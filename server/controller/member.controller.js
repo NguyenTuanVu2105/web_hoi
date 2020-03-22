@@ -187,7 +187,6 @@ exports.AdminEditProfile = (req,res) =>{
         }
         else {
             Profile.update({
-                Sothethanhvien: req.body.sothethanhvien,
                 Hovaten: req.body.hovaten,
                 Ngaysinh: req.body.ngaysinh,
                 Gioitinh: req.body.gioitinh,
