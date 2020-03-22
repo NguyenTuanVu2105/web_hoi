@@ -70,12 +70,7 @@ function AdminProfile(props) {
                             </div>
 
                             <div className="informationUserForMobile">
-                                <label className="label_information2">Mã thành viên: </label>
-                                {getFieldDecorator('sothethanhvien', {
-                                    initialValue: user.Sothethanhvien
-                                })(
-                                    <Input type="text" className="input_information" />
-                                )}<br />
+                                <label className="label_information2">Mã thành viên: </label> {user.Sothethanhvien}<br />
                                 <label className="label_information2">Họ và tên: </label>
                                 {getFieldDecorator('hovaten', {
                                     initialValue: user.Hovaten
