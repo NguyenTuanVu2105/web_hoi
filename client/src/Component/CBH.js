@@ -45,7 +45,7 @@ const CBH = (props) => {
                                 <h4>Chỉnh sửa background</h4>
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <div className="modal-body">
+                            <div className="modal-body" style={{paddingBottom:0}}>
                                 {/* <form>
                                     <input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
                                     <input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
@@ -59,8 +59,16 @@ const CBH = (props) => {
                                 </form> */}
                                 <Form>
                                     <Form.Item>
-                                        <Input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
-                                        <Input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
+                                        <Input type="text" name="name" style={{marginBottom:10}} placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
+                                        <Input type="text" name="link" style={{marginBottom:10}} placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
+                                                                            
+                                        <Input type="text" name="time" style={{marginBottom:10}} placeholder="Ngày diễn ra" onChange={e=>changeBackgroudHeader(e)}/>
+                                        <Input type="date" name="hihi" style={{marginBottom:10}} placeholder="Ngày kết thúc" /> {/*sử lý gì tự sử lý đi nha */}
+                                        <Input type="text" name="place"  style={{marginBottom:10}} placeholder="Địa điểm tổ chức" onChange={e=>changeBackgroudHeader(e)} />
+                                        <label className="changeColor">Màu nền: </label>
+                                        <Input name="background" type="color" style={{marginBottom:10, width:80,marginLeft:5}} defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
+                                        <label className="changeColor">Màu chữ: </label>
+                                        <Input name="color" type="color" style={{marginBottom:10, width:80,marginLeft:5}} defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
                                         <Upload
                                             // link to upload
                                             customRequest={onChooseFile}
@@ -69,16 +77,10 @@ const CBH = (props) => {
                                             multiple={false}
                                             fileList={[]}
                                         >
-                                            <Icon type="camera" theme="filled" className="icon_change_avatar" />
-                                            <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p>
-                                        </Upload>                                      
-                                        <Input type="text" name="time" className="changeBackground" placeholder="Ngày diễn ra" onChange={e=>changeBackgroudHeader(e)}/>
-                                        <Input type="text" name="place" className="changeBackground" placeholder="Địa điểm tổ chức" onChange={e=>changeBackgroudHeader(e)} />
-                                        <label className="changeColor">Màu nền: </label>
-                                        <Input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
-                                        <label className="changeColor">Màu chữ: </label>
-                                        <Input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
-                                        <div className="modal-footer">
+                                            <div style={{display:'flex',flexWrap:'wrap'}}><label className="changeColor">Tải ảnh lên: </label><Icon style={{marginLeft:5}} type="camera" theme="filled" className="icon_change_avatar" /></div>                              
+                                            {/* <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p> */}
+                                        </Upload>  
+                                        <div className="modal-footer" style={{paddingBottom:0}}>
                                             <Button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</Button>
                                         </div>
                                     </Form.Item>
