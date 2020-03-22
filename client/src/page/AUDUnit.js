@@ -6,10 +6,20 @@ import '../css/AUDUnit.css'
 import '../api/base/club'
 import { addClub } from '../api/base/club'
 import { addUnit } from '../api/base/unit'
+import { getUnitAll } from '../api/base/unit'
 const AUDUnit = (props) => {
+    const { Option } = Select
     const { getFieldDecorator } = props.form
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
-
+    const [unit, setUnit] = useState([])
+    const fetchData = async () => {
+        const result = await getUnitAll()
+        setLoading(false)
+        if (result.data.success) {
+            setUnit(result.data.data)
+        }
+    }
+    console.log(unit)
     const handleSubmitClub = e => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {
@@ -53,6 +63,7 @@ const AUDUnit = (props) => {
     const [name, setName] = useState(true)
 
     useEffect(() => {
+        fetchData()
         setNameMap({
             ['/']: 'Trang chủ',
             ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
@@ -118,7 +129,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('camtinhvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -130,7 +141,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('tnv')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -142,7 +153,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('hoivien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -157,7 +168,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('huongdanvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
                                     </div>
                                 </div>
@@ -168,7 +179,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('huanluyenvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -180,7 +191,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('canbotangcuong')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -319,6 +330,11 @@ const AUDUnit = (props) => {
                                 </div>
                             </div>{/*unit-column-infor*/}
                         </div>{/*---------------unit-table-infor-------------------------*/}
+                        <Select placeholder="Tên Chi Hội" style={{ width: '60%' }}>
+                            {unit.map(unit => (
+                                <Option style={{ textAlign: "center" }} key={unit.id}>{unit.Tenchihoi}</Option>
+                            ))}
+                        </Select>
                         <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
                         {getFieldDecorator('diemhienmau')(
                             <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
