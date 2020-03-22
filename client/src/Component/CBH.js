@@ -49,8 +49,6 @@ const CBH = (props) => {
                                     <input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
                                     <label className="changeColor">Màu chữ: </label>
                                     <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
-                                    <label className="changeColor">Link Background: </label>
-                                    {/* <input type="file" style={{ marginLeft: 5 }} /><br /> */}
                                 </form>
                             </div>
                             <div className="modal-footer">

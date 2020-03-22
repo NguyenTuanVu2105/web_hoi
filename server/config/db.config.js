@@ -24,6 +24,7 @@ db.club = require('../model/club.model')(sequelize, Sequelize)
 db.branch = require('../model/branch.model')(sequelize, Sequelize)
 db.association = require('../model/association.model')(sequelize, Sequelize)
 db.school = require('../model/school.model')(sequelize, Sequelize)
+db.background = require('../model/background.model')(sequelize, Sequelize)
 
 db.user.hasOne(db.member)
 db.member.belongsTo(db.user)
