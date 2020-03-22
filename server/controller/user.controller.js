@@ -95,7 +95,7 @@ exports.ForgetPassword = (req, res)=>{
 				Hội máu</h4></div><div style="border-bottom:1px solid gray;
 				 width:600px"><p>Xin chào ${user.member.Hovaten},
 				 </p><p>Bạn vui lòng truy cập link sau và làm theo hướng dẫn để tạo mật khẩu mới:
-				 </p><button style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:70px;text-align:center;margin-bottom:20px"><a href=${process.env.CLIENT_HOST}/ResetPassword/${token} style="text-decoration: none;">Tại đây</a></button></div></div>`			  
+				 </p><button style="border:1px solid black; background-color:#d7d1d1; line-height:30px;width:70px;text-align:center;margin-bottom:20px"><a href=${process.env.CLIENT_HOST}/ResetPassword${token} style="text-decoration: none;">Tại đây</a></button></div></div>`			  
 			};
 			  
 			  transporter.sendMail(mailOptions, function(error, info){

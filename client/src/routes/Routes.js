@@ -94,10 +94,10 @@ const routes = [
                 component: ChangeBackground,
             },
             {
-                path: "/ChiHoi",
+                path: `/ChiHoi/:machihoi`,
                 exact: true,
                 component: ChiHoi,
-            },
+            }
         ]
     },
 ]
