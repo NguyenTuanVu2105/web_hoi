@@ -1,7 +1,14 @@
 import React, { Component, useState } from 'react'
 import '../css/Header.css'
+import { Form, Button, Input, Upload, Icon } from 'antd'
 
 const CBH = (props) => {
+    const { getFieldDecorator } = props.form
+
+    const onChooseFile = ({ data, filename, file }) => {
+        props.setFile({ data, filename, file })
+    }
+
     const changeBackgroudHeader = (event) => {
         var target= event.target;
         var name = target.name;
@@ -39,7 +46,7 @@ const CBH = (props) => {
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div className="modal-body">
-                                <form>
+                                {/* <form>
                                     <input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
                                     <input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
                                     <input type="text" name="linkAnh" className="changeBackground" placeholder="LinkAnh" onChange={e=>changeBackgroudHeader(e)} />
@@ -49,11 +56,37 @@ const CBH = (props) => {
                                     <input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
                                     <label className="changeColor">Màu chữ: </label>
                                     <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
-                                </form>
+                                </form> */}
+                                <Form>
+                                    <Form.Item>
+                                        <Input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
+                                        <Input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
+                                        <Upload
+                                            // link to upload
+                                            customRequest={onChooseFile}
+                                            // end
+                                            accept={".png,.jpg,.jpeg"}
+                                            multiple={false}
+                                            fileList={[]}
+                                        >
+                                            <Icon type="camera" theme="filled" className="icon_change_avatar" />
+                                            <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p>
+                                        </Upload>                                      
+                                        <Input type="text" name="time" className="changeBackground" placeholder="Ngày diễn ra" onChange={e=>changeBackgroudHeader(e)}/>
+                                        <Input type="text" name="place" className="changeBackground" placeholder="Địa điểm tổ chức" onChange={e=>changeBackgroudHeader(e)} />
+                                        <label className="changeColor">Màu nền: </label>
+                                        <Input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
+                                        <label className="changeColor">Màu chữ: </label>
+                                        <Input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
+                                        <div className="modal-footer">
+                                            <Button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</Button>
+                                        </div>
+                                    </Form.Item>
+                                </Form>
                             </div>
-                            <div className="modal-footer">
+                            {/* <div className="modal-footer">
                                 <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -65,4 +98,4 @@ const CBH = (props) => {
         </div>
     )
 }
-export default CBH;
+export default Form.create()(CBH)

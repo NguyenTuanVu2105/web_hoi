@@ -146,3 +146,49 @@ export const uploadFileAdmin = async (url, data, filename, file, id) => {
         }
     }
 }
+
+export const uploadBackground = async (url, data, filename, file, tenchuongtrinh, linkchuongtrinh, ngaydienra, diadiem, maunen, mauchu) => {
+    const formData = new FormData();
+    const token = getCookie(COOKIE_KEY.TOKEN)
+    if (!token) {
+        return
+    }
+    try {
+        if (data) {
+            Object.keys(data).forEach(key => {
+                formData.append(key, data[key]);
+            });
+        }
+        formData.append("background", file)
+        formData.append("tenchuongtrinh", tenchuongtrinh)
+        formData.append("linkchuongtrinh", linkchuongtrinh)
+        formData.append("ngaydienra", ngaydienra)
+        formData.append("diadiem", diadiem)
+        formData.append("maunen", maunen)
+        formData.append("mauchu", mauchu)
+        const { data: resp } = await axios.post(
+            `${url}`,
+            formData,
+            {
+                headers: {
+                    'x-access-token': `${token}`
+                }
+            })
+        return {
+            success: true,
+            data: resp,
+        }
+    } catch (e) {
+        const { response } = e
+        const errorMessage = response ? response.data.message : e.message || e
+        if (response.status && [401, 403].includes(response.status)) {
+            logout()
+            window.location.href = Paths.Login
+        }
+
+        return {
+            success: false,
+            message: errorMessage,
+        }
+    }
+}
