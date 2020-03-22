@@ -118,7 +118,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('camtinhvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -130,7 +130,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('tnv')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -142,7 +142,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('hoivien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -157,7 +157,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('huongdanvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
                                     </div>
                                 </div>
@@ -168,7 +168,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('huanluyenvien')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>
@@ -180,7 +180,7 @@ const AUDUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                     {getFieldDecorator('canbotangcuong')(
-                                        <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                        <Input type="number" min="0" style={{ width: "60%",height:31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                     )}
 
                                     </div>

@@ -71,7 +71,7 @@ const InformationUser = (props) => {
                             <div className="informationUserForMobile">
                                 <label className="label_information2">Mã thành viên: </label> {sttv}<br />
                                 <label className="label_information2">Họ và tên: </label> {hovaten}<br />
-                                <label className="label_information2">giotmau: </label> {giotmau}<br />
+                                {/* <label className="label_information2">giotmau: </label> {giotmau}<br /> */}
                                 <label className="label_information2">Ngày sinh: </label>
                                 <input type="date" className="input_information2" defaultValue={ngaysinh} disabled={true} /><br />
                                 <label className="label_information2">Giới tính: </label>
