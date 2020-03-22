@@ -28,7 +28,7 @@ exports.AddClub = (req, res) => {
     }).then(clubs =>{
         if(!clubs) {
             new Club(club).save()
-            .then(clubs => res.status(200).send({success : true, Madoi: clubs.Madoi}))
+            .then(clubs => res.status(200).send({success : true}))
             .catch(err => res.status(404).send({message: err}));
         } else {
             res.status(404).send({success: false, message: "club is exist"})

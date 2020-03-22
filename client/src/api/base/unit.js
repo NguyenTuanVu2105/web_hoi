@@ -6,3 +6,11 @@ export const getUnitAll = () => {
         method: 'get'
     })
 }
+
+export const addUnit = (data) => {
+    return createAuthApiRequest({
+        url: '/api/admin/add/branch',
+        method: 'post',
+        data: data
+    })
+}

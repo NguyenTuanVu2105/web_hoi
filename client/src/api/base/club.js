@@ -13,3 +13,10 @@ export const getClub = (madoi) => {
         method: 'get'
     })
 }
+export const addClub = (data) => {
+    return createAuthApiRequest({
+        url: '/api/admin/add/club',
+        method: 'post',
+        data: data
+    })
+}
