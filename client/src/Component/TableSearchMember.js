@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { Select } from 'antd'
 import '../css/TableSearchMember.css'
 import { getClubAll } from '../api/base/admin'
-const { Option } = Select
+
+import { getUnitAll } from '../api/base/unit'
 const TableSearchMember = () => {
+    const { Option } = Select
     const [club, setClub] = useState([])
     function handleChange(value) {
         console.log(`selected ${value}`)
@@ -14,7 +16,15 @@ const TableSearchMember = () => {
           setClub(result.data.data)
         }
       }
+      const [unit, setUnit] = useState([])
+    const fetchData = async () => {
+        const result = await getUnitAll()
+        if (result.data.success) {
+            setUnit(result.data.data)
+        }
+    }
     useEffect(() => {
+        fetchData()
         fetchDataClub()
         
     }, [])
@@ -39,11 +49,10 @@ const TableSearchMember = () => {
                         >
 
                         </Select>
-                        <Select style={{ width: '24%', height: 30, marginLeft: 5, marginBottom:7 }} defaultValue="Chi Hội" onChange={handleChange}>
-                            <Option style={{ textAlign: "center" }} value="Chi Hội">Chi Hội</Option>
-                            <Option style={{ textAlign: "center" }} value="2">2</Option>
-                            <Option style={{ textAlign: "center" }} value="3">3</Option>
-                            <Option style={{ textAlign: "center" }} value="4">4</Option>
+                        <Select placeholder="Tên Chi Hội" style={{ width: '24%', height: 30, marginLeft: 5, marginBottom:7 }}>
+                            {unit.map(unit => (
+                                <Option style={{ textAlign: "center" }} key={unit.id}>{unit.Tenchihoi}</Option>
+                            ))}
                         </Select>
                         <Select placeholder="Tên đội" style={{ width: '24%', height: 30, marginLeft: 5, marginBottom:7 }}>
                             {club.map(club => (
