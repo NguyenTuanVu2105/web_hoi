@@ -3,7 +3,7 @@ import '../css/style.css';
 import '../css/InformationUser.scss'
 import { Radio, Form, Upload, Icon, message, Avatar } from 'antd'
 const InformationUser = (props) => {
-    const { sttv, hovaten, ngaysinh, gioitinh, image } = props
+    const { sttv, hovaten, ngaysinh, gioitinh, giotmau, image } = props
     const [animateChangeAvatar, setAnimateChangeAvatar] = useState(0)
     const [avatar, setAvatar] = useState(props.image)
     useEffect(() => {
@@ -15,6 +15,7 @@ const InformationUser = (props) => {
         // this.setState({ data, filename, file, profile: this.state.profile })
         props.setFile({ data, filename, file })
     }
+    console.log(giotmau)
     const arr = []
     const n = 3 // cho chức vụ thay cho số 3 là dc nhé////////////////////////////////////////
     for( var i = 1;i<=5;i++){
