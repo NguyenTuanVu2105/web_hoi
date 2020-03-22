@@ -7,6 +7,7 @@ const Op = db.Sequelize.Op
 
 exports.AddClub = (req, res) => {
     const club = {};
+    if (req.body.machihoi) club.Machihoi = req.body.machihoi; 
     if (req.body.madoi) club.Madoi = req.body.madoi;
     if (req.body.tendoi) club.Tendoi = req.body.tendoi;
     if (req.body.ngaythanhlap) club.Ngaythanhlap = req.body.ngaythanhlap;
@@ -25,6 +26,7 @@ exports.AddClub = (req, res) => {
     if (req.body.ketquahoatdong) club.Ketquahoatdong = req.body.ketquahoatdong;
     Club.findOne({
         where:{Madoi :req.body.madoi}
+
     }).then(clubs =>{
         if(!clubs) {
             new Club(club).save()

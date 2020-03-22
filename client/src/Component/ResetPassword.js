@@ -4,6 +4,7 @@ import '../css/ResetPassword.css'
 import { resetpassword } from '../api/base/auth';
 
 const ResetPassword = () => {
+
   const [password, setpassword] = useState('')
   const [confirmpassword, setconfirmpassword] = useState('')
   const handlePassword = async () => {
@@ -21,9 +22,7 @@ const ResetPassword = () => {
   }
   return (
     <div className="Body">
-          <form className="borderContent">
-
-            
+          <form className="borderContent">           
             <div style={{ width: 240, margin:'0 auto'}}>
             <div className="logomauI"/>
             <input className="password" type="password" placeholder="New Password" value={password} onChange={(e) => setpassword(e.target.value)}/><br/>
