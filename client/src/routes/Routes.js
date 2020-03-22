@@ -13,11 +13,17 @@ import introduleBloodDisplay from '../page/introduleBloodDisplay'
 import HistoryBlood from '../page/HistoryBlood'
 import ChangeBackground from '../page/ChangeBackground'
 import ChiHoi from '../page/ChiHoi'
+import ResetPassword from '../Component/ResetPassword'
 const routes = [
     {
         path: "/login",
         exact: true,
         component: signIn
+    },
+    {
+        path: "/ResetPassword",
+        exact: true,
+        component: ResetPassword
     },
     {
         component: HomePage,
