@@ -15,16 +15,17 @@ const InformationUser = (props) => {
         // this.setState({ data, filename, file, profile: this.state.profile })
         props.setFile({ data, filename, file })
     }
-    console.log(giotmau)
+    
+    
     const arr = []
     const n = 3 // cho chức vụ thay cho số 3 là dc nhé////////////////////////////////////////
-    for( var i = 1;i<=5;i++){
-        if(i<=n){
+    for (var i = 1; i <= 5; i++) {
+        if (i <= n) {
             arr.push(
                 <div className="icon-blood"></div>
             )
         }
-        else{
+        else {
             arr.push(
                 <div className="icon-blood-1"></div>
             )
@@ -59,17 +60,18 @@ const InformationUser = (props) => {
                                         </Upload>
                                     </div>
                                     <div className="icon-position">
-                                    <div className="icon-position-div">
-                                        {
-                                            arr
-                                        }
+                                        <div className="icon-position-div">
+                                            {
+                                                arr
+                                            }
+                                        </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                             <div className="informationUserForMobile">
                                 <label className="label_information2">Mã thành viên: </label> {sttv}<br />
                                 <label className="label_information2">Họ và tên: </label> {hovaten}<br />
+                                <label className="label_information2">giotmau: </label> {giotmau}<br />
                                 <label className="label_information2">Ngày sinh: </label>
                                 <input type="date" className="input_information2" defaultValue={ngaysinh} disabled={true} /><br />
                                 <label className="label_information2">Giới tính: </label>
@@ -77,9 +79,6 @@ const InformationUser = (props) => {
                                     <Radio value={1} style={{ marginLeft: '5px' }} className="radio_information"> Nam </Radio>
                                     <Radio value={2} className="radio_information"> Nữ </Radio>
                                 </Radio.Group>
-                                
-                                
-                                
                             </div>
                         </div>
                     </fieldset>
