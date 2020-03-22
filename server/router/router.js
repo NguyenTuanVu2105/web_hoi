@@ -46,7 +46,9 @@ module.exports = function(app) {
    
     // backgroud
 
-    app.post('/api/upload/background', [imageUploader.single('background')],backgroudcontroller.AddBackground)
+     app.get('/api/viewbackground', backgroudcontroller.ViewBackground)
+
+    app.post('/api/upload/background', [imageUploader.single('background'),authJwt.verifyToken],backgroudcontroller.AddBackground)
 
     app.get('/api/background/:name', (req, res) => {
       const fileName = req.params.name
