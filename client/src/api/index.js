@@ -159,7 +159,7 @@ export const uploadBackground = async (url, data, filename, file, tenchuongtrinh
                 formData.append(key, data[key]);
             });
         }
-        formData.append("linkanh", file)
+        formData.append("background", file)
         formData.append("tenchuongtrinh", tenchuongtrinh)
         formData.append("linkchuongtrinh", linkchuongtrinh)
         formData.append("ngaydienra", ngaydienra)
