@@ -65,7 +65,7 @@ const SearchUnit = () =>{
                                     search.clubs.map((child,index) =>(
                                         <li key={"C-"+index} className="list-group-blood-item">
                                             <div style={{width:"100%"}}>
-                                                <Link madoi={child.madoi} className="list-items-a"  
+                                                <Link className="list-items-a"  
                                                     to = {{
                                                         pathname:`/AddUnit/${child.Madoi}`
                                                     }}> {child.Tendoi}

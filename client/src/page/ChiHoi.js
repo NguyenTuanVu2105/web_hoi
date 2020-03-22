@@ -4,10 +4,11 @@ import '../css/AddUnit.css'
 import { getUser, checkAuth } from '../api/auth/auth'
 import { getClub } from '../api/base/club'
 import { Button, Input, Form, } from 'antd';
+import { useParams } from 'react-router-dom';
 const ChiHoi = (props) => {
 
     const [changeInput, setchangeInput] = useState(true)
-
+    const {machihoi} = useParams()
     const { nameMap, setNameMap } = useContext(HomepageContext)
 
     const fetchData = async () => {

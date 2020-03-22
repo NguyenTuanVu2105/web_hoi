@@ -16,7 +16,7 @@ const TableSearchMember = () => {
           setClub(result.data.data)
         }
       }
-      const [unit, setUnit] = useState([])
+    const [unit, setUnit] = useState([])
     const fetchData = async () => {
         const result = await getUnitAll()
         if (result.data.success) {

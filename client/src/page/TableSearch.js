@@ -125,7 +125,7 @@ const TableSearch = (props) => {
     title: 'Ngày sinh',
     dataIndex: 'Ngaysinh',
     id: 'Ngaysinh',
-    fixed: 'left'
+    // fixed: 'left'
   }, {
     title: 'Giới tính',
     dataIndex: 'Gioitinh',
