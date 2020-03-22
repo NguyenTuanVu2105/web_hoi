@@ -16,11 +16,11 @@ exports.AddBackground = (req, res) => {
     const background = {};
     if (req.body.tenchuongtrinh) background.Tenchuongtrinh = req.body.tenchuongtrinh; 
     if (req.body.linkchuongtrinh) background.Linkchuongtrinh = req.body.linkchuongtrinh;
-    background.Tendoi = filePath;
+    background.Linkanh = filePath;
     if (req.body.ngaydienra) background.Ngaydienra = req.body.ngaydienra;
     if (req.body.diadiem) background.Diadiem = req.body.diadiem;
     if (req.body.maunen) background.Maunen = req.body.maunen;
-    if (req.body.cochu) background.Cochu = req.body.cochu;
+    if (req.body.mauchu) background.Mauchu = req.body.mauchu;
     Background.findOne({
         where:{
             [Op.and] :[
@@ -29,13 +29,13 @@ exports.AddBackground = (req, res) => {
                 {Linkanh :filePath},
                 {Ngaydienra :req.body.ngaydienra},
                 {Maunen :req.body.maunen},
-                {Cochu :req.body.cochu}
+                {Mauchu :req.body.mauchu}
             ]
         }
 
-    }).then(backgrounds =>{
-        if(!backgrounds) {
-            new background(background).save()
+    }).then(background =>{
+        if(!background) {
+            new Background(background).save()
             .then(() => res.status(200).send({success : true}))
             .catch(err => res.status(404).send({message: err}));
         } else {
