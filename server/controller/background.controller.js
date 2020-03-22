@@ -1,8 +1,9 @@
+const path = require('path')
+const fs = require('fs')
+var moment = require('moment')
 const db = require('../config/db.config')
 const Background = db.background
 const Op = db.Sequelize.Op
-const path = require('path')
-const fs = require('fs')
 exports.AddBackground = (req, res) => {
     const processedFile = req.file || {}
     let orgName = processedFile.originalname || ''
@@ -45,6 +46,20 @@ exports.AddBackground = (req, res) => {
 }
 exports.ViewBackground = (req, res) => {
     Background.findAll({
+    }).then( data => {
+        res.status(200).send({success: true, data: data})
+    }).catch(err => {
+        res.status(500).send({message: err})
+    })
+}
+
+exports.SlideShowBackground = (req, res) => {
+    Background.findAll({
+        where: {
+            Ngayketthuc: {
+              [Op.gte]: moment().format('YYYY-MM-DD')
+            }
+        }
     }).then( data => {
         res.status(200).send({success: true, data: data})
     }).catch(err => {

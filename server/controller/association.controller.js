@@ -14,7 +14,6 @@ exports.EditAssociation = (req,res) =>{
     }).then(res.status(200).send({Success : true}))
     .catch(error =>{ res.status(500).send({message: err})})
 }
-
 exports.ViewAssociation = (req, res) => {
     Association.findAll({
         include: 

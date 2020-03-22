@@ -43,10 +43,10 @@ module.exports = function(app) {
 		}
 		res.sendFile(path.resolve(`./images/${fileName}`))
     })
-   
-    // backgroud
+    // background
+    app.get('/api/viewbackground', [authJwt.verifyToken], backgroudcontroller.ViewBackground)
 
-     app.get('/api/viewbackground', backgroudcontroller.ViewBackground)
+    app.get('/api/slideshowbackground', [authJwt.verifyToken], backgroudcontroller.SlideShowBackground)
 
     app.post('/api/upload/background', [imageUploader.single('background'),authJwt.verifyToken],backgroudcontroller.AddBackground)
 
