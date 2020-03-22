@@ -73,10 +73,10 @@ const TableSearch = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    props.form.validateFields((err, values) => {
+    props.form.validateFields(async (err, values) => {
       if (!err) {
         setLoading(true)
-        const {success} = addNewMember(values)
+        const {success} = await addNewMember(values)
         setLoading(false)
         setVisible(false)
         if (success) {
