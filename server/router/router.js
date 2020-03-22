@@ -46,20 +46,18 @@ module.exports = function(app) {
    
     // backgroud
 
-    app.post('/api/upload/background', [imageUploader.single('backgroud'), authJwt.verifyToken],backgroudcontroller.AddBackground)
+    app.post('/api/upload/background', [imageUploader.single('background')],backgroudcontroller.AddBackground)
 
     app.get('/api/background/:name', (req, res) => {
-		const fileName = req.params.name
-		if (!fileName) {
-			return res.send({
-				status: false,
-				message: 'no filename specified',
-			})
-		}
-		res.sendFile(path.resolve(`./images/${fileName}`))
-    })
-   
-
+      const fileName = req.params.name
+      if (!fileName) {
+        return res.send({
+          status: false,
+          message: 'no filename specified',
+        })
+      }
+      res.sendFile(path.resolve(`./images/${fileName}`))
+      })
     //learning and activities
 
     app.get('/api/learnactivity/view', [authJwt.verifyToken], learnactivity.getLearnActivity)
