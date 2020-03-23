@@ -103,7 +103,7 @@ function ProFileLeft(props) {
                                 {getFieldDecorator('email', {
                                     initialValue: user.Email
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" className="input_information" required/>
                                 )}
                             </div>
                         </fieldset>

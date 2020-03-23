@@ -64,14 +64,14 @@ const CBH = (props) => {
                                 <Form >
                                     <Form.Item>
                                         <Input type="text" name="name" style={{ marginBottom: 10 }} placeholder="Tên chương trình" onChange={e => changeBackgroudHeader(e)} required/>
-                                        <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)}/>
-                                        <Input type="text" name="time" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra - Ngày kết thúc" onChange={e => changeBackgroudHeader(e)}/>
+                                        <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)} required/>
+                                        <Input type="text" name="time" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra - Ngày kết thúc" onChange={e => changeBackgroudHeader(e)} required/>
                                         <Input type="date" name="hihi" style={{ marginBottom: 10 }} placeholder="Ngày kết thúc" required/> {/*sử lý gì tự sử lý đi nha */}
-                                        <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" onChange={e => changeBackgroudHeader(e)}/>
+                                        <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" onChange={e => changeBackgroudHeader(e)} required/>
                                         <label className="changeColor">Màu nền: </label>
-                                        <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)} /><br />
+                                        <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)}required /><br />
                                         <label className="changeColor">Màu chữ: </label>
-                                        <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)} /><br />
+                                        <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)} required/><br />
                                         <Upload
                                             // link to upload
                                             customRequest={onChooseFile}
@@ -84,7 +84,7 @@ const CBH = (props) => {
                                             {/* <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p> */}
                                         </Upload>
                                         <div className="modal-footer" style={{ paddingBottom: 0 }}>
-                                            <Button type="submit" className="footerButton"  onClick={()=>handleConfirm()}>Lưu thay đổi</Button>
+                                            <Button type="primary" htmlType="submit" className="footerButton"  onClick={()=>handleConfirm()}>Lưu thay đổi</Button>
                                         </div>
                                     </Form.Item>
                                 </Form>
