@@ -7,7 +7,7 @@
     
 }
 .sideBarOpen{
-    position: fixed;
+    /* position: fixed;
     border: none;
     display: inline-block;
     padding: 8px 16px;
@@ -18,7 +18,21 @@
     cursor: pointer;
     white-space: nowrap;
     z-index: 11;
+    border: 1px solid white; */
+
+    position: fixed;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    /* vertical-align: middle; */
+    /* overflow: hidden; */
+    /* text-decoration: none; */
+    /* text-align: center; */
+    cursor: pointer;
+    /* white-space: nowrap; */
+    z-index: 11;
     border: 1px solid white;
+
 }
 .sideBarOpen:hover{
     border: 1px solid blueviolet;
