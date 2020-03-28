@@ -1,13 +1,14 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useContext } from 'react'
 import '../css/Header.css'
-import { Form, Button, Input, Upload, Icon } from 'antd'
+import BackgroundUpload from '../Component/BackgroundUpload'
+import { Form, Button, Input, notification } from 'antd'
+import { uploadBackground } from '../api/base/background'
+import HomepageContext from "../context/HomepageContext"
 
 const CBH = (props) => {
     const { getFieldDecorator } = props.form
-
-    const onChooseFile = ({ data, filename, file }) => {
-        props.setFile({ data, filename, file })
-    }
+    const [file, setFile] = useState({})
+    const { setLoading } = useContext(HomepageContext)
 
     const changeBackgroudHeader = (event) => {
         var target = event.target;
@@ -18,6 +19,27 @@ const CBH = (props) => {
             [name]: value
         })
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        props.form.validateFields(async (err, values) => {
+            if (!err) {
+                setLoading(true)
+                    const {success} = await uploadBackground(file, values)
+                setLoading(false)
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin thành công!',
+                    })
+                } else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin thất bại!',
+                    })
+                }
+            }
+        })
+    }
+
     const [inf, setInf] = useState({
         name: 'Người Việt Trẻ 3000',
         link: 'https://www.facebook.com/',
@@ -28,9 +50,7 @@ const CBH = (props) => {
         color: 'white'
 
     })
-    const handleConfirm = () =>{
-        
-    }
+
     return (
         <div className='pageHeader' id={props.id} style={{ marginBottom: 30 }}>
             <div className="informationImg" style={{ backgroundColor: `${inf.background}` }}>
@@ -61,30 +81,38 @@ const CBH = (props) => {
                                     <label className="changeColor">Màu chữ: </label>
                                     <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
                                 </form> */}
-                                <Form >
+                                <Form onSubmit={handleSubmit}>
                                     <Form.Item>
-                                        <Input type="text" name="name" style={{ marginBottom: 10 }} placeholder="Tên chương trình" onChange={e => changeBackgroudHeader(e)} required/>
-                                        <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)} required/>
-                                        <Input type="text" name="time" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra - Ngày kết thúc" onChange={e => changeBackgroudHeader(e)} required/>
-                                        <Input type="date" name="hihi" style={{ marginBottom: 10 }} placeholder="Ngày kết thúc" required/> {/*sử lý gì tự sử lý đi nha */}
-                                        <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" onChange={e => changeBackgroudHeader(e)} required/>
+                                        {getFieldDecorator('tenchuongtrinh')(
+                                            <Input type="text" name="name" style={{ marginBottom: 10 }} placeholder="Tên chương trình" onChange={e => changeBackgroudHeader(e)} required/>
+                                        )}
+                                        {getFieldDecorator('linkchuongtrinh')(
+                                            <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)} required/>
+                                        )}
+                                        {getFieldDecorator('ngaydienra')(
+                                            <Input type="date" name="date" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra" onChange={e => changeBackgroudHeader(e)} required/>
+                                        )}
+                                        {getFieldDecorator('ngayketthuc')(
+                                            <Input type="date" name="hihi" style={{ marginBottom: 10 }} placeholder="Ngày kết thúc" required/>
+                                        )}
+                                        {getFieldDecorator('diadiem')(
+                                            <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" onChange={e => changeBackgroudHeader(e)} required/>
+                                        )}
                                         <label className="changeColor">Màu nền: </label>
-                                        <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)}required /><br />
+                                        {getFieldDecorator('maunen', {
+                                            initialValue: "#ff0000"
+                                        })(
+                                            <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} onChange={e => changeBackgroudHeader(e)}required />
+                                        )}<br />
                                         <label className="changeColor">Màu chữ: </label>
-                                        <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} defaultValue="#ff0000" onChange={e => changeBackgroudHeader(e)} required/><br />
-                                        <Upload
-                                            // link to upload
-                                            customRequest={onChooseFile}
-                                            // end
-                                            accept={".png,.jpg,.jpeg"}
-                                            multiple={false}
-                                            fileList={[]}
-                                        >
-                                            <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}><label className="changeColor">Tải ảnh lên: </label><Icon style={{ marginLeft: 5 }} type="camera" theme="filled" className="icon_change_avatar" /></div>
-                                            {/* <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p> */}
-                                        </Upload>
+                                        {getFieldDecorator('mauchu', {
+                                            initialValue: "#ff0000"
+                                        })(
+                                            <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} onChange={e => changeBackgroudHeader(e)} required/>
+                                        )}<br />                             
+                                        <BackgroundUpload setFile={setFile}></BackgroundUpload>
                                         <div className="modal-footer" style={{ paddingBottom: 0 }}>
-                                            <Button type="primary" htmlType="submit" className="footerButton"  onClick={()=>handleConfirm()}>Lưu thay đổi</Button>
+                                            <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
                                         </div>
                                     </Form.Item>
                                 </Form>

@@ -31,6 +31,7 @@ exports.AddBackground = (req, res) => {
                 {Linkanh :filePath},
                 {Ngaydienra :req.body.ngaydienra},
                 {Ngayketthuc: req.body.ngayketthuc},
+                {Diadiem: req.body.diadiem},
                 {Maunen :req.body.maunen},
                 {Mauchu :req.body.mauchu}
             ]
