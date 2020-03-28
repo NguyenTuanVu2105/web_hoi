@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Form, Upload, Icon } from 'antd'
+import { Form, Upload } from 'antd'
 
 const BackgroundUpload = props => {
     const onChooseFile = ({ data, filename, file }) => {
@@ -16,9 +16,12 @@ const BackgroundUpload = props => {
                 multiple={false}
                 fileList={[]}
             >
-                <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}><label className="changeColor">Tải ảnh lên: </label>
-                <Icon style={{ marginLeft: 5 }} type="camera" theme="filled" className="icon_change_avatar" /></div>
-                {/* <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p> */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}>
+                    <label className="changeColor">Tải ảnh lên: </label>
+                    <button>
+                        Choose File
+                    </button>
+                </div>
             </Upload>
         </div>
     )
