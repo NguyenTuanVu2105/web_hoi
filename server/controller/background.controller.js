@@ -19,6 +19,7 @@ exports.AddBackground = (req, res) => {
     if (req.body.linkchuongtrinh) background.Linkchuongtrinh = req.body.linkchuongtrinh;
     background.Linkanh = filePath;
     if (req.body.ngaydienra) background.Ngaydienra = req.body.ngaydienra;
+    if (req.body.ngayketthuc) background.Ngayketthuc = req.body.ngayketthuc;
     if (req.body.diadiem) background.Diadiem = req.body.diadiem;
     if (req.body.maunen) background.Maunen = req.body.maunen;
     if (req.body.mauchu) background.Mauchu = req.body.mauchu;
@@ -29,6 +30,7 @@ exports.AddBackground = (req, res) => {
                 {Linkchuongtrinh :req.body.linkchuongtrinh},
                 {Linkanh :filePath},
                 {Ngaydienra :req.body.ngaydienra},
+                {Ngayketthuc: req.body.ngayketthuc},
                 {Maunen :req.body.maunen},
                 {Mauchu :req.body.mauchu}
             ]

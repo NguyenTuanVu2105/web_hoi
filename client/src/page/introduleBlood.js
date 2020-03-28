@@ -51,24 +51,11 @@ const IntroduleBlood = () => {
             }
             <div>
                 <div>
-                    <span className="spanLabel">Các đơn vị trực thuộc Hội:</span><br />
-                    {
-                        unit.map(name => (
-                            <div style={{ paddingLeft: '20px' }}>
-                                {/* <a href='/ChiHoi'>{name.Tenchihoi}</a><br/> */}
-                                <Link className="list-items-a"
-                                    to={{
-                                        pathname: `/ChiHoi/${name.Machihoi}`
-                                    }}> {name.Tenchihoi}
-                                    <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
-                                                        <i className="fa fa-caret-right" style={{fontSize :"20px"}}/>
-                                                    </div>
-                                </Link>
-                            </div>
-                        ))
-                    }
+                    <span className="spanLabel">Các đơn vị trực thuộc Hội:</span>
+                    <a href="/SearchUnit"> Đi tới </a>
+                    <br />
                 </div>
-                <span className="spanLabel">Thành viên hiện tại: </span>
+                <span className="spanLabel">Tổng số thành viên: </span>
             </div>
             <div className="unit-table-infor">
                 <div className="unit-column-infor">
@@ -137,7 +124,6 @@ const IntroduleBlood = () => {
                     </div>
                 </div>{/*unit-column-infor*/}
             </div>{/*---------------unit-table-infor-------------------------*/}
-            <span className="spanLabel">Tổng số thành viên:</span><br />
 
             <div className="buttonSubmitForMobile">
                 <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
