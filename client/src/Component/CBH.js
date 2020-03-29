@@ -1,7 +1,6 @@
 import React, { Component, useState, useContext } from 'react'
 import '../css/Header.css'
-import BackgroundUpload from '../Component/BackgroundUpload'
-import { Form, Button, Input, notification } from 'antd'
+import { Form, Button, Input, notification, Upload, Icon } from 'antd'
 import { uploadBackground } from '../api/base/background'
 import HomepageContext from "../context/HomepageContext"
 
@@ -9,6 +8,10 @@ const CBH = (props) => {
     const { getFieldDecorator } = props.form
     const [file, setFile] = useState({})
     const { setLoading } = useContext(HomepageContext)
+
+    const onChooseFile = ({ data, filename, file }) => {
+        setFile({ data, filename, file })
+    }
 
     const changeBackgroudHeader = (event) => {
         var target = event.target;
@@ -110,7 +113,21 @@ const CBH = (props) => {
                                         })(
                                             <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} onChange={e => changeBackgroudHeader(e)} required/>
                                         )}<br />                             
-                                        <BackgroundUpload setFile={setFile}></BackgroundUpload>
+                                        <Upload
+                                            // link to upload
+                                            customRequest={onChooseFile}
+                                            // end
+                                            accept={".png,.jpg,.jpeg"}
+                                            multiple={false}
+                                            fileList={[]}
+                                        >
+                                            <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}>
+                                                <label className="changeColor">Tải ảnh lên: </label>
+                                                <Button>
+                                                    <Icon type="upload" /> Choose File
+                                                </Button>
+                                            </div>
+                                        </Upload>
                                         <div className="modal-footer" style={{ paddingBottom: 0 }}>
                                             <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
                                         </div>
