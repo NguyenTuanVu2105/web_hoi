@@ -2,9 +2,24 @@ import React, { Component,useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import CBH from "../Component/CBH";
 import '../css/changeBackground.css'
+import { getAllBackground } from '../api/base/background'
 const ChangeBackground = () => {
-    const { nameMap, setNameMap } = useContext(HomepageContext)
+    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const [cover, setCover] = useState(null)
+
+    const fetchData = async () => {
+        setLoading(true)
+        const result = await getAllBackground()
+        setLoading(false)
+        if (result) {
+            if (result.data.success) {
+                setCover(result.data.data)
+            }
+        }
+    }
+
     useEffect(() => {
+        fetchData()
         setNameMap({
             ['/']: 'Trang chủ',
             ['/HistoryBlood']: 'Change Background',
@@ -18,7 +33,7 @@ const ChangeBackground = () => {
     }
     return (
         <div className="para">
-            <button className="addBackground" onClick={()=>setCount(count + 1)}>Thêm background</button>
+            <button className="addBackground" onClick={()=>setCount(1)}>Thêm background</button>
             {
                 arr
             }
