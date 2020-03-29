@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "start": "node server/index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "heroku-postbuild": "cd client && yarn install && yarn build",
     "server": "node server/index.js",
-    "client": "npm run start --prefix client",
+    "client": "cd client && yarn start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
