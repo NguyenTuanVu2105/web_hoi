@@ -55,6 +55,7 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+    margin-bottom: 15px;
 }
     .unit-table-infor .unit-column-infor{
         width: calc(50% - 20px);

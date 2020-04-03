@@ -1,13 +1,33 @@
 export const introduleBloodList = [
     {
-        name: 'Phụ trách đơn vị hiện tại:'
+        span: 'Chủ tịch Hội:',
+        name: "Chử Nhất Hợp"
     },
     {
-        name: 'Ngày Truyền thống:'
+        span: 'Phó chủ tịch Hội:',
+        name: "Trịnh Xuân Thủy"
     },
     {
-        name: 'Ngày thành lập:'
+        span: 'Phó chủ tịch Hội:',
+        name: "Nguyễn Xuân Giáp"
+    },
+    {
+        span: 'Phó chủ tịch Hội:',
+        name: "Hoàng Văn Hải"
+    },
+    {
+        span: 'Phó chủ tịch Hội:',
+        name: "Lê Kiều Trang"
+    },
+    {
+        span: 'Ủy viên Ban thường trực:',
+        name: "Nguyễn Văn Huyến"
+    },
+    {
+        span: 'Ủy viên Ban thường trực:',
+        name: "Lê Thế Chỉnh"
     }
+
 ]
 export const ItemUnit = [
     {

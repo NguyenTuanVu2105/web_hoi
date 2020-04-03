@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import { introduleBloodList, ItemUnit } from '../Component/introduleBloodList'
 import '../css/AddUnit.css'
-import '../css/introduleBlood.css'
+import '../css/introduleBlood.scss'
 import { Button, Input, Form, } from 'antd';
 import { getUnitAll } from '../api/base/unit'
 import { BrowserRouter as Link } from "react-router-dom"
@@ -37,25 +37,54 @@ const IntroduleBlood = () => {
 
     return (
         <div className="para">
-            <div className="ButtonForMobileAdd">
+            {/* <div className="ButtonForMobileAdd">
                 <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
+            </div> */}
+            <h4><a style={{ color: 'red' }} href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
+            <div>
+                <span>Thường trực ủy ban Hội</span>
+                {
+                    introduleBloodList.map((label, index) => (
+                        <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap" }}>
+                            <span key={"span-" + index} className="span-label">{label.span}</span>
+                            <Input
+                                key={"input-" + index}
+                                type="text"
+                                style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                                disabled={changeInput}
+                                defaultValue={label.name}
+                            /><br />
+                        </div>
+                    ))
+                }
             </div>
-            <h4><a style={{ color: 'red' }} href='/introduleBloodDisplay'>Phần I: Giới thiệu về Hội >>></a></h4>
-            {
-                introduleBloodList.map(label => (
-                    <div>
-                        <span className="spanLabel">{label.name}</span>
-                        <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderRadius: 0, marginBottom: 2 }} disabled={changeInput} /><br />
-                    </div>
-                ))
-            }
             <div>
                 <div>
-                    <span className="spanLabel">Các đơn vị trực thuộc Hội:</span>
+                    <span className="spanLabel">Năm thành lập: </span>
+                    <Input
+                        type="text"
+                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                        disabled={changeInput}
+                        defaultValue=""
+                    />
+                </div>
+                <div>
+                    <span className="spanLabel">Ngày truyền thống: </span>
+                    <Input
+                        type="text"
+                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                        disabled={changeInput}
+                        defaultValue=""
+                    />
+                </div>
+                <div>
+                    <span className="spanLabel">Các cơ sở trực thuộc Hội:</span>
                     <a href="/SearchUnit"> Đi tới </a>
                     <br />
                 </div>
-                <span className="spanLabel">Tổng số thành viên: </span>
+                <div>
+                    <span className="spanLabel">Tổng số thành viên: </span>
+                </div>
             </div>
             <div className="unit-table-infor">
                 <div className="unit-column-infor">
@@ -124,8 +153,97 @@ const IntroduleBlood = () => {
                     </div>
                 </div>{/*unit-column-infor*/}
             </div>{/*---------------unit-table-infor-------------------------*/}
+            <span className="spanLabel">Kết quả hoạt động:</span>
+            <div className="border-intro">
+                <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Năm</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Hội viên</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Tình nguyện viên</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Số điểm hiến máu</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Số đơn vị máu trực tiếp</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <span className="label-intro">Số đơn vị máu phối hợp</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.32%", border: "none" }}>
+                        <span className="label-intro">Xếp loại</span>
+                    </div>
+                </div>
+                <div className="row-intro">
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.28%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "14.32%", border: "none" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                </div>
+            </div>
+
+
+            <span className="spanLabel">Khen thưởng:</span>
+            <div className="border-intro">
+                <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
+                    <div className="column-intro" style={{ width: "14%" }}>
+                        <span className="label-intro">Năm</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "20%" }}>
+                        <span className="label-intro">Hội viên</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "30%" }}>
+                        <span className="label-intro">Nội dung khen thưởng</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "20%" }}>
+                        <span className="label-intro">Nơi cấp</span>
+                    </div>
+                    <div className="column-intro" style={{ width: "16%", border: "none" }}>
+                        <span className="label-intro">Số quyết định</span>
+                    </div>
+                </div>
+                <div className="row-intro">
+                    <div className="column-intro" style={{ width: "14%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "20%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "30%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "20%" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                    <div className="column-intro" style={{ width: "16%", border: "none" }}>
+                        <Input style={{width:"90%"}}/>
+                    </div>
+                </div>
+            </div>
 
             <div className="buttonSubmitForMobile">
+                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
                 <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
             </div>
         </div>

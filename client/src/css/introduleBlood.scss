@@ -1,0 +1,37 @@
+@media (max-width: 992px){
+    .tableAddUnit{
+        width: 100%;
+    }
+}
+.span-label{
+    margin-left: 50px;
+    width: 153px;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+}
+.border-intro{
+    margin-bottom: 15px;
+    width:80%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    .row-intro{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        .column-intro{
+            height: 50px;
+            border-right: 1px solid #a9a9a9;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .label-intro{
+                color: red;
+            }
+        }
+    }
+    
+}
