@@ -13,7 +13,7 @@ const Header = (props) => {
     })
     console.log(props)
     return (
-        <div className='.pageHeader' style={props} >            
+        <div className='pageHeader' style={props} >            
             <div  className="informationImg" style={{backgroundColor:`${inf.background}`}}>                
                 <div>      
                     <label name="time" className="labelHeader" style={{color:`${inf.color}`}}>Tên chương trình:</label><br />               
