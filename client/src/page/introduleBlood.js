@@ -6,6 +6,7 @@ import '../css/introduleBlood.scss'
 import { Button, Input, Form, } from 'antd';
 import { getUnitAll } from '../api/base/unit'
 import { BrowserRouter as Link } from "react-router-dom"
+import IntroUnit from '../Component/introUnit'
 const IntroduleBlood = () => {
     const [changeInput, setchangeInput] = useState(true)
     const { nameMap, setNameMap, isLoading, setLoading } = useContext(HomepageContext)
@@ -42,7 +43,7 @@ const IntroduleBlood = () => {
             </div> */}
             <h4><a style={{ color: 'red' }} href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
             <div>
-                <span>Thường trực ủy ban Hội</span>
+                <h6 style={{ color: 'red' }}>Thường trực ủy ban Hội</h6>
                 {
                     introduleBloodList.map((label, index) => (
                         <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap" }}>
@@ -153,94 +154,8 @@ const IntroduleBlood = () => {
                     </div>
                 </div>{/*unit-column-infor*/}
             </div>{/*---------------unit-table-infor-------------------------*/}
-            <span className="spanLabel">Kết quả hoạt động:</span>
-            <div className="border-intro">
-                <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Năm</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Hội viên</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Tình nguyện viên</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Số điểm hiến máu</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Số đơn vị máu trực tiếp</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Số đơn vị máu phối hợp</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.32%", border: "none" }}>
-                        <span className="label-intro">Xếp loại</span>
-                    </div>
-                </div>
-                <div className="row-intro">
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.28%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "14.32%", border: "none" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                </div>
-            </div>
-
-
-            <span className="spanLabel">Khen thưởng:</span>
-            <div className="border-intro">
-                <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
-                    <div className="column-intro" style={{ width: "14%" }}>
-                        <span className="label-intro">Năm</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "20%" }}>
-                        <span className="label-intro">Hội viên</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "30%" }}>
-                        <span className="label-intro">Nội dung khen thưởng</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "20%" }}>
-                        <span className="label-intro">Nơi cấp</span>
-                    </div>
-                    <div className="column-intro" style={{ width: "16%", border: "none" }}>
-                        <span className="label-intro">Số quyết định</span>
-                    </div>
-                </div>
-                <div className="row-intro">
-                    <div className="column-intro" style={{ width: "14%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "20%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "30%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "20%" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                    <div className="column-intro" style={{ width: "16%", border: "none" }}>
-                        <Input style={{width:"90%"}}/>
-                    </div>
-                </div>
-            </div>
+            
+            <IntroUnit/>
 
             <div className="buttonSubmitForMobile">
                 <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>

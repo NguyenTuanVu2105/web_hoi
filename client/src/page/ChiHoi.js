@@ -5,6 +5,7 @@ import { getUser, checkAuth } from '../api/auth/auth'
 import { getClub } from '../api/base/club'
 import { Button, Input, Form, } from 'antd';
 import { useParams } from 'react-router-dom';
+import IntroUnit from '../Component/introUnit'
 const ChiHoi = (props) => {
 
     const [changeInput, setchangeInput] = useState(true)
@@ -150,8 +151,8 @@ const ChiHoi = (props) => {
                     </div>{/*---------------unit-table-infor-------------------------*/}
                     <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
                     <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderRadius: 0, marginBottom: 2 }} disabled={changeInput} /><br />
-                    <span className="spanLabel">Kết quả hoạt động:</span>
-                    <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderRadius: 0, marginBottom: 2 }} disabled={changeInput} /><br />
+                    <IntroUnit/>
+                    
                 </Form.Item>
             </Form>
             <div className="buttonSubmitForMobile">
