@@ -32,25 +32,26 @@
     width: 41px;
 }
 .buttonDisable1{
-    /* height: 32px; */
-    width: 31%;
+    width: 108px;
     margin-left: 1.75%;
-    /* background-color: white;
-    border-radius: 4px;
-    border: 1px solid #d9d9d9;   */
+    background-color: white !important;
+    color: red !important;
+    border: 1px solid #696969 !important;
 }
 .buttonDisable1:hover{
-    background-color: #aad7fc;
-}
-.buttonDisable1:visited:after{
-    content:"Dang"
+    border: 1px solid red !important;
+    color: #696969 !important;
+    box-shadow: 1px 1px red;
 }
 .ButtonForMobileAdd{
-    margin-left: 70%;
+    margin-left: 60%;
+    width: 30%;
+    display: flex;
+    
 }
 .unit-table-infor{
     border: 1px solid #a9a9a9;
-    border-radius: 10px;
+    border-radius: 8px;
     width: 80%;
     display: flex;
     flex-wrap: wrap;
@@ -90,7 +91,6 @@
     .ButtonForMobileAdd{
         width: 100%;
         margin-left: 0;
-        display: flex;
         justify-content: center;
     }
 }

@@ -70,9 +70,7 @@ const AddUnit = (props) => {
     }
     return (
         <div className = "para">
-            <div className="ButtonForMobileAdd">
-                <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
-            </div>
+            
             <Form onSubmit={handleUpdate}>
                 <Form.Item>
                     <div>
@@ -308,10 +306,10 @@ const AddUnit = (props) => {
                         <Input type="text" style={{width:"70%",backgroundColor:"white", color:"red", border:"none", marginBottom:2}} disabled={changeInput} />
                     )}
                 </Form.Item>
-                <div className="buttonSubmitForMobile">
-                   
+                <div className="ButtonForMobileAdd">
+                    <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
                     <Form.Item>
-                        <Button id='rolesave' className="buttonS" type="primary" htmlType="submit">Lưu thay đổi</Button>
+                        <Button id='rolesave' className="buttonDisable1" type="primary" htmlType="submit">Lưu thay đổi</Button>
                     </Form.Item>
                 </div>
             </Form>
