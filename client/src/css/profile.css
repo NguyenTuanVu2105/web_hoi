@@ -1,10 +1,8 @@
 
 .buttonProfile{
-    width: 70px !important;
-    height: 30px !important;
     background-color: white !important;
     border-radius: 5px !important;
-    border: 1px solid red !important;
+    border: 1px solid #696969 !important;
     color: red !important;
     margin-left: 5px !important;
 }
@@ -12,7 +10,9 @@
     line-height: normal !important;
 }
 .buttonProfile:hover{
-    background-color: rgb(206, 174, 236) !important;
+    border: 1px solid red !important;
+    color: #696969 !important;
+    box-shadow: 1px 1px red;
 }
 .DIVprofile{
     display: flex;
