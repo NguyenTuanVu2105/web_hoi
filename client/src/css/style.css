@@ -2,7 +2,7 @@
     padding-right: 0px !important;
 }
 .drop-menu{
-    background-color: #ff1313 !important;
+    background-color: #ff4d4d !important;
     height: 35px !important;
     width: 90% !important;
     margin-top: 10px !important;
@@ -10,7 +10,7 @@
     border-radius: 10px !important;
 }
 .drop-menu:hover {
-    background: rgb(177, 6, 6) !important ;
+    background: #ff3333 !important ;
 }
 .stickyA{
     font-size: 15px;
@@ -40,15 +40,19 @@
     line-height: 30px;
     text-align: center;
     padding: 0 !important;
-    border: 1px solid red;
+    border: 1px solid #ff4d4d;
     margin-top: 5px !important;
 }
 .list-items{
-    color: red;
+    color: #ff4d4d;
     text-align: center;
     font-weight: 400 !important;
     font-size: 14px !important;
     line-height: 30px !important;  
+}
+.list-items:hover{
+    color: #ff3333;
+    font-weight: 500 !important;
 }
 .items-i i{
     color: black;
@@ -67,7 +71,7 @@
 }
 .label_information{
     font-size: 14px;
-    color: red;
+    color: #ff4d4d;
     display: inline-block;    
 }
 fieldset{
@@ -80,7 +84,7 @@ fieldset{
     font-size: 20px !important;
     padding-left: 5px !important;
     padding-right: 5px !important;
-    color: red !important;
+    color: #ff4d4d !important;
     border: none !important;
 }
 .sticky{
