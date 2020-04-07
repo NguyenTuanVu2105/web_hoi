@@ -18,14 +18,17 @@
 }
 .buttonD{
     height: 32px;
-    width: 100px;
+    width: 108px;
     margin-left: 1.75%;
-    background-color: rgb(245, 245, 245);
+    background-color: white ;
     border-radius: 4px;
-    border: 1px solid #d9d9d9;  
+    border: 1px solid #696969;  
+    color: red;
 }
 .buttonD:hover{   
-    background-color: #40a9ff;
+    border: 1px solid red;
+    color: #696969;
+    box-shadow: 1px 1px red;
 }
 .changeAUDUnit{
     margin-top: 20px;
@@ -48,7 +51,7 @@
 }
 .buttonS{
     height: 32px;
-    /* width: 100px; */
+    width: 108px;
     margin-left: 2%;
     background-color: white !important;
     border-radius: 4px;
@@ -56,7 +59,9 @@
     color: red !important;  
 }
 .buttonS:hover{
-    background-color: #40a9ff;
+    border: 1px solid red !important;
+    color: #696969 !important;
+    box-shadow: 1px 1px red;
 }
 
 @media (max-width: 992px){
