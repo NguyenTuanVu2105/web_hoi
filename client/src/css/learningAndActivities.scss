@@ -6,22 +6,26 @@
 h3{
     color: red;
 }
+.fieldset-LAA{
+    padding-right: 15px;
+    border-radius: 8px;
+    border: 1px solid #696969 !important;
+}
 .activities{
     margin-left: 15px;
 }
-.buttonLAA{
-    width: 70px;
-    height: 30px;
+.button-LAA{
     background-color: white !important;
-    border-radius: 5px ;
-    border: 1px solid red !important;
+    border: 1px solid #696969 !important;
     color: red !important;
     margin-left: 5px;
 }
-.buttonLAA:hover{
-    background-color: rgb(206, 174, 236) !important;
+.button-LAA:hover{
+    border: 1px solid red !important;
+    color: #696969 !important;
+    box-shadow: 1px 1px red;
 }
-.DivLAA{
+.Div-LAA{
     margin-top: 10px;
     display: flex;
     justify-content: flex-end;
@@ -32,14 +36,14 @@ h3{
     border: none ;
     border-bottom: 1px solid rgb(204, 202, 202) ;
 }
-.input_LAA2{
+.input-LAA2{
     margin-left: 5px;
     width: 55% !important;
     border: none !important;
     border-bottom: 1px solid rgb(204, 202, 202) !important;
     border-radius: 0 !important;
 }
-.input_LAA2:after{
+.input-LAA2:after{
     border: none !important;
 }
 .input_LAA1{

@@ -2,7 +2,6 @@ import '../css/learningAndActivities.scss'
 import React, { useContext, useEffect, Fragment, useState } from 'react'
 import { Form, notification, Input, Button } from 'antd'
 import HomepageContext from "../context/HomepageContext";
-
 import { getLearnActivity, editLearnActivity } from '../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea';
 
@@ -65,23 +64,23 @@ function LearningAndActivities(props) {
                                     {getFieldDecorator('truong', {
                                         initialValue: leact.Truong
                                     })(
-                                        <Input type="text" className="input_LAA2" />
+                                        <Input type="text" className="input-LAA2" />
                                     )} <br />
                                     <label className="label_LAA">Lớp:</label>
                                     {getFieldDecorator('lop', {
                                         initialValue: leact.Lop
                                     })(
-                                        <Input type="text" className="input_LAA2" />
+                                        <Input type="text" className="input-LAA2" />
                                     )} <br />
                                     <label className="label_LAA">Ngành:</label>
                                     {getFieldDecorator('nganh', {
                                         initialValue: leact.Nganh
                                     })(
-                                        <Input type="text" className="input_LAA2" />
+                                        <Input type="text" className="input-LAA2" />
                                     )} <br />
                                 </div>
                             </div>
-                            <fieldset style={{ paddingRight: 15, borderRadius: 8, color: "rgba(0, 0, 0, 0.65)" }}>
+                            <fieldset className="fieldset-LAA">
                                 <legend className="legendA">Khen thưởng:</legend>
                                 <div className="table-LA">
                                     <div className="table-LA-par">
@@ -350,7 +349,7 @@ function LearningAndActivities(props) {
                     <Form.Item>
 
 
-                        <fieldset style={{ paddingRight: 15, borderRadius: 8, color: "rgba(0, 0, 0, 0.65)" }}>
+                        <fieldset className="fieldset-LAA">
                             <legend className="legendA">Khen thưởng:</legend>
                             <div className="table-LA">
                                 <div className="table-LA-par">
@@ -601,9 +600,9 @@ function LearningAndActivities(props) {
                         </fieldset> */}
                     </Form.Item>
                 </div>
-                <div className="DivLAA">
+                <div className="Div-LAA">
                     <Form.Item>
-                        <Button className="buttonLAA" type="primary" htmlType="submit">Submit</Button>
+                        <Button className="button-LAA" type="primary" htmlType="submit">Submit</Button>
                     </Form.Item>
                 </div>
             </Form>
