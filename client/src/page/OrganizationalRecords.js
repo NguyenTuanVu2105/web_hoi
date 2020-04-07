@@ -33,7 +33,7 @@ const OrganizationalRecords = () =>{
                         <div  className = "header"><h4>{label.name}</h4></div>
                         {
                             label.child.map(x=>(
-                                <div key = {x.key} id={x.id} className = "tagA"><i className='fas fa-angle-double-right' style={{fontSize:'15px',color:"red",marginRight:'10px'}}></i><a href={x.href}>{x.name}</a></div>
+                                <div key = {x.key} id={x.id} className = "tagA"><i className='fas fa-angle-double-right' style={{fontSize:'15px',color:"#ff4d4d",marginRight:'10px'}}></i><a className="tag-a-OR" href={x.href}>{x.name}</a></div>
                             ))
                         }                        
                     </div>

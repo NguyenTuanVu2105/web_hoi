@@ -3,12 +3,12 @@
 }
 .divBody{
     
-    border: 1px solid red;
+    border: 1px solid #ff4d4d;
     border-top: none;
     margin-top: 25px;
 }
 .header{
-    background-color: red;
+    background-color: #ff4d4d;
     height: 30px;
 }
 .header h4{
@@ -19,8 +19,12 @@
     margin-left: 50px;
 }
 
-    .tagA a{
+    .tag-a-OR{
         font-size: 20px;
-        color: red !important;
+        color: #ff4d4d !important;
         font-weight: 500;
+    }
+    .tag-a-OR:hover{
+        color: #ff3333 !important;
+        font-weight: 700;
     }
