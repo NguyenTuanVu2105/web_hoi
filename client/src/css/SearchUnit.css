@@ -30,12 +30,13 @@
     padding: 0px;
     padding-left: 15px;
     flex-direction:column-reverse;
-    border: 1px solid red;
-    color: red;
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
 }
 .list-group-blood:hover{
-    background-color: rgb(248, 234, 234) !important;
-    color: rgb(123, 20, 219);
+    /* background-color: rgb(248, 234, 234); */
+    color: #ff3333;
+    font-weight: 500;
 }
 .list-group-blood a{
     color: red !important;
@@ -47,14 +48,14 @@
         width: 100% !important;
         margin-top: 5px !important;
         border-radius: 9px !important;
-        border: 1px solid red !important;
+        border: 1px solid #ff4d4d !important;
         list-style-type: none;
     }
         .list-items-a{
             padding-left: 10px;
             padding-right: 10px;
             font-size: 18px;
-            color: red !important;
+            color: #ff4d4d !important;
             text-decoration: none !important;
             text-align: left !important;
             width: 100%;
@@ -63,7 +64,9 @@
         }
     
         .list-group-blood-item:hover{
-            background-color: rgb(248, 234, 234);
+            /* background-color: rgb(248, 234, 234); */
+            color: #ff3333;
+            font-weight: 500;
         }
 .AFM{
     font-size: 22px;
