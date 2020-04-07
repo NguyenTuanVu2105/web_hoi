@@ -3,12 +3,12 @@
 }
 .spanLabel{
     font-size: 14px;
-    color: red;
+    color: #ff4d4d;
 }
 .inputDisable{
     width: 300px;
     margin-left:5px; 
-    color:red;
+    color:#ff4d4d;
     border: none;
     border-bottom: 1px solid grey;
 }
@@ -22,7 +22,7 @@
 }
 .tableAddUnit{
     border: none;
-    color: red;
+    color: #ff4d4d;
     font-weight: 100;
 }
 .tableAddUnit th{
@@ -80,7 +80,7 @@
             }
                 .unit-table-infor .unit-column-infor .unit-div-infor .unit-div1-infor .unit-span-infor{
                     font-size: 14px;
-                    color: red;
+                    color: #ff4d4d;
                     margin-left: 10px;                    
                 }
                 .unit-table-infor .unit-column-infor .unit-div-infor .unit-div2-infor{

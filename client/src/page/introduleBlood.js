@@ -41,9 +41,9 @@ const IntroduleBlood = () => {
             {/* <div className="ButtonForMobileAdd">
                 <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
             </div> */}
-            <h4><a style={{ color: 'red' }} href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
+            <h4><a className="tag-a-IB" href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
             <div>
-                <h6 style={{ color: 'red' }}>Thường trực ủy ban Hội</h6>
+                <h6 style={{ color: '#ff4d4d' }}>Thường trực ủy ban Hội</h6>
                 {
                     introduleBloodList.map((label, index) => (
                         <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap",marginLeft:50}}>
@@ -51,7 +51,7 @@ const IntroduleBlood = () => {
                             <Input
                                 key={"input-" + index}
                                 type="text"
-                                style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                                style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
                                 disabled={changeInput}
                                 defaultValue={label.name}
                             /><br />
@@ -64,23 +64,23 @@ const IntroduleBlood = () => {
                     <span className="span-label">Năm thành lập: </span>
                     <Input
                         type="text"
-                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
                         disabled={changeInput}
-                        defaultValue=""
+                        defaultValue="24-1-1994"
                     />
                 </div>
                 <div>
                     <span className="span-label">Ngày truyền thống: </span>
                     <Input
                         type="text"
-                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
+                        style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
                         disabled={changeInput}
                         defaultValue=""
                     />
                 </div>
                 <div>
-                    <span className="span-label">Các cơ sở trực thuộc Hội:</span>
-                    <a href="/SearchUnit"> Đi tới </a>
+                    <span className="span-label" style={{marginRight:2}}>Các cơ sở trực thuộc Hội:</span>
+                    <a className="tag-a-IB" href="/SearchUnit">Tại đây</a>
                     <br />
                 </div>
                 <div>
