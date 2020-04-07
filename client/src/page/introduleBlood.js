@@ -46,7 +46,7 @@ const IntroduleBlood = () => {
                 <h6 style={{ color: 'red' }}>Thường trực ủy ban Hội</h6>
                 {
                     introduleBloodList.map((label, index) => (
-                        <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap" }}>
+                        <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap",marginLeft:50}}>
                             <span key={"span-" + index} className="span-label">{label.span}</span>
                             <Input
                                 key={"input-" + index}
@@ -61,7 +61,7 @@ const IntroduleBlood = () => {
             </div>
             <div>
                 <div>
-                    <span className="spanLabel">Năm thành lập: </span>
+                    <span className="span-label">Năm thành lập: </span>
                     <Input
                         type="text"
                         style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
@@ -70,7 +70,7 @@ const IntroduleBlood = () => {
                     />
                 </div>
                 <div>
-                    <span className="spanLabel">Ngày truyền thống: </span>
+                    <span className="span-label">Ngày truyền thống: </span>
                     <Input
                         type="text"
                         style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "red", border: "none", borderRadius: 0 }}
@@ -79,12 +79,12 @@ const IntroduleBlood = () => {
                     />
                 </div>
                 <div>
-                    <span className="spanLabel">Các cơ sở trực thuộc Hội:</span>
+                    <span className="span-label">Các cơ sở trực thuộc Hội:</span>
                     <a href="/SearchUnit"> Đi tới </a>
                     <br />
                 </div>
                 <div>
-                    <span className="spanLabel">Tổng số thành viên: </span>
+                    <span className="span-label">Tổng số thành viên: </span>
                 </div>
             </div>
             <div className="unit-table-infor">
@@ -157,9 +157,9 @@ const IntroduleBlood = () => {
             
             <IntroUnit/>
 
-            <div className="buttonSubmitForMobile">
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
-                <button className="buttonS" onClick={() => handleUp()}>Lưu thay đổi</button>
+            <div className="div-submit-IB">
+                <button className="button-dis-sub" onClick={() => setchangeInput(false)}>Sửa</button>
+                <button className="button-dis-sub" onClick={() => handleUp()}>Lưu thay đổi</button>
             </div>
         </div>
     )
