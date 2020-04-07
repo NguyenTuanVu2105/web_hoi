@@ -260,7 +260,7 @@ const TableSearch = (props) => {
       <div className='row menuFM' >
         
         {/* --Thêm thành viên--- */}
-        <Button type="primary" onClick={showModal}  style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit',height:30}}>
+        <Button type="primary" onClick={showModal}  style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit',height:32}}>
           Thêm thành viên
           </Button>
         <Modal

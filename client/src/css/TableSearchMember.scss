@@ -1,10 +1,10 @@
 .div1{
     position: relative;
     width: 65%;
-}
-    .div1 .searchOC{
+    .searchOC{
+        width: 135px;
         background-color: white;
-        height: 30px;
+        height: 32px;
         border: 1px solid rgb(24, 144, 255);
         color: rgb(24, 144, 255);
         border-radius: 5px;
@@ -12,7 +12,7 @@
         margin-right: 5px;
         position:absolute;
     }
-    .div1 .formSearch{
+    .formSearch{
         width: 100%;
         margin-left: 15px;
         margin-right: 15px;
@@ -22,19 +22,26 @@
         border: 1px solid rgb(24, 144, 255);
         padding: 10px;
         border-radius: 5px;
-    }
-        .div1 .formSearch .divA{
+        .divA{
             display: flex;
             justify-content: flex-end;
-        }
-            .div1 .formSearch .divA .tagA{
+            .tagA{
                 width: 15px;
             }
-            .div1 .formSearch .divA .tagA:hover{
+            .tagA:hover{
                 color: rgb(24, 144, 255);
             }
-        .div1 .formSearch .menuSearch{
+        }
+        .menuSearch{
             width: 95%;
             margin-right: 0;
             margin-left: 0;
         }
+    }
+}
+    // .div1 
+    // .div1 
+    //     .div1 .formSearch 
+    //         .div1 .formSearch .divA 
+    //         .div1 .formSearch .divA 
+    //     .div1 .formSearch 

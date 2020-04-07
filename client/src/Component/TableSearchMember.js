@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Select } from 'antd'
-import '../css/TableSearchMember.css'
+import '../css/TableSearchMember.scss'
 import { getClubAll } from '../api/base/admin'
 import {regionList} from '../Component/regionList'
 import { getUnitAll } from '../api/base/unit'
@@ -36,7 +36,6 @@ const TableSearchMember = () => {
                 <div className="divA">
                     <a className="tagA" onClick={() => setOpen(false)}>X</a>
                 </div>
-
                 <form className='menuSearch'>
                     <div>
                         <Select

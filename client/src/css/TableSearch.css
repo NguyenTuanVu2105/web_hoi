@@ -5,19 +5,15 @@
     margin-bottom: 10px;
     margin-left: 0;
 }
-
 .tenFM{
     width: 100%;
 }
 .menuSearchFM{
-    width: 100%;
-    
+    width: 100%;  
 }
-
 .buttonSearch{
     background-color: white;
     border: none;
-
 }
 .buttonSearch:hover{
     color: rgb(24, 144, 255);
