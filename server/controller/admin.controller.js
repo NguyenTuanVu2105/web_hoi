@@ -74,7 +74,7 @@ exports.ViewMemberInformation = (req, res) => {
                             attributes: ['Tenchihoi']
                         }]
                     }]
-                }).then(information => {
+                }).then(async information => {
                     count = await Member.count()
                     res.status(200).send({success: true, total: count, data: information})
                 }).catch(err => {
@@ -104,7 +104,7 @@ exports.ViewMemberInformation = (req, res) => {
                             attributes: ['Tenchihoi']
                         }]
                     }]
-                }).then(information => {
+                }).then(async information => {
                     count = await Member.count()
                     res.status(200).send({success: true, total: count, data: information})
                 }).catch(err => {
