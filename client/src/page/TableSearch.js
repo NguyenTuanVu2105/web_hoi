@@ -196,7 +196,7 @@ const TableSearch = (props) => {
     render: (Rh) => {
       if (Rh === true) {
         return <span> + </span>
-      } else if (Rh == false) {
+      } else if (Rh === false) {
         return <span> - </span>
       } else {
         return <span>   </span>

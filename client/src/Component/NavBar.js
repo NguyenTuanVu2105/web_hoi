@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../css/style.css'
-import '../css/NavBar.css'
+import '../css/style.scss'
+import '../css/NavBar.scss'
 import { navs } from '../nav'
 import { getUser, logout, checkAuth } from '../api/auth/auth';
 
@@ -40,11 +40,12 @@ const NavBar = () => {
     }
     const [open, setOpen] = useState(false)
     return (
-        <div>
+        <div className="sidebar-container">
             <button className="sideBarOpen sideBar" onClick={() => setOpen(true)} >&#9776;</button>
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex: 12, display: open ? "block" : "none" }} id="mySidebar" >
                 <button className="sideBarClose sideBar" onClick={() => setOpen(false) && roles}>Close X</button>
                 <div className="logoPageBlood">
+                    <img className="logo-image" src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=1&_nc_ohc=fgTTjiQRwO8AX_EyHit&_nc_ht=scontent.fhan3-1.fna&oh=0fc38a83e734acec907d4d9d8784b797&oe=5EBB1865"></img>
                 </div>
                 {
                     navs.map(nav => (

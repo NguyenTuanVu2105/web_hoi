@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import '../css/style.css';
+import '../css/style.scss';
 import '../css/InformationUser.scss'
 import { Radio, Form, Upload, Icon, message, Avatar } from 'antd'
 const InformationUser = (props) => {
