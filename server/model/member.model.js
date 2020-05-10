@@ -22,7 +22,6 @@ module.exports = (sequelize, Sequelize) => {
         ThongtinlienheGD:   Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Donvi:              Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Donvicuthe:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        GPA:                Sequelize.FLOAT,
         Trinhdohocvan:      Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         DoanvienDangvien:   Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Ghichukhac:         Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',          
