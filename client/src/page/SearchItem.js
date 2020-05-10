@@ -4,7 +4,7 @@ import HomepageContext from "../context/HomepageContext";
 import '../css/SearchItem.css'
 const Searchitem = () => {
 
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const {setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',

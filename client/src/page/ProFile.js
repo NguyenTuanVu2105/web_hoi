@@ -10,7 +10,7 @@ import { getUserProfile, updateUserProfile, uploadAvatar } from '../api/base/pro
 
 function ProFileLeft(props) {
     const { getFieldDecorator } = props.form
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const {  setNameMap, setLoading } = useContext(HomepageContext)
     const [user, setUser] = useState([])
     const [file, setFile] = useState({})
     const fetchData = async () => {
@@ -132,7 +132,7 @@ function ProFileLeft(props) {
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
-                                <Select style={{ marginLeft: 5, height: 30, width: 120, marginTop:5 }}>
+                                <Select style={{ marginLeft: 5, height: 30, width: 120, marginTop:5 }} defaultValue={true}>
                                     <Option style={{ textAlign: "center" }} value={true}>+</Option>
                                     <Option style={{ textAlign: "center" }} value={false}>-</Option>
                                 </Select>

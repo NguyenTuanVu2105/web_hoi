@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react'
-import '../css/style.css';
+import '../css/style.scss';
 import '../css/InformationUser.scss'
 import { Form, Upload, Icon, Avatar } from 'antd'
 

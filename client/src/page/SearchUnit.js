@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 
 const { Option } = Select
 const SearchUnit = () =>{
-    const {nameMap, setNameMap, setLoading} = useContext(HomepageContext)
+    const { setNameMap, setLoading} = useContext(HomepageContext)
     const [unit, setUnit] = useState([])
     const fetchData = async () => {
         setLoading(true)

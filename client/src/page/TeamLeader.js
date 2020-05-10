@@ -5,7 +5,7 @@ import { getLeaderAll } from '../api/base/leader'
 
 const TeamLeader = () => {
 
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const { setNameMap, setLoading } = useContext(HomepageContext)
     const [leader, setLeader] = useState([])
     const fetchData = async () => {
         setLoading(true)
