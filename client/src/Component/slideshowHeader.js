@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import { Slide } from 'react-slideshow-image';
-import Header from '../Component/Header';
+// import Header from '../Component/Header';
 import '../css/Header.css'
-
+import { getAllBackground } from '../api/base/background'
 const properties = {
   duration: 3500,
   transitionDuration: 500,
@@ -13,20 +13,42 @@ const properties = {
     // console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
-const arr = []
-for (var i = 0; i < 4; i++) {
-  arr.push(<div key={i.toString()} className="each-slide">
-    <Header />
-  </div>)
-}
-
 const Slideshow = () => {
+  const [inf, setInf] = useState(null)
+
+  const fetchData = async () => {
+    const result = await getAllBackground()
+    if (result.data.success) {
+      setInf(result.data.data)
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [])
+
   return (
-    <div style={{display:'flex', flexWrap:'wrap',marginLeft:15, marginRight:15}}>
-      <div className="slide-container" style={{ width: 1200, margin:"0 auto"}}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: 15, marginRight: 15 }}>
+      <div className="slide-container" style={{ width: 1200, margin: "0 auto" }}>
         <Slide {...properties}>
           {
-            arr
+            inf.map((child, index) => (
+              <div className="each-slide">
+                <div className='pageHeader'>
+                  <div className="informationImg" style={{ backgroundColor: `${inf.Maunen}` }}>
+                    <div>
+                      <label name="time" className="labelHeader" style={{ color: `${inf.Mauchu}` }}>Tên chương trình:</label><br />
+                      <label name="name" className="labelHeader" style={{ color: `${inf.Mauchu}`, fontSize: 26 }}> <a href={inf.Linkanh} style={{ color: `${inf.Mauchu}` }} target="blank">{inf.Tenchuongtrinh}</a></label><br />
+                      <label name="time" className="labelHeader" style={{ color: `${inf.Mauchu}` }}>Ngày diễn ra: {inf.Ngaydienra}</label><br />
+                      <label name="place" className="labelHeader" style={{ color: `${inf.Mauchu}` }}>Địa điểm tổ chức: {inf.Diadiem}</label><br />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="triangleImg" style={{ borderLeft: `60px solid ${inf.Maunen}` }} />
+                    <div className="backgroundCover" style={{backgroundImage: `url(${inf.Linkanh})`}} />
+                  </div>
+                </div>
+              </div>
+            ))
           }
         </Slide>
       </div>
