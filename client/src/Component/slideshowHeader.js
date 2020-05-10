@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Slide } from 'react-slideshow-image';
 // import Header from '../Component/Header';
 import '../css/Header.css'
-import { getAllBackground } from '../api/base/background'
+import { getSlideShowBackground } from '../api/base/background'
 const properties = {
   duration: 3500,
   transitionDuration: 500,
@@ -17,9 +17,12 @@ const Slideshow = () => {
   const [inf, setInf] = useState([])
 
   const fetchData = async () => {
-    const result = await getAllBackground()
+    const result = await getSlideShowBackground()
     if (result.data.success) {
       setInf(result.data.data)
+      if (inf) {
+        console.log('nghia')
+      }
     }
   }
   useEffect(() => {
