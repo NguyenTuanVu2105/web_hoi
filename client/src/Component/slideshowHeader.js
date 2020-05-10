@@ -28,7 +28,7 @@ const Slideshow = () => {
   useEffect(() => {
     fetchData()
   }, [])
-
+console.log(inf)
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: 15, marginRight: 15 }}>
       <div className="slide-container" style={{ width: 1200, margin: "0 auto" }}>
