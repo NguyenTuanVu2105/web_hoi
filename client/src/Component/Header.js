@@ -1,29 +1,33 @@
-import React, { Component, useState } from 'react'
+import React, { Component, useState, useEffect } from 'react'
 import '../css/Header.css'
+import { getAllBackground } from '../api/base/background'
 
 
 const Header = (props) => {
-    const [inf, setInf] = useState({
-        name: 'Người Việt Trẻ 3000',
-        link: 'https://www.facebook.com/nguoiviettrevietnam/',
-        time: '30/2/3000-31/2/3000',
-        place: 'Hà Nội-Việt Nam',
-        background: 'rgb(87, 78, 78)',
-        color: 'white'
-    })
-    console.log(props)
+    const [inf, setInf] = useState(null)
+    
+    const fetchData = async () => {
+        const result = await getAllBackground()
+        if (result.data.success) {
+            setInf(result.data.data)
+        }
+    }
+    useEffect(() => {
+        fetchData()
+    }, [])
+
     return (
         <div className='pageHeader' style={props} >            
-            <div  className="informationImg" style={{backgroundColor:`${inf.background}`}}>                
+            <div  className="informationImg" style={{backgroundColor:`${inf.Maunen}`}}>                
                 <div>      
-                    <label name="time" className="labelHeader" style={{color:`${inf.color}`}}>Tên chương trình:</label><br />               
-                    <label name="name" className="labelHeader" style={{color:`${inf.color}`, fontSize:26}}> <a href={inf.link} style={{color:`${inf.color}`}} target="blank">{inf.name}</a></label><br />
-                    <label name="time" className="labelHeader" style={{color:`${inf.color}`}}>Ngày diễn ra: {inf.time}</label><br />
-                    <label name="place" className="labelHeader" style={{color:`${inf.color}`}}>Địa điểm tổ chức: {inf.place}</label><br />                    
+                    <label name="time" className="labelHeader" style={{color:`${inf.Mauchu}`}}>Tên chương trình:</label><br />               
+                    <label name="name" className="labelHeader" style={{color:`${inf.Mauchu}`, fontSize:26}}> <a href={inf.Linkanh} style={{color:`${inf.Mauchu}`}} target="blank">{inf.Tenchuongtrinh}</a></label><br />
+                    <label name="time" className="labelHeader" style={{color:`${inf.Mauchu}`}}>Ngày diễn ra: {inf.Ngaydienra}</label><br />
+                    <label name="place" className="labelHeader" style={{color:`${inf.Mauchu}`}}>Địa điểm tổ chức: {inf.Diadiem}</label><br />                    
                 </div>
             </div>
             <div>
-                <div className="triangleImg" style={{borderLeft:`60px solid ${inf.background}`}}/>
+                <div className="triangleImg" style={{borderLeft:`60px solid ${inf.Maunen}`}}/>
                 <div className="backgroundCover"/>
             </div>            
         </div>

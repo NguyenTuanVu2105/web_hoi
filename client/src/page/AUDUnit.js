@@ -331,11 +331,18 @@ const AUDUnit = (props) => {
                             </div>{/*unit-column-infor*/}
                         </div>{/*---------------unit-table-infor-------------------------*/}
                         <div>
-                            <Select placeholder="Tên Chi Hội" style={{ width: '60%' }}>
-                                {unit.map(unit => (
-                                    <Option style={{ textAlign: "center" }} key={unit.id}>{unit.Tenchihoi}</Option>
-                                ))}
-                            </Select>
+                            {getFieldDecorator('branchId', {
+                                rules: [{
+                                required: true,
+                                message: 'Chưa chọn chi hội trực thuộc!'
+                                }]
+                            })(
+                                <Select placeholder="Tên Chi Hội" style={{ width: '60%' }}>
+                                    {unit.map(unit => (
+                                        <Option style={{ textAlign: "center" }} key={unit.id}>{unit.Tenchihoi}</Option>
+                                    ))}
+                                </Select>
+                            )}
                         </div>
 
                         <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
