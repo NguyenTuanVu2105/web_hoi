@@ -3,6 +3,7 @@ module.exports = (sequelize, Sequelize) => {
         Truong:             Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Lop:                Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
         Nganh:              Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
+        GPA:                Sequelize.INTEGER,
         HT_Namhoc_Mot:      Sequelize.STRING,
         HT_Kihoc_Mot:       Sequelize.INTEGER,
         HT_Lydo_Mot:        Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
