@@ -93,9 +93,11 @@ const CBH = (props) => {
                                         {getFieldDecorator('linkchuongtrinh')(
                                             <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)} required/>
                                         )}
+                                        <label className="changeColor">Ngày diễn ra: </label>
                                         {getFieldDecorator('ngaydienra')(
                                             <Input type="date" name="date" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra" onChange={e => changeBackgroudHeader(e)} required/>
                                         )}
+                                        <label className="changeColor">Ngày kết thúc: </label>
                                         {getFieldDecorator('ngayketthuc')(
                                             <Input type="date" name="hihi" style={{ marginBottom: 10 }} placeholder="Ngày kết thúc" required/>
                                         )}
