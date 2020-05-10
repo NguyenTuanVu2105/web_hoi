@@ -14,7 +14,7 @@ const properties = {
   }
 }
 const Slideshow = () => {
-  const [inf, setInf] = useState(null)
+  const [inf, setInf] = useState([])
 
   const fetchData = async () => {
     const result = await getAllBackground()
@@ -31,7 +31,7 @@ const Slideshow = () => {
       <div className="slide-container" style={{ width: 1200, margin: "0 auto" }}>
         <Slide {...properties}>
           {
-            inf.map((child, index) => (
+            inf.map(inf => (
               <div className="each-slide">
                 <div className='pageHeader'>
                   <div className="informationImg" style={{ backgroundColor: `${inf.Maunen}` }}>
