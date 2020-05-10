@@ -11,6 +11,8 @@ const Specialized = db.specialized
 const Op = db.Sequelize.Op
 //chưa test
 exports.ViewMemberInformation = (req, res) => {
+    page = parseInt(req.query.page)
+    limit = 10
     User.findOne({
         where: {
             id: req.userId
@@ -28,6 +30,8 @@ exports.ViewMemberInformation = (req, res) => {
         }).then(member => {
             if (user.role === 'hoitruong') {
                 Member.findAll({
+                    limit: limit,
+                    offset: (page - 1) * limit,
                     include: [{
                         model: Position,
                     }, {
@@ -40,13 +44,16 @@ exports.ViewMemberInformation = (req, res) => {
                             attributes: ['Tenchihoi']
                         }]
                     }]
-                }).then(information => {
-                    res.status(200).send({success: true, data: information})
+                }).then(async information => {
+                    count = await Member.count()
+                    res.status(200).send({success: true, total: count, data: information})
                 }).catch(err => {
                     res.status(500).send({success: false, message: err})
                 })
             } else if (user.role === 'chihoitruong') {
                 Member.findAll({
+                    limit: limit,
+                    offset: (page - 1) * limit,
                     include: [{
                         model: Position,
                         where: {
@@ -68,12 +75,15 @@ exports.ViewMemberInformation = (req, res) => {
                         }]
                     }]
                 }).then(information => {
-                    res.status(200).send({success: true, data: information})
+                    count = await Member.count()
+                    res.status(200).send({success: true, total: count, data: information})
                 }).catch(err => {
                     res.status(500).send({success: false, message: err})
                 })
             } else {
                 Member.findAll({
+                    limit: limit,
+                    offset: (page - 1) * limit,
                     include: [{
                         model: Position,
                         where: {
@@ -95,7 +105,8 @@ exports.ViewMemberInformation = (req, res) => {
                         }]
                     }]
                 }).then(information => {
-                    res.status(200).send({success: true, data: information})
+                    count = await Member.count()
+                    res.status(200).send({success: true, total: count, data: information})
                 }).catch(err => {
                     res.status(500).send({success: false, message: err})
                 })
