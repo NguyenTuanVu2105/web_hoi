@@ -44,11 +44,15 @@ module.exports = function(app) {
 		res.sendFile(path.resolve(`./images/${fileName}`))
     })
     // background
-    app.get('/api/viewbackground', [authJwt.verifyToken], backgroudcontroller.ViewBackground)
+    app.get('/api/viewbackground', backgroudcontroller.ViewBackground)
 
-    app.get('/api/slideshowbackground', [authJwt.verifyToken], backgroudcontroller.SlideShowBackground)
+    app.get('/api/slideshowbackground', backgroudcontroller.SlideShowBackground)
 
-    app.post('/api/upload/background', [imageUploader.single('background'),authJwt.verifyToken],backgroudcontroller.AddBackground)
+    app.post('/api/editbackground', [imageUploader.single('linkanh')], backgroudcontroller.EditBackground)
+
+    app.delete('/api/deletebackground', backgroudcontroller.DeleteBackground)
+
+    app.post('/api/upload/background', [imageUploader.single('background')],backgroudcontroller.AddBackground)
 
     app.get('/api/background/:name', (req, res) => {
       const fileName = req.params.name
@@ -138,3 +142,6 @@ module.exports = function(app) {
     app.get('/api/', admincontroller.Search)
 
 }
+
+
+

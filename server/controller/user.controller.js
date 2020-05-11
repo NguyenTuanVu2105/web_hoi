@@ -10,7 +10,7 @@ const Op = db.Sequelize.Op;
 var jwt = require('jsonwebtoken')
 var bcrypt = require('bcryptjs')
 var nodemailer = require('nodemailer');
-var generator = require('generate-password');
+
 
 exports.login = (req, res) => {
 	User.findOne({
