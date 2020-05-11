@@ -36,8 +36,8 @@ console.log(inf)
       <div className="slide-container" style={{ width: 1200, margin: "0 auto" }}>
         <Slide {...properties}>
           {
-            inf.map(inf => (
-              <div className="each-slide">
+            inf.map((inf,index) => (
+              <div key={"ink"+index} className="each-slide">
                 <div className='pageHeader'>
                   <div className="informationImg" style={{ backgroundColor: `${inf.Maunen}` }}>
                     <div>

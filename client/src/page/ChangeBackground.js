@@ -65,7 +65,7 @@ const ChangeBackground = (props) => {
     for (let i = 0; i < count; i++) {
         arr.push(<CBH id={i} />)
     }
-    console.log(cover.length)
+    // console.log(cover.length)
     return (
         <div className="para">
             <button className="addBackground" onClick={() => setCount(1)}>Thêm background</button>
@@ -77,7 +77,7 @@ const ChangeBackground = (props) => {
             >
                 {
                     cover.map((data, index) => (
-                        <div className='pageHeader' id={data.id} style={{ marginBottom: 30 }}>
+                        <div key={"cover"+index} className='pageHeader' id={data.id} style={{ marginBottom: 30 }}>
                             <div className="informationImg" style={{ backgroundColor: `${data.Maunen}` }}>
                                 <div>
                                     <label name="time" className="labelHeader" style={{ color: `${data.Mauchu}` }}>Tên chương trình:</label><br />
@@ -94,7 +94,7 @@ const ChangeBackground = (props) => {
                                     </label><br />
                                     <a className="doiBackground" data-toggle="modal" data-target={'#modalBackground' + data.id}>
                                         Changebackground >>>
-                                </a>
+                                    </a>
                                     <div className="modal fade AA" id={"modalBackground" + data.id} role="dialog">
                                         <div className="modal-dialog">
                                             <div className="modal-content">
@@ -156,7 +156,7 @@ const ChangeBackground = (props) => {
                                                                     <label className="changeColor">Tải ảnh lên: </label>
                                                                     <button>
                                                                         <Icon type="upload" /> Choose File
-                                                </button>
+                                                                    </button>
                                                                     {nameFile}
                                                                 </div>
                                                             </Upload>
