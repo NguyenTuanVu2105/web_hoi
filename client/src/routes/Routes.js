@@ -4,7 +4,7 @@ import LearningAndActivities from "../page/learningAndActivities";
 import SearchUnit from '../page/SearchUnit';
 import TeamLeader from '../page/TeamLeader';
 import AddUnit from '../page/AddUnit'
-import OrganizationalRecords from '../page/OrganizationalRecords'
+import OrganizationalRecords from '../page/organizationlRecords/OrganizationalRecords'
 import TableSearch from '../page/TableSearch'
 import signIn from '../page/signIn'
 import AUDUnit from '../page/AUDUnit'
