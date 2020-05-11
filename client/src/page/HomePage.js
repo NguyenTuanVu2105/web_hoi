@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import { notification} from 'antd';
 import { renderRoutes } from 'react-router-config'
 import { Link, withRouter } from "react-router-dom";
-import NavBar from '../Component/NavBar';
+import NavBar from './navbar/NavBar';
 import { Breadcrumb, Input } from "antd";
 import _ from 'lodash';
 import HomepageContext from "../context/HomepageContext";
