@@ -56,14 +56,14 @@ const CBH = (props) => {
     })
 
     return (
-        <div className='pageHeader' id={props.id} style={{ marginBottom: 30 }}>
-            <div className="informationImg" style={{ backgroundColor: `${inf.background}` }}>
+        <div className='page-header' id={props.id} style={{ marginBottom: 30 }}>
+            <div className="information-img-reposive" style={{ backgroundColor: `${inf.background}` }}>
                 <div>
-                    <label name="time" className="labelHeader" style={{ color: `${inf.color}` }}>Tên chương trình:</label><br />
-                    <label name="name" className="labelHeader" style={{ color: `${inf.color}`, fontSize: 26 }}><a href={inf.link} style={{ color: `${inf.color}` }} target="blank">{inf.name}</a></label><br />
-                    <label name="time" className="labelHeader" style={{ color: `${inf.color}` }}>Ngày diễn ra: {inf.time}</label><br />
-                    <label name="place" className="labelHeader" style={{ color: `${inf.color}` }}>Địa điểm tổ chức: {inf.place}</label><br />
-                    <a className="doiBackground" data-toggle="modal" data-target={'#modalBackground' + props.id}> Changebackground >>></a>
+                    <label name="time" className="label-header" style={{ color: `${inf.color}` }}>Tên chương trình:</label><br />
+                    <label name="name" className="label-header" style={{ color: `${inf.color}`, fontSize: 26 }}><a href={inf.link} style={{ color: `${inf.color}` }} target="blank">{inf.name}</a></label><br />
+                    <label name="time" className="label-header" style={{ color: `${inf.color}` }}>Ngày diễn ra: {inf.time}</label><br />
+                    <label name="place" className="label-header" style={{ color: `${inf.color}` }}>Địa điểm tổ chức: {inf.place}</label><br />
+                    <a className="change-background-header" data-toggle="modal" data-target={'#modalBackground' + props.id}> Changebackground >>></a>
                 </div>
 
                 <div className="modal fade AA" id={"modalBackground" + props.id} role="dialog">
@@ -82,24 +82,24 @@ const CBH = (props) => {
                                         {getFieldDecorator('linkchuongtrinh')(
                                             <Input type="text" name="link" style={{ marginBottom: 10 }} placeholder="Link chương trình" onChange={e => changeBackgroudHeader(e)} required/>
                                         )}
-                                        <label className="changeColor">Ngày diễn ra: </label>
+                                        <label className="change-color-header">Ngày diễn ra: </label>
                                         {getFieldDecorator('ngaydienra')(
                                             <Input type="date" name="date" style={{ marginBottom: 10 }} placeholder="Ngày diễn ra" onChange={e => changeBackgroudHeader(e)} required/>
                                         )}
-                                        <label className="changeColor">Ngày kết thúc: </label>
+                                        <label className="change-color-header">Ngày kết thúc: </label>
                                         {getFieldDecorator('ngayketthuc')(
                                             <Input type="date" name="hihi" style={{ marginBottom: 10 }} placeholder="Ngày kết thúc" required/>
                                         )}
                                         {getFieldDecorator('diadiem')(
                                             <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" onChange={e => changeBackgroudHeader(e)} required/>
                                         )}
-                                        <label className="changeColor">Màu nền: </label>
+                                        <label className="change-color-header">Màu nền: </label>
                                         {getFieldDecorator('maunen', {
                                             initialValue: "#ff0000"
                                         })(
                                             <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} onChange={e => changeBackgroudHeader(e)}required />
                                         )}<br />
-                                        <label className="changeColor">Màu chữ: </label>
+                                        <label className="change-color-header">Màu chữ: </label>
                                         {getFieldDecorator('mauchu', {
                                             initialValue: "#ff0000"
                                         })(
@@ -114,7 +114,7 @@ const CBH = (props) => {
                                             fileList={[]}
                                         >
                                             <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}>
-                                                <label className="changeColor">Tải ảnh lên: </label>
+                                                <label className="change-color-header">Tải ảnh lên: </label>
                                                 <button>
                                                     <Icon type="upload" /> Choose File
                                                 </button>
@@ -134,9 +134,9 @@ const CBH = (props) => {
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="triangleImg" style={{ borderLeft: `60px solid ${inf.background}` }}></div>
-                <div name="linkAnh" className="backgroundCover" style={{ backgroundImage: `url(${inf.linkAnh})` }}></div>
+            <div className="reponsive-header">
+                <div className="triangle-img" style={{ borderLeft: `60px solid ${inf.background}` }}></div>
+                <div name="linkAnh" className="background-cover-header" style={{ backgroundImage: `url(${inf.linkAnh})` }}></div>
             </div>
         </div>
     )
