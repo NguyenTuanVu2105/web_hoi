@@ -21,7 +21,8 @@ const TableSearch = (props) => {
   const [position, setPosition] = useState([])
   const [specialized, setSpecialized] = useState([])
   const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
-
+  const [page, setPage] = useState(1)
+  const [total, setTotal] = useState(0)
   const fetchDataPosition = async () => {
     const result = await getPosition()
     if (result.data.success) {
@@ -43,12 +44,13 @@ const TableSearch = (props) => {
     }
   }
 
-  const fetchData = async () => {
+  const fetchData = async (page) => {
     setLoading(true)
-    const result = await getTableMember()
+    const result = await getTableMember(page)
     setLoading(false)
     if (result.data.success) {
       setTable(result.data.data)
+      setTotal(result.data.total)
     }
   }
 
@@ -56,7 +58,7 @@ const TableSearch = (props) => {
     fetchDataPosition()
     fetchDataSpecialized()
     fetchDataClub()
-    fetchData()
+    fetchData(1)
     setNameMap({
       ['/']: 'Trang chủ',
       ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
@@ -101,6 +103,11 @@ const TableSearch = (props) => {
     console.log(`selected ${value}`)
   }
 
+  const _onPageChange = (page) => {
+    setPage(page)
+    setTable([])
+    fetchData(page)
+  }
   const columns = [{
     title: 'Sửa',
     fixed: 'left',
@@ -373,7 +380,13 @@ const TableSearch = (props) => {
 
       </div>
 
-      <Table columns={columns} dataSource={table} scroll={{ x: 'max-content' }}/>
+      <Table columns={columns} dataSource={table} scroll={{ x: 'max-content' }} pagination={{
+        onChange: _onPageChange,
+        current: page,
+        total: total,
+        pageSize: 10,
+        showQuickJumper: true
+      }}/>
 
     </div>
 

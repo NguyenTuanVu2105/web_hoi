@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Spin } from 'antd';
-import '../css/loading.css'
+import '../css/loading.scss'
 
 const Loading = () => {
     return (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Slide } from 'react-slideshow-image';
-// import Header from '../Component/Header';
 import '../css/Header.css'
 import { getSlideShowBackground } from '../api/base/background'
+
 const properties = {
   duration: 3500,
   transitionDuration: 500,
@@ -18,17 +18,19 @@ const Slideshow = () => {
 
   const fetchData = async () => {
     const result = await getSlideShowBackground()
-    if (result.data.success) {
-      setInf(result.data.data)
-      if (inf) {
-        console.log('nghia')
+    if (result) {
+      if (result.data.success) {
+        setInf(result.data.data)
+        if (!inf) {
+          console.log('nghia')
+        }
       }
     }
   }
   useEffect(() => {
     fetchData()
   }, [])
-
+console.log(inf)
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: 15, marginRight: 15 }}>
       <div className="slide-container" style={{ width: 1200, margin: "0 auto" }}>
