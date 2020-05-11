@@ -35,3 +35,29 @@
         }
     }
 }
+.div-remove{
+    display: flex;
+    justify-content: flex-end;
+    .button-remove{
+        background: white;
+        border: none;
+        border: 1px solid rgba(0, 0, 0, 0.65);
+    }
+    .button-remove:hover{
+        color: blue !important;
+        text-decoration: underline !important;
+    }
+}
+.modal-button-remove{
+    height: 32px;
+    width: 80px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #696969;
+    color: red;
+}
+.modal-button-remove:hover{
+    border: 1px solid red;
+    color: #696969;
+    box-shadow: 1px 1px red;
+}

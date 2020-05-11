@@ -74,17 +74,6 @@ const CBH = (props) => {
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
                             </div>
                             <div className="modal-body" style={{ paddingBottom: 0 }}>
-                                {/* <form>
-                                    <input type="text" name="name" className="changeBackground" placeholder="Tên chương trình" onChange={e=>changeBackgroudHeader(e)} />
-                                    <input type="text" name="link" className="changeBackground" placeholder="Link chương trình" onChange={e=>changeBackgroudHeader(e)} />
-                                    <input type="text" name="linkAnh" className="changeBackground" placeholder="LinkAnh" onChange={e=>changeBackgroudHeader(e)} />
-                                    <input type="text" name="time" className="changeBackground" placeholder="Ngày diễn ra" onChange={e=>changeBackgroudHeader(e)}/>
-                                    <input type="text" name="place" className="changeBackground" placeholder="Địa điểm tổ chức" onChange={e=>changeBackgroudHeader(e)} />
-                                    <label className="changeColor">Màu nền: </label>
-                                    <input name="background" type="color" className="Ccolor" defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)}/><br />
-                                    <label className="changeColor">Màu chữ: </label>
-                                    <input name="color" type="color" className="Ccolor"defaultValue="#ff0000" onChange={e=>changeBackgroudHeader(e)} /><br />
-                                </form> */}
                                 <Form onSubmit={handleSubmit}>
                                     <Form.Item>
                                         {getFieldDecorator('tenchuongtrinh')(
