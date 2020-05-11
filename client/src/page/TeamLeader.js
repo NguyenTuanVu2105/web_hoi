@@ -53,7 +53,7 @@ const TeamLeader = () => {
                             <label className="label_information1">Họ tên: {leader.Hovaten}</label><br />
                             <label className="label_information1">Chức vụ: {leader.position.Chucvu}</label><br />
                             <label className="label_information1">Thời gian công tác: {leader.ThoigianHD}</label><br />
-                            <div>
+                            <div className="div-reponsive-TL">
                                 <div id={"div-" + index} className="div-information-close" style={{ width: "100%", overflow: "hidden", }}>Mô tả: {leader.Ghichukhac}</div>
                                 <a id={"a-"+index} className='describe' onClick={() => HandleOC(index)}>Chi tiết>>></a>
                             </div>
