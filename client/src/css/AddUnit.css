@@ -87,7 +87,17 @@
                     width: calc(20% - 1px);
                     margin-left: 1px;
                 }
-@media (max-width: 992px){
+@media(max-width: 992px){
+    .container-intro{
+        width: 995px;
+    }
+    .unit-table-infor{
+        padding-top: 10px;
+        width: 995px !important;
+    }
+    .unit-table-infor .unit-column-infor{
+        margin-top: 0px;
+    }
     .ButtonForMobileAdd{
         width: 100%;
         margin-left: 0;
@@ -97,15 +107,5 @@
 @media(max-width: 1400px){
     .unit-table-infor{
         width: 90%;       
-    }
-}
-@media(max-width: 992px){
-    .unit-table-infor{
-        padding-top: 10px;
-        width: 100%;
-    }
-    .unit-table-infor .unit-column-infor{
-        width: 100%;
-        margin-top: 0px;
     }
 }

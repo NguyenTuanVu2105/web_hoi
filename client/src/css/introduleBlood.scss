@@ -1,16 +1,11 @@
-@media (max-width: 992px){
-    .tableAddUnit{
-        width: 100%;
-    }
-    .div-submit-IB{
-        width: 100%;
-        margin-left: 0;
-        display: flex;
-        justify-content: center;
-    }
-    .border-intro{
-        width: 100%;
-    }
+.h4-a-IB{
+    color: #ff4d4d;
+    text-decoration: underline;
+}
+.h4-a-IB:hover{
+    color: #ff4d4d;
+    text-decoration: underline;
+    font-weight: 650;
 }
 .span-label{
     width: 153px;
@@ -20,10 +15,11 @@
 }
 .tag-a-IB{
     color: #ff4d4d;
+    text-decoration: underline;
 }
 .tag-a-IB:hover{
     color: #ff4d4d;
-    text-decoration: underline;
+    text-decoration: underline;  
     font-weight: 500;
 }
 .border-intro{
@@ -67,5 +63,19 @@
         border: 1px solid red ;
         color: #696969 ;
         box-shadow: 1px 1px red;
+    }
+}
+@media (max-width: 992px){
+    .tableAddUnit{
+        width: 100%;
+    }
+    .div-submit-IB{
+        margin-left: 0px !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .border-intro{
+        width: 995px;
     }
 }
