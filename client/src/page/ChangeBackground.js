@@ -178,7 +178,7 @@ const ChangeBackground = (props) => {
 {/* -------xóa background------ */}
                                     <div className="div-remove">
                                         <a className="button-remove" data-toggle="modal" data-target={'#modalRemove' + data.id}>
-                                            Remove
+                                            X
                                         </a>
                                         <div className="modal fade AA" id={"modalRemove" + data.id} role="dialog">
                                             <div className="modal-dialog">

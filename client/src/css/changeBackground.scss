@@ -42,10 +42,16 @@
         background: white;
         border: none;
         border: 1px solid rgba(0, 0, 0, 0.65);
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .button-remove:hover{
-        color: blue !important;
-        text-decoration: underline !important;
+        color: white !important;
+        background-color: #ff3333;
+        border: 1px solid #ff3333;
     }
 }
 .modal-button-remove{
