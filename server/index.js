@@ -13,7 +13,7 @@ app.get('*', function (req, res) {
   });
 const db = require('./config/db.config');
 
-db.sequelize.sync({alter: true}).then(() => {
+db.sequelize.sync({}).then(() => {
     console.log("Sequelize is Running");
 }).catch(err => {
     console.log(err.message);
