@@ -222,7 +222,6 @@ exports.Search = (req, res) => {
     var result4 = _.pickBy(json4, function(value, key) {
         return value !='';
     });
-    console.log(result1)
     Member.findAll({
         where: result1,
         include: [

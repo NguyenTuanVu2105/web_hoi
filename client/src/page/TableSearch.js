@@ -379,7 +379,7 @@ const TableSearch = (props) => {
         <TableSearchMember data={table}/>
 
       </div>
-
+      
       <Table columns={columns} dataSource={table} scroll={{ x: 'max-content' }} pagination={{
         onChange: _onPageChange,
         current: page,
