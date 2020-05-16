@@ -4,7 +4,7 @@ import '../css/Header.css'
 import { getSlideShowBackground } from '../api/base/background'
 
 const properties = {
-  duration: 1000000,
+  duration: 3500,
   transitionDuration: 500,
   infinite: true,
   indicators: true,
