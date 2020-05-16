@@ -38,7 +38,7 @@ const IntroduleBlood = () => {
 
     return (
         <div className="para container-intro">
-            <h4><a className="h4-a-IB" href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
+            <h4><a className="h4-a-IB" href='/introduleBloodDisplay'>Giới thiệu về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
             <div>
                 <h6 style={{ color: '#ff4d4d' }}>Thường trực ủy ban Hội</h6>
                 {
