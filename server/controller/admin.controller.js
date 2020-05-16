@@ -42,7 +42,6 @@ exports.ViewMemberInformation = (req, res) => {
                 attributes: ['branchId']
             }
         }).then(member => {
-
             // Kiểm tra quyền hội trưởng
 
             if (user.role === 'hoitruong') {
@@ -99,9 +98,31 @@ exports.ViewMemberInformation = (req, res) => {
                     }).catch(err => {
                         res.status(500).send({success: false, message: err})
                     })
+                } else if (!req.query.branchId){
+
+                    
+                    Member.findAndCountAll({
+                        limit: limit,
+                        offset: (page - 1) * limit,
+                        where: queryMember,
+                        include: [{
+                            model: Position,
+                        }, {
+                            model: Specialized,
+                        },  {
+                            model: Club,
+                            attributes: ['Tendoi'],
+                            include:[{
+                                model: Branch,
+                                attributes: ['Tenchihoi']
+                            }]
+                        }]
+                    }).then(information => {
+                        res.status(200).send({success: true, total: information.count, data: information.rows})
+                    }).catch(err => {
+                        res.status(500).send({success: false, message: err})
+                    })
                 } else {
-
-
                     Member.findAndCountAll({
                         limit: limit,
                         offset: (page - 1) * limit,
