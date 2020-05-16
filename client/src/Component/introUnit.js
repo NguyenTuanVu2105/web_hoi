@@ -4,6 +4,7 @@ const IntroUnit = () =>{
     return(
         <div>
             <span className="spanLabel">Kết quả hoạt động:</span>
+            <div className="para-intro-s">
             <div className="border-intro">
                 <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
                     <div className="column-intro" style={{ width: "14.28%" }}>
@@ -19,10 +20,10 @@ const IntroUnit = () =>{
                         <span className="label-intro">Số điểm hiến máu</span>
                     </div>
                     <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Số đơn vị máu trực tiếp</span>
+                        <span className="label-intro">Số đv máu trực tiếp</span>
                     </div>
                     <div className="column-intro" style={{ width: "14.28%" }}>
-                        <span className="label-intro">Số đơn vị máu phối hợp</span>
+                        <span className="label-intro">Số đv máu phối hợp</span>
                     </div>
                     <div className="column-intro" style={{ width: "14.32%", border: "none" }}>
                         <span className="label-intro">Xếp loại</span>
@@ -52,9 +53,10 @@ const IntroUnit = () =>{
                     </div>
                 </div>
             </div>
-
+            </div>
 
             <span className="spanLabel">Khen thưởng:</span>
+            <div className="para-intro-s">
             <div className="border-intro">
                 <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
                     <div className="column-intro" style={{ width: "14%" }}>
@@ -90,6 +92,7 @@ const IntroUnit = () =>{
                         <Input style={{width:"90%"}}/>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )
