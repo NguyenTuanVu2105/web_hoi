@@ -49,7 +49,9 @@ console.log(inf)
                   </div>
                   <div className="reponsive-header">
                     <div className="triangle-img" style={{ borderLeft: `60px solid ${inf.Maunen}` }} />
-                    <div className="background-cover-header" style={{backgroundImage: `url(${inf.Linkanh})`}} />
+                    <div>
+                      <img className="background-cover-header" src={inf.Linkanh}/>
+                    </div>
                   </div>
                 </div>
               </div>
