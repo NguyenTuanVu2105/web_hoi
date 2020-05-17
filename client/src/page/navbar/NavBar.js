@@ -45,7 +45,7 @@ const NavBar = () => {
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex: 12, display: open ? "block" : "none" }} id="mySidebar" >
                 <button className="sideBarClose sideBar" onClick={() => setOpen(false) && roles}>Close X</button>
                 <div className="logo-page-blood">
-                    <img className="logo-image" src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=o7EgMvzVkxsAX-q-A9i&_nc_ht=scontent.fhan5-1.fna&oh=9a8ead7a8a0de1dda36932c5dc99b1c5&oe=5EE5889B"></img>
+                    <img className="logo-image" src="./img/navbar/logomau.png" alt="logo"></img>
                 </div>
                 {
                     navs.map((nav,index) => (

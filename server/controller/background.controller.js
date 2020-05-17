@@ -91,8 +91,6 @@ exports.EditBackground = (req,res) =>{
             const linkanh = {}
             linkanh.Linkanh = background.Linkanh;
 
-            console.log(linkanh.Linkanh)
-            console.log(background.Linkanh)
             if(filePath != linkanh.Linkanh ){
                 new LogImage(linkanh).save()
             }
@@ -144,11 +142,11 @@ exports.DeleteBackground = (req,res) =>{
     }).catch(err => {})
 
 }
-function DeleteImageSystem(){
+var x = '!!!!!!';
+var j = schedule.scheduleJob({hour: 11, minute: 58, dayOfWeek: 0}, function DeleteImageSystem(){
     LogImage.findAll({}).then(data =>{
         const host = `${process.env.SERVER_HOST}/api/background`
         data.map(y => {
-            // return y.Linkanh
             let a = y.Linkanh
             if(a == null) return false
             let x = replaceString(a, host,'./images')
@@ -163,5 +161,14 @@ function DeleteImageSystem(){
 
         })      
     })
-}
-var j = schedule.scheduleJob({hour: 15, minute: 35, dayOfWeek: 1}, DeleteImageSystem());
+}.bind(null,x));
+// function initSchedule(argument, callback) {
+//     const jobSchedule = nodeSchedule.scheduleJob(schedule, (argumentToPass => {
+//        callback(argumentToPass);
+//      }).bind(null, argument));
+//    }
+//    function myNamedFunction(myArgument) {
+//      // do something with job
+//    }
+   
+//    initSchedule(myArgument, myNamedFunction);
