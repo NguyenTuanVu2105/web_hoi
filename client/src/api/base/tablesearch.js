@@ -1,9 +1,8 @@
 import {createAuthApiRequest} from '../index'
 
 export const getTableMember = (page) => {
-    console.log(page)
     return createAuthApiRequest({
-        url: `/api/admin/view/member?page=${page}`,
+        url: `/api/admin/view/member?page=${page}&hovaten=&nhommau=&quequan=&ngaysinh=&clubId=&branchId=`,
         method: 'get'
     })
 }

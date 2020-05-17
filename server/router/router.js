@@ -139,8 +139,6 @@ module.exports = function(app) {
 
     app.get('/api/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
 
-    app.get('/api/search', [authJwt.verifyToken], admincontroller.Search)
-
 }
 
 
