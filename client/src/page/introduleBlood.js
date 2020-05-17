@@ -37,27 +37,26 @@ const IntroduleBlood = () => {
 
 
     return (
-        <div className="para">
-            {/* <div className="ButtonForMobileAdd">
-                <button className="buttonDisable" onClick={() => setchangeInput(false)}>Sửa</button>
-            </div> */}
-            <h4><a className="tag-a-IB" href='/introduleBloodDisplay'>Giới thiệu chi tiết về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
+        <div className="para container-intro">
+            <h4><a className="h4-a-IB" href='/introduleBloodDisplay'>Giới thiệu về Hội thanh niên vận động hiến máu Hà Nội</a></h4>
             <div>
                 <h6 style={{ color: '#ff4d4d' }}>Thường trực ủy ban Hội</h6>
+                <div>
                 {
                     introduleBloodList.map((label, index) => (
-                        <div key={"i-" + index} style={{ display: "flex", flexWrap: "wrap",marginLeft:50}}>
+                        <div key={"i-" + index} className="list-name-intro">
                             <span key={"span-" + index} className="span-label">{label.span}</span>
                             <Input
                                 key={"input-" + index}
                                 type="text"
-                                style={{ width: "calc(100% - 250px)", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
+                                style={{ width: "auto", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
                                 disabled={changeInput}
                                 defaultValue={label.name}
-                            /><br />
+                            />
                         </div>
                     ))
                 }
+                </div>
             </div>
             <div>
                 <div>

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '../css/style.scss'
-import '../css/NavBar.scss'
-import { navs } from '../nav'
-import { getUser, logout, checkAuth } from '../api/auth/auth';
+// import '../css/style.scss'
+import '../navbar/style/NavBar.scss'
+import { navs } from './component/nav'
+import { getUser, logout, checkAuth } from '../../api/auth/auth';
 
 const NavBar = () => {
 
@@ -44,12 +44,12 @@ const NavBar = () => {
             <button className="sideBarOpen sideBar" onClick={() => setOpen(true)} >&#9776;</button>
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex: 12, display: open ? "block" : "none" }} id="mySidebar" >
                 <button className="sideBarClose sideBar" onClick={() => setOpen(false) && roles}>Close X</button>
-                <div className="logoPageBlood">
-                    <img className="logo-image" src="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=1&_nc_ohc=fgTTjiQRwO8AX_EyHit&_nc_ht=scontent.fhan3-1.fna&oh=0fc38a83e734acec907d4d9d8784b797&oe=5EBB1865"></img>
+                <div className="logo-page-blood">
+                    <img className="logo-image" src="./img/navbar/logomau.png" alt="logo"></img>
                 </div>
                 {
-                    navs.map(nav => (
-                        <div key={nav.id}>
+                    navs.map((nav,index) => (
+                        <div key={"nav"+index}>
                             <div className="panel-heading drop-menu">
                                 <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={() => setChangeIcon(nav.IconID)}>
                                     {nav.name}
@@ -59,8 +59,8 @@ const NavBar = () => {
                             <div id={nav.Id2} className="panel-collapse collapse">
                                 <ul className="list-group">
                                     {
-                                        nav.children.map(x => (
-                                            <li key={x.id} id={x.id} className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
+                                        nav.children.map((x,index) => (
+                                            <li key={"navC"+index}  className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                         ))
                                     }
                                 </ul>

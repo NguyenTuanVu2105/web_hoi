@@ -1,28 +1,28 @@
-.pageHeader{
+.page-header{
     width: 100%;
     display: flex;
     position: relative;
     flex-wrap: wrap;
 }
-    .pageHeader i{
+    .page-header i{
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .informationImg{
+    .information-img{
         width: 300px;
         height: 350px;
     }
-        .labelHeader{
+        .label-header{
             margin-left: 15px;
         }
-        .doiBackground{
+        .change-background-header{
             background-color: white;
             opacity: .6;
             margin-left: 15px;
 
         }
-            .changeColor{
+            .change-color-header{
                 margin: 0;
                 color: black;
             }
@@ -47,7 +47,7 @@
                 border: 1px solid rgb(82, 163, 255);
             }
 
-    .triangleImg{
+    .triangle-img{
         opacity: .9;
         width: 0;
         height: 0;
@@ -56,13 +56,12 @@
         position: absolute;
         z-index: 1;
     }
-    .informationImg::after{
+    .information-img::after{
         position: absolute;
         width: 0;
-        height: 0;
-        
+        height: 0;        
     }
-    .backgroundCover{
+    .background-cover-header{
         position: relative;
         background-image: url('https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/85240841_2892567020796099_125429988689182720_o.jpg?_nc_cat=105&_nc_sid=a61e81&_nc_ohc=GRySwZG7C00AX9NzVL-&_nc_ht=scontent.fhan5-6.fna&oh=6a7e94b9ce6eeba47e342257fb68a35f&oe=5EF562A8');
         height:350px;
@@ -71,7 +70,19 @@
         background-size: cover;
     
     }
-    
+.para-header-s{
+    width: 1200px;
+     margin: 0 auto; 
+}
+.information-img-reposive{
+    width: 300px;
+    height: 350px;
+}
+.information-img-reposive::after{
+    position: absolute;
+    width: 0;
+    height: 0;        
+}
 /* .menu-cont{
     width: calc(100% - 900px);
     height: 350px;
@@ -92,17 +103,53 @@
     background-color: #F5F5F5;
 } */
 @media(max-width:1200px){
-    .informationImg{
+    .para-header-s{
+        width: 900px;
+    }
+    .information-img{
         display: none;
     }
-    .triangleImg{
+    .triangle-img{
         display: none;
+    }
+    .reponsive-header{
+        width: 100%;
+    }
+    .information-img-reposive{
+        width: 100%;
+        height: 150px;
     }
 }
-@media (max-width: 992px){
-    
-    .backgroundCover{
+@media all and (max-width: 992px){ 
+    /* .page-header{
         width: 700px;
-        height: 250px;
+    } */
+    .para-header-s{
+        width: 100%;
+    } 
+    .background-cover-header{
+        width: 100%;
+        height:350px;
+    }
+}
+/* iphone 5/SE */
+@media all and (max-width:320px){
+    .background-cover-header{
+        width: 100%;
+        height:114px;
+    }
+}
+/* iphone X */
+@media (min-width:321px) and (max-width:375px){
+    .background-cover-header{
+        width: 100%;
+        height:132px;
+    }
+}
+/* iphone 6/7/8 */
+@media (min-width:376px) and (max-width: 480px){
+    .background-cover-header{
+        width: 100%;
+        height:145px;
     }
 }

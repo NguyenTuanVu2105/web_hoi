@@ -21,7 +21,7 @@
   }
 }
 .sideBarClose:hover{
-    border: 1px solid red;
+    border: 1px solid #ff3333;
 }
 .sideBarClose{
     background-color: white;
@@ -29,33 +29,31 @@
     
 }
 .sideBarOpen{
-    /* position: fixed;
-    border: none;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    z-index: 11;
-    border: 1px solid white; */
-
     position: fixed;
     border: none;
     display: inline-block;
     padding: 8px 16px;
-    /* vertical-align: middle; */
-    /* overflow: hidden; */
-    /* text-decoration: none; */
-    /* text-align: center; */
     cursor: pointer;
-    /* white-space: nowrap; */
     z-index: 11;
-    border: 1px solid white;
 
 }
 .sideBarOpen:hover{
-    border: 1px solid blueviolet;
+  background-color: #ff3333;
+  color: white;
+}
+.logo-page-blood{
+  margin: 0 auto;
+  height:215px;
+  width: 85%;  
+  background-position: center;
+  background-size: cover;
+  .logo-image {
+     width: 100%; 
+     height: auto;       
+  }
+}
+@media (min-width: 993px){
+  .sideBar{
+      display: none!important;
+  }  
 }

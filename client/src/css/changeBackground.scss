@@ -1,4 +1,4 @@
-.addBackground{
+.add-background{
     background-color: white;
     height: 32px;
     border: 1px solid #696969;
@@ -6,7 +6,7 @@
     border-radius: 4px;
     margin-bottom: 10px;
 }
-.addBackground:hover{
+.add-background:hover{
     border: 1px solid red;
     color: #696969;
     box-shadow: 1px 1px red;
@@ -42,10 +42,16 @@
         background: white;
         border: none;
         border: 1px solid rgba(0, 0, 0, 0.65);
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .button-remove:hover{
-        color: blue !important;
-        text-decoration: underline !important;
+        color: white !important;
+        background-color: #ff3333;
+        border: 1px solid #ff3333;
     }
 }
 .modal-button-remove{
