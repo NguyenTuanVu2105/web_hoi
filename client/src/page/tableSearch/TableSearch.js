@@ -1,16 +1,19 @@
 import React, {  useState, useContext, useEffect } from 'react'
-import HomepageContext from "../context/HomepageContext"
+import HomepageContext from "../../context/HomepageContext"
 import { Table } from 'antd'
 import '../css/TableSearch.css'
 import { Modal, Button, Radio, Form, notification } from 'antd'
 import { Select } from 'antd'
+import {regionList} from '../../Component/regionList'
 // import { TableSearchList, CheckBoxLeft, CheckBoxRight } from '../Component/TableSearchList'
 import { Input } from 'antd'
-import { getTableMember, addNewMember } from '../api/base/tablesearch'
-import { getClubAll } from '../api/base/admin'
-import { getPosition, getSpecialized } from '../api/base/consernposition'
-import ChangeInfUser from '../Component/ChangeInfUser'
-import TableSearchMember from '../Component/TableSearchMember'
+import { getTableMember, addNewMember } from '../../api/base/tablesearch'
+import { getUnitAll } from '../../api/base/unit'
+import { getClubAll } from '../../api/base/admin'
+import { getPosition, getSpecialized } from '../../api/base/consernposition'
+import ChangeInfUser from '../../Component/ChangeInfUser'
+import TableSearchMember from '../../Component/TableSearchMember'
+import {_} from 'lodash'
 const { Column } = Table
 const { Option } = Select
 
@@ -18,6 +21,7 @@ const TableSearch = (props) => {
   const { getFieldDecorator } = props.form
   const [table, setTable] = useState([])
   const [club, setClub] = useState([])
+  const [unit, setUnit] = useState([])
   const [position, setPosition] = useState([])
   const [specialized, setSpecialized] = useState([])
   const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
@@ -37,16 +41,26 @@ const TableSearch = (props) => {
     }
   }
 
-  const fetchDataClub = async () => {
-    const result = await getClubAll()
+  const fetchDataUnit = async () => {
+    const result = await getUnitAll()
     if (result.data.success) {
-      setClub(result.data.data)
+      setUnit(result.data.data)
     }
   }
 
   const fetchData = async (page) => {
     setLoading(true)
-    const result = await getTableMember(page)
+    const result = await getTableMember(page, {hovaten: '', nhommau: '', quequan: '', ngaysinh: '', clubId: '', branchId: ''})
+    setLoading(false)
+    if (result.data.success) {
+      setTable(result.data.data)
+      setTotal(result.data.total)
+    }
+  }
+
+  const fetchDataSearch = async (page, data) => {
+    setLoading(true)
+    const result = await getTableMember(page, data)
     setLoading(false)
     if (result.data.success) {
       setTable(result.data.data)
@@ -55,9 +69,10 @@ const TableSearch = (props) => {
   }
 
   useEffect(() => {
+    console.log(_.pickBy({ a: null, b: 1, c: undefined }, _.identity))
     fetchDataPosition()
     fetchDataSpecialized()
-    fetchDataClub()
+    fetchDataUnit()
     fetchData(1)
     setNameMap({
       ['/']: 'Trang chủ',
@@ -73,6 +88,10 @@ const TableSearch = (props) => {
     setVisible(true)
   };
 
+  const mapClub = branchId => {
+    setClub(unit.find(x => x.id === branchId).clubs)
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
     props.form.validateFields(async (err, values) => {
@@ -85,6 +104,7 @@ const TableSearch = (props) => {
           notification['success']({
             message: 'Thêm thành công thành viên ' + values.hovaten
           })
+          fetchData(page)
         } else {
           notification['error']({
             message: 'Thêm không thành công'
@@ -261,7 +281,16 @@ const TableSearch = (props) => {
       }
     }
   }]
-
+  const onSearchSubmit = e => {
+    e.preventDefault()
+    props.form.validateFields( async (err, values) => {
+      console.log('ada')
+      if (!err) {
+        console.log(values)
+        // fetchDataSearch(page, _.pickBy(values, _.identity))
+      }
+    })
+  }
   return (
     <div className="para searchItem">
       <div className='row menuFM' >
@@ -376,7 +405,81 @@ const TableSearch = (props) => {
 
         
         {/* =====Tìm kiếm===== */}
-        <TableSearchMember data={table}/>
+        {/* <TableSearchMember data={table}/> */}
+        
+        <Form className='menuSearch' onSubmit={onSearchSubmit}>
+            <Form.Item>
+                <div style={{width: 1000}}>
+                  {getFieldDecorator('hovaten')(
+                      <Input
+                        showSearch
+                        placeholder="Họ và tên..."
+                        style={{ width: '24%', height: 30, marginLeft: 5, marginBottom:7 }}
+                      ></Input>
+                  )}
+                    
+                </div>
+                <div>
+                    {/* ======que quan====== */}
+                    {getFieldDecorator('quequan')(
+                      <Select
+                          showSearch
+                          placeholder="Quê quán"
+                          style={{ width: '24%', height: 30, marginLeft: 5, textAlign:"center" }}
+                          filterOption={(input, option) =>
+                              option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                          }
+                      >
+                          {regionList.map((region) => (
+                              <Option style={{ textAlign: "center" }} key={region.name} >{region.name}</Option>
+                          ))}
+
+                      </Select>
+                    )}
+                    
+                    {/* ======Năm sinh====== */}
+
+                    {getFieldDecorator('ngaysinh')(
+                        <Input
+                            showSearch
+                            placeholder="Năm sinh"
+                            style={{ width: '24%', height: 30, marginLeft: 5 }}
+                            
+                        >
+
+                        </Input>
+                    )}
+
+                    {getFieldDecorator('nhommau')(
+                        <Select style={{ width: '15%', height: 30, marginLeft: 5, marginBottom:7 }} onChange={handleChange}>
+                            <Option style={{ textAlign: "center" }} value="default">Nhóm máu</Option>
+                            <Option style={{ textAlign: "center" }} value="O">O</Option>
+                            <Option style={{ textAlign: "center" }} value="A">A</Option>
+                            <Option style={{ textAlign: "center" }} value="B">B</Option>
+                            <Option style={{ textAlign: "center" }} value="AB">AB</Option>
+                        </Select>
+                    )}
+
+                    {getFieldDecorator('branchId')(
+                        <Select onChange={mapClub} placeholder="Mã Chi Hội" style={{ width: '15%', height: 30, marginLeft: 5, marginBottom:7 }}>
+                            {unit.map(unit => (
+                                <Option style={{ textAlign: "center" }} value={unit.id} key={unit.id}>{unit.Machihoi}</Option>
+                            ))}
+                        </Select>
+                    )}
+
+                    {getFieldDecorator('clubId')(
+                        <Select placeholder="Tên đội" style={{ width: '30%', height: 30, marginLeft: 5, marginBottom:7 }}>
+                            {club.map(club => (
+                                <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                            ))}
+                        </Select>
+                    )}
+                    
+                    <Button className='buttonSearch' htmlType='submit'><i className="fa fa-search"></i></Button>
+                </div>
+            </Form.Item>
+        </Form>
 
       </div>
       
