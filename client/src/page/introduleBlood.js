@@ -45,14 +45,15 @@ const IntroduleBlood = () => {
                 {
                     introduleBloodList.map((label, index) => (
                         <div key={"i-" + index} className="list-name-intro">
-                            <span key={"span-" + index} className="span-label">{label.span}</span>
-                            <Input
+                            <span key={"span-0" + index} className="span-label">{label.span}</span>
+                            <span key={"input-1" + index} style={{ width: "auto", height:30, lineHeight:'30px', color: "#ff4d4d"}}>{label.name}</span>
+                            {/* <Input
                                 key={"input-" + index}
                                 type="text"
                                 style={{ width: "auto", backgroundColor: "white", color: "#ff4d4d", border: "none", borderRadius: 0 }}
                                 disabled={changeInput}
                                 defaultValue={label.name}
-                            />
+                            /> */}
                         </div>
                     ))
                 }
