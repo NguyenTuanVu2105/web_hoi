@@ -163,6 +163,7 @@ exports.LeaderAssociation = (req, res) => {
     })
 }
 exports.Search = (req, res) => {
+    console.log(req.body)
     if( req.query.hovaten == null 
         && req.query.nhommau == null 
         && req.query.quequan ==null
@@ -190,6 +191,7 @@ exports.Search = (req, res) => {
                     }]
             }]
         }).then(information => {
+            console.log(information)
             res.status(200).send({success: true, data: information})
         }).catch(err => {
             res.status(500).send({success: false, message: err})
@@ -202,10 +204,10 @@ exports.Search = (req, res) => {
         Ngaysinh:  Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('Ngaysinh')), req.query.namsinh),
     }
     var json2 = {
-        id:  req.query.id,
+        Tendoi:  req.query.tendoi,
     }
     var json3 = {
-        id:   req.query.id,
+        Tenchihoi:   req.query.tenchihoi,
     }
     var json4 = {
         Truong:  {[Op.like]: '%' + req.query.truong + '%'},
