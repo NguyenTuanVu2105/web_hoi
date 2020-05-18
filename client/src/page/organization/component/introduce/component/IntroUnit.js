@@ -3,7 +3,7 @@ import {Input} from 'antd';
 const IntroUnit = () =>{
     return(
         <div>
-            <span className="spanLabel">Kết quả hoạt động:</span>
+            <span className="span-label">Kết quả hoạt động:</span>
             <div className="para-intro-s">
             <div className="border-intro">
                 <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
@@ -55,7 +55,7 @@ const IntroUnit = () =>{
             </div>
             </div>
 
-            <span className="spanLabel">Khen thưởng:</span>
+            <span className="span-label">Khen thưởng:</span>
             <div className="para-intro-s">
             <div className="border-intro">
                 <div className="row-intro" style={{borderBottom:"1px solid #a9a9a9"}}>
