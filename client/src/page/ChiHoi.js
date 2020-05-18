@@ -1,11 +1,11 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
-import '../css/AddUnit.css'
+import './organization/component/unit/UnitDetail.css'
 import { getUser, checkAuth } from '../api/auth/auth'
 import { getClub } from '../api/base/club'
 import { Button, Input, Form, } from 'antd';
 import { useParams } from 'react-router-dom';
-import IntroUnit from '../Component/introUnit'
+import IntroUnit from './organization/component/introduce/component/IntroUnit'
 const ChiHoi = (props) => {
 
     const [changeInput, setchangeInput] = useState(true)
@@ -34,9 +34,9 @@ const ChiHoi = (props) => {
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',
-            ['/OrganizationalRecords']: 'Hồ sơ tổ chức',
-            ['/introduleBlood']: 'Giới thiệu về Hội',
-            ['/AddUnit']: 'Hồ sơ đơn vị(Chi Hội)'
+            ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
+            ['/gioi-thieu-ve-hoi']: 'Giới thiệu về Hội',
+            ['/ho-so-chi-hoi']: 'Hồ sơ đơn vị(Chi Hội)'
         })
     }, [])
     const handleUp = () => {

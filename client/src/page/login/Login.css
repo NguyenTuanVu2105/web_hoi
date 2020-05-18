@@ -1,0 +1,198 @@
+.login-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  } 
+  .login-wrap .login-form {
+      width: 400px;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 1;
+      position: absolute;
+    }
+  
+  .login-form-button {
+  width: 100%;
+  }
+.backgroundSignIn{
+  background-image: url("./img/backgroundlogo.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.backgroundOpacity{
+  background-color: black;
+  opacity: .3;
+  height: 254px;
+  width: 400px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  border-radius: 10px;
+}
+.quenDoiMK{
+  color: #ffffff !important;
+}
+.quenDoiMK:hover{
+  color: blueviolet !important;
+}
+.divMK{
+  text-align: center;
+}
+.backgroundBlack{
+  position: absolute;
+  z-index: 2;
+  background-color: rgb(0, 0, 0,0.6);
+}
+.setvisible{
+  width: 350px;
+  background: rgba(255, 255, 255);
+  border-radius: 10px;
+}
+  .khungChua{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex;
+    justify-content: space-between;
+  }
+    .setClose{
+      border: none;
+      background-color: white;
+      font-size: 20px;
+      border-radius: 25%;
+    }
+    .setClose:hover{
+      color: rgb(24, 144, 255);
+    }
+
+  .setEmail{
+    background: rgba(255, 255, 255, 0.6);
+    width: 90%;
+    border: 1px solid #e9ecef;
+    margin-left: 5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    height: 40px;
+    padding-left: 15px;
+  }
+  .setEmail:hover{
+    border: 1px solid rgb(24, 144, 255);
+  }
+  .Gui{
+    width: 25%;
+    border: 1px solid #e9ecef;
+    margin-left: 70%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    font-weight: 500 !important;
+  }
+  .Gui:hover{
+    border: 1px solid rgb(24, 144, 255);
+    color: rgb(24, 144, 255);
+  }
+@media (max-width:992px){
+  .backgroundSignIn{
+    background-image: none;
+    background-color: #ff4d4d;
+  }
+  
+}
+@media (max-width:600px){
+  .login-wrap .login-form{
+    width: 95%;
+    padding: 0;
+  }
+  .setvisible{
+    width: 320px;
+  }
+}
+
+body{
+  background-size: cover;
+}
+.test {
+  background: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+}
+.para-e{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.hihi{
+  display: block;
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  background-color: white;
+  border-radius: 3%;
+  z-index: 1;
+}
+
+.circle-blood{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  width: 100%;
+  height: 100px;
+  border-radius: 50%;
+}
+.circle-blood .mau{
+  /* background-image: url("logo-02.png"); */
+  background-position: center;
+  background-size: cover;
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 70px;
+  height: 70px;
+}
+.sign-in-form{
+  padding: 0 20px;
+}
+.child-form{
+  display: flex;
+  border: 1px solid red;
+  border-radius: 5px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+.child-form .child-input{
+  border: none;
+  line-height: 30px;
+  width: 97%;
+  padding-left: 15px;
+}
+.child-form .child-input:focus{
+  border-radius: 5px;
+  border-color: white !important;
+}
+.child-form button{
+  color: white;
+  font-size: 22px;
+  width: 100%;
+  background-color: rgb(8, 91, 139);
+  border: none;
+}
+.child-form .icon-fa{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.unknown-name{
+  display: flex;
+  justify-content: space-evenly;
+}
+input:focus{
+  outline-offset: 0 !important;
+}
