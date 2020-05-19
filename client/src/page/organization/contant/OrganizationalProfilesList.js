@@ -14,7 +14,7 @@ export const OrganizationalProfilesList = [
             },
             {
                 name : "Lãnh đạo qua các thời kỳ",
-                href : "/TeamLeader",
+                href : "/lanh-dao-qua-cac-thoi-ky",
                 id: 'teamleader'
             },
             // Chưa có module báo cáo công tác hội
