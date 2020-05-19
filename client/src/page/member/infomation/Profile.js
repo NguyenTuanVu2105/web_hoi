@@ -209,11 +209,9 @@ function ProFileLeft(props) {
                         </fieldset>
                     </Form.Item>
                     <div className="DIVprofile">
-                        {/* <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a> */}
                         <Form.Item>
                             <Button className="buttonProfile" type="primary" htmlType="submit">Lưu thay đổi</Button>
                         </Form.Item>
-                        {/* <button className="buttonProfile">Hủy</button> */}
                     </div>
 
                 </div>
