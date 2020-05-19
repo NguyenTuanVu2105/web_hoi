@@ -52,13 +52,16 @@ function LearningAndActivities(props) {
         paddingLeft: '15px'
     }
     return (
-        <div className="para">
+        <div className="para-learning-and-activities">
             <Form onSubmit={handleSubmit}>
-                <div>
-                    <h3>Học tập</h3>
+                <div className="paren-body-LAA">
+                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px'}}>
+                        <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>HỌC TẬP</span>
+                    </div>
+                    
                     <Form.Item>
                         <form action="" method="post" className="">
-                            <div className="row">
+                            <div >
                                 <div className="DIV-learn">
                                     <label className="label_LAA">Trường:</label>
                                     {getFieldDecorator('truong', {
@@ -80,6 +83,7 @@ function LearningAndActivities(props) {
                                     )} <br />
                                 </div>
                             </div>
+                            <div>
                             <fieldset className="fieldset-LAA">
                                 <legend className="legendA">Khen thưởng:</legend>
                                 <div className="table-LA">
@@ -203,137 +207,16 @@ function LearningAndActivities(props) {
                                     </div>
                                 </div>
                             </fieldset>
-                            {/* <fieldset>
-                                <legend className="legendA">Khen thưởng:</legend>
-                                <table style={{ width: '100%' }}>
-                                    <tr className='row '>
-                                        <th className='col-4'>Năm học</th>
-                                        <th className='col-4'>Kỳ học</th>
-                                        <th className='col-4'>Lý do khen thưởng</th>
-                                    </tr>
-                                    <tr className='row'>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_namhoc_mot', {
-                                                initialValue: leact.HT_Namhoc_Mot
-                                            })(
-                                                <Input type="text" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_kihoc_mot', {
-                                                initialValue: leact.HT_Kihoc_Mot
-                                            })(
-                                                <Input type="number" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_lydo_mot', {
-                                                initialValue: leact.HT_Lydo_Mot
-                                            })(
-                                                <TextArea rows="1" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                    </tr>
-                                    <tr className='row'>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_namhoc_hai', {
-                                                initialValue: leact.HT_Namhoc_Hai
-                                            })(
-                                                <Input type="text" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_kihoc_hai', {
-                                                initialValue: leact.HT_Kihoc_Hai
-                                            })(
-                                                <Input type="number" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_lydo_hai', {
-                                                initialValue: leact.HT_Lydo_Hai
-                                            })(
-                                                <TextArea rows="1" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                    </tr>
-                                    <tr className='row'>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_namhoc_ba', {
-                                                initialValue: leact.HT_Namhoc_Ba
-                                            })(
-                                                <Input type="text" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_kihoc_ba', {
-                                                initialValue: leact.HT_Kihoc_Ba
-                                            })(
-                                                <Input type="number" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_lydo_ba', {
-                                                initialValue: leact.HT_Lydo_Ba
-                                            })(
-                                                <TextArea rows="1" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                    </tr>
-                                    <tr className='row'>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_namhoc_bon', {
-                                                initialValue: leact.HT_Namhoc_Bon
-                                            })(
-                                                <Input type="text" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_kihoc_bon', {
-                                                initialValue: leact.HT_Kihoc_Bon
-                                            })(
-                                                <Input type="number" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_lydo_bon', {
-                                                initialValue: leact.HT_Lydo_Bon
-                                            })(
-                                                <TextArea rows="1" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                    </tr>
-                                    <tr className='row'>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_namhoc_nam', {
-                                                initialValue: leact.HT_Namhoc_Nam
-                                            })(
-                                                <Input type="text" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_kihoc_nam', {
-                                                initialValue: leact.HT_Kihoc_Nam
-                                            })(
-                                                <Input type="number" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                        <th className='col-4'>
-                                            {getFieldDecorator('learn_lydo_nam', {
-                                                initialValue: leact.HT_Lydo_Nam
-                                            })(
-                                                <TextArea rows="1" className="input_LAA1" />
-                                            )}
-                                        </th>
-                                    </tr>
-                                </table>
-                            </fieldset> */}
+                            </div>
+                            
                         </form>
                     </Form.Item>
                 </div>
-                <div>
-                    <h3>Hoạt động</h3>
-                    <div className="row">
+                <div className="paren-body-LAA">
+                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px',marginBottom: 10}}>
+                        <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>HOẠT ĐỘNG</span>
+                    </div>
+                    <div style={{display:"flex",flexWrap:"wrap"}}>
                         <div className="col12">
                             <label className="label_information">Trực thuộc chi Hội:</label><br />
                             <label className="label_information">Trực thuộc Đội:</label><br />
