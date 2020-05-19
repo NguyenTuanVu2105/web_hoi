@@ -83,7 +83,7 @@ function LearningAndActivities(props) {
                                     )} <br />
                                 </div>
                             </div>
-                            <div>
+                            <div className="scroll-view">
                             <fieldset className="fieldset-LAA">
                                 <legend className="legendA">Khen thưởng:</legend>
                                 <div className="table-LA">
@@ -231,7 +231,7 @@ function LearningAndActivities(props) {
 
                     <Form.Item>
 
-
+                        <div className="scroll-view">                                 
                         <fieldset className="fieldset-LAA">
                             <legend className="legendA">Khen thưởng:</legend>
                             <div className="table-LA">
@@ -355,7 +355,7 @@ function LearningAndActivities(props) {
                                 </div>
                             </div>
                         </fieldset>
-
+                        </div>  
                         {/* <fieldset>
                             <legend className="legendA">Khen thưởng:</legend>
                             <table style={{ width: '100%' }}>
@@ -485,7 +485,7 @@ function LearningAndActivities(props) {
                 </div>
                 <div className="Div-LAA">
                     <Form.Item>
-                        <Button className="button-LAA" type="primary" htmlType="submit">Submit</Button>
+                        <Button className="button-LAA" type="primary" htmlType="submit">Lưu thay đổi</Button>
                     </Form.Item>
                 </div>
             </Form>
