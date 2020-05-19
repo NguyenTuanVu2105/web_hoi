@@ -58,9 +58,9 @@ function ProFileLeft(props) {
     //nhóm máu
     const { Option } = Select;
     return (
-        <div>
+        <div className="para-profile-member">
             <Form onSubmit={handleSubmit} className="row">
-                <div className="profileForMobile">
+                <div className="profileForMobile-1">
                     <InformationUser image={user.Image} file={file} setFile={setFile} sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} giotmau={user.specialized} />
                     <Form.Item action="" method="post" className="information"  style={{marginBottom:0}}>
                         <fieldset>
@@ -137,7 +137,7 @@ function ProFileLeft(props) {
                         </fieldset>
                     </Form.Item>
                 </div>
-                <div className="profileForMobile">
+                <div className="profileForMobile-2">
                     <Form.Item action="" method="post" className="information" style={{marginBottom:0}}>
                         <fieldset>
                             <legend className="legendA">Đơn vị công tác</legend>

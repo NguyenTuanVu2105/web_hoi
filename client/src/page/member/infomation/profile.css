@@ -1,4 +1,7 @@
-
+.para-profile-member{
+    width: 1100px;
+    margin: 0 auto;
+}
 .buttonProfile{
     background-color: white !important;
     border-radius: 5px !important;
@@ -19,10 +22,13 @@
     justify-content: flex-end;
     margin-top: 15px;
 }
-.profileForMobile{
-    width: 41.66%;
-    margin-left: 4%;
+.profileForMobile-1{
+    width: 48%;
     margin-right: 4%;
+}
+.profileForMobile-2{
+    width: 48%;
+    margin-top: 2px;
 }
 .doiMK{
     height: fit-content;
@@ -31,12 +37,23 @@
 .doiMK:hover{
     color: rgb(240, 27, 27) !important;
 }
-
+@media (min-width:993px) and (max-width:1200px){
+    .para-profile-member{
+        width: 96%;
+    }
+}
 @media (max-width: 992px){
-    .profileForMobile{
-        width: 83.33%;
-        margin-left: 8.33%;
+    .para-profile-member{
+        width: 100%;
+    }
+    .profileForMobile-1{
+        width: 90%;
+        margin-left: 5%;
     }   
+    .profileForMobile-2{
+        width: 90%;
+        margin-left: 5%;
+    }
     .label_information{
         font-size: 13px;
     }
