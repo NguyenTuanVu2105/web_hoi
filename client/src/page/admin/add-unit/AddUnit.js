@@ -72,64 +72,66 @@ const AddUnit = (props) => {
     }, [])
 
     return (
-        <div className="para">
-            <div className=' row changeAUDUnit'>
+        <div className="para-add-unit">
+            <div className='change-div-AU'>
                 <div className="ButtonForMobile">
                     <button className="buttonD" onClick={() => setName(true)}>Chi Hội</button>
                     <button className="buttonD" onClick={() => setName(false)}>Đội</button>
                 </div>
             </div>
-            <div className="para" style={{ display: name ? 'block' : 'none' }}>
+            <div className="paren-body-AU" style={{ display: name ? 'block' : 'none' }}>
                 <Form onSubmit={handleSubmitUnit}>
                     <Form.Item>
-                        <h4>Chi Hội</h4>
-                        <div>
-                            <span className="spanLabel">Đơn vị:</span>
+                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px'}}>
+                        <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>CHI HỘI</span>
+                    </div>
+                        <div style={{padding: "0px 20px 0px 20px"}}>
+                            <span className="span-label-AU">Đơn vị:</span>
                             {getFieldDecorator('tenchihoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Mã Đơn vị:</span>
+                            <span className="span-label-AU">Mã Đơn vị:</span>
                             {getFieldDecorator('machihoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Địa chỉ:</span>
+                            <span className="span-label-AU">Địa chỉ:</span>
                             {getFieldDecorator('diachi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
+                            <span className="span-label-AU">Đơn vị trực thuộc quản lý:</span>
                             {getFieldDecorator('donviql')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
+                            <span className="span-label-AU">Phụ trách đơn vị hiện tại:</span>
                             {getFieldDecorator('phutrach')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Năm thành lập:</span>
+                            <span className="span-label-AU">Năm thành lập:</span>
                             {getFieldDecorator('ngaythanhlap')(
-                                <Input type="number" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="number" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Ngày truyền thống:</span>
+                            <span className="span-label-AU">Ngày truyền thống:</span>
                             {getFieldDecorator('ngaytruyenthong')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Số cơ sở trực thuộc chi Hội:</span>
+                            <span className="span-label-AU">Số cơ sở trực thuộc chi Hội:</span>
                             {getFieldDecorator('csthuochoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
                         </div>
-                        <div>
-                            <span className="spanLabel">Thành viên hiện tại: </span>
+                        <div  style={{padding: "0px 20px 0px 20px"}}>
+                            <span className="span-label-AU">Thành viên hiện tại: </span>
                         </div>
-                        <div className="unit-table-infor">
+                        <div style={{width:"100%",padding: "0px 20px 0px 20px"}}>
+                        <div className="unit-table-infor" style={{width:"100%"}}>
                             <div className="unit-column-infor">
                                 <div className="unit-div-infor">
                                     <div className="unit-div1-infor">
                                         <span className="unit-span-infor">Cảm tình viên</span>
                                     </div>
                                     <div className="unit-div2-infor">
-
                                         {getFieldDecorator('camtinhvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -141,7 +143,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('tnv')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -153,7 +155,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('hoivien')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -168,7 +170,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('huongdanvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
                                     </div>
                                 </div>
@@ -179,7 +181,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('huanluyenvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -191,67 +193,73 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('canbotangcuong')(
-                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
+                        </div>
+                        <div style={{padding: "0px 20px 0px 20px"}}>
+                        <span className="span-label-AU">Điểm hiến máu thường xuyên tổ chức:</span>
                         {getFieldDecorator('diemhienmau')(
-                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                         )} <br />
-                        <span className="spanLabel">Kết quả hoạt động:</span>
+                        <span className="span-label-AU">Kết quả hoạt động:</span>
                         {getFieldDecorator('ketquahoatdong')(
-                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                         )}
+                        </div>
+                        
                         <div className="buttonSubmitForMobile">
                             <Button className="buttonS" type="primary" htmlType="submit">Thêm mới</Button>
                         </div>
                     </Form.Item>
                 </Form>
-
-            </div>
-            <div className="para" style={{ display: name ? 'none' : 'block' }}>
+            </div>{/* chi hội */}
+            
+            <div className="paren-body-AU" style={{ display: name ? 'none' : 'block' }}>
                 <Form onSubmit={handleSubmitClub}>
                     <Form.Item>
-                        <h4>Đội</h4>
-                        <div>
-                            <span className="spanLabel">Đơn vị:</span>
+                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px'}}>
+                        <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>ĐỘI</span>
+                    </div>
+                        <div style={{padding: "0px 20px 0px 20px"}}>
+                            <span className="span-label-AU">Đơn vị:</span>
                             {getFieldDecorator('tenhoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Mã Đơn vị:</span>
+                            <span className="span-label-AU">Mã Đơn vị:</span>
                             {getFieldDecorator('madoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Địa chỉ:</span>
+                            <span className="span-label-AU">Địa chỉ:</span>
                             {getFieldDecorator('diachi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
+                            <span className="span-label-AU">Đơn vị trực thuộc quản lý:</span>
                             {getFieldDecorator('donviql')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
+                            <span className="span-label-AU">Phụ trách đơn vị hiện tại:</span>
                             {getFieldDecorator('phutrach')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Năm thành lập:</span>
+                            <span className="span-label-AU">Năm thành lập:</span>
                             {getFieldDecorator('ngaythanhlap')(
-                                <Input type="number" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="number" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
-                            <span className="spanLabel">Ngày truyền thống:</span>
+                            <span className="span-label-AU">Ngày truyền thống:</span>
                             {getFieldDecorator('ngaytruyenthong')(
-                                <Input type="date" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="date" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
                         </div>
-                        <div>
-                            <span className="spanLabel">Thành viên hiện tại: </span>
+                        <div style={{padding: "0px 20px 0px 20px"}}>
+                            <span className="span-label-AU">Thành viên hiện tại: </span>
                         </div>
-                        <div className="unit-table-infor">
+                        <div style={{width:"100%",padding: "0px 20px 0px 20px"}}>
+                        <div className="unit-table-infor" style={{width:"100%"}}>
                             <div className="unit-column-infor">
                                 <div className="unit-div-infor">
                                     <div className="unit-div1-infor">
@@ -260,7 +268,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('camtinhvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -272,7 +280,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('tnv')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -284,7 +292,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('hoivien')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -299,7 +307,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('huongdanvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -311,7 +319,7 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('huanluyenvien')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
@@ -323,13 +331,15 @@ const AddUnit = (props) => {
                                     <div className="unit-div2-infor">
 
                                         {getFieldDecorator('canbotangcuong')(
-                                            <Input type="number" min="0" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                            <Input type="number" min="0" style={{ width: "60%", height: 31, backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                                         )}
 
                                     </div>
                                 </div>
                             </div>{/*unit-column-infor*/}
                         </div>{/*---------------unit-table-infor-------------------------*/}
+                        </div>
+                        <div style={{padding: "0px 20px 0px 20px"}}>
                         <div>
                             {getFieldDecorator('branchId', {
                                 rules: [{
@@ -345,14 +355,16 @@ const AddUnit = (props) => {
                             )}
                         </div>
 
-                        <span className="spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
+                        <span className="span-label-AU">Điểm hiến máu thường xuyên tổ chức:</span>
                         {getFieldDecorator('diemhienmau')(
-                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                         )} <br />
-                        <span className="spanLabel">Kết quả hoạt động:</span>
+                        <span className="span-label-AU">Kết quả hoạt động:</span>
                         {getFieldDecorator('ketquahoatdong')(
-                            <Input type="text" style={{ width: "60%", backgroundColor: "white", color: "red", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                            <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                         )}
+                        </div>
+                        
                         <div className="buttonSubmitForMobile">
                             <Button className="buttonS" type="primary" htmlType="submit">Thêm mới</Button>
                         </div>
