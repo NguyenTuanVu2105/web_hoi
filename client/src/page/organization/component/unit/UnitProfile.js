@@ -39,7 +39,7 @@ const UnitProfile = () =>{
         })
     }, [])
     return(
-        <div className="para">
+        <div className="para-unit-profile">
             {
                 unit.map((search,index) =>(
                     <div key={"U-"+index}>                       
