@@ -84,6 +84,12 @@ function AdminLA(props) {
                                     })(
                                         <Input type="text" className="input_LAA2" />
                                     )} <br />
+                                    <label className="label_LAA">GPA:</label>
+                                    {getFieldDecorator('gpa', {
+                                        initialValue: leact.GPA
+                                    })(
+                                        <Input type="text" className="input_LAA2" />
+                                    )} <br />
                                 </div>
                             </div>
                             <fieldset>

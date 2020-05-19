@@ -68,6 +68,8 @@ module.exports = function(app) {
 
     app.get('/api/learnactivity/view', [authJwt.verifyToken], learnactivity.getLearnActivity)
 
+    app.get('/api/activity/view', [authJwt.verifyToken], learnactivity.getActivity)
+
     app.post('/api/learnactivity/edit', [authJwt.verifyToken], learnactivity.editLearnActivity)
 
     app.get('/api/admin/la/view', [authJwt.verifyToken, authJwt.checkRoles], learnactivity.getLearnActivityAdmin)

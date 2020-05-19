@@ -33,6 +33,13 @@ export const getLearnActivity = () => {
   })
 }
 
+export const getActivity = () => {
+  return createAuthApiRequest({
+    url: `/api/activity/view`,
+    method: 'get'
+  })
+}
+
 export const editLearnActivity = (data) => {
   return createAuthApiRequest({
     url: `/api/learnactivity/edit`,

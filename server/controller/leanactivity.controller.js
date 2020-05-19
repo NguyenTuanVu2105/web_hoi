@@ -1,6 +1,10 @@
 const db = require('../config/db.config')
-const Member    = db.member
-const School    = db.school
+const Member        = db.member
+const School        = db.school
+const Club          = db.club
+const Position      = db.position
+const Specialized   = db.specialized
+const Branch        = db.branch
 
 exports.getLearnActivity = (req, res) => {
     Member.findOne({
@@ -22,6 +26,35 @@ exports.getLearnActivity = (req, res) => {
     })
 }
 
+exports.getActivity = (req, res) => {
+    Member.findOne({
+        where: {
+            userId :req.userId
+        },
+        attributes: ['NgayvaoHoi', 'TinhtrangHD'],
+        include: [{
+            model: Position,
+            attributes: ['Chucvu']
+        }, {
+            model: Specialized,
+            attributes: ['Bacchuyenmon']
+        }, {
+            model: Club,
+            attributes: ['Tendoi'],
+            include: [{
+                model: Branch,
+                attributes: ['Tenchihoi']
+            }]
+        }]
+    }).then(information => {
+        res.status(200).send({success: true, data: {NgayvaoHoi: information.NgayvaoHoi, TinhtrangHD: information.TinhtrangHD,
+        Bacchuyenmon: information.specialized.Bacchuyenmon, Chucvu: information.position.Chucvu,
+        Tendoi: information.club.Tendoi, Tenchihoi: information.club.branch.Tenchihoi}})
+    }).catch(err => {
+        res.status(500).send({success: true, message: err})
+    })
+}
+
 exports.editLearnActivity = (req,res) =>{
     Member.findOne({
         where: {
@@ -38,6 +71,7 @@ exports.editLearnActivity = (req,res) =>{
                     Truong:             req.body.truong,
                     Lop:                req.body.lop,
                     Nganh:              req.body.nganh,
+                    GPA:                req.body.gpa,
                     HT_Namhoc_Mot:      req.body.learn_namhoc_mot,
                     HT_Kihoc_Mot:       req.body.learn_kihoc_mot,
                     HT_Lydo_Mot:        req.body.learn_lydo_mot,
@@ -79,6 +113,7 @@ exports.editLearnActivity = (req,res) =>{
                     Truong:             req.body.truong,
                     Lop:                req.body.lop,
                     Nganh:              req.body.nganh,
+                    GPA:                req.body.gpa,
                     HT_Namhoc_Mot:      req.body.learn_namhoc_mot,
                     HT_Kihoc_Mot:       req.body.learn_kihoc_mot,
                     HT_Lydo_Mot:        req.body.learn_lydo_mot,
@@ -146,6 +181,7 @@ exports.editLearnActivityAdmin = (req,res) =>{
                 Truong:             req.body.truong,
                 Lop:                req.body.lop,
                 Nganh:              req.body.nganh,
+                GPA:                req.body.gpa,
                 HT_Namhoc_Mot:      req.body.learn_namhoc_mot,
                 HT_Kihoc_Mot:       req.body.learn_kihoc_mot,
                 HT_Lydo_Mot:        req.body.learn_lydo_mot,
@@ -187,6 +223,7 @@ exports.editLearnActivityAdmin = (req,res) =>{
                 Truong:             req.body.truong,
                 Lop:                req.body.lop,
                 Nganh:              req.body.nganh,
+                GPA:                req.body.gpa,
                 HT_Namhoc_Mot:      req.body.learn_namhoc_mot,
                 HT_Kihoc_Mot:       req.body.learn_kihoc_mot,
                 HT_Lydo_Mot:        req.body.learn_lydo_mot,
