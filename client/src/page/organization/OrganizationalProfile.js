@@ -25,7 +25,7 @@ const OrganizationalProfile = () =>{
     }, [])
 
     return(
-        <div className = "para">
+        <div className = "para-organizational">
             {
                 OrganizationalProfilesList.map((label, index) =>(
                     <div key={"OR"+index} className = "divBody">
