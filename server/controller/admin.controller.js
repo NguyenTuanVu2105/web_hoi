@@ -326,7 +326,7 @@ exports.BranchClubInformation = (req, res) => {
         include: 
         [{
             model: Club,
-            attributes: ['Madoi', 'Tendoi']
+            attributes: ['id', 'Madoi', 'Tendoi', 'branchId']
         }]
     }).then(information => {
         res.status(200).send({success: true, data: information})

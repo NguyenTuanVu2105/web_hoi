@@ -1,19 +1,19 @@
-import HomePage from '../page/HomePage';
-import ProFileLeft from "../page/ProFile";
-import LearningAndActivities from "../page/learningAndActivities";
-import SearchUnit from '../page/SearchUnit';
-import TeamLeader from '../page/TeamLeader';
-import AddUnit from '../page/AddUnit'
-import OrganizationalRecords from '../page/organizationlRecords/OrganizationalRecords'
-import TableSearch from '../page/TableSearch'
-import signIn from '../page/signIn'
-import AUDUnit from '../page/AUDUnit'
-import introduleBlood from '../page/introduleBlood'
-import introduleBloodDisplay from '../page/introduleBloodDisplay'
-import HistoryBlood from '../page/HistoryBlood'
-import ChangeBackground from '../page/ChangeBackground'
+import HomePage from '../page/homepage/HomePage';
+import ProFileLeft from "../page/member/infomation/Profile";
+import LearningAndActivities from "../page/member/learning-activity/LearningAndActivities";
+import UnitProfile from '../page/organization/component/unit/UnitProfile';
+import TeamLeader from '../page/organization/component/leader/TeamLeader';
+import AddUnit from '../page/organization/component/unit/UnitDetail'
+import OrganizationalProfile from '../page/organization/OrganizationalProfile'
+import TableSearch from '../page/admin/search-member/MemberSearch'
+import signIn from '../page/login/Login'
+import AUDUnit from '../page/admin/add-unit/AddUnit'
+import introduleBlood from '../page/organization/component/introduce/IntroduceBlood'
+import introduleBloodDisplay from '../page/organization/component/introduce/component/IntroduleBloodDisplay'
+import HistoryBlood from '../page/organization/component/history/HistoryBlood'
+import ChangeBackground from '../page/admin/change-background/ChangeBackground'
 import ChiHoi from '../page/ChiHoi'
-import ResetPassword from '../Component/ResetPassword'
+import ResetPassword from '../page/reset-password/ResetPassword'
 const routes = [
     {
         path: "/login",
@@ -34,67 +34,68 @@ const routes = [
                 component: ProFileLeft,
             },
             {
-                path: "/profile",
+                path: "/ho-so-ca-nhan",
                 exact: true,
                 component: ProFileLeft,
             },
             {
-                path: "/learn",
+                path: "/hoc-tap-va-hoat-dong",
                 exact: true,
                 component: LearningAndActivities,
             },
             {
-                path: "/SearchUnit",
+                path: "/ho-so-don-vi",
                 exact: true,
-                component: SearchUnit,
+                component: UnitProfile,
             },
             {
-                path: "/TeamLeader",
+                
+                path: "/lanh-dao-qua-cac-thoi-ky",
                 exact: true,
                 component: TeamLeader,
             },
             {
-                path: "/OrganizationalRecords",
+                path: "/ho-so-to-chuc",
                 exact: true,
-                component: OrganizationalRecords,
+                component: OrganizationalProfile,
             },
             {
-                path: `/AddUnit/:madoi`,
+                path: `/ho-so-doi-mau/:madoi`,
                 exact: true,
                 component: AddUnit,
             },
             {
-                path: "/TableSearch",
+                path: "/tra-cuu-thanh-vien",
                 exact: true,
                 component: TableSearch,
             },
             {
-                path: "/AUDUnit",
+                path: "/them-don-vi",
                 exact: true,
                 component: AUDUnit,
             },
             {
-                path: "/introduleBlood",
+                path: "/gioi-thieu-ve-hoi",
                 exact: true,
                 component: introduleBlood,
             },
             {
-                path: "/introduleBloodDisplay",
+                path: "/gioi-thieu-ve-hoi-chi-tiet",
                 exact: true,
                 component: introduleBloodDisplay,
             },
             {
-                path: "/HistoryBlood",
+                path: "/lich-su-hoi",
                 exact: true,
                 component: HistoryBlood,
             },
             {
-                path: "/ChangeBackground",
+                path: "/thay-doi-background",
                 exact: true,
                 component: ChangeBackground,
             },
             {
-                path: `/ChiHoi/:machihoi`,
+                path: `/ho-so-chi-hoi/:machihoi`,
                 exact: true,
                 component: ChiHoi,
             }
