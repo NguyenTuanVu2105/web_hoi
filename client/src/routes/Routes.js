@@ -21,7 +21,7 @@ const routes = [
         component: signIn
     },
     {
-        path: "/ResetPassword",
+        path: "/cap-nhat-mat-khau/:token",
         exact: true,
         component: ResetPassword
     },

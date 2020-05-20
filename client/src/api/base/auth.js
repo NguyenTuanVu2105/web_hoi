@@ -28,3 +28,11 @@ export const changepassword = (data) => {
         data: data
     })
 }
+
+export const checkToken = (token) => {
+    return createApiRequest({
+        url: '/api/token/check',
+        method: 'post',
+        data: {token}
+    })
+}
