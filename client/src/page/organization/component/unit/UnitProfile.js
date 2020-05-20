@@ -50,6 +50,20 @@ const UnitProfile = () =>{
                         </a>
                         <div id={search.Machihoi} className="panel-collapse collapse">
                             <ul className="list-group">
+                                <li key={"C-1"} className="list-group-blood-item">
+                                    <div style={{width:"100%"}}>
+                                        <Link className="list-items-a"  
+                                            to = {{
+                                                pathname:`/ho-so-chi-hoi/${search.Machihoi}`
+                                            }}> Giới thiệu về {search.Tenchihoi}
+                                            <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
+                                                <i className="fa fa-caret-right" style={{fontSize :"20px"}}/>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul className="list-group">
                                 {
                                     search.clubs.map((child,index) =>(
                                         <li key={"C-"+index} className="list-group-blood-item">
