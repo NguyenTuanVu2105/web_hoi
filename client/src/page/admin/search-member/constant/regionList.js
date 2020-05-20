@@ -1,5 +1,6 @@
 export const regionList = [
     { name: 'Hồ Chí Minh' },
+    { name: "Hà Nội" },
     { name: 'Đà Nẵng' },
     { name: 'Đồng Nai' },
     { name: "Bình Dương" },
