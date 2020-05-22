@@ -59,7 +59,7 @@ const LoginWrap = (props) => {
   const [open, setOpen] = useState(false)
   const { getFieldDecorator } = props.form;
   return (
-    <div>
+    <div className="para-login-form">
       <div style={{ display: isLoading ? 'block' : 'none' }}>
         <Loading />
       </div>
@@ -80,8 +80,11 @@ const LoginWrap = (props) => {
           </div>{/*setvisible*/}
         </div>
 
-
+        
         <Form onSubmit={handleSubmit} className="login-form">
+        <div className="logo-login-s">
+          <img className="logo-img-login" src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=YsYvls0vHNEAX8kPRUG&_nc_ht=scontent.fhan5-1.fna&oh=26e30a6e4672bee0555faccebaf06682&oe=5EED719B"></img>
+        </div>
           {message && <Alert style={{ marginBottom: '20px' }} message={message} type="error" />}
           <Form.Item>
             {getFieldDecorator('username', {
@@ -98,6 +101,7 @@ const LoginWrap = (props) => {
               rules: [{ required: true, message: 'Please input your Password!' }],
             })(
               <Input
+                style={{backgroundColor:"white !important"}}
                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                 type="password"
                 placeholder="Password"
@@ -105,9 +109,9 @@ const LoginWrap = (props) => {
             )}
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
-                </Button>
+            <Button type="primary" htmlType="submit" className="login-form-button button-login-form-s">
+              Login
+            </Button>
           </Form.Item>
           <div className="divMK">
             <a className="quenDoiMK" onClick={() => setOpen(true)}>Quên mật khẩu</a>
