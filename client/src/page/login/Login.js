@@ -64,7 +64,6 @@ const LoginWrap = (props) => {
         <Loading />
       </div>
       <div className="login-wrap backgroundSignIn">
-        {/* <div className="backgroundOpacity"></div> */}
         <div className="backgroundBlack" style={{ display: open ? 'block' : 'none' }}>
           <div className="setvisible" >
             <div className="row khungChua">
@@ -83,7 +82,7 @@ const LoginWrap = (props) => {
         <div className="information-login-s">
           <div style={{margin:"0 auto"}}>
             <div style={{color:"white", fontSize:40,fontWeight:700,fontFamily: "sans-serif",textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
-            <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Hiến máu cứu người, một nghĩa cử cao đẹp</div>
+            <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Hiến giọt máu đào, trao đời sự sống</div>
           </div>
         </div>
         <Form onSubmit={handleSubmit} className="login-form">
