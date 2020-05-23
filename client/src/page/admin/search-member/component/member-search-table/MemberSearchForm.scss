@@ -33,15 +33,17 @@
             }
         }
         .menuSearch{
-            width: 95%;
-            margin-right: 0;
-            margin-left: 0;
+            width: 100%;
+            //margin-right: 0;
+            //margin-left: 0;
+            display: flex;
+            padding: 0 15px;
         }
     }
 }
-    // .div1 
-    // .div1 
-    //     .div1 .formSearch 
-    //         .div1 .formSearch .divA 
-    //         .div1 .formSearch .divA 
-    //     .div1 .formSearch 
+    // .div1
+    // .div1
+    //     .div1 .formSearch
+    //         .div1 .formSearch .divA
+    //         .div1 .formSearch .divA
+    //     .div1 .formSearch

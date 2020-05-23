@@ -8,7 +8,7 @@ import { Button,  Input, Form, notification } from 'antd'
 
 const UnitDetail = (props) => {
     const { getFieldDecorator } = props.form
-    let { madoi } = useParams()
+    const { madoi } = useParams()
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [changeInput, setchangeInput] = useState(true)
     // const [changeButton, setchangeButton] = useState(false)
@@ -211,87 +211,9 @@ const UnitDetail = (props) => {
                                 )}
                                 </div>
                             </div>
-                        </div>{/*unit-column-infor*/}
-                    </div>{/*---------------unit-table-infor-------------------------*/}
+                        </div>
+                    </div>
 
-                    {/* <div className='row rowTable'>
-                        <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
-                            <tr>
-                                <th>
-                                    Cảm tình viên
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('camtinhvien', {
-                                    initialValue: club.Camtinhvien
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Tình nguyện viên
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('tnv', {
-                                    initialValue: club.TNV
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Hội viên
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('hoivien', {
-                                    initialValue: club.Hoivien
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}
-                                </th>
-                            </tr>
-                        </table>
-                        <table className='col-4 tableAddUnit' border={'1px'} cellPadding={'2px'}>
-                            <tr>
-                                <th>
-                                    Hướng dẫn viên/Cán bộ tăng cường
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('huongdanvien', {
-                                    initialValue: club.Huongdanvien
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Huấn luyện viên
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('huanluyenvien', {
-                                    initialValue: club.Huanluyenvien
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}       
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    Cán bộ
-                                </th>
-                                <th className="inputTH">
-                                {getFieldDecorator('canbotangcuong', {
-                                    initialValue: club.Canbotangcuong
-                                })(
-                                    <Input type="number" min="0" style={{width:70, color:"red", border:"none", backgroundColor:"white" }} disabled={changeInput} />
-                                )}
-                                </th>
-                            </tr>
-                        </table>
-                    </div>            */}
                     <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
                     {getFieldDecorator('ketquahoatdong', {
                         initialValue: club.Ketquahoatdong

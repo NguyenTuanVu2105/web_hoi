@@ -22,8 +22,9 @@ module.exports = function(app) {
 
     app.post('/api/forgetpassword', usercontroller.ForgetPassword)
 
-    app.post('/api/newpassword',[authJwt.verifyToken, verifySignUp.checkPassword], usercontroller.NewPassword)
+    app.post('/api/newpassword',[verifySignUp.checkPassword], usercontroller.NewPassword)
 
+    app.post('/api/token/check', usercontroller.checkToken)
     //member
     app.post('/api/admin/information/add',[authJwt.verifyToken], membercontroller.AddProfile)
 
@@ -67,6 +68,8 @@ module.exports = function(app) {
     //learning and activities
 
     app.get('/api/learnactivity/view', [authJwt.verifyToken], learnactivity.getLearnActivity)
+
+    app.get('/api/activity/view', [authJwt.verifyToken], learnactivity.getActivity)
 
     app.post('/api/learnactivity/edit', [authJwt.verifyToken], learnactivity.editLearnActivity)
 

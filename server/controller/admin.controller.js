@@ -13,16 +13,16 @@ exports.ViewMemberInformation = (req, res) => {
     limit = 10
     queryMember = {}
     if (req.query.hovaten) {
-        queryMember['Hovaten'] = {[Op.like]: '%' + req.query.hovaten + '%'}
+        queryMember['Hovaten'] = {[Op.like]: `%` + req.query.hovaten + `%`}
     }
     if (req.query.nhommau) {
         queryMember['Nhommau'] = req.query.nhommau
     }
     if (req.query.quequan) {
-        queryMember['Quequan'] = {[Op.like]: '%' + req.query.quequan + '%'}
+        queryMember['Quequan'] = {[Op.like]: `%` + req.query.quequan + `%`}
     }
     if (req.query.ngaysinh) {
-        queryMember['Ngaysinh'] = {[Op.like]: '%' + req.query.ngaysinh + '%'}
+        queryMember['Op.and'] = db.Sequelize.where(db.Sequelize.fn('YEAR', db.Sequelize.col('ngaysinh')), req.query.ngaysinh)
     }
     if (req.query.clubId) {
         queryMember['clubId'] = req.query.clubId

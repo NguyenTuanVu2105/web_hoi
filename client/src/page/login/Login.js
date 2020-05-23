@@ -44,17 +44,21 @@ const LoginWrap = (props) => {
     });
   }
   const handleForget = async () => {
+    setIsLoading(true)
     const { success, data } = await forgetpassword({ username: idForget })
+
     if (success) {
       notification['success']({
-        message: 'Vui lòng vào gmail và làm theo hướng dẫn để nhận mật khẩu mới ',
+        message: 'Yêu cầu quên mật khẩu đã được gửi. Vui lòng vào mail đã đăng ký để xem chi tiết ',
       })
+      setOpen(false)
     }
     else {
       notification['error']({
         message: 'Bạn đã nhập ID sai. Vui lòng nhập lại',
       })
     }
+    setIsLoading(false)
   }
   const [open, setOpen] = useState(false)
   const { getFieldDecorator } = props.form;

@@ -143,7 +143,7 @@ exports.DeleteBackground = (req,res) =>{
 
 }
 var x = '!!!!!!';
-var j = schedule.scheduleJob({hour: 11, minute: 58, dayOfWeek: 0}, function DeleteImageSystem(){
+var j = schedule.scheduleJob({hour: 3, minute: 30, dayOfWeek: 0}, function DeleteImageSystem(){
     LogImage.findAll({}).then(data =>{
         const host = `${process.env.SERVER_HOST}/api/background`
         data.map(y => {
@@ -162,13 +162,3 @@ var j = schedule.scheduleJob({hour: 11, minute: 58, dayOfWeek: 0}, function Dele
         })      
     })
 }.bind(null,x));
-// function initSchedule(argument, callback) {
-//     const jobSchedule = nodeSchedule.scheduleJob(schedule, (argumentToPass => {
-//        callback(argumentToPass);
-//      }).bind(null, argument));
-//    }
-//    function myNamedFunction(myArgument) {
-//      // do something with job
-//    }
-   
-//    initSchedule(myArgument, myNamedFunction);
