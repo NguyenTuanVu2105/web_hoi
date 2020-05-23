@@ -49,7 +49,9 @@ const MemberSearchForm = (props) => {
         })
     }
     const mapClub = branchId => {
-        setClub(unit.find(x => x.id === branchId).clubs)
+        if (branchId) {
+            setClub(unit.find(x => x.id === branchId).clubs)
+        }
     }
     return (
         <Form className='menuSearch' onSubmit={onSearchSubmit}>
@@ -76,6 +78,7 @@ const MemberSearchForm = (props) => {
                                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                                 }
                             >
+                                <Option style={{ textAlign: "center" }} value="">Quê quán</Option>
                                 {regionList.map((region) => (
                                     <Option style={{ textAlign: "center" }} key={region.name}>{region.name}</Option>
                                 ))}
@@ -102,7 +105,7 @@ const MemberSearchForm = (props) => {
                         {getFieldDecorator('nhommau')(
                             <Select style={{ width: '100%', height: 32 }}
                                 onChange={handleChange} placeholder="Nhóm máu">
-                                <Option style={{ textAlign: "center" }} value="default">Nhóm máu</Option>
+                                <Option style={{ textAlign: "center" }} value="">Nhóm máu</Option>
                                 <Option style={{ textAlign: "center" }} value="O">O</Option>
                                 <Option style={{ textAlign: "center" }} value="A">A</Option>
                                 <Option style={{ textAlign: "center" }} value="B">B</Option>
@@ -116,6 +119,7 @@ const MemberSearchForm = (props) => {
                         {getFieldDecorator('branchId')(
                             <Select onChange={mapClub} placeholder="Mã Chi Hội"
                                 style={{ width: '100%', height: 32 }}>
+                                <Option style={{ textAlign: "center" }} value="">Mã chi hội</Option>
                                 {unit.map(unit => (
                                     <Option style={{ textAlign: "center" }} value={unit.id}
                                         key={unit.id}>{unit.Machihoi}</Option>
@@ -128,6 +132,7 @@ const MemberSearchForm = (props) => {
                         {getFieldDecorator('clubId')(
                             <Select placeholder="Tên đội"
                                 style={{ width: '100%', height: 32 }}>
+                                <Option style={{ textAlign: "center" }} value="">Tên đội</Option>
                                 {club.map(club => (
                                     <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
                                 ))}

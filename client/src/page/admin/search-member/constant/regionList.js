@@ -1,5 +1,4 @@
 export const regionList = [
-    {name: "Quê quán"},
     { name: 'Hồ Chí Minh' },
     { name: "Hà Nội" },
     { name: 'Đà Nẵng' },
