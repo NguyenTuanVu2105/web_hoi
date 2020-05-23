@@ -42,7 +42,7 @@ console.log(inf)
                   <div className="information-img" style={{ backgroundColor: `${inf.Maunen}` }}>
                     <div>
                       <label name="time" className="label-header" style={{ color: `${inf.Mauchu}` }}>Tên chương trình:</label><br />
-                      <label name="name" className="label-header" style={{ color: `${inf.Mauchu}`, fontSize: 26 }}> <a href={inf.Linkanh} style={{ color: `${inf.Mauchu}` }} target="blank">{inf.Tenchuongtrinh}</a></label><br />
+                      <label name="name" className="label-header" style={{ color: `${inf.Mauchu}`, fontSize: 24 }}> <a href={inf.Linkanh} style={{ color: `${inf.Mauchu}` }} target="blank">{inf.Tenchuongtrinh}</a></label><br />
                       <label name="time" className="label-header" style={{ color: `${inf.Mauchu}` }}>Ngày diễn ra: <label style={{fontWeight:500}}>{inf.Ngaydienra}</label></label><br />
                       <label name="place" className="label-header" style={{ color: `${inf.Mauchu}` }}>Địa điểm tổ chức: <label style={{fontWeight:500}}>{inf.Diadiem}</label></label><br />
                     </div>

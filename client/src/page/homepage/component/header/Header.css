@@ -1,3 +1,6 @@
+.react-slideshow-container{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+}
 .page-header{
     width: 100%;
     display: flex;
@@ -11,7 +14,7 @@
     }
     .information-img{
         width: 300px;
-        height: 350px;
+        height: 300px;
     }
         .label-header{
             margin-left: 15px;
@@ -51,8 +54,8 @@
         opacity: .9;
         width: 0;
         height: 0;
-        border-bottom: 175px solid transparent;
-        border-top: 175px solid transparent;
+        border-bottom: 150px solid transparent;
+        border-top: 150px solid transparent;
         position: absolute;
         z-index: 1;
     }
@@ -64,19 +67,20 @@
     .background-cover-header{
         position: relative;
         background-image: url('https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/85240841_2892567020796099_125429988689182720_o.jpg?_nc_cat=105&_nc_sid=a61e81&_nc_ohc=GRySwZG7C00AX9NzVL-&_nc_ht=scontent.fhan5-6.fna&oh=6a7e94b9ce6eeba47e342257fb68a35f&oe=5EF562A8');
-        height:350px;
-        width: 900px;
+        height:300px;
+        width: 800px;
         background-position: center;
         background-size: cover;
     
     }
 .para-header-s{
-    width: 1200px;
-     margin: 0 auto; 
+    width: 1100px;
+    margin: 0 auto; 
+    /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19); */
 }
 .information-img-reposive{
     width: 300px;
-    height: 350px;
+    height: 300px;
 }
 .information-img-reposive::after{
     position: absolute;
@@ -104,7 +108,7 @@
 } */
 @media(max-width:1200px){
     .para-header-s{
-        width: 900px;
+        width: 815px;
     }
     .information-img{
         display: none;
