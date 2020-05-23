@@ -1,18 +1,18 @@
-import React, {useState, useEffect, useContext} from 'react'
-import {Button, Form, Input, notification, Select} from 'antd'
+import React, { useState, useEffect, useContext } from 'react'
+import { Button, Form, Input, notification, Select } from 'antd'
 import './MemberSearchForm.scss'
 import { getClubAll } from '../../../../../api/base/admin'
 import { getUnitAll } from '../../../../../api/base/unit'
-import {regionList} from "../../constant/regionList";
+import { regionList } from "../../constant/regionList";
 import HomepageContext from "../../../../../context/HomepageContext";
 import _ from 'lodash'
-import {dataSearchDefault} from "../../constant/searchDefault";
+import { dataSearchDefault } from "../../constant/searchDefault";
 
 const MemberSearchForm = (props) => {
     const { setLoading } = useContext(HomepageContext)
     const { Option } = Select
-    const {getFieldDecorator} = props.form
-    const {setDataSearch, searchMember} = props
+    const { getFieldDecorator } = props.form
+    const { setDataSearch, searchMember } = props
     const [club, setClub] = useState([])
     function handleChange(value) {
         console.log(`selected ${value}`)
@@ -20,9 +20,9 @@ const MemberSearchForm = (props) => {
     const fetchDataClub = async () => {
         const result = await getClubAll()
         if (result.data.success) {
-          setClub(result.data.data)
+            setClub(result.data.data)
         }
-      }
+    }
     const [unit, setUnit] = useState([])
     const fetchData = async () => {
         const result = await getUnitAll()
@@ -33,7 +33,7 @@ const MemberSearchForm = (props) => {
     useEffect(() => {
         fetchData()
         fetchDataClub()
-        
+
     }, [])
 
     const onSearchSubmit = async e => {
@@ -54,77 +54,90 @@ const MemberSearchForm = (props) => {
     return (
         <Form className='menuSearch' onSubmit={onSearchSubmit}>
             <Form.Item>
-                <div style={{width: 1000}}>
-                    {getFieldDecorator('hovaten')(
-                        <Input
-                            showSearch
-                            placeholder="Họ và tên..."
-                            style={{width: '24%', height: 30}}
-                        ></Input>
-                    )}
-
-                </div>
-                <div>
+                <div className="row-search-1">
+                    {/* ======ho va ten====== */}
+                    <div className="search-hovaten-s">
+                        {getFieldDecorator('hovaten')(
+                            <Input
+                                showSearch
+                                placeholder="Họ và tên..."
+                                style={{ width: '100%', height: 32 }}
+                            ></Input>
+                        )}
+                    </div>
                     {/* ======que quan====== */}
-                    {getFieldDecorator('quequan')(
-                        <Select
-                            showSearch
-                            placeholder="Quê quán"
-                            style={{width: '24%', height: 30}}
-                            filterOption={(input, option) =>
-                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
-                            {regionList.map((region) => (
-                                <Option style={{textAlign: "center"}} key={region.name}>{region.name}</Option>
-                            ))}
+                    <div className="search-quequan-s">
+                        {getFieldDecorator('quequan')(
+                            <Select
+                                showSearch
+                                placeholder="Quê quán"
+                                style={{ width: '100%', height: 32 }}
+                                filterOption={(input, option) =>
+                                    option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                }
+                            >
+                                {regionList.map((region) => (
+                                    <Option style={{ textAlign: "center" }} key={region.name}>{region.name}</Option>
+                                ))}
 
-                        </Select>
-                    )}
-
+                            </Select>
+                        )}
+                    </div>
                     {/* ======Năm sinh====== */}
+                    <div className="search-ngaysinh-s">
+                        {getFieldDecorator('ngaysinh')(
+                            <Input
+                                showSearch
+                                placeholder="Năm sinh"
+                                style={{ width: '100%', height: 32 }}
+                            >
 
-                    {getFieldDecorator('ngaysinh')(
-                        <Input
-                            showSearch
-                            placeholder="Năm sinh"
-                            style={{width: '24%', height: 30}}
-                        >
+                            </Input>
+                        )}
+                    </div>
+                </div>
+                <div className="row-search-2">
+                    {/* ======Nhóm máu====== */}
+                    <div className="search-nhommau-s">
+                        {getFieldDecorator('nhommau')(
+                            <Select style={{ width: '100%', height: 32 }}
+                                onChange={handleChange} placeholder="Nhóm máu">
+                                <Option style={{ textAlign: "center" }} value="default">Nhóm máu</Option>
+                                <Option style={{ textAlign: "center" }} value="O">O</Option>
+                                <Option style={{ textAlign: "center" }} value="A">A</Option>
+                                <Option style={{ textAlign: "center" }} value="B">B</Option>
+                                <Option style={{ textAlign: "center" }} value="AB">AB</Option>
+                            </Select>
+                        )}
+                    </div>
 
-                        </Input>
-                    )}
-
-                    {getFieldDecorator('nhommau')(
-                        <Select style={{width: '15%', height: 30}}
-                                onChange={handleChange}>
-                            <Option style={{textAlign: "center"}} value="default">Nhóm máu</Option>
-                            <Option style={{textAlign: "center"}} value="O">O</Option>
-                            <Option style={{textAlign: "center"}} value="A">A</Option>
-                            <Option style={{textAlign: "center"}} value="B">B</Option>
-                            <Option style={{textAlign: "center"}} value="AB">AB</Option>
-                        </Select>
-                    )}
-
-                    {getFieldDecorator('branchId')(
-                        <Select onChange={mapClub} placeholder="Mã Chi Hội"
-                                style={{width: '15%', height: 30}}>
-                            {unit.map(unit => (
-                                <Option style={{textAlign: "center"}} value={unit.id}
+                    {/* ======ma chi hoi====== */}
+                    <div className="search-machihoi-s">
+                        {getFieldDecorator('branchId')(
+                            <Select onChange={mapClub} placeholder="Mã Chi Hội"
+                                style={{ width: '100%', height: 32 }}>
+                                {unit.map(unit => (
+                                    <Option style={{ textAlign: "center" }} value={unit.id}
                                         key={unit.id}>{unit.Machihoi}</Option>
-                            ))}
-                        </Select>
-                    )}
-
-                    {getFieldDecorator('clubId')(
-                        <Select placeholder="Tên đội"
-                                style={{width: '30%', height: 30}}>
-                            {club.map(club => (
-                                <Option style={{textAlign: "center"}} key={club.id}>{club.Tendoi}</Option>
-                            ))}
-                        </Select>
-                    )}
-
-                    <Button className='buttonSearch' htmlType='submit'><i className="fa fa-search"></i></Button>
+                                ))}
+                            </Select>
+                        )}
+                    </div>
+                    {/* ======ten doi====== */}
+                    <div className="search-tendoi-s">
+                        {getFieldDecorator('clubId')(
+                            <Select placeholder="Tên đội"
+                                style={{ width: '100%', height: 32 }}>
+                                {club.map(club => (
+                                    <Option style={{ textAlign: "center" }} key={club.id}>{club.Tendoi}</Option>
+                                ))}
+                            </Select>
+                        )}
+                        
+                    </div>
+                    <div className="search-search-s">
+                        <Button className='button-search-s' htmlType='submit' style={{border:"none"}}><i className="fa fa-search"></i></Button>
+                    </div>
                 </div>
             </Form.Item>
         </Form>
