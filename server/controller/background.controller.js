@@ -72,47 +72,32 @@ exports.SlideShowBackground = (req, res) => {
         res.status(500).send({message: err})
     })
 }
-exports.EditBackground = (req,res) =>{
-    const processedFile = req.file || {}
-    let orgName = processedFile.originalname || ''
-    orgName = orgName.trim().replace(/ /g, "-")
-    const fullPathInServ = processedFile.path
-    const newFullPath = `${fullPathInServ}-${orgName}`
-    fs.renameSync(fullPathInServ, newFullPath);
-    var fileString = path.basename(newFullPath)
-    var filePath = `${process.env.SERVER_HOST}/api/background/` + fileString
+exports.EditBackground = (req, res) =>{
     Background.findOne({
-        where:{id :parseInt(req.body.id)}
+        where: {
+            id : parseInt(req.body.id)
+        }
     }).then(background =>{
         if(!background)
-            res.status(500).send({message : err})
-        else 
-        {
-            const linkanh = {}
-            linkanh.Linkanh = background.Linkanh;
-
-            if(filePath != linkanh.Linkanh ){
-                new LogImage(linkanh).save()
-            }
-        Background.update({
+            res.status(500).send({success: false, message: err})
+        else {
+            Background.update({
                 Tenchuongtrinh :req.body.tenchuongtrinh,
                 Linkchuongtrinh :req.body.linkchuongtrinh,
-                Linkanh :filePath,
                 Ngaydienra :req.body.ngaydienra,
                 Ngayketthuc: req.body.ngayketthuc,
                 Diadiem: req.body.diadiem,
                 Maunen :req.body.maunen,
                 Mauchu :req.body.mauchu
-            },
-            {
-                where:{id :parseInt(req.body.id)}
-            })
-            .then(
+            }, {
+                where: {
+                    id : req.body.id
+                }
+            }).then(
                 res.status(200).send({success : true})
-            ).catch(err =>
-                {
-                    res.status(500).send({success: false, message: err})
-                })
+            ).catch(err => {
+                res.status(500).send({success: false, message: err})
+            })
         }
     }).catch(err => res.status(500).send({success: false, message: err}))
 }

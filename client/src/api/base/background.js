@@ -1,7 +1,7 @@
-import { createAuthApiRequest, uploadFileBackground } from "../index"
+import { createApiRequest, createAuthApiRequest, uploadFileBackground } from "../index"
 
 export const getSlideShowBackground = () => {
-  return createAuthApiRequest({
+  return createApiRequest({
     url: `/api/slideshowbackground`,
     method: 'get'
   })
@@ -14,8 +14,16 @@ export const getAllBackground = () => {
   })
 }
 
-export const getBackground = (fileName) => {
+export const editBackground = (data) => {
   return createAuthApiRequest({
+    url: `/api/editbackground`,
+    method: 'post',
+    data: data
+  })
+}
+
+export const getBackground = (fileName) => {
+  return createApiRequest({
     url: `/api/background/${fileName}`,
     method: 'get'
   })

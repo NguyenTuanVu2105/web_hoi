@@ -2,14 +2,14 @@ import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../../../context/HomepageContext";
 // import CBH from "../Component/CBH";
 import './changeBackground.scss'
-import { getAllBackground } from '../../../api/base/background'
+import { getAllBackground, uploadBackground, editBackground } from '../../../api/base/background'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { uploadBackground } from '../../../api/base/background'
-import { Form, Button, Input, notification, Upload, Icon, Modal } from 'antd'
+import { Form, Button, Input, notification, Upload, Icon, Modal, Spin } from 'antd'
 
 const ChangeBackground = (props) => {
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
     const [cover, setCover] = useState([])
+    const {page, setPage} = useState(1)
 
     const { getFieldDecorator } = props.form
     const [file, setFile] = useState({})
@@ -55,6 +55,28 @@ const ChangeBackground = (props) => {
         })
     }
 
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        props.form.validateFields(async (err, values) => {
+            if (!err) {
+                setLoading(true)
+                const { success } = await editBackground(values)
+                setLoading(false)
+                if (success) {
+                    notification['success']({
+                        message: 'Cập nhật thông tin background thành công!',
+                    })
+                    setOpenBack(false)
+                    
+                } else {
+                    notification['error']({
+                        message: 'Cập nhật thông tin background thất bại!',
+                    })
+                }
+            }
+        })
+    }
+
     useEffect(() => {
         fetchData()
         setNameMap({
@@ -69,6 +91,7 @@ const ChangeBackground = (props) => {
     //     arr.push(<CBH id={i} />)
     // }
     const [openBack, setOpenBack] = useState(false)
+
     const showModal = () => {
         setOpenBack(true)
     };
@@ -149,6 +172,9 @@ const ChangeBackground = (props) => {
 
             <InfiniteScroll
                 dataLength={cover.length}
+                // next = {() => setPage(page + 1)}
+                // hasMore
+                loader={<Spin style={{margin: 'auto 0', width: '100%'}} tip="Loading..."></Spin>}
             >
                 {
                     cover.map((data, index) => (
@@ -178,8 +204,11 @@ const ChangeBackground = (props) => {
                                                     <button type="button" className="close" data-dismiss="modal">&times;</button>
                                                 </div>
                                                 <div className="modal-body" style={{ paddingBottom: 0 }}>
-                                                    <Form onSubmit={handleSubmit}>
+                                                    <Form onSubmit={handleUpdate}>
                                                         <Form.Item>
+                                                            {getFieldDecorator('id', {
+                                                                initialValue: data.id
+                                                            })}
                                                             {getFieldDecorator('tenchuongtrinh', {
                                                                 initialValue: data.Tenchuongtrinh
                                                             })(
@@ -211,7 +240,7 @@ const ChangeBackground = (props) => {
                                                             {getFieldDecorator('maunen', {
                                                                 initialValue: data.Maunen
                                                             })(
-                                                                <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
+                                                                <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
                                                             )}<br />
                                                             <label className="change-color-header">Màu chữ: </label>
                                                             {getFieldDecorator('mauchu', {
@@ -219,22 +248,6 @@ const ChangeBackground = (props) => {
                                                             })(
                                                                 <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
                                                             )}<br />
-                                                            <Upload
-                                                                // link to upload
-                                                                customRequest={onChooseFile}
-                                                                // end
-                                                                accept={".png,.jpg,.jpeg"}
-                                                                multiple={false}
-                                                                fileList={[]}
-                                                            >
-                                                                <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}>
-                                                                    <label className="change-color-header">Tải ảnh lên: </label>
-                                                                    <button>
-                                                                        <Icon type="upload" /> Choose File
-                                                                    </button>
-                                                                    {nameFile}
-                                                                </div>
-                                                            </Upload>
                                                             <div className="modal-footer" style={{ paddingBottom: 0 }}>
                                                                 <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
                                                             </div>

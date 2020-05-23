@@ -45,15 +45,15 @@ module.exports = function(app) {
 		res.sendFile(path.resolve(`./images/${fileName}`))
     })
     // background
-    app.get('/api/viewbackground', backgroudcontroller.ViewBackground)
+    app.get('/api/viewbackground', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.ViewBackground)
 
     app.get('/api/slideshowbackground', backgroudcontroller.SlideShowBackground)
 
-    app.post('/api/editbackground', [imageUploader.single('linkanh')], backgroudcontroller.EditBackground)
+    app.post('/api/editbackground', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.EditBackground)
 
-    app.delete('/api/deletebackground', backgroudcontroller.DeleteBackground)
+    app.delete('/api/deletebackground', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.DeleteBackground)
 
-    app.post('/api/upload/background', [imageUploader.single('background')],backgroudcontroller.AddBackground)
+    app.post('/api/upload/background', [imageUploader.single('background'), authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.AddBackground)
 
     app.get('/api/background/:name', (req, res) => {
       const fileName = req.params.name
