@@ -204,8 +204,11 @@ const ChangeBackground = (props) => {
                                                         <button type="button" className="close" data-dismiss="modal">&times;</button>
                                                     </div>
                                                     <div className="modal-body" style={{ paddingBottom: 0 }}>
-                                                        <Form onSubmit={handleSubmit}>
+                                                        <Form onSubmit={handleUpdate}>
                                                             <Form.Item>
+                                                                {getFieldDecorator('id', {
+                                                                    initialValue: data.id
+                                                                })}
                                                                 {getFieldDecorator('tenchuongtrinh', {
                                                                     initialValue: data.Tenchuongtrinh
                                                                 })(
@@ -244,23 +247,7 @@ const ChangeBackground = (props) => {
                                                                     initialValue: data.Mauchu
                                                                 })(
                                                                     <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
-                                                                )}<br />
-                                                                <Upload
-                                                                    // link to upload
-                                                                    customRequest={onChooseFile}
-                                                                    // end
-                                                                    accept={".png,.jpg,.jpeg"}
-                                                                    multiple={false}
-                                                                    fileList={[]}
-                                                                >
-                                                                    <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: 10 }}>
-                                                                        <label className="change-color-header">Tải ảnh lên: </label>
-                                                                        <button>
-                                                                            <Icon type="upload" /> Choose File
-                                                                    </button>
-                                                                        {nameFile}
-                                                                    </div>
-                                                                </Upload>
+                                                                )}
                                                                 <div className="modal-footer" style={{ paddingBottom: 0 }}>
                                                                     <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
                                                                 </div>
