@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../../../context/HomepageContext";
 // import CBH from "../Component/CBH";
 import './changeBackground.scss'
-import { getAllBackground, uploadBackground, editBackground } from '../../../api/base/background'
+import {getAllBackground, uploadBackground, editBackground, deleteBackground} from '../../../api/base/background'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Form, Button, Input, notification, Upload, Icon, Modal, Spin } from 'antd'
 
@@ -29,8 +29,22 @@ const ChangeBackground = (props) => {
             }
         }
     }
-    const removeImg = () => {
-
+    const removeImg = async (id) => {
+        setLoading(true)
+        const resp = await deleteBackground(id)
+        if (resp.success) {
+            if (resp.data.success) {
+                notification['success']({
+                    message: 'Xóa thành công',
+                })
+                fetchData()
+            } else {
+                notification['error']({
+                    message: 'Xóa không thành công',
+                })
+            }
+        }
+        setLoading(false)
     }
     // sửa khi có bảng update sửa lại handlesubmit
     const handleSubmit = (e) => {
@@ -272,7 +286,7 @@ const ChangeBackground = (props) => {
                                                         <label className="change-color-header">Bạn có chắc muốn xóa background, hành động này không thể hoàn tác! </label>
                                                     </div>
                                                     <div className="modal-footer">
-                                                        <button type="button" className="modal-button-remove" onClick={removeImg}>Xóa</button>
+                                                        <button type="button" className="modal-button-remove" data-dismiss="modal" onClick={() => removeImg(data.id)}>Xóa</button>
                                                         <button type="button" className="modal-button-remove" data-dismiss="modal">Hủy</button>
                                                     </div>
                                                 </div>

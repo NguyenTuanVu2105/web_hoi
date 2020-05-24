@@ -28,7 +28,14 @@ export const getBackground = (fileName) => {
     method: 'get'
   })
 }
-  
+
+export const deleteBackground = (id) => {
+  return createAuthApiRequest({
+    url: `/api/deletebackground`,
+    method: 'delete',
+    data: {id}
+  })
+}
 export const uploadBackground = ({data, filename, file}, values) => {
   return uploadFileBackground('/api/upload/background', data, filename, file, values)
 }
