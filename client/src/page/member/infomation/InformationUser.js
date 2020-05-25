@@ -36,8 +36,8 @@ const InformationUser = (props) => {
         <div>
             {
                 <Form action="" method="post" className="information">
-                    <fieldset>
-                        <legend className="legendA">Thông tin cá nhân</legend>
+                    <div>
+                        <div id="thong-tin-ca-nhan" className="title-profile-s">Thông tin cá nhân</div>
                         <div className="bodyA">
                             <div className="avatarForMobile" id="image_infor" >
                                 <div className="avatar_profile" onMouseEnter={() => { setAnimateChangeAvatar(1) }} onMouseLeave={() => { setAnimateChangeAvatar(0) }}>
@@ -80,7 +80,7 @@ const InformationUser = (props) => {
                                 </Radio.Group>
                             </div>
                         </div>
-                    </fieldset>
+                    </div>
                 </Form>
             }
         </div>
