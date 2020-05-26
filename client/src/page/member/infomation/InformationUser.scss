@@ -52,7 +52,14 @@
     display: inline-block;
     text-align: end;
 }
-
+.label-profile-s-2{
+  text-align: end;
+  width: 32%;
+  padding-right: 10px;
+  color: #ff4d4d;
+  display: inline-block;
+  font-weight: 500;
+}
 
 .avatarForMobile{
     width: 25%;
@@ -60,6 +67,7 @@
 }
 .informationUserForMobile{
     width: 75%;
+    margin-top: 12px;
 }
 @media(max-width:1400px){
   .avatarForMobile{

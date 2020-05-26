@@ -50,11 +50,6 @@ function ProFileLeft(props) {
         })
     }, [])
 
-    const style = {
-        textAlign: 'end',
-        width: '32%'
-    }
-
     //nhóm máu
     const { Option } = Select;
     return (
@@ -67,44 +62,56 @@ function ProFileLeft(props) {
                         <div>
                             <div id="thong-tin-co-ban" className="title-profile-s">Thông tin cơ bản</div>
                             <div className="body-border-profile-s">
-                            <div>
-                                <label style={style} className="label-profile-s">CMND/CCCD/HC: </label>
+                            {/* <div> */}
+                                <div className="border-bottom-profile-s">
+                                <label className="label-profile-s">CMND/CCCD/HC: </label>
                                 {getFieldDecorator('cmtorhc', {
                                     initialValue: user.CMTorHC
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.CMTorHC} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Ngày cấp: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Ngày cấp: </label>
                                 {getFieldDecorator('ngaycap', {
                                     initialValue: user.Ngaycap
                                 })(
-                                    <Input type="date" className="input_information" />
+                                    <Input type="date" title={user.Ngaycap} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Nơi cấp: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Nơi cấp: </label>
                                 {getFieldDecorator('noicap', {
                                     initialValue: user.Noicap
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Noicap} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Điện thoại: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Điện thoại: </label>
                                 {getFieldDecorator('dienthoai', {
                                     initialValue: user.Dienthoai
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Dienthoai} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Link Facebook: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Link Facebook: </label>
                                 {getFieldDecorator('facebook', {
                                     initialValue: user.Facebook
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Facebook} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Địa chỉ Email: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Địa chỉ Email: </label>
                                 {getFieldDecorator('email', {
                                     initialValue: user.Email
                                 })(
-                                    <Input type="text" className="input_information" required/>
+                                    <Input type="text" title={user.Email} className=" input-profile-s-1" required/>
                                 )}
-                            </div>
+                                </div>
+                            {/* </div> */}
                             </div>
                         </div>
                     </Form.Item>
@@ -112,13 +119,16 @@ function ProFileLeft(props) {
                         <div>
                             <div id="hien-mau" className="title-profile-s">Hiến máu</div>
                             <div className="body-border-profile-s">
-                            <label style={style} className="label-profile-s">Số lần hiến máu: </label>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Số lần hiến máu: </label>
                             {getFieldDecorator('solanhm', {
                                 initialValue: user.SolanHM
                             })(
-                                <Input type="text" className="input_information" />
+                                <Input type="text" title={user.SolanHM} className=" input-profile-s-1" />
                             )}
-                            <label style={style} className="label-profile-s">Nhóm máu: </label>
+                            </div>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Nhóm máu: </label>
                             {getFieldDecorator('nhommau', {
                                 initialValue: user.Nhommau ? user.Nhommau : null
                             })(
@@ -128,8 +138,10 @@ function ProFileLeft(props) {
                                     <Option style={{ textAlign: "center" }} value="B">B</Option>
                                     <Option style={{ textAlign: "center" }} value="AB">AB</Option>
                                 </Select>
-                            )} <br />
-                            <label style={style} className="label-profile-s">Rh(D): </label>
+                            )}
+                            </div>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Rh(D): </label>
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
@@ -139,6 +151,7 @@ function ProFileLeft(props) {
                                 </Select>
                             )}
                             </div>
+                            </div>
                         </div>
                     </Form.Item>
                 </div>
@@ -147,58 +160,72 @@ function ProFileLeft(props) {
                         <div>
                             <div id="don-vi-cong-tac" className="title-profile-s">Đơn vị công tác</div>
                             <div className="body-border-profile-s">
-                                <label style={style} className="label-profile-s">Đơn vị học tập/Công tác: </label>
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Đơn vị học tập/Công tác: </label>
                                 {getFieldDecorator('donvi', {
                                     initialValue: user.Donvi
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Donvi} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Khoa/Đơn vị cụ thể: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Khoa/Đơn vị cụ thể: </label>
                                 {getFieldDecorator('donvicuthe', {
                                     initialValue: user.Donvicuthe
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Donvicuthe} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Đoàn viên/Đảng viên: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Đoàn viên/Đảng viên: </label>
                                 {getFieldDecorator('doanviendangvien', {
                                     initialValue: user.DoanvienDangvien
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.DoanvienDangvien} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Trình độ học vấn: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Trình độ học vấn: </label>
                                 {getFieldDecorator('trinhdohocvan', {
                                     initialValue: user.Trinhdohocvan
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Trinhdohocvan} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
                         </div>
                         <div>
                             <div id="dia-chi" className="title-profile-s">Địa chỉ</div>
                             <div className="body-border-profile-s">
-                                <label style={style} className="label-profile-s">Quê quán: </label>
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Quê quán: </label>
                                 {getFieldDecorator('quequan', {
                                     initialValue: user.Quequan
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Quequan} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label-profile-s">Nơi ở hiện nay: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Nơi ở hiện nay: </label>
                                 {getFieldDecorator('diachill', {
                                     initialValue: user.DiachiLL
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.DiachiLL} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
                         </div>
                         <div>
                             <div id="lien-he-nguoi-than" className="title-profile-s">Liên hệ người thân</div>
                             <div className="body-border-profile-s">
-                                <label style={style} className="label-profile-s">Địa chỉ liên hệ: </label>
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Địa chỉ liên hệ: </label>
                                 {getFieldDecorator('thongtinlienhegd', {
                                     initialValue: user.ThongtinlienheGD
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.ThongtinlienheGD} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
                         </div>
                     </Form.Item>
@@ -206,12 +233,14 @@ function ProFileLeft(props) {
                         <div>
                             <div id="ghi-chu-khac" className="title-profile-s">Ghi chú khác</div>
                             <div className="body-border-profile-s">
-                            <label style={style} className="label-profile-s">Ghi chú: </label>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Ghi chú: </label>
                             {getFieldDecorator('ghichukhac', {
                                 initialValue: user.Ghichukhac
                             })(
-                                <Input type="text" className="input_information" />
+                                <Input type="text" title={user.Ghichukhac} className=" input-profile-s-1" />
                             )}
+                            </div>
                             </div>
                         </div>
                     </Form.Item>

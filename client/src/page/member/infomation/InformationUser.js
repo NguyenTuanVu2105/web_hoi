@@ -68,12 +68,12 @@ const InformationUser = (props) => {
                                 </div>
                             </div>
                             <div className="informationUserForMobile">
-                                <label className="label_information2">Mã thành viên: </label> {sttv}<br />
-                                <label className="label_information2">Họ và tên: </label> {hovaten}<br />
+                                <label className="label-profile-s-2">Mã thành viên: </label> {sttv}<br />
+                                <label className="label-profile-s-2">Họ và tên: </label> {hovaten}<br />
                                 {/* <label className="label_information2">giotmau: </label> {giotmau}<br /> */}
-                                <label className="label_information2">Ngày sinh: </label>
+                                <label className="label-profile-s-2">Ngày sinh: </label>
                                 <input type="date" className="input_information2" defaultValue={ngaysinh} disabled={true} /><br />
-                                <label className="label_information2">Giới tính: </label>
+                                <label className="label-profile-s-2">Giới tính: </label>
                                 <Radio.Group disabled={true} value={gioitinh ? 1 : 2} name="radiogroup">
                                     <Radio value={1} style={{ marginLeft: '5px' }} className="radio_information"> Nam </Radio>
                                     <Radio value={2} className="radio_information"> Nữ </Radio>
