@@ -9,6 +9,7 @@ import { checkAuth } from '../../api/auth/auth';
 import Slideshow from './component/header/slideshowHeader';
 import Loading from './component/loading/Spin';
 import ChangePass from './component/change-password/ChangePass'
+import './Homepage.css'
 function HomePage(props) {
     const [nameMap, setNameMap] = useState({})
     if (!checkAuth()) {
@@ -39,7 +40,7 @@ function HomePage(props) {
                 }}>
                     <div className="content-right" >
                         <Slideshow/>
-                        <Breadcrumb style={{ paddingLeft: 25, paddingTop: 10 }}>{breadcrumb}</Breadcrumb>
+                        <Breadcrumb className="bread-crumb-s">{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         <ChangePass/>
                     </div>
