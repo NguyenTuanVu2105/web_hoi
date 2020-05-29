@@ -58,6 +58,17 @@ exports.ViewBackground = (req, res) => {
         res.status(500).send({message: err})
     })
 }
+exports.ViewOneBackground = (req, res) => {
+    Background.findOne({
+        where: {
+            id: req.query.backgroundId
+        }
+    }).then(information => {
+        res.status(200).send({success: true, data: information})
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
 
 exports.SlideShowBackground = (req, res) => {
     Background.findAll({

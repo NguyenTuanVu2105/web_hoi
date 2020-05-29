@@ -47,6 +47,8 @@ module.exports = function(app) {
     // background
     app.get('/api/viewbackground', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.ViewBackground)
 
+    app.get('/api/one/background', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.ViewOneBackground)
+
     app.get('/api/slideshowbackground', backgroudcontroller.SlideShowBackground)
 
     app.post('/api/editbackground', [authJwt.verifyToken, authJwt.checkRoles], backgroudcontroller.EditBackground)
