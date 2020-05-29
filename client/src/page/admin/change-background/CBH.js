@@ -1,6 +1,6 @@
 import React, { Component, useState, useContext } from 'react'
 import '../../homepage/component/header/Header.css'
-import { Form, Button, Input, notification, Upload, Icon } from 'antd'
+import { Form, Button, Input, notification, Upload, Icon,Modal } from 'antd'
 import { uploadBackground} from '../../../api/base/background'
 import HomepageContext from "../../../context/HomepageContext"
 
@@ -15,15 +15,15 @@ const CBH = (props) => {
         setNameFile(file.name)
     }
 
-    const changeBackgroudHeader = (event) => {
-        var target = event.target;
-        var name = target.name;
-        var value = target.value;
-        setInf({
-            ...inf,
-            [name]: value
-        })
-    }
+    // const changeBackgroudHeader = (event) => {
+    //     var target = event.target;
+    //     var name = target.name;
+    //     var value = target.value;
+    //     setInf({
+    //         ...inf,
+    //         [name]: value
+    //     })
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -45,19 +45,33 @@ const CBH = (props) => {
         })
     }
 
-    const [inf, setInf] = useState({
-        name: 'Người Việt Trẻ 3000',
-        link: 'https://www.facebook.com/',
-        linkAnh: 'https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-9/85240841_2892567020796099_125429988689182720_o.jpg?_nc_cat=105&_nc_sid=dd9801&_nc_ohc=ZJ7DekKJR2sAX-dA-_M&_nc_ht=scontent.fhan4-1.fna&oh=47c35d57c93d60761ef95b8720d1c55a&oe=5EF562A8',
-        time: '30/2/3000-31/2/3000',
-        place: 'Hà Nội-Việt Nam',
-        background: 'rgb(87, 78, 78)',
-        color: 'white'
-    })
 
+    const [openChange, setOpenChange] = useState(false)
+
+    const showModal = () => {
+        setOpenChange(true)
+    };
+
+    const handleCancel = e => {
+        setOpenChange(false)
+    };
     return (
         <div className='page-header' id={props.id} style={{ marginBottom: 30 }}>
-            <div className="information-img-reposive" style={{ backgroundColor: `${inf.background}` }}>
+<Button type="primary" style={{ marginBottom: 15 }} onClick={showModal}>
+                    Sửa
+                </Button>
+                <Modal
+                title="Thêm chương trình"
+                visible={openChange}
+                footer={null}
+                onCancel={handleCancel}
+            ></Modal>
+
+
+
+
+
+            {/* <div className="information-img-reposive" style={{ backgroundColor: `${inf.background}` }}>
                 <div>
                     <label name="time" className="label-header" style={{ color: `${inf.color}` }}>Tên chương trình:</label><br />
                     <label name="name" className="label-header" style={{ color: `${inf.color}`, fontSize: 26 }}><a href={inf.link} style={{ color: `${inf.color}` }} target="blank">{inf.name}</a></label><br />
@@ -127,9 +141,6 @@ const CBH = (props) => {
                                     </Form.Item>
                                 </Form>
                             </div>
-                            {/* <div className="modal-footer">
-                                <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
-                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -137,7 +148,7 @@ const CBH = (props) => {
             <div className="reponsive-header">
                 <div className="triangle-img" style={{ borderLeft: `60px solid ${inf.background}` }}></div>
                 <div name="linkAnh" className="background-cover-header" style={{ backgroundImage: `url(${inf.linkAnh})` }}></div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../../../context/HomepageContext";
-// import CBH from "../Component/CBH";
 import './changeBackground.scss'
 import {getAllBackground, uploadBackground, editBackground, deleteBackground} from '../../../api/base/background'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import { Form, Button, Input, notification, Upload, Icon, Modal, Spin } from 'antd'
+import { Form, Button, Input, notification, Upload, Icon, Modal, Spin, Table } from 'antd'
+import CBH from './CBH';
 
 const ChangeBackground = (props) => {
     const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
@@ -115,6 +115,52 @@ const ChangeBackground = (props) => {
         setOpenBack(false)
     };
     // console.log(cover.length)
+
+// tableback
+const columns = [
+    {
+        title: 'Sửa',
+        fixed: 'left',
+        id: 'Chon',
+        dataIndex: 'id',
+        render: (id) => {
+            return <div>
+                <CBH/>
+                <div>Xóa</div>
+            </div>
+        }
+    },
+    {
+        title: 'Tên chương trình',
+        dataIndex: 'Tenchuongtrinh',
+    },
+    {
+        title: 'link chương trình',
+        dataIndex: 'Linkchuongtrinh',
+    },
+    {
+        title: 'Ngày diễn ra',
+        dataIndex: 'Ngaydienra',
+    },
+    {
+        title: 'Ngày kết thúc',
+        dataIndex: 'Ngayketthuc',
+    },
+    {
+        title: 'Địa điểm',
+        dataIndex: 'Diadiem',
+    },
+    {
+        title: 'Ảnh chương trình',
+        dataIndex: 'Linkanh',
+        id: 'Linkanh',
+        render: (Linkanh) => {
+            return <div name="linkAnh" className="background-change-header-s" style={{ backgroundImage: `url(${Linkanh})` }}></div>
+        }
+    },
+  ];
+// tableback
+
     return (
         <div className="para">
             <div style={{width:1100, margin:'0 auto'}}>
@@ -299,7 +345,10 @@ const ChangeBackground = (props) => {
                     ))
                 }
             </div>
+            {/* table back */}
+            <Table columns={columns} dataSource={cover} size="middle" />
 
+            {/* table back */}
         </div>
     )
 }
