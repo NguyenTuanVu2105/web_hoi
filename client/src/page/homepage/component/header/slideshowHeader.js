@@ -21,16 +21,12 @@ const Slideshow = () => {
     if (result) {
       if (result.data.success) {
         setInf(result.data.data)
-        if (!inf) {
-          console.log('nghia')
-        }
       }
     }
   }
   useEffect(() => {
     fetchData()
   }, [])
-console.log(inf)
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', marginLeft: 15, marginRight: 15 }}>
       <div className="slide-container para-header-s" style={{}}>

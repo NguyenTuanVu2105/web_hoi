@@ -22,6 +22,13 @@ export const editBackground = (data) => {
   })
 }
 
+export const getOneBackground = (id) => {
+  return createAuthApiRequest({
+    url: `/api/one/background?backgroundId=${id}`,
+    method: 'get'
+  })
+}
+
 export const getBackground = (fileName) => {
   return createApiRequest({
     url: `/api/background/${fileName}`,
