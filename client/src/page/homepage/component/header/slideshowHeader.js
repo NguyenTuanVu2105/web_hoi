@@ -4,7 +4,7 @@ import './Header.css'
 import { getSlideShowBackground } from '../../../../api/base/background'
 
 const properties = {
-  duration: 40000000,
+  duration: 4000,
   transitionDuration: 500,
   infinite: true,
   indicators: true,
@@ -91,9 +91,9 @@ console.log(inf)
               </a>
             </div>
             <div style={{backgroundColor:"#4267b2", width:"calc(50% - 1px)"}}>
-            <a className="href-link-header-s" href="http://mau.vn/" target="_blank" style={{backgroundColor:"#c149d9"}}>
+            <a className="href-link-header-s" href="http://mau.vn/" target="_blank" style={{backgroundColor:"#ff524d"}}>
               <div style={{color:"white",fontWeight:"500",marginRight:'5px'}}>Mau.vn</div>
-              <div className="icon-header-s"><img style={{width:"39px", height:"auto", borderRadius:"50%"}} src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fwSetp_69fMAX9rcBm-&_nc_ht=scontent.fhan5-1.fna&oh=289de5bd24485af7a08a59927601e0ac&oe=5EF55A9B"></img></div>
+              <div className="icon-header-s" style={{borderRadius:"50%"}}><img style={{width:"38px", height:"auto", borderRadius:"50%"}} src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fwSetp_69fMAX9rcBm-&_nc_ht=scontent.fhan5-1.fna&oh=289de5bd24485af7a08a59927601e0ac&oe=5EF55A9B"></img></div>
               </a>
             </div>
           </div>
