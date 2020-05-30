@@ -23,7 +23,7 @@ const ChangeBackground = (props) => {
         setLoading(true)
         const result = await getAllBackground()
         setLoading(false)
-        if (result) {
+        if (result.success) {
             if (result.data.success) {
                 setCover(result.data.data)
             }
@@ -69,28 +69,28 @@ const ChangeBackground = (props) => {
         })
     }
 
-    const handleUpdate = (e) => {
-        e.preventDefault()
-        props.form.validateFields(async (err, values) => {
-            if (!err) {
-                console.log(values)
-                // setLoading(true)
-                // const { success } = await editBackground(values)
-                // setLoading(false)
-                // if (success) {
-                //     notification['success']({
-                //         message: 'Cập nhật thông tin background thành công!',
-                //     })
-                //     setOpenBack(false)
-                    
-                // } else {
-                //     notification['error']({
-                //         message: 'Cập nhật thông tin background thất bại!',
-                //     })
-                // }
-            }
-        })
-    }
+    // const handleUpdate = (e) => {
+    //     e.preventDefault()
+    //     props.form.validateFields(async (err, values) => {
+    //         if (!err) {
+    //             console.log(values)
+    //             // setLoading(true)
+    //             // const { success } = await editBackground(values)
+    //             // setLoading(false)
+    //             // if (success) {
+    //             //     notification['success']({
+    //             //         message: 'Cập nhật thông tin background thành công!',
+    //             //     })
+    //             //     setOpenBack(false)
+
+    //             // } else {
+    //             //     notification['error']({
+    //             //         message: 'Cập nhật thông tin background thất bại!',
+    //             //     })
+    //             // }
+    //         }
+    //     })
+    // }
 
     useEffect(() => {
         fetchData()
@@ -125,8 +125,8 @@ const columns = [
         dataIndex: 'id',
         render: (id) => {
             return <div>
-                <CBH/>
-                <div>Xóa</div>
+                <CBH id={id}/>
+                <button onClick={() => removeImg(id)}>Xóa</button>
             </div>
         }
     },
@@ -233,7 +233,7 @@ const columns = [
                 </Form>
             </Modal>
 
-            <div style={{width:"100%",boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)'}}>
+            {/* <div style={{width:1100, margin:"0 auto",boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)'}}>
                 {
                     cover.map((data, index) => (
                         <div key={"cover" + index} className='page-header' id={data.id} style={{ marginBottom: 30 }}>
@@ -320,7 +320,7 @@ const columns = [
                             <div className="reponsive-header">
                                 <div className="triangle-img" style={{ borderLeft: `60px solid ${data.Maunen}` }}></div>
                                 <div name="linkAnh" className="background-cover-header" style={{ backgroundImage: `url(${data.Linkanh})` }}>
-                                    {/* -------xóa background------ */}
+
                                     <div className="div-remove">
                                         <a className="button-remove" data-toggle="modal" data-target={'#modalRemove' + data.id}>
                                             X
@@ -342,13 +342,13 @@ const columns = [
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>{/* -------xóa background------ */}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     ))
                 }
-            </div>
+            </div> */}
             {/* table back */}
             <Table columns={columns} dataSource={cover} size="middle" />
 
