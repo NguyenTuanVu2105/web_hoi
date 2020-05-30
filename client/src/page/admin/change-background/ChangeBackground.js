@@ -119,14 +119,14 @@ const ChangeBackground = (props) => {
 // tableback
 const columns = [
     {
-        title: 'Sửa',
+        title: 'Thao tác',
         fixed: 'left',
         id: 'Chon',
         dataIndex: 'id',
         render: (id) => {
             return <div>
                 <CBH id={id}/>
-                <button onClick={() => removeImg(id)}>Xóa</button>
+                <button className="button-change-back-s" onClick={() => removeImg(id)}>Xóa</button>
             </div>
         }
     },
