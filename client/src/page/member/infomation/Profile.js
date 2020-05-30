@@ -50,71 +50,85 @@ function ProFileLeft(props) {
         })
     }, [])
 
-    const style = {
-        textAlign: 'end',
-        width: '32%'
-    }
-
     //nhóm máu
     const { Option } = Select;
     return (
-        <div>
+        <div className="para-profile-member">
+            <div className="para-content-profile-s">
             <Form onSubmit={handleSubmit} className="row">
-                <div className="profileForMobile">
+                <div className="profileForMobile-1">
                     <InformationUser image={user.Image} file={file} setFile={setFile} sttv={user.Sothethanhvien} hovaten={user.Hovaten} ngaysinh={user.Ngaysinh} gioitinh={user.Gioitinh} image={user.Image} giotmau={user.specialized} />
                     <Form.Item action="" method="post" className="information"  style={{marginBottom:0}}>
-                        <fieldset>
-                            <legend className="legendA">Thông tin cơ bản</legend>
-                            <div>
-                                <label style={style} className="label_information">CMND/CCCD/HC: </label>
+                        <div>
+                            <div id="thong-tin-co-ban" className="title-profile-s">Thông tin cơ bản</div>
+                            <div className="body-border-profile-s">
+                            {/* <div> */}
+                                <div className="border-bottom-profile-s">
+                                <label className="label-profile-s">CMND/CCCD/HC: </label>
                                 {getFieldDecorator('cmtorhc', {
                                     initialValue: user.CMTorHC
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.CMTorHC} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Ngày cấp: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Ngày cấp: </label>
                                 {getFieldDecorator('ngaycap', {
                                     initialValue: user.Ngaycap
                                 })(
-                                    <Input type="date" className="input_information" />
+                                    <Input type="date" title={user.Ngaycap} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Nơi cấp: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Nơi cấp: </label>
                                 {getFieldDecorator('noicap', {
                                     initialValue: user.Noicap
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Noicap} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Điện thoại: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Điện thoại: </label>
                                 {getFieldDecorator('dienthoai', {
                                     initialValue: user.Dienthoai
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Dienthoai} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Link Facebook: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Link Facebook: </label>
                                 {getFieldDecorator('facebook', {
                                     initialValue: user.Facebook
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Facebook} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Địa chỉ Email: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Địa chỉ Email: </label>
                                 {getFieldDecorator('email', {
                                     initialValue: user.Email
                                 })(
-                                    <Input type="text" className="input_information" required/>
+                                    <Input type="text" title={user.Email} className=" input-profile-s-1" required/>
                                 )}
+                                </div>
+                            {/* </div> */}
                             </div>
-                        </fieldset>
+                        </div>
                     </Form.Item>
                     <Form.Item action="" method="post" className="information" style={{marginBottom:0}}>
-                        <fieldset>
-                            <legend className="legendA">Hiến máu</legend>
-                            <label style={style} className="label_information">Số lần hiến máu: </label>
+                        <div>
+                            <div id="hien-mau" className="title-profile-s">Hiến máu</div>
+                            <div className="body-border-profile-s">
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Số lần hiến máu: </label>
                             {getFieldDecorator('solanhm', {
                                 initialValue: user.SolanHM
                             })(
-                                <Input type="text" className="input_information" />
+                                <Input type="text" title={user.SolanHM} className=" input-profile-s-1" />
                             )}
-                            <label style={style} className="label_information">Nhóm máu: </label>
+                            </div>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Nhóm máu: </label>
                             {getFieldDecorator('nhommau', {
                                 initialValue: user.Nhommau ? user.Nhommau : null
                             })(
@@ -124,8 +138,10 @@ function ProFileLeft(props) {
                                     <Option style={{ textAlign: "center" }} value="B">B</Option>
                                     <Option style={{ textAlign: "center" }} value="AB">AB</Option>
                                 </Select>
-                            )} <br />
-                            <label style={style} className="label_information">Rh(D): </label>
+                            )}
+                            </div>
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Rh(D): </label>
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
@@ -134,90 +150,134 @@ function ProFileLeft(props) {
                                     <Option style={{ textAlign: "center" }} value={false}>-</Option>
                                 </Select>
                             )}
-                        </fieldset>
+                            </div>
+                            </div>
+                        </div>
                     </Form.Item>
                 </div>
-                <div className="profileForMobile">
+                <div className="profileForMobile-2">
                     <Form.Item action="" method="post" className="information" style={{marginBottom:0}}>
-                        <fieldset>
-                            <legend className="legendA">Đơn vị công tác</legend>
-                            <div>
-                                <label style={style} className="label_information">Đơn vị học tập/Công tác: </label>
+                        <div>
+                            <div id="don-vi-cong-tac" className="title-profile-s">Đơn vị công tác</div>
+                            <div className="body-border-profile-s">
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Đơn vị học tập/Công tác: </label>
                                 {getFieldDecorator('donvi', {
                                     initialValue: user.Donvi
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Donvi} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Khoa/Đơn vị cụ thể: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Khoa/Đơn vị cụ thể: </label>
                                 {getFieldDecorator('donvicuthe', {
                                     initialValue: user.Donvicuthe
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Donvicuthe} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Đoàn viên/Đảng viên: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Đoàn viên/Đảng viên: </label>
                                 {getFieldDecorator('doanviendangvien', {
                                     initialValue: user.DoanvienDangvien
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.DoanvienDangvien} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Trình độ học vấn: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Trình độ học vấn: </label>
                                 {getFieldDecorator('trinhdohocvan', {
                                     initialValue: user.Trinhdohocvan
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Trinhdohocvan} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend className="legendA">Địa chỉ</legend>
-                            <div>
-                                <label style={style} className="label_information">Quê quán: </label>
+                        </div>
+                        <div>
+                            <div id="dia-chi" className="title-profile-s">Địa chỉ</div>
+                            <div className="body-border-profile-s">
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Quê quán: </label>
                                 {getFieldDecorator('quequan', {
                                     initialValue: user.Quequan
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.Quequan} className=" input-profile-s-1" />
                                 )}
-                                <label style={style} className="label_information">Nơi ở hiện nay: </label>
+                                </div>
+                                <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Nơi ở hiện nay: </label>
                                 {getFieldDecorator('diachill', {
                                     initialValue: user.DiachiLL
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.DiachiLL} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
-                        </fieldset>
-                        <fieldset>
-                            <legend className="legendA">Liên hệ người thân</legend>
-                            <div>
-                                <label style={style} className="label_information">Địa chỉ liên hệ: </label>
+                        </div>
+                        <div>
+                            <div id="lien-he-nguoi-than" className="title-profile-s">Liên hệ người thân</div>
+                            <div className="body-border-profile-s">
+                            <div className="border-bottom-profile-s">
+                                <label  className="label-profile-s">Địa chỉ liên hệ: </label>
                                 {getFieldDecorator('thongtinlienhegd', {
                                     initialValue: user.ThongtinlienheGD
                                 })(
-                                    <Input type="text" className="input_information" />
+                                    <Input type="text" title={user.ThongtinlienheGD} className=" input-profile-s-1" />
                                 )}
+                                </div>
                             </div>
-                        </fieldset>
+                        </div>
                     </Form.Item>
                     <Form.Item action="" method="post" className="information" style={{ heigh: 'auto' }}>
-                        <fieldset>
-                            <legend className="legendA">Ghi chú khác</legend>
-                            <label style={style} className="label_information">Ghi chú: </label>
+                        <div>
+                            <div id="ghi-chu-khac" className="title-profile-s">Ghi chú khác</div>
+                            <div className="body-border-profile-s">
+                            <div className="border-bottom-profile-s">
+                            <label  className="label-profile-s">Ghi chú: </label>
                             {getFieldDecorator('ghichukhac', {
                                 initialValue: user.Ghichukhac
                             })(
-                                <Input type="text" className="input_information" />
+                                <Input type="text" title={user.Ghichukhac} className=" input-profile-s-1" />
                             )}
-                        </fieldset>
+                            </div>
+                            </div>
+                        </div>
                     </Form.Item>
                     <div className="DIVprofile">
-                        {/* <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a> */}
                         <Form.Item>
-                            <Button className="buttonProfile" type="primary" htmlType="submit">Submit</Button>
+                            <Button className="buttonProfile" type="primary" htmlType="submit">Lưu thay đổi</Button>
                         </Form.Item>
-                        {/* <button className="buttonProfile">Hủy</button> */}
                     </div>
 
                 </div>
             </Form>
+            </div>
+            <div className="para-menu-profile-s">
+                <div className="body-menu-profile-s">
+                    <div className="child-menu-profile-s">
+                        <a href="#thong-tin-ca-nhan" className="tag-a-profile-s">Thông tin cá nhân</a>
+                    </div>
+                    <div className="child-menu-profile-s">
+                    <a href="#thong-tin-co-ban" className="tag-a-profile-s">Thông tin cơ bản</a>
+                    </div>
+                    <div className="child-menu-profile-s">
+                    <a href="#hien-mau" className="tag-a-profile-s">Hiến máu</a>
+                    </div>
+                    <div className="child-menu-profile-s">
+                    <a href="#don-vi-cong-tac" className="tag-a-profile-s">Đơn vị công tác</a>
+                    </div>
+                    <div className="child-menu-profile-s">
+                    <a href="#dia-chi" className="tag-a-profile-s">Địa chỉ</a>
+                    </div>
+                    <div className="child-menu-profile-s">
+                    <a href="#lien-he-nguoi-than" className="tag-a-profile-s">Liên hệ người thân</a>
+                    </div>
+                    <div className="child-menu-profile-s">        
+                    <a href="#ghi-chu-khac" className="tag-a-profile-s">Ghi chú khác</a><br/>
+                    </div>
+                </div>
+            </div>
         </div>// row
     )
 }

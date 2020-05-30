@@ -45,16 +45,16 @@ const TeamLeader = () => {
         <div >
             {
                 leader.map((leader, index) => (
-                    <div key={"L"+index} className='row borderRadius'>
+                    <div key={"L"+index} className='row para-team-leader'>
                         <div className='image'>
                             <img className='img' src={leader.Image}></img>
                         </div>
                         <div className='information1'>
-                            <label className="label_information1">Họ tên: {leader.Hovaten}</label><br />
-                            <label className="label_information1">Chức vụ: {leader.position.Chucvu}</label><br />
-                            <label className="label_information1">Thời gian công tác: {leader.ThoigianHD}</label><br />
+                            <label className="label_information1">Họ tên: </label><label style={{marginLeft:2, fontSize:14,color: 'rgba(0, 0, 0, 0.65)'}}>{leader.Hovaten}</label><br />
+                            <label className="label_information1">Chức vụ: </label><label style={{marginLeft:2, fontSize:14,color: 'rgba(0, 0, 0, 0.65)'}}>{leader.position.Chucvu}</label><br />
+                            <label className="label_information1">Thời gian công tác: </label><label style={{marginLeft:2, fontSize:14,color: 'rgba(0, 0, 0, 0.65)'}}>{leader.ThoigianHD}</label><br />
                             <div className="div-reponsive-TL">
-                                <div id={"div-" + index} className="div-information-close" style={{ width: "100%", overflow: "hidden", }}>Mô tả: {leader.Ghichukhac}</div>
+                                <div id={"div-" + index} className="div-information-close" style={{ width: "100%", overflow: "hidden" }}><label className="label_information1">Thông tin chi tiết: </label> {leader.Ghichukhac}</div>
                                 <a id={"a-"+index} className='describe' onClick={() => HandleOC(index)}>Chi tiết>>></a>
                             </div>
                         </div>

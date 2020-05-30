@@ -162,9 +162,13 @@ const columns = [
 // tableback
 
     return (
-        <div className="para">
-            <div style={{width:1100, margin:'0 auto'}}>
-                <Button type="primary" style={{ marginBottom: 15 }} onClick={showModal}>
+        <div className="para-change-background-admin">
+            {/* <button className="add-background" onClick={() => setCount(1)}>Thêm background</button>
+            {
+                arr
+            } */}
+            <div>
+                <Button type="primary" className="add-button-background" style={{ marginBottom: 15 }} onClick={showModal}>
                     Thêm chương trình
                 </Button>
             </div>
@@ -223,13 +227,13 @@ const columns = [
                             </div>
                         </Upload>
                         <div className="modal-footer" style={{ paddingBottom: 0 }}>
-                            <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
+                            <Button type="primary" htmlType="submit">Lưu thay đổi</Button>
                         </div>
                     </Form.Item>
                 </Form>
             </Modal>
 
-            <div style={{width:1100, margin:"0 auto",boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)'}}>
+            <div style={{width:"100%",boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)'}}>
                 {
                     cover.map((data, index) => (
                         <div key={"cover" + index} className='page-header' id={data.id} style={{ marginBottom: 30 }}>

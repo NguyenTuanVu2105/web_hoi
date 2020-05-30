@@ -30,58 +30,58 @@ export const navs = [
             }
         ]
     },
-    {
-        Id1: "#collapse3",
-        Id2: "collapse3",
-        name: "ĐÁNH GIÁ NĂNG LỰC",
-        IconID: 'icon3', 
-        children: [
-            {
-                // id: "1",
-                name: ""
-            },
+    // {
+    //     Id1: "#collapse3",
+    //     Id2: "collapse3",
+    //     name: "ĐÁNH GIÁ NĂNG LỰC",
+    //     IconID: 'icon3', 
+    //     children: [
+    //         {
+    //             // id: "1",
+    //             name: ""
+    //         },
 
-        ]
-    },
-    {
-        Id1: "#collapse4",
-        Id2: "collapse4",
-        name: "TỔ CHỨC SỰ KIỆN",
-        IconID: 'icon4', 
-        children: [
-            {
-                // id: "1",
-                name: ""
-            },
+    //     ]
+    // },
+    // {
+    //     Id1: "#collapse4",
+    //     Id2: "collapse4",
+    //     name: "TỔ CHỨC SỰ KIỆN",
+    //     IconID: 'icon4', 
+    //     children: [
+    //         {
+    //             // id: "1",
+    //             name: ""
+    //         },
 
-        ]
-    },
-    {
-        Id1: "#collapse5",
-        Id2: "collapse5",
-        name: "HỌC TẬP VÀ VIỆC LÀM",
-        IconID: 'icon5', 
-        children: [
-            {
-                // id: "1",
-                name: ""
-            },
+    //     ]
+    // },
+    // {
+    //     Id1: "#collapse5",
+    //     Id2: "collapse5",
+    //     name: "HỌC TẬP VÀ VIỆC LÀM",
+    //     IconID: 'icon5', 
+    //     children: [
+    //         {
+    //             // id: "1",
+    //             name: ""
+    //         },
 
-        ]
-    },
-    {
-        Id1: "#collapse6",
-        Id2: "collapse6",
-        name: "Ý TƯỞNG VÀ GÓP Ý",
-        IconID: 'icon6', 
-        children: [
-            {
-                // id: "1",
-                name: ""
-            },
+    //     ]
+    // },
+    // {
+    //     Id1: "#collapse6",
+    //     Id2: "collapse6",
+    //     name: "Ý TƯỞNG VÀ GÓP Ý",
+    //     IconID: 'icon6', 
+    //     children: [
+    //         {
+    //             // id: "1",
+    //             name: ""
+    //         },
 
-        ]
-    },
+    //     ]
+    // },
     {
         Id1: "#collapse8",
         Id2: "collapse8",

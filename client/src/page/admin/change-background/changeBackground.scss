@@ -1,3 +1,19 @@
+.para-change-background-admin{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top:15px;
+    .add-button-background{
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19) !important;
+        border: none !important;
+        background-color: #2c3e50 !important;
+        color: white !important;
+        font-weight: 500 !important;
+        border-radius: 20px !important;
+    }
+    .add-button-background:hover{
+        background-color: #ff4d4d !important;
+    }
+}
 .add-background{
     background-color: white;
     height: 32px;
@@ -67,9 +83,13 @@
     color: #696969;
     box-shadow: 1px 1px red;
 }
-.background-change-header-s{
-    width: 266px;
-    height: 100px;
-    background-position: center;
-    background-size: cover;
+@media (min-width:993px) and (max-width:1200px){
+    .para-change-background-admin{
+        width: 96%;
+    }
+}
+@media (max-width:992px){
+    .para-change-background-admin{
+        width: 98%;
+    }
 }

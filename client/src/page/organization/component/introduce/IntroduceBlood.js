@@ -102,7 +102,7 @@ const IntroduceBlood = () => {
                             </div>
                         </div>
                         <div className="logo-intro">
-                            <img class="logo-intro-img" src="./img/navbar/logomau.png" alt="logo" />
+                            <img className="logo-intro-img" src="./img/navbar/logomau.png" alt="logo" />
                             <div className="intro-tag-a"><a className="h4-a-IB" href='/gioi-thieu-ve-hoi-chi-tiet'>Hội máu Hà Nội</a></div>
                         </div>
                     </div>

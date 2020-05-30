@@ -1,3 +1,11 @@
+.para-learning-and-activities{
+    width: 1100px;
+    margin: 0 auto;
+    .paren-body-LAA{
+        margin-top: 15px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+    }
+}
 .label{
     padding-left: 5%;
     color: red;
@@ -7,7 +15,8 @@ h3{
     color: red;
 }
 .fieldset-LAA{
-    margin-top: 15px;
+    width: 1070px;
+    margin: 15px;
     padding-right: 15px;
     border-radius: 8px;
     border: 1px solid #696969 !important;
@@ -16,15 +25,15 @@ h3{
     margin-left: 15px;
 }
 .button-LAA{
-    background-color: white !important;
-    border: 1px solid #696969 !important;
-    color: red !important;
-    margin-left: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19) !important;
+    border: none !important;
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
 }
 .button-LAA:hover{
-    border: 1px solid red !important;
-    color: #696969 !important;
-    box-shadow: 1px 1px red;
+    background-color: #ff4d4d !important;
 }
 .Div-LAA{
     margin-top: 10px;
@@ -89,9 +98,20 @@ h3{
         }
     }
 }
-
-
+@media (max-width:1200px){
+    .scroll-view{
+        overflow-x: scroll;
+    }
+}
+@media (min-width:993px) and (max-width:1200px){
+    .para-learning-and-activities{
+        width: 96%;
+    }
+}
 @media (max-width:992px){
+    .para-learning-and-activities{
+        width: 98%;
+    }
     .col12{
         width: 100%;
     }
