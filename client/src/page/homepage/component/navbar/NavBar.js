@@ -7,13 +7,20 @@ const NavBar = () => {
 
     const roles = getUser().then((value) => {
         if (checkAuth()) {
-            var para = document.getElementById("tracuu")
-            if (para) {
-                if (value.role === 'member') {
-                    para.style.display = 'none'
-                } else {
-                    para.style.display = 'block'
-                }
+            var roleAdmin = document.getElementById('admin')
+            var roleBackground = document.getElementById('quanlybackground')
+            var roleAdd = document.getElementById('themdonvi')
+            if (value.role === 'member') {
+                roleAdmin.style.display='none'
+            } else {
+                roleAdmin.style.display='block'
+            }
+            if (value.role === 'hoitruong') {
+                roleBackground.style.display = 'block'
+                roleAdd.style.display = 'block'
+            } else {
+                roleBackground.style.display = 'none'
+                roleAdd.style.display = 'none'
             }
         }
     })
@@ -42,15 +49,15 @@ const NavBar = () => {
         <div className="sidebar-container">
             <button className="sideBarOpen sideBar" onClick={() => setOpen(true)} >&#9776;</button>
             <div className="sticky w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style={{ width: 235, zIndex: 12, display: open ? "block" : "none" }} id="mySidebar" >
-                <button className="sideBarClose sideBar" onClick={() => setOpen(false) && roles}>Close X</button>
+                <button className="sideBarClose sideBar" onClick={() => setOpen(false)}>Close X</button>
                 <div className="logo-page-blood">
                     <img className="logo-image" src="/img/navbar/logomau.png" alt="logo"></img>
                 </div>
                 {
                     navs.map((nav,index) => (
-                        <div key={"nav"+index}>
+                        <div key={"nav"+index} id={nav.id}>
                             <div className="panel-heading drop-menu">
-                                <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={() => setChangeIcon(nav.IconID)}>
+                                <a className="stickyA" data-toggle="collapse" href={nav.Id1} onClick={() => setChangeIcon(nav.IconID) && roles}>
                                     {nav.name}
                                     <div className="items-i"><i id={nav.IconID} className='fa fa-angle-down' style={style}></i></div>
                                 </a>
@@ -59,7 +66,7 @@ const NavBar = () => {
                                 <ul className="list-group">
                                     {
                                         nav.children.map((x,index) => (
-                                            <li key={"navC"+index}  className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
+                                            <li key={"navC"+index} id={x.id}  className="list-group-item"><a className="list-items" href={x.href}>{x.name}</a></li>
                                         ))
                                     }
                                 </ul>

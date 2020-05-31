@@ -23,19 +23,19 @@ const ChiHoi = (props) => {
         }
     }
 
-    // const roles = getUser().then((value) => {
-    //     if (checkAuth()) {
-    //         var edit = document.getElementById('roleedit')
-    //         var save = document.getElementById('rolesave')
-    //         if (value.role === 'member') {
-    //             edit.style.display = 'none'
-    //             save.style.display = 'none'
-    //         } else {
-    //             edit.style.display = 'block'
-    //             save.style.display = 'block'
-    //         }
-    //     }
-    // })
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('roleedit')
+            var save = document.getElementById('rolesave')
+            if (value.role === 'hoitruong') {
+                edit.style.display='block'
+                save.style.display='block'
+            } else {
+                edit.style.display='none'
+                save.style.display='none'
+            }
+        }
+    })
 
     useEffect(() => {
         fetchData()
@@ -254,7 +254,7 @@ const ChiHoi = (props) => {
                         </Form.Item>
                     </div>
                     <div className="ButtonForMobileAdd">
-                        <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>
+                        <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false) && roles}>Sửa</Button>
                         <Form.Item>
                             <Button id='rolesave' className="buttonDisable1" type="primary" htmlType="submit">Lưu thay đổi</Button>
                         </Form.Item>

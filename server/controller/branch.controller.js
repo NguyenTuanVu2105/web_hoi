@@ -96,7 +96,9 @@ exports.ViewBranch = (req, res) => {
     Branch.findOne({
         where:{Machihoi  :req.query.machihoi}
     }).then( result => {
-      res.status(200).send({success: true,data: result,});
+      res.status(200).send({success: true,data: result})
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})    
     })
       
 }
