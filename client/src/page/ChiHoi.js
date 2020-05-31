@@ -19,7 +19,6 @@ const ChiHoi = (props) => {
         setLoading(false)
         if (result.data.success) {
             setUnit(result.data.data)
-            console.log(unit)
         }
     }
 

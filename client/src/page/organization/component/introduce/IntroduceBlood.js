@@ -5,6 +5,7 @@ import './introduleBlood.scss'
 import { getUser, checkAuth } from '../../../../api/auth/auth'
 import { Input } from 'antd';
 import { getUnitAll } from '../../../../api/base/unit'
+import { getAssociation, editAssociation } from '../../../../api/base/association'
 import IntroUnit from './component/IntroUnit'
 
 const IntroduceBlood = () => {

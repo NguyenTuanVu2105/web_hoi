@@ -41,8 +41,25 @@ checkRoles = (req, res, next) => {
 	})
 } 
 
+checkRolesHoitruong = (req, res, next) => {
+	User.findOne({
+		where: {
+			id: req.userId
+		}
+	}).then(user => {
+		if (user.role === "hoitruong") {
+			next()
+			return
+		}
+		res.status(403).send("Require Role!")
+	}).catch(err => {
+		res.status(500).send({message: err})
+	})
+}
+
 const authJwt = {}
 authJwt.verifyToken = verifyToken
 authJwt.checkRoles = checkRoles
+authJwt.checkRolesHoitruong = checkRolesHoitruong
 
 module.exports = authJwt
