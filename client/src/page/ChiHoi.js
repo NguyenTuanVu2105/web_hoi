@@ -80,7 +80,7 @@ const ChiHoi = (props) => {
                     <div className="content-unit-s">
                         <Form.Item>
                             <div style={{ width: "100%", display: 'flex', flexWrap: "wrap" }}>
-                                <div style={{ width: "60%" }}>
+                                <div className="reponsive-unit-s">
                                     <div>
                                         <span className="label-unit-s">Đơn vị:</span>
                                         {getFieldDecorator('tenchihoi', {

@@ -122,7 +122,8 @@
     margin-top: 20px;
 }
     .header-unit-s{
-        line-height: 80px;
+        display: flex;
+        align-items: center;
         padding-left: 20px;
         width: 100%;
         height: 80px;
@@ -141,6 +142,9 @@
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
         border-left: 5px solid #ff4d4d;
     }
+        .reponsive-unit-s{
+            width: 60%;
+        }
         .label-unit-s{
             font-weight: 500;
             height: 30px;
@@ -154,4 +158,28 @@
         display: flex;
         flex-wrap: wrap;
     }
+@media (min-width:993px) and (max-width:1200px){
+    .para-unit-s{
+        width: 96%;
+    }
+}
+@media (max-width:992px){
+    .para-unit-s{
+        width: 100%;
+    }
+    .content-unit-s{
+        padding: 10px;
+    }
+    .unit-table-infor .unit-column-infor .unit-div-infor .unit-div1-infor .unit-span-infor{
+        font-size: 12px;
+    }
+    .reponsive-unit-s{
+        width: 100%;
+    }
+}
+@media (max-width: 1200px){
+    .logo-unit-s{
+        display: none;
+    }
+}
 /* chihoi */
