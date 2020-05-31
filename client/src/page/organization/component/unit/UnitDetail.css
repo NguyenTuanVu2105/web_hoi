@@ -116,12 +116,12 @@
 
 
 /* chihoi */
-.para-chihoi-s{
+.para-unit-s{
     width: 1100px;
     margin: 0 auto;
     margin-top: 20px;
 }
-    .header-chihoi-s{
+    .header-unit-s{
         line-height: 80px;
         padding-left: 20px;
         width: 100%;
@@ -129,26 +129,26 @@
         border-left: 5px solid #ff4d4d;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
     }
-        .tag-a-header-chihoi{
+        .tag-a-header-unit-s{
             margin-right: 10px;
             font-weight: 500;
             color: rgb(255, 77, 77) !important;
         }
-    .content-chihoi-s{
+    .content-unit-s{
         margin-top: 10px;
         margin-bottom: 20px;
         padding: 20px;
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
         border-left: 5px solid #ff4d4d;
     }
-        .label-chihoi-s{
+        .label-unit-s{
             font-weight: 500;
             height: 30px;
             line-height: 30px;
             color: #ff4d4d;
             font-size: 14px;
         }
-    .logo-chihoi-s{
+    .logo-unit-s{
         width: 240px;
         height: 270px;
         display: flex;
