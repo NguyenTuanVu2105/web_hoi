@@ -76,8 +76,8 @@ const NavBar = () => {
                     </div>
                     <div id="collapse7" className="panel-collapse collapse">
                         <ul className="list-group">
-                            <li className="list-group-item"><a className="doiMK" onClick={logout}>ĐĂNG XUẤT</a></li>
-                            <li className="list-group-item"><a className="doiMK" data-toggle="modal" data-target="#modalMK">ĐỔI MẬT KHẨU</a></li>
+                            <li className="list-group-item"><a className="list-items" onClick={logout} style={{color:"#ff4d4d"}}>ĐĂNG XUẤT</a></li>
+                            <li className="list-group-item"><a className="list-items" data-toggle="modal" data-target="#modalMK"  style={{color:"#ff4d4d"}}>ĐỔI MẬT KHẨU</a></li>
                         </ul>
                     </div>
                 </div>

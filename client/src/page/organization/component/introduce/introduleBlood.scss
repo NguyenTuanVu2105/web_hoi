@@ -1,4 +1,4 @@
-.container-intro-s{
+.para-container-intro-s{
     width: 1100px;
     margin: 0 auto;
     margin-top: 20px;
@@ -154,5 +154,10 @@
     }
     .para-intro-s{
         overflow-x: scroll;        
+    }
+}
+@media (min-width:993px) and (max-width:1200px){
+    .para-container-intro-s{
+        width: 96%;
     }
 }

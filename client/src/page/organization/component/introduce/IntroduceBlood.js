@@ -36,12 +36,11 @@ const IntroduceBlood = () => {
     const [visibleIntro, setVisibleIntro] = useState(true)
 
     return (
-        <div className="para container-intro-s">
+        <div className="para-container-intro-s">
             <div className="header-introdule-blood-s">
                 <div className="red-left-header" />
                 <div className="content-header">
                     <div style={{ marginRight: 10,fontWeight:500, color: visibleIntro?"#ff4d4d":"rgba(0, 0, 0, 0.65)" }} onClick={()=> setVisibleIntro(true)}><a>Hội máu Hà Nội</a></div>
-                    {/* <div style={{ marginRight: 10,fontWeight:500 }}><a>Đơn vị trực thuộc Hội</a></div> */}
                     <div style={{ marginRight: 10,fontWeight:500, color: visibleIntro?"rgba(0, 0, 0, 0.65)":"#ff4d4d" }} onClick={()=> setVisibleIntro(false)}><a>Hoạt động và khen thưởng</a></div>
                 </div>
             </div>
@@ -220,8 +219,7 @@ const IntroduceBlood = () => {
             <div className="body-intro-blood-s" style={{display:visibleIntro?"none":"flex"}}>
                 <div className="red-left-body" />
                 <div className="content-body-intro">
-                <IntroUnit />
-                    
+                <IntroUnit />                  
                 </div>
             </div>
             {/* -------------------------- */}

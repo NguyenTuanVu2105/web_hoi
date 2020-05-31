@@ -1,5 +1,6 @@
 import React, { Component, useState, useContext, useEffect } from 'react'
 import '../../homepage/component/header/Header.css'
+import './changeBackground.scss'
 import { Form, Button, Input, notification, Upload, Icon,Modal } from 'antd'
 import { getOneBackground, editBackground } from '../../../api/base/background'
 import HomepageContext from "../../../context/HomepageContext"
@@ -59,8 +60,8 @@ const CBH = (props) => {
         fetchData()
     }, [])
     return (
-        <div className='page-header' id={id} style={{ marginBottom: 30 }}>
-            <Button type="primary" style={{ marginBottom: 15 }} onClick={showModal}>
+        <div className='page-header' id={id}>
+            <Button type="primary" className="button-change-back-s" onClick={showModal}>
                     Sửa
             </Button>
             <Modal
