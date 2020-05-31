@@ -85,6 +85,7 @@ export const navs = [
     {
         Id1: "#collapse8",
         Id2: "collapse8",
+        id: "admin",
         name: "ADMIN",
         IconID: 'icon8', 
         children: [
@@ -96,11 +97,13 @@ export const navs = [
             },
             {
                 // id: "2",
+                id: "themdonvi",
                 name: "THÊM ĐƠN VỊ",
                 href: '/them-don-vi'
             },
             {
                 // id: "3",
+                id: "quanlybackground",
                 name: "THAY ĐỔI BACKGROUND",
                 href: '/thay-doi-background'
             }

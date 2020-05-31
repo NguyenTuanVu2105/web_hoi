@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../../../../context/HomepageContext";
 import { introduleBloodList } from './contant/introduleBloodList'
 import './introduleBlood.scss'
+import { getUser, checkAuth } from '../../../../api/auth/auth'
 import { Input } from 'antd';
 import { getUnitAll } from '../../../../api/base/unit'
 import IntroUnit from './component/IntroUnit'
@@ -25,6 +26,21 @@ const IntroduceBlood = () => {
             setUnit(result.data.data)
         }
     }
+
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('roleedit')
+            var save = document.getElementById('rolesave')
+            if (value.role === 'hoitruong') {
+                edit.style.display='block'
+                save.style.display='block'
+            } else {
+                edit.style.display='none'
+                save.style.display='none'
+            }
+        }
+    })
+
     useEffect(() => {
         fetchData()
         setNameMap({
@@ -226,8 +242,8 @@ const IntroduceBlood = () => {
             
 
             <div className="div-submit-IB">
-                <button className="button-dis-sub" onClick={() => setchangeInput(false)}>Sửa</button>
-                <button className="button-dis-sub" onClick={() => handleUp()}>Lưu thay đổi</button>
+                <button id="roleedit" className="button-dis-sub" onClick={() => setchangeInput(false) && roles}>Sửa</button>
+                <button id="rolesave" className="button-dis-sub" onClick={() => handleUp()}>Lưu thay đổi</button>
             </div>
         </div>
     )
