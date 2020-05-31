@@ -32,11 +32,11 @@ const IntroduceBlood = () => {
             var edit = document.getElementById('roleedit')
             var save = document.getElementById('rolesave')
             if (value.role === 'hoitruong') {
-                edit.style.display='block'
-                save.style.display='block'
+                edit.style.display = 'block'
+                save.style.display = 'block'
             } else {
-                edit.style.display='none'
-                save.style.display='none'
+                edit.style.display = 'none'
+                save.style.display = 'none'
             }
         }
     })
@@ -56,31 +56,46 @@ const IntroduceBlood = () => {
             <div className="header-introdule-blood-s">
                 <div className="red-left-header" />
                 <div className="content-header">
-                    <div style={{ marginRight: 10,fontWeight:500, color: visibleIntro?"#ff4d4d":"rgba(0, 0, 0, 0.65)" }} onClick={()=> setVisibleIntro(true)}><a>Hội máu Hà Nội</a></div>
-                    <div style={{ marginRight: 10,fontWeight:500, color: visibleIntro?"rgba(0, 0, 0, 0.65)":"#ff4d4d" }} onClick={()=> setVisibleIntro(false)}><a>Hoạt động và khen thưởng</a></div>
+                    <div style={{ marginRight: 10, fontWeight: 500, color: visibleIntro ? "#ff4d4d" : "rgba(0, 0, 0, 0.65)" }} onClick={() => setVisibleIntro(true)}><a>Hội máu Hà Nội</a></div>
+                    <div style={{ marginRight: 10, fontWeight: 500, color: visibleIntro ? "rgba(0, 0, 0, 0.65)" : "#ff4d4d" }} onClick={() => setVisibleIntro(false)}><a>Hoạt động và khen thưởng</a></div>
                 </div>
             </div>
             {/* Hội máu Hà Nội */}
-            <div className="body-intro-blood-s" style={{display:visibleIntro?"flex":"none"}}>
+            <div className="body-intro-blood-s" style={{ display: visibleIntro ? "flex" : "none" }}>
                 <div className="red-left-body" />
                 <div className="content-body-intro">
                     <div style={{ width: "100%", display: 'flex', flexWrap: "wrap" }}>
                         <div>
                             <h6 style={{ color: '#ff4d4d' }}>Thường trực ủy ban Hội</h6>
                             <div>
-                                {
-                                    introduleBloodList.map((label, index) => (
-                                        <div key={"i-" + index} className="list-name-intro">
-                                            <span key={"span-0" + index} className="span-label">{label.span}</span>
-                                            <span key={"input-1" + index} style={{
-                                                width: "auto",
-                                                height: 30,
-                                                lineHeight: '30px'
-                                                // color: "#ff4d4d"
-                                            }}>{label.name}</span>
-                                        </div>
-                                    ))
-                                }
+                                <div className="list-name-intro">
+                                    <span className="span-label">Chủ tịch Hội:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Phó chủ tịch Hội:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Phó chủ tịch Hội:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Phó chủ tịch Hội:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Phó chủ tịch Hội:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Ủy viên Ban thường trực:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
+                                <div className="list-name-intro">
+                                    <span className="span-label">Ủy viên Ban thường trực:</span>
+                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>Điền vào đây</span>
+                                </div>
                             </div>
                             <div>
                                 <span className="span-label">Năm thành lập: </span>
@@ -122,7 +137,7 @@ const IntroduceBlood = () => {
                         </div>
                     </div>
                     <div style={{ width: "100%" }}>
-                        <div className="unit-table-infor" style={{width:"100%"}}>
+                        <div className="unit-table-infor" style={{ width: "100%" }}>
                             <div className="unit-column-infor">
                                 <div className="unit-div-infor">
                                     <div className="unit-div1-infor">
@@ -232,14 +247,14 @@ const IntroduceBlood = () => {
                 </div>
             </div>
             {/* Hoạt động và khen thưởng */}
-            <div className="body-intro-blood-s" style={{display:visibleIntro?"none":"flex"}}>
+            <div className="body-intro-blood-s" style={{ display: visibleIntro ? "none" : "flex" }}>
                 <div className="red-left-body" />
                 <div className="content-body-intro">
-                <IntroUnit />                  
+                    <IntroUnit />
                 </div>
             </div>
             {/* -------------------------- */}
-            
+
 
             <div className="div-submit-IB">
                 <button id="roleedit" className="button-dis-sub" onClick={() => setchangeInput(false) && roles}>Sửa</button>
