@@ -32,16 +32,18 @@
     width: 41px;
 }
 .buttonDisable1{
-    width: 108px;
-    margin-left: 1.75%;
-    background-color: white !important;
-    color: red !important;
-    border: 1px solid #696969 !important;
+    margin-right: 5px;
+    width: 110px;
+    height: 32px !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19) !important;
+    border: none !important;
+    background-color: #2c3e50 !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: 20px !important;
 }
 .buttonDisable1:hover{
-    border: 1px solid red !important;
-    color: #696969 !important;
-    box-shadow: 1px 1px red;
+    background-color: #ff4d4d !important;
 }
 .ButtonForMobileAdd{
     margin-left: 60%;
@@ -52,7 +54,7 @@
 .unit-table-infor{
     border: 1px solid #a9a9a9;
     border-radius: 8px;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
@@ -111,3 +113,45 @@
         width: 90%;       
     }
 }
+
+
+/* chihoi */
+.para-chihoi-s{
+    width: 1100px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+    .header-chihoi-s{
+        line-height: 80px;
+        padding-left: 20px;
+        width: 100%;
+        height: 80px;
+        border-left: 5px solid #ff4d4d;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+    }
+        .tag-a-header-chihoi{
+            margin-right: 10px;
+            font-weight: 500;
+            color: rgb(255, 77, 77) !important;
+        }
+    .content-chihoi-s{
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+        border-left: 5px solid #ff4d4d;
+    }
+        .label-chihoi-s{
+            font-weight: 500;
+            height: 30px;
+            line-height: 30px;
+            color: #ff4d4d;
+            font-size: 14px;
+        }
+    .logo-chihoi-s{
+        width: 240px;
+        height: 270px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+/* chihoi */

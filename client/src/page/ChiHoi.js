@@ -52,13 +52,13 @@ const ChiHoi = (props) => {
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
-                const {success} = await updateUnit(values)
+                const { success } = await updateUnit(values)
                 setLoading(false)
                 if (success) {
                     notification['success']({
                         message: 'Cập nhật thông tin đơn vị thành công!',
                     })
-                  }
+                }
                 else {
                     notification['error']({
                         message: 'Cập nhật thông tin đơn vị thất bại!',
@@ -71,179 +71,196 @@ const ChiHoi = (props) => {
 
 
     return (
-        <div className = "para">
-            <Form onSubmit={handleUpdate}>
-                <Form.Item>
-                    <div>
-                            <span className="spanLabel">Đơn vị:</span>
-                            {getFieldDecorator('tenchihoi', {
+        <div className="para-chihoi-s">
+            <div className="header-chihoi-s">
+                <a className="tag-a-header-chihoi">{unit.Tenchihoi}</a>
+            </div>
+            <div>
+                <Form onSubmit={handleUpdate}>
+                    <div className="content-chihoi-s">
+                        <Form.Item>
+                            <div style={{ width: "100%", display: 'flex', flexWrap: "wrap" }}>
+                            <div style={{width:"60%"}}>
+                            <div>
+                                <span className="label-chihoi-s">Đơn vị:</span>
+                                {getFieldDecorator('tenchihoi', {
                                     initialValue: unit.Tenchihoi
-                            })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Mã đơn vị:</span>
-                            {getFieldDecorator('machihoi', {
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Mã đơn vị:</span>
+                                {getFieldDecorator('machihoi', {
                                     initialValue: unit.Machihoi
-                            })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Địa chỉ:</span>
-                            {getFieldDecorator('diachi', {
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Địa chỉ:</span>
+                                {getFieldDecorator('diachi', {
                                     initialValue: unit.Diachi
-                            })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Đơn vị trực thuộc quản lý:</span>
-                            {getFieldDecorator('donviql', {
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Đơn vị trực thuộc quản lý:</span>
+                                {getFieldDecorator('donviql', {
                                     initialValue: unit.DonviQL
-                            })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                            
-                        </div>
-                        <div>
-                            <span className="spanLabel">Phụ trách đơn vị hiện tại:</span>
-                            {getFieldDecorator('phutrach', {
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Phụ trách đơn vị hiện tại:</span>
+                                {getFieldDecorator('phutrach', {
                                     initialValue: unit.Phutrach
-                            })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Năm thành lập:</span>
-                            {getFieldDecorator('ngaythanhlap', {
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Năm thành lập:</span>
+                                {getFieldDecorator('ngaythanhlap', {
                                     initialValue: unit.Ngaythanhlap
-                            })(
-                                <Input type="number" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Ngày truyền thống:</span>
-                            {getFieldDecorator('ngaytruyenthong', {
+                                })(
+                                    <Input type="number" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Ngày truyền thống:</span>
+                                {getFieldDecorator('ngaytruyenthong', {
                                     initialValue: unit.Ngaytruyenthong
-                            })(
-                                <Input type="date" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                            )}
-                        </div>
-                        <div>
-                            <span className="spanLabel">Cơ sở thuộc hội:</span>
-                            {getFieldDecorator('csthuochoi', {
+                                })(
+                                    <Input type="date" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Cơ sở thuộc hội:</span>
+                                {getFieldDecorator('csthuochoi', {
                                     initialValue: unit.CSthuochoi
+                                })(
+                                    <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                )}
+                            </div>
+                            <div>
+                                <span className="label-chihoi-s">Tổng số thành viên:</span><br />
+                            </div>
+                            </div>
+                            <div className="logo-chihoi-s">
+                                <img></img>
+                                <div>
+                                    <a></a>
+                                </div>
+                            </div>
+                            </div>
+                            {/*---------------unit-table-infor-------------------------*/}
+                            <div className="unit-table-infor">
+                                <div className="unit-column-infor">
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Cảm tình viên</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('camtinhvien', {
+                                                initialValue: unit.Camtinhvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Tình nguyện viên</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('tnv', {
+                                                initialValue: unit.TNV
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Hội viên</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('hoivien', {
+                                                initialValue: unit.Hoivien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>{/*unit-column-infor*/}
+
+                                <div className="unit-column-infor">
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('huongdanvien', {
+                                                initialValue: unit.Huongdanvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Huấn luyện viên</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('huanluyenvien', {
+                                                initialValue: unit.Huanluyenvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                    <div className="unit-div-infor">
+                                        <div className="unit-div1-infor">
+                                            <span className="unit-span-infor">Cán bộ</span>
+                                        </div>
+                                        <div className="unit-div2-infor">
+                                            {getFieldDecorator('canbotangcuong', {
+                                                initialValue: unit.Canbotangcuong
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span className="label-chihoi-s">Điểm hiến máu thường xuyên tổ chức:</span>
+                            {getFieldDecorator('ketquahoatdong', {
+                                initialValue: unit.Ketquahoatdong
                             })(
-                                <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
+                                <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
                             )}
-                        </div>
-                    <div>
-                    <span className = "spanLabel">Tổng số thành viên:</span><br/>
+                            <br />
+                            <span className="label-chihoi-s">Kết quả hoạt động:</span>
+                            {getFieldDecorator('diemhienmau', {
+                                initialValue: unit.Diemhienmau
+                            })(
+                                <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                            )}
+                        </Form.Item>
                     </div>
-                    {/*---------------unit-table-infor-------------------------*/}
-                    <div className="unit-table-infor">
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cảm tình viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('camtinhvien', {
-                                    initialValue: unit.Camtinhvien
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )}
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Tình nguyện viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('tnv', {
-                                    initialValue: unit.TNV
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )}
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hội viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('hoivien', {
-                                    initialValue: unit.Hoivien
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )}
-                                </div>
-                            </div>
-                        </div>{/*unit-column-infor*/}
-
-                        <div className="unit-column-infor">
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('huongdanvien', {
-                                    initialValue: unit.Huongdanvien
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )}
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Huấn luyện viên</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('huanluyenvien', {
-                                    initialValue: unit.Huanluyenvien
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )} 
-                                </div>
-                            </div>
-                            <div className="unit-div-infor">
-                                <div className="unit-div1-infor">
-                                    <span className="unit-span-infor">Cán bộ</span>
-                                </div>
-                                <div className="unit-div2-infor">
-                                {getFieldDecorator('canbotangcuong', {
-                                    initialValue: unit.Canbotangcuong
-                                })(
-                                    <Input type="number" min="0" style={{width:"100%", color:"#ff4d4d", border:"none", backgroundColor:"white",height:28 }} disabled={changeInput} />
-                                )}
-                                </div>
-                            </div>
-                        </div>
+                    <div className="ButtonForMobileAdd">
+                        <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>
+                        <Form.Item>
+                            <Button id='rolesave' className="buttonDisable1" type="primary" htmlType="submit">Lưu thay đổi</Button>
+                        </Form.Item>
                     </div>
-
-                    <span className = "spanLabel">Điểm hiến máu thường xuyên tổ chức:</span>
-                    {getFieldDecorator('ketquahoatdong', {
-                        initialValue: unit.Ketquahoatdong
-                    })(
-                        <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}}  disabled={changeInput} />
-                    )}
-                    <br/>
-                    <span className = "spanLabel">Kết quả hoạt động:</span>
-                    {getFieldDecorator('diemhienmau', {
-                        initialValue: unit.Diemhienmau
-                    })(
-                        <Input type="text" style={{width:"70%",backgroundColor:"white", color:"#ff4d4d", border:"none", marginBottom:2}} disabled={changeInput} />
-                    )}
-                </Form.Item>
-                <div className="ButtonForMobileAdd">
-                    <Button className="buttonDisable1" id='roleedit' onClick={() => setchangeInput(false)}>Sửa</Button>                
-                    <Form.Item>
-                        <Button id='rolesave' className="buttonDisable1" type="primary" htmlType="submit">Lưu thay đổi</Button>
-                    </Form.Item>
-                </div>
-            </Form>
+                </Form>
+            </div>
         </div>
     )
 }
