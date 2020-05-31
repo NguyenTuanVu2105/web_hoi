@@ -91,7 +91,7 @@ const LoginWrap = (props) => {
         </div>
         <Form onSubmit={handleSubmit} className="login-form">
           <div className="logo-login-s">
-            <img className="logo-img-login" src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=YsYvls0vHNEAX8kPRUG&_nc_ht=scontent.fhan5-1.fna&oh=26e30a6e4672bee0555faccebaf06682&oe=5EED719B"></img>
+            <img className="logo-img-login" src="/img/logomau.png"></img>
           </div>
           {message && <Alert style={{ marginBottom: '20px' }} message={message} type="error" />}
           <Form.Item>
