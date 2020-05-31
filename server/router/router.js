@@ -124,9 +124,10 @@ module.exports = function(app) {
     app.get('/api/user/captain/branch', [authJwt.verifyToken], branchcontroller.CaptainBranch)
 
     //hoi
-    app.put('/api/admin/edit/association', [authJwt.verifyToken], associationcontroller.EditAssociation)
 
-    app.get('/api/information/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
+    app.get('/api/admin/view/association', [authJwt.verifyToken], associationcontroller.ViewAssociation)
+    
+    app.post('/api/admin/update/association', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.UpdateAssociation)
 
     //admin
 

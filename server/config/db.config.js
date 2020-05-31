@@ -22,10 +22,13 @@ db.specialized = require('../model/specialized.model')(sequelize, Sequelize)
 db.position = require('../model/position.model')(sequelize, Sequelize)
 db.club = require('../model/club.model')(sequelize, Sequelize)
 db.branch = require('../model/branch.model')(sequelize, Sequelize)
-db.association = require('../model/association.model')(sequelize, Sequelize)
 db.school = require('../model/school.model')(sequelize, Sequelize)
 db.background = require('../model/background.model')(sequelize, Sequelize)
 db.logimage = require('../model/logimage.model')(sequelize, Sequelize)
+//Về hội
+db.association = require('../model/association.model')(sequelize, Sequelize)
+db.activity     = require('../model/activity.association.model')(sequelize, Sequelize)
+db.remunerative = require('../model/remunerative.association.model')(sequelize, Sequelize)
 
 db.user.hasOne(db.member)
 db.member.belongsTo(db.user)
@@ -39,7 +42,8 @@ db.club.hasMany(db.member)
 db.member.belongsTo(db.club)
 db.branch.hasMany(db.club)
 db.club.belongsTo(db.branch)
-db.association.hasMany(db.branch)
-db.branch.belongsTo(db.association)
+// Về hội
+db.association.hasMany(db.activity)
+db.association.hasMany(db.remunerative)
 
 module.exports = db
