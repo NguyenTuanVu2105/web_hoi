@@ -5,6 +5,6 @@
 @media (max-width:1200px){
     .bread-crumb-s{
         width: 100%;
-        margin-left: 20px !important;
+        padding-left: 20px !important;
     }
 }
