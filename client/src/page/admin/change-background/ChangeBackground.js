@@ -155,7 +155,7 @@ const columns = [
         dataIndex: 'Linkanh',
         id: 'Linkanh',
         render: (Linkanh) => {
-            return <div name="linkAnh" className="background-change-header-s" style={{ backgroundImage: `url(${Linkanh})` }}></div>
+            return <a href={Linkanh} target="blank"><div name="linkAnh" className="background-change-header-s" style={{ backgroundImage: `url(${Linkanh})` }}/></a>
         }
     },
   ];
@@ -198,7 +198,7 @@ const columns = [
                         {getFieldDecorator('diadiem')(
                             <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" required />
                         )}
-                        <label className="change-color-header">Màu nền: </label>
+                        {/* <label className="change-color-header">Màu nền: </label>
                         {getFieldDecorator('maunen', {
                             initialValue: "rgb(0, 0, 0)"
                         })(
@@ -209,7 +209,7 @@ const columns = [
                             initialValue: "white"
                         })(
                             <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
-                        )}<br />
+                        )}<br /> */}
                         <Upload
                             // link to upload
                             customRequest={onChooseFile}

@@ -45,9 +45,9 @@ const Slideshow = () => {
                   </div> */}
                   <div className="reponsive-header">
                     {/* <div className="triangle-img" style={{ borderLeft: `60px solid ${inf.Maunen}`}} /> */}
-                    <div>
-                      <img className="background-cover-header" src={inf.Linkanh}/>
-                    </div>
+                    <a href={inf.Linkchuongtrinh} target="blank">
+                      <img className="background-cover-header" src={inf.Linkanh} />
+                    </a>
                   </div>
                 </div>
               </div>
