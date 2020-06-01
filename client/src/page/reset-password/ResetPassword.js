@@ -53,10 +53,18 @@ const ResetPassword = (props) => {
                         <div style={{display: isLoading ? 'block' : 'none'}}>
                             <Loading/>
                         </div>
-                        <div className="Body">
+                        <div className="body-changepass-form">
                             <div className="borderContent">
-                                <div style={{width: 240, margin: '0 auto'}}>
-                                    <div className="logomauI"/>
+                                <div className="content-left-changepass">
+                                <div style={{margin:"0 auto"}}>
+                                    <div style={{color:"white", fontSize:40,fontWeight:700,fontFamily: "sans-serif",textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
+                                    <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Hiến giọt máu đào, trao đời sự sống</div>
+                                </div>
+                                </div>
+                                <div className="content-right-changepass">
+                                    <div className="logomauI">
+                                        <img className="logo-img-changepass" src="/img/logomau.png"/>
+                                    </div>
                                     <input className="password" type="password" placeholder="New Password" value={password}
                                            onChange={(e) => setpassword(e.target.value)}/><br/>
                                     <input className="password" type="password" placeholder="Confirm Password"
