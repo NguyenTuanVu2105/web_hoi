@@ -6,8 +6,8 @@ module.exports = (sequelize, Sequelize) => {
         Ngaydienra:         Sequelize.STRING,
         Ngayketthuc:        Sequelize.DATEONLY,
         Diadiem:            Sequelize.TEXT + ' CHARSET utf8 COLLATE utf8_general_ci',
-        Maunen:             Sequelize.STRING,
-        Mauchu:             Sequelize.STRING
+        // Maunen:             Sequelize.STRING,
+        // Mauchu:             Sequelize.STRING
     })
     return Background
 }

@@ -24,8 +24,8 @@ exports.AddBackground = (req, res) => {
     if (req.body.ngaydienra) background.Ngaydienra = req.body.ngaydienra;
     if (req.body.ngayketthuc) background.Ngayketthuc = req.body.ngayketthuc;
     if (req.body.diadiem) background.Diadiem = req.body.diadiem;
-    if (req.body.maunen) background.Maunen = req.body.maunen;
-    if (req.body.mauchu) background.Mauchu = req.body.mauchu;
+    // if (req.body.maunen) background.Maunen = req.body.maunen;
+    // if (req.body.mauchu) background.Mauchu = req.body.mauchu;
     Background.findOne({
         where:{
             [Op.and] :[
@@ -35,8 +35,8 @@ exports.AddBackground = (req, res) => {
                 {Ngaydienra :req.body.ngaydienra},
                 {Ngayketthuc: req.body.ngayketthuc},
                 {Diadiem: req.body.diadiem},
-                {Maunen :req.body.maunen},
-                {Mauchu :req.body.mauchu}
+                // {Maunen :req.body.maunen},
+                // {Mauchu :req.body.mauchu}
             ]
         }
 
@@ -98,8 +98,8 @@ exports.EditBackground = (req, res) =>{
                 Ngaydienra :req.body.ngaydienra,
                 Ngayketthuc: req.body.ngayketthuc,
                 Diadiem: req.body.diadiem,
-                Maunen :req.body.maunen,
-                Mauchu :req.body.mauchu
+                // Maunen :req.body.maunen,
+                // Mauchu :req.body.mauchu
             }, {
                 where: {
                     id : req.body.id
