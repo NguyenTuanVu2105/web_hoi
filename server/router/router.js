@@ -26,7 +26,7 @@ module.exports = function(app) {
 
     app.post('/api/token/check', usercontroller.checkToken)
     //member
-    app.post('/api/admin/information/add',[authJwt.verifyToken], membercontroller.AddProfile)
+    app.post('/api/admin/information/add',[authJwt.verifyToken, authJwt.checkRoles], membercontroller.AddProfile)
 
     app.put('/api/user/information/edit', [authJwt.verifyToken], membercontroller.EditProfile)
 
@@ -80,30 +80,30 @@ module.exports = function(app) {
     app.post('/api/admin/la/edit', [authJwt.verifyToken, authJwt.checkRoles], learnactivity.editLearnActivityAdmin)
 
     //position
-    app.get('/api/admin/position/view', [authJwt.verifyToken], positioncontroller.viewPosition)
+    app.get('/api/admin/position/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.viewPosition)
 
-    app.post('/api/admin/position/add', [authJwt.verifyToken], positioncontroller.addPosition)
+    app.post('/api/admin/position/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.addPosition)
 
-    app.put('/api/admin/position/update', [authJwt.verifyToken], positioncontroller.editPosition)
+    app.put('/api/admin/position/update', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.editPosition)
 
-    app.delete('/api/admin/position/delete', [authJwt.verifyToken], positioncontroller.deletePosition)
+    app.delete('/api/admin/position/delete', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.deletePosition)
 
     //specialized
 
-    app.get('/api/admin/specialized/view', [authJwt.verifyToken], specializedcontroller.viewSpecialized)
+    app.get('/api/admin/specialized/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.viewSpecialized)
 
-    app.post('/api/admin/specialized/add', [authJwt.verifyToken], specializedcontroller.addSpecialized)
+    app.post('/api/admin/specialized/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.addSpecialized)
 
-    app.put('/api/admin/specialized/update', [authJwt.verifyToken], specializedcontroller.editSpecialized)
+    app.put('/api/admin/specialized/update', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.editSpecialized)
 
-    app.delete('/api/admin/specialized/delete', [authJwt.verifyToken], specializedcontroller.deleteSpecialized)
+    app.delete('/api/admin/specialized/delete', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.deleteSpecialized)
     
     // club
-    app.post('/api/admin/add/club', [authJwt.verifyToken], clubcontroller.AddClub)
+    app.post('/api/admin/add/club', [authJwt.verifyToken, authJwt.checkRolesHoitruong], clubcontroller.AddClub)
 
-    app.put('/api/admin/edit/club', [authJwt.verifyToken], clubcontroller.EditClub)
+    app.put('/api/admin/edit/club', [authJwt.verifyToken, authJwt.checkRolesHoitruong], clubcontroller.EditClub)
 
-    app.delete('/api/admin/delete/club', [authJwt.verifyToken], clubcontroller.DeleteClub)
+    app.delete('/api/admin/delete/club', [authJwt.verifyToken, authJwt.checkRolesHoitruong], clubcontroller.DeleteClub)
 
     app.get('/api/information/club', [authJwt.verifyToken], clubcontroller.ViewOneClub)
 
@@ -113,11 +113,11 @@ module.exports = function(app) {
 
     //chi hoi
 
-    app.post('/api/admin/add/branch', [authJwt.verifyToken], branchcontroller.AddBranch)
+    app.post('/api/admin/add/branch', [authJwt.verifyToken, authJwt.checkRolesHoitruong], branchcontroller.AddBranch)
 
-    app.put('/api/admin/edit/branch', [authJwt.verifyToken], branchcontroller.EditBranch)
+    app.put('/api/admin/edit/branch', [authJwt.verifyToken, authJwt.checkRolesHoitruong], branchcontroller.EditBranch)
 
-    app.delete('/api/admin/delete/branch', [authJwt.verifyToken], branchcontroller.DeleteBranch)
+    app.delete('/api/admin/delete/branch', [authJwt.verifyToken, authJwt.checkRolesHoitruong], branchcontroller.DeleteBranch)
 
     app.get('/api/information/branch', [authJwt.verifyToken], branchcontroller.ViewBranch)
 
@@ -137,9 +137,9 @@ module.exports = function(app) {
 
     app.post('/api/admin/upload/avatar', [imageUploader.single('avatar'), authJwt.verifyToken, authJwt.checkRoles], membercontroller.AdminUploadAvatar)
 
-    app.get('/api/admin/view/member', [authJwt.verifyToken], admincontroller.ViewMemberInformation)
+    app.get('/api/admin/view/member', [authJwt.verifyToken, authJwt.checkRoles], admincontroller.ViewMemberInformation)
 
-    app.get('/api/admin/view/memberLA', [authJwt.verifyToken], admincontroller.ViewMemberLA)
+    app.get('/api/admin/view/memberLA', [authJwt.verifyToken, authJwt.checkRoles], admincontroller.ViewMemberLA)
     
     app.get('/api/branch/club/all', [authJwt.verifyToken], admincontroller.BranchClubInformation)
 
