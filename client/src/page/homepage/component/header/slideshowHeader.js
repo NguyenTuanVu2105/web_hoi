@@ -29,7 +29,7 @@ const Slideshow = () => {
   }, [])
   return (
     <div className="para-header-s-0">
-      <div className="slide-container para-header-s" style={{}}>
+      <div className="slide-container para-header-s">
         <Slide {...properties}>
           {
             inf.map((inf,index) => (
@@ -45,9 +45,9 @@ const Slideshow = () => {
                   </div> */}
                   <div className="reponsive-header">
                     {/* <div className="triangle-img" style={{ borderLeft: `60px solid ${inf.Maunen}`}} /> */}
-                    <div>
-                      <img className="background-cover-header" src={inf.Linkanh}/>
-                    </div>
+                    <a href={inf.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: "+inf.Ngaydienra + ". Địa điểm: "+inf.Diadiem} >
+                      <img className="background-cover-header" src={inf.Linkanh} />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@ const Slideshow = () => {
             </div>
             <div className="body-text-header-s">
               <div className="text-header-s">
-                <a href="#lien-he-nguoi-than" className="tag-a-header-s">Các chương trình lớn</a>
+                <a href="#cac-chuong-trinh-lon" className="tag-a-header-s">Các chương trình lớn</a>
               </div>
             </div>
           </div>

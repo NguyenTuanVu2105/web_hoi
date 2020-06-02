@@ -32,7 +32,7 @@ const HistoryBlood = () => {
             <iframe 
             // cho link vào đây ------------------------------------------------------------
                 src="https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview"
-                style={{width: "100%", height: "1000px"}}
+                style={{width: "100%", height: "700px"}}
             >
             </iframe>
             <div>
@@ -45,8 +45,11 @@ const HistoryBlood = () => {
                     onOk={handleOk}
                     onCancel={handleCancel}
                 >
-                    <label>Đường Link PDF:</label>
-                    <input></input>
+                    <Form>
+                        <Form.Item>
+                            <Input placeholder="Link PDF"></Input>
+                        </Form.Item>
+                    </Form>
                 </Modal>
             </div>
         </div>
