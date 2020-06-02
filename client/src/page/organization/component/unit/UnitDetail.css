@@ -158,6 +158,15 @@
         display: flex;
         flex-wrap: wrap;
     }
+.input-unit-s{
+    width: 70% !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    border: none !important;
+    margin-bottom: 2px !important;
+    margin-left: 2px !important;
+    padding: 0px !important;
+}
 @media (min-width:993px) and (max-width:1200px){
     .para-unit-s{
         width: 96%;
@@ -175,6 +184,9 @@
     }
     .reponsive-unit-s{
         width: 100%;
+    }
+    .input-unit-s{
+        width: 100% !important;
     }
 }
 @media (max-width: 1200px){

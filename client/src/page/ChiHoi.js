@@ -85,7 +85,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('tenchihoi', {
                                             initialValue: unit.Tenchihoi
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -93,7 +93,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('machihoi', {
                                             initialValue: unit.Machihoi
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -101,7 +101,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('diachi', {
                                             initialValue: unit.Diachi
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -109,7 +109,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('donviql', {
                                             initialValue: unit.DonviQL
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
 
                                     </div>
@@ -118,7 +118,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('phutrach', {
                                             initialValue: unit.Phutrach
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -126,7 +126,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('ngaythanhlap', {
                                             initialValue: unit.Ngaythanhlap
                                         })(
-                                            <Input type="number" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="number" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -134,7 +134,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('ngaytruyenthong', {
                                             initialValue: unit.Ngaytruyenthong
                                         })(
-                                            <Input type="date" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="date" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -142,7 +142,7 @@ const ChiHoi = (props) => {
                                         {getFieldDecorator('csthuochoi', {
                                             initialValue: unit.CSthuochoi
                                         })(
-                                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                                         )}
                                     </div>
                                     <div>
@@ -237,18 +237,18 @@ const ChiHoi = (props) => {
                                 </div>
                             </div>
 
-                            <span className="label-unit-s">Điểm hiến máu thường xuyên tổ chức:</span>
+                            <span className="label-unit-s">Kết quả hoạt động:</span>
                             {getFieldDecorator('ketquahoatdong', {
                                 initialValue: unit.Ketquahoatdong
                             })(
-                                <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                <Input type="text" className="input-unit-s" disabled={changeInput} />
                             )}
                             <br />
-                            <span className="label-unit-s">Kết quả hoạt động:</span>
+                            <span className="label-unit-s">Điểm hiến máu thường xuyên tổ chức:</span>
                             {getFieldDecorator('diemhienmau', {
                                 initialValue: unit.Diemhienmau
                             })(
-                                <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                <Input type="text" className="input-unit-s" disabled={changeInput} />
                             )}
                         </Form.Item>
                     </div>

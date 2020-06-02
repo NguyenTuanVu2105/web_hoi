@@ -83,7 +83,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('tendoi', {
                                         initialValue: club.Tendoi
                                     })(
-                                        <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -91,7 +91,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('madoi', {
                                         initialValue: club.Madoi
                                     })(
-                                        <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -99,7 +99,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('diachi', {
                                         initialValue: club.Diachi
                                     })(
-                                        <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -107,7 +107,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('donviql', {
                                         initialValue: club.DonviQL
                                     })(
-                                        <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
                                     )}
 
                                 </div>
@@ -116,7 +116,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('phutrach', {
                                         initialValue: club.Phutrach
                                     })(
-                                        <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -124,7 +124,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('ngaythanhlap', {
                                         initialValue: club.Ngaythanhlap
                                     })(
-                                        <Input type="number" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="number" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -132,7 +132,7 @@ const UnitDetail = (props) => {
                                     {getFieldDecorator('ngaytruyenthong', {
                                         initialValue: club.Ngaytruyenthong
                                     })(
-                                        <Input type="date" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                                        <Input type="date" className="input-unit-s" disabled={changeInput} />
                                     )}
                                 </div>
                                 <div>
@@ -231,14 +231,14 @@ const UnitDetail = (props) => {
                         {getFieldDecorator('ketquahoatdong', {
                             initialValue: club.Ketquahoatdong
                         })(
-                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                         )}
                         <br />
                         <span className="label-unit-s">Kết quả hoạt động:</span>
                         {getFieldDecorator('diemhienmau', {
                             initialValue: club.Diemhienmau
                         })(
-                            <Input type="text" style={{ width: "70%", backgroundColor: "white", color: "rgba(0, 0, 0, 0.6)", border: "none", marginBottom: 2 }} disabled={changeInput} />
+                            <Input type="text" className="input-unit-s" disabled={changeInput} />
                         )}
                     </Form.Item>
                 </div>
