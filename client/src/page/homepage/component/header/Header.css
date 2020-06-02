@@ -93,13 +93,6 @@
         flex-direction: column;
         justify-content: center;
     }
-    .information-img{
-        width: 300px;
-        height: 300px;
-    }
-        .label-header{
-            margin-left: 15px;
-        }
         .change-background-header{
             background-color: white;
             opacity: .6;
@@ -130,21 +123,6 @@
             .Ccolor:hover{
                 border: 1px solid rgb(82, 163, 255);
             }
-
-    .triangle-img{
-        opacity: .9;
-        width: 0;
-        height: 0;
-        border-bottom: 150px solid transparent;
-        border-top: 150px solid transparent;
-        position: absolute;
-        z-index: 1;
-    }
-    .information-img::after{
-        position: absolute;
-        width: 0;
-        height: 0;        
-    }
     .background-cover-header{
         position: relative;
         background-image: url('https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/85240841_2892567020796099_125429988689182720_o.jpg?_nc_cat=105&_nc_sid=a61e81&_nc_ohc=GRySwZG7C00AX9NzVL-&_nc_ht=scontent.fhan5-6.fna&oh=6a7e94b9ce6eeba47e342257fb68a35f&oe=5EF562A8');
@@ -166,36 +144,10 @@
     width: 0;
     height: 0;        
 }
-
-/* .menu-cont{
-    width: calc(100% - 900px);
-    height: 350px;
-    overflow-y: scroll;
-}
-    .chil-cont{
-        margin:5px;
-    }
-#scroll-menu::-webkit-scrollbar {
-    width: 5px;
-    background-color: #F5F5F5;
-} 
-#scroll-menu::-webkit-scrollbar-thumb {
-    background-color: red;
-}
-#scroll-menu::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-} */
 @media (min-width:993px) and (max-width:1200px){
     .para-header-s{
         width: 800px;
         margin: 0 auto;
-    }
-    .information-img{
-        display: none;
-    }
-    .triangle-img{
-        display: none;
     }
     .reponsive-header{
         width: 100%;
