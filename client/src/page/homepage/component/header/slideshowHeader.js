@@ -4,7 +4,7 @@ import './Header.css'
 import { getSlideShowBackground } from '../../../../api/base/background'
 
 const properties = {
-  duration: 4000,
+  duration: 4500,
   transitionDuration: 500,
   infinite: true,
   indicators: true,
@@ -75,7 +75,7 @@ const Slideshow = () => {
             </div>
             <div className="body-text-header-s">
               <div className="text-header-s">
-                <a href="#cac-chuong-trinh-lon" className="tag-a-header-s">Các chương trình lớn</a>
+                <a href="https://www.facebook.com/groups/Giadinhhoimau/" target="_blank" className="tag-a-header-s">Gia đình Hội Máu</a>
               </div>
             </div>
           </div>
