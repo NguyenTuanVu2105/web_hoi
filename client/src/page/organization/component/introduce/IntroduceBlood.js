@@ -66,7 +66,11 @@ const IntroduceBlood = () => {
                 <div className="red-left-body" />
                 <div className="content-body-intro">
                     <div style={{ width: "100%", display: 'flex', flexWrap: "wrap" }}>
-                        <div>
+                        <div className="logo-intro-reponsive">
+                            <img className="logo-intro-img-rp" src="./img/navbar/logomau.png" alt="logo" />
+                            <div className="intro-tag-a-rp"><a className="h4-a-IB" href='/gioi-thieu-ve-hoi-chi-tiet'>Hội máu Hà Nội</a></div>
+                        </div>
+                        <div className="thuong-truc-s">
                             <h6 style={{ color: '#ff4d4d' }}>Thường trực ủy ban Hội</h6>
                             <div>
                                 <div className="list-name-intro">
