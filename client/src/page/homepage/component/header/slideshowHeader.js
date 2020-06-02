@@ -29,14 +29,14 @@ const Slideshow = () => {
   }, [])
   return (
     <div className="para-header-s-0">
-      <div className="slide-container para-header-s">
+      <div className="slide-container para-header-s" style={{ display: inf.length ? "block" : "none" }}>
         <Slide {...properties}>
           {
-            inf.map((inf,index) => (
-              <div key={"ink"+index} className="each-slide">
+            inf.map((inf, index) => (
+              <div key={"ink" + index} className="each-slide">
                 <div className='page-header'>
                   <div className="reponsive-header">
-                    <a href={inf.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: "+inf.Ngaydienra + ". Địa điểm: "+inf.Diadiem} >
+                    <a href={inf.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: " + inf.Ngaydienra + ". Địa điểm: " + inf.Diadiem} >
                       <img className="background-cover-header" src={inf.Linkanh} />
                     </a>
                   </div>
@@ -46,44 +46,51 @@ const Slideshow = () => {
           }
         </Slide>
       </div>
+      <div style={{ display: inf.length ? "none" : "block" }}>
+        <div className='page-header'>
+          <div className="reponsive-header">
+            <img className="background-cover-header" src="/img/backgroundlogo.png" />
+          </div>
+        </div>
+      </div>
       <div className="menu-right-s">
-          <div className="title-header-s">HỘI MÁU HÀ NỘI</div>
-          <div className="content-header-s" style={{height:'175px'}}>
-            <div className="body-text-header-s">
-              <div className="text-header-s">
-                <a href="/gioi-thieu-ve-hoi" className="tag-a-header-s">Giới thiệu về Hội</a>
-              </div>
-            </div>
-            <div className="body-text-header-s">
-              <div className="text-header-s">
-                <a href="/ho-so-don-vi" className="tag-a-header-s">Đơn vị trực thuộc</a>
-              </div>
-            </div>
-            <div className="body-text-header-s">
-              <div className="text-header-s">
-                <a href="/lich-su-hoi" className="tag-a-header-s">Lịch sử Hội</a>
-              </div>
-            </div>
-            <div className="body-text-header-s">
-              <div className="text-header-s">
-                <a href="https://www.facebook.com/groups/Giadinhhoimau/" target="_blank" className="tag-a-header-s">Gia đình Hội Máu</a>
-              </div>
+        <div className="title-header-s">HỘI MÁU HÀ NỘI</div>
+        <div className="content-header-s" style={{ height: '175px' }}>
+          <div className="body-text-header-s">
+            <div className="text-header-s">
+              <a href="/gioi-thieu-ve-hoi" className="tag-a-header-s">Giới thiệu về Hội</a>
             </div>
           </div>
-          <div className="content-header-s" style={{height:'65px'}}>
-            <div style={{marginRight:'2px',backgroundColor:"#4267b2", width:"calc(50% - 1px)"}}>
-              <a className="href-link-header-s" href="https://www.facebook.com/hoimauhanoi/" target="_blank" style={{backgroundColor:"#4267b2"}}>
-              <div style={{color:"white",fontWeight:"500",marginRight:'5px'}}>Facebook</div>
-              <div className="icon-header-s" style={{paddingTop:"4.5px"}}><i className="fa fa-facebook-f" style={{fontSize:34,color:'#4267b2'}}/></div>
-              </a>
-            </div>
-            <div style={{backgroundColor:"#4267b2", width:"calc(50% - 1px)"}}>
-            <a className="href-link-header-s" href="http://mau.vn/" target="_blank" style={{backgroundColor:"#ff524d"}}>
-              <div style={{color:"white",fontWeight:"500",marginRight:'5px'}}>Mau.vn</div>
-              <div className="icon-header-s" style={{borderRadius:"50%"}}><img style={{width:"38px", height:"auto", borderRadius:"50%"}} src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fwSetp_69fMAX9rcBm-&_nc_ht=scontent.fhan5-1.fna&oh=289de5bd24485af7a08a59927601e0ac&oe=5EF55A9B"></img></div>
-              </a>
+          <div className="body-text-header-s">
+            <div className="text-header-s">
+              <a href="/ho-so-don-vi" className="tag-a-header-s">Đơn vị trực thuộc</a>
             </div>
           </div>
+          <div className="body-text-header-s">
+            <div className="text-header-s">
+              <a href="/lich-su-hoi" className="tag-a-header-s">Lịch sử Hội</a>
+            </div>
+          </div>
+          <div className="body-text-header-s">
+            <div className="text-header-s">
+              <a href="https://www.facebook.com/groups/Giadinhhoimau/" target="_blank" className="tag-a-header-s">Gia đình Hội Máu</a>
+            </div>
+          </div>
+        </div>
+        <div className="content-header-s" style={{ height: '65px' }}>
+          <div style={{ marginRight: '2px', backgroundColor: "#4267b2", width: "calc(50% - 1px)" }}>
+            <a className="href-link-header-s" href="https://www.facebook.com/hoimauhanoi/" target="_blank" style={{ backgroundColor: "#4267b2" }}>
+              <div style={{ color: "white", fontWeight: "500", marginRight: '5px' }}>Facebook</div>
+              <div className="icon-header-s" style={{ paddingTop: "4.5px" }}><i className="fa fa-facebook-f" style={{ fontSize: 34, color: '#4267b2' }} /></div>
+            </a>
+          </div>
+          <div style={{ backgroundColor: "#4267b2", width: "calc(50% - 1px)" }}>
+            <a className="href-link-header-s" href="http://mau.vn/" target="_blank" style={{ backgroundColor: "#ff524d" }}>
+              <div style={{ color: "white", fontWeight: "500", marginRight: '5px' }}>Mau.vn</div>
+              <div className="icon-header-s" style={{ borderRadius: "50%" }}><img style={{ width: "38px", height: "auto", borderRadius: "50%" }} src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fwSetp_69fMAX9rcBm-&_nc_ht=scontent.fhan5-1.fna&oh=289de5bd24485af7a08a59927601e0ac&oe=5EF55A9B"></img></div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
