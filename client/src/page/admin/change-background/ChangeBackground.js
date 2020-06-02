@@ -371,7 +371,7 @@ const columns = [
                 }
             </div> */}
             {/* table back */}
-            <Table columns={columns} dataSource={cover} size="middle" />
+            <Table columns={columns} scroll={{x: 'max-content'}} dataSource={cover} size="middle" />
 
             {/* table back */}
         </div>
