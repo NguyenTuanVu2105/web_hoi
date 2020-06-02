@@ -25,6 +25,7 @@ db.branch = require('../model/branch.model')(sequelize, Sequelize)
 db.school = require('../model/school.model')(sequelize, Sequelize)
 db.background = require('../model/background.model')(sequelize, Sequelize)
 db.logimage = require('../model/logimage.model')(sequelize, Sequelize)
+db.introduction = require('../model/introduction.model')(sequelize, Sequelize)
 //Về hội
 db.association = require('../model/association.model')(sequelize, Sequelize)
 db.activity     = require('../model/activity.association.model')(sequelize, Sequelize)
