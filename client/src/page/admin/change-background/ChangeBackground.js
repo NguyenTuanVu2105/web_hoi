@@ -29,11 +29,13 @@ const ChangeBackground = (props) => {
             }
         }
     }
+    const [openDe, setOpenDe] = useState(false)
     const removeImg = async (id) => {
         setLoading(true)
         const resp = await deleteBackground(id)
         if (resp.success) {
             if (resp.data.success) {
+                setOpenDe(false)
                 notification['success']({
                     message: 'Xóa thành công',
                 })
@@ -114,8 +116,14 @@ const ChangeBackground = (props) => {
     const handleCancel = e => {
         setOpenBack(false)
     };
-    // console.log(cover.length)
-
+    // delete img
+    
+    const showModalDe = () => {
+        setOpenDe(true)
+    };
+    const handleCancelDe = e => {
+        setOpenDe(false)
+    };
 // tableback
 const columns = [
     {
@@ -125,8 +133,21 @@ const columns = [
         dataIndex: 'id',
         render: (id) => {
             return <div>
-                <CBH id={id}/>
-                <button className="button-change-back-s" onClick={() => removeImg(id)}>Xóa</button>
+                <CBH id={id}/>               
+                <Button type="primary" className="button-change-back-s" style={{ marginTop: 15 }} onClick={showModalDe}>
+                    Xóa
+                </Button>
+                <Modal
+                title="Xóa chương trình!"
+                visible={openDe}
+                footer={null}
+                onCancel={handleCancelDe}
+                >
+                    <p>Hành động này không thể hoàn tác. Bạn có chắc muốn xóa!</p>
+                    <div className="modal-change-back-s">
+                        <button className="button-change-back-s" style={{width:"100px"}} onClick={() => removeImg(id)}>Xóa</button>
+                    </div>                   
+                </Modal>
             </div>
         }
     },
