@@ -14,3 +14,18 @@ export const editAssociation = (data) => {
         data: data
     })
 }
+
+export const getPDF = () => {
+    return createAuthApiRequest({
+        url: `/api/introduction`,
+        method: 'get'
+    })
+}
+  
+export const editPDF = (data) => {
+    return createAuthApiRequest({
+        url: `/api/update/introduction`,
+        method: 'post',
+        data: data
+    })
+}

@@ -78,6 +78,67 @@ exports.UpdateAssociation = (req, res) => {
     })
 }
 
+exports.viewPDF = (req, res) => {
+    Association.findOne({
+        where: {
+            id: 1
+        },
+        attributes: ['Tailieu']
+    }).then(association => {
+        res.status(200).send({success: true, message: association})
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
+
+exports.editPDF = (req, res) => {
+    Association.findOne({
+        where: {
+            id: 1
+        }
+    }).then(association => {
+        if (!association) {
+            Association.create({
+                id:                 1,
+                Chutichhoi:         null,
+                Phochutich_1:       null, 
+                Phochutich_2:       null,
+                Phochutich_3:       null,
+                Phochutich_4:       null,
+                Uyvien_1:           null, 
+                Uyvien_2:           null,
+                Namthanhlap:        null,
+                Ngaytruyenthong:    null,
+                Camtinhvien:        null,
+                TNV:                null,
+                Hoivien:            null,
+                Huongdanvien:       null,
+                Huanluyenvien:      null,
+                Canbotangcuong:     null,
+                Tailieu:            req.body.Tailieu
+            }).then(() => {
+                res.status(200).send({success: true, message: "Tạo thành công thông tin!"})
+            }).catch(err => {
+                res.status(500).send({success: false, message: err})
+            })
+        } else {
+            Association.update({
+                Tailieu:  req.body.Tailieu
+            }, {
+                where: {
+                    id: 1
+                }
+            }).then(() => {
+                res.status(200).send({success: true, message: "Cập nhập thành công thông tin!"})
+            }).catch(err => {
+                res.status(500).send({success: false, message: err})
+            })
+        }
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
+
 // exports.AddAndUpdateRemunerative = (req, res) => {
 //     Association.findOne({
 //         where: {

@@ -15,7 +15,6 @@ module.exports = function(app) {
     const learnactivity             = require('../controller/leanactivity.controller')
     const imageUploader             = multer({dest: 'images/'})
     const backgroudcontroller       = require('../controller/background.controller')
-    const introductioncontroller    = require('../controller/introduction.controller')
 
     app.post('/api/login', usercontroller.login)
 
@@ -130,9 +129,9 @@ module.exports = function(app) {
     
     app.post('/api/admin/update/association', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.UpdateAssociation)
 
-    app.get('/api/introduction', introductioncontroller.ViewPDF)
+    app.get('/api/introduction', [authJwt.verifyToken], associationcontroller.viewPDF)
     
-    app.post('/api/update/introduction', introductioncontroller.AddLinkPDF)
+    app.post('/api/update/introduction', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.editPDF)
     
     //admin
 
