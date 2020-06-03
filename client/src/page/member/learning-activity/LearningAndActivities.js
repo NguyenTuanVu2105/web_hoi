@@ -58,7 +58,7 @@ function LearningAndActivities(props) {
         <div className="para-learning-and-activities">
             <Form onSubmit={handleSubmit}>
                 <div className="paren-body-LAA">
-                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px'}}>
+                    <div style={{backgroundColor:"#ff4d4d",height:35,display:"flex", alignItems:"center"}}>
                         <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>HỌC TẬP</span>
                     </div>
                     
@@ -221,7 +221,7 @@ function LearningAndActivities(props) {
                     </Form.Item>
                 </div>
                 <div className="paren-body-LAA">
-                    <div style={{backgroundColor:"#ff4d4d",height:30,lineHeight:'30px',marginBottom: 10}}>
+                    <div style={{backgroundColor:"#ff4d4d",height:35,display:"flex", alignItems:"center",marginBottom: 10}}>
                         <span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>HOẠT ĐỘNG</span>
                     </div>
                     <div style={{display:"flex",flexWrap:"wrap"}}>
