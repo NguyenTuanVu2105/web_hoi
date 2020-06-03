@@ -152,6 +152,9 @@ exports.ViewProfile = (req, res) => {
 }
 
 exports.uploadAvatar = (req, res) => {
+    if (!req.file) {
+        return res.status(200).send({success: true})
+    }
     const processedFile = req.file || {}
     let orgName = processedFile.originalname || ''
     orgName = orgName.trim().replace(/ /g, "-")
@@ -239,6 +242,9 @@ exports.AdminViewProfile = (req, res) => {
 }
 
 exports.AdminUploadAvatar = (req, res) => {
+    if (!req.file) {
+        return res.status(200).send({success: true})
+    }
     const processedFile = req.file || {}
     let orgName = processedFile.originalname || ''
     orgName = orgName.trim().replace(/ /g, "-")
