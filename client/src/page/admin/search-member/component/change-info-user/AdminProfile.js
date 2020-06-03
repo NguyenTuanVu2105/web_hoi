@@ -85,7 +85,7 @@ function AdminProfile(props) {
                                 )}<br />
                                 <label className="label_information2">Giới tính: </label>
                                 {getFieldDecorator('gioitinh', {
-                                    initialValue: user.Gioitinh ? user.Gioitinh : null
+                                    initialValue: user.Gioitinh
                                 })(
                                     <Radio.Group name="radiogroup">
                                         <Radio value={true} style={{ marginLeft: '5px' }} className="radio_information"> Nam </Radio>

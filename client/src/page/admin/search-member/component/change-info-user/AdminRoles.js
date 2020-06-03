@@ -3,6 +3,7 @@ import HomepageContext from "../../../../../context/HomepageContext"
 import { Form, notification } from 'antd'
 import { Select } from 'antd'
 import './ChangeInfUser.css'
+import { getUser, checkAuth } from '../../../../../api/auth/auth'
 import {editRoles, viewRoles} from '../../../../../api/base/admin'
 const { Option } = Select
 
@@ -10,7 +11,7 @@ const AdminRoles = (props) => {
     const { idUser } = props
     const { getFieldDecorator } = props.form
     const { setLoading } = useContext(HomepageContext)
-    const [roles, setRoles] = useState([])
+    const [roles, setRoles] = useState({})
     const fetchData = async () => {
         setLoading(true)
         const result = await viewRoles(idUser)
@@ -21,6 +22,17 @@ const AdminRoles = (props) => {
             }
         }
     }
+
+    const ROLES = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('edit')
+            if (value.role === 'hoitruong') {
+                edit.style.display='block'
+            } else {
+                edit.style.display='none'
+            }
+        }
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -46,7 +58,7 @@ const AdminRoles = (props) => {
         fetchData()
     }, [])
     return (<div>
-        <Form style={{ width: 150,marginLeft:10, marginRight:10 }} onSubmit={handleSubmit}>
+        <Form id='edit' style={{ width: 150,marginLeft:10, marginRight:10 }} onSubmit={handleSubmit && ROLES}>
             <Form.Item>
                 {getFieldDecorator('id', {
                     initialValue: roles.id

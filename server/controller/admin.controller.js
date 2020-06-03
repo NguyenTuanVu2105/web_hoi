@@ -360,7 +360,11 @@ exports.editRoles = (req, res) => {
             id: req.body.id
         }
     }).then(
-        res.status(200).send({success: true})
+        User.findOne({
+            where: {
+                id: req.body.id
+            }
+        }).then(data => res.send(data))
     ).catch(err => {
         res.status(500).send({success: false, message: err})
     })

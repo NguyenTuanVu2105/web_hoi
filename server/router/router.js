@@ -81,7 +81,7 @@ module.exports = function(app) {
     app.post('/api/admin/la/edit', [authJwt.verifyToken, authJwt.checkRoles], learnactivity.editLearnActivityAdmin)
 
     //position
-    app.get('/api/admin/position/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.viewPosition)
+    app.get('/api/admin/position/view', [authJwt.verifyToken, authJwt.checkRoles], positioncontroller.viewPosition)
 
     app.post('/api/admin/position/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.addPosition)
 
@@ -91,7 +91,7 @@ module.exports = function(app) {
 
     //specialized
 
-    app.get('/api/admin/specialized/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.viewSpecialized)
+    app.get('/api/admin/specialized/view', [authJwt.verifyToken, authJwt.checkRoles], specializedcontroller.viewSpecialized)
 
     app.post('/api/admin/specialized/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.addSpecialized)
 
@@ -152,7 +152,7 @@ module.exports = function(app) {
 
     app.post('/api/admin/edit/roles', [authJwt.verifyToken, authJwt.checkRolesHoitruong], admincontroller.editRoles)
 
-    app.get('/api/admin/view/roles', [authJwt.verifyToken, authJwt.checkRolesHoitruong], admincontroller.viewRoles)
+    app.get('/api/admin/view/roles', [authJwt.verifyToken, authJwt.checkRoles], admincontroller.viewRoles)
 
 }
 
