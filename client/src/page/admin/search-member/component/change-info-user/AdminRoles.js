@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import HomepageContext from "../../../../../context/HomepageContext"
-import { Modal, Button, Form, notification } from 'antd'
+import { Form, notification } from 'antd'
 import { Select } from 'antd'
 import './ChangeInfUser.css'
 import {editRoles, viewRoles} from '../../../../../api/base/admin'
@@ -47,19 +47,21 @@ const AdminRoles = (props) => {
     }, [])
     return (<div>
         <Form style={{ width: 150,marginLeft:10, marginRight:10 }} onSubmit={handleSubmit}>
-            {getFieldDecorator('id', {
-                initialValue: roles.id
-            })}
-            {getFieldDecorator('role', {
-                initialValue: roles.role ? roles.role : "Phân quyền"
-            })(
-                <Select style={{ height: 30 }} defaultValue="Phân quyền">
-                    <Option style={{ textAlign: "center" }} value="hoitruong">Admin</Option>
-                    <Option style={{ textAlign: "center" }} value="chihoitruong">Chi hội trưởng</Option>
-                    <Option style={{ textAlign: "center" }} value="doitruong">Đội trưởng</Option>
-                    <Option style={{ textAlign: "center" }} value="member">Thành viên</Option>
-                </Select>
-            )}
+            <Form.Item>
+                {getFieldDecorator('id', {
+                    initialValue: roles.id
+                })}
+                {getFieldDecorator('role', {
+                    initialValue: roles.role
+                })(
+                    <Select style={{ height: 30 }}>
+                        <Option style={{ textAlign: "center" }} value="hoitruong">Admin</Option>
+                        <Option style={{ textAlign: "center" }} value="chihoitruong">Chi hội trưởng</Option>
+                        <Option style={{ textAlign: "center" }} value="doitruong">Đội trưởng</Option>
+                        <Option style={{ textAlign: "center" }} value="member">Thành viên</Option>
+                    </Select>
+                )}
+            </Form.Item>
         </Form>
     </div>)
 }

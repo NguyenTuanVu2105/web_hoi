@@ -18,7 +18,6 @@ const ChangeInfUser = (props) => {
     };
 
     const handleCancel = e => {
-        console.log(e);
         setVisible(false)
     };
     const handleChange = () => {

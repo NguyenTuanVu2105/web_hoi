@@ -165,7 +165,7 @@ function AdminProfile(props) {
                             {getFieldDecorator('rh', {
                                 initialValue: user.Rh ? user.Rh : null
                             })(
-                                <Select style={{ marginLeft: 5, height: 30, width: 120 }} defaultValue="">
+                                <Select style={{ marginLeft: 5, height: 30, width: 120 }}>
                                     <Option style={{ textAlign: "center" }} value={true}>+</Option>
                                     <Option style={{ textAlign: "center" }} value={false}>-</Option>
                                 </Select>
