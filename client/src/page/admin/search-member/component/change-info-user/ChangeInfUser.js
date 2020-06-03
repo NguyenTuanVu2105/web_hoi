@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { Modal, Button, Radio, Form, notification } from 'antd'
-import { Select } from 'antd'
+import { Modal, Button, Form } from 'antd'
 import './ChangeInfUser.css'
 import AdminProFile from './AdminProfile'
 import AdminLA from './AdminLA'
-const { Option } = Select
+import AdminRoles from './AdminRoles'
 
 const ChangeInfUser = (props) => {
     const { idUser } = props
     const [Visible, setVisible] = useState(false)
     const [Open, setOpen] = useState(true)
+
     const showModal = () => {
         setVisible(true)
     };
@@ -24,6 +24,7 @@ const ChangeInfUser = (props) => {
     const handleChange = () => {
 
     }
+
     return (
         <div>
             <Button type="primary" onClick={showModal} style={{ backgroundColor: 'white', color: '#1890ff', whiteSpace: 'inherit', height: 30, width: '50px !important' }}>
@@ -40,14 +41,7 @@ const ChangeInfUser = (props) => {
                 <div className="flexChoose">
                     <button className="ChooseClick" onClick={() => setOpen(true)}>Thông tin cá nhân</button>
                     <button className="ChooseClick" onClick={() => setOpen(false)}>Học tập và hoạt động</button>
-                    <Form style={{ width: 150,marginLeft:10, marginRight:10 }}>
-                        <Select style={{ height: 30 }} defaultValue="Phân quyền" onChange={handleChange}>
-                            <Option style={{ textAlign: "center" }} value="Phân quyền">Phân quyền</Option>
-                            <Option style={{ textAlign: "center" }} value="Chủ tịch Hội">2</Option>
-                            <Option style={{ textAlign: "center" }} value="3">3</Option>
-                            <Option style={{ textAlign: "center" }} value="4">4</Option>
-                        </Select>
-                    </Form>
+                    <AdminRoles idUser = {idUser}/>
                 </div>
                 <Form onSubmit={handleSubmit}>
 

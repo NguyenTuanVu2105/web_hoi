@@ -25,3 +25,18 @@ export const viewProfileUser = (id) => {
 export const editAvatarUser = ({data, filename, file, id}) => {
     return uploadFileAdmin(`/api/admin/upload/avatar`, data, filename, file, id)
 }
+
+export const editRoles = (data) => {
+    return createAuthApiRequest({
+        url: '/api/admin/edit/roles', 
+        method: 'post',
+        data: data
+    })
+}
+
+export const viewRoles = (userId) => {
+    return createAuthApiRequest({
+        url: `/api/admin/view/roles?userId=${userId}`,
+        method: 'get'
+    })
+}
