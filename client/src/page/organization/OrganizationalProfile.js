@@ -29,7 +29,7 @@ const OrganizationalProfile = () =>{
             {
                 OrganizationalProfilesList.map((label, index) =>(
                     <div key={"OR"+index} className = "divBody">
-                        <div  className = "header"><h4>{label.name}</h4></div>
+                        <div  className = "header"><span style={{color:"white", marginLeft:15,fontWeight:600,fontSize:18}}>{label.name}</span></div>
                         {
                             label.child.map((x,index)=>(
                                 <div key = {"OR-C"+index} id={x.id} className = "tagA">

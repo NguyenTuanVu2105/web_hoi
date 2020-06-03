@@ -29,12 +29,6 @@ const HistoryBlood = () => {
 
     return (
         <div className="para-IBD-s">
-            <iframe 
-            // cho link vào đây ------------------------------------------------------------
-                src="https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview"
-                style={{width: "100%", height: "700px"}}
-            >
-            </iframe>
             <div>
                 <Button type="primary" onClick={showModal}>
                     Sửa
@@ -52,6 +46,13 @@ const HistoryBlood = () => {
                     </Form>
                 </Modal>
             </div>
+            <iframe 
+            // cho link vào đây ------------------------------------------------------------
+                src="https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview"
+                style={{width: "100%", height: "700px"}}
+            >
+            </iframe>
+            
         </div>
     )
 }

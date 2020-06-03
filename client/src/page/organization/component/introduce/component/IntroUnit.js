@@ -2,7 +2,7 @@ import React from 'react'
 import {Input} from 'antd';
 const IntroUnit = () =>{
     return(
-        <div>
+        <div style={{width:"100%"}}>
             <span className="span-label">Kết quả hoạt động:</span>
             <div className="para-intro-s">
             <div className="border-intro">
