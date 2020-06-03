@@ -29,12 +29,6 @@ const IntroduleBloodDisplay = () => {
 
     return (
         <div className="para-IBD-s">
-            <iframe
-            // cho link vào đây ------------------------------------------------------------
-                src="https://drive.google.com/file/d/1jz2hyNr1bMqejn5qTO8wciYRqs3VP6G3/preview"
-                style={{ width: "100%", height: "700px" }}
-            >
-            </iframe>
             <div>
                 <Button type="primary" onClick={showModal}>
                     Sửa
@@ -52,6 +46,13 @@ const IntroduleBloodDisplay = () => {
                     </Form>
                 </Modal>
             </div>
+            <iframe
+            // cho link vào đây ------------------------------------------------------------
+                src="https://drive.google.com/file/d/1jz2hyNr1bMqejn5qTO8wciYRqs3VP6G3/preview"
+                style={{ width: "100%", height: "700px" }}
+            >
+            </iframe>
+            
         </div>
     )
 }
