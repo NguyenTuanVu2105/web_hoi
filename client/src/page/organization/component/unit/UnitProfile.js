@@ -48,7 +48,7 @@ const UnitProfile = () =>{
                                 <i id="icon10" className="fa fa-angle-down" style={{fontSize:'25px'}}/>
                             </div>
                         </a>
-                        <div id={search.Machihoi} className="panel-collapse collapse">
+                        <div id={search.Machihoi} className="panel-collapse collapse" style={{marginTop:"10px"}}>
                             <ul className="list-group">
                                 <li key={"C-1"} className="list-group-blood-item">
                                     <div style={{width:"100%"}}>
