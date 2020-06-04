@@ -69,16 +69,19 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            height: 45px;
+            align-items: center;
         }
     
         .list-group-blood-item:hover{
             color: #ff3333;
             width: calc(100% + 20px);
             margin-left: -10px;
-            height: 31.4px;
+            height: 50px;
             margin-top: 3px;
-            line-height: 31.4px;
             margin-bottom: 2px;
+            display: flex;
+            align-items: center;
         }
 .AFM{
     font-size: 22px;
@@ -87,7 +90,7 @@
 
 @media (max-width: 992px){
     .para-unit-profile{
-        width: calc(100% - 8px);
+        width: 100%;
     }
     .list-items-a{
         font-size: 14px;

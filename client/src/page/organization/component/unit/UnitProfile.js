@@ -56,7 +56,7 @@ const UnitProfile = () =>{
                                             to = {{
                                                 pathname:`/ho-so-chi-hoi/${search.Machihoi}`
                                             }}> Giới thiệu về {search.Tenchihoi}
-                                            <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
+                                            <div style={{display: 'flex'}}>
                                                 <i className="fa fa-caret-right" style={{fontSize :"20px"}}/>
                                             </div>
                                         </Link>
@@ -67,16 +67,16 @@ const UnitProfile = () =>{
                                 {
                                     search.clubs.map((child,index) =>(
                                         <li key={"C-"+index} className="list-group-blood-item">
-                                            <div style={{width:"100%"}}>
+                                            {/* <div style={{width:"100%"}}> */}
                                                 <Link className="list-items-a"  
                                                     to = {{
                                                         pathname:`/ho-so-doi-mau/${child.Madoi}`
                                                     }}> {child.Tendoi}
-                                                    <div style={{display: 'flex', flexDirection:'column-reverse',justifyContent: 'center'}}>
+                                                    <div style={{display: 'flex'}}>
                                                         <i className="fa fa-caret-right" style={{fontSize :"20px"}}/>
                                                     </div>
                                                 </Link>
-                                            </div>
+                                            {/* </div> */}
                                         </li>
                                     ))
                                 }                                               
