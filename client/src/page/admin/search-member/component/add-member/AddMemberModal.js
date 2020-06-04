@@ -44,7 +44,6 @@ const AddMemberModal = (props) => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {
             if (!err) {
-                console.log(values)
                 setLoading(true)
                 const {success} = await addNewMember(values)
                 setLoading(false)

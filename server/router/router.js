@@ -15,7 +15,6 @@ module.exports = function(app) {
     const learnactivity             = require('../controller/leanactivity.controller')
     const imageUploader             = multer({dest: 'images/'})
     const backgroudcontroller       = require('../controller/background.controller')
-    const introductioncontroller    = require('../controller/introduction.controller')
 
     app.post('/api/login', usercontroller.login)
 
@@ -81,7 +80,7 @@ module.exports = function(app) {
     app.post('/api/admin/la/edit', [authJwt.verifyToken, authJwt.checkRoles], learnactivity.editLearnActivityAdmin)
 
     //position
-    app.get('/api/admin/position/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.viewPosition)
+    app.get('/api/admin/position/view', [authJwt.verifyToken, authJwt.checkRoles], positioncontroller.viewPosition)
 
     app.post('/api/admin/position/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], positioncontroller.addPosition)
 
@@ -91,7 +90,7 @@ module.exports = function(app) {
 
     //specialized
 
-    app.get('/api/admin/specialized/view', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.viewSpecialized)
+    app.get('/api/admin/specialized/view', [authJwt.verifyToken, authJwt.checkRoles], specializedcontroller.viewSpecialized)
 
     app.post('/api/admin/specialized/add', [authJwt.verifyToken, authJwt.checkRolesHoitruong], specializedcontroller.addSpecialized)
 
@@ -130,9 +129,9 @@ module.exports = function(app) {
     
     app.post('/api/admin/update/association', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.UpdateAssociation)
 
-    app.get('/api/introduction', introductioncontroller.ViewPDF)
+    app.get('/api/introduction', [authJwt.verifyToken], associationcontroller.viewPDF)
     
-    app.post('/api/update/introduction', introductioncontroller.AddLinkPDF)
+    app.post('/api/update/introduction', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.editPDF)
     
     //admin
 
@@ -149,6 +148,10 @@ module.exports = function(app) {
     app.get('/api/branch/club/all', [authJwt.verifyToken], admincontroller.BranchClubInformation)
 
     app.get('/api/association/leader/all', [authJwt.verifyToken], admincontroller.LeaderAssociation)
+
+    app.post('/api/admin/edit/roles', [authJwt.verifyToken, authJwt.checkRolesHoitruong], admincontroller.editRoles)
+
+    app.get('/api/admin/view/roles', [authJwt.verifyToken, authJwt.checkRoles], admincontroller.viewRoles)
 
 }
 

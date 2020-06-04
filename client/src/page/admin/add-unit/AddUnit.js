@@ -19,7 +19,6 @@ const AddUnit = (props) => {
             setUnit(result.data.data)
         }
     }
-    console.log(unit)
     const handleSubmitClub = e => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {

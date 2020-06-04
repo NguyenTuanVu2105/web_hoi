@@ -351,3 +351,42 @@ exports.LeaderAssociation = (req, res) => {
         res.status(500).send({success: false, message: err})
     })
 }
+
+exports.editRoles = (req, res) => {
+    User.update({
+        role: req.body.role
+    }, {
+        where: {
+            id: req.body.id
+        }
+    }).then(
+        User.findOne({
+            where: {
+                id: req.body.id
+            }
+        }).then(data => res.send(data))
+    ).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
+
+exports.viewRoles = (req, res) => {
+    Member.findOne({
+        where: {
+            id: req.query.userId
+        }
+    }).then(user => {
+        User.findOne({
+            where: {
+                id: user.userId
+            },
+            attributes: ['id', 'role']
+        }).then(roles => {
+            res.status(200).send({success: true, message: roles})
+        }).catch(err => {
+            res.status(500).send({success: false, message: err})
+        })
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}

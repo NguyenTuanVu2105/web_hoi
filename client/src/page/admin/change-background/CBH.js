@@ -103,18 +103,6 @@ const CBH = (props) => {
                         })(
                             <Input type="text" name="place" style={{ marginBottom: 10 }} placeholder="Địa điểm tổ chức" required />
                         )}
-                        {/* <label className="change-color-header">Màu nền: </label>
-                        {getFieldDecorator('maunen', {
-                            initialValue: background.Maunen
-                        })(
-                            <Input name="background" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
-                        )}<br />
-                        <label className="change-color-header">Màu chữ: </label>
-                        {getFieldDecorator('mauchu', {
-                            initialValue: background.Mauchu
-                        })(
-                            <Input name="color" type="color" style={{ marginBottom: 10, width: 80, marginLeft: 5 }} required />
-                        )} */}
                         <div className="modal-footer" style={{ paddingBottom: 0 }}>
                             <Button type="primary" htmlType="submit" className="footerButton">Lưu thay đổi</Button>
                         </div>

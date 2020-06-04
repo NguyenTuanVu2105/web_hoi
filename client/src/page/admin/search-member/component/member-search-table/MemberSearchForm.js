@@ -42,7 +42,6 @@ const MemberSearchForm = (props) => {
             if (!err) {
                 let data = _.pickBy(values, _.identity)
                 if (!data) data = dataSearchDefault
-                console.log(data)
                 setDataSearch(data)
                 await searchMember(data)
             }
