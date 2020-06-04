@@ -32,7 +32,7 @@ const TeamLeader = () => {
         if (para.classList.item(0) === "div-information-close") {
             para.classList.remove("div-information-close");
             para.classList.toggle("div-information-open");
-            para1.innerHTML="thu gọn";
+            para1.innerHTML="Thu gọn";
         }
         else if (para.classList.item(0) === "div-information-open") {
             para.classList.remove("div-information-open");
@@ -45,7 +45,7 @@ const TeamLeader = () => {
         <div >
             {
                 leader.map((leader, index) => (
-                    <div key={"L"+index} className='row para-team-leader'>
+                    <div key={"L"+index} className='para-team-leader'>
                         <div className='image'>
                             <img className='img' src={leader.Image}></img>
                         </div>
@@ -54,7 +54,7 @@ const TeamLeader = () => {
                             <label className="label_information1">Chức vụ: </label><label style={{marginLeft:2, fontSize:14,color: 'rgba(0, 0, 0, 0.65)'}}>{leader.position.Chucvu}</label><br />
                             <label className="label_information1">Thời gian công tác: </label><label style={{marginLeft:2, fontSize:14,color: 'rgba(0, 0, 0, 0.65)'}}>{leader.ThoigianHD}</label><br />
                             <div className="div-reponsive-TL">
-                                <div id={"div-" + index} className="div-information-close" style={{ width: "100%", overflow: "hidden" }}><label className="label_information1">Thông tin chi tiết: </label> {leader.Ghichukhac}</div>
+                                <div id={"div-" + index} className="div-information-close" style={{ width: "100%", overflow: "hidden" }}><label className="label_information1">Thông tin chi tiết: </label><p>{leader.Ghichukhac}</p></div>
                                 <a id={"a-"+index} className='describe' onClick={() => HandleOC(index)}>Chi tiết>>></a>
                             </div>
                         </div>

@@ -6,6 +6,8 @@
     box-sizing: border-box;
     margin-bottom: 15px;
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .img{
     background-position: center;
@@ -41,7 +43,7 @@
 .div-information-open{
     font-size: 14px;
     color: rgba(0, 0, 0, 0.65);
-    word-break: break-all;
+    word-break: break-word;
 }
 .div-information-close{
     font-size: 14px;
@@ -55,14 +57,14 @@
 }
 @media (max-width:992px){
     .para-team-leader{
-        width: calc(100% - 8px);
+        width: 100%;
     }
     .information1{
         width: 100%;
-        margin-left: 15px;
-        margin-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .div-reponsive-TL{
-        width: 90%;
+        width: 100%;
     }
 }
