@@ -65,7 +65,7 @@ const CBH = (props) => {
                     Sửa
             </Button>
             <Modal
-                title="Thêm chương trình"
+                title="Sửa chương trình"
                 visible={openChange}
                 footer={null}
                 okText="submit"
