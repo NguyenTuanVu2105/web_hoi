@@ -15,7 +15,8 @@ module.exports = (sequelize, Sequelize) => {
         Huongdanvien:       Sequelize.INTEGER,
         Huanluyenvien:      Sequelize.INTEGER,
         Canbotangcuong:     Sequelize.INTEGER,
-        Tailieu:            Sequelize.STRING
+        Tailieu:            Sequelize.STRING,
+        TailieuHistory:     Sequelize.STRING
     });
     return Association;
 }

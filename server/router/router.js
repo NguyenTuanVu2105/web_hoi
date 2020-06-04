@@ -132,6 +132,8 @@ module.exports = function(app) {
     app.get('/api/introduction', [authJwt.verifyToken], associationcontroller.viewPDF)
     
     app.post('/api/update/introduction', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.editPDF)
+
+    app.post('/api/update/history', [authJwt.verifyToken, authJwt.checkRolesHoitruong], associationcontroller.editPDFHistory)
     
     //admin
 
