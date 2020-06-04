@@ -64,16 +64,16 @@ const IntroduleBloodDisplay = (props) => {
         setOpenModal(false)
     };
 
-    const roles = getUser().then((value) => {
-        if (checkAuth()) {
-            var edit = document.getElementById('roleedit')
-            if (value.role === 'hoitruong') {
-                edit.style.display='block'
-            } else {
-                edit.style.display='none'
-            }
-        }
-    })
+    // const roles = getUser().then((value) => {
+    //     if (checkAuth()) {
+    //         var edit = document.getElementById('roleedit')
+    //         if (value.role === 'hoitruong') {
+    //             edit.style.display='block'
+    //         } else {
+    //             edit.style.display='none'
+    //         }
+    //     }
+    // })
 
     return (
         <div className="para-IBD-s">
@@ -92,8 +92,7 @@ const IntroduleBloodDisplay = (props) => {
                         <Form.Item>
                             {getFieldDecorator('Tailieu')(
                                 <Input placeholder="Link PDF"></Input>
-                            )}
-                            
+                            )}   
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit"> Sửa </Button>

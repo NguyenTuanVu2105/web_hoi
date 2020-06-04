@@ -29,3 +29,11 @@ export const editPDF = (data) => {
         data: data
     })
 }
+
+export const editPDFHistory = (data) => {
+    return createAuthApiRequest({
+        url: `/api/update/history`,
+        method: 'post',
+        data: data
+    })
+}

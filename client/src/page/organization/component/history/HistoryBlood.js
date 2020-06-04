@@ -1,10 +1,46 @@
 import React, {  useContext, useEffect, useState } from 'react'
 import HomepageContext from "../../../../context/HomepageContext";
 import '../introduce/component/introduleBloodDisplay.scss'
-import { Form, Input, Modal, Button } from 'antd';
-const HistoryBlood = () => {
-    const { setNameMap } = useContext(HomepageContext)
+import { Form, Input, Modal, Button, notification } from 'antd'
+import { getUser, checkAuth } from '../../../../api/auth/auth'
+import { getPDF, editPDFHistory} from '../../../../api/base/association'
+const HistoryBlood = (props) => {
+    const { getFieldDecorator } = props.form
+    const { setNameMap, setLoading } = useContext(HomepageContext)
+
+    const [pdf, setPDF] = useState([])
+
+    const fetchData = async () => {
+        const result = await getPDF()
+        if (result.success) {
+            if (result.data.success) {
+                setPDF(result.data.message.TailieuHistory)
+            }
+        }
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.form.validateFields(async (err, values) => {
+            if (!err) {
+                setLoading(true)
+                const {success} = await editPDFHistory(values)
+                setLoading(false)
+                if (success) {
+                    notification['success']({
+                        message: 'Sửa thành công!'
+                    })
+                } else {
+                    notification['error']({
+                        message: 'Sửa không thành công'
+                    })
+                }
+            }
+        })
+    }
+
     useEffect(() => {
+        fetchData()
         setNameMap({
             ['/']: 'Trang chủ',
             ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
@@ -38,17 +74,23 @@ const HistoryBlood = () => {
                     visible={OpenModal}
                     onOk={handleOk}
                     onCancel={handleCancel}
+                    footer={null}
                 >
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Item>
-                            <Input placeholder="Link PDF"></Input>
+                            {getFieldDecorator('TailieuHistory')(
+                                <Input placeholder="Link PDF"></Input>
+                            )}
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit"> Sửa </Button>
                         </Form.Item>
                     </Form>
                 </Modal>
             </div>
             <iframe 
             // cho link vào đây ------------------------------------------------------------
-                src="https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview"
+                src={pdf}
                 style={{width: "100%", height: "700px"}}
             >
             </iframe>
@@ -57,4 +99,4 @@ const HistoryBlood = () => {
     )
 }
 
-export default HistoryBlood;
+export default Form.create()(HistoryBlood)

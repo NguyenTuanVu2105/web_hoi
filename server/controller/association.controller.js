@@ -39,7 +39,8 @@ exports.UpdateAssociation = (req, res) => {
                 Huongdanvien:       req.body.Huongdanvien,
                 Huanluyenvien:      req.body.Huanluyenvien,
                 Canbotangcuong:     req.body.Canbotangcuong,
-                Tailieu:            req.body.Tailieu
+                Tailieu:            null,
+                TailieuHistory:     null
             }).then(() => {
                 res.status(200).send({success: true, message: "Tạo thành công thông tin!"})
             }).catch(err => {
@@ -61,8 +62,7 @@ exports.UpdateAssociation = (req, res) => {
                 Hoivien:            req.body.Hoivien,
                 Huongdanvien:       req.body.Huongdanvien,
                 Huanluyenvien:      req.body.Huanluyenvien,
-                Canbotangcuong:     req.body.Canbotangcuong,
-                Tailieu:            req.body.Tailieu
+                Canbotangcuong:     req.body.Canbotangcuong
             }, {
                 where: {
                     id: 1
@@ -83,7 +83,7 @@ exports.viewPDF = (req, res) => {
         where: {
             id: 1
         },
-        attributes: ['Tailieu']
+        attributes: ['Tailieu', 'TailieuHistory']
     }).then(association => {
         res.status(200).send({success: true, message: association})
     }).catch(err => {
@@ -115,7 +115,8 @@ exports.editPDF = (req, res) => {
                 Huongdanvien:       null,
                 Huanluyenvien:      null,
                 Canbotangcuong:     null,
-                Tailieu:            req.body.Tailieu
+                Tailieu:            req.body.Tailieu,
+                TailieuHistory:     null
             }).then(() => {
                 res.status(200).send({success: true, message: "Tạo thành công thông tin!"})
             }).catch(err => {
@@ -124,6 +125,55 @@ exports.editPDF = (req, res) => {
         } else {
             Association.update({
                 Tailieu:  req.body.Tailieu
+            }, {
+                where: {
+                    id: 1
+                }
+            }).then(() => {
+                res.status(200).send({success: true, message: "Cập nhập thành công thông tin!"})
+            }).catch(err => {
+                res.status(500).send({success: false, message: err})
+            })
+        }
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
+
+exports.editPDFHistory = (req, res) => {
+    Association.findOne({
+        where: {
+            id: 1
+        }
+    }).then(association => {
+        if (!association) {
+            Association.create({
+                id:                 1,
+                Chutichhoi:         null,
+                Phochutich_1:       null, 
+                Phochutich_2:       null,
+                Phochutich_3:       null,
+                Phochutich_4:       null,
+                Uyvien_1:           null, 
+                Uyvien_2:           null,
+                Namthanhlap:        null,
+                Ngaytruyenthong:    null,
+                Camtinhvien:        null,
+                TNV:                null,
+                Hoivien:            null,
+                Huongdanvien:       null,
+                Huanluyenvien:      null,
+                Canbotangcuong:     null,
+                Tailieu:            null,
+                TailieuHistory:     req.body.TailieuHistory
+            }).then(() => {
+                res.status(200).send({success: true, message: "Tạo thành công thông tin!"})
+            }).catch(err => {
+                res.status(500).send({success: false, message: err})
+            })
+        } else {
+            Association.update({
+                TailieuHistory:  req.body.TailieuHistory
             }, {
                 where: {
                     id: 1
