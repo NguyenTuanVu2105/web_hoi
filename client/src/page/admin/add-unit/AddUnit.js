@@ -65,7 +65,6 @@ const AddUnit = (props) => {
         fetchData()
         setNameMap({
             ['/']: 'Trang chủ',
-            ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
             ['/them-don-vi']: 'Thêm đơn vị'
         })
     }, [])

@@ -57,8 +57,8 @@ const ResetPassword = (props) => {
                             <div className="borderContent">
                                 <div className="content-left-changepass">
                                 <div style={{margin:"0 auto"}}>
-                                    <div style={{color:"white", fontSize:40,fontWeight:700,fontFamily: "sans-serif",textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
-                                    <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Hiến giọt máu đào, trao đời sự sống</div>
+                                    <div style={{color:"white", fontSize:40,fontWeight:700,textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
+                                    <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Đổi mật khẩu</div>
                                 </div>
                                 </div>
                                 <div className="content-right-changepass">
