@@ -14,7 +14,11 @@ const HistoryBlood = (props) => {
         const result = await getPDF()
         if (result.success) {
             if (result.data.success) {
-                setPDF(result.data.message.TailieuHistory)
+                if (result.data.message.TailieuHistory !== null) {
+                    setPDF(result.data.message.TailieuHistory)
+                } else  {
+                    setPDF('https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview')
+                }
             }
         }
     }

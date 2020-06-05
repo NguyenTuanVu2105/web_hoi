@@ -3,7 +3,6 @@ import HomepageContext from "../../../../../context/HomepageContext";
 import './introduleBloodDisplay.scss'
 import { Form, Input, Modal, Button, notification } from 'antd';
 import { getPDF, editPDF } from '../../../../../api/base/association'
-import { getUser, checkAuth } from '../../../../../api/auth/auth'
 import create from 'antd/lib/icon/IconFont';
 const IntroduleBloodDisplay = (props) => {
     const { getFieldDecorator } = props.form
@@ -15,7 +14,11 @@ const IntroduleBloodDisplay = (props) => {
         const result = await getPDF()
         if (result.success) {
             if (result.data.success) {
-                setPDF(result.data.message.Tailieu)
+                if (result.data.message.Tailieu !== null) {
+                    setPDF(result.data.message.Tailieu)
+                } else  {
+                    setPDF('https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview')
+                }
             }
         }
     }
@@ -63,17 +66,6 @@ const IntroduleBloodDisplay = (props) => {
         console.log(e);
         setOpenModal(false)
     };
-
-    // const roles = getUser().then((value) => {
-    //     if (checkAuth()) {
-    //         var edit = document.getElementById('roleedit')
-    //         if (value.role === 'hoitruong') {
-    //             edit.style.display='block'
-    //         } else {
-    //             edit.style.display='none'
-    //         }
-    //     }
-    // })
 
     return (
         <div className="para-IBD-s">
