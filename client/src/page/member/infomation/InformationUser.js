@@ -16,20 +16,20 @@ const InformationUser = (props) => {
     }
     
     
-    const arr = []
-    const n = 3 // cho chức vụ thay cho số 3 là dc nhé////////////////////////////////////////
-    for (var i = 1; i <= 5; i++) {
-        if (i <= n) {
-            arr.push(
-                <div className="icon-blood"></div>
-            )
-        }
-        else {
-            arr.push(
-                <div className="icon-blood-1"></div>
-            )
-        }
-    }
+    // const arr = []
+    // const n = 3 
+    // for (var i = 1; i <= 5; i++) {
+    //     if (i <= n) {
+    //         arr.push(
+    //             <div className="icon-blood"></div>
+    //         )
+    //     }
+    //     else {
+    //         arr.push(
+    //             <div className="icon-blood-1"></div>
+    //         )
+    //     }
+    // }
 
 
     return (
@@ -58,13 +58,13 @@ const InformationUser = (props) => {
                                             <p style={{ textAlign: "center", color: "white", width: "100%" }}>Thay đổi</p>
                                         </Upload>
                                     </div>
-                                    <div className="icon-position">
+                                    {/* <div className="icon-position">
                                         <div className="icon-position-div">
                                             {
                                                 arr
                                             }
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="informationUserForMobile">
