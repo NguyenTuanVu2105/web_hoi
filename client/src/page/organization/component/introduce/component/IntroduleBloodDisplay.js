@@ -3,6 +3,7 @@ import HomepageContext from "../../../../../context/HomepageContext";
 import './introduleBloodDisplay.scss'
 import { Form, Input, Modal, Button, notification } from 'antd';
 import { getPDF, editPDF } from '../../../../../api/base/association'
+import { getUser, checkAuth } from '../../../../../api/auth/auth'
 import create from 'antd/lib/icon/IconFont';
 const IntroduleBloodDisplay = (props) => {
     const { getFieldDecorator } = props.form
@@ -43,6 +44,17 @@ const IntroduleBloodDisplay = (props) => {
         })
     }
 
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('edit')
+            if (value.role === 'hoitruong') {
+                edit.style.display = 'block'
+            } else {
+                edit.style.display = 'none'
+            }
+        }
+    })
+
     useEffect(() => {
         fetchData()
         setNameMap({
@@ -70,9 +82,6 @@ const IntroduleBloodDisplay = (props) => {
     return (
         <div className="para-IBD-s">
             <div>
-                <Button type="primary" onClick={showModal}>
-                    Sửa
-                </Button>
                 <Modal
                     title="Sửa file PDF"
                     visible={OpenModal}
@@ -98,6 +107,9 @@ const IntroduleBloodDisplay = (props) => {
                 style={{ width: "100%", height: "700px" }}
             >
             </iframe>
+            <Button id='edit' type="primary" onClick={showModal && roles}>
+                Sửa
+            </Button>
             
         </div>
     )

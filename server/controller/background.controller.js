@@ -44,14 +44,17 @@ exports.AddBackground = (req, res) => {
         if(!backgrounds) {
             new Background(background).save()
             .then(data => res.status(200).send({success : true}))
-            .catch(err => res.status(404).send({message: err}));
+            .catch(err => res.status(403).send({message: err}));
         } else {
-            res.status(404).send({success: false, message: "background is exist"})
+            res.status(403).send({success: false, message: "background is exist"})
         }
     }).catch(err => res.status(500).send({message: err}))
 }
 exports.ViewBackground = (req, res) => {
     Background.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
     }).then( data => {
         res.status(200).send({success: true, data: data})
     }).catch(err => {
