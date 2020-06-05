@@ -55,6 +55,35 @@ exports.getActivity = (req, res) => {
     })
 }
 
+exports.getActivityAdmin = (req, res) => {
+    Member.findOne({
+        where: {
+            userId :req.query.id
+        },
+        attributes: ['NgayvaoHoi', 'TinhtrangHD'],
+        include: [{
+            model: Position,
+            attributes: ['Chucvu']
+        }, {
+            model: Specialized,
+            attributes: ['Bacchuyenmon']
+        }, {
+            model: Club,
+            attributes: ['Tendoi'],
+            include: [{
+                model: Branch,
+                attributes: ['Tenchihoi']
+            }]
+        }]
+    }).then(information => {
+        res.status(200).send({success: true, data: {NgayvaoHoi: information.NgayvaoHoi, TinhtrangHD: information.TinhtrangHD,
+        Bacchuyenmon: information.specialized.Bacchuyenmon, Chucvu: information.position.Chucvu,
+        Tendoi: information.club.Tendoi, Tenchihoi: information.club.branch.Tenchihoi}})
+    }).catch(err => {
+        res.status(500).send({success: true, message: err})
+    })
+}
+
 exports.editLearnActivity = (req,res) =>{
     Member.findOne({
         where: {

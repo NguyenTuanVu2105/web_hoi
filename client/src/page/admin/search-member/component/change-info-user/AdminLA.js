@@ -2,8 +2,7 @@
 import React, { useContext, useEffect, Fragment, useState } from 'react'
 import { Form, notification, Input, Button } from 'antd'
 import HomepageContext from "../../../../../context/HomepageContext";
-
-import { getLearnActivityAdmin, editLearnActivityAdmin } from '../../../../../api/base/profile'
+import { getLearnActivityAdmin, editLearnActivityAdmin, getActivityAdmin } from '../../../../../api/base/profile'
 import TextArea from 'antd/lib/input/TextArea';
 
 function AdminLA(props) {
@@ -11,13 +10,16 @@ function AdminLA(props) {
     const { getFieldDecorator } = props.form
     const { setNameMap, setLoading  } = useContext(HomepageContext)
     const [ leact, setLeact ] = useState([])
+    const [ act, setAct ] = useState([])
     const fetchData = async () => {
         setLoading(true)
         const result = await getLearnActivityAdmin(idUser)
+        const result2 = await getActivityAdmin(idUser)
         setLoading(false)
         if (result) {
             if (result.data.success) {
                 setLeact(result.data.data)
+                setAct(result2.data.data)
             }
         }
     }
@@ -224,14 +226,14 @@ function AdminLA(props) {
                     <h3>Hoạt động</h3>
                     <div className="row">
                         <div className="col12">
-                            <label className="label_information">Trực thuộc chi Hội:</label><br />
-                            <label className="label_information">Trực thuộc Đội:</label><br />
-                            <label className="label_information">Ngày vào Hội:</label><br />
+                            <label className="label_information">Trực thuộc chi Hội: {act.Tenchihoi}</label><br />
+                            <label className="label_information">Trực thuộc Đội: {act.Tendoi}</label><br />
+                            <label className="label_information">Ngày vào Hội: {act.NgayvaoHoi}</label><br />
                         </div>
                         <div className="col12">
-                        <label className="label_information">Chức vụ:</label><br />
-                            <label className="label_information">Bậc chuyên môn:</label><br />
-                            <label className="label_information">Tình trạng hoạt động:</label><br />
+                        <label className="label_information">Chức vụ: {act.Chucvu}</label><br />
+                            <label className="label_information">Bậc chuyên môn: {act.Bacchuyenmon}</label><br />
+                            <label className="label_information">Tình trạng hoạt động: {act.TinhtrangHD ? "Đang hoạt động" : "Nghỉ hoạt động"}</label><br />
                         </div>
                     </div>
 

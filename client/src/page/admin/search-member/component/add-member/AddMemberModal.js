@@ -140,6 +140,7 @@ const AddMemberModal = (props) => {
                         }]
                     })(
                         <Select 
+                            showSearch
                             placeholder="Tên đội" 
                             style={{ width: '100%' }}
                             filterOption={(input, option) =>

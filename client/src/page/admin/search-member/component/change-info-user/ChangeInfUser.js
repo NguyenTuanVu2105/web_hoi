@@ -43,7 +43,6 @@ const ChangeInfUser = (props) => {
                     <AdminRoles idUser = {idUser}/>
                 </div>
                 <Form onSubmit={handleSubmit}>
-
                     <div style={{ display: Open ? "block" : 'none' }}>
                         <AdminProFile idUser = {idUser}/>
                     </div>

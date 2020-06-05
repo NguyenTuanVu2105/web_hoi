@@ -252,6 +252,7 @@ function AdminProfile(props) {
 
                 </div>
             </Form>
+
         </div>// row
 
     )

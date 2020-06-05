@@ -39,6 +39,12 @@ export const getActivity = () => {
     method: 'get'
   })
 }
+export const getActivityAdmin = (id) => {
+  return createAuthApiRequest({
+    url: `/api/admin/activity/view?id=${id}`,
+    method: 'get'
+  })
+}
 
 export const editLearnActivity = (data) => {
   return createAuthApiRequest({
