@@ -255,7 +255,7 @@ const IntroduceBlood = () => {
             <div className="body-intro-blood-s" style={{ display: visibleIntro ? "none" : "flex" }}>
                 <div className="red-left-body" />
                 <div className="content-body-intro">
-                    <IntroUnit />
+                    <IntroUnit/>
                 </div>
             </div>
             {/* -------------------------- */}
