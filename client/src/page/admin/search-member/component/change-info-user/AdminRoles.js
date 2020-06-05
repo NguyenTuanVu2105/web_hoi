@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import HomepageContext from "../../../../../context/HomepageContext"
-import { Form, Button, notification } from 'antd'
+import { Form, notification } from 'antd'
 import { Select } from 'antd'
 import './ChangeInfUser.css'
 import { getUser, checkAuth } from '../../../../../api/auth/auth'
@@ -73,9 +73,6 @@ const AdminRoles = (props) => {
                         <Option style={{ textAlign: "center" }} value="member">Thành viên</Option>
                     </Select>
                 )}
-            </Form.Item>
-            <Form.Item>
-                <Button type="primary" htmlType="submit">Submit</Button>
             </Form.Item>
         </Form>
     </div>)
