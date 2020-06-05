@@ -7,7 +7,7 @@ import { getUser, checkAuth } from '../../../../../api/auth/auth'
 import create from 'antd/lib/icon/IconFont';
 const IntroduleBloodDisplay = (props) => {
     const { getFieldDecorator } = props.form
-    const { setNameMap, setLoading } = useContext(HomepageContext)
+    const { setLoading } = useContext(HomepageContext)
 
     const [pdf, setPDF] = useState([])
 
@@ -44,25 +44,22 @@ const IntroduleBloodDisplay = (props) => {
         })
     }
 
-    const roles = getUser().then((value) => {
-        if (checkAuth()) {
-            var edit = document.getElementById('edit')
-            if (value.role === 'hoitruong') {
-                edit.style.display = 'block'
-            } else {
-                edit.style.display = 'none'
+    const roles = () => {
+        getUser().then((value) => {
+            if (checkAuth()) {
+                var edit = document.getElementById('edit')
+                if (value.role === 'hoitruong') {
+                    edit.style.display = 'block'
+                } else {
+                    edit.style.display = 'none'
+                }
             }
-        }
-    })
+        })
+    }
 
     useEffect(() => {
         fetchData()
-        setNameMap({
-            ['/']: 'Trang chủ',
-            ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
-            ['/gioi-thieu-ve-hoi']: 'Giới thiệu về Hội',
-            ['/gioi-thieu-ve-hoi-chi-tiet']: 'Giới thiệu về Hội(Chi tiết)'
-        })
+        roles()
     }, [])
     const [OpenModal, setOpenModal] = useState(false)
     const showModal = () => {
@@ -107,10 +104,9 @@ const IntroduleBloodDisplay = (props) => {
                 style={{ width: "100%", height: "700px" }}
             >
             </iframe>
-            <Button id='edit' type="primary" onClick={showModal && roles}>
+            <Button id='edit' type="primary" onClick={showModal}>
                 Sửa
             </Button>
-            
         </div>
     )
 }

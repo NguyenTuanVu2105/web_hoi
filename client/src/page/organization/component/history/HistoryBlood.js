@@ -6,7 +6,7 @@ import { getUser, checkAuth } from '../../../../api/auth/auth'
 import { getPDF, editPDFHistory} from '../../../../api/base/association'
 const HistoryBlood = (props) => {
     const { getFieldDecorator } = props.form
-    const { setNameMap, setLoading } = useContext(HomepageContext)
+    const { setLoading } = useContext(HomepageContext)
 
     const [pdf, setPDF] = useState([])
 
@@ -43,24 +43,22 @@ const HistoryBlood = (props) => {
         })
     }
 
-    const roles = getUser().then((value) => {
-        if (checkAuth()) {
-            var edit = document.getElementById('edit')
-            if (value.role === 'hoitruong') {
-                edit.style.display = 'block'
-            } else {
-                edit.style.display = 'none'
+    const roles = () => {
+        getUser().then((value) => {
+            if (checkAuth()) {
+                var edit = document.getElementById('edit')
+                if (value.role === 'hoitruong') {
+                    edit.style.display = 'block'
+                } else {
+                    edit.style.display = 'none'
+                }
             }
-        }
-    })
+        })
+    }
 
     useEffect(() => {
         fetchData()
-        setNameMap({
-            ['/']: 'Trang chủ',
-            ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
-            ['/lich-su-hoi']: 'Lịch sử Hội',
-        })
+        roles()
     }, [])
 
     const [OpenModal, setOpenModal] = useState(false)
@@ -106,10 +104,10 @@ const HistoryBlood = (props) => {
                 style={{width: "100%", height: "700px"}}
             >
             </iframe>
-            <Button id='edit' type="primary" onClick={showModal && roles}>
+            
+            <Button id='edit' type="primary" onClick={showModal}>
                 Sửa
             </Button>
-            
         </div>
     )
 }
