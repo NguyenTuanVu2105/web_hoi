@@ -245,38 +245,13 @@ function AdminProfile(props) {
                         </fieldset>
                     </Form.Item>
                     <div className="DIVprofile">
-                        {/* <a className="doiMK" data-toggle="modal" data-target="#modalMK">Đổi mật khẩu</a> */}
                         <Form.Item>
                             <Button className="buttonProfile" type="primary" htmlType="submit">Submit</Button>
                         </Form.Item>
-                        {/* <button className="buttonProfile">Hủy</button> */}
                     </div>
 
                 </div>
             </Form>
-
-            {/* <div >
-                <div className="modal fade" id="modalMK" role="dialog">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h4>Đổi mật khẩu</h4>
-                                <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <input type="text" className="changePass" placeholder="Mật khẩu cũ" />
-                                    <input type="text" className="changePass" placeholder="Mật khẩu mới" />
-                                    <input type="text" className="changePass" placeholder="Xác nhận lại mật khẩu" />
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" className="footerButton" data-dismiss="modal">Lưu thay đổi</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
         </div>// row
 
     )

@@ -128,7 +128,7 @@ exports.NewPassword = (req, res) => {
 exports.checkToken = (req, res) => {
     const token = req.body.token
     if (!token) {
-        return res.status(400).send({
+        return res.status(401).send({
             success: false,
             message: "Not token provide"
         })

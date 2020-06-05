@@ -14,7 +14,11 @@ const HistoryBlood = (props) => {
         const result = await getPDF()
         if (result.success) {
             if (result.data.success) {
-                setPDF(result.data.message.TailieuHistory)
+                if (result.data.message.TailieuHistory !== null) {
+                    setPDF(result.data.message.TailieuHistory)
+                } else  {
+                    setPDF('https://drive.google.com/file/d/1vIKk1qYAxAEghLyUcksTKwqe-r9SbTQo/preview')
+                }
             }
         }
     }
@@ -38,6 +42,17 @@ const HistoryBlood = (props) => {
             }
         })
     }
+
+    const roles = getUser().then((value) => {
+        if (checkAuth()) {
+            var edit = document.getElementById('edit')
+            if (value.role === 'hoitruong') {
+                edit.style.display = 'block'
+            } else {
+                edit.style.display = 'none'
+            }
+        }
+    })
 
     useEffect(() => {
         fetchData()
@@ -66,9 +81,6 @@ const HistoryBlood = (props) => {
     return (
         <div className="para-IBD-s">
             <div>
-                <Button type="primary" onClick={showModal}>
-                    Sửa
-                </Button>
                 <Modal
                     title="Sửa file PDF"
                     visible={OpenModal}
@@ -94,6 +106,9 @@ const HistoryBlood = (props) => {
                 style={{width: "100%", height: "700px"}}
             >
             </iframe>
+            <Button id='edit' type="primary" onClick={showModal && roles}>
+                Sửa
+            </Button>
             
         </div>
     )
