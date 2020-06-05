@@ -51,7 +51,6 @@ const MemberSearch = (props) => {
         fetchData(1)
         setNameMap({
             ['/']: 'Trang chủ',
-            ['/ho-so-to-chuc']: 'Hồ sơ tổ chức',
             ['/tra-cuu-thanh-vien']: 'Tra cứu thành viên'
         })
     }, [])
