@@ -85,7 +85,7 @@ const LoginWrap = (props) => {
         <div className="body-login-form">
         <div className="information-login-s">
           <div style={{margin:"0 auto"}}>
-            <div style={{color:"white", fontSize:40,fontWeight:700,fontFamily: "sans-serif",textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
+            <div style={{color:"white", fontSize:40,fontWeight:700,textAlign:"center"}}>HỘI MÁU HÀ NỘI</div>
             <div style={{color:" white",fontSize: 18,fontFamily: "sans-serif",textAlign:"center"}}>Hiến giọt máu đào, trao đời sự sống</div>
           </div>
         </div>
