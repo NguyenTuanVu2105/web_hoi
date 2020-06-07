@@ -13,14 +13,20 @@ const AdminRoles = (props) => {
     const { setLoading } = useContext(HomepageContext)
     const [roles, setRoles] = useState({})
     const fetchData = async () => {
-        setLoading(true)
-        const result = await viewRoles(idUser)
-        setLoading(false)
-        if (result.success) {
-            if (result.data.success) {
-                setRoles(result.data.message)
+        await getUser().then(async value => {
+            if (checkAuth()) {
+                if (value.role === 'hoitruong') {
+                    setLoading(true)
+                    const result = await viewRoles(idUser)
+                    setLoading(false)
+                    if (result.success) {
+                        if (result.data.success) {
+                            setRoles(result.data.message)
+                        }
+                    }
+                }
             }
-        }
+        }).catch(err => console.log(err))
     }
 
     const ROLES = getUser().then((value) => {

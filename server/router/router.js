@@ -155,7 +155,7 @@ module.exports = function(app) {
 
     app.post('/api/admin/edit/roles', [authJwt.verifyToken, authJwt.checkRolesHoitruong], admincontroller.editRoles)
 
-    app.get('/api/admin/view/roles', [authJwt.verifyToken, authJwt.checkRoles], admincontroller.viewRoles)
+    app.get('/api/admin/view/roles', [authJwt.verifyToken, authJwt.checkRolesHoitruong], admincontroller.viewRoles)
 
 }
 

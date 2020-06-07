@@ -189,34 +189,34 @@ exports.editPDFHistory = (req, res) => {
     })
 }
 
-// exports.AddAndUpdateRemunerative = (req, res) => {
-//     Association.findOne({
-//         where: {
-//             id: 1
-//         }
-//     }).then(association => {
-//         if (!association) {
-//             res.status(404).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
-//         } else {
-            
-//         }
-//     }).catch(err => {
-//         res.status(500).send({success: false, message: err})
-//     })
-// }
+exports.AddAndUpdateRemunerative = (req, res) => {
+    Association.findOne({
+        where: {
+            id: 1
+        }
+    }).then(association => {
+        if (!association) {
+            res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
+        } else {
+            Remunerative.update
+        }
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
 
-// exports.AddAndUpdateActivity = (req, res) => {
-//     Association.findOne({
-//         where: {
-//             id: 1
-//         }
-//     }).then(association => {
-//         if (!association) {
-//             res.status(404).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
-//         } else {
+exports.AddAndUpdateActivity = (req, res) => {
+    Association.findOne({
+        where: {
+            id: 1
+        }
+    }).then(association => {
+        if (!association) {
+            res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
+        } else {
             
-//         }
-//     }).catch(err => {
-//         res.status(500).send({success: false, message: err})
-//     })
-// }
+        }
+    }).catch(err => {
+        res.status(500).send({success: false, message: err})
+    })
+}
