@@ -1,7 +1,7 @@
 const db = require('../config/db.config')
 const Association   = db.association
-const Activity      = db.activity
-const Remunerative  = db.remunerative
+// const Activity      = db.activity
+// const Remunerative  = db.remunerative
 
 exports.ViewAssociation = (req, res) => {
     Association.findOne({
@@ -30,7 +30,7 @@ exports.UpdateAssociation = (req, res) => {
                 Phochutich_3:       req.body.Phochutich_3,
                 Phochutich_4:       req.body.Phochutich_4,
                 Uyvien_1:           req.body.Uyvien_1, 
-                Uyvien_2:           req.body.Uyvien_1,
+                Uyvien_2:           req.body.Uyvien_2,
                 Namthanhlap:        req.body.Namthanhlap,
                 Ngaytruyenthong:    req.body.Ngaytruyenthong,
                 Camtinhvien:        req.body.Camtinhvien,
@@ -54,7 +54,7 @@ exports.UpdateAssociation = (req, res) => {
                 Phochutich_3:       req.body.Phochutich_3,
                 Phochutich_4:       req.body.Phochutich_4,
                 Uyvien_1:           req.body.Uyvien_1, 
-                Uyvien_2:           req.body.Uyvien_1,
+                Uyvien_2:           req.body.Uyvien_2,
                 Namthanhlap:        req.body.Namthanhlap,
                 Ngaytruyenthong:    req.body.Ngaytruyenthong,
                 Camtinhvien:        req.body.Camtinhvien,
@@ -189,34 +189,34 @@ exports.editPDFHistory = (req, res) => {
     })
 }
 
-exports.AddAndUpdateRemunerative = (req, res) => {
-    Association.findOne({
-        where: {
-            id: 1
-        }
-    }).then(association => {
-        if (!association) {
-            res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
-        } else {
-            Remunerative.update
-        }
-    }).catch(err => {
-        res.status(500).send({success: false, message: err})
-    })
-}
+// exports.AddAndUpdateRemunerative = (req, res) => {
+//     Association.findOne({
+//         where: {
+//             id: 1
+//         }
+//     }).then(association => {
+//         if (!association) {
+//             res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
+//         } else {
+//             Remunerative.update
+//         }
+//     }).catch(err => {
+//         res.status(500).send({success: false, message: err})
+//     })
+// }
 
-exports.AddAndUpdateActivity = (req, res) => {
-    Association.findOne({
-        where: {
-            id: 1
-        }
-    }).then(association => {
-        if (!association) {
-            res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
-        } else {
+// exports.AddAndUpdateActivity = (req, res) => {
+//     Association.findOne({
+//         where: {
+//             id: 1
+//         }
+//     }).then(association => {
+//         if (!association) {
+//             res.status(403).send({success: false, message: 'Thông tin về hội chưa được tạo!'})
+//         } else {
             
-        }
-    }).catch(err => {
-        res.status(500).send({success: false, message: err})
-    })
-}
+//         }
+//     }).catch(err => {
+//         res.status(500).send({success: false, message: err})
+//     })
+// }
