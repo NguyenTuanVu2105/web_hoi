@@ -8,7 +8,7 @@ import AdminRoles from './AdminRoles'
 const ChangeInfUser = (props) => {
     const { idUser } = props
     const [Visible, setVisible] = useState(false)
-    const [Open, setOpen] = useState(true)
+    const [Open, setOpen] = useState(0)
 
     const showModal = () => {
         setVisible(true)
@@ -38,17 +38,19 @@ const ChangeInfUser = (props) => {
                 footer={null}
             >
                 <div className="flexChoose">
-                    <button className="ChooseClick" onClick={() => setOpen(true)}>Thông tin cá nhân</button>
-                    <button className="ChooseClick" onClick={() => setOpen(false)}>Học tập và hoạt động</button>
-                    <AdminRoles idUser = {idUser}/>
+                    <button className="ChooseClick" onClick={() => setOpen(0)}>Thông tin cá nhân</button>
+                    <button className="ChooseClick" onClick={() => setOpen(1)}>Học tập và hoạt động</button>
+                    <button className="ChooseClick" onClick={() => setOpen(2)}>Phân quyền</button>
                 </div>
                 <Form onSubmit={handleSubmit}>
-
-                    <div style={{ display: Open ? "block" : 'none' }}>
+                    <div style={{ display: Open === 0 ? 'block' : 'none' }}>
                         <AdminProFile idUser = {idUser}/>
                     </div>
-                    <div style={{ display: Open ? "none" : "block" }}>
+                    <div style={{ display: Open === 1 ? 'block' : 'none' }}>
                         <AdminLA idUser = {idUser}/>
+                    </div>
+                    <div style={{ display: Open === 2 ? 'block' : 'none' }}>
+                        <AdminRoles idUser = {idUser}/>
                     </div>
                 </Form>
             </Modal>
