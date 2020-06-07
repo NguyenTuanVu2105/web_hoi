@@ -341,7 +341,7 @@ exports.LeaderAssociation = (req, res) => {
         include: [{
             model: Position,
             where: {
-                id: 3
+                id: 1
             },
             attributes: ['Chucvu']
         }]
