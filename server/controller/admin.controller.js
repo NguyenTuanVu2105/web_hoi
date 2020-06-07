@@ -169,7 +169,7 @@ exports.ViewMemberInformation = (req, res) => {
                             model: Position,
                             where: {
                                 Capbac: {
-                                    [Op.gte]: 2
+                                    [Op.gte]: 3
                                 }
                             }
                         }, {
@@ -201,7 +201,7 @@ exports.ViewMemberInformation = (req, res) => {
                             model: Position,
                             where: {
                                 Capbac: {
-                                    [Op.gte]: 2
+                                    [Op.gte]: 3
                                 }
                             }
                         }, {
