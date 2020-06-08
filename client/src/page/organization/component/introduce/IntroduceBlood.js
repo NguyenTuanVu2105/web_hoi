@@ -3,22 +3,22 @@ import HomepageContext from "../../../../context/HomepageContext";
 import { introduleBloodList } from './contant/introduleBloodList'
 import './introduleBlood.scss'
 import { getUser, checkAuth } from '../../../../api/auth/auth'
-import { Button , Input, Form, notification } from 'antd'
+import { Button, Input, Form, notification } from 'antd'
 import { getAssociation, editAssociation } from '../../../../api/base/association'
 import IntroUnit from './component/IntroUnit'
 
 const IntroduceBlood = (props) => {
     const { getFieldDecorator } = props.form
-    const [changeInput, setchangeInput] = useState(true)
+    const [changeInputIB, setchangeInputIB] = useState(true)
     const { setNameMap, setLoading } = useContext(HomepageContext)
     const [association, setAssociation] = useState([])
-    
+
     const handleUpdate = (e) => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {
             if (!err) {
                 setLoading(true)
-                const {success} = await editAssociation(values)
+                const { success } = await editAssociation(values)
                 setLoading(false)
                 if (success) {
                     notification['success']({
@@ -34,7 +34,7 @@ const IntroduceBlood = (props) => {
     }
     const handleCa = () => {
         window.confirm('Bạn có chắc muốn Hủy thay đổi!');
-        setchangeInput(true)
+        setchangeInputIB(true)
     }
     const fetchData = async () => {
         const result = await getAssociation()
@@ -96,111 +96,157 @@ const IntroduceBlood = (props) => {
                                     <div className="list-name-intro">
                                         <span className="span-label">Chủ tịch Hội:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Chutichhoi', {
-                                                initialValue: association.Chutichhoi
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Chutichhoi}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Chutichhoi', {
+                                                        initialValue: association.Chutichhoi
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
+
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Phó chủ tịch Hội:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Phochutich_1', {
-                                                initialValue: association.Phochutich_1
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Phochutich_1}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Phochutich_1', {
+                                                        initialValue: association.Phochutich_1
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Phó chủ tịch Hội:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Phochutich_2', {
-                                                initialValue: association.Phochutich_2
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Phochutich_2}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Phochutich_2', {
+                                                        initialValue: association.Phochutich_2
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Phó chủ tịch Hội:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Phochutich_3', {
-                                                initialValue: association.Phochutich_3
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Phochutich_3}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Phochutich_3', {
+                                                        initialValue: association.Phochutich_3
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Phó chủ tịch Hội:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Phochutich_4', {
-                                                initialValue: association.Phochutich_4
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Phochutich_4}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Phochutich_4', {
+                                                        initialValue: association.Phochutich_4
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Ủy viên Ban thường trực:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Uyvien_1', {
-                                                initialValue: association.Uyvien_1
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Uyvien_1}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Uyvien_1', {
+                                                        initialValue: association.Uyvien_1
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                     <div className="list-name-intro">
                                         <span className="span-label">Ủy viên Ban thường trực:</span>
                                         <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Uyvien_2', {
-                                                initialValue: association.Uyvien_2
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
+                                            <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                                <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Uyvien_2}</label>
+                                            </div>
+                                            <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                                <Form.Item>
+                                                    {getFieldDecorator('Uyvien_2', {
+                                                        initialValue: association.Uyvien_2
+                                                    })(
+                                                        <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                    )}
+                                                </Form.Item>
+                                            </div>
                                         </span>
                                     </div>
                                 </div>
-                                <div>
-                                    <span className="span-label">Năm thành lập: </span>
-                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Namthanhlap', {
-                                                initialValue: association.Namthanhlap
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
-                                    </span>
+                                <div style={{display: "flex"}}>
+                                    <div className="span-label">Năm thành lập: </div>
+                                    <div style={{ width: "auto", height: 30, lineHeight: '30px' }}>
+                                        <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Namthanhlap}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                            <Form.Item>
+                                                {getFieldDecorator('Namthanhlap', {
+                                                    initialValue: association.Namthanhlap
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                )}
+                                            </Form.Item>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="span-label">Ngày truyền thống: </span>
-                                    <span style={{ width: "auto", height: 30, lineHeight: '30px' }}>
-                                        <Form.Item>
-                                            {getFieldDecorator('Ngaytruyenthong', {
-                                                initialValue: association.Ngaytruyenthong
-                                            })(
-                                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
-                                            )}
-                                        </Form.Item>
-                                    </span>
+                                <div style={{display: "flex"}}>
+                                    <div className="span-label">Ngày truyền thống: </div>
+                                    <div style={{ width: "auto", height: 30, lineHeight: '30px' }}>
+                                        <div style={{ display: changeInputIB ? "block" : "none" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)" }} >{association.Ngaytruyenthong}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
+                                            <Form.Item>
+                                                {getFieldDecorator('Ngaytruyenthong', {
+                                                    initialValue: association.Ngaytruyenthong
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
+                                                )}
+                                            </Form.Item>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
                                     <span className="span-label">Tổng số thành viên: </span>
@@ -219,15 +265,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Cảm tình viên</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Camtinhvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('Camtinhvien', {
-                                                initialValue: association.Camtinhvien
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Camtinhvien
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB} />
                                                 )}
                                             </Form.Item>
-
+                                                    </div>
                                         </div>
                                     </div>
                                     <div className="unit-div-infor">
@@ -235,15 +284,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Tình nguyện viên</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Tinhnguyenvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('TNV', {
-                                                initialValue: association.Tinhnguyenvien
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Tinhnguyenvien
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
                                             </Form.Item>
-
+                                        </div>
                                         </div>
                                     </div>
                                     <div className="unit-div-infor">
@@ -251,15 +303,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Hội viên</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Hoivien}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('Hoivien', {
-                                                initialValue: association.Hoivien
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Hoivien
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
                                             </Form.Item>
-
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -271,15 +326,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Huongdanvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('Huongdanvien', {
-                                                initialValue: association.Huongdanvien
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Huongdanvien
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
                                             </Form.Item>
-
+                                                    </div>
                                         </div>
                                     </div>
                                     <div className="unit-div-infor">
@@ -287,15 +345,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Huấn luyện viên</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Huanluyenvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('Huanluyenvien', {
-                                                initialValue: association.Huanluyenvien
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Huanluyenvien
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
                                             </Form.Item>
-
+                                                    </div>
                                         </div>
                                     </div>
                                     <div className="unit-div-infor">
@@ -303,15 +364,18 @@ const IntroduceBlood = (props) => {
                                             <span className="unit-span-infor">Cán bộ</span>
                                         </div>
                                         <div className="unit-div2-infor">
-
+                                        <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Canbotangcuong}</label>
+                                        </div>
+                                        <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('Canbotangcuong', {
-                                                initialValue: association.Canbotangcuong
-                                            })(
-                                                    <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                                    initialValue: association.Canbotangcuong
+                                                })(
+                                                    <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
                                             </Form.Item>
-
+                                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -325,18 +389,20 @@ const IntroduceBlood = (props) => {
                 <div className="body-intro-blood-s" style={{ display: visibleIntro ? "none" : "flex" }}>
                     <div className="red-left-body" />
                     <div className="content-body-intro">
-                        <IntroUnit/>
+                        <IntroUnit />
                     </div>
                 </div>
                 {/* -------------------------- */}
 
 
-                <div className="div-submit-IB">
-                    <Form.Item>
-                        <Button id="roleedit" className="button-dis-sub" onClick={() => setchangeInput(false) && roles}>Sửa</Button>
+
+                <Form.Item>
+                    <div className="div-submit-IB">
+                        <Button id="roleedit" className="button-dis-sub" onClick={() => setchangeInputIB(false) && roles}>Sửa</Button>
                         <Button id="rolesave" className="button-dis-sub" type="primary" htmlType="submit">Lưu thay đổi</Button>
-                    </Form.Item>
-                </div>
+                    </div>
+                </Form.Item>
+
             </Form>
         </div>
     )
