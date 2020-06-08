@@ -52,7 +52,7 @@ const ChangeBackground = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {
-            if (!err) {
+            if (!err && !file) {
                 setLoading(true)
                 const { success } = await uploadBackground(file, values)
                 setLoading(false)
@@ -61,7 +61,7 @@ const ChangeBackground = (props) => {
                         message: 'Cập nhật thông tin thành công!',
                     })
                     setOpenBack(false)
-
+                    fetchData()
                 } else {
                     notification['error']({
                         message: 'Cập nhật thông tin thất bại!',
@@ -199,7 +199,7 @@ const columns = [
                                 <label className="change-color-header">Tải ảnh lên: </label>
                                 <button>
                                     <Icon type="upload" /> Choose File
-                                                </button>
+                                </button>
                                 {nameFile}
                             </div>
                         </Upload>
