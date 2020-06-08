@@ -225,7 +225,7 @@ const AddUnit = (props) => {
                     </div>
                         <div style={{padding: "0px 20px 0px 20px"}}>
                             <span className="span-label-AU">Đơn vị:</span>
-                            {getFieldDecorator('tenhoi')(
+                            {getFieldDecorator('tendoi')(
                                 <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
                             )} <br />
                             <span className="span-label-AU">Mã Đơn vị:</span>
