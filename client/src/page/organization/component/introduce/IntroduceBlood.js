@@ -29,6 +29,7 @@ const IntroduceBlood = (props) => {
                         message: 'Cập nhật thông tin thất bại!',
                     })
                 }
+                setchangeInputIB(true)
             }
         })
     }
