@@ -5,7 +5,6 @@ import { Input, Form, notification, Button } from 'antd'
 import './AddUnit.css'
 import '../../../api/base/club'
 import { addClub } from '../../../api/base/club'
-import { addUnit } from '../../../api/base/unit'
 import { getUnitAll } from '../../../api/base/unit'
 const AddClub = (props) => {
     const { Option } = Select
@@ -39,34 +38,13 @@ const AddClub = (props) => {
         })
     }
 
-    // const handleSubmitUnit = e => {
-    //     e.preventDefault()
-    //     props.form.validateFields(async (err, values) => {
-    //         if (!err) {
-    //             setLoading(true)
-    //             const { success } = await addUnit(values)
-    //             setLoading(false)
-    //             if (success) {
-    //                 notification['success']({
-    //                     message: 'Thêm thành công chi hội!'
-    //                 })
-    //             } else {
-    //                 notification['error']({
-    //                     message: 'Thêm không thành công chi hội!'
-    //                 })
-    //             }
-    //         }
-    //     })
-    // }
-
-
-    // useEffect(() => {
-    //     fetchData()
-    //     setNameMap({
-    //         ['/']: 'Trang chủ',
-    //         ['/them-don-vi']: 'Thêm đơn vị'
-    //     })
-    // }, [])
+    useEffect(() => {
+        fetchData()
+        setNameMap({
+            ['/']: 'Trang chủ',
+            ['/HistoryBlood']: 'Change Background',
+        })
+    }, [])
 
     return (
         <div className="paren-body-AU">

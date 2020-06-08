@@ -4,40 +4,10 @@ import { Select } from 'antd'
 import { Input, Form, notification, Button } from 'antd'
 import './AddUnit.css'
 import '../../../api/base/club'
-import { addClub } from '../../../api/base/club'
 import { addUnit } from '../../../api/base/unit'
-import { getUnitAll } from '../../../api/base/unit'
 const AddUnit = (props) => {
-    const { Option } = Select
     const { getFieldDecorator } = props.form
-    const { setNameMap, setLoading } = useContext(HomepageContext)
-    // const [unit, setUnit] = useState([])
-    // const fetchData = async () => {
-    //     const result = await getUnitAll()
-    //     setLoading(false)
-    //     if (result.data.success) {
-    //         setUnit(result.data.data)
-    //     }
-    // }
-    // const handleSubmitClub = e => {
-    //     e.preventDefault()
-    //     props.form.validateFields(async (err, values) => {
-    //         if (!err) {
-    //             setLoading(true)
-    //             const { success } = await addClub(values)
-    //             setLoading(false)
-    //             if (success) {
-    //                 notification['success']({
-    //                     message: 'Thêm thành công đội!'
-    //                 })
-    //             } else {
-    //                 notification['error']({
-    //                     message: 'Thêm không thành công đội!'
-    //                 })
-    //             }
-    //         }
-    //     })
-    // }
+    const { setLoading } = useContext(HomepageContext)
 
     const handleSubmitUnit = e => {
         e.preventDefault()
@@ -58,13 +28,6 @@ const AddUnit = (props) => {
             }
         })
     }
-    // useEffect(() => {
-    //     fetchData()
-    //     setNameMap({
-    //         ['/']: 'Trang chủ',
-    //         ['/them-don-vi']: 'Thêm đơn vị'
-    //     })
-    // }, [])
 
     return (
         <div className="paren-body-AU">
