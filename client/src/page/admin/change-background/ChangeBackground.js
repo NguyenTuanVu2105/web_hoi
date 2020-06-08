@@ -52,7 +52,7 @@ const ChangeBackground = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         props.form.validateFields(async (err, values) => {
-            if (!err && !file) {
+            if (!err) {
                 setLoading(true)
                 const { success } = await uploadBackground(file, values)
                 setLoading(false)
@@ -165,10 +165,10 @@ const columns = [
             <Modal
                 title="Thêm chương trình"
                 visible={openBack}
-                footer={null}
+                onOk={handleSubmit}
                 onCancel={handleCancel}
             >
-                <Form onSubmit={handleSubmit}>
+                <Form>
                     <Form.Item>
                         {getFieldDecorator('tenchuongtrinh')(
                             <Input type="text" name="name" style={{ marginBottom: 10 }} placeholder="Tên chương trình" required />
@@ -203,9 +203,6 @@ const columns = [
                                 {nameFile}
                             </div>
                         </Upload>
-                        <div className="modal-footer" style={{ paddingBottom: 0 }}>
-                            <Button type="primary" htmlType="submit">Lưu thay đổi</Button>
-                        </div>
                     </Form.Item>
                 </Form>
             </Modal>
