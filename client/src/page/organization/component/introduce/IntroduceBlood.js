@@ -285,12 +285,12 @@ const IntroduceBlood = (props) => {
                                         </div>
                                         <div className="unit-div2-infor">
                                         <div style={{ display: changeInputIB ? "flex" : "none",justifyContent:"center" }}>
-                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.Tinhnguyenvien}</label>
+                                            <label style={{ color: "rgba(0, 0, 0, 0.65)",marginTop:"5px" }} >{association.TNV}</label>
                                         </div>
                                         <div style={{ display: changeInputIB ? "none" : "block" }}>
                                             <Form.Item>
                                                 {getFieldDecorator('TNV', {
-                                                    initialValue: association.Tinhnguyenvien
+                                                    initialValue: association.TNV
                                                 })(
                                                     <Input type="text" style={{ width: "100%", backgroundColor: "white", borderRadius: 0 }} disabled={changeInputIB}/>
                                                 )}
