@@ -159,13 +159,21 @@
         flex-wrap: wrap;
     }
 .input-unit-s{
-    width: 70% !important;
+    width: 100% !important;
     background-color: rgb(255, 255, 255) !important;
     color: rgba(0, 0, 0, 0.6) !important;
-    border: none !important;
     margin-bottom: 2px !important;
     margin-left: 2px !important;
     padding: 0px !important;
+}
+.row-unit-s{
+    display: flex;
+}
+.label-value-s{
+    color: rgba(0, 0, 0, 0.65);
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
 }
 @media (min-width:993px) and (max-width:1200px){
     .para-unit-s{

@@ -28,11 +28,11 @@ const UnitDetail = (props) => {
             var edit = document.getElementById('roleedit')
             var save = document.getElementById('rolesave')
             if (value.role === 'hoitruong') {
-                edit.style.display='block'
-                save.style.display='block'
+                edit.style.display = 'block'
+                save.style.display = 'block'
             } else {
-                edit.style.display='none'
-                save.style.display='none'
+                edit.style.display = 'none'
+                save.style.display = 'none'
             }
         }
     })
@@ -78,65 +78,99 @@ const UnitDetail = (props) => {
                     <Form.Item>
                         <div style={{ width: "100%", display: 'flex', flexWrap: "wrap" }}>
                             <div className="reponsive-unit-s">
-                                <div>
-                                    <span className="label-unit-s">Đơn vị:</span>
-                                    {getFieldDecorator('tendoi', {
-                                        initialValue: club.Tendoi
-                                    })(
-                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
-                                    )}
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Đơn vị:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Tendoi}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('tendoi', {
+                                            initialValue: club.Tendoi
+                                        })(
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Mã đơn vị:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Madoi}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('madoi', {
+                                            initialValue: club.Madoi
+                                        })(
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Địa chỉ:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Diachi}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('diachi', {
+                                            initialValue: club.Diachi
+                                        })(
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Đơn vị trực thuộc quản lý:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.DonviQL}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('donviql', {
+                                            initialValue: club.DonviQL
+                                        })(
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Phụ trách đơn vị hiện tại:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Phutrach}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('phutrach', {
+                                            initialValue: club.Phutrach
+                                        })(
+                                            <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Năm thành lập:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Ngaythanhlap}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('ngaythanhlap', {
+                                            initialValue: club.Ngaythanhlap
+                                        })(
+                                            <Input type="number" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="row-unit-s">
+                                    <div className="label-unit-s">Ngày truyền thống:</div>
+                                    <div style={{ display: changeInput ? "block" : "none" }}>
+                                        <label className="label-value-s" >{club.Ngaytruyenthong}</label>
+                                    </div>
+                                    <div style={{ display: changeInput ? "none" : "block" }}>
+                                        {getFieldDecorator('ngaytruyenthong', {
+                                            initialValue: club.Ngaytruyenthong
+                                        })(
+                                            <Input type="date" className="input-unit-s" disabled={changeInput} />
+                                        )}
+                                    </div>
                                 </div>
                                 <div>
-                                    <span className="label-unit-s">Mã đơn vị:</span>
-                                    {getFieldDecorator('madoi', {
-                                        initialValue: club.Madoi
-                                    })(
-                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
-                                    )}
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Địa chỉ:</span>
-                                    {getFieldDecorator('diachi', {
-                                        initialValue: club.Diachi
-                                    })(
-                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
-                                    )}
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Đơn vị trực thuộc quản lý:</span>
-                                    {getFieldDecorator('donviql', {
-                                        initialValue: club.DonviQL
-                                    })(
-                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
-                                    )}
-
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Phụ trách đơn vị hiện tại:</span>
-                                    {getFieldDecorator('phutrach', {
-                                        initialValue: club.Phutrach
-                                    })(
-                                        <Input type="text" className="input-unit-s" disabled={changeInput} />
-                                    )}
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Năm thành lập:</span>
-                                    {getFieldDecorator('ngaythanhlap', {
-                                        initialValue: club.Ngaythanhlap
-                                    })(
-                                        <Input type="number" className="input-unit-s" disabled={changeInput} />
-                                    )}
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Ngày truyền thống:</span>
-                                    {getFieldDecorator('ngaytruyenthong', {
-                                        initialValue: club.Ngaytruyenthong
-                                    })(
-                                        <Input type="date" className="input-unit-s" disabled={changeInput} />
-                                    )}
-                                </div>
-                                <div>
-                                    <span className="label-unit-s">Tổng số thành viên:</span><br />
+                                    <div className="label-unit-s">Tổng số thành viên:</div>
                                 </div>
                             </div>
                             <div className="logo-unit-s">
@@ -154,11 +188,16 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Cảm tình viên</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('camtinhvien', {
-                                            initialValue: club.Camtinhvien
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.Camtinhvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('camtinhvien', {
+                                                initialValue: club.Camtinhvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="unit-div-infor">
@@ -166,11 +205,16 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Tình nguyện viên</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('tnv', {
-                                            initialValue: club.TNV
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.TNV}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('tnv', {
+                                                initialValue: club.TNV
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="unit-div-infor">
@@ -178,11 +222,16 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Hội viên</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('hoivien', {
-                                            initialValue: club.Hoivien
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.Hoivien}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('hoivien', {
+                                                initialValue: club.Hoivien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>{/*unit-column-infor*/}
@@ -193,11 +242,16 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Hướng dẫn viên/Cán bộ tăng cường</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('huongdanvien', {
-                                            initialValue: club.Huongdanvien
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.Huongdanvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('huongdanvien', {
+                                                initialValue: club.Huongdanvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="unit-div-infor">
@@ -205,11 +259,16 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Huấn luyện viên</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('huanluyenvien', {
-                                            initialValue: club.Huanluyenvien
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.Huanluyenvien}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('huanluyenvien', {
+                                                initialValue: club.Huanluyenvien
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="unit-div-infor">
@@ -217,29 +276,46 @@ const UnitDetail = (props) => {
                                         <span className="unit-span-infor">Cán bộ</span>
                                     </div>
                                     <div className="unit-div2-infor">
-                                        {getFieldDecorator('canbotangcuong', {
-                                            initialValue: club.Canbotangcuong
-                                        })(
-                                            <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
-                                        )}
+                                        <div style={{ display: changeInput ? "flex" : "none", justifyContent: "center" }}>
+                                            <label className="label-value-s" >{club.Canbotangcuong}</label>
+                                        </div>
+                                        <div style={{ display: changeInput ? "none" : "block" }}>
+                                            {getFieldDecorator('canbotangcuong', {
+                                                initialValue: club.Canbotangcuong
+                                            })(
+                                                <Input type="number" min="0" style={{ width: "100%", color: "rgba(0, 0, 0, 0.6)", border: "none", backgroundColor: "white", height: 28 }} disabled={changeInput} />
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <span className="label-unit-s">Điểm hiến máu thường xuyên tổ chức:</span>
-                        {getFieldDecorator('ketquahoatdong', {
-                            initialValue: club.Ketquahoatdong
-                        })(
-                            <Input type="text" className="input-unit-s" disabled={changeInput} />
-                        )}
-                        <br />
-                        <span className="label-unit-s">Kết quả hoạt động:</span>
-                        {getFieldDecorator('diemhienmau', {
-                            initialValue: club.Diemhienmau
-                        })(
-                            <Input type="text" className="input-unit-s" disabled={changeInput} />
-                        )}
+                        <div className="row-unit-s">
+                            <div className="label-unit-s">Điểm hiến máu thường xuyên tổ chức:</div>
+                            <div style={{ display: changeInput ? "block" : "none" }}>
+                                <label className="label-value-s" >{club.Ketquahoatdong}</label>
+                            </div>
+                            <div style={{ display: changeInput ? "none" : "block" }}>
+                                {getFieldDecorator('ketquahoatdong', {
+                                    initialValue: club.Ketquahoatdong
+                                })(
+                                    <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                )}
+                            </div>
+                        </div>
+                        <div className="row-unit-s">
+                            <div className="label-unit-s">Kết quả hoạt động:</div>
+                            <div style={{ display: changeInput ? "block" : "none" }}>
+                                <label className="label-value-s" >{club.Diemhienmau}</label>
+                            </div>
+                            <div style={{ display: changeInput ? "none" : "block" }}>
+                                {getFieldDecorator('diemhienmau', {
+                                    initialValue: club.Diemhienmau
+                                })(
+                                    <Input type="text" className="input-unit-s" disabled={changeInput} />
+                                )}
+                            </div>
+                        </div>
                     </Form.Item>
                 </div>
                 <div className="ButtonForMobileAdd">
