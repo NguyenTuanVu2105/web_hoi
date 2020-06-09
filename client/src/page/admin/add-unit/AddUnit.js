@@ -1,6 +1,5 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import HomepageContext from "../../../context/HomepageContext"
-import { Select } from 'antd'
 import { Input, Form, notification, Button } from 'antd'
 import './AddUnit.css'
 import '../../../api/base/club'
@@ -39,11 +38,11 @@ const AddUnit = (props) => {
                         <div style={{padding: "0px 20px 0px 20px"}}>
                             <span className="span-label-AU">Đơn vị:</span>
                             {getFieldDecorator('tenchihoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} required/>
                             )} <br />
                             <span className="span-label-AU">Mã Đơn vị:</span>
                             {getFieldDecorator('machihoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} required/>
                             )} <br />
                             <span className="span-label-AU">Địa chỉ:</span>
                             {getFieldDecorator('diachi')(
