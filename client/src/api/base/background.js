@@ -40,7 +40,7 @@ export const deleteBackground = (id) => {
   return createAuthApiRequest({
     url: `/api/deletebackground`,
     method: 'delete',
-    data: {id}
+    data: {id: id}
   })
 }
 export const uploadBackground = ({data, filename, file}, values) => {
