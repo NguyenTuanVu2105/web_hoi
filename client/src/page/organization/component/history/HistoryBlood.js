@@ -122,7 +122,7 @@ const HistoryBlood = (props) => {
                 style={{width: "100%", height: "700px"}}
             >
             </iframe> */}
-            <iframe src="/pdf/Don dang ky hoc KNBT 2017.pdf" style={{width: "100%", height: "700px"}}></iframe>
+            <iframe src="/pdf/ls.pdf" style={{width: "100%", height: "700px"}}></iframe>
             <Button className="button-IBD-HB" id='edit' type="primary" onClick={showModal}>
                 Sửa
             </Button>
