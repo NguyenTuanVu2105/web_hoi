@@ -1,7 +1,7 @@
-import React, { Component, useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import '../../homepage/component/header/Header.css'
 import './changeBackground.scss'
-import { Form, Button, Input, notification, Upload, Icon,Modal } from 'antd'
+import { Form, Button, Input, notification,Modal } from 'antd'
 import { getOneBackground, editBackground } from '../../../api/base/background'
 import HomepageContext from "../../../context/HomepageContext"
 

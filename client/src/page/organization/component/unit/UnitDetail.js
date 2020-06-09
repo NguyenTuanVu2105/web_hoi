@@ -9,7 +9,7 @@ import { Button, Input, Form, notification } from 'antd'
 const UnitDetail = (props) => {
     const { getFieldDecorator } = props.form
     const { madoi } = useParams()
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const { setNameMap, setLoading } = useContext(HomepageContext)
     const [changeInput, setchangeInput] = useState(true)
     // const [changeButton, setchangeButton] = useState(false)
     const [club, setClub] = useState([])

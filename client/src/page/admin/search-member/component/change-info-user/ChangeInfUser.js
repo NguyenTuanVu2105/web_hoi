@@ -20,9 +20,6 @@ const ChangeInfUser = (props) => {
     const handleCancel = e => {
         setVisible(false)
     };
-    const handleChange = () => {
-
-    }
 
     return (
         <div>

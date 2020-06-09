@@ -1,4 +1,4 @@
-import { getEnv } from '../helper/env/getEnv'
+// import { getEnv } from '../helper/env/getEnv'
 import { getCookie } from './storage/cookies'
 import axios from 'axios'
 import { COOKIE_KEY } from './storage/sessionStorage'
