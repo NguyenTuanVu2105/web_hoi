@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext } from 'react'
 import { Slide } from 'react-slideshow-image';
 import './Header.css'
 import HomepageContext from "../../../../context/HomepageContext";
