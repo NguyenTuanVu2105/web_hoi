@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { Slide } from 'react-slideshow-image';
 import './Header.css'
-import { getSlideShowBackground } from '../../../../api/base/background'
+import HomepageContext from "../../../../context/HomepageContext";
 
 const properties = {
   duration: 4500,
@@ -13,31 +13,19 @@ const properties = {
     // console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
-const Slideshow = () => {
-  const [inf, setInf] = useState([])
-
-  const fetchData = async () => {
-    const result = await getSlideShowBackground()
-    if (result) {
-      if (result.data.success) {
-        setInf(result.data.data)
-      }
-    }
-  }
-  useEffect(() => {
-    fetchData()
-  }, [])
+const Slideshow = (props) => {
+  const { background } = useContext(HomepageContext)
   return (
     <div className="para-header-s-0">
-      <div className="slide-container para-header-s" style={{ display: inf.length ? "block" : "none" }}>
+      <div className="slide-container para-header-s" style={{ display: background.length ? "block" : "none" }}>
         <Slide {...properties}>
           {
-            inf.map((inf, index) => (
+            background.map((bg, index) => (
               <div key={"ink" + index} className="each-slide">
                 <div className='page-header'>
                   <div className="reponsive-header">
-                    <a href={inf.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: " + inf.Ngaydienra + ". Địa điểm: " + inf.Diadiem} >
-                      <img className="background-cover-header" src={inf.Linkanh} />
+                    <a href={bg.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: " + bg.Ngaydienra + ". Địa điểm: " + bg.Diadiem} >
+                      <img className="background-cover-header" src={bg.Linkanh} />
                     </a>
                   </div>
                 </div>
@@ -46,7 +34,7 @@ const Slideshow = () => {
           }
         </Slide>
       </div>
-      <div style={{ display: inf.length ? "none" : "block" }}>
+      <div style={{ display: background.length ? "none" : "block" }}>
         <div className='page-header'>
           <div className="reponsive-header">
             <img className="background-cover-header" src="/img/backgroundlogo.png" />

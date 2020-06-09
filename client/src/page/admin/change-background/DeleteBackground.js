@@ -4,12 +4,14 @@ import {deleteBackground} from "../../../api/base/background";
 import HomepageContext from "../../../context/HomepageContext";
 
 const DeleteBackground = (props) => {
+    const { fetchBackgroundData } = useContext(HomepageContext)
     const {id, fetchData} = props
     const { setLoading } = useContext(HomepageContext)
     const [openDe, setOpenDe] = useState(false)
     const removeImg = async (id) => {
         setLoading(true)
         const resp = await deleteBackground(id)
+        setLoading(false)
         if (resp.success) {
             if (resp.data.success) {
                 setOpenDe(false)
@@ -17,13 +19,14 @@ const DeleteBackground = (props) => {
                     message: 'Xóa thành công',
                 })
                 fetchData()
+                fetchBackgroundData()
             } else {
                 notification['error']({
                     message: 'Xóa không thành công',
                 })
             }
         }
-        setLoading(false)
+
     }
     const showModalDe = () => {
         setOpenDe(true)

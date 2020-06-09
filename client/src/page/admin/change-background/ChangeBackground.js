@@ -8,7 +8,7 @@ import CBH from './CBH';
 import DeleteBackground from "./DeleteBackground";
 
 const ChangeBackground = (props) => {
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const { setNameMap, setLoading, fetchBackgroundData } = useContext(HomepageContext)
     const [cover, setCover] = useState([])
     const {page, setPage} = useState(1)
 
@@ -46,6 +46,7 @@ const ChangeBackground = (props) => {
                     })
                     setOpenBack(false)
                     fetchData()
+                    fetchBackgroundData()
                 } else {
                     notification['error']({
                         message: 'Cập nhật thông tin thất bại!',

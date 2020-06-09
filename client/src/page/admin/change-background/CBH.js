@@ -6,6 +6,7 @@ import { getOneBackground, editBackground } from '../../../api/base/background'
 import HomepageContext from "../../../context/HomepageContext"
 
 const CBH = (props) => {
+    const { fetchBackgroundData } = useContext(HomepageContext)
     const { getFieldDecorator } = props.form
     const { id } = props
     const { setLoading } = useContext(HomepageContext)
@@ -34,6 +35,7 @@ const CBH = (props) => {
                     notification['success']({
                         message: 'Cập nhật thông tin background thành công!',
                     })
+                    fetchBackgroundData()
                     setOpenChange(false)
                     
                 } else {
