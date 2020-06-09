@@ -1,7 +1,7 @@
 import React, {  useContext, useEffect, useState } from 'react'
 import HomepageContext from "../../../../context/HomepageContext";
 import '../introduce/component/introduleBloodDisplay.scss'
-import { Form, Input, Modal, Button, notification } from 'antd'
+import { Form, Input, Modal, Button, notification,Upload, Icon, } from 'antd'
 import { getUser, checkAuth } from '../../../../api/auth/auth'
 import { getPDF, editPDFHistory} from '../../../../api/base/association'
 const HistoryBlood = (props) => {
@@ -75,7 +75,9 @@ const HistoryBlood = (props) => {
         console.log(e);
         setOpenModal(false)
     };
+    const onChooseFile = () => {
 
+    }
     return (
         <div className="para-IBD-s">
             <div>
@@ -88,12 +90,28 @@ const HistoryBlood = (props) => {
                 >
                     <Form onSubmit={handleSubmit}>
                         <Form.Item>
-                            {getFieldDecorator('TailieuHistory')(
-                                <Input placeholder="Link PDF"></Input>
-                            )}
+                        <Upload
+                            // link to upload
+                            customRequest={onChooseFile}
+                            // end
+                            accept={".pdf"}
+                            multiple={false}
+                            fileList={[]}
+                        >
+                            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                                <label className="change-color-header">Tải File pdf lên: </label>
+                                <button>
+                                    <Icon type="upload" /> Choose File
+                                </button>
+                                {/* {nameFile} */}
+                            </div>
+                        </Upload>
                         </Form.Item>
                         <Form.Item>
-                            <Button type="primary" htmlType="submit"> Sửa </Button>
+                            <div className="footer-modal-s">
+                                <Button className="button-IBD-HB" type="primary" htmlType="submit"> Lưu thay đổi </Button>
+                            </div>
+                            
                         </Form.Item>
                     </Form>
                 </Modal>
@@ -105,7 +123,7 @@ const HistoryBlood = (props) => {
             >
             </iframe>
             
-            <Button id='edit' type="primary" onClick={showModal}>
+            <Button className="button-IBD-HB" id='edit' type="primary" onClick={showModal}>
                 Sửa
             </Button>
         </div>

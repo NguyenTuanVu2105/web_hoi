@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import HomepageContext from "../../../../../context/HomepageContext";
 import './introduleBloodDisplay.scss'
-import { Form, Input, Modal, Button, notification } from 'antd';
+import { Form, Input, Modal, Button, notification, Upload, Icon } from 'antd';
 import { getPDF, editPDF } from '../../../../../api/base/association'
 import { getUser, checkAuth } from '../../../../../api/auth/auth'
 import create from 'antd/lib/icon/IconFont';
@@ -75,7 +75,9 @@ const IntroduleBloodDisplay = (props) => {
         console.log(e);
         setOpenModal(false)
     };
+    const onChooseFile = () => {
 
+    }
     return (
         <div className="para-IBD-s">
             <div>
@@ -87,10 +89,29 @@ const IntroduleBloodDisplay = (props) => {
                     footer={null}
                 >
                     <Form onSubmit={handleSubmit}>
+                    <Form.Item>
+                    <Upload
+                            // link to upload
+                            customRequest={onChooseFile}
+                            // end
+                            accept={".pdf"}
+                            multiple={false}
+                            fileList={[]}
+                        >
+                            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                                <label className="change-color-header">Tải File pdf lên: </label>
+                                <button>
+                                    <Icon type="upload" /> Choose File
+                                </button>
+                                {/* {nameFile} */}
+                            </div>
+                        </Upload>
+                        </Form.Item>
                         <Form.Item>
-                            {getFieldDecorator('Tailieu')(
-                                <Input placeholder="Link PDF"></Input>
-                            )}   
+                            <div className="footer-modal-s">
+                                <Button className="button-IBD-HB" type="primary" htmlType="submit"> Lưu thay đổi </Button>
+                            </div>
+                            
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit"> Sửa </Button>
