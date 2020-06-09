@@ -118,15 +118,15 @@ exports.EditBackground = (req, res) =>{
 exports.DeleteBackground = (req,res) =>{
     Background.findOne({
         where :{
-            id :parseInt(req.body.id)
+            id : req.body.id
         }
     }).then( background => {
         const linkanh = {}
-        linkanh.Linkanh = background.Linkanh;
+        linkanh.Linkanh = background.Linkanh
         new LogImage(linkanh).save()
         Background.destroy({
             where: {
-                id :parseInt(req.body.id)
+                id : req.body.id
             }
         }).then(function (result) {
             if(result !== 0)
