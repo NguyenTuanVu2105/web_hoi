@@ -9,7 +9,7 @@ import { getUnitAll } from '../../../api/base/unit'
 const AddClub = (props) => {
     const { Option } = Select
     const { getFieldDecorator } = props.form
-    const { setNameMap, setLoading } = useContext(HomepageContext)
+    const { setLoading } = useContext(HomepageContext)
     const [unit, setUnit] = useState([])
     const fetchData = async () => {
         const result = await getUnitAll()
@@ -40,10 +40,6 @@ const AddClub = (props) => {
 
     useEffect(() => {
         fetchData()
-        setNameMap({
-            ['/']: 'Trang chủ',
-            ['/HistoryBlood']: 'Change Background',
-        })
     }, [])
 
     return (
@@ -56,11 +52,11 @@ const AddClub = (props) => {
                         <div style={{padding: "0px 20px 0px 20px"}}>
                             <span className="span-label-AU">Đơn vị:</span>
                             {getFieldDecorator('tendoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} required/>
                             )} <br />
                             <span className="span-label-AU">Mã Đơn vị:</span>
                             {getFieldDecorator('madoi')(
-                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} />
+                                <Input type="text" style={{ width: "60%", backgroundColor: "white", border: "none", borderBottom: "1px solid grey", borderRadius: 0, marginBottom: 2 }} required/>
                             )} <br />
                             <span className="span-label-AU">Địa chỉ:</span>
                             {getFieldDecorator('diachi')(
@@ -175,7 +171,7 @@ const AddClub = (props) => {
                                 message: 'Chưa chọn chi hội trực thuộc!'
                                 }]
                             })(
-                                <Select placeholder="Tên Chi Hội" style={{ width: '60%' }}>
+                                <Select placeholder="Tên Chi Hội trực thuộc" style={{ width: '60%' }}>
                                     {unit.map(unit => (
                                         <Option style={{ textAlign: "center" }} key={unit.id}>{unit.Tenchihoi}</Option>
                                     ))}
