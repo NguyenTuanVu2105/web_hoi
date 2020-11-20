@@ -14,6 +14,7 @@ import HistoryBlood from '../page/organization/component/history/HistoryBlood'
 import ChangeBackground from '../page/admin/change-background/ChangeBackground'
 import ChiHoi from '../page/ChiHoi'
 import ResetPassword from '../page/reset-password/ResetPassword'
+import TestUnit from "../page/member/Test/index"
 const routes = [
     {
         path: "/login",
@@ -98,6 +99,11 @@ const routes = [
                 path: `/ho-so-chi-hoi/:machihoi`,
                 exact: true,
                 component: ChiHoi,
+            },
+            {
+                path: `/kiem-tra-danh-gia`,
+                exact: true,
+                component: TestUnit,
             }
         ]
     },

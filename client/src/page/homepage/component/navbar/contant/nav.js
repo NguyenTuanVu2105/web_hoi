@@ -30,19 +30,20 @@ export const navs = [
             }
         ]
     },
-    // {
-    //     Id1: "#collapse3",
-    //     Id2: "collapse3",
-    //     name: "ĐÁNH GIÁ NĂNG LỰC",
-    //     IconID: 'icon3', 
-    //     children: [
-    //         {
-    //             // id: "1",
-    //             name: ""
-    //         },
+    {
+        Id1: "#collapse3",
+        Id2: "collapse3",
+        name: "ĐÁNH GIÁ NĂNG LỰC",
+        IconID: 'icon3', 
+        children: [
+            {
+                // id: "1",
+                name: "KIỂM TRA",
+                href:"/kiem-tra-danh-gia"
+            },
 
-    //     ]
-    // },
+        ]
+    },
     // {
     //     Id1: "#collapse4",
     //     Id2: "collapse4",
