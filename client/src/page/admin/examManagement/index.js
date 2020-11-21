@@ -9,9 +9,9 @@ const ExamManagement = (props) => {
   const [data, setData] = useState("");
 
   const fetchData = async () => {
-    let { success, data } = await getLinkTest();
-    if (success) {
-      setData(data.message.LinkTest);
+    let data = await getLinkTest();
+    if (data && data.success) {
+      setData(data.data.message.LinkTest);
     }
   };
 
