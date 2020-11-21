@@ -107,6 +107,12 @@ export const navs = [
                 id: "quanlybackground",
                 name: "THAY ĐỔI BACKGROUND",
                 href: '/thay-doi-background'
+            },
+            {
+                // id: "3",
+                id: "quanlybackground",
+                name: "QUẢN LÝ ĐỀ THI",
+                href: '/quan-ly-de-thi'
             }
         ]
     },
