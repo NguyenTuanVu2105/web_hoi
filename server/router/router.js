@@ -309,7 +309,7 @@ module.exports = function (app) {
 
   app.get(
     "/api/link-test",
-    [authJwt.verifyToken, authJwt.checkRolesHoitruong],
+    [authJwt.verifyToken],
     associationcontroller.viewLinkTest
   );
 
