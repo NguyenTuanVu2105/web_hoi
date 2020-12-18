@@ -1,0 +1,113 @@
+// @media (min-width: 992px){
+//     .mediaConten{
+//         opacity: 0;
+//         transform: translate3d(-130px,0,0);
+//     }
+// }
+.sidebar-container {
+    ::-webkit-scrollbar {
+        width: 5px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px;
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #ff4d4d; 
+        border-radius: 10px;
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: red; 
+      }
+    }
+    .sideBarClose:hover{
+        border: 1px solid #ff3333;
+    }
+    .sideBarClose{
+        background-color: white;
+        border: 1px solid white;
+        
+    }
+    .sideBarOpen{
+        position: fixed;
+        border: none;
+        display: inline-block;
+        padding: 8px 16px;
+        cursor: pointer;
+        z-index: 11;
+    
+    }
+    .sideBarOpen:hover{
+      background-color: #ff3333;
+      color: white;
+    }
+    .logo-page-blood{
+      margin: 0 auto;
+      height:215px;
+      width: 85%;  
+      background-position: center;
+      background-size: cover;
+      .logo-image {
+         width: 100%; 
+         height: auto;       
+    }
+}
+@media (min-width: 993px){
+    .sideBar{
+        display: none!important;
+    }  
+}
+.drop-menu{
+    background-color: #ff4d4d !important;
+    height: 35px !important;
+    width: 90% !important;
+    margin-top: 10px !important;
+    margin-left: 5%;
+    border-radius: 10px !important;
+}
+.drop-menu:hover {
+    background: #ff3333 !important ;
+}
+.stickyA{
+    font-size: 15px;
+    color: white  !important;
+    text-decoration: none !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    line-height: 35px !important;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    padding: 0 10px;
+}
+.list-group-item{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 !important;
+    border: 1px solid #ff4d4d;
+    margin-top: 5px !important;
+}
+.list-items{
+    color: #ff4d4d;
+    text-align: center;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 30px !important;
+}
+.list-items:hover{
+    color: #ff3333;
+    font-weight: 500 !important;
+}
+.sticky{
+    padding-top: 30px;
+    position: sticky;
+    position: -webkit-sticky;
+    top:0;
+}
