@@ -1,12 +1,6 @@
 import React, { memo, useState } from "react";
 import {Box, makeStyles } from "@material-ui/core";
 import "./style.scss"
-import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
-import PermIdentityOutlinedIcon from '@material-ui/icons/PermIdentityOutlined';
-import AssignmentTurnedInOutlinedIcon from '@material-ui/icons/AssignmentTurnedInOutlined';
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
-import MenuItem from "./Components/menuItem"
 const MenuBar = () => {
     const classes = useStyles();
     const setChangeIcon = (element) => {
