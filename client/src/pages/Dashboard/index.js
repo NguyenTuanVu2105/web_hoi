@@ -6,19 +6,22 @@ import {
   MenuBar,
   InputSelector
 } from "../../components"
-
+import {
+  OrganizationalRecords
+} from "../../pages/Member"
 const Dashboard = (props) => {
   const classes = useStyles();
 
   return (
     <Box>
-      <MenuBar/>
+      {/* <MenuBar/> */}
       <MainLayout>
       <h1 className={classes.root}>This is dashboard page</h1>
       <ButtonBox nameButton="click" />
-      <Box marginLeft="100px" marginTop="100px">
+      {/* <Box marginLeft="100px" marginTop="100px">
         <InputSelector data={top100Films} label="Mời nhập dữ liệu" />
-      </Box>
+      </Box> */}
+      <OrganizationalRecords/>
       </MainLayout>
     </Box>
   );
