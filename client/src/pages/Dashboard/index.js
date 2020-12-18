@@ -8,7 +8,7 @@ import {
 } from "../../components"
 import {
   OrganizationalRecords
-} from "../../pages/Member"
+} from "../../pages/Organization"
 const Dashboard = (props) => {
   const classes = useStyles();
 
