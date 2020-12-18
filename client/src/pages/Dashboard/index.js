@@ -1,12 +1,21 @@
-import React, { Component } from "react";
+import React, { memo } from "react";
 import MainLayout from "../../layouts/MainLayout";
+import { makeStyles } from "@material-ui/core";
 
-export default class Dashboard extends Component {
-  render() {
-    return (
-      <MainLayout>
-        <h1>This is dashboard page</h1>
-      </MainLayout>
-    );
-  }
-}
+const Dashboard = (props) => {
+  const classes = useStyles();
+
+  return (
+    <MainLayout>
+      <h1 className={classes.root}>This is dashboard page</h1>
+    </MainLayout>
+  );
+};
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    color: theme.palette.mainRed,
+  },
+}));
+
+export default memo(Dashboard);
