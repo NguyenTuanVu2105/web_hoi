@@ -7,7 +7,8 @@ import {
   InputSelector
 } from "../../components"
 import {
-  OrganizationalRecords
+  OrganizationalRecords,
+  ListUnits
 } from "../../pages/Organization"
 const Dashboard = (props) => {
   const classes = useStyles();
@@ -21,7 +22,8 @@ const Dashboard = (props) => {
       {/* <Box marginLeft="100px" marginTop="100px">
         <InputSelector data={top100Films} label="Mời nhập dữ liệu" />
       </Box> */}
-      <OrganizationalRecords/>
+      {/* <OrganizationalRecords/> */}
+      <ListUnits/>
       </MainLayout>
     </Box>
   );
