@@ -9,7 +9,13 @@ import {
   TableBody,
   Button,
 } from "@material-ui/core";
-import { InputSelector, CellHead, CellBody, Footer } from "../../components";
+import {
+  InputSelector,
+  CellHead,
+  CellBody,
+  Footer,
+  UploadAvatar,
+} from "../../components";
 
 const Dashboard = (props) => {
   const classes = useStyles();
@@ -47,6 +53,7 @@ const Dashboard = (props) => {
         </Table>
       </TableContainer>
       <Footer page={0} total={10} />
+      <UploadAvatar />
     </MainLayout>
   );
 };
