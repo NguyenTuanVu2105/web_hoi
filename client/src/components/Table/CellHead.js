@@ -6,10 +6,7 @@ const CellHead = ({ cellData, ...props }) => {
   const classes = useStyles();
 
   return (
-    <TableCell
-      align="center"
-      classes={{ root: classes.root, body: classes.body }}
-    >
+    <TableCell align="center" className={classes.root}>
       {cellData}
     </TableCell>
   );
@@ -17,15 +14,11 @@ const CellHead = ({ cellData, ...props }) => {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    border: `1px solid ${theme.palette.grey[500]}`,
-    padding: 8,
-  },
-  body: {
-    color: theme.palette.text.primary,
-    backgroundColor: "#ffffff",
-    minWidth: 100,
     fontSize: 14,
-    padding: "8px 0px",
+    fontWeight: "bold",
+    border: `1px solid ${theme.palette.grey[400]}`,
+    padding: 10,
+    backgroundColor: `${theme.palette.grey[300]}`,
   },
 }));
 

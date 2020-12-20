@@ -7,18 +7,25 @@ import {
   TableHead,
   TableRow,
   TableBody,
+  Button,
 } from "@material-ui/core";
-import { InputSelector, CellHead, CellBody } from "../../components";
+import { InputSelector, CellHead, CellBody, Footer } from "../../components";
 
 const Dashboard = (props) => {
   const classes = useStyles();
 
   return (
     <MainLayout>
-      <TableContainer style={{ margin: 50, width: 700 }}>
-        <Table stickyHeader>
+      <TableContainer
+        style={{
+          boxShadow: "0 1px 3px 0 rgba(0,0,0,.2),0 1px 6px 0 rgba(0,0,0,.19)",
+        }}
+      >
+        <Table stickyHeader style={{ width: "100%" }}>
           <TableHead>
             <TableRow>
+              <CellHead cellData="Họ và tên"></CellHead>
+              <CellHead cellData="Ngày sinh"></CellHead>
               <CellHead cellData="name"></CellHead>
               <CellHead cellData="year"></CellHead>
               <CellHead cellData="name"></CellHead>
@@ -32,11 +39,14 @@ const Dashboard = (props) => {
                 <CellBody cellData={data.year}></CellBody>
                 <CellBody cellData={data.name}></CellBody>
                 <CellBody cellData={data.year}></CellBody>
+                <CellBody cellData={data.name}></CellBody>
+                <CellBody cellData={data.year}></CellBody>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <Footer page={0} total={10} />
     </MainLayout>
   );
 };
