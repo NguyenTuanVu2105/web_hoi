@@ -73,10 +73,10 @@ const useStyles = makeStyles({
     boxPara: {
         margin: "0 auto",
         width: "1100px",
-        ['@media (min-width:993px) and (max-width:1200px)']:{
+        '@media (min-width:993px) and (max-width:1200px)':{
             width: "96%",
         },
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             width: "100%",
         },
     },
@@ -85,7 +85,7 @@ const useStyles = makeStyles({
         marginTop: "20px",
         boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)",
         borderRadius: "8px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },
@@ -96,7 +96,7 @@ const useStyles = makeStyles({
         alignItems: "center",
         borderTopLeftRadius: "8px",
         borderTopRightRadius: "8px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },

@@ -132,10 +132,10 @@ const useStyles = makeStyles({
     boxPara: {
         margin: "0 auto",
         width: "1100px",
-        ['@media (min-width:993px) and (max-width:1200px)']:{
+        '@media (min-width:993px) and (max-width:1200px)':{
             width: "96%",
         },
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             width: "100%",
         },
         display: "flex",
@@ -146,14 +146,14 @@ const useStyles = makeStyles({
         boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)",
         borderRadius: "8px",
         padding: "20px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },
     boxLists: {
         width: "calc(70% - 20px)",
         marginRight: "20px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             width: "100%",
             marginRight: "0px"
         },
@@ -167,7 +167,7 @@ const useStyles = makeStyles({
         // position: "-webkit-sticky",
         position: "sticky",
         top: "0",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             display: "none",
         },
     },
@@ -175,7 +175,7 @@ const useStyles = makeStyles({
         borderRadius: "8px",
         boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)",
         marginTop: "20px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },
@@ -184,7 +184,7 @@ const useStyles = makeStyles({
         marginTop: "20px",
         boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19)",
         borderRadius: "8px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },
@@ -195,7 +195,7 @@ const useStyles = makeStyles({
         alignItems: "center",
         borderTopLeftRadius: "8px",
         borderTopRightRadius: "8px",
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             borderRadius: "0px"
         },
     },
@@ -233,7 +233,7 @@ const useStyles = makeStyles({
         "&:hover": {
             color: "#ff4d4d"
         },
-        ['@media (max-width:992px)']:{
+        '@media (max-width:992px)':{
             margin: "0px 10px",
             width: "calc(100% - 20px)",
         },
