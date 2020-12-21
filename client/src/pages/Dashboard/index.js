@@ -9,12 +9,14 @@ import {
   TableBody,
   Button,
 } from "@material-ui/core";
+import { Close } from "@material-ui/icons";
 import {
   InputSelector,
   CellHead,
   CellBody,
   Footer,
   UploadAvatar,
+  IconButton,
 } from "../../components";
 
 const Dashboard = (props) => {
@@ -54,6 +56,7 @@ const Dashboard = (props) => {
       </TableContainer>
       <Footer page={0} total={10} />
       <UploadAvatar />
+      <IconButton title="Xác nhận" icon={<Close />} />
     </MainLayout>
   );
 };
