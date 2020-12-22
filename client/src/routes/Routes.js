@@ -14,6 +14,7 @@ import HistoryBlood from '../page/organization/component/history/HistoryBlood'
 import ChangeBackground from '../page/admin/change-background/ChangeBackground'
 import ChiHoi from '../page/ChiHoi'
 import ResetPassword from '../page/reset-password/ResetPassword'
+
 const routes = [
     {
         path: "/login",
