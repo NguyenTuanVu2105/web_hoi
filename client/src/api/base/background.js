@@ -1,48 +1,59 @@
-import { createApiRequest, createAuthApiRequest, uploadFileBackground } from "../index"
+import {
+  createApiRequest,
+  createAuthApiRequest,
+  uploadFileBackground,
+} from "../auth";
+import { ApiConst } from "../../const";
 
 export const getSlideShowBackground = () => {
   return createApiRequest({
-    url: `/api/slideshowbackground`,
-    method: 'get'
-  })
-}
+    url: ApiConst.GET_SLIDE_SHOW_BACKGROUND,
+    method: "get",
+  });
+};
 
 export const getAllBackground = () => {
   return createAuthApiRequest({
-    url: `/api/viewbackground`,
-    method: 'get'
-  })
-}
+    url: ApiConst.GET_ALL_BACKGROUND,
+    method: "get",
+  });
+};
 
 export const editBackground = (data) => {
   return createAuthApiRequest({
-    url: `/api/editbackground`,
-    method: 'post',
-    data: data
-  })
-}
+    url: ApiConst.EDIT_BACKGROUND,
+    method: "post",
+    data: data,
+  });
+};
 
 export const getOneBackground = (id) => {
   return createAuthApiRequest({
-    url: `/api/one/background?backgroundId=${id}`,
-    method: 'get'
-  })
-}
+    url: `${ApiConst.GET_ONE_BACKGROUND}${id}`,
+    method: "get",
+  });
+};
 
 export const getBackground = (fileName) => {
   return createApiRequest({
-    url: `/api/background/${fileName}`,
-    method: 'get'
-  })
-}
+    url: `${ApiConst.GET_BACKGROUND}${fileName}`,
+    method: "get",
+  });
+};
 
 export const deleteBackground = (id) => {
   return createAuthApiRequest({
-    url: `/api/deletebackground`,
-    method: 'delete',
-    data: {id: id}
-  })
-}
-export const uploadBackground = ({data, filename, file}, values) => {
-  return uploadFileBackground('/api/upload/background', data, filename, file, values)
-}
+    url: ApiConst.DELETE_BACKGROUND,
+    method: "delete",
+    data: { id: id },
+  });
+};
+export const uploadBackground = ({ data, filename, file }, values) => {
+  return uploadFileBackground(
+    ApiConst.UPLOAD_BACKGROUND,
+    data,
+    filename,
+    file,
+    values
+  );
+};

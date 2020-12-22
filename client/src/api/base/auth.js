@@ -1,38 +1,39 @@
-import {createApiRequest, createAuthApiRequest} from '../index'
+import { createApiRequest, createAuthApiRequest } from "../auth";
+import { ApiConst } from "../../const";
 
 export const login = (data) => {
-    return createApiRequest({
-        url: '/api/login', 
-        method: 'post',
-        data: data
-    })
-}
-export const forgetpassword = (data) => {
-    return createApiRequest({
-        url: '/api/forgetpassword', 
-        method: 'post',
-        data: data
-    })
-}
-export const resetpassword = (data) => {
-    return createApiRequest({
-        url: '/api/newpassword', 
-        method: 'post',
-        data: data
-    })
-}
-export const changepassword = (data) => {
-    return createAuthApiRequest({
-        url: '/api/user/edit/password', 
-        method: 'put',
-        data: data
-    })
-}
+  return createApiRequest({
+    url: ApiConst.LOGIN,
+    method: "post",
+    data: data,
+  });
+};
+export const forgetPassword = (data) => {
+  return createApiRequest({
+    url: ApiConst.FORGET_PASSWORD,
+    method: "post",
+    data: data,
+  });
+};
+export const resetPassword = (data) => {
+  return createApiRequest({
+    url: ApiConst.RESET_PASSWORD,
+    method: "post",
+    data: data,
+  });
+};
+export const changePassword = (data) => {
+  return createAuthApiRequest({
+    url: ApiConst.CHANGE_PASSWORD,
+    method: "put",
+    data: data,
+  });
+};
 
 export const checkToken = (token) => {
-    return createApiRequest({
-        url: '/api/token/check',
-        method: 'post',
-        data: {token}
-    })
-}
+  return createApiRequest({
+    url: ApiConst.CHECK_TOKEN,
+    method: "post",
+    data: { token },
+  });
+};

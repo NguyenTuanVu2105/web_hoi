@@ -1,15 +1,16 @@
-import { createAuthApiRequest } from "../index";
+import { createAuthApiRequest } from "../auth";
+import { ApiConst } from "../../const";
 
 export const getAssociation = () => {
   return createAuthApiRequest({
-    url: `/api/admin/view/association`,
+    url: ApiConst.GET_ASSOCIATION,
     method: "get",
   });
 };
 
 export const editAssociation = (data) => {
   return createAuthApiRequest({
-    url: `/api/admin/update/association`,
+    url: ApiConst.EDIT_ASSOCIATION,
     method: "post",
     data: data,
   });
@@ -17,14 +18,14 @@ export const editAssociation = (data) => {
 
 export const getPDF = () => {
   return createAuthApiRequest({
-    url: `/api/introduction`,
+    url: ApiConst.GET_PDF,
     method: "get",
   });
 };
 
 export const editPDF = (data) => {
   return createAuthApiRequest({
-    url: `/api/update/introduction`,
+    url: ApiConst.EDIT_PDF,
     method: "post",
     data: data,
   });
@@ -32,7 +33,7 @@ export const editPDF = (data) => {
 
 export const editPDFHistory = (data) => {
   return createAuthApiRequest({
-    url: `/api/update/history`,
+    url: ApiConst.EDIT_PDF_HISTORY,
     method: "post",
     data: data,
   });
@@ -40,7 +41,7 @@ export const editPDFHistory = (data) => {
 
 export const editLinkTest = (data) => {
   return createAuthApiRequest({
-    url: `/api/update/link-test`,
+    url: ApiConst.EDIT_LINK_TEST,
     method: "post",
     data: data,
   });
@@ -48,7 +49,14 @@ export const editLinkTest = (data) => {
 
 export const getLinkTest = () => {
   return createAuthApiRequest({
-    url: `/api/link-test`,
+    url: ApiConst.GET_LINK_TEST,
+    method: "get",
+  });
+};
+
+export const getLeaderAll = () => {
+  return createAuthApiRequest({
+    url: ApiConst.GET_LEADER_ALL,
     method: "get",
   });
 };
