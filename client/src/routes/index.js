@@ -2,7 +2,9 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
 import { MemberProfile } from "../pages/MemberRecord";
-
+import {
+  OrganizationalRecords
+} from "../pages/Organizational";
 const routes = [
   {
     path: "/login",
@@ -21,6 +23,11 @@ const routes = [
         path: "/",
         exact: true,
         component: MemberProfile,
+      },
+      {
+        path: "/ho-so-to-chuc",
+        exact: true,
+        component: OrganizationalRecords,
       },
     ],
   },
