@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Slide } from "react-slideshow-image";
-import "./Header.css";
+import "./style.scss";
 import HomepageContext from "../../context/HomepageContext";
 
 const properties = {
@@ -16,7 +16,7 @@ const properties = {
 const Slideshow = (props) => {
   const { background } = useContext(HomepageContext);
   return (
-    <div className="para-header-s-0">
+    <div className="box-para-header">
       <div
         className="slide-container para-header-s"
         style={{ display: background.length ? "block" : "none" }}
@@ -121,7 +121,13 @@ const Slideshow = (props) => {
               </div>
             </a>
           </div>
-          <div style={{ backgroundColor: "#4267b2", width: "calc(50% - 1px)" }}>
+          <div 
+            style={{ 
+              backgroundColor: "#4267b2",
+              width: "calc(50% - 1px)",
+              borderBottomRightRadius: "8px"
+            }}
+          >
             <a
               className="href-link-header-s"
               href="http://mau.vn/"
@@ -137,11 +143,20 @@ const Slideshow = (props) => {
               >
                 Mau.vn
               </div>
-              <div className="icon-header-s" style={{ borderRadius: "50%" }}>
+              <div
+                className="icon-header-s"
+                style={{
+                  borderRadius: "50%"
+                }}
+              >
                 <img
-                  style={{ width: "38px", height: "auto", borderRadius: "50%" }}
+                  style={{
+                    width: "38px",
+                    height: "auto",
+                    borderRadius: "50%"
+                  }}
                   src="/img/navbar/logomau.png"
-                ></img>
+                />
               </div>
             </a>
           </div>
