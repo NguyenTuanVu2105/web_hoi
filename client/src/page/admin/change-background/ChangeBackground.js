@@ -5,9 +5,10 @@ import {getAllBackground, uploadBackground, editBackground, deleteBackground} fr
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { Form, Button, Input, notification, Upload, Icon, Modal, Spin, Table } from 'antd'
 import CBH from './CBH';
+import DeleteBackground from "./DeleteBackground";
 
 const ChangeBackground = (props) => {
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const { setNameMap, setLoading, fetchBackgroundData } = useContext(HomepageContext)
     const [cover, setCover] = useState([])
     const {page, setPage} = useState(1)
 
@@ -19,6 +20,7 @@ const ChangeBackground = (props) => {
         setFile({ data, filename, file })
         setNameFile(file.name)
     }
+
     const fetchData = async () => {
         setLoading(true)
         const result = await getAllBackground()
@@ -29,25 +31,7 @@ const ChangeBackground = (props) => {
             }
         }
     }
-    const [openDe, setOpenDe] = useState(false)
-    const removeImg = async (id) => {
-        setLoading(true)
-        const resp = await deleteBackground(id)
-        if (resp.success) {
-            if (resp.data.success) {
-                setOpenDe(false)
-                notification['success']({
-                    message: 'Xóa thành công',
-                })
-                fetchData()
-            } else {
-                notification['error']({
-                    message: 'Xóa không thành công',
-                })
-            }
-        }
-        setLoading(false)
-    }
+
     // sửa khi có bảng update sửa lại handlesubmit
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -62,6 +46,7 @@ const ChangeBackground = (props) => {
                     })
                     setOpenBack(false)
                     fetchData()
+                    fetchBackgroundData()
                 } else {
                     notification['error']({
                         message: 'Cập nhật thông tin thất bại!',
@@ -90,12 +75,7 @@ const ChangeBackground = (props) => {
     };
     // delete img
     
-    const showModalDe = () => {
-        setOpenDe(true)
-    };
-    const handleCancelDe = e => {
-        setOpenDe(false)
-    };
+
 // tableback
 const columns = [
     {
@@ -106,20 +86,7 @@ const columns = [
         render: (id) => {
             return <div>
                 <CBH id={id}/>               
-                <Button type="primary" className="button-change-back-s" style={{ marginTop: 15 }} onClick={showModalDe}>
-                    Xóa
-                </Button>
-                <Modal
-                title="Xóa chương trình!"
-                visible={openDe}
-                footer={null}
-                onCancel={handleCancelDe}
-                >
-                    <p>Hành động này không thể hoàn tác. Bạn có chắc muốn xóa!</p>
-                    <div className="modal-change-back-s">
-                        <button className="button-change-back-s" style={{width:"100px"}} onClick={() => removeImg(id)}>Xóa</button>
-                    </div>                   
-                </Modal>
+                <DeleteBackground id={id} fetchData={fetchData}/>
             </div>
         }
     },

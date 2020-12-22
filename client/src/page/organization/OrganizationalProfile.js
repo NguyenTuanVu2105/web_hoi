@@ -1,22 +1,9 @@
-import React, {Component, useContext, useEffect} from 'react'
+import React, { useContext, useEffect} from 'react'
 import HomepageContext from "../../context/HomepageContext";
 import {OrganizationalProfilesList} from './contant/OrganizationalProfilesList'
-import { getUser, checkAuth} from '../../api/auth/auth'
 import './/style/OrganizationalProfile.scss'
 const OrganizationalProfile = () =>{
-
-    // const roles = getUser().then((value) => {
-    //     if (checkAuth()) {
-    //         var para = document.getElementById('addunit')
-    //         if (value.role === 'admin' || value.role === 'hoitruong') {
-    //             para.style.display='block'
-    //         } else {
-    //             para.style.display='none'
-    //         }
-    //     }
-    // })
-
-    const {nameMap, setNameMap} = useContext(HomepageContext)
+    const { setNameMap} = useContext(HomepageContext)
     useEffect(() => {
         setNameMap({
             ['/']: 'Trang chủ',

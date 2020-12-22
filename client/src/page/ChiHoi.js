@@ -1,16 +1,16 @@
-import React, { Component, useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import HomepageContext from "../context/HomepageContext";
 import './organization/component/unit/UnitDetail.css'
 import { getUser, checkAuth } from '../api/auth/auth'
 import { getUnitDetail, updateUnit } from '../api/base/unit'
 import { Button, Input, Form, notification } from 'antd';
 import { useParams } from 'react-router-dom';
-import IntroUnit from './organization/component/introduce/component/IntroUnit'
+// import IntroUnit from './organization/component/introduce/component/IntroUnit'
 const ChiHoi = (props) => {
     const { getFieldDecorator } = props.form
     const [changeInput, setchangeInput] = useState(true)
     const { machihoi } = useParams()
-    const { nameMap, setNameMap, setLoading } = useContext(HomepageContext)
+    const { setNameMap, setLoading } = useContext(HomepageContext)
     const [unit, setUnit] = useState([])
 
     const fetchData = async () => {

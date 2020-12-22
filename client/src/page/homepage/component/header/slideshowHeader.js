@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, {useContext } from 'react'
 import { Slide } from 'react-slideshow-image';
 import './Header.css'
-import { getSlideShowBackground } from '../../../../api/base/background'
+import HomepageContext from "../../../../context/HomepageContext";
 
 const properties = {
   duration: 4500,
@@ -13,31 +13,19 @@ const properties = {
     // console.log(`slide transition from ${oldIndex} to ${newIndex}`);
   }
 }
-const Slideshow = () => {
-  const [inf, setInf] = useState([])
-
-  const fetchData = async () => {
-    const result = await getSlideShowBackground()
-    if (result) {
-      if (result.data.success) {
-        setInf(result.data.data)
-      }
-    }
-  }
-  useEffect(() => {
-    fetchData()
-  }, [])
+const Slideshow = (props) => {
+  const { background } = useContext(HomepageContext)
   return (
     <div className="para-header-s-0">
-      <div className="slide-container para-header-s" style={{ display: inf.length ? "block" : "none" }}>
+      <div className="slide-container para-header-s" style={{ display: background.length ? "block" : "none" }}>
         <Slide {...properties}>
           {
-            inf.map((inf, index) => (
+            background.map((bg, index) => (
               <div key={"ink" + index} className="each-slide">
                 <div className='page-header'>
                   <div className="reponsive-header">
-                    <a href={inf.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: " + inf.Ngaydienra + ". Địa điểm: " + inf.Diadiem} >
-                      <img className="background-cover-header" src={inf.Linkanh} />
+                    <a href={bg.Linkchuongtrinh} target="blank" title={"Ngày diễn ra: " + bg.Ngaydienra + ". Địa điểm: " + bg.Diadiem} >
+                      <img className="background-cover-header" src={bg.Linkanh} />
                     </a>
                   </div>
                 </div>
@@ -46,7 +34,7 @@ const Slideshow = () => {
           }
         </Slide>
       </div>
-      <div style={{ display: inf.length ? "none" : "block" }}>
+      <div style={{ display: background.length ? "none" : "block" }}>
         <div className='page-header'>
           <div className="reponsive-header">
             <img className="background-cover-header" src="/img/backgroundlogo.png" />
@@ -87,7 +75,7 @@ const Slideshow = () => {
           <div style={{ backgroundColor: "#4267b2", width: "calc(50% - 1px)" }}>
             <a className="href-link-header-s" href="http://mau.vn/" target="_blank" style={{ backgroundColor: "#ff524d" }}>
               <div style={{ color: "white", fontWeight: "500", marginRight: '5px' }}>Mau.vn</div>
-              <div className="icon-header-s" style={{ borderRadius: "50%" }}><img style={{ width: "38px", height: "auto", borderRadius: "50%" }} src="https://scontent.fhan5-1.fna.fbcdn.net/v/t1.0-9/p960x960/79601448_2757775170941952_3792868997574164480_o.png?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fwSetp_69fMAX9rcBm-&_nc_ht=scontent.fhan5-1.fna&oh=289de5bd24485af7a08a59927601e0ac&oe=5EF55A9B"></img></div>
+              <div className="icon-header-s" style={{ borderRadius: "50%" }}><img style={{ width: "38px", height: "auto", borderRadius: "50%" }} src="/img/navbar/logomau.png"></img></div>
             </a>
           </div>
         </div>

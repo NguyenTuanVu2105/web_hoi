@@ -6,6 +6,7 @@ import { getUser, checkAuth } from '../../../../api/auth/auth'
 import { Button, Input, Form, notification } from 'antd'
 import { getAssociation, editAssociation } from '../../../../api/base/association'
 import IntroUnit from './component/IntroUnit'
+import ButtonBox from "../../../../components/buttonBox/index"
 
 const IntroduceBlood = (props) => {
     const { getFieldDecorator } = props.form
@@ -399,8 +400,20 @@ const IntroduceBlood = (props) => {
 
                 <Form.Item>
                     <div className="div-submit-IB">
-                        <Button id="roleedit" className="button-dis-sub" onClick={() => setchangeInputIB(false) && roles}>Sửa</Button>
-                        <Button id="rolesave" className="button-dis-sub" type="primary" htmlType="submit">Lưu thay đổi</Button>
+                        {/* <Button id="roleedit" className="button-dis-sub" onClick={() => setchangeInputIB(false) && roles}>Sửa</Button>
+                        <Button id="rolesave" className="button-dis-sub" type="primary" htmlType="submit">Lưu thay đổi</Button> */}
+                        <ButtonBox 
+                            id="roleedit"
+                            nameButton="Sửa"
+                            onClick={() => setchangeInputIB(false) && roles}
+                        />
+                        <ButtonBox 
+                            id="rolesave"
+                            nameButton="Lưu thay đổi"
+                            typeButton="primary"
+                            htmlType="submit"
+                            onClick={() => setchangeInputIB(false) && roles}
+                        />
                     </div>
                 </Form.Item>
 

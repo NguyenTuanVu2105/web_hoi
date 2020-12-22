@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import { renderRoutes } from 'react-router-config'
 import { withRouter } from "react-router-dom";
 import NavBar from './component/navbar/NavBar';
@@ -10,11 +10,27 @@ import Slideshow from './component/header/slideshowHeader';
 import Loading from './component/loading/Spin';
 import ChangePass from './component/change-password/ChangePass'
 import './Homepage.css'
+import {getSlideShowBackground} from "../../api/base/background";
 function HomePage(props) {
-    const [nameMap, setNameMap] = useState({})
     if (!checkAuth()) {
         props.history.push('/login')
     }
+    const [nameMap, setNameMap] = useState({})
+    const [background, setBackground] = useState([])
+    const [isLoading, setLoading] = useState(false)
+
+    const fetchBackgroundData = async () => {
+        const result = await getSlideShowBackground()
+        if (result) {
+            if (result.data.success) {
+                setBackground(result.data.data)
+            }
+        }
+    }
+
+    useEffect(() => {
+        fetchBackgroundData()
+    }, [])
 
     const breadcrumb = _.map(nameMap, (name, url) => {
         return (
@@ -23,7 +39,6 @@ function HomePage(props) {
             </Breadcrumb.Item>
         )
     })
-    const [isLoading, setLoading] = useState(false)
 
     return (
         <div className="container-fluid">            
@@ -36,10 +51,12 @@ function HomePage(props) {
                     nameMap,
                     setNameMap,
                     isLoading,
-                    setLoading
+                    setLoading,
+                    background,
+                    fetchBackgroundData
                 }}>
                     <div className="content-right" >
-                        <Slideshow/>
+                        <Slideshow background={background}/>
                         <Breadcrumb className="bread-crumb-s">{breadcrumb}</Breadcrumb>
                         {renderRoutes(props.route.routes)}
                         <ChangePass/>

@@ -16,8 +16,8 @@ function AdminLA(props) {
         const result = await getLearnActivityAdmin(idUser)
         const result2 = await getActivityAdmin(idUser)
         setLoading(false)
-        if (result) {
-            if (result.data.success) {
+        if (result.success && result2.success) {
+            if (result.data.success && result2.data.success) {
                 setLeact(result.data.data)
                 setAct(result2.data.data)
             }

@@ -1,11 +1,12 @@
-import React, { Component, useState, useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import '../../homepage/component/header/Header.css'
 import './changeBackground.scss'
-import { Form, Button, Input, notification, Upload, Icon,Modal } from 'antd'
+import { Form, Button, Input, notification,Modal } from 'antd'
 import { getOneBackground, editBackground } from '../../../api/base/background'
 import HomepageContext from "../../../context/HomepageContext"
 
 const CBH = (props) => {
+    const { fetchBackgroundData } = useContext(HomepageContext)
     const { getFieldDecorator } = props.form
     const { id } = props
     const { setLoading } = useContext(HomepageContext)
@@ -34,6 +35,7 @@ const CBH = (props) => {
                     notification['success']({
                         message: 'Cập nhật thông tin background thành công!',
                     })
+                    fetchBackgroundData()
                     setOpenChange(false)
                     
                 } else {
