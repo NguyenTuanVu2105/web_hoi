@@ -3,7 +3,7 @@ import { Form, notification, Input, Button } from "antd";
 import TextArea from "antd/lib/input/TextArea";
 import HomepageContext from "../../../context/HomepageContext";
 import { Profile } from "../../../api/base";
-import "./index.scss";
+import "./style.scss";
 
 const LearnAndActivity = (props) => {
   const { getFieldDecorator } = props.form;
