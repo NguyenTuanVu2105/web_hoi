@@ -2,7 +2,7 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
 import { MemberProfile, LearnAndActivity } from "../pages/MemberRecord";
-import { Dashboard, History } from "../pages/Organizational";
+import { Dashboard, History, Leader } from "../pages/Organizational";
 
 const routes = [
   {
@@ -42,6 +42,11 @@ const routes = [
         path: "/lich-su-hoi",
         exact: true,
         component: History,
+      },
+      {
+        path: "/lanh-dao-qua-cac-thoi-ky",
+        exact: true,
+        component: Leader,
       },
     ],
   },
