@@ -1,10 +1,8 @@
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
-import { MemberProfile } from "../pages/MemberRecord";
-import {
-  OrganizationalRecords
-} from "../pages/Organizational";
+import { MemberProfile, LearnAndActivity } from "../pages/MemberRecord";
+import { OrganizationalRecords } from "../pages/Organizational";
 const routes = [
   {
     path: "/login",
@@ -33,6 +31,11 @@ const routes = [
         path: "/ho-so-ca-nhan",
         exact: true,
         component: MemberProfile,
+      },
+      {
+        path: "/hoc-tap-va-hoat-dong",
+        exact: true,
+        component: LearnAndActivity,
       },
     ],
   },
