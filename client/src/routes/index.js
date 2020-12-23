@@ -2,7 +2,8 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
 import { MemberProfile, LearnAndActivity } from "../pages/MemberRecord";
-import { OrganizationalRecords } from "../pages/Organizational";
+import { Dashboard, History } from "../pages/Organizational";
+
 const routes = [
   {
     path: "/login",
@@ -25,7 +26,7 @@ const routes = [
       {
         path: "/ho-so-to-chuc",
         exact: true,
-        component: OrganizationalRecords,
+        component: Dashboard,
       },
       {
         path: "/ho-so-ca-nhan",
@@ -36,6 +37,11 @@ const routes = [
         path: "/hoc-tap-va-hoat-dong",
         exact: true,
         component: LearnAndActivity,
+      },
+      {
+        path: "/lich-su-hoi",
+        exact: true,
+        component: History,
       },
     ],
   },

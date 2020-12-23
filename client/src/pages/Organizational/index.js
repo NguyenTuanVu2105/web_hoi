@@ -1,5 +1,4 @@
-import OrganizationalRecords from "./organizationalRecords"
+import Dashboard from "./Dashboard";
+import History from "./History";
 
-export {
-    OrganizationalRecords
-}
+export { Dashboard, History };
