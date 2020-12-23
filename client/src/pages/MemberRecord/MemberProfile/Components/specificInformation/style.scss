@@ -1,0 +1,38 @@
+.box-para-speinfo{
+    width: 100%;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+    // height: 500px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    .box-header-speinfo{
+        font-weight: 500;
+        font-size: 20px;
+        border-bottom: 1px solid rgba(0,0,0,.4);
+        padding-bottom: 20px;
+    }
+    .box-body-speinfo{
+        .box-content-speinfo{
+            margin: 0 auto;
+            width: 100%;
+            border-bottom: 1px solid rgba(0,0,0,.2);
+            display: flex;
+            flex-wrap: wrap;
+            padding: 15px 0px;
+            .label-speinfo{
+                font-size: 14px;
+                width: 190px;
+                color:rgba(0, 0, 0, 0.65);
+                display: inline-block;
+                font-weight: 500;
+            }
+            .value-speinfo{
+                font-size: 14px;
+                width: calc(100% - 190px);
+                color:rgba(0, 0, 0, 0.65);
+                display: inline-block;
+                font-weight: 500;
+            }
+        }
+    }
+}

@@ -29,6 +29,11 @@ const routes = [
         exact: true,
         component: OrganizationalRecords,
       },
+      {
+        path: "/ho-so-ca-nhan",
+        exact: true,
+        component: MemberProfile,
+      },
     ],
   },
 ];

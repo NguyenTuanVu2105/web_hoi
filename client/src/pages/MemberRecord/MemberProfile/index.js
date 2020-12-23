@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import InformationUser from "./InformationUser";
+import InformationUser from "./Components/informationUser";
+import SpecificInformation from "./Components/specificInformation"
+import LearningAndActivities from "./Components/learningActivity"
 import HomepageContext from "../../../context/HomepageContext";
 import { Select, Form, notification, Input, Button } from "antd";
 import { Profile } from "../../../api/base";
-import "./index.css";
+import "./style.scss";
 
 const MemberProfile = (props) => {
   const { getFieldDecorator } = props.form;
@@ -56,7 +58,7 @@ const MemberProfile = (props) => {
     <div className="para-profile-member">
       <div className="para-content-profile-s">
         <Form onSubmit={handleSubmit} className="row">
-          <div className="profileForMobile-1">
+          <div className="box-profile-1">
             <InformationUser
               image={user.Image}
               file={file}
@@ -67,17 +69,41 @@ const MemberProfile = (props) => {
               gioitinh={user.Gioitinh}
               image={user.Image}
               giotmau={user.specialized}
+              SolanHM = {user.SolanHM}
+              Nhommau = {user.Nhommau}
+              rhD = {user.Rh}
+              donvi = {user.Donvi}
+              donvicuthe = {user.Donvicuthe}
+              doanviendangvien = {user.DoanvienDangvien}
+              trinhdohocvan = {user.Trinhdohocvan}
+              email = {user.Email}
+              sdt = {user.Dienthoai}
+              cmtorhc = {user.CMTorHC}
+              linkfb = {user.Facebook}
+              diachi = {user.DiachiLL}
+            />            
+          </div>
+          <div className="profileForMobile-2">
+            <SpecificInformation
+              donvi = {user.Donvi}
+              donvicuthe = {user.Donvicuthe}
+              doanviendangvien = {user.DoanvienDangvien}
+              trinhdohocvan = {user.Trinhdohocvan}
+              quequan = {user.Quequan}
+              thongtinlienheGD = {user.ThongtinlienheGD}
+              ghichu = {user.Ghichukhac} 
             />
-            <Form.Item
+            {/* <LearningAndActivities/> */}
+          <Form.Item
               action=""
               method="post"
               className="information"
               style={{ marginBottom: 0 }}
             >
               <div>
-                <div id="thong-tin-co-ban" className="title-profile-s">
+                {/* <div id="thong-tin-co-ban" className="title-profile-s">
                   Thông tin cơ bản
-                </div>
+                </div> */}
                 <div className="body-border-profile-s">
                   {/* <div> */}
                   <div className="border-bottom-profile-s">
@@ -153,6 +179,54 @@ const MemberProfile = (props) => {
                       />
                     )}
                   </div>
+                  <div className="border-bottom-profile-s">
+                    <label className="label-profile-s">Quê quán: </label>
+                    {getFieldDecorator("quequan", {
+                      initialValue: user.Quequan,
+                    })(
+                      <Input
+                        type="text"
+                        title={user.Quequan}
+                        className=" input-profile-s-1"
+                      />
+                    )}
+                  </div>
+                  <div className="border-bottom-profile-s">
+                    <label className="label-profile-s">Nơi ở hiện nay: </label>
+                    {getFieldDecorator("diachill", {
+                      initialValue: user.DiachiLL,
+                    })(
+                      <Input
+                        type="text"
+                        title={user.DiachiLL}
+                        className=" input-profile-s-1"
+                      />
+                    )}
+                  </div>
+                  <div className="border-bottom-profile-s">
+                    <label className="label-profile-s">Địa chỉ liên hệ: </label>
+                    {getFieldDecorator("thongtinlienhegd", {
+                      initialValue: user.ThongtinlienheGD,
+                    })(
+                      <Input
+                        type="text"
+                        title={user.ThongtinlienheGD}
+                        className=" input-profile-s-1"
+                      />
+                    )}
+                  </div>
+                  <div className="border-bottom-profile-s">
+                    <label className="label-profile-s">Ghi chú: </label>
+                    {getFieldDecorator("ghichukhac", {
+                      initialValue: user.Ghichukhac,
+                    })(
+                      <Input
+                        type="text"
+                        title={user.Ghichukhac}
+                        className=" input-profile-s-1"
+                      />
+                    )}
+                  </div>
                   {/* </div> */}
                 </div>
               </div>
@@ -164,10 +238,10 @@ const MemberProfile = (props) => {
               style={{ marginBottom: 0 }}
             >
               <div>
-                <div id="hien-mau" className="title-profile-s">
+                {/* <div id="hien-mau" className="title-profile-s">
                   Hiến máu
-                </div>
-                <div className="body-border-profile-s">
+                </div> */}
+                {/* <div className="body-border-profile-s">
                   <div className="border-bottom-profile-s">
                     <label className="label-profile-s">Số lần hiến máu: </label>
                     {getFieldDecorator("solanhm", {
@@ -230,11 +304,9 @@ const MemberProfile = (props) => {
                       </Select>
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </Form.Item>
-          </div>
-          <div className="profileForMobile-2">
             <Form.Item
               action=""
               method="post"
@@ -242,10 +314,10 @@ const MemberProfile = (props) => {
               style={{ marginBottom: 0 }}
             >
               <div>
-                <div id="don-vi-cong-tac" className="title-profile-s">
+                {/* <div id="don-vi-cong-tac" className="title-profile-s">
                   Đơn vị công tác
-                </div>
-                <div className="body-border-profile-s">
+                </div> */}
+                {/* <div className="body-border-profile-s">
                   <div className="border-bottom-profile-s">
                     <label className="label-profile-s">
                       Đơn vị học tập/Công tác:{" "}
@@ -302,13 +374,13 @@ const MemberProfile = (props) => {
                       />
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
               <div>
-                <div id="dia-chi" className="title-profile-s">
+                {/* <div id="dia-chi" className="title-profile-s">
                   Địa chỉ
-                </div>
-                <div className="body-border-profile-s">
+                </div> */}
+                {/* <div className="body-border-profile-s">
                   <div className="border-bottom-profile-s">
                     <label className="label-profile-s">Quê quán: </label>
                     {getFieldDecorator("quequan", {
@@ -333,13 +405,13 @@ const MemberProfile = (props) => {
                       />
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
               <div>
-                <div id="lien-he-nguoi-than" className="title-profile-s">
+                {/* <div id="lien-he-nguoi-than" className="title-profile-s">
                   Liên hệ người thân
-                </div>
-                <div className="body-border-profile-s">
+                </div> */}
+                {/* <div className="body-border-profile-s">
                   <div className="border-bottom-profile-s">
                     <label className="label-profile-s">Địa chỉ liên hệ: </label>
                     {getFieldDecorator("thongtinlienhegd", {
@@ -352,7 +424,7 @@ const MemberProfile = (props) => {
                       />
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </Form.Item>
             <Form.Item
@@ -362,10 +434,10 @@ const MemberProfile = (props) => {
               style={{ heigh: "auto" }}
             >
               <div>
-                <div id="ghi-chu-khac" className="title-profile-s">
+                {/* <div id="ghi-chu-khac" className="title-profile-s">
                   Ghi chú khác
-                </div>
-                <div className="body-border-profile-s">
+                </div> */}
+                {/* <div className="body-border-profile-s">
                   <div className="border-bottom-profile-s">
                     <label className="label-profile-s">Ghi chú: </label>
                     {getFieldDecorator("ghichukhac", {
@@ -378,7 +450,7 @@ const MemberProfile = (props) => {
                       />
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </Form.Item>
             <div className="DIVprofile">
@@ -395,7 +467,7 @@ const MemberProfile = (props) => {
           </div>
         </Form>
       </div>
-      <div className="para-menu-profile-s">
+      {/* <div className="para-menu-profile-s">
         <div className="body-menu-profile-s">
           <div className="child-menu-profile-s">
             <a href="#thong-tin-ca-nhan" className="tag-a-profile-s">
@@ -434,7 +506,7 @@ const MemberProfile = (props) => {
             <br />
           </div>
         </div>
-      </div>
+      </div> */}
     </div> // row
   );
 };

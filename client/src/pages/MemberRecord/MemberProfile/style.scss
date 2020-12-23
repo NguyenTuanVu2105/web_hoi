@@ -4,6 +4,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 20px;
     /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19); */
 }
 .buttonProfile{
@@ -63,6 +64,7 @@
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 8px;
 }
 .border-bottom-profile-s{
     margin: 0 auto;
@@ -91,7 +93,7 @@
     margin-bottom: 5px;
 }
 .para-content-profile-s{
-    width: 800px;
+    width: 1100px;
 }
 .para-menu-profile-s{
     width: 285px;
@@ -115,13 +117,13 @@
 .tag-a-profile-s:hover{
     color: #2c3e50;
 }
-.profileForMobile-1{
-    width: 100%;
+.box-profile-1{
+    width: 280px;
     /* margin-right: 4%; */
 }
 .profileForMobile-2{
-    width: 100%;
-    margin-top: 2px;
+    width: calc(100% - 280px);
+    padding-left: 20px;
 }
 .child-menu-profile-s{
     height: 30px;
@@ -155,7 +157,7 @@
         width: 100%;
         box-shadow: none;
     }
-    .profileForMobile-1{
+    .box-profile-1{
         width: 100%;
     }   
     .profileForMobile-2{

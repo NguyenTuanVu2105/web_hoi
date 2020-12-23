@@ -1,10 +1,11 @@
-.bodyA{
+.box-border-member{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19) !important;
   background: white;
   padding: 20px;
+  border-radius: 8px;
 }
   .title-profile-s{
     width: 170px;
@@ -61,25 +62,61 @@
   font-weight: 500;
 }
 
-.avatarForMobile{
-    width: 25%;
-    padding-left: 8%;
+.box-avatar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    // padding-left: 8%;
 }
-.informationUserForMobile{
-    width: 75%;
+.box-content-member{
+    width: 100%;
     margin-top: 12px;
 }
+.box-name-member{
+  display: flex;
+  justify-content: center;
+}
+.box-infor-member{
+  display: flex;
+  justify-content: space-between;
+}
+.box-topic-member{
+  display: flex;
+  margin: 15px 0px;
+}
+.box-label{
+  font-weight: 500;
+  font-size: 16px;
+}
+.box-line{
+  height: 14px;
+  margin-left: 5px;
+  flex-grow: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.box-infor-member-1{
+  display: flex;
+  margin-top: 15px;
+}
+.box-svg-member{
+  width: 20px;
+  margin-right: 20px;
+}
+.box-value-member{
+  font-weight: 500;
+  word-break: break-word;
+}
 @media(max-width:1400px){
-  .avatarForMobile{
+  .box-avatar{
     padding-left: 5px;
   }
 }
 
 @media (max-width: 992px){
-    .informationUserForMobile{
+    .box-content-member{
         width: 100%;
     }
-    .avatarForMobile{
+    .box-avatar{
         padding-left: 0;
     }
 }
@@ -136,22 +173,22 @@
     .icon-position-div{
       display: flex;
       flex-wrap: wrap;
-      .icon-blood{
-        background-image: url("iconBlood/iconBlood-01.png");
-        background-position: center;
-        background-size: cover;
-        width: 15px;
-        height: 23px;
-        margin-left: 4px;
-      }
-      .icon-blood-1{
-        background-image: url("iconBlood/iconBlood-02.png");
-        background-position: center;
-        background-size: cover;
-        width: 15px;
-        height: 23px;
-        margin-left: 4px;
-      }
+      // .icon-blood{
+      //   background-image: url("iconBlood/iconBlood-01.png");
+      //   background-position: center;
+      //   background-size: cover;
+      //   width: 15px;
+      //   height: 23px;
+      //   margin-left: 4px;
+      // }
+      // .icon-blood-1{
+      //   background-image: url("iconBlood/iconBlood-02.png");
+      //   background-position: center;
+      //   background-size: cover;
+      //   width: 15px;
+      //   height: 23px;
+      //   margin-left: 4px;
+      // }
     }
     
 
