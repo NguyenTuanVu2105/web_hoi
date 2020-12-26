@@ -2,7 +2,12 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
 import { MemberProfile, LearnAndActivity } from "../pages/MemberRecord";
-import { Dashboard, History, Leader } from "../pages/Organizational";
+import {
+  Dashboard,
+  History,
+  Leader,
+  Introduction,
+} from "../pages/Organizational";
 
 const routes = [
   {
@@ -29,6 +34,21 @@ const routes = [
         component: Dashboard,
       },
       {
+        path: "/lich-su-hoi",
+        exact: true,
+        component: History,
+      },
+      {
+        path: "/gioi-thieu-ve-hoi",
+        exact: true,
+        component: Introduction,
+      },
+      {
+        path: "/lanh-dao-qua-cac-thoi-ky",
+        exact: true,
+        component: Leader,
+      },
+      {
         path: "/ho-so-ca-nhan",
         exact: true,
         component: MemberProfile,
@@ -37,16 +57,6 @@ const routes = [
         path: "/hoc-tap-va-hoat-dong",
         exact: true,
         component: LearnAndActivity,
-      },
-      {
-        path: "/lich-su-hoi",
-        exact: true,
-        component: History,
-      },
-      {
-        path: "/lanh-dao-qua-cac-thoi-ky",
-        exact: true,
-        component: Leader,
       },
     ],
   },
