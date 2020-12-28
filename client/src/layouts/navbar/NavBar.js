@@ -74,11 +74,7 @@ const NavBar = () => {
           Close X
         </button>
         <div className="logo-page-blood">
-          <img
-            className="logo-image"
-            src="/img/navbar/logomau.png"
-            alt="logo"
-          ></img>
+          <img className="logo-image" src="/img/logomau.png" alt="logo"></img>
         </div>
         {navs.map((nav, index) => (
           <div key={"nav" + index} id={nav.id}>
