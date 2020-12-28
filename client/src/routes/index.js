@@ -11,7 +11,7 @@ import {
   UnitDetail,
   Club,
 } from "../pages/Organizational";
-import { ManageMember } from "../pages/Admin";
+import { ManageMember, ManageExam } from "../pages/Admin";
 
 const routes = [
   {
@@ -81,6 +81,11 @@ const routes = [
         path: "/tra-cuu-thanh-vien",
         exact: true,
         component: ManageMember,
+      },
+      {
+        path: `/quan-ly-de-thi`,
+        exact: true,
+        component: ManageExam,
       },
     ],
   },

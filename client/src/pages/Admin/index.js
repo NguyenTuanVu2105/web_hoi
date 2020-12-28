@@ -1,3 +1,4 @@
 import ManageMember from "./ManageMember";
+import ManageExam from "./ManageExam";
 
-export { ManageMember };
+export { ManageMember, ManageExam };
