@@ -11,7 +11,12 @@ import {
   UnitDetail,
   Club,
 } from "../pages/Organizational";
-import { ManageMember, ManageExam, ManageUnit } from "../pages/Admin";
+import {
+  ManageMember,
+  ManageExam,
+  ManageUnit,
+  ManageBackground,
+} from "../pages/Admin";
 
 const routes = [
   {
@@ -91,6 +96,11 @@ const routes = [
         path: "/them-don-vi",
         exact: true,
         component: ManageUnit,
+      },
+      {
+        path: "/thay-doi-background",
+        exact: true,
+        component: ManageBackground,
       },
     ],
   },

@@ -1,0 +1,204 @@
+.react-slideshow-container {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+}
+.box-para-header {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+}
+.menu-right-s {
+  /* margin-left: 15px; */
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom-right-radius: 8px;
+  /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19); */
+}
+.title-header-s {
+  width: 100%;
+  height: 50px;
+  background-color: #ff4d4d;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.content-header-s {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  margin-top: 5px;
+  border-bottom-right-radius: 8px;
+}
+.body-text-header-s {
+  width: 90%;
+  height: 30px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.text-header-s {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 5px;
+  margin-bottom: 10px;
+  border-left: 0px solid #2c3e50;
+  -webkit-transition: border 500ms ease-out;
+  -moz-transition: border 500ms ease-out;
+  -o-transition: border 500ms ease-out;
+  transition: transform 0.25s, opacity 0.25s, border 500ms ease-out;
+}
+.text-header-s:hover {
+  transform: translateX(10px);
+  border-left: 5px solid #ff4d4d;
+}
+.tag-a-header-s {
+  color: #2c3e50;
+  font-weight: 500;
+}
+.tag-a-header-s:hover {
+  color: #2c3e50;
+}
+.href-link-header-s {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: 8px;
+}
+.icon-header-s {
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  background: rgb(255, 255, 255);
+  /* padding-top: 4.5px; */
+}
+.href-link-header-s:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.page-header {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+}
+.page-header i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.change-background-header {
+  background-color: white;
+  opacity: 0.6;
+  margin-left: 15px;
+}
+.change-color-header {
+  margin: 0;
+  color: black;
+}
+.changeBackground {
+  width: 100%;
+  border: 1px solid #e9ecef;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  height: 40px;
+  padding-left: 15px;
+}
+.changeBackground:hover {
+  border: 1px solid rgb(82, 163, 255);
+}
+.Ccolor {
+  margin-left: 5px;
+  border: 1px solid #e9ecef;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.Ccolor:hover {
+  border: 1px solid rgb(82, 163, 255);
+}
+.background-cover-header {
+  position: relative;
+  height: 300px;
+  width: 800px;
+  background-position: center;
+  background-size: cover;
+  border-bottom-left-radius: 8px;
+}
+.para-header-s {
+  width: 800px;
+}
+.information-img-reposive {
+  width: 300px;
+  height: 300px;
+}
+.information-img-reposive::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .para-header-s {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .reponsive-header {
+    width: 100%;
+  }
+  .information-img-reposive {
+    width: 100%;
+    height: 150px;
+  }
+}
+@media (max-width: 1200px) {
+  .box-para {
+    width: 100%;
+  }
+  .menu-right-s {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  /* .page-header{
+        width: 700px;
+    } */
+  .para-header-s {
+    width: 100%;
+  }
+  .background-cover-header {
+    width: 100%;
+    height: 350px;
+  }
+}
+/* iphone 5/SE */
+@media all and (max-width: 320px) {
+  .background-cover-header {
+    width: 100%;
+    height: 114px;
+  }
+}
+/* iphone X */
+@media (min-width: 321px) and (max-width: 375px) {
+  .background-cover-header {
+    width: 100%;
+    height: 132px;
+  }
+}
+/* iphone 6/7/8 */
+@media (min-width: 376px) and (max-width: 480px) {
+  .background-cover-header {
+    width: 100%;
+    height: 145px;
+  }
+}
