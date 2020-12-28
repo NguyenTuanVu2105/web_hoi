@@ -7,6 +7,9 @@ import {
   History,
   Leader,
   Introduction,
+  UnitRecord,
+  UnitDetail,
+  Club,
 } from "../pages/Organizational";
 
 const routes = [
@@ -47,6 +50,21 @@ const routes = [
         path: "/lanh-dao-qua-cac-thoi-ky",
         exact: true,
         component: Leader,
+      },
+      {
+        path: "/ho-so-don-vi",
+        exact: true,
+        component: UnitRecord,
+      },
+      {
+        path: `/ho-so-chi-hoi/:machihoi`,
+        exact: true,
+        component: UnitDetail,
+      },
+      {
+        path: `/ho-so-doi-mau/:madoi`,
+        exact: true,
+        component: Club,
       },
       {
         path: "/ho-so-ca-nhan",
