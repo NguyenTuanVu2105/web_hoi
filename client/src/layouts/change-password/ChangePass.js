@@ -3,7 +3,7 @@ import { notification } from "antd";
 import { Loading } from "../../components";
 import { logout } from "../../api/auth";
 import { Auth } from "../../api/base";
-import "./changePass.css";
+import "./style.scss";
 
 const ChangePass = () => {
   const [isLoading, setIsLoading] = useState(false);

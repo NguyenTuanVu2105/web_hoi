@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import InformationUser from "./Components/informationUser";
-import SpecificInformation from "./Components/specificInformation"
-import LearningAndActivities from "./Components/learningActivity"
+import SpecificInformation from "./Components/specificInformation";
+import LearnAndActivities from "./Components/learningActivity";
 import HomepageContext from "../../../context/HomepageContext";
 import { Select, Form, notification, Input, Button } from "antd";
 import { Profile } from "../../../api/base";
@@ -69,32 +69,32 @@ const MemberProfile = (props) => {
               gioitinh={user.Gioitinh}
               image={user.Image}
               giotmau={user.specialized}
-              SolanHM = {user.SolanHM}
-              Nhommau = {user.Nhommau}
-              rhD = {user.Rh}
-              donvi = {user.Donvi}
-              donvicuthe = {user.Donvicuthe}
-              doanviendangvien = {user.DoanvienDangvien}
-              trinhdohocvan = {user.Trinhdohocvan}
-              email = {user.Email}
-              sdt = {user.Dienthoai}
-              cmtorhc = {user.CMTorHC}
-              linkfb = {user.Facebook}
-              diachi = {user.DiachiLL}
-            />            
+              SolanHM={user.SolanHM}
+              Nhommau={user.Nhommau}
+              rhD={user.Rh}
+              donvi={user.Donvi}
+              donvicuthe={user.Donvicuthe}
+              doanviendangvien={user.DoanvienDangvien}
+              trinhdohocvan={user.Trinhdohocvan}
+              email={user.Email}
+              sdt={user.Dienthoai}
+              cmtorhc={user.CMTorHC}
+              linkfb={user.Facebook}
+              diachi={user.DiachiLL}
+            />
           </div>
           <div className="profileForMobile-2">
             <SpecificInformation
-              donvi = {user.Donvi}
-              donvicuthe = {user.Donvicuthe}
-              doanviendangvien = {user.DoanvienDangvien}
-              trinhdohocvan = {user.Trinhdohocvan}
-              quequan = {user.Quequan}
-              thongtinlienheGD = {user.ThongtinlienheGD}
-              ghichu = {user.Ghichukhac} 
+              donvi={user.Donvi}
+              donvicuthe={user.Donvicuthe}
+              doanviendangvien={user.DoanvienDangvien}
+              trinhdohocvan={user.Trinhdohocvan}
+              quequan={user.Quequan}
+              thongtinlienheGD={user.ThongtinlienheGD}
+              ghichu={user.Ghichukhac}
             />
-            {/* <LearningAndActivities/> */}
-          <Form.Item
+            <LearnAndActivities />
+            <Form.Item
               action=""
               method="post"
               className="information"

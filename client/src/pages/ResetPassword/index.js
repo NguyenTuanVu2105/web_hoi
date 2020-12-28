@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { notification } from "antd";
 import { Auth } from "../../api/base";
 import { Loading } from "../../components";
-import "./style.css";
+import "./style.scss";
 
 const ResetPassword = (props) => {
   const { token } = props.match.params;

@@ -121,11 +121,11 @@ const Slideshow = (props) => {
               </div>
             </a>
           </div>
-          <div 
-            style={{ 
+          <div
+            style={{
               backgroundColor: "#4267b2",
               width: "calc(50% - 1px)",
-              borderBottomRightRadius: "8px"
+              borderBottomRightRadius: "8px",
             }}
           >
             <a
@@ -146,16 +146,16 @@ const Slideshow = (props) => {
               <div
                 className="icon-header-s"
                 style={{
-                  borderRadius: "50%"
+                  borderRadius: "50%",
                 }}
               >
                 <img
                   style={{
                     width: "38px",
                     height: "auto",
-                    borderRadius: "50%"
+                    borderRadius: "50%",
                   }}
-                  src="/img/navbar/logomau.png"
+                  src="/img/logomau.png"
                 />
               </div>
             </a>
