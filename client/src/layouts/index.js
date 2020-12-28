@@ -10,7 +10,7 @@ import { Loading } from "../components";
 import HomepageContext from "../context/HomepageContext";
 import { checkAuth } from "../api/auth";
 import { Background } from "../api/base";
-import "./index.css";
+import "./style.scss";
 
 const MainLayout = (props) => {
   if (!checkAuth()) {
