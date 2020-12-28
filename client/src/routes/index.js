@@ -11,6 +11,7 @@ import {
   UnitDetail,
   Club,
 } from "../pages/Organizational";
+import { ManageMember } from "../pages/Admin";
 
 const routes = [
   {
@@ -75,6 +76,11 @@ const routes = [
         path: "/hoc-tap-va-hoat-dong",
         exact: true,
         component: LearnAndActivity,
+      },
+      {
+        path: "/tra-cuu-thanh-vien",
+        exact: true,
+        component: ManageMember,
       },
     ],
   },
