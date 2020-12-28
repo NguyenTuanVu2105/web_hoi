@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import InformationUser from "./Components/informationUser";
 import SpecificInformation from "./Components/specificInformation";
-import LearningAndActivities from "./Components/learningActivity";
+import LearnAndActivities from "./Components/learningActivity";
 import HomepageContext from "../../../context/HomepageContext";
 import { Select, Form, notification, Input, Button } from "antd";
 import { Profile } from "../../../api/base";
@@ -93,7 +93,7 @@ const MemberProfile = (props) => {
               thongtinlienheGD={user.ThongtinlienheGD}
               ghichu={user.Ghichukhac}
             />
-            <LearningAndActivities />
+            <LearnAndActivities />
             <Form.Item
               action=""
               method="post"

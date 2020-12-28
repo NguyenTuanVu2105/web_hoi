@@ -9,7 +9,7 @@ import {
 } from "../../../../../api/base/profile";
 import TextArea from "antd/lib/input/TextArea";
 
-const LearningAndActivities = (props) => {
+const LearnAndActivities = (props) => {
   const { getFieldDecorator } = props.form;
   const { setNameMap, setLoading } = useContext(HomepageContext);
   const [leact, setLeact] = useState([]);
@@ -49,14 +49,47 @@ const LearningAndActivities = (props) => {
 
   useEffect(() => {
     fetchData();
-    setNameMap({
-      ["/"]: "Trang chủ",
-      ["/learn"]: "Học tập và hoạt động",
-    });
   }, []);
   return (
-    <div className="para-learning-and-activities">
-      <Form onSubmit={handleSubmit}>
+    <div className="box-para-la">
+      <div className="box-header-learn">Học tập</div>
+      <div className="box-body-learn">
+        <div className="box-content-learn">
+          <div className="label-learn">Trường:</div>
+          <div className="value-learn">{leact.Truong}</div>
+        </div>
+        <div className="box-content-learn">
+          <div className="label-learn">Lớp:</div>
+          <div className="value-learn">{leact.Lop}</div>
+        </div>
+        <div className="box-content-learn">
+          <div className="label-learn">Ngành:</div>
+          <div className="value-learn">{leact.Nganh}</div>
+        </div>
+        <div className="box-content-learn">
+          <div className="label-learn">GPA:</div>
+          <div className="value-learn">{leact.GPA}</div>
+        </div>
+        <div className="box-content-learn">
+          <div className="label-learn">Khen thưởng:</div>
+        </div>
+        <div className="table-content-learn">
+          <div className="col1-learn">Năm học</div>
+          <div className="col1-learn">Kỳ học</div>
+          <div className="col2-learn">Lý do khen thưởng</div>
+        </div>
+        <div className="table-content-learn">
+          <div className="col1-learn">Khen thưởng</div>
+          <div className="col1-learn">vcl</div>
+          <div className="col2-learn">
+            sinh vien 10 tot sinh vien 10 totsinh vien 10 totsinh vien 10
+            totsinh vien 10 totsinh vien 10 totsinh vien 10 totsinh vien 10
+            totsinh vien 10 totsinh vien 10 totsinh vien 10 totsinh vien 10
+            totsinh vien 10 totsinh vien 10 totsinh vien 10 tot
+          </div>
+        </div>
+      </div>
+      {/* <Form onSubmit={handleSubmit}>
         <div className="paren-body-LAA">
           <div
             style={{
@@ -446,9 +479,9 @@ const LearningAndActivities = (props) => {
             </Button>
           </Form.Item>
         </div>
-      </Form>
+      </Form> */}
     </div>
   );
 };
 
-export default Form.create()(LearningAndActivities);
+export default Form.create()(LearnAndActivities);
