@@ -1,10 +1,14 @@
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import MainLayout from "../layouts";
-import { MemberProfile } from "../pages/MemberRecord";
+import { MemberProfile, LearnAndActivity } from "../pages/MemberRecord";
 import {
-  OrganizationalRecords
+  Dashboard,
+  History,
+  Leader,
+  Introduction,
 } from "../pages/Organizational";
+
 const routes = [
   {
     path: "/login",
@@ -27,12 +31,32 @@ const routes = [
       {
         path: "/ho-so-to-chuc",
         exact: true,
-        component: OrganizationalRecords,
+        component: Dashboard,
+      },
+      {
+        path: "/lich-su-hoi",
+        exact: true,
+        component: History,
+      },
+      {
+        path: "/gioi-thieu-ve-hoi",
+        exact: true,
+        component: Introduction,
+      },
+      {
+        path: "/lanh-dao-qua-cac-thoi-ky",
+        exact: true,
+        component: Leader,
       },
       {
         path: "/ho-so-ca-nhan",
         exact: true,
         component: MemberProfile,
+      },
+      {
+        path: "/hoc-tap-va-hoat-dong",
+        exact: true,
+        component: LearnAndActivity,
       },
     ],
   },

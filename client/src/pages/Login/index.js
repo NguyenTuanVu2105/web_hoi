@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { Loading } from "../../components";
 import { setUserCookies, checkAuth } from "../../api/auth";
 import { Auth } from "../../api/base";
-import "./index.css";
+import "./style.css";
 
 const Login = (props) => {
   const [idForget, setIdForget] = useState("");
