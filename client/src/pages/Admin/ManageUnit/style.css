@@ -1,0 +1,107 @@
+.para-add-unit {
+  width: 1100px;
+  margin: 0 auto;
+}
+.paren-body-AU {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+}
+.change-div-AU {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.buttonDisable {
+  height: 32px;
+  width: 100px;
+  margin-left: 1.75%;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+}
+.buttonDisable:disabled {
+  opacity: 0.3;
+}
+.buttonDisable:hover {
+  background-color: #aad7fc;
+}
+.changeAddUnit {
+  margin-top: 10px;
+  display: flex;
+}
+.buttonD {
+  margin-right: 5px;
+  width: 100px;
+  height: 32px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+  border: none;
+  background-color: #2c3e50;
+  color: white;
+  font-weight: 500;
+  border-radius: 20px;
+}
+.buttonD:hover {
+  background-color: #ff4d4d;
+}
+.buttonD:focus {
+  outline: none;
+}
+.changeAUDUnit {
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+.span-label-AU {
+  color: #ff4d4d;
+  font-weight: 500;
+}
+.searchForMobile {
+  width: 25%;
+}
+.ButtonForMobile {
+  width: 320px;
+}
+.tableAddUnit {
+  width: 33.33%;
+}
+.buttonSubmitForMobile {
+  display: flex;
+  justify-content: flex-end;
+}
+.buttonS {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19) !important;
+  border: none !important;
+  background-color: #2c3e50 !important;
+  color: white !important;
+  font-weight: 500 !important;
+  border-radius: 0px !important;
+  border-top-left-radius: 6px !important;
+}
+.buttonS:hover {
+  background-color: #ff4d4d !important;
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .para-add-unit {
+    width: 96%;
+  }
+}
+@media (max-width: 992px) {
+  .para-add-unit {
+    width: 100%;
+  }
+  .changeAUDUnit {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+  }
+  .ButtonForMobile {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+  }
+  .searchForMobile {
+    width: 100%;
+  }
+  .tableAddUnit {
+    width: 100%;
+  }
+}
