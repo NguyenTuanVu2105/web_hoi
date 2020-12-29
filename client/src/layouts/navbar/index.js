@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getUser, logout, checkAuth } from "../../api/auth";
 import { Association } from "../../api/base";
 import { navs } from "./contant/nav";
-import "./style/NavBar.scss";
+import "./style.scss";
 const NavBar = () => {
   const [data, setData] = useState("");
 

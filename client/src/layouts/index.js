@@ -3,7 +3,7 @@ import { renderRoutes } from "react-router-config";
 import { withRouter } from "react-router-dom";
 import _ from "lodash";
 import { Breadcrumb } from "antd";
-import NavBar from "./navbar/NavBar";
+import NavBar from "./navbar";
 import Slideshow from "./header/slideshowHeader";
 import ChangePass from "./change-password/ChangePass";
 import { Loading } from "../components";
