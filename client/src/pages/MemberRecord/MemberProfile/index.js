@@ -55,8 +55,8 @@ const MemberProfile = (props) => {
   //nhóm máu
   const { Option } = Select;
   return (
-    <div className="para-profile-member">
-      <div className="para-content-profile-s">
+    <div className="box-para-member">
+      <div className="box-body-member">
         <Form onSubmit={handleSubmit} className="row">
           <div className="box-profile-1">
             <InformationUser
@@ -83,7 +83,7 @@ const MemberProfile = (props) => {
               diachi={user.DiachiLL}
             />
           </div>
-          <div className="profileForMobile-2">
+          <div className="box-profile-2">
             <SpecificInformation
               donvi={user.Donvi}
               donvicuthe={user.Donvicuthe}
