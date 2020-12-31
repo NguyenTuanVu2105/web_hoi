@@ -1,0 +1,126 @@
+.box-para-unit {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.box-link-unit {
+  width: 30%;
+}
+.menu-items {
+  border: 1px solid red;
+  margin-left: 5%;
+  border-radius: 8px;
+  display: flex;
+  margin-top: 15px;
+  height: 50px;
+}
+.menu-items a {
+  color: red !important;
+}
+
+.para-menu {
+  margin-left: 6%;
+}
+
+.para-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-group-blood {
+  background-color: rgb(255, 255, 255);
+  height: 60px;
+  width: 100%;
+  // margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  // flex-direction: column-reverse;
+  color: rgba(0, 0, 0, 0.65);
+  // border-left: 5px solid #ff4d4d;
+  // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.2s;
+  border-radius: 8px;
+}
+.list-group-blood:hover {
+  color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.list-group-blood a {
+  color: red !important;
+}
+.item-i i {
+  color: red;
+}
+.list-group-blood-item {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  list-style-type: none;
+  // box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.19);
+  // border-left: 3px solid #ff4d4d;
+}
+.box-item-unit {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  // text-decoration: none !important;
+  // text-align: left !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  align-items: center;
+  transition: 0.2s;
+}
+.box-item-unit:hover {
+  color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+.list-group-blood-item:hover {
+  color: rgba(0, 0, 0, 0.65);
+  // color: #ff3333;
+  // width: calc(100% + 20px);
+  // margin-left: -10px;
+  // height: 50px;
+  // margin-top: 3px;
+  // margin-bottom: 2px;
+  // display: flex;
+  // align-items: center;
+}
+.box-name-unit {
+  font-size: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .box-para-unit {
+    width: 100%;
+  }
+  .box-item-unit {
+    font-size: 14px;
+  }
+  .box-name-unit {
+    width: 100%;
+  }
+  .list-group-blood {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+  .box-para-unit {
+    width: 96%;
+  }
+}
