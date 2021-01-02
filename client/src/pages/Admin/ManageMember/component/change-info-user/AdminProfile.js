@@ -3,7 +3,7 @@ import HomepageContext from "../../../../../context/HomepageContext";
 import { Radio, Select, Form, notification, Input, Button } from "antd";
 import { Admin } from "../../../../../api/base";
 import AdminInfUser from "./AdminInfUser";
-import "./profile.css";
+import "./profile.scss";
 
 function AdminProfile(props) {
   const { idUser } = props;

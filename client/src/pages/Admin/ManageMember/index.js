@@ -6,7 +6,7 @@ import ChangeInfUser from "./component/change-info-user/ChangeInfUser";
 import MemberSearchForm from "./component/member-search-table/MemberSearchForm";
 import AddMemberModal from "./component/add-member/AddMemberModal";
 import { dataSearchDefault } from "./constant/searchDefault";
-import "./style.css";
+import "./style.scss";
 
 const MemberSearch = (props) => {
   const [table, setTable] = useState([]);

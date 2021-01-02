@@ -3,7 +3,7 @@ import HomepageContext from "../../../../../context/HomepageContext";
 import { Button, Form, notification, Select } from "antd";
 import { getUser, checkAuth } from "../../../../../api/auth";
 import { Admin } from "../../../../../api/base";
-import "./ChangeInfUser.css";
+import "./ChangeInfUser.scss";
 
 const { Option } = Select;
 
