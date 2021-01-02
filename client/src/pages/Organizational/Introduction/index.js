@@ -111,7 +111,7 @@ const Introduction = (props) => {
               <div className="logo-intro-reponsive">
                 <img
                   className="logo-intro-img-rp"
-                  src="./img/navbar/logomau.png"
+                  src="./img/logomau.png"
                   alt="logo"
                 />
                 <div className="intro-tag-a-rp">
@@ -420,7 +420,7 @@ const Introduction = (props) => {
               <div className="logo-intro">
                 <img
                   className="logo-intro-img"
-                  src="./img/navbar/logomau.png"
+                  src="./img/logomau.png"
                   alt="logo"
                 />
                 <div className="intro-tag-a">
