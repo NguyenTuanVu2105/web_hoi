@@ -5,10 +5,26 @@ export const navs = [
     name: "HỒ SƠ TỔ CHỨC",
     IconID: "icon1",
     children: [
+      // {
+      //   // id: "1",
+      //   name: "HỒ SƠ TỔ CHỨC",
+      //   href: "/ho-so-to-chuc",
+      // },
       {
-        // id: "1",
-        name: "HỒ SƠ TỔ CHỨC",
-        href: "/ho-so-to-chuc",
+        name: "GIỚI THIỆU VỀ HỘI",
+        href: "/gioi-thieu-ve-hoi",
+      },
+      {
+        name: "LỊCH SỬ HỘI",
+        href: "/lich-su-hoi",
+      },
+      {
+        name: "LÃNH ĐẠO QUA CÁC THỜI KỲ",
+        href: "/lanh-dao-qua-cac-thoi-ky",
+      },
+      {
+        name: "HỒ SƠ ĐƠN VỊ",
+        href: "/ho-so-don-vi",
       },
     ],
   },
