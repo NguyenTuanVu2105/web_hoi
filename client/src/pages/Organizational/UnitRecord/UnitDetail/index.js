@@ -4,7 +4,7 @@ import HomepageContext from "../../../../context/HomepageContext";
 import { getUser, checkAuth } from "../../../../api/auth";
 import { Unit } from "../../../../api/base";
 import { useParams } from "react-router-dom";
-import "./style.css";
+import "./style.scss";
 
 const UnitDetail = (props) => {
   const { getFieldDecorator } = props.form;
