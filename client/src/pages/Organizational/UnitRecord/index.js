@@ -2,6 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import HomepageContext from "../../../context/HomepageContext";
 import { Unit, Admin } from "../../../api/base";
 import { Link } from "react-router-dom";
+import {
+  CaretDownOutlined,
+  CaretRightOutlined,
+  CaretUpOutlined,
+} from "@ant-design/icons";
 import "./style.scss";
 
 const UnitRecord = () => {
@@ -14,6 +19,17 @@ const UnitRecord = () => {
     if (result.data.success) {
       setUnit(result.data.data);
     }
+  };
+  const [checked, setChecked] = useState([]);
+  const handleChecked = (e) => {
+    const currentIndex = checked.indexOf(e);
+    const newChecked = [...checked];
+    if (currentIndex === -1) {
+      newChecked.push(e);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+    setChecked(newChecked);
   };
 
   const [club, setClub] = useState([]);
@@ -43,21 +59,18 @@ const UnitRecord = () => {
               className="panel-heading list-group-blood "
               data-toggle="collapse"
               href={`#${search.Machihoi}`}
+              onClick={(e) => handleChecked(search.Machihoi)}
             >
               <div className="box-name-unit">
                 {search.Tenchihoi}
-                <i
-                  id="icon10"
-                  className="fa fa-angle-down"
-                  style={{ fontSize: "25px" }}
-                />
+                {checked.indexOf(search.Machihoi) === -1 ? (
+                  <CaretDownOutlined style={{ fontSize: "14px" }} />
+                ) : (
+                  <CaretUpOutlined style={{ fontSize: "14px" }} />
+                )}
               </div>
             </a>
-            <div
-              id={search.Machihoi}
-              className="panel-collapse collapse"
-              // style={{ marginTop: "10px" }}
-            >
+            <div id={search.Machihoi} className="panel-collapse collapse">
               <ul className="list-group">
                 <li key={"C-1"} className="list-group-blood-item">
                   <div style={{ width: "100%" }}>
@@ -70,10 +83,7 @@ const UnitRecord = () => {
                       {" "}
                       Giới thiệu về {search.Tenchihoi}
                       <div style={{ display: "flex" }}>
-                        <i
-                          className="fa fa-caret-right"
-                          style={{ fontSize: "14px" }}
-                        />
+                        <CaretRightOutlined style={{ fontSize: "12px" }} />
                       </div>
                     </Link>
                   </div>
@@ -82,7 +92,6 @@ const UnitRecord = () => {
               <ul className="list-group">
                 {search.clubs.map((child, index) => (
                   <li key={"C-" + index} className="list-group-blood-item">
-                    {/* <div style={{width:"100%"}}> */}
                     <Link
                       className="box-item-unit"
                       to={{
@@ -92,13 +101,9 @@ const UnitRecord = () => {
                       {" "}
                       {child.Tendoi}
                       <div style={{ display: "flex" }}>
-                        <i
-                          className="fa fa-caret-right"
-                          style={{ fontSize: "14px" }}
-                        />
+                        <CaretRightOutlined style={{ fontSize: "12px" }} />
                       </div>
                     </Link>
-                    {/* </div> */}
                   </li>
                 ))}
               </ul>
