@@ -8,6 +8,10 @@ const Specialized = db.specialized;
 const Op = db.Sequelize.Op;
 
 exports.ViewMemberInformation = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   page = parseInt(req.query.page);
   limit = 10;
   queryMember = {};
@@ -417,6 +421,10 @@ exports.ViewMemberInformation = (req, res) => {
 };
 
 exports.ViewMemberLA = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   User.findOne({
     where: {
       id: req.userId,
@@ -429,6 +437,10 @@ exports.ViewMemberLA = (req, res) => {
 };
 
 exports.BranchClubInformation = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   Branch.findAll({
     attributes: ["id", "Machihoi", "Tenchihoi"],
     include: [
@@ -447,6 +459,10 @@ exports.BranchClubInformation = (req, res) => {
 };
 
 exports.LeaderAssociation = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   Member.findAll({
     attributes: ["Image", "Hovaten", "ThoigianHD", "TinhtrangHD", "Ghichukhac"],
     include: [
@@ -468,6 +484,10 @@ exports.LeaderAssociation = (req, res) => {
 };
 
 exports.editRoles = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   User.update(
     {
       role: req.body.role,
@@ -491,6 +511,10 @@ exports.editRoles = (req, res) => {
 };
 
 exports.viewRoles = (req, res) => {
+  try {
+  } catch (error) {
+    res.status(500).send({ success: false, message: "Error -> " + error });
+  }
   Member.findOne({
     where: {
       id: req.query.userId,
