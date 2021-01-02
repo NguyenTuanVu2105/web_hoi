@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from "react";
 import { Button, Form, Input, Select } from "antd";
 import { Admin, Unit } from "../../../../../api/base";
 import { regionList } from "../../constant/regionList";
-import HomepageContext from "../../../../../context/HomepageContext";
+// import HomepageContext from "../../../../../context/HomepageContext";
 import { dataSearchDefault } from "../../constant/searchDefault";
 import _ from "lodash";
 import "./MemberSearchForm.scss";
 
 const MemberSearchForm = (props) => {
-  const { setLoading } = useContext(HomepageContext);
+  // const { setLoading } = useContext(HomepageContext);
   const { Option } = Select;
   const { getFieldDecorator } = props.form;
   const { setDataSearch, searchMember } = props;
