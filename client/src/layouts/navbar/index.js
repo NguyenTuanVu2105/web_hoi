@@ -3,6 +3,7 @@ import { getUser, logout, checkAuth } from "../../api/auth";
 import { Association } from "../../api/base";
 import { navs } from "./contant/nav";
 import "./style.scss";
+import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
 const NavBar = () => {
   const [data, setData] = useState("");
 
@@ -12,7 +13,17 @@ const NavBar = () => {
       setData(data.data.message.LinkTest);
     }
   };
-
+  const [checked, setChecked] = useState([]);
+  const handleChecked = (e) => {
+    const currentIndex = checked.indexOf(e);
+    const newChecked = [...checked];
+    if (currentIndex === -1) {
+      newChecked.push(e);
+    } else {
+      newChecked.splice(currentIndex, 1);
+    }
+    setChecked(newChecked);
+  };
   const roles = getUser().then((value) => {
     if (checkAuth()) {
       var roleAdmin = document.getElementById("admin");
@@ -37,18 +48,18 @@ const NavBar = () => {
   });
 
   // const [Icon, setIcon] = useState(false)
-  const setChangeIcon = (element) => {
-    var para = document.getElementById(element);
-    if (para) {
-      if (para.classList.item(1) === "fa-angle-down") {
-        para.classList.remove("fa-angle-down");
-        para.classList.toggle("fa-angle-up");
-      } else if (para.classList.item(1) === "fa-angle-up") {
-        para.classList.remove("fa-angle-up");
-        para.classList.toggle("fa-angle-down");
-      }
-    }
-  };
+  // const setChangeIcon = (element) => {
+  //   var para = document.getElementById(element);
+  //   if (para) {
+  //     if (para.classList.item(1) === "fa-angle-down") {
+  //       para.classList.remove("fa-angle-down");
+  //       para.classList.toggle("fa-angle-up");
+  //     } else if (para.classList.item(1) === "fa-angle-up") {
+  //       para.classList.remove("fa-angle-up");
+  //       para.classList.toggle("fa-angle-down");
+  //     }
+  //   }
+  // };
   const style = {
     fontSize: "24px",
     lineHeight: "35px",
@@ -83,15 +94,20 @@ const NavBar = () => {
                 className="stickyA"
                 data-toggle="collapse"
                 href={nav.Id1}
-                onClick={() => setChangeIcon(nav.IconID) && roles}
+                onClick={() => handleChecked(nav.IconID) && roles}
               >
                 {nav.name}
                 <div className="items-i">
-                  <i
+                  {/* <i
                     id={nav.IconID}
                     className="fa fa-angle-down"
                     style={style}
-                  ></i>
+                  ></i> */}
+                  {checked.indexOf(nav.IconID) === -1 ? (
+                    <CaretDownOutlined style={{ fontSize: "14px" }} />
+                  ) : (
+                    <CaretUpOutlined style={{ fontSize: "14px" }} />
+                  )}
                 </div>
               </a>
             </div>
@@ -124,11 +140,16 @@ const NavBar = () => {
               className="stickyA"
               data-toggle="collapse"
               href="#collapse7"
-              onClick={() => setChangeIcon("icon7")}
+              onClick={() => handleChecked("icon7")}
             >
               QUẢN LÝ TÀI KHOẢN
               <div className="items-i">
-                <i id="icon7" className="fa fa-angle-down" style={style}></i>
+                {/* <i id="icon7" className="fa fa-angle-down" style={style}></i> */}
+                {checked.indexOf("icon7") === -1 ? (
+                  <CaretDownOutlined style={{ fontSize: "14px" }} />
+                ) : (
+                  <CaretUpOutlined style={{ fontSize: "14px" }} />
+                )}
               </div>
             </a>
           </div>
