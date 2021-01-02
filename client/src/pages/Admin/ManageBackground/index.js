@@ -9,7 +9,7 @@ import {
   Upload,
   Icon,
   Modal,
-  Spin,
+  // Spin,
   Table,
 } from "antd";
 import CBH from "./CBH";
@@ -21,7 +21,7 @@ const ChangeBackground = (props) => {
     HomepageContext
   );
   const [cover, setCover] = useState([]);
-  const { page, setPage } = useState(1);
+  // const { page, setPage } = useState(1);
 
   const { getFieldDecorator } = props.form;
   const [file, setFile] = useState({});

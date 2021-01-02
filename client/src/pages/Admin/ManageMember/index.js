@@ -52,9 +52,9 @@ const MemberSearch = (props) => {
     setAddMemberVisible(false);
   };
 
-  function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
+  // function handleChange(value) {
+  //   console.log(`selected ${value}`);
+  // }
 
   const _onPageChange = (page) => {
     setPage(page);
