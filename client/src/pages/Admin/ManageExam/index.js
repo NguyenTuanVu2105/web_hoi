@@ -37,8 +37,8 @@ const ExamManagement = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/kiem-tra-danh-gia"]: "Kiểm tra",
+      "/": "Trang chủ",
+      "/kiem-tra-danh-gia": "Kiểm tra",
     });
   }, []);
 

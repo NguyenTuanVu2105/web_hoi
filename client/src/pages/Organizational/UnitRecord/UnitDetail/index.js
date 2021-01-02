@@ -39,10 +39,10 @@ const UnitDetail = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
+      "/": "Trang chủ",
       // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
-      ["/ho-so-chi-hoi"]: "Hồ sơ đơn vị(Chi Hội)",
+      "/ho-so-don-vi": "Hồ sơ đơn vị",
+      "/ho-so-chi-hoi": "Hồ sơ đơn vị(Chi Hội)",
     });
   }, []);
 

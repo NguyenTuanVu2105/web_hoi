@@ -39,10 +39,10 @@ const Club = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
-      ["/ho-so-doi-mau"]: "Hồ sơ đơn vị(Đội)",
+      "/": "Trang chủ",
+      "/ho-so-to-chuc": "Hồ sơ tổ chức",
+      "/ho-so-don-vi": "Hồ sơ đơn vị",
+      "/ho-so-doi-mau": "Hồ sơ đơn vị(Đội)",
     });
   }, []);
 

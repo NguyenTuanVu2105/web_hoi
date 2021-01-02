@@ -45,9 +45,9 @@ const UnitRecord = () => {
     fetchData();
     fetchDataClub();
     setNameMap({
-      ["/"]: "Trang chủ",
+      "/": "Trang chủ",
       // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
+      "/ho-so-don-vi": "Hồ sơ đơn vị",
     });
   }, []);
   return (

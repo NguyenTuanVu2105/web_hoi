@@ -70,8 +70,8 @@ const ChangeBackground = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/HistoryBlood"]: "Change Background",
+      "/": "Trang chủ",
+      "/HistoryBlood": "Change Background",
     });
   }, []);
 

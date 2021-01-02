@@ -65,9 +65,9 @@ const Introduction = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
+      "/": "Trang chủ",
       // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/gioi-thieu-ve-hoi"]: "Giới thiệu về Hội",
+      "/gioi-thieu-ve-hoi": "Giới thiệu về Hội",
     });
   }, []);
   const [visibleIntro, setVisibleIntro] = useState(true);

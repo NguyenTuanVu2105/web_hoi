@@ -38,8 +38,8 @@ const MemberSearch = (props) => {
     fetchDataUnit();
     fetchData(1);
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/tra-cuu-thanh-vien"]: "Tra cứu thành viên",
+      "/": "Trang chủ",
+      "/tra-cuu-thanh-vien": "Tra cứu thành viên",
     });
   }, []);
 

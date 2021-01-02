@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import HomepageContext from "../../../context/HomepageContext";
 import AddUnit from "./AddUnit";
 import AddClub from "./AddClub";
-import "./style.css";
+import "./style.scss";
 
 const AddUnitClub = () => {
   const { setNameMap } = useContext(HomepageContext);
@@ -10,8 +10,8 @@ const AddUnitClub = () => {
 
   useEffect(() => {
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/them-don-vi"]: "Thêm đơn vị",
+      "/": "Trang chủ",
+      "/them-don-vi": "Thêm đơn vị",
     });
   }, []);
 

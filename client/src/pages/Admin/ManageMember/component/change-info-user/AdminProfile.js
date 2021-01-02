@@ -46,8 +46,8 @@ function AdminProfile(props) {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/profile"]: "Hồ sơ cá nhân",
+      "/": "Trang chủ",
+      "/profile": "Hồ sơ cá nhân",
     });
   }, []);
 
