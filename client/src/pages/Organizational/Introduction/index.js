@@ -66,7 +66,7 @@ const Introduction = (props) => {
     fetchData();
     setNameMap({
       ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
+      // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
       ["/gioi-thieu-ve-hoi"]: "Giới thiệu về Hội",
     });
   }, []);

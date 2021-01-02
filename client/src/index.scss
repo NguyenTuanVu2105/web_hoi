@@ -16,10 +16,10 @@ code {
   box-sizing: border-box;
 }
 
-.container-fluid{
+.container-fluid {
   padding-right: 0px !important;
 }
-.drop-menu{
+.drop-menu {
   background-color: #ff4d4d !important;
   height: 35px !important;
   width: 90% !important;
@@ -30,22 +30,22 @@ code {
 .drop-menu:hover {
   background: #ff3333 !important ;
 }
-.stickyA{
+.stickyA {
   font-size: 15px;
-  color: white  !important;
+  color: white !important;
   text-decoration: none !important;
   font-weight: 400 !important;
   text-align: center !important;
   line-height: 35px !important;
   width: 100%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 0 10px;
 }
-.homePageBlood{
+.homePageBlood {
   margin-right: 0 !important;
 }
-.menu-left{
+.menu-left {
   background-color: white;
   height: auto;
 }
@@ -53,51 +53,50 @@ code {
 //   padding-left: 5% !important;
 //   padding-right: 5% !important;
 // }
-.list-group-item{
+.list-group-item {
   height: 30px;
   line-height: 30px;
-  text-align: center;
   padding: 0 !important;
   border: 1px solid #ff4d4d;
   margin-top: 5px !important;
+  padding-left: 10px !important;
 }
-.list-items{
+.list-items {
   color: #ff4d4d;
-  text-align: center;
   font-weight: 400 !important;
   font-size: 14px !important;
   line-height: 30px !important;
 }
-.list-items:hover{
+.list-items:hover {
   color: #ff3333;
   font-weight: 500 !important;
 }
-.items-i i{
+.items-i i {
   color: black;
 }
 
-.information{
+.information {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.input_information{
+.input_information {
   margin-left: 5px;
   width: 55% !important;
   border: none !important;
   border-bottom: 1px solid rgb(204, 202, 202) !important;
   border-radius: 0 !important;
 }
-.label_information{
+.label_information {
   font-size: 14px;
   color: #ff4d4d;
   display: inline-block;
 }
-fieldset{
+fieldset {
   border: 1px solid black !important;
   padding-bottom: 15px !important;
   padding-left: 15px !important;
 }
-.legendA{
+.legendA {
   width: auto !important;
   font-size: 20px !important;
   padding-left: 5px !important;
@@ -105,41 +104,36 @@ fieldset{
   color: #ff4d4d !important;
   border: none !important;
 }
-.sticky{
+.sticky {
   padding-top: 30px;
   position: sticky;
   position: -webkit-sticky;
-  top:0;
+  top: 0;
 }
-.content-right{
+.content-right {
   width: calc(100% - 235px);
   margin-left: 235px;
   padding-left: 0px !important;
   padding-right: 0px;
-  transition: margin-left .4s;
+  transition: margin-left 0.4s;
 }
-.para{
+.para {
   margin: 20px;
 }
-.sex{
+.sex {
   margin-right: 10px;
 }
 
-
-@media (max-width: 992px){
+@media (max-width: 992px) {
   .content-right {
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
-  .ant-modal{
+  .ant-modal {
     width: 90% !important;
   }
 }
-
-
-
-
 
 /* For mobile phones: */
 /* [class*="col-"] {

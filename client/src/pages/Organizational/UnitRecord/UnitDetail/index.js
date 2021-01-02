@@ -40,7 +40,7 @@ const UnitDetail = (props) => {
     fetchData();
     setNameMap({
       ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
+      // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
       ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
       ["/ho-so-chi-hoi"]: "Hồ sơ đơn vị(Chi Hội)",
     });

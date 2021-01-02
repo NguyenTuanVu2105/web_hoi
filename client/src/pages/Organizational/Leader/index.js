@@ -18,7 +18,7 @@ const Leader = () => {
     fetchData();
     setNameMap({
       ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
+      // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
       ["/lanh-dao-qua-cac-thoi-ky"]: "Lãnh đạo qua các thời kỳ",
     });
   }, []);
