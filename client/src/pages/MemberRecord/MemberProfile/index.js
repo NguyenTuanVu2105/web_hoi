@@ -47,8 +47,8 @@ const MemberProfile = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/ho-so-ca-nhan"]: "Hồ sơ cá nhân",
+      "/": "Trang chủ",
+      "/ho-so-ca-nhan": "Hồ sơ cá nhân",
     });
   }, []);
 

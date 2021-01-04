@@ -46,8 +46,8 @@ const LearnAndActivity = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/learn"]: "Học tập và hoạt động",
+      "/": "Trang chủ",
+      "/learn": "Học tập và hoạt động",
     });
   }, []);
   return (

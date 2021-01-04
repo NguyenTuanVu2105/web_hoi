@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  // useEffect,
+  useState,
+} from "react";
 import { notification } from "antd";
 import { Loading } from "../../components";
 import { logout } from "../../api/auth";
@@ -14,9 +17,9 @@ const ChangePass = () => {
   const [checkPass1, setCheckPass1] = useState(false);
   const [checkPass2, setCheckPass2] = useState(false);
   const handlePassword = async () => {
-    if (newpassword.length < 8 || newpassword.indexOf(" ") != -1) {
+    if (newpassword.length < 8 || newpassword.indexOf(" ") !== -1) {
       setCheckPass(true);
-    } else if (newpassword != passwordconfirm) {
+    } else if (newpassword !== passwordconfirm) {
       setCheckPass2(true);
       setCheckPass(false);
     } else {

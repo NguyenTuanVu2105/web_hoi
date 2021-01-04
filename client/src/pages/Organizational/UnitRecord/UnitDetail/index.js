@@ -4,7 +4,7 @@ import HomepageContext from "../../../../context/HomepageContext";
 import { getUser, checkAuth } from "../../../../api/auth";
 import { Unit } from "../../../../api/base";
 import { useParams } from "react-router-dom";
-import "./style.css";
+import "./style.scss";
 
 const UnitDetail = (props) => {
   const { getFieldDecorator } = props.form;
@@ -39,10 +39,10 @@ const UnitDetail = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
-      ["/ho-so-chi-hoi"]: "Hồ sơ đơn vị(Chi Hội)",
+      "/": "Trang chủ",
+      // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
+      "/ho-so-don-vi": "Hồ sơ đơn vị",
+      "/ho-so-chi-hoi": "Hồ sơ đơn vị(Chi Hội)",
     });
   }, []);
 

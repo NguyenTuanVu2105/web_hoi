@@ -3,7 +3,7 @@ import { Modal, Button, Form } from "antd";
 import AdminProFile from "./AdminProfile";
 import AdminLA from "./AdminLA";
 import AdminRoles from "./AdminRoles";
-import "./ChangeInfUser.css";
+import "./ChangeInfUser.scss";
 
 const ChangeInfUser = (props) => {
   const { idUser } = props;

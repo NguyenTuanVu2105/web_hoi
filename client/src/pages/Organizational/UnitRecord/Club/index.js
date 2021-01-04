@@ -4,7 +4,7 @@ import { Button, Input, Form, notification } from "antd";
 import { getUser, checkAuth } from "../../../../api/auth";
 import { Unit } from "../../../../api/base";
 import { useParams } from "react-router-dom";
-import "./style.css";
+import "./style.scss";
 
 const Club = (props) => {
   const { getFieldDecorator } = props.form;
@@ -39,10 +39,10 @@ const Club = (props) => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/ho-so-don-vi"]: "Hồ sơ đơn vị",
-      ["/ho-so-doi-mau"]: "Hồ sơ đơn vị(Đội)",
+      "/": "Trang chủ",
+      "/ho-so-to-chuc": "Hồ sơ tổ chức",
+      "/ho-so-don-vi": "Hồ sơ đơn vị",
+      "/ho-so-doi-mau": "Hồ sơ đơn vị(Đội)",
     });
   }, []);
 

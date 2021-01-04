@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import HomepageContext from "../../../context/HomepageContext";
 import { Association } from "../../../api/base";
-import "./style.css";
+import "./style.scss";
 
 const Leader = () => {
   const { setNameMap, setLoading } = useContext(HomepageContext);
@@ -17,9 +17,9 @@ const Leader = () => {
   useEffect(() => {
     fetchData();
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
-      ["/lanh-dao-qua-cac-thoi-ky"]: "Lãnh đạo qua các thời kỳ",
+      "/": "Trang chủ",
+      // ["/ho-so-to-chuc"]: "Hồ sơ tổ chức",
+      "/lanh-dao-qua-cac-thoi-ky": "Lãnh đạo qua các thời kỳ",
     });
   }, []);
 

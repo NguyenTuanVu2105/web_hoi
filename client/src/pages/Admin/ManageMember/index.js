@@ -6,7 +6,7 @@ import ChangeInfUser from "./component/change-info-user/ChangeInfUser";
 import MemberSearchForm from "./component/member-search-table/MemberSearchForm";
 import AddMemberModal from "./component/add-member/AddMemberModal";
 import { dataSearchDefault } from "./constant/searchDefault";
-import "./style.css";
+import "./style.scss";
 
 const MemberSearch = (props) => {
   const [table, setTable] = useState([]);
@@ -38,8 +38,8 @@ const MemberSearch = (props) => {
     fetchDataUnit();
     fetchData(1);
     setNameMap({
-      ["/"]: "Trang chủ",
-      ["/tra-cuu-thanh-vien"]: "Tra cứu thành viên",
+      "/": "Trang chủ",
+      "/tra-cuu-thanh-vien": "Tra cứu thành viên",
     });
   }, []);
 
@@ -52,9 +52,9 @@ const MemberSearch = (props) => {
     setAddMemberVisible(false);
   };
 
-  function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
+  // function handleChange(value) {
+  //   console.log(`selected ${value}`);
+  // }
 
   const _onPageChange = (page) => {
     setPage(page);

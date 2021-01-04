@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import HomepageContext from "../../../../context/HomepageContext";
 import { Input, Form, notification, Button } from "antd";
 import { Unit } from "../../../../api/base";
-import "../style.css";
+import "../style.scss";
 
 const AddUnit = (props) => {
   const { getFieldDecorator } = props.form;

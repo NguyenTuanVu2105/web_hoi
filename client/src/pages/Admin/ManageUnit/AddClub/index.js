@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import HomepageContext from "../../../../context/HomepageContext";
 import { Input, Form, notification, Button, Select } from "antd";
 import { Unit } from "../../../../api/base";
-import "../style.css";
+import "../style.scss";
 
 const AddClub = (props) => {
   const { Option } = Select;
