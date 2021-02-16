@@ -3,7 +3,7 @@ const authJwt = require("./verifyJwtToken");
 const multer = require("multer");
 const path = require("path");
 
-module.exports = function (app) {
+module.exports = (app) => {
   const usercontroller = require("../controller/user.controller");
   const clubcontroller = require("../controller/club.controller");
   const branchcontroller = require("../controller/branch.controller");
@@ -15,6 +15,12 @@ module.exports = function (app) {
   const learnactivity = require("../controller/leanactivity.controller");
   const imageUploader = multer({ dest: "images/" });
   const backgroudcontroller = require("../controller/background.controller");
+
+  const member = require("./member.router")(app);
+  const admin = require("./admin.router")(app);
+
+  app.use("/api", member);
+  app.use("/api/admin", admin);
 
   app.post("/api/login", usercontroller.login);
 
